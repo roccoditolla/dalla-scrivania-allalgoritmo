@@ -173,12 +173,12 @@ Cue sheet stampabile: `outputs/cue_sheet.md` — ⏳ (prematuro finché speech n
 
 | Step | Status | Note |
 |---|---|---|
-| `vercel.json` configurato | 🟡 | in corso |
-| `deploy.md` istruzioni | 🟡 | in corso |
-| `vercel link` | ⏳ | Rocco deve eseguire |
-| Primo `vercel --prod` | ⏳ | Rocco esegue dopo link |
-| GitHub auto-deploy on push | ⏳ | dopo link |
-| URL pubblico | ⏳ | sarà fornito da Vercel |
+| `vercel.json` configurato | ✅ | rewrite `/` → `/deck/index.html`, cache headers MP4/audio |
+| `deploy.md` istruzioni | ✅ | guida completa |
+| Push GitHub origin/main | ✅ | commit `0495931` — 28 SVG + synth + speech + agents tutti su https://github.com/roccoditolla/dalla-scrivania-allalgoritmo |
+| Vercel Import (1 click) | 🔒 | **Rocco**: vai su https://vercel.com/new → Import `roccoditolla/dalla-scrivania-allalgoritmo` → Click "Deploy". Vercel rileva `vercel.json` automaticamente. |
+| Auto-deploy on push | ⏳ | attivo automaticamente dopo l'Import |
+| URL pubblico | ⏳ | Vercel lo fornisce post-deploy (`dalla-scrivania-allalgoritmo.vercel.app`) |
 
 ---
 
@@ -231,3 +231,4 @@ Prima di muoversi oltre questi gate, serve approvazione esplicita di Rocco:
 - 2026-05-16 16:24 — Sub-agent #2 chiuso: **14/14 SVG scene story** create (media 9 KB, max 18.6 KB su 03A). Lampi tempesta su 3 layer SMIL, bussola scena 12 fa bridge esagonale 1:1 verso slide 13.
 - 2026-05-16 16:25 — Deck rigenerato finale: **17 SVG story + 11 SVG realistic + 0 placeholder**. `deck/index.html` = 4737 righe, 28 SVG inline.
 - ✅ **MILESTONE**: il deck è **COMPLETO end-to-end**. Apri `deck/index.html` in Chrome (`npx serve deck/` o doppio click) e gira tutto: animazioni SMIL native, transizioni Reveal.js, audio sintetico SynthAudio Web Audio API, speaker view, fullscreen. **Zero MP4 Veo, zero PNG Nano Banana, zero MP3 Pixabay**. Cost: 0€.
+- 2026-05-16 16:30 — Commit `0495931` su GitHub (origin/main). Push ok. Pronto per Vercel auto-import (1 click su https://vercel.com/new).

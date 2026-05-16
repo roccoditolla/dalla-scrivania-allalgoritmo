@@ -65,20 +65,114 @@ STORY_SCENES = [
     {"id": "12", "title": "Transizione al realistic"},
 ]
 
-# Sequenza slide realistic (13-24) — 6 piattaforme di prodotto
+# Sequenza slide realistic (13-24) — 6 piattaforme di prodotto.
+# `bullets`: punti che si animano in sequenza sotto/lato illustrazione.
+#   Devono comunicare VALORE concreto (prima/ora/effetto), non decorazione.
+#   Massimo 4 bullet per slide, brevi (5-12 parole).
 REALISTIC_SLIDES = [
-    {"id": "13", "title": "Anno zero", "big": "ANNO ZERO."},
-    {"id": "14", "title": "Chi siamo", "big": "6"},
-    {"id": "15", "title": "Il problema", "big": "60%"},
-    {"id": "16", "title": "Piattaforma DVR", "big": "12 min"},
-    {"id": "17", "title": "Preventivatore", "big": "5 min"},
-    {"id": "18", "title": "Lead Hunter", "big": "AUTO"},
-    {"id": "19", "title": "Project Manager", "big": "PENSA"},
-    {"id": "20", "title": "Piattaforma HR", "big": "INSIDE"},
-    {"id": "21", "title": "Piattaforma Videoconferenze e e-Learning", "big": "LIVE"},
-    {"id": "22", "title": "Il pattern", "big": "6 bussole"},
-    {"id": "23", "title": "Metodologia BMAD", "big": "BMAD"},
-    {"id": "24", "title": "Chiusura", "big": "ADESSO."},
+    {
+        "id": "13", "title": "Anno zero", "big": "ANNO ZERO.",
+        "bullets": [
+            "Il presente, non la fantascienza",
+            "Chi capisce l'AI prima costruisce un vantaggio",
+            "Tre anni nel lavoro sono una vita",
+        ],
+    },
+    {
+        "id": "14", "title": "Conflavoro AI", "big": "6",
+        "bullets": [
+            "Sei piattaforme. Una visione.",
+            "Per consulente, PMI e lavoratore",
+            "Non chatbot — strumenti specifici verticali",
+            "Costruiti da chi ha visto la vostra giornata",
+        ],
+    },
+    {
+        "id": "15", "title": "Il problema", "big": "60%",
+        "bullets": [
+            "Compliance, controlli, refresh normativo",
+            "Tempo rubato al cliente, alla relazione, al mestiere",
+            "L'AI libera il tempo, non lo sostituisce",
+        ],
+    },
+    {
+        "id": "16", "title": "Piattaforma DVR", "big": "12 min",
+        "bullets": [
+            "Prima: 4 ore per validare un DVR",
+            "Ora: 12 minuti, conforme D.Lgs. 81/08",
+            "Libera 3h 48min per ogni cliente",
+            "Non sostituire — ridare tempo a chi conta",
+        ],
+    },
+    {
+        "id": "17", "title": "Preventivatore", "big": "5 min",
+        "bullets": [
+            "Prima: 30-40 min per articolare un preventivo",
+            "Ora: anagrafica → listino → PDF in 5 min",
+            "Tu rileggi e firmi, niente più 'settimana prossima'",
+            "Più preventivi inviati = più clienti chiusi",
+        ],
+    },
+    {
+        "id": "18", "title": "Lead Hunter", "big": "AUTO",
+        "bullets": [
+            "Cerca, qualifica e contatta lead nei canali giusti",
+            "Già attivo per noi e per il primo cliente",
+            "L'agente che riempie l'agenda mentre dormi",
+        ],
+    },
+    {
+        "id": "19", "title": "Project Manager", "big": "PENSA",
+        "bullets": [
+            "Non un cronoprogramma — un agente che ragiona",
+            "'Hai sentito Mario?' / 'Scadenza in conflitto'",
+            "Tu resti il decisore, lui ti tiene presente tutto",
+        ],
+    },
+    {
+        "id": "20", "title": "Piattaforma HR", "big": "INSIDE",
+        "bullets": [
+            "Busta paga, presenze, contratti, ferie, formazione",
+            "Un sistema unico — fine dell'Excel a sette schede",
+            "Consulente, azienda e dipendente: stessa verità",
+            "Il dipendente non è una riga di Excel",
+        ],
+    },
+    {
+        "id": "21", "title": "Videoconferenze e e-Learning", "big": "LIVE",
+        "bullets": [
+            "Videoconferenze GDPR + trascrizione automatica",
+            "Salvataggio nel fascicolo del dipendente",
+            "e-Learning per formazione obbligatoria",
+            "Riconosciuta. Tracciabile. Dal telefono.",
+        ],
+    },
+    {
+        "id": "22", "title": "Il pattern", "big": "6 bussole",
+        "bullets": [
+            "Ogni processo del lavoro ha il suo strumento AI",
+            "Specifico. Verticale. Fatto da chi conosce il settore.",
+            "Una bussola per ogni rotta che vi serve",
+        ],
+    },
+    {
+        "id": "23", "title": "Metodologia BMAD", "big": "BMAD",
+        "bullets": [
+            "Build → Measure → Adjust → Deploy",
+            "Una modifica alla volta, testata e confermata",
+            "Niente big bang, niente promesse impossibili",
+            "Si naviga in mare nuovo una bracciata alla volta",
+        ],
+    },
+    {
+        "id": "24", "title": "Chiusura", "big": "ADESSO.",
+        "bullets": [
+            "Anno zero. Adesso.",
+            "Abbiamo trovato la nostra isola",
+            "La bussola arancione è in mano nostra",
+            "Possiamo metterla anche nella vostra",
+        ],
+    },
 ]
 
 
@@ -230,13 +324,21 @@ STORY_SLIDE_TEMPLATE = Template("""
 
 REALISTIC_SLIDE_TEMPLATE = Template("""
       <section data-slide-id="$id" class="realistic-slide" data-background-color="#F5EFE6">
-        <div class="realistic-grid">
-          <div class="big-number" data-gsap="fade-up">$big</div>
-          $image_block
-          <div class="caption">$title</div>
+        <div class="realistic-layout">
+          <header class="r-header">
+            <div class="big-number" data-anim="bignum">$big</div>
+            <h2 class="r-title" data-anim="title">$title</h2>
+          </header>
+          <div class="r-body">
+            <div class="r-visual" data-anim="visual">$image_block</div>
+            <ul class="r-bullets">$bullets</ul>
+          </div>
         </div>
         <aside class="notes">$notes</aside>
       </section>""")
+
+
+BULLET_ITEM_TEMPLATE = Template('<li class="r-bullet" data-anim="bullet" data-i="$i"><span class="r-bullet-mark"></span><span class="r-bullet-text">$text</span></li>')
 
 
 def build_story_slide_html(scene: dict) -> str:
@@ -308,21 +410,27 @@ def build_realistic_slide_html(slide: dict) -> str:
 
     if image_path:
         rel = image_path.relative_to(DECK_DIR)
-        image_block = f'<div class="illustration" data-gsap="orange-glow"><img src="{rel}" alt="" /></div>'
+        image_block = f'<div class="illustration"><img src="{rel}" alt="" /></div>'
     elif svg_anim_path:
         svg_inline = inline_svg_content(svg_anim_path)
-        image_block = f'<div class="illustration svg-anim" data-gsap="orange-glow">{svg_inline}</div>'
+        image_block = f'<div class="illustration svg-anim">{svg_inline}</div>'
     else:
         image_block = f'''<div class="illustration placeholder">
           <p>Illustrazione mancante:<br>
           <code>deck/assets/images/realistic_{slide["id"]}_*.png</code></p>
         </div>'''
-    
+
+    bullets_html = "\n            ".join(
+        BULLET_ITEM_TEMPLATE.substitute(i=i, text=b)
+        for i, b in enumerate(slide.get("bullets", []))
+    )
+
     return REALISTIC_SLIDE_TEMPLATE.substitute(
         id=slide["id"],
         big=slide["big"],
         title=slide["title"],
         image_block=image_block,
+        bullets=bullets_html,
         notes=notes or f"[Speech per slide {slide['id']} non trovato]",
     )
 

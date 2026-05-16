@@ -241,70 +241,164 @@ html, body {
   height: 100% !important;
 }
 
-.realistic-grid {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 4vh;
-  width: 84vw;
-  height: 84vh;
+/* === Realistic slide: layout 2-colonna (visual + bullet) === */
+.realistic-layout {
+  width: 90%;
+  height: 92%;
+  display: flex;
+  flex-direction: column;
   padding: 0;
-  align-items: center;
+  gap: 28px;
+}
+
+.r-header {
+  display: flex;
+  align-items: baseline;
+  gap: 32px;
+  border-bottom: 2px solid rgba(26, 22, 20, 0.12);
+  padding-bottom: 16px;
 }
 
 .big-number {
-  font-size: 8vw;
+  font-size: 112px;
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: var(--color-ink);
+  color: var(--color-orange);
   line-height: 0.95;
-  text-align: center;
+  text-align: left;
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
-.big-number::after {
-  content: '';
-  display: block;
-  width: 6vw;
-  height: 0.5vh;
-  background: var(--color-orange);
-  margin: 1vh auto 0;
+.r-title {
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.0;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.r-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.r-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.92);
 }
 
 .illustration {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 50vh;
+  width: 100%;
+  height: 100%;
 }
 
-.illustration img {
+.illustration img,
+.illustration.svg-anim > svg {
   max-width: 100%;
-  max-height: 50vh;
+  max-height: 100%;
   object-fit: contain;
 }
 
 .illustration.placeholder {
   border: 2px dashed var(--color-orange);
   background: rgba(255, 107, 26, 0.05);
-  border-radius: 0.5rem;
-  padding: 3vh;
+  border-radius: 12px;
+  padding: 32px;
   color: var(--color-ink-soft);
   text-align: center;
-  font-size: 1.2vw;
+  font-size: 20px;
 }
 
 .illustration.placeholder code {
   background: rgba(0, 0, 0, 0.08);
-  padding: 0.2em 0.4em;
-  border-radius: 0.3em;
+  padding: 4px 10px;
+  border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
 }
 
-.caption {
-  font-size: 2vw;
-  font-weight: 400;
-  color: var(--color-ink-soft);
-  text-align: center;
+.r-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.r-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--color-ink);
   letter-spacing: -0.01em;
+  line-height: 1.25;
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.r-bullet-mark {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 18px;
+  background: var(--color-orange);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 6px rgba(255, 107, 26, 0.12);
+}
+
+.r-bullet-text {
+  flex: 1;
+}
+
+/* Quando slide attiva: animazione stagger Disney-pro */
+.reveal section.present.realistic-slide .big-number {
+  animation: r-bignum-in 0.7s 0.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal section.present.realistic-slide .r-title {
+  animation: r-title-in 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal section.present.realistic-slide .r-visual {
+  animation: r-visual-in 0.9s 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal section.present.realistic-slide .r-bullet[data-i="0"] { animation: r-bullet-in 0.7s 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.reveal section.present.realistic-slide .r-bullet[data-i="1"] { animation: r-bullet-in 0.7s 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.reveal section.present.realistic-slide .r-bullet[data-i="2"] { animation: r-bullet-in 0.7s 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.reveal section.present.realistic-slide .r-bullet[data-i="3"] { animation: r-bullet-in 0.7s 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes r-bignum-in {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes r-title-in {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 0.85; transform: translateY(0); }
+}
+@keyframes r-visual-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes r-bullet-in {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 /* ============================================================================

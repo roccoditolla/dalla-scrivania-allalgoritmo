@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09A — Crew in circle around glowing compass">
+  <title>Scene 09A — Tre silhouette in cerchio attorno alla bussola arancione</title>
+  <desc>Crane down from above. Tre figure di spalle in cerchio. Bussola al centro che pulsa arancione. Ombre lunghe.</desc>
+
+  <defs>
+    <radialGradient id="sandBg09a" cx="50%" cy="55%" r="80%">
+      <stop offset="0%" stop-color="#F0E6D0"/>
+      <stop offset="55%" stop-color="#D8C9A8"/>
+      <stop offset="100%" stop-color="#8C7858"/>
+    </radialGradient>
+    <radialGradient id="orangeSpill09a" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFB066" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FF6B1A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orangeCore09a" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFCFA0"/>
+      <stop offset="50%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.9"/>
+    </radialGradient>
+    <filter id="bloom09a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bloomStrong09a" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="grain09a">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.05 0"/>
+    </filter>
+    <radialGradient id="vig09a" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sand background (slightly cooler than 08b) -->
+  <rect width="1920" height="1080" fill="url(#sandBg09a)"/>
+  <rect width="1920" height="1080" fill="#000" opacity="0.4" filter="url(#grain09a)"/>
+
+  <!-- Slow crane-down: start zoomed slightly tighter from above, end full top-down -->
+  <g transform="translate(960 540)">
+    <g>
+      <animateTransform attributeName="transform" type="scale"
+        values="1.12; 1.06; 1.0; 0.96" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+
+      <!-- Soft warm aura on ground (orange spill) -->
+      <circle r="540" fill="url(#orangeSpill09a)" filter="url(#bloomStrong09a)" opacity="0.7">
+        <animate attributeName="opacity" values="0.55;0.7;0.85;0.75;0.9;0.8" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+        <animate attributeName="r" values="480;540;600;560;620;580" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+      </circle>
+
+      <!-- Long radial shadows from 3 figures (low sun, top-down) -->
+      <g opacity="0.45" fill="#0E0B09">
+        <!-- Shadow figure 1 (top) -->
+        <path d="M 0,-250 L -40,-560 L 40,-560 Z"/>
+        <!-- Shadow figure 2 (bottom-left) -->
+        <path d="M -216,125 L -480,310 L -420,370 Z"/>
+        <!-- Shadow figure 3 (bottom-right) -->
+        <path d="M 216,125 L 480,310 L 420,370 Z"/>
+      </g>
+
+      <!-- ============== COMPASS at center (smaller, pulsing) ============== -->
+      <g transform="translate(0 0)">
+        <!-- Glow halo -->
+        <circle r="160" fill="#FFB066" opacity="0.7" filter="url(#bloomStrong09a)">
+          <animate attributeName="opacity" values="0.55;0.75;0.6;0.8;0.65;0.75" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="140;180;160;200;170;180" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Hex rim -->
+        <polygon points="0,-95 82,-47 82,47 0,95 -82,47 -82,-47"
+                 fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Hex glass orange core -->
+        <polygon points="0,-72 62,-36 62,36 0,72 -62,36 -62,-36"
+                 fill="url(#orangeCore09a)" stroke="#5A1E00" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Inner needle hint (faint, slow rotation) -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            values="0;90;160;200;220;230;235" keyTimes="0;0.25;0.5;0.7;0.85;0.95;1"
+            dur="8s" fill="freeze"/>
+          <polygon points="0,-58 5,0 0,3 -5,0" fill="#FF8A3A" filter="url(#bloom09a)"/>
+          <polygon points="0,58 5,0 0,-3 -5,0" fill="#1A1410"/>
+        </g>
+        <!-- Center pulse -->
+        <circle r="32" fill="#FFCFA0" opacity="0.7" filter="url(#bloom09a)">
+          <animate attributeName="opacity" values="0.5;0.85;0.6;0.85;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- ============== 3 FIGURES IN CIRCLE (top-down view) ============== -->
+      <!-- Each figure: head (ellipse) + shoulders (curved trapezoid) + arms pointing toward center -->
+
+      <!-- Figure 1: TOP (12 o'clock) -->
+      <g transform="translate(0 -250)">
+        <!-- Long cast shadow already drawn above -->
+        <!-- Shoulders (top view) -->
+        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
+        <!-- Head -->
+        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
+        <!-- Arms reaching toward center -->
+        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
+        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
+        <!-- Backlight rim (orange edge from compass below) -->
+        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
+      </g>
+
+      <!-- Figure 2: BOTTOM-LEFT (8 o'clock) -->
+      <g transform="translate(-216 125) rotate(120)">
+        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
+        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
+        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
+        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
+        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
+      </g>
+
+      <!-- Figure 3: BOTTOM-RIGHT (4 o'clock) -->
+      <g transform="translate(216 125) rotate(-120)">
+        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
+        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
+        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
+        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
+        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
+      </g>
+
+      <!-- Sand drag-lines (paths leading to compass) -->
+      <g stroke="#7A6948" stroke-width="1.5" opacity="0.35" fill="none">
+        <path d="M -40,-180 Q -30,-130 -20,-100"/>
+        <path d="M -150,90 Q -110,80 -80,60"/>
+        <path d="M 150,90 Q 110,80 80,60"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig09a)" pointer-events="none"/>
+</svg>

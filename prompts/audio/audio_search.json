@@ -31,7 +31,7 @@
     {
       "id": "03_thunderstorm",
       "scene": "03A_03B",
-      "query": "thunderstorm rain heavy thunder",
+      "query": "thunderstorm heavy rain dramatic",
       "description": "Tempesta drammatica: tuoni, pioggia, vento — WOW 1",
       "filename": "ambient_03_thunderstorm.mp3",
       "min_duration": 10,
@@ -42,7 +42,7 @@
     {
       "id": "04_calm_after",
       "scene": "04",
-      "query": "calm ocean gentle waves seagull distant",
+      "query": "gentle ocean waves seagulls",
       "description": "Mare dopo la tempesta: onde gentili, gabbiani lontani",
       "filename": "ambient_04_calm_after.mp3",
       "min_duration": 8,
@@ -53,7 +53,7 @@
     {
       "id": "05_island_appears",
       "scene": "05",
-      "query": "mystery atmosphere drone ambient mysterious",
+      "query": "mysterious drone low ambient",
       "description": "Atmosfera misteriosa quando appare l'isola — WOW 2",
       "filename": "ambient_05_island_appears.mp3",
       "min_duration": 8,
@@ -75,7 +75,7 @@
     {
       "id": "07_sand_shift",
       "scene": "07",
-      "query": "sand granular movement gentle whisper",
+      "query": "sand whisper grains soft",
       "description": "Sabbia che si muove sotto le dita, quasi silenzio",
       "filename": "ambient_07_sand_shift.mp3",
       "min_duration": 3,
@@ -97,7 +97,7 @@
     {
       "id": "09_revelation",
       "scene": "09A_09B",
-      "query": "warm resonance sustained ambient inspirational",
+      "query": "warm cinematic sustained pad",
       "description": "Risonanza calda durante la rivelazione collettiva",
       "filename": "ambient_09_revelation.mp3",
       "min_duration": 10,
@@ -108,7 +108,7 @@
     {
       "id": "10_returning",
       "scene": "10",
-      "query": "rowing return purposeful gentle ocean",
+      "query": "rowing oars steady wooden boat",
       "description": "Remi del ritorno, più decisi di quelli dell'andata",
       "filename": "ambient_10_returning.mp3",
       "min_duration": 6,
@@ -141,7 +141,7 @@
     {
       "id": "13_realistic_intro",
       "scene": "13",
-      "query": "modern ambient corporate uplifting subtle",
+      "query": "minimal ambient calm pad",
       "description": "Sottofondo neutro per le slide realistic",
       "filename": "ambient_13_realistic.mp3",
       "min_duration": 30,
@@ -152,7 +152,7 @@
     {
       "id": "23_end_pulse",
       "scene": "23",
-      "query": "warm closing pulse ambient resolution",
+      "query": "warm slow pulse ambient",
       "description": "Pulse caldo finale, bussola che pulsa nera",
       "filename": "ambient_23_end.mp3",
       "min_duration": 8,

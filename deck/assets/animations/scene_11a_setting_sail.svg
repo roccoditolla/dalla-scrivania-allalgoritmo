@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 11A — Ship sets sail at sunset">
+  <title>Scene 11A — Nave salpa al tramonto, vele gonfie</title>
+  <desc>Wide statico dalla riva. Nave da dietro vela verso l'orizzonte aperto, golden light. Bandiera con accento arancione (atto III).</desc>
+
+  <defs>
+    <linearGradient id="sky11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBE0B8"/>
+      <stop offset="45%" stop-color="#F0B878"/>
+      <stop offset="80%" stop-color="#C88848"/>
+      <stop offset="100%" stop-color="#8B5A28"/>
+    </linearGradient>
+    <linearGradient id="water11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7B7A8C"/>
+      <stop offset="100%" stop-color="#3A3A4C"/>
+    </linearGradient>
+    <linearGradient id="hull11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1614"/>
+      <stop offset="100%" stop-color="#0A0805"/>
+    </linearGradient>
+    <linearGradient id="sail11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8DCB0"/>
+      <stop offset="100%" stop-color="#C08850"/>
+    </linearGradient>
+    <radialGradient id="sun11a" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFE6B8"/>
+      <stop offset="55%" stop-color="#F8B868" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F8B868" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bloom11a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="painterly11a">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="31"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.5"/>
+    </filter>
+    <radialGradient id="vig11a" cx="50%" cy="55%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+    </radialGradient>
+    <path id="wave11a" d="M 0,30 Q 150,5 300,30 T 600,30 T 900,30 T 1200,30 T 1500,30 T 1800,30 T 2100,30 L 2100,80 L 0,80 Z"/>
+  </defs>
+
+  <!-- Very slow dolly forward (ship pulls away from us) -->
+  <g transform="translate(960 540)">
+    <g>
+      <animateTransform attributeName="transform" type="scale"
+        values="1.0; 0.98; 0.96; 0.94" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+      <g transform="translate(-960 -540)">
+
+        <!-- Sky -->
+        <rect x="0" y="0" width="1920" height="640" fill="url(#sky11a)"/>
+
+        <!-- Setting sun -->
+        <circle cx="960" cy="540" r="160" fill="url(#sun11a)" filter="url(#bloom11a)"/>
+        <circle cx="960" cy="540" r="70" fill="#FFE6B8" filter="url(#bloom11a)"/>
+
+        <!-- High clouds streaked golden -->
+        <g opacity="0.55">
+          <ellipse cx="280" cy="180" rx="320" ry="22" fill="#FBE0B8"/>
+          <ellipse cx="700" cy="140" rx="260" ry="18" fill="#F8C880"/>
+          <ellipse cx="1280" cy="200" rx="340" ry="24" fill="#FBE0B8"/>
+          <ellipse cx="1680" cy="160" rx="220" ry="18" fill="#F8C880"/>
+        </g>
+
+        <!-- Foreground beach silhouette (POV from island shore) -->
+        <rect x="0" y="1000" width="1920" height="80" fill="#1A1410"/>
+        <path d="M 0,1000 Q 480,990 960,1005 Q 1440,1020 1920,1000 L 1920,1080 L 0,1080 Z" fill="#1A1410"/>
+
+        <!-- Ocean -->
+        <rect x="0" y="640" width="1920" height="360" fill="url(#water11a)"/>
+
+        <!-- Golden glitter band reflecting sun on water -->
+        <ellipse cx="960" cy="700" rx="280" ry="40" fill="#FFE6B8" opacity="0.6" filter="url(#bloom11a)"/>
+
+        <!-- ============ DISTANT STILL SHIPS on horizon (others not moving) ============ -->
+        <g transform="translate(280 660) scale(0.22)" opacity="0.6">
+          <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="#1A1410"/>
+          <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
+          <rect x="-72" y="-170" width="4" height="170" fill="#1F1810"/>
+          <path d="M -2,-220 Q -60,-170 -60,-80 L -60,-20 L 0,-20 Z" fill="#C8B898" opacity="0.7"/>
+          <path d="M 2,-220 Q 60,-170 60,-80 L 60,-20 L 0,-20 Z" fill="#C8B898" opacity="0.65"/>
+        </g>
+        <g transform="translate(1620 670) scale(0.18)" opacity="0.55">
+          <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="#1A1410"/>
+          <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
+          <path d="M -2,-220 Q -60,-170 -60,-80 L -60,-20 L 0,-20 Z" fill="#C8B898" opacity="0.7"/>
+          <path d="M 2,-220 Q 60,-170 60,-80 L 60,-20 L 0,-20 Z" fill="#C8B898" opacity="0.65"/>
+        </g>
+
+        <!-- ============ OUR SHIP — center, viewed from behind, sailing away ============ -->
+        <g transform="translate(960 740) scale(0.95)">
+          <!-- Slow forward drift -->
+          <animateTransform attributeName="transform" type="translate"
+            values="960 740; 960 735; 960 730; 960 728"
+            keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze" additive="replace"/>
+
+          <!-- Stern (back of hull, wider visible) -->
+          <path d="M -180,0 Q -160,40 -100,55 L 100,55 Q 160,40 180,0 L 150,-18 L -150,-18 Z" fill="url(#hull11a)" stroke="#0A0805" stroke-width="2"/>
+          <!-- Stern windows (lit warm) -->
+          <rect x="-50" y="-10" width="20" height="22" fill="#F8C880" opacity="0.85"/>
+          <rect x="-20" y="-10" width="20" height="22" fill="#F8C880" opacity="0.85"/>
+          <rect x="10" y="-10" width="20" height="22" fill="#F8C880" opacity="0.85"/>
+          <rect x="40" y="-10" width="20" height="22" fill="#F8C880" opacity="0.85"/>
+
+          <!-- Masts -->
+          <rect x="-3" y="-360" width="6" height="360" fill="#1F1810"/>
+          <rect x="-100" y="-300" width="5" height="300" fill="#1F1810"/>
+          <rect x="95" y="-280" width="5" height="280" fill="#1F1810"/>
+
+          <!-- Sails BILLOWED FULL (wind from behind) — viewed from rear so they fan out -->
+          <path d="M -3,-360 Q -120,-300 -130,-150 L -130,-20 L 0,-20 Z" fill="url(#sail11a)" stroke="#8B5A28" stroke-width="1.2"/>
+          <path d="M 3,-360 Q 120,-300 130,-150 L 130,-20 L 0,-20 Z" fill="url(#sail11a)" stroke="#8B5A28" stroke-width="1.2" opacity="0.95"/>
+          <!-- Fore sail -->
+          <path d="M -100,-300 Q -180,-240 -190,-110 L -190,-20 L -100,-20 Z" fill="url(#sail11a)" stroke="#8B5A28" stroke-width="1.2"/>
+          <!-- Mizzen -->
+          <path d="M 95,-280 Q 175,-220 185,-100 L 185,-20 L 95,-20 Z" fill="url(#sail11a)" stroke="#8B5A28" stroke-width="1.2" opacity="0.95"/>
+
+          <!-- Rigging diagonals -->
+          <g stroke="#1F1810" stroke-width="0.8" opacity="0.5">
+            <line x1="0" y1="-360" x2="-100" y2="-300"/>
+            <line x1="0" y1="-360" x2="95" y2="-280"/>
+            <line x1="-130" y1="-150" x2="-190" y2="-110"/>
+            <line x1="130" y1="-150" x2="185" y2="-100"/>
+          </g>
+
+          <!-- FLAG on mainmast top — small accent of orange (Act III, allowed) -->
+          <path d="M 3,-360 L 60,-340 L 50,-320 L 3,-330 Z" fill="#FF6B1A" filter="url(#bloom11a)">
+            <animateTransform attributeName="transform" type="skewX"
+              values="0;6;0;-4;0" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+          </path>
+
+          <!-- Tiny silhouette helmsman -->
+          <ellipse cx="0" cy="-32" rx="8" ry="10" fill="#0A0805"/>
+          <rect x="-7" y="-22" width="14" height="22" fill="#0A0805"/>
+
+          <!-- Wake (V-shape behind ship) -->
+          <path d="M -200,55 L -380,180 L -180,90 Z" fill="#FAF4E9" opacity="0.5"/>
+          <path d="M 200,55 L 380,180 L 180,90 Z" fill="#FAF4E9" opacity="0.5"/>
+          <path d="M -160,80 Q 0,90 160,80 Q 0,110 -160,80 Z" fill="#FAF4E9" opacity="0.65"/>
+        </g>
+
+        <!-- Surface waves -->
+        <g opacity="0.55">
+          <use href="#wave11a" x="-100" y="780" fill="#E8DCBE">
+            <animate attributeName="x" values="-100;-280;-100" dur="14s" repeatCount="indefinite"/>
+          </use>
+        </g>
+        <g opacity="0.45">
+          <use href="#wave11a" x="-200" y="860" fill="#FAE6C0">
+            <animate attributeName="x" values="-200;-60;-200" dur="11s" repeatCount="indefinite"/>
+          </use>
+        </g>
+        <g opacity="0.35">
+          <use href="#wave11a" x="-100" y="940" fill="#FAF4E9" transform="scale(1.4 0.7)">
+            <animate attributeName="x" values="-100;-260;-100" dur="13s" repeatCount="indefinite"/>
+          </use>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#painterly11a)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig11a)" pointer-events="none"/>
+</svg>

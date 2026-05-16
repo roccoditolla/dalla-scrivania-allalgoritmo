@@ -15,25 +15,35 @@ class AudioMixer {
   constructor() {
     this.currentAmbient = null;
     this.fadeMs = 800;
-    this.ambientVolume = 0.30;   // -12 dB circa
-    this.sfxVolume = 0.85;       //  -1 dB
+    this.defaultAmbientDb = -14;
+    this.defaultSfxDb = -6;
+  }
+
+  dbToLinear(db) {
+    return Math.pow(10, db / 20);
+  }
+
+  targetVolumeFor(audioEl) {
+    const dbAttr = audioEl?.dataset?.volumeDb;
+    const db = dbAttr !== undefined ? parseFloat(dbAttr) : this.defaultAmbientDb;
+    return Math.min(1, Math.max(0, this.dbToLinear(db)));
   }
 
   activate(audioEl) {
     if (!audioEl) return;
     if (this.currentAmbient === audioEl) return;
-    
+
     if (this.currentAmbient) {
       this.fadeOut(this.currentAmbient);
     }
-    
+
     this.currentAmbient = audioEl;
     audioEl.volume = 0;
     audioEl.loop = audioEl.dataset.ambient === 'true' || audioEl.loop;
     audioEl.play().catch(err => {
       console.warn('Autoplay audio bloccato:', err);
     });
-    this.fadeIn(audioEl, this.ambientVolume);
+    this.fadeIn(audioEl, this.targetVolumeFor(audioEl));
   }
 
   fadeIn(el, targetVol) {
@@ -128,40 +138,87 @@ function applyOrangeBridge(prevSlide, currSlide) {
 // Hook reveal.js events
 // ============================================================================
 
+/**
+ * Restart delle animazioni SMIL dentro un SVG inline.
+ * Le animazioni `<animate>` con `fill="freeze"` non si re-triggerano
+ * automaticamente su slide-revisit; le ri-avviamo via beginElement().
+ */
+function restartSvgAnimations(slideEl) {
+  const svg = slideEl.querySelector('.full-bleed-svg svg, .illustration.svg-anim svg');
+  if (!svg) return;
+  svg.querySelectorAll('animate, animateTransform').forEach(el => {
+    try { el.beginElement(); } catch (e) { /* SMIL non supportato — skip */ }
+  });
+}
+
+/**
+ * Fallback audio: se la slide non ha <audio>, prova SynthAudio (sintetico).
+ */
+function activateAudioForSlide(slideEl) {
+  const ambient = slideEl.querySelector('audio[data-ambient]') || slideEl.querySelector('audio');
+  if (ambient) {
+    audioMixer.activate(ambient);
+    return;
+  }
+
+  // Nessun MP3 — usa SynthAudio se disponibile
+  if (typeof window.SynthAudio === 'undefined') return;
+
+  // Stop dell'eventuale MP3 in fade-out
+  if (audioMixer.currentAmbient) {
+    audioMixer.fadeOut(audioMixer.currentAmbient);
+    audioMixer.currentAmbient = null;
+  }
+
+  const sceneId = slideEl.dataset.sceneId;
+  const slideId = slideEl.dataset.slideId;
+  let cfg = null;
+  if (sceneId && window.SynthAudio.AMBIENT_FOR_SCENE[sceneId]) {
+    cfg = window.SynthAudio.AMBIENT_FOR_SCENE[sceneId];
+  } else if (slideId && window.SynthAudio.AMBIENT_FOR_SLIDE[slideId]) {
+    cfg = window.SynthAudio.AMBIENT_FOR_SLIDE[slideId];
+  }
+  if (!cfg) { window.SynthAudio.stopAmbient(); return; }
+
+  if (cfg.type) {
+    window.SynthAudio.playAmbient(cfg.type, cfg.db);
+  } else {
+    window.SynthAudio.stopAmbient();
+  }
+  if (cfg.sfx) {
+    // Delay per dare respiro narrativo (scena 08A: silenzio iniziale + shimmer dopo 2s)
+    setTimeout(() => window.SynthAudio.playSFX(cfg.sfx, cfg.sfxDb || -6), 2000);
+  }
+}
+
 Reveal.on('slidechanged', event => {
   const prev = event.previousSlide;
   const curr = event.currentSlide;
-  
-  // Stop all videos in non-active slides (per evitare audio sovrapposto)
+
+  // Stop all videos in non-active slides
   document.querySelectorAll('video').forEach(v => {
     if (!curr.contains(v)) {
       v.pause();
       v.currentTime = 0;
     }
   });
-  
-  // Audio ambient
-  const ambient = curr.querySelector('audio[data-ambient]') 
-                  || curr.querySelector('audio');
-  if (ambient) {
-    audioMixer.activate(ambient);
-  } else {
-    if (audioMixer.currentAmbient) {
-      audioMixer.fadeOut(audioMixer.currentAmbient);
-      audioMixer.currentAmbient = null;
-    }
-  }
-  
+
+  // Audio (MP3 → fallback SynthAudio)
+  activateAudioForSlide(curr);
+
+  // Restart SVG SMIL animations (fallback visual per scene/slide senza MP4/PNG)
+  restartSvgAnimations(curr);
+
   // Animazioni realistic slide
   if (curr.classList.contains('realistic-slide')) {
     animateRealisticSlide(curr);
   }
-  
+
   // Transizione speciale storia → realistic
   if (prev?.dataset.sceneId === '12' && curr?.dataset.slideId === '13') {
     applyOrangeBridge(prev, curr);
   }
-  
+
   // Autoplay video
   const video = curr.querySelector('video[data-autoplay], video');
   if (video) {
@@ -172,12 +229,36 @@ Reveal.on('slidechanged', event => {
   }
 });
 
-// Sblocca autoplay con interazione iniziale (browser policy)
+// Sblocca autoplay con interazione iniziale (browser policy: Chrome/Safari
+// non permettono <video> con audio o <audio> non-muted senza un user gesture).
+// Il primo click ovunque nella pagina sblocca AudioContext + forza play sul
+// video della slide corrente, se presente.
 document.addEventListener('click', () => {
+  // 1. Sblocca AudioContext globale
   const ctx = window.AudioContext || window.webkitAudioContext;
   if (ctx && !window._audioContextResumed) {
-    new ctx().resume();
+    try { new ctx().resume(); } catch (e) { /* no-op */ }
     window._audioContextResumed = true;
+  }
+
+  // 2. Inizializza SynthAudio (post user gesture)
+  if (typeof window.SynthAudio !== 'undefined') {
+    window.SynthAudio.init();
+  }
+
+  // 3. Forza autoplay del video della slide corrente (se non già partito)
+  const currentSlide = document.querySelector('.reveal .slides section.present');
+  const video = currentSlide?.querySelector('video');
+  if (video && video.paused) {
+    video.play().catch(err => {
+      console.warn('Video play dopo click ancora bloccato:', err);
+    });
+  }
+
+  // 4. Riattiva audio della slide corrente (MP3 o synth fallback)
+  if (currentSlide) {
+    activateAudioForSlide(currentSlide);
+    restartSvgAnimations(currentSlide);
   }
 }, { once: true });
 

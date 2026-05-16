@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 12 — Cinematic-to-realistic transition">
+  <title>Scene 12 — Bussola arancione riempie l'inquadratura, bridge verso slide 13 realistic</title>
+  <desc>Cream sky con bussola arancione esagonale al centro che cresce fino a riempire tutto. Bridge col realistic deck.</desc>
+
+  <defs>
+    <radialGradient id="creamSky12" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#FAF4E9"/>
+      <stop offset="60%" stop-color="#EFE6D2"/>
+      <stop offset="100%" stop-color="#D8C9A8"/>
+    </radialGradient>
+    <radialGradient id="orangeCore12" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFCFA0"/>
+      <stop offset="40%" stop-color="#FF8A3A"/>
+      <stop offset="70%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.95"/>
+    </radialGradient>
+    <radialGradient id="orangeBloom12" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFCFA0" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FF8A3A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="metalRim12" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#3A2F22"/>
+      <stop offset="100%" stop-color="#1A1410"/>
+    </radialGradient>
+    <filter id="bloom12" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bloomBig12" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="painterly12">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="29"/>
+      <feDisplacementMap in="SourceGraphic" scale="2"/>
+    </filter>
+  </defs>
+
+  <!-- Cream sky (dominant in first half, gets washed out by orange in second half) -->
+  <rect width="1920" height="1080" fill="url(#creamSky12)"/>
+
+  <!-- Soft horizon mist (dissolving sea hint, vanishes early) -->
+  <g opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.4;0.2;0" keyTimes="0;0.3;0.5;0.7" dur="8s" fill="freeze"/>
+    <rect x="0" y="640" width="1920" height="160" fill="#C8B898" opacity="0.5"/>
+    <rect x="0" y="800" width="1920" height="280" fill="#7B8E9C" opacity="0.45"/>
+    <!-- Tiny ghost ship silhouette (dissolves) -->
+    <g transform="translate(1280 700) scale(0.18)" opacity="0.5">
+      <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="#1A1410"/>
+      <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
+      <path d="M -2,-220 Q -60,-170 -60,-80 L -60,-20 L 0,-20 Z" fill="#C8B898"/>
+      <path d="M 2,-220 Q 60,-170 60,-80 L 60,-20 L 0,-20 Z" fill="#C8B898" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- Outer halo (the orange "explodes" outward) -->
+  <circle cx="960" cy="540" r="200" fill="url(#orangeBloom12)" filter="url(#bloomBig12)" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0.6;0.85;1;1" keyTimes="0;0.2;0.4;0.6;0.85;1" dur="8s" fill="freeze"/>
+    <animate attributeName="r" values="180;320;520;760;1100;1400" keyTimes="0;0.2;0.4;0.6;0.85;1" dur="8s" fill="freeze"/>
+  </circle>
+
+  <!-- Compass — starts small, grows to dominate frame -->
+  <g transform="translate(960 540)">
+    <g>
+      <animateTransform attributeName="transform" type="scale"
+        values="0.4;0.6;0.9;1.3;1.9;2.6" keyTimes="0;0.18;0.4;0.6;0.82;1" dur="8s" fill="freeze"/>
+
+      <!-- Soft rotation (slight, to feel alive) -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="-6;-3;0;3;6;8" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="8s" fill="freeze"/>
+
+        <!-- Outer hex rim -->
+        <polygon points="0,-360 312,-180 312,180 0,360 -312,180 -312,-180"
+                 fill="url(#metalRim12)" stroke="#0A0805" stroke-width="6" stroke-linejoin="round"/>
+        <!-- Bezel -->
+        <polygon points="0,-300 260,-150 260,150 0,300 -260,150 -260,-150"
+                 fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Glass face -->
+        <polygon points="0,-270 234,-135 234,135 0,270 -234,135 -234,-135"
+                 fill="url(#orangeCore12)" stroke="#5A1E00" stroke-width="2" stroke-linejoin="round"/>
+
+        <!-- Dial rings -->
+        <circle r="230" fill="none" stroke="#2A1408" stroke-width="2" opacity="0.55"/>
+        <circle r="170" fill="none" stroke="#2A1408" stroke-width="1.5" opacity="0.4"/>
+
+        <!-- Cardinal diamonds -->
+        <g fill="#2A1408" opacity="0.9">
+          <polygon points="0,-258 9,-244 0,-230 -9,-244"/>
+          <polygon points="258,0 244,8 230,0 244,-8"/>
+          <polygon points="0,258 9,244 0,230 -9,244"/>
+          <polygon points="-258,0 -244,8 -230,0 -244,-8"/>
+        </g>
+        <!-- 30deg ticks -->
+        <g stroke="#2A1408" stroke-width="2.5" opacity="0.65">
+          <g transform="rotate(30)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(60)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(120)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(150)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(210)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(240)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(300)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+          <g transform="rotate(330)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
+        </g>
+
+        <!-- Inner big bloom -->
+        <circle r="120" fill="#FFCFA0" opacity="0.75" filter="url(#bloom12)">
+          <animate attributeName="opacity" values="0.5;0.7;0.85;0.95;1" keyTimes="0;0.25;0.5;0.75;1" dur="8s" fill="freeze"/>
+        </circle>
+
+        <!-- Needle locked, pointing up (north into the future) -->
+        <polygon points="0,-220 22,0 0,12 -22,0" fill="#FF6B1A" stroke="#5A1E00" stroke-width="2" filter="url(#bloom12)"/>
+        <polygon points="0,220 22,0 0,-12 -22,0" fill="#1A1410" stroke="#0A0805" stroke-width="2"/>
+        <circle r="20" fill="#3A2F22" stroke="#0A0805" stroke-width="2"/>
+        <circle r="7" fill="#FFCFA0"/>
+
+        <!-- Glass sheen -->
+        <polygon points="-180,-180 -60,-220 -60,-100 -180,-60" fill="#FFFFFF" opacity="0.14"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Final wash: pure orange/cream takeover (last 1.5s) -->
+  <rect width="1920" height="1080" fill="#FF6B1A" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0.1;0.25;0.4" keyTimes="0;0.5;0.7;0.85;0.92;0.97;1" dur="8s" fill="freeze"/>
+  </rect>
+  <rect width="1920" height="1080" fill="#FAF4E9" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0.15;0.35" keyTimes="0;0.5;0.7;0.85;0.92;0.96;1" dur="8s" fill="freeze"/>
+  </rect>
+
+  <!-- Painterly noise overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.03" filter="url(#painterly12)" pointer-events="none"/>
+</svg>

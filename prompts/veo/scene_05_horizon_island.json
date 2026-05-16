@@ -7,6 +7,8 @@
   "resolution": "1080p",
   "model": "veo-3.1-generate-001",
   "audio_generation": true,
+  "negative_prompt_ref": "00_style_bible.md::NEGATIVE_PROMPT",
+  "style_dna_ref": "00_style_bible.md::STYLE_DNA",
   "prompt_components": {
     "shot_type": "Wide shot, transition from a lookout figure to the horizon view",
     "subject": "The scene starts with a back-view silhouette of a lookout in a crow's nest pointing forward, then cuts to what they see: a mysterious island slowly emerging from a low fog bank on the horizon",
@@ -17,8 +19,9 @@
     "mood": "wonder, uncertainty, the sublime — like spotting Atlantis but with a calm scientific curiosity",
     "audio_hint": "complete silence for the first 1 second after the fog dissipates, then a deep low sub-bass slowly rising, distant ethereal chimes, no wind, no waves audible — the island absorbs all natural sound"
   },
-  "estimated_cost_usd": 6.0,
-  "max_regenerations_allowed": 3,
+  "assembled_prompt_preview": "Vedi outputs/scene_05_prompt_for_gemini.txt per la versione expanded copy-paste ready. Forma compatta: 'Wide shot, transition from a lookout silhouette in a crow's nest pointing forward, then cut to a mysterious island slowly emerging from a low fog bank on the horizon. ... [+STYLE_DNA da 00_style_bible.md] [+NEGATIVE_PROMPT da 00_style_bible.md]'",
+  "estimated_cost_usd": 0.0,
+  "max_regenerations_allowed": 5,
   "acceptance_criteria": [
     "L'isola ha forme che suggeriscono 'tecnologia organica', mai sci-fi neon",
     "La luce sull'isola è leggermente più fredda/violacea del mare",

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 14 — Chi siamo Conflavoro: open office with floating compasses">
+  <title>Slide 14 — Chi siamo</title>
+  <desc>Edificio Conflavoro stilizzato con figure di spalle ai banchi, piccole bussole arancioni fluttuanti.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Floor base shadow (flat fog) -->
+  <ellipse cx="540" cy="900" rx="380" ry="40" fill="#B8B5AD" opacity="0.25"/>
+
+  <!-- Building structure (isometric, simplified) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+    <!-- Back wall -->
+    <polygon points="260,360 540,260 820,360 820,720 540,820 260,720"/>
+    <!-- Floor plate -->
+    <polygon points="260,720 540,820 820,720 540,620" fill="#F5EFE6"/>
+    <!-- Roof line -->
+    <polyline points="260,360 540,260 820,360" fill="none"/>
+    <!-- Vertical struts -->
+    <line x1="540" y1="260" x2="540" y2="620"/>
+    <line x1="260" y1="360" x2="260" y2="720"/>
+    <line x1="820" y1="360" x2="820" y2="720"/>
+  </g>
+
+  <!-- Windows pattern (left face) -->
+  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45">
+    <rect x="305" y="430" width="50" height="40"/>
+    <rect x="375" y="450" width="50" height="40"/>
+    <rect x="445" y="470" width="50" height="40"/>
+    <rect x="305" y="530" width="50" height="40"/>
+    <rect x="375" y="550" width="50" height="40"/>
+    <rect x="445" y="570" width="50" height="40"/>
+  </g>
+
+  <!-- Windows pattern (right face) -->
+  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45">
+    <rect x="585" y="470" width="50" height="40"/>
+    <rect x="655" y="450" width="50" height="40"/>
+    <rect x="725" y="430" width="50" height="40"/>
+    <rect x="585" y="570" width="50" height="40"/>
+    <rect x="655" y="550" width="50" height="40"/>
+    <rect x="725" y="530" width="50" height="40"/>
+  </g>
+
+  <!-- Three silhouette figures in front of building (back view, only shoulders + back of head) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#1A1614">
+    <!-- Figure 1 -->
+    <g transform="translate(370 820)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
+    </g>
+    <!-- Figure 2 -->
+    <g transform="translate(540 845)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
+    </g>
+    <!-- Figure 3 -->
+    <g transform="translate(710 820)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
+    </g>
+  </g>
+
+  <!-- 5 floating small compasses above (mini icons), evenly distributed -->
+  <g>
+    <!-- Compass 1 (top left) -->
+    <g transform="translate(280 200)">
+      <circle cx="0" cy="0" r="28" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+      <polygon points="0,-18 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
+      <polygon points="0,18 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+      <animateTransform attributeName="transform" type="translate" values="280,200; 280,185; 280,200" dur="4s" repeatCount="indefinite"/>
+    </g>
+    <!-- Compass 2 (top center-left) -->
+    <g transform="translate(420 150)">
+      <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+      <polygon points="0,-16 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
+      <polygon points="0,16 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+      <animateTransform attributeName="transform" type="translate" values="420,150; 420,135; 420,150" dur="4.6s" repeatCount="indefinite"/>
+    </g>
+    <!-- Compass 3 (top center) -->
+    <g transform="translate(540 130)">
+      <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+      <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
+      <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+      <animateTransform attributeName="transform" type="translate" values="540,130; 540,115; 540,130" dur="3.8s" repeatCount="indefinite"/>
+    </g>
+    <!-- Compass 4 (top center-right) -->
+    <g transform="translate(660 150)">
+      <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+      <polygon points="0,-16 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
+      <polygon points="0,16 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+      <animateTransform attributeName="transform" type="translate" values="660,150; 660,135; 660,150" dur="4.3s" repeatCount="indefinite"/>
+    </g>
+    <!-- Compass 5 (top right) -->
+    <g transform="translate(800 200)">
+      <circle cx="0" cy="0" r="28" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+      <polygon points="0,-18 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
+      <polygon points="0,18 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+      <animateTransform attributeName="transform" type="translate" values="800,200; 800,185; 800,200" dur="4.2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Thin vertical connection lines (compasses to building roof) -->
+  <g stroke="#1A1614" stroke-width="1" stroke-dasharray="3,5" opacity="0.25">
+    <line x1="280" y1="232" x2="280" y2="350"/>
+    <line x1="420" y1="180" x2="420" y2="290"/>
+    <line x1="540" y1="164" x2="540" y2="262"/>
+    <line x1="660" y1="180" x2="660" y2="290"/>
+    <line x1="800" y1="232" x2="800" y2="350"/>
+  </g>
+</svg>

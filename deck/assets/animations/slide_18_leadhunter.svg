@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 18 — LeadHunter AI: stylized map of Italy with orange pins">
+  <title>Slide 18 — LeadHunter AI</title>
+  <desc>Mappa Italia stilizzata, lente di ingrandimento, 5 pin arancioni distribuiti.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- ITALY OUTLINE — stylized "boot" shape, single continuous line, simplified -->
+  <g transform="translate(540 540)" fill="#F5EFE6" stroke="#1A1614" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Mainland boot, simplified path -->
+    <path d="
+      M -80,-300
+      C -60,-310 -20,-300 10,-280
+      C 60,-260 100,-250 140,-220
+      C 170,-200 175,-160 160,-130
+      C 145,-100 110,-90 80,-70
+      C 50,-50 30,-20 20,20
+      C 10,50 0,90 -10,130
+      C -25,170 -50,200 -85,230
+      C -120,255 -150,260 -160,290
+      C -165,310 -150,330 -120,330
+      C -85,335 -50,310 -20,290
+      C 10,275 40,260 70,260
+      C 100,260 130,275 140,300
+      C 150,320 130,345 100,350
+      C 60,355 20,345 -20,360
+      C -50,370 -80,395 -120,400
+      C -160,403 -200,388 -220,360
+      C -240,330 -240,290 -225,260
+      C -200,220 -180,180 -170,140
+      C -160,90 -160,30 -150,-20
+      C -140,-70 -130,-130 -120,-180
+      C -115,-220 -110,-260 -95,-285
+      C -88,-298 -85,-303 -80,-300 Z
+    "/>
+    <!-- Sicily (separate small island) -->
+    <ellipse cx="-130" cy="430" rx="55" ry="22" transform="rotate(-12 -130 430)"/>
+    <!-- Sardinia (separate, to the left) -->
+    <ellipse cx="-280" cy="250" rx="34" ry="56" transform="rotate(8 -280 250)"/>
+  </g>
+
+  <!-- 5 ORANGE PIN dots scattered across the boot, distributed naturally -->
+  <g>
+    <!-- Pin 1 (Milano area, top) -->
+    <g transform="translate(485 305)">
+      <circle cx="0" cy="0" r="12" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="20" fill="#FF6B1A" opacity="0.18">
+        <animate attributeName="r" values="14;26;14" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- Pin 2 (Veneto area) -->
+    <g transform="translate(600 360)">
+      <circle cx="0" cy="0" r="11" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.18">
+        <animate attributeName="r" values="13;24;13" dur="3.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- Pin 3 (Roma/Lazio center) -->
+    <g transform="translate(560 580)">
+      <circle cx="0" cy="0" r="14" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="22" fill="#FF6B1A" opacity="0.18">
+        <animate attributeName="r" values="16;30;16" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- Pin 4 (Napoli/Campania) -->
+    <g transform="translate(530 720)">
+      <circle cx="0" cy="0" r="11" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.18">
+        <animate attributeName="r" values="13;24;13" dur="3.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- Pin 5 (Sicilia) -->
+    <g transform="translate(420 970)">
+      <circle cx="0" cy="0" r="10" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="17" fill="#FF6B1A" opacity="0.18">
+        <animate attributeName="r" values="12;22;12" dur="3.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Thin connection lines between some pins (sparse constellation) -->
+  <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45" stroke-dasharray="3,5">
+    <line x1="485" y1="305" x2="600" y2="360"/>
+    <line x1="600" y1="360" x2="560" y2="580"/>
+    <line x1="560" y1="580" x2="530" y2="720"/>
+    <line x1="530" y1="720" x2="420" y2="970"/>
+  </g>
+
+  <!-- MAGNIFYING GLASS — over a pin (upper right area, hovering near pin 2) -->
+  <g transform="translate(740 380)">
+    <!-- Handle -->
+    <line x1="60" y1="60" x2="120" y2="120" stroke="#1A1614" stroke-width="10" stroke-linecap="round"/>
+    <line x1="60" y1="60" x2="120" y2="120" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+    <!-- Lens -->
+    <circle cx="0" cy="0" r="65" fill="#F5EFE6" stroke="#1A1614" stroke-width="5"/>
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
+    <!-- Reflection highlight -->
+    <path d="M -40,-30 Q -50,-50 -25,-50" fill="none" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <!-- Animation: gentle hover -->
+    <animateTransform attributeName="transform" type="translate" values="740,380; 740,365; 740,380" dur="4.4s" repeatCount="indefinite"/>
+  </g>
+</svg>

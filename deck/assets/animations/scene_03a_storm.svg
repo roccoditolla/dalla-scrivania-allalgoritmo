@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 03A — Storm at sea (WOW 1)">
+  <title>Scene 03A — Tempesta drammatica (WOW 1)</title>
+  <desc>Onda enorme alle spalle della nave, lampi brevi via SMIL, nave inclinata 60deg, pioggia diagonale, mare in furia. Camera bassa slow dolly indietro.</desc>
+
+  <defs>
+    <!-- Storm sky base -->
+    <linearGradient id="stormSky03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080B12"/>
+      <stop offset="50%" stop-color="#0F1A26"/>
+      <stop offset="100%" stop-color="#1A2A38"/>
+    </linearGradient>
+    <!-- Roiling cloud bank -->
+    <linearGradient id="clouds03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B131D"/>
+      <stop offset="100%" stop-color="#1A2A38" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Lightning flash overlay -->
+    <radialGradient id="flashRadial03a" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#E0E8F2" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#8B9CB0" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#0B131D" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Wave water (deep furious) -->
+    <linearGradient id="waterFury03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A2A38"/>
+      <stop offset="50%" stop-color="#0E1A26"/>
+      <stop offset="100%" stop-color="#050810"/>
+    </linearGradient>
+    <linearGradient id="waveCrest03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E0EAF2"/>
+      <stop offset="55%" stop-color="#7B92AE"/>
+      <stop offset="100%" stop-color="#2A3D52" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bigWave03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A4E62"/>
+      <stop offset="40%" stop-color="#1A2A38"/>
+      <stop offset="100%" stop-color="#080F18"/>
+    </linearGradient>
+    <linearGradient id="hull03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1410"/>
+      <stop offset="100%" stop-color="#080603"/>
+    </linearGradient>
+    <linearGradient id="sailTorn03a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D8C9A8"/>
+      <stop offset="100%" stop-color="#6E5230"/>
+    </linearGradient>
+    <filter id="painterly03a">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="42"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+    <filter id="bloom03a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bloomBig03a" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <radialGradient id="vig03a" cx="50%" cy="50%" r="78%">
+      <stop offset="45%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.6"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===================== SKY ===================== -->
+  <rect width="1920" height="820" fill="url(#stormSky03a)"/>
+
+  <!-- Layered storm clouds, slow drift -->
+  <g opacity="0.95">
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; -40 0; -80 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
+    <path d="M -100,260 Q 240,160 540,240 Q 820,310 1100,210 Q 1380,140 1700,230 Q 1900,280 2020,200 L 2020,0 L -100,0 Z" fill="#070B12"/>
+    <path d="M -100,440 Q 300,360 660,420 Q 980,490 1320,400 Q 1620,330 2020,420 L 2020,180 L -100,180 Z" fill="url(#clouds03a)" opacity="0.85"/>
+    <path d="M -100,580 Q 320,510 720,560 Q 1100,620 1500,540 Q 1820,490 2020,560 L 2020,360 L -100,360 Z" fill="#0B131D" opacity="0.65"/>
+  </g>
+
+  <!-- ===================== LIGHTNING FLASH FULL-SCREEN OVERLAY ===================== -->
+  <!-- Multiple brief flashes: 0.05s each, at varied times -->
+  <rect width="1920" height="1080" fill="url(#flashRadial03a)" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0.95;0.4;0;0;0.85;0.25;0;0;0.6;0;0;0.95;0.3;0"
+      keyTimes="0;0.08;0.085;0.095;0.12;0.36;0.365;0.378;0.42;0.62;0.625;0.66;0.85;0.855;0.87;1"
+      dur="8s" fill="freeze"/>
+  </rect>
+  <!-- Pure white flash (very brief) -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0.7;0;0;0.5;0;0;0.7;0"
+      keyTimes="0;0.085;0.09;0.1;0.365;0.37;0.385;0.855;0.86;0.875"
+      dur="8s" fill="freeze"/>
+  </rect>
+
+  <!-- ===================== LIGHTNING BOLTS ===================== -->
+  <g stroke="#F0F4FA" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round" filter="url(#bloom03a)">
+    <!-- Bolt A (left, time ~0.08-0.10) -->
+    <path d="M 360,0 L 340,150 L 410,200 L 360,340 L 430,400 L 380,560" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.6;0;0"
+        keyTimes="0;0.08;0.085;0.092;0.1;1" dur="8s" fill="freeze"/>
+    </path>
+    <!-- Branches on bolt A -->
+    <path d="M 360,340 L 290,420 M 430,400 L 500,460" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.4;0;0"
+        keyTimes="0;0.08;0.085;0.092;0.1;1" dur="8s" fill="freeze"/>
+    </path>
+
+    <!-- Bolt B (right, time ~0.36) -->
+    <path d="M 1480,0 L 1510,130 L 1450,190 L 1510,320 L 1430,410 L 1490,540" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.5;0"
+        keyTimes="0;0.36;0.365;0.378;0.4" dur="8s" fill="freeze"/>
+    </path>
+    <path d="M 1510,320 L 1580,380 M 1450,190 L 1380,250" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.3;0"
+        keyTimes="0;0.36;0.365;0.378;0.4" dur="8s" fill="freeze"/>
+    </path>
+
+    <!-- Bolt C (center, intense, double — peak WOW) -->
+    <path d="M 940,0 L 970,140 L 910,200 L 980,330 L 920,440 L 990,580 L 940,720" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.8;0.2;0"
+        keyTimes="0;0.85;0.855;0.86;0.87;0.88" dur="8s" fill="freeze"/>
+    </path>
+    <path d="M 980,330 L 1080,400 M 920,440 L 840,500 M 990,580 L 1100,640" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.4;0"
+        keyTimes="0;0.85;0.855;0.86;0.87" dur="8s" fill="freeze"/>
+    </path>
+
+    <!-- Bolt D (subtle, far right, time 0.62) -->
+    <path d="M 1740,0 L 1770,120 L 1720,180 L 1760,300" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0.8;0"
+        keyTimes="0;0.62;0.628;0.66" dur="8s" fill="freeze"/>
+    </path>
+  </g>
+
+  <!-- ===================== SLOW DOLLY BACK — main composition ===================== -->
+  <!-- Camera "pulls back" via group translate down slightly (water rises in frame) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 -40; 0 -20; 0 0; 0 20" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+
+    <!-- ===================== GIGANTIC WAVE (back) ===================== -->
+    <g>
+      <!-- Wave curl behind ship -->
+      <path d="M -100,720
+               Q 200,580 460,520
+               Q 720,460 920,440
+               Q 1100,430 1240,460
+               Q 1380,490 1480,540
+               Q 1580,600 1640,680
+               Q 1700,760 1700,840
+               L 1640,820
+               Q 1620,760 1560,720
+               Q 1480,660 1380,640
+               Q 1240,610 1100,620
+               Q 920,640 720,690
+               Q 480,750 200,830
+               Q 40,880 -100,920 Z"
+            fill="url(#bigWave03a)" stroke="#040810" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Wave crest foam (top edge) -->
+      <path d="M -100,720 Q 200,580 460,520 Q 720,460 920,440 Q 1100,430 1240,460 Q 1380,490 1480,540 Q 1580,600 1640,680 Q 1700,760 1700,840"
+            fill="none" stroke="url(#waveCrest03a)" stroke-width="34" stroke-linecap="round" opacity="0.85" filter="url(#bloom03a)"/>
+      <!-- Foam streaks down the wave face -->
+      <g stroke="#E0EAF2" stroke-width="2" opacity="0.6" fill="none">
+        <path d="M 480,540 Q 520,640 540,740"/>
+        <path d="M 740,490 Q 770,610 790,720"/>
+        <path d="M 980,460 Q 1010,580 1020,700"/>
+        <path d="M 1220,480 Q 1250,610 1240,720"/>
+        <path d="M 1420,540 Q 1450,650 1430,750"/>
+      </g>
+      <!-- Spray off the top of the wave (animated upward) -->
+      <g fill="#E0EAF2" opacity="0.85" filter="url(#bloom03a)">
+        <circle cx="500" cy="500" r="6">
+          <animate attributeName="cy" values="500;460;420" dur="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="780" cy="450" r="7">
+          <animate attributeName="cy" values="450;390;340" dur="1.4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1020" cy="430" r="8">
+          <animate attributeName="cy" values="430;360;300" dur="1.3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1260" cy="450" r="6">
+          <animate attributeName="cy" values="450;390;340" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1480" cy="530" r="7">
+          <animate attributeName="cy" values="530;460;400" dur="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+
+    <!-- ===================== SHIP TILTED 60deg (back-lit by lightning) ===================== -->
+    <g transform="translate(680 760) rotate(-50)">
+      <!-- Sway slightly with wave -->
+      <animateTransform attributeName="transform" type="rotate"
+        values="-46;-52;-48;-54;-50" keyTimes="0;0.25;0.5;0.75;1"
+        dur="4s" repeatCount="indefinite" additive="sum"/>
+
+      <!-- Hull -->
+      <path d="M -200,0 Q -180,40 -110,55 L 110,55 Q 180,40 200,0 L 165,-20 L -165,-20 Z" fill="url(#hull03a)" stroke="#020306" stroke-width="2.5"/>
+      <line x1="-160" y1="-10" x2="160" y2="-10" stroke="#1A1410" stroke-width="1" opacity="0.6"/>
+      <line x1="-150" y1="15" x2="150" y2="15" stroke="#1A1410" stroke-width="1" opacity="0.6"/>
+
+      <!-- Masts -->
+      <rect x="-3" y="-360" width="6" height="360" fill="#1A1410"/>
+      <rect x="-100" y="-280" width="5" height="280" fill="#1A1410"/>
+      <rect x="95" y="-260" width="5" height="260" fill="#1A1410"/>
+
+      <!-- Torn sails (flapping wildly) -->
+      <g>
+        <path d="M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1">
+          <animate attributeName="d"
+            values="M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z;
+                    M -3,-360 Q -140,-310 -150,-150 L -140,-30 L 0,-30 Z;
+                    M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z"
+            dur="2s" repeatCount="indefinite"/>
+        </path>
+        <!-- Tears -->
+        <path d="M -90,-220 L -60,-160 L -110,-180 Z" fill="#0B0805"/>
+        <path d="M -120,-100 L -90,-60 L -135,-80 Z" fill="#0B0805"/>
+
+        <path d="M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1" opacity="0.92">
+          <animate attributeName="d"
+            values="M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z;
+                    M 3,-360 Q 140,-310 150,-150 L 140,-30 L 0,-30 Z;
+                    M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z"
+            dur="2s" repeatCount="indefinite"/>
+        </path>
+
+        <path d="M -100,-280 Q -180,-220 -190,-110 L -190,-30 L -100,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1"/>
+        <path d="M 95,-260 Q 175,-200 185,-100 L 185,-30 L 95,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1" opacity="0.92"/>
+      </g>
+
+      <!-- Tattered rigging lines -->
+      <g stroke="#1A1410" stroke-width="0.9" opacity="0.6">
+        <line x1="0" y1="-360" x2="-100" y2="-280"/>
+        <line x1="0" y1="-360" x2="95" y2="-260"/>
+        <path d="M -50,-260 Q -80,-200 -120,-180" fill="none"/>
+      </g>
+
+      <!-- Flag whipping (no orange — Act I) -->
+      <path d="M 3,-360 L 60,-340 L 40,-320 L 3,-330 Z" fill="#1A1410">
+        <animateTransform attributeName="transform" type="skewX"
+          values="0;30;-10;25;0" keyTimes="0;0.25;0.5;0.75;1"
+          dur="0.8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- ===================== FOREGROUND WAVE (low camera) ===================== -->
+    <path d="M -100,920
+             Q 200,860 480,890
+             Q 760,920 1040,880
+             Q 1320,840 1620,890
+             Q 1820,920 2020,900
+             L 2020,1080 L -100,1080 Z"
+          fill="url(#waterFury03a)" stroke="#020306" stroke-width="2"/>
+    <!-- Foam on foreground wave -->
+    <path d="M -100,920 Q 200,860 480,890 Q 760,920 1040,880 Q 1320,840 1620,890 Q 1820,920 2020,900"
+          fill="none" stroke="#E0EAF2" stroke-width="6" opacity="0.55" filter="url(#bloom03a)"/>
+
+    <!-- Foam patches scattered -->
+    <g fill="#E0EAF2" opacity="0.5">
+      <ellipse cx="300" cy="950" rx="80" ry="6"/>
+      <ellipse cx="640" cy="980" rx="100" ry="7"/>
+      <ellipse cx="1100" cy="940" rx="90" ry="6"/>
+      <ellipse cx="1500" cy="980" rx="110" ry="7"/>
+    </g>
+  </g>
+
+  <!-- ===================== DIAGONAL HEAVY RAIN ===================== -->
+  <g stroke="#9CB0C4" stroke-width="1.4" opacity="0.65">
+    <line x1="100" y1="0" x2="0" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="220" y1="0" x2="120" y2="280">
+      <animate attributeName="y1" values="-180;0;-380" dur="0.55s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="100;280;-100" dur="0.55s" repeatCount="indefinite"/>
+    </line>
+    <line x1="360" y1="0" x2="260" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.62s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.62s" repeatCount="indefinite"/>
+    </line>
+    <line x1="500" y1="0" x2="400" y2="280">
+      <animate attributeName="y1" values="-220;0;-340" dur="0.58s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="60;280;-60" dur="0.58s" repeatCount="indefinite"/>
+    </line>
+    <line x1="660" y1="0" x2="560" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="820" y1="0" x2="720" y2="280">
+      <animate attributeName="y1" values="-160;0;-400" dur="0.56s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="120;280;-120" dur="0.56s" repeatCount="indefinite"/>
+    </line>
+    <line x1="980" y1="0" x2="880" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1140" y1="0" x2="1040" y2="280">
+      <animate attributeName="y1" values="-200;0;-360" dur="0.58s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="80;280;-80" dur="0.58s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1300" y1="0" x2="1200" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.62s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.62s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1460" y1="0" x2="1360" y2="280">
+      <animate attributeName="y1" values="-140;0;-420" dur="0.55s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="140;280;-140" dur="0.55s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1620" y1="0" x2="1520" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1780" y1="0" x2="1680" y2="280">
+      <animate attributeName="y1" values="-220;0;-340" dur="0.58s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="60;280;-60" dur="0.58s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1920" y1="0" x2="1820" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  <!-- Second rain layer faster, finer -->
+  <g stroke="#C8D4E2" stroke-width="0.7" opacity="0.4">
+    <line x1="200" y1="0" x2="140" y2="200">
+      <animate attributeName="y1" values="-200;0;-200" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;200;0" dur="0.4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="600" y1="0" x2="540" y2="200">
+      <animate attributeName="y1" values="-200;0;-200" dur="0.42s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;200;0" dur="0.42s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1000" y1="0" x2="940" y2="200">
+      <animate attributeName="y1" values="-200;0;-200" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;200;0" dur="0.4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1400" y1="0" x2="1340" y2="200">
+      <animate attributeName="y1" values="-200;0;-200" dur="0.44s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;200;0" dur="0.44s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1700" y1="0" x2="1640" y2="200">
+      <animate attributeName="y1" values="-200;0;-200" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;200;0" dur="0.4s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.03" filter="url(#painterly03a)" pointer-events="none"/>
+
+  <!-- Heavy vignette (storm feel) -->
+  <rect width="1920" height="1080" fill="url(#vig03a)" pointer-events="none"/>
+</svg>

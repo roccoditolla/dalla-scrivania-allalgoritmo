@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 02B — Hands at work">
+  <title>Scene 02B — Mani al lavoro (macro)</title>
+  <desc>Tre macro di mani weathered: nodi di corda, penna su libro mastro, mano sul timone. Pan lento.</desc>
+
+  <defs>
+    <radialGradient id="bg02b" cx="50%" cy="55%" r="80%">
+      <stop offset="0%" stop-color="#EFE6D2"/>
+      <stop offset="60%" stop-color="#D8C9A8"/>
+      <stop offset="100%" stop-color="#8C7858"/>
+    </radialGradient>
+    <linearGradient id="skin02b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B68B6E"/>
+      <stop offset="100%" stop-color="#765538"/>
+    </linearGradient>
+    <linearGradient id="rope02b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C9A878"/>
+      <stop offset="100%" stop-color="#6E5230"/>
+    </linearGradient>
+    <linearGradient id="paper02b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2E6CC"/>
+      <stop offset="100%" stop-color="#D8C198"/>
+    </linearGradient>
+    <linearGradient id="wood02b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5A4126"/>
+      <stop offset="100%" stop-color="#2A1C0E"/>
+    </linearGradient>
+    <filter id="grain02b" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="4"/>
+      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0.05 0"/>
+    </filter>
+    <radialGradient id="vig02b" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Slow pan-right via group translate -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="60 0; 0 0; -60 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
+
+    <!-- Background -->
+    <rect width="1920" height="1080" fill="url(#bg02b)"/>
+    <rect width="1920" height="1080" fill="#000" opacity="0.05" filter="url(#grain02b)"/>
+
+    <!-- Three triptych panels separated by soft shadows -->
+
+    <!-- ====== PANEL 1: rope knot ====== -->
+    <g transform="translate(320 540)">
+      <!-- Soft vignette per panel -->
+      <ellipse cx="0" cy="0" rx="320" ry="360" fill="#1A1614" opacity="0.06"/>
+
+      <!-- Rope coil background -->
+      <path d="M -180,140 Q -120,80 -40,90 Q 60,100 110,40 Q 160,-20 90,-80 Q 30,-130 -60,-100 Q -160,-60 -200,20 Z"
+            fill="url(#rope02b)" stroke="#3D2A14" stroke-width="3"/>
+      <path d="M -160,140 Q -100,90 -20,100 Q 60,110 100,50 Q 140,-10 80,-70"
+            fill="none" stroke="#3D2A14" stroke-width="2" opacity="0.7"/>
+      <!-- Rope fibers (diagonal hatching) -->
+      <g stroke="#3D2A14" stroke-width="1" opacity="0.4">
+        <line x1="-160" y1="120" x2="-130" y2="80"/>
+        <line x1="-100" y1="110" x2="-70" y2="70"/>
+        <line x1="-40" y1="105" x2="-10" y2="65"/>
+        <line x1="30" y1="100" x2="60" y2="60"/>
+        <line x1="80" y1="60" x2="110" y2="20"/>
+        <line x1="100" y1="0" x2="130" y2="-40"/>
+      </g>
+
+      <!-- Hand gripping rope (weathered, knuckles up) -->
+      <path d="M -220,-80 Q -260,-20 -250,80 Q -240,180 -160,200 Q -60,210 40,160 Q 80,140 60,80 Q 30,20 -40,40 Q -120,60 -180,30 Q -220,0 -220,-80 Z"
+            fill="url(#skin02b)" stroke="#2A1810" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Wrinkles / lines -->
+      <path d="M -200,-30 Q -150,-10 -100,-20" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.55"/>
+      <path d="M -180,30 Q -120,50 -50,40" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.55"/>
+      <path d="M -160,100 Q -90,130 -10,120" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.45"/>
+      <!-- Thumb -->
+      <path d="M 60,80 Q 100,40 80,-10 Q 50,-40 20,-20 Q 0,10 40,40 Z" fill="url(#skin02b)" stroke="#2A1810" stroke-width="3"/>
+    </g>
+
+    <!-- ====== PANEL 2: pen on logbook ====== -->
+    <g transform="translate(960 540)">
+      <ellipse cx="0" cy="0" rx="340" ry="360" fill="#1A1614" opacity="0.06"/>
+
+      <!-- Open book -->
+      <path d="M -260,180 L -280,-60 L -10,-80 L 0,180 Z" fill="url(#paper02b)" stroke="#2A1810" stroke-width="3"/>
+      <path d="M 0,180 L -10,-80 L 280,-60 L 260,180 Z" fill="url(#paper02b)" stroke="#2A1810" stroke-width="3"/>
+      <!-- Spine -->
+      <line x1="-5" y1="-80" x2="0" y2="180" stroke="#2A1810" stroke-width="2"/>
+      <!-- Handwritten lines (calligraphic strokes) -->
+      <g stroke="#2A1810" stroke-width="2" opacity="0.7" fill="none" stroke-linecap="round">
+        <path d="M -240,-30 Q -200,-35 -130,-32 Q -80,-30 -40,-34"/>
+        <path d="M -240,5 Q -180,8 -90,4"/>
+        <path d="M -240,40 Q -150,42 -70,38"/>
+        <path d="M -240,75 Q -190,78 -110,72 Q -60,68 -30,74"/>
+        <path d="M -240,110 Q -160,113 -50,108"/>
+        <path d="M 30,-25 Q 80,-28 160,-26"/>
+        <path d="M 30,10 Q 110,8 200,12"/>
+        <path d="M 30,45 Q 90,46 170,42"/>
+      </g>
+
+      <!-- Hand holding pen, dipping toward page -->
+      <path d="M 80,-280 Q 110,-220 130,-140 Q 145,-60 120,40 Q 100,100 60,90 Q 20,80 10,30 Q 0,-40 20,-110 Q 30,-220 80,-280 Z"
+            fill="url(#skin02b)" stroke="#2A1810" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Thumb -->
+      <path d="M 10,30 Q -30,40 -50,10 Q -40,-20 -10,-30 Q 10,-20 20,0 Z" fill="url(#skin02b)" stroke="#2A1810" stroke-width="3"/>
+      <!-- Wrinkles -->
+      <path d="M 30,-200 Q 70,-180 100,-200" fill="none" stroke="#2A1810" stroke-width="1.5" opacity="0.5"/>
+      <path d="M 20,-120 Q 60,-100 95,-120" fill="none" stroke="#2A1810" stroke-width="1.5" opacity="0.5"/>
+      <path d="M 10,-40 Q 50,-20 90,-40" fill="none" stroke="#2A1810" stroke-width="1.5" opacity="0.5"/>
+
+      <!-- Quill / pen -->
+      <g transform="rotate(-25 50 50)">
+        <rect x="40" y="-260" width="6" height="320" fill="#1A1410"/>
+        <!-- Nib -->
+        <polygon points="40,60 46,60 50,90 36,90" fill="#1A1410"/>
+        <!-- Feather -->
+        <path d="M 43,-260 Q 80,-220 80,-160 Q 70,-200 43,-200" fill="#D8C9A8" stroke="#1A1410" stroke-width="1.5"/>
+        <path d="M 43,-200 Q 78,-160 78,-100 Q 70,-140 43,-140" fill="#D8C9A8" stroke="#1A1410" stroke-width="1.5"/>
+      </g>
+      <!-- Small ink mark on page below nib -->
+      <ellipse cx="80" cy="92" rx="8" ry="3" fill="#1A1410" opacity="0.8">
+        <animate attributeName="rx" values="2;6;8;10;12" keyTimes="0;0.3;0.55;0.8;1" dur="8s" fill="freeze"/>
+      </ellipse>
+    </g>
+
+    <!-- ====== PANEL 3: hand on ship's wheel ====== -->
+    <g transform="translate(1600 540)">
+      <ellipse cx="0" cy="0" rx="320" ry="360" fill="#1A1614" opacity="0.06"/>
+
+      <!-- Wheel partial (right side dominant) -->
+      <g>
+        <circle cx="-60" cy="0" r="240" fill="none" stroke="#1A1410" stroke-width="14"/>
+        <circle cx="-60" cy="0" r="180" fill="none" stroke="#1A1410" stroke-width="6" opacity="0.7"/>
+        <circle cx="-60" cy="0" r="28" fill="#1A1410"/>
+        <!-- Handles -->
+        <g stroke="#1A1410" stroke-width="14" stroke-linecap="round">
+          <line x1="-60" y1="-260" x2="-60" y2="-300"/>
+          <line x1="-60" y1="260" x2="-60" y2="300"/>
+          <line x1="180" y1="0" x2="220" y2="0"/>
+          <line x1="-300" y1="0" x2="-340" y2="0"/>
+          <line x1="110" y1="-190" x2="138" y2="-218"/>
+          <line x1="110" y1="190" x2="138" y2="218"/>
+          <line x1="-230" y1="-190" x2="-258" y2="-218"/>
+          <line x1="-230" y1="190" x2="-258" y2="218"/>
+        </g>
+        <!-- Wood grain -->
+        <path d="M -240,-80 Q -120,-60 60,-70" fill="none" stroke="#3D2A14" stroke-width="1.5" opacity="0.5"/>
+        <path d="M -250,40 Q -120,60 60,50" fill="none" stroke="#3D2A14" stroke-width="1.5" opacity="0.5"/>
+      </g>
+
+      <!-- Weathered hand gripping right handle (large foreground) -->
+      <g transform="translate(140 0)">
+        <path d="M -40,-110 Q -80,-60 -90,40 Q -90,140 -20,180 Q 60,200 130,160 Q 180,120 170,40 Q 150,-40 90,-80 Q 30,-120 -40,-110 Z"
+              fill="url(#skin02b)" stroke="#2A1810" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Thumb wraps over handle -->
+        <path d="M -80,-50 Q -130,0 -110,60 Q -80,80 -50,50 Q -40,10 -60,-30 Z" fill="url(#skin02b)" stroke="#2A1810" stroke-width="3"/>
+        <!-- Knuckles -->
+        <circle cx="20" cy="-30" r="14" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.55"/>
+        <circle cx="60" cy="-10" r="14" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.55"/>
+        <circle cx="95" cy="20" r="13" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.55"/>
+        <circle cx="120" cy="55" r="12" fill="none" stroke="#2A1810" stroke-width="2" opacity="0.55"/>
+        <!-- Wrinkles -->
+        <path d="M -40,90 Q 30,120 130,100" fill="none" stroke="#2A1810" stroke-width="1.5" opacity="0.4"/>
+        <path d="M -30,130 Q 40,150 120,140" fill="none" stroke="#2A1810" stroke-width="1.5" opacity="0.4"/>
+      </g>
+    </g>
+
+    <!-- Soft top haze across triptych -->
+    <rect x="0" y="0" width="1920" height="180" fill="#F5EFE6" opacity="0.35"/>
+    <rect x="0" y="900" width="1920" height="180" fill="#1A1410" opacity="0.18"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig02b)" pointer-events="none"/>
+</svg>

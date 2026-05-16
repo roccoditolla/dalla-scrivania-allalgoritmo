@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 15 — Il problema: oppressive desk, no orange">
+  <title>Slide 15 — Il problema</title>
+  <desc>Scrivania sommersa di carte, figura di spalle curva, orologio. Zero arancione.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Floor shadow under desk -->
+  <ellipse cx="540" cy="880" rx="340" ry="34" fill="#B8B5AD" opacity="0.32"/>
+
+  <!-- Clock on wall (upper right, fog gray face) -->
+  <g transform="translate(840 240)">
+    <circle cx="0" cy="0" r="78" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <!-- ticks -->
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="-68" x2="0" y2="-58"/>
+      <line x1="68" y1="0" x2="58" y2="0"/>
+      <line x1="0" y1="68" x2="0" y2="58"/>
+      <line x1="-68" y1="0" x2="-58" y2="0"/>
+      <line x1="48" y1="-48" x2="42" y2="-42" opacity="0.6"/>
+      <line x1="48" y1="48" x2="42" y2="42" opacity="0.6"/>
+      <line x1="-48" y1="48" x2="-42" y2="42" opacity="0.6"/>
+      <line x1="-48" y1="-48" x2="-42" y2="-42" opacity="0.6"/>
+    </g>
+    <!-- Hour hand -->
+    <line x1="0" y1="0" x2="0" y2="-38" stroke="#1A1614" stroke-width="4.5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
+    </line>
+    <!-- Minute hand (faster) -->
+    <line x1="0" y1="0" x2="0" y2="-55" stroke="#1A1614" stroke-width="3" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1.4s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+  </g>
+
+  <!-- DESK — isometric 3/4 view -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Desk top -->
+    <polygon points="270,720 540,820 810,720 540,640" fill="#F5EFE6"/>
+    <!-- Desk front face -->
+    <polygon points="270,720 540,820 540,860 270,760" fill="#B8B5AD" opacity="0.35"/>
+    <polygon points="540,820 810,720 810,760 540,860" fill="#B8B5AD" opacity="0.5"/>
+    <!-- Desk legs -->
+    <line x1="290" y1="755" x2="290" y2="870" stroke-width="3"/>
+    <line x1="540" y1="855" x2="540" y2="965"/>
+    <line x1="790" y1="755" x2="790" y2="870"/>
+  </g>
+
+  <!-- Massive paper pile (leaning, exaggerated) on the desk -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- bottom papers (wide) -->
+    <polygon points="370,690 660,690 690,710 400,710" fill="#F5EFE6"/>
+    <polygon points="380,665 670,665 700,685 410,685" fill="#F5EFE6"/>
+    <polygon points="370,640 660,640 690,660 400,660" fill="#F5EFE6" opacity="0.95"/>
+    <polygon points="385,615 675,615 705,635 415,635" fill="#F5EFE6"/>
+    <!-- mid pile, drifting -->
+    <polygon points="375,575 665,580 695,600 405,595" fill="#F5EFE6" opacity="0.95"/>
+    <polygon points="395,545 685,540 715,560 425,565" fill="#F5EFE6"/>
+    <polygon points="380,510 670,515 700,535 410,530" fill="#F5EFE6" opacity="0.95"/>
+    <!-- upper, leaning right -->
+    <polygon points="410,475 700,470 730,490 440,495" fill="#F5EFE6"/>
+    <polygon points="425,440 715,440 745,460 455,460" fill="#F5EFE6" opacity="0.95"/>
+    <polygon points="445,405 735,400 765,420 475,425" fill="#F5EFE6"/>
+    <polygon points="465,370 755,365 785,385 495,390" fill="#F5EFE6" opacity="0.95"/>
+    <!-- topmost, tilting -->
+    <polygon points="490,335 780,325 808,345 518,355" fill="#F5EFE6"/>
+    <polygon points="510,300 800,290 828,310 538,320" fill="#F5EFE6" opacity="0.95"/>
+    <polygon points="530,265 818,253 846,273 558,285" fill="#F5EFE6"/>
+    <polygon points="555,232 840,218 868,238 583,252" fill="#F5EFE6" opacity="0.95"/>
+
+    <!-- Single sheet falling off (fog gray) -->
+    <polygon points="220,560 320,545 340,575 240,590" fill="#B8B5AD" opacity="0.45">
+      <animateTransform attributeName="transform" type="translate" values="0,-40; 0,40; 0,-40" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Figure (back view, slumped) seated behind/to-the-side of the desk -->
+  <g transform="translate(200 770)">
+    <!-- back of head (down, slumped) -->
+    <ellipse cx="0" cy="-100" rx="34" ry="40" fill="#1A1614"/>
+    <!-- shoulders/back, curved -->
+    <path d="M -75,-60 C -78,-30 -85,40 -78,100 L 78,100 C 75,40 65,-20 60,-55 C 56,-78 30,-90 0,-90 C -32,-90 -72,-78 -75,-60 Z" fill="#1A1614"/>
+    <!-- subtle fog overlay on figure -->
+    <ellipse cx="0" cy="-20" rx="80" ry="100" fill="#B8B5AD" opacity="0.2"/>
+  </g>
+
+  <!-- Overall fog overlay top half (heavy mood) -->
+  <rect x="0" y="0" width="1080" height="540" fill="#B8B5AD" opacity="0.08"/>
+</svg>

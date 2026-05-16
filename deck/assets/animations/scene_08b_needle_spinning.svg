@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08B — Compass needle spinning, searching">
+  <title>Scene 08B — Ago della bussola che ruota cercando direzione</title>
+  <desc>Top-down close-up. Bussola sulla sabbia, ago ruota 720deg poi rallenta. Orange glow attivo.</desc>
+
+  <defs>
+    <radialGradient id="sandBg08b" cx="50%" cy="55%" r="78%">
+      <stop offset="0%" stop-color="#F2E8D6"/>
+      <stop offset="55%" stop-color="#E2D6BD"/>
+      <stop offset="100%" stop-color="#8C7858"/>
+    </radialGradient>
+    <radialGradient id="orangeGlow08b" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFB066" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#FF6B1A" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orangeCore08b" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFC68A"/>
+      <stop offset="45%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.9"/>
+    </radialGradient>
+    <radialGradient id="metalRim08b" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#4A3F36"/>
+      <stop offset="100%" stop-color="#1A1410"/>
+    </radialGradient>
+    <filter id="bloom08b" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="grain08b">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11"/>
+      <feColorMatrix values="0 0 0 0 0.18  0 0 0 0 0.14  0 0 0 0 0.08  0 0 0 0.05 0"/>
+    </filter>
+    <radialGradient id="vig08b" cx="50%" cy="50%" r="75%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sand bed (top-down) -->
+  <rect width="1920" height="1080" fill="url(#sandBg08b)"/>
+  <rect width="1920" height="1080" fill="#000" opacity="0.4" filter="url(#grain08b)"/>
+
+  <!-- Subtle radial vignette already from background -->
+  <radialGradient id="warmAura08b" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#FFE0BD" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#FFE0BD" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#warmAura08b)"/>
+
+  <!-- Orange ground spill (animated bloom) -->
+  <circle cx="960" cy="540" r="640" fill="url(#orangeGlow08b)" opacity="0.85" filter="url(#bloom08b)">
+    <animate attributeName="opacity" values="0.7;0.95;0.8;1;0.85;0.95" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+    <animate attributeName="r" values="540;620;680;640;700;660" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+  </circle>
+
+  <!-- ============== COMPASS top-down view ============== -->
+  <g transform="translate(960 540)">
+    <!-- Outer hexagonal metal rim -->
+    <polygon points="0,-360 312,-180 312,180 0,360 -312,180 -312,-180"
+             fill="url(#metalRim08b)" stroke="#0A0805" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Inner hexagonal bezel -->
+    <polygon points="0,-300 260,-150 260,150 0,300 -260,150 -260,-150"
+             fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Hexagonal glass face (now lit orange) -->
+    <polygon points="0,-270 234,-135 234,135 0,270 -234,135 -234,-135"
+             fill="url(#orangeCore08b)" stroke="#5A1E00" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- Inner ring -->
+    <circle r="230" fill="none" stroke="#2A1408" stroke-width="2" opacity="0.55"/>
+    <circle r="170" fill="none" stroke="#2A1408" stroke-width="1.5" opacity="0.4"/>
+    <!-- Tick marks around dial -->
+    <g stroke="#2A1408" stroke-width="2.5" opacity="0.6">
+      <line x1="0" y1="-260" x2="0" y2="-235"/>
+      <line x1="130" y1="-225" x2="120" y2="-205" transform="rotate(0)"/>
+      <line x1="225" y1="-130" x2="205" y2="-120"/>
+      <line x1="260" y1="0" x2="235" y2="0"/>
+      <line x1="225" y1="130" x2="205" y2="120"/>
+      <line x1="130" y1="225" x2="120" y2="205"/>
+      <line x1="0" y1="260" x2="0" y2="235"/>
+      <line x1="-130" y1="225" x2="-120" y2="205"/>
+      <line x1="-225" y1="130" x2="-205" y2="120"/>
+      <line x1="-260" y1="0" x2="-235" y2="0"/>
+      <line x1="-225" y1="-130" x2="-205" y2="-120"/>
+      <line x1="-130" y1="-225" x2="-120" y2="-205"/>
+    </g>
+    <!-- Cardinal marks (geometric, no text) — diamonds at N/E/S/W -->
+    <g fill="#2A1408" opacity="0.85">
+      <polygon points="0,-258 8,-244 0,-230 -8,-244"/>
+      <polygon points="258,0 244,8 230,0 244,-8"/>
+      <polygon points="0,258 8,244 0,230 -8,244"/>
+      <polygon points="-258,0 -244,8 -230,0 -244,-8"/>
+    </g>
+
+    <!-- Bloom radial under needle -->
+    <circle r="80" fill="#FFB066" opacity="0.6" filter="url(#bloom08b)">
+      <animate attributeName="opacity" values="0.4;0.7;0.5;0.8;0.6;0.7" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+    </circle>
+
+    <!-- ============== SPINNING NEEDLE ==============
+         Spins fast (720deg) in first 5s, decelerates, then slight oscillation -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="0;360;720;850;920;955;980;992;1000;1004;1002;1003"
+        keyTimes="0;0.25;0.5;0.62;0.72;0.8;0.86;0.91;0.94;0.97;0.99;1"
+        dur="8s" fill="freeze"/>
+
+      <!-- Needle body — north tip orange, south dark -->
+      <polygon points="0,-220 18,0 0,12 -18,0" fill="#FF6B1A" stroke="#5A1E00" stroke-width="2" filter="url(#bloom08b)"/>
+      <polygon points="0,220 18,0 0,-12 -18,0" fill="#1A1410" stroke="#0A0805" stroke-width="2"/>
+      <!-- Center cap -->
+      <circle r="18" fill="#3A2F22" stroke="#0A0805" stroke-width="2"/>
+      <circle r="6" fill="#FFB066"/>
+    </g>
+
+    <!-- Glass highlight (reflective sheen) -->
+    <polygon points="-180,-180 -60,-220 -60,-100 -180,-60" fill="#FFFFFF" opacity="0.12"/>
+  </g>
+
+  <!-- Tiny sand grains scattered around -->
+  <g fill="#8C7858" opacity="0.5">
+    <circle cx="640" cy="540" r="1.5"/>
+    <circle cx="700" cy="620" r="1.2"/>
+    <circle cx="1280" cy="540" r="1.4"/>
+    <circle cx="1200" cy="640" r="1.2"/>
+    <circle cx="960" cy="280" r="1.4"/>
+    <circle cx="960" cy="800" r="1.4"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig08b)" pointer-events="none"/>
+</svg>

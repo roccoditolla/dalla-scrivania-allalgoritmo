@@ -108,6 +108,30 @@ In `.claude/skills/`, già pronte:
 
 **Invocale esplicitamente** quando il task corrisponde. Non improvvisare.
 
+## I 5 sub-agent verticali (orchestrazione parallela)
+
+In `.claude/agents/`, sono skill specialistiche con identità — puoi delegare loro intere micro-aree di responsabilità via Task tool:
+
+1. **`videomaker-director`** — Veo prompt JSON, export per Gemini app, validazione MP4 sui criteri di accettazione
+2. **`audio-engineer`** — sourcing Pixabay/Freesound, bilanciamento dB nel deck, attribuzioni
+3. **`designer-illustrator`** — prompt Nano Banana Pro per le 11 slide realistic (output: `prompts/images/realistic_prompts.md`)
+4. **`deck-builder`** — reveal.js, cinematic.css, transitions.js, AudioMixer, backup MP4
+5. **`speech-coach`** — copione italiano, cue sheet, timing wpm, riscaldamento vocale
+
+Quando un task tocca solo una di queste aree, **delega all'agent**. Quando attraversa più aree (es. modifica scena → speech → audio), **resta tu l'orchestratore** e usa gli agent in sequenza/parallelo.
+
+## Regola STATUS.md — aggiornamento continuo
+
+Esiste `STATUS.md` nella root. È la dashboard del progetto. **Ad ogni completamento di task — tuo o di un sub-agent — la riga corrispondente in `STATUS.md` va aggiornata** (icona di stato, file, note brevi).
+
+Ordine operativo:
+1. Esegui il task
+2. Aggiorna `STATUS.md` con il nuovo stato
+3. Aggiungi un'entry al "Diario operativo" in fondo (data + 1 riga di sintesi)
+4. Comunica a Rocco
+
+I sub-agent devono fare lo stesso. Se un agent termina e non ha aggiornato `STATUS.md`, **lo aggiorni tu** prima di rispondere a Rocco.
+
 ## Cosa NON fare mai
 
 - **NON** generare video direttamente (l'API Veo costa, Rocco vuole zero spese)

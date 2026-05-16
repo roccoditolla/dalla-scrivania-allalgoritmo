@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 22 — BMAD: four horizontal boxes connected by arrows, one orange cycling">
+  <title>Slide 22 — BMAD methodology</title>
+  <desc>Quattro caselle Build/Measure/Adjust/Deploy connesse da frecce, una freccia arancione che cicla.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Card 1: BUILD (block being placed) -->
+  <g transform="translate(140 480)">
+    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <!-- Pictogram: a wooden block being placed (hand-like arrow + block) -->
+    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <!-- Block (isometric small cube) -->
+      <polygon points="-32,8 0,-12 32,8 0,28"/>
+      <polygon points="-32,8 -32,36 0,56 0,28" fill="#B8B5AD" fill-opacity="0.45"/>
+      <polygon points="0,28 32,8 32,36 0,56" fill="#B8B5AD" fill-opacity="0.55"/>
+      <!-- Drop arrow from above -->
+      <line x1="0" y1="-50" x2="0" y2="-22" stroke-width="3"/>
+      <polyline points="-6,-28 0,-18 6,-28" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Card 2: MEASURE (magnifying glass on dot) -->
+  <g transform="translate(390 480)">
+    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <!-- Magnifying glass lens -->
+      <circle cx="-8" cy="-8" r="30" fill="#F5EFE6"/>
+      <!-- Handle -->
+      <line x1="14" y1="14" x2="36" y2="36" stroke-width="6"/>
+      <!-- Tiny dot inside -->
+      <circle cx="-8" cy="-8" r="5" fill="#1A1614"/>
+    </g>
+  </g>
+
+  <!-- Card 3: ADJUST (gear / circular arrow) -->
+  <g transform="translate(640 480)">
+    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <!-- Circular arrow (refresh icon) -->
+      <path d="M 30,-8 A 36 36 0 1 1 -28,-22" fill="none"/>
+      <polyline points="30,-22 30,-8 16,-8" fill="none"/>
+      <polyline points="-28,-22 -42,-22 -42,-8" fill="none"/>
+      <!-- Small dot center -->
+      <circle cx="0" cy="0" r="4" fill="#1A1614"/>
+    </g>
+  </g>
+
+  <!-- Card 4: DEPLOY (forward arrow / rocket-like) -->
+  <g transform="translate(890 480)">
+    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <!-- Paper plane / forward arrow -->
+      <polygon points="-40,-20 40,0 -40,20 -22,0"/>
+      <line x1="-22" y1="0" x2="-40" y2="0" stroke-width="3"/>
+    </g>
+  </g>
+
+  <!-- Arrows between cards (3 arrows total) — the THIRD arrow is the cycling orange -->
+  <!-- Arrow 1: Build -> Measure -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="325" y1="570" x2="380" y2="570"/>
+    <polyline points="370,562 384,570 370,578"/>
+  </g>
+  <!-- Arrow 2: Measure -> Adjust -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="575" y1="570" x2="630" y2="570"/>
+    <polyline points="620,562 634,570 620,578"/>
+  </g>
+  <!-- Arrow 3: Adjust -> Deploy (ORANGE — the narrative arrow) -->
+  <g stroke="#FF6B1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="825" y1="570" x2="880" y2="570"/>
+    <polyline points="870,560 886,570 870,580"/>
+    <!-- Pulsing halo on this arrow -->
+    <line x1="825" y1="570" x2="880" y2="570" stroke="#FF6B1A" stroke-width="10" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="2.4s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Bottom loop arrow (deploy → back to build, closing the BMAD cycle) — dashed, subtle -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="6,8" opacity="0.5">
+    <path d="M 980,680 C 980,800 600,840 230,800 C 200,795 180,780 180,720 L 180,680"/>
+    <polyline points="172,690 180,676 188,690"/>
+  </g>
+</svg>

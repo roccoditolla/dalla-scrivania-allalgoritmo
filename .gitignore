@@ -69,4 +69,8 @@ temp/
 .claude/cache/
 .claude/sessions/
 # Le skill custom in .claude/skills/ DEVONO essere in repo
+# Gli agent in .claude/agents/ DEVONO essere in repo
 # I file di plugin .claude/plugins/PLUGIN_INSTALL.md DEVE essere in repo
+
+# --- Vercel ---
+.vercel/

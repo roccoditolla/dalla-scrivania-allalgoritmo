@@ -127,6 +127,43 @@
   background: #000;
 }
 
+/* SVG animato full-bleed — fallback quando manca il video Veo */
+.full-bleed-svg {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-cream);
+}
+
+.full-bleed-svg > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Restart animazioni SMIL su slide change — usa la classe .active aggiunta da transitions.js */
+.full-bleed-svg.active > svg {
+  animation: none; /* placeholder; il restart effettivo viene gestito da JS */
+}
+
+/* Illustrazione realistic con SVG animato in-code */
+.illustration.svg-anim {
+  width: 100%;
+  max-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration.svg-anim > svg {
+  max-width: 100%;
+  max-height: 50vh;
+  height: auto;
+}
+
 .placeholder-slide {
   color: var(--color-cream);
   font-family: var(--font-display);

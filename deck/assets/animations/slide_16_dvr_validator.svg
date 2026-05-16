@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 16 — DVR Validator: same desk, illuminated by orange light">
+  <title>Slide 16 — DVR Validator</title>
+  <desc>Stessa scrivania della slide 15, ora illuminata: laptop con glow arancione, pile ordinate, checkmark.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange glow halo behind desk (the light from the laptop) -->
+  <g>
+    <ellipse cx="540" cy="600" rx="380" ry="280" fill="#FF6B1A" opacity="0.08">
+      <animate attributeName="opacity" values="0.06;0.12;0.06" dur="3.6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="540" cy="600" rx="240" ry="170" fill="#FF6B1A" opacity="0.12">
+      <animate attributeName="opacity" values="0.10;0.18;0.10" dur="3.6s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Floor shadow under desk -->
+  <ellipse cx="540" cy="880" rx="340" ry="34" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- Clock on wall (calm, hands at gentle position) -->
+  <g transform="translate(840 240)">
+    <circle cx="0" cy="0" r="78" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="-68" x2="0" y2="-58"/>
+      <line x1="68" y1="0" x2="58" y2="0"/>
+      <line x1="0" y1="68" x2="0" y2="58"/>
+      <line x1="-68" y1="0" x2="-58" y2="0"/>
+    </g>
+    <line x1="0" y1="0" x2="20" y2="-32" stroke="#1A1614" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="0" y2="-55" stroke="#1A1614" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+  </g>
+
+  <!-- DESK — same isometric layout as slide 15 -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Desk top -->
+    <polygon points="270,720 540,820 810,720 540,640" fill="#F5EFE6"/>
+    <!-- Desk front face -->
+    <polygon points="270,720 540,820 540,860 270,760" fill="#B8B5AD" opacity="0.35"/>
+    <polygon points="540,820 810,720 810,760 540,860" fill="#B8B5AD" opacity="0.5"/>
+    <!-- Desk legs -->
+    <line x1="290" y1="755" x2="290" y2="870"/>
+    <line x1="540" y1="855" x2="540" y2="965"/>
+    <line x1="790" y1="755" x2="790" y2="870"/>
+  </g>
+
+  <!-- Tidy ORDERED paper pile (low, aligned) — replaces the chaotic mess -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- bottom -->
+    <polygon points="340,705 600,705 625,720 365,720" fill="#F5EFE6"/>
+    <polygon points="345,685 605,685 630,700 370,700" fill="#F5EFE6"/>
+    <polygon points="350,665 610,665 635,680 375,680" fill="#F5EFE6"/>
+    <polygon points="355,645 615,645 640,660 380,660" fill="#F5EFE6"/>
+    <!-- top sheet with checkmark -->
+    <polygon points="365,620 625,620 650,635 390,635" fill="#F5EFE6"/>
+  </g>
+
+  <!-- Orange CHECKMARK on the top sheet (narrative orange) -->
+  <g transform="translate(505 612)" stroke="#FF6B1A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polyline points="-18,0 -4,12 22,-14"/>
+  </g>
+
+  <!-- LAPTOP on the desk (left of pile), emitting orange glow -->
+  <g transform="translate(360 600)">
+    <!-- Laptop base (isometric) -->
+    <polygon points="-90,40 90,40 120,55 -60,55" fill="#1A1614" stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Laptop screen (open, glowing) -->
+    <polygon points="-90,40 -90,-50 70,-50 70,40" fill="#F5EFE6" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="-90,40 -90,-50 70,-50 70,40" fill="#FF6B1A" opacity="0.55">
+      <animate attributeName="opacity" values="0.45;0.7;0.45" dur="3.6s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Screen inner light core -->
+    <rect x="-78" y="-38" width="138" height="68" fill="#FF6B1A" opacity="0.35"/>
+  </g>
+
+  <!-- Light beam (from laptop to papers, dashed soft orange) -->
+  <g stroke="#FF6B1A" stroke-width="2" stroke-linecap="round" opacity="0.5">
+    <line x1="430" y1="595" x2="490" y2="615" stroke-dasharray="4,4"/>
+    <line x1="420" y1="610" x2="490" y2="625" stroke-dasharray="4,4"/>
+    <line x1="425" y1="580" x2="490" y2="605" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Figure (back view, RELAXED — leaning slightly back) -->
+  <g transform="translate(200 770)">
+    <!-- back of head (upright) -->
+    <ellipse cx="0" cy="-115" rx="32" ry="38" fill="#1A1614"/>
+    <!-- shoulders/back, relaxed straight posture -->
+    <path d="M -72,-70 C -75,-30 -78,40 -75,100 L 75,100 C 78,40 75,-30 72,-70 C 68,-92 36,-100 0,-100 C -36,-100 -68,-92 -72,-70 Z" fill="#1A1614"/>
+  </g>
+</svg>

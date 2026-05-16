@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 06 — Rowboat landing on white beach">
+  <title>Scene 06 — Sbarco sulla spiaggia bianca</title>
+  <desc>Scialuppa con remi che approda. Spiaggia bianca, ombre lunghe. Tracking shot laterale.</desc>
+
+  <defs>
+    <linearGradient id="sky06" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C5C9CE"/>
+      <stop offset="60%" stop-color="#B6BCC2"/>
+      <stop offset="100%" stop-color="#9AA2A8"/>
+    </linearGradient>
+    <linearGradient id="water06" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6A7F8E"/>
+      <stop offset="100%" stop-color="#3F5364"/>
+    </linearGradient>
+    <linearGradient id="shallows06" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9CB4C4"/>
+      <stop offset="100%" stop-color="#6A8294"/>
+    </linearGradient>
+    <linearGradient id="beach06" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0EADC"/>
+      <stop offset="100%" stop-color="#D8CFB8"/>
+    </linearGradient>
+    <linearGradient id="boat06" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3D2A18"/>
+      <stop offset="100%" stop-color="#1A1108"/>
+    </linearGradient>
+    <filter id="painterly06">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="6"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.5"/>
+    </filter>
+    <radialGradient id="vig06" cx="50%" cy="50%" r="80%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.35"/>
+    </radialGradient>
+    <path id="wave06" d="M 0,30 Q 150,5 300,30 T 600,30 T 900,30 T 1200,30 T 1500,30 T 1800,30 T 2100,30 L 2100,80 L 0,80 Z"/>
+  </defs>
+
+  <!-- Slow lateral tracking (left to right) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="-60 0; 0 0; 60 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
+
+    <!-- Sky -->
+    <rect x="-100" y="0" width="2120" height="540" fill="url(#sky06)"/>
+    <!-- Soft clouds -->
+    <g opacity="0.4">
+      <ellipse cx="400" cy="180" rx="280" ry="32" fill="#D8DCE0"/>
+      <ellipse cx="1300" cy="140" rx="320" ry="36" fill="#C8CCD0"/>
+    </g>
+
+    <!-- Distant water -->
+    <rect x="-100" y="540" width="2120" height="160" fill="url(#water06)"/>
+    <!-- Shallows transitioning -->
+    <rect x="-100" y="700" width="2120" height="100" fill="url(#shallows06)"/>
+
+    <!-- Beach -->
+    <path d="M -100,800 L 2020,800 L 2020,1080 L -100,1080 Z" fill="url(#beach06)"/>
+    <!-- Beach grain texture -->
+    <g opacity="0.35" fill="#B8AC95">
+      <circle cx="180" cy="880" r="1.4"/>
+      <circle cx="360" cy="910" r="1.2"/>
+      <circle cx="540" cy="950" r="1.5"/>
+      <circle cx="720" cy="880" r="1.2"/>
+      <circle cx="900" cy="960" r="1.4"/>
+      <circle cx="1080" cy="890" r="1.2"/>
+      <circle cx="1260" cy="940" r="1.4"/>
+      <circle cx="1440" cy="880" r="1.2"/>
+      <circle cx="1620" cy="950" r="1.4"/>
+      <circle cx="1800" cy="900" r="1.2"/>
+    </g>
+    <!-- Shoreline foam edge -->
+    <path d="M -100,800 Q 200,790 400,805 Q 700,820 960,800 Q 1240,780 1500,810 Q 1750,820 2020,800 L 2020,790 L -100,790 Z" fill="#FAF4E9" opacity="0.65"/>
+
+    <!-- Distant gulls -->
+    <g fill="#1A1614" opacity="0.55">
+      <path d="M 0,0 q 7,-5 14,0 q 7,-5 14,0" transform="translate(360 280)"/>
+      <path d="M 0,0 q 6,-4 12,0 q 6,-4 12,0" transform="translate(1480 240)"/>
+    </g>
+
+    <!-- ============== ROWBOAT (foreground) approaching beach ============== -->
+    <g transform="translate(960 760)">
+      <animateTransform attributeName="transform" type="translate"
+        values="800 770; 880 762; 960 760" keyTimes="0;0.6;1" dur="8s" fill="freeze"/>
+      <!-- Reflection in shallows -->
+      <ellipse cx="0" cy="50" rx="200" ry="14" fill="#1A1614" opacity="0.25"/>
+
+      <!-- Hull -->
+      <path d="M -200,-20 Q -190,30 -120,50 L 120,50 Q 190,30 200,-20 L 170,-30 L -170,-30 Z" fill="url(#boat06)" stroke="#0A0805" stroke-width="2"/>
+      <!-- Planks -->
+      <line x1="-170" y1="-10" x2="170" y2="-10" stroke="#1F1108" stroke-width="1" opacity="0.6"/>
+      <line x1="-160" y1="10" x2="160" y2="10" stroke="#1F1108" stroke-width="1" opacity="0.6"/>
+      <line x1="-150" y1="30" x2="150" y2="30" stroke="#1F1108" stroke-width="1" opacity="0.6"/>
+      <!-- Prow tip -->
+      <path d="M -200,-20 L -220,-40 L -200,-30 Z" fill="#1F1108"/>
+      <path d="M 200,-20 L 220,-40 L 200,-30 Z" fill="#1F1108"/>
+
+      <!-- Three rower silhouettes (backs to us, hunched) -->
+      <g fill="#0A0805">
+        <ellipse cx="-100" cy="-80" rx="22" ry="26"/>
+        <path d="M -125,-58 L -75,-58 L -82,15 L -118,15 Z"/>
+        <ellipse cx="0" cy="-90" rx="24" ry="28"/>
+        <path d="M -28,-68 L 28,-68 L 22,10 L -22,10 Z"/>
+        <ellipse cx="100" cy="-80" rx="22" ry="26"/>
+        <path d="M 75,-58 L 125,-58 L 118,15 L 82,15 Z"/>
+      </g>
+
+      <!-- Oars (left and right, animated rowing) -->
+      <g>
+        <line x1="-120" y1="-50" x2="-310" y2="80" stroke="#1F1108" stroke-width="6" stroke-linecap="round">
+          <animate attributeName="x2" values="-310;-280;-310;-280;-310" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="80;100;80;100;80" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+        </line>
+        <ellipse cx="-310" cy="80" rx="18" ry="6" fill="#1F1108">
+          <animate attributeName="cx" values="-310;-280;-310;-280;-310" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="80;100;80;100;80" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <line x1="120" y1="-50" x2="310" y2="80" stroke="#1F1108" stroke-width="6" stroke-linecap="round">
+          <animate attributeName="x2" values="310;280;310;280;310" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="80;100;80;100;80" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+        </line>
+        <ellipse cx="310" cy="80" rx="18" ry="6" fill="#1F1108">
+          <animate attributeName="cx" values="310;280;310;280;310" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="80;100;80;100;80" keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+        </ellipse>
+      </g>
+    </g>
+
+    <!-- Long shadows from boat & figures cast on beach (low cool sun) -->
+    <g opacity="0.3">
+      <path d="M 760,810 L 1160,810 L 1400,1080 L 580,1080 Z" fill="#1A1614"/>
+    </g>
+
+    <!-- Calm wavelets in shallows -->
+    <g opacity="0.5">
+      <use href="#wave06" x="-100" y="740" fill="#E8EEF0">
+        <animate attributeName="x" values="-100;-180;-100" dur="13s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.45">
+      <use href="#wave06" x="-200" y="780" fill="#FAF4E9">
+        <animate attributeName="x" values="-200;-80;-200" dur="11s" repeatCount="indefinite"/>
+      </use>
+    </g>
+  </g>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#painterly06)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig06)" pointer-events="none"/>
+</svg>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 20 — Welfare & Videoconference: person with headset, heart, medal">
+  <title>Slide 20 — Welfare e Videoconferenze</title>
+  <desc>Silhouette persona con headset, cuore arancione, medaglia.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Floor shadow -->
+  <ellipse cx="540" cy="980" rx="280" ry="22" fill="#B8B5AD" opacity="0.2"/>
+
+  <!-- CENTRAL FIGURE — silhouette with headset, viewed from behind/three-quarter -->
+  <g transform="translate(540 580)">
+    <!-- Back of head -->
+    <ellipse cx="0" cy="-90" rx="68" ry="78" fill="#1A1614"/>
+    <!-- Headset band (over the head) -->
+    <path d="M -78,-128 C -78,-180 78,-180 78,-128" fill="none" stroke="#1A1614" stroke-width="8" stroke-linecap="round"/>
+    <!-- Headphone cups -->
+    <ellipse cx="-78" cy="-100" rx="14" ry="22" fill="#1A1614"/>
+    <ellipse cx="78" cy="-100" rx="14" ry="22" fill="#1A1614"/>
+    <!-- Microphone arm (from left ear, curving forward) -->
+    <path d="M -78,-90 C -110,-70 -130,-30 -120,20" fill="none" stroke="#1A1614" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="-120" cy="20" r="8" fill="#1A1614"/>
+    <!-- Shoulders/torso -->
+    <path d="M -150,30 C -155,80 -165,180 -150,260 L 150,260 C 165,180 155,80 150,30 C 140,-10 70,-30 0,-30 C -70,-30 -140,-10 -150,30 Z" fill="#1A1614"/>
+  </g>
+
+  <!-- HEART (left side, above shoulder) — orange narrative accent -->
+  <g transform="translate(280 380)">
+    <!-- Heart shape -->
+    <path d="
+      M 0,40
+      C -20,20 -60,0 -60,-30
+      C -60,-55 -40,-70 -20,-65
+      C -10,-62 -3,-55 0,-45
+      C 3,-55 10,-62 20,-65
+      C 40,-70 60,-55 60,-30
+      C 60,0 20,20 0,40 Z
+    " fill="#FF6B1A" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Pulsing halo -->
+    <circle cx="0" cy="-12" r="55" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.22;0" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="45;75;45" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- MEDAL/AWARD (right side, above shoulder) — circle with ribbon -->
+  <g transform="translate(800 380)">
+    <!-- Ribbons -->
+    <polygon points="-32,-20 -10,30 0,5 -22,-25" fill="#1A1614"/>
+    <polygon points="32,-20 10,30 0,5 22,-25" fill="#1A1614"/>
+    <!-- Medal disc -->
+    <circle cx="0" cy="60" r="44" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="60" r="32" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.5"/>
+    <!-- Star inside the medal -->
+    <polygon points="0,38 6,55 24,55 10,66 16,84 0,73 -16,84 -10,66 -24,55 -6,55" fill="#1A1614"/>
+  </g>
+
+  <!-- Soft conversation bubbles (videoconference hint) — small, around the figure -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
+    <!-- Bubble top-left -->
+    <g transform="translate(180 240)">
+      <ellipse cx="0" cy="0" rx="36" ry="26"/>
+      <polyline points="-16,22 -8,38 0,22" fill="#F5EFE6"/>
+      <!-- 3 dots inside -->
+      <circle cx="-12" cy="0" r="3.5" fill="#1A1614"/>
+      <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+      <circle cx="12" cy="0" r="3.5" fill="#1A1614"/>
+    </g>
+    <!-- Bubble top-right -->
+    <g transform="translate(900 240)">
+      <ellipse cx="0" cy="0" rx="36" ry="26"/>
+      <polyline points="0,22 8,38 16,22" fill="#F5EFE6"/>
+      <circle cx="-12" cy="0" r="3.5" fill="#1A1614"/>
+      <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+      <circle cx="12" cy="0" r="3.5" fill="#1A1614"/>
+    </g>
+  </g>
+</svg>

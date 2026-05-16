@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 04 — Calm sea after the storm">
+  <title>Scene 04 — Mare calmo post-tempesta</title>
+  <desc>Mare calmo, nave silhouette piccola, foschia, gabbiani lontani. Pan lento destra-sinistra.</desc>
+
+  <defs>
+    <linearGradient id="sky04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D5D8DC"/>
+      <stop offset="55%" stop-color="#C4C8CE"/>
+      <stop offset="100%" stop-color="#A8AEB6"/>
+    </linearGradient>
+    <linearGradient id="ocean04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7B8E9C"/>
+      <stop offset="100%" stop-color="#475866"/>
+    </linearGradient>
+    <linearGradient id="haze04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D5D8DC" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#D5D8DC" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hull04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F1810"/>
+      <stop offset="100%" stop-color="#0E0A06"/>
+    </linearGradient>
+    <linearGradient id="sail04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8E0D0"/>
+      <stop offset="100%" stop-color="#B8AC95"/>
+    </linearGradient>
+    <path id="wave04" d="M 0,30 Q 150,0 300,30 T 600,30 T 900,30 T 1200,30 T 1500,30 T 1800,30 T 2100,30 L 2100,80 L 0,80 Z"/>
+    <filter id="painterly04">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="22"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.5"/>
+    </filter>
+    <radialGradient id="vig04" cx="50%" cy="50%" r="80%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.3"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Slow pan right-to-left via translate -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="80 0; 0 0; -80 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
+
+    <!-- Sky -->
+    <rect x="-200" y="0" width="2300" height="720" fill="url(#sky04)"/>
+
+    <!-- Distant cloud bands (thinning, post-storm) -->
+    <g opacity="0.5">
+      <ellipse cx="280" cy="220" rx="280" ry="32" fill="#D8DCE0"/>
+      <ellipse cx="900" cy="160" rx="340" ry="36" fill="#C8CCD0"/>
+      <ellipse cx="1500" cy="240" rx="260" ry="28" fill="#B8BCC0"/>
+      <ellipse cx="1880" cy="180" rx="200" ry="24" fill="#D0D4D8"/>
+    </g>
+
+    <!-- Soft sun-glow trying to break through -->
+    <radialGradient id="sun04" cx="68%" cy="32%" r="22%">
+      <stop offset="0%" stop-color="#F0E8D6" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#F0E8D6" stop-opacity="0"/>
+    </radialGradient>
+    <rect x="-200" y="0" width="2300" height="600" fill="url(#sun04)"/>
+
+    <!-- Horizon haze -->
+    <rect x="-200" y="600" width="2300" height="240" fill="url(#haze04)"/>
+
+    <!-- Ocean -->
+    <rect x="-200" y="720" width="2300" height="400" fill="url(#ocean04)"/>
+
+    <!-- Small distant gulls (3) -->
+    <g fill="#1A1614" opacity="0.6">
+      <path d="M 0,0 q 8,-5 14,0 q 6,-5 14,0" transform="translate(540 360)">
+        <animateTransform attributeName="transform" type="translate"
+          values="540 360; 600 354; 660 360" dur="12s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 0,0 q 6,-4 12,0 q 6,-4 12,0" transform="translate(1200 320)">
+        <animateTransform attributeName="transform" type="translate"
+          values="1200 320; 1140 314; 1080 320" dur="13s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 0,0 q 5,-3 10,0 q 5,-3 10,0" transform="translate(1640 380)">
+        <animateTransform attributeName="transform" type="translate"
+          values="1640 380; 1580 374; 1520 380" dur="15s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Small ship in distance -->
+    <g transform="translate(1180 720) scale(0.5)" opacity="0.95">
+      <!-- Hull -->
+      <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="url(#hull04)" stroke="#0A0805" stroke-width="2"/>
+      <!-- Masts -->
+      <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
+      <rect x="-72" y="-180" width="4" height="180" fill="#1F1810"/>
+      <rect x="68" y="-170" width="4" height="170" fill="#1F1810"/>
+      <!-- Main sail (slack — calm wind) -->
+      <path d="M -2,-220 Q -65,-180 -65,-80 L -65,-20 L 0,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1"/>
+      <path d="M 2,-220 Q 65,-180 65,-80 L 65,-20 L 0,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1" opacity="0.9"/>
+      <!-- Fore -->
+      <path d="M -72,-180 Q -115,-140 -115,-70 L -115,-20 L -72,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1"/>
+      <path d="M 68,-170 Q 110,-130 110,-65 L 110,-20 L 68,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1" opacity="0.9"/>
+      <!-- Tiny silhouette of figure on deck (writing) -->
+      <ellipse cx="20" cy="-30" rx="6" ry="8" fill="#0A0805"/>
+      <rect x="14" y="-22" width="12" height="20" fill="#0A0805"/>
+      <!-- Reflection -->
+      <path d="M -160,45 L 160,45 L 130,75 L -130,75 Z" fill="#1A1614" opacity="0.35"/>
+    </g>
+
+    <!-- Calm waves -->
+    <g opacity="0.4">
+      <use href="#wave04" x="-200" y="820" fill="#E8EAEC">
+        <animate attributeName="x" values="-200;-280;-200" dur="18s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.32">
+      <use href="#wave04" x="-300" y="900" fill="#FAF4E9">
+        <animate attributeName="x" values="-300;-160;-300" dur="16s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.25">
+      <use href="#wave04" x="-100" y="980" fill="#FFFFFF" transform="scale(1.4 0.7)">
+        <animate attributeName="x" values="-100;-250;-100" dur="14s" repeatCount="indefinite"/>
+      </use>
+    </g>
+
+    <!-- Reflection of distant ship -->
+    <ellipse cx="1180" cy="800" rx="100" ry="6" fill="#1A1614" opacity="0.2"/>
+  </g>
+
+  <!-- Soft painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#painterly04)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig04)" pointer-events="none"/>
+</svg>

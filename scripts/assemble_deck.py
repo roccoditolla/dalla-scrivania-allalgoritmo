@@ -24,17 +24,25 @@ import re
 from pathlib import Path
 from string import Template
 
-from rich.console import Console
+try:
+    from rich.console import Console as _RichConsole
+    console = _RichConsole()
+except ImportError:
+    # Fallback: stampe colorate ANSI senza dipendenze
+    class _PlainConsole:
+        _RE = __import__('re').compile(r'\[/?[a-zA-Z0-9_ #]+\]')
+        def print(self, msg=""):
+            print(self._RE.sub('', str(msg)))
+    console = _PlainConsole()
 
 ROOT = Path(__file__).resolve().parent.parent
 DECK_DIR = ROOT / "deck"
 VIDEOS_DIR = DECK_DIR / "assets" / "videos"
 AUDIO_DIR = DECK_DIR / "assets" / "audio"
 IMAGES_DIR = DECK_DIR / "assets" / "images"
+ANIMATIONS_DIR = DECK_DIR / "assets" / "animations"
 DOCS_DIR = ROOT / "docs"
 PROMPTS_DIR = ROOT / "prompts"
-
-console = Console()
 
 # Sequenza scene story (1-12) — IDs come da storyboard
 STORY_SCENES = [
@@ -83,25 +91,52 @@ def find_scene_video(scene_id: str) -> Path | None:
     return versions[-1] if versions else None
 
 
+def find_scene_animation_svg(scene_id: str) -> Path | None:
+    """Trova SVG animato per una scena (fallback se manca MP4)."""
+    sid = scene_id.lower()
+    candidates = list(ANIMATIONS_DIR.glob(f"scene_{sid}_*.svg"))
+    return candidates[0] if candidates else None
+
+
 def find_realistic_image(slide_id: str) -> Path | None:
-    """Trova l'illustrazione per una slide realistic."""
+    """Trova l'illustrazione PNG/SVG per una slide realistic (in deck/assets/images)."""
     candidates = list(IMAGES_DIR.glob(f"realistic_{slide_id}_*.svg"))
     candidates += list(IMAGES_DIR.glob(f"realistic_{slide_id}_*.png"))
     return candidates[0] if candidates else None
 
 
-def find_ambient_for_scene(scene_id: str) -> str | None:
-    """Trova il filename dell'audio ambient per una scena."""
+def find_realistic_animation_svg(slide_id: str) -> Path | None:
+    """Trova SVG animato per una slide realistic (fallback se manca PNG/SVG generato)."""
+    candidates = list(ANIMATIONS_DIR.glob(f"slide_{slide_id}_*.svg"))
+    return candidates[0] if candidates else None
+
+
+def inline_svg_content(svg_path: Path) -> str:
+    """Legge un SVG e lo restituisce inline (senza la xml declaration)."""
+    text = svg_path.read_text(encoding="utf-8")
+    if text.startswith("<?xml"):
+        text = text.split("?>", 1)[-1].lstrip()
+    return text
+
+
+def find_ambient_for_scene(scene_id: str) -> tuple[str | None, int | None]:
+    """Trova (filename, volume_db) dell'audio ambient per una scena.
+
+    Legge prompts/audio/audio_search.json (Pixabay/Freesound pipeline).
+    Il campo `scene` può essere "01" o "03A_03B" (multi-scene): match per startswith
+    e per inclusione del scene_id nella lista separata da '_'.
+    """
     try:
-        data = json.loads((PROMPTS_DIR / "elevenlabs" / "ambient_sounds.json").read_text())
-        for entry in data["ambient_sounds"]:
-            if entry["scene"] == scene_id or entry["scene"].startswith(scene_id):
+        data = json.loads((PROMPTS_DIR / "audio" / "audio_search.json").read_text())
+        for entry in data["audio_items"]:
+            scenes_in_entry = entry.get("scene", "").split("_")
+            if scene_id in scenes_in_entry or entry.get("scene", "") == scene_id:
                 fname = entry["filename"]
                 if (AUDIO_DIR / fname).exists():
-                    return fname
+                    return fname, entry.get("volume_db_in_deck")
     except Exception:
         pass
-    return None
+    return None, None
 
 
 def extract_speech_for(marker: str) -> str:
@@ -161,6 +196,7 @@ $realistic_slides
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/synth_audio.js"></script>
   <script src="js/transitions.js"></script>
   <script>
     Reveal.initialize({
@@ -198,28 +234,54 @@ REALISTIC_SLIDE_TEMPLATE = Template("""
 
 
 def build_story_slide_html(scene: dict) -> str:
+    """
+    Ordine di preferenza per il visual:
+      1. MP4 video Veo finale (deck/assets/videos/scene_XX_FINAL.mp4)
+      2. MP4 versione precedente (scene_XX_vN.mp4)
+      3. SVG animato fatto in-code (deck/assets/animations/scene_XX_*.svg)
+      4. Placeholder testuale (ultima spiaggia)
+
+    Per l'audio:
+      - Se esiste l'MP3 in deck/assets/audio/, lo usa
+      - Altrimenti il transitions.js fa fallback su SynthAudio (sintetico in-browser)
+        attivato via data-synth-ambient="scene_id"
+    """
     video_path = find_scene_video(scene["id"])
-    ambient = find_ambient_for_scene(scene["id"])
+    svg_anim_path = find_scene_animation_svg(scene["id"])
+    ambient, ambient_db = find_ambient_for_scene(scene["id"])
     notes = extract_speech_for(f"SCENA {scene['id']}")
-    
+
     if video_path:
         rel_video = video_path.relative_to(DECK_DIR)
         body = f'''
         <video data-autoplay class="full-bleed-video"
                src="{rel_video}"
                preload="auto" playsinline></video>'''
-        if ambient:
-            body += f'\n        <audio data-ambient src="assets/audio/{ambient}" loop></audio>'
+    elif svg_anim_path:
+        # Fallback SVG animato in-code (zero costi, sempre disponibile)
+        svg_inline = inline_svg_content(svg_anim_path)
+        body = f'''
+        <div class="full-bleed-svg" data-anim-scene="{scene["id"]}">
+          {svg_inline}
+        </div>'''
     else:
-        # Placeholder slide
         body = f'''
         <div class="placeholder-slide">
           <div class="placeholder-icon">⚠️</div>
           <h2>Scena {scene["id"]} — {scene["title"]}</h2>
-          <p>Video non ancora generato.<br>
-          File atteso: <code>deck/assets/videos/scene_{scene["id"].lower()}_FINAL.mp4</code></p>
+          <p>Asset visivo non ancora pronto.<br>
+          File atteso: <code>deck/assets/videos/scene_{scene["id"].lower()}_FINAL.mp4</code>
+          oppure <code>deck/assets/animations/scene_{scene["id"].lower()}_*.svg</code></p>
         </div>'''
-    
+
+    # Audio: MP3 prima, altrimenti synth fallback via data-attribute
+    if ambient and (AUDIO_DIR / ambient).exists():
+        db_attr = f' data-volume-db="{ambient_db}"' if ambient_db is not None else ''
+        body += f'\n        <audio data-ambient{db_attr} src="assets/audio/{ambient}" loop></audio>'
+    else:
+        # transitions.js leggera questo attributo e attivera SynthAudio
+        body += f'\n        <!-- audio fallback: SynthAudio per scena {scene["id"]} -->'
+
     return STORY_SLIDE_TEMPLATE.substitute(
         id=scene["id"],
         body=body,
@@ -228,16 +290,26 @@ def build_story_slide_html(scene: dict) -> str:
 
 
 def build_realistic_slide_html(slide: dict) -> str:
+    """
+    Ordine preferenza illustrazione realistic:
+      1. PNG/SVG da Gemini app (deck/assets/images/realistic_NN_*.png)
+      2. SVG animato in-code (deck/assets/animations/slide_NN_*.svg)
+      3. Placeholder testuale
+    """
     image_path = find_realistic_image(slide["id"])
+    svg_anim_path = find_realistic_animation_svg(slide["id"])
     notes = extract_speech_for(f"SLIDE {slide['id']}")
-    
+
     if image_path:
         rel = image_path.relative_to(DECK_DIR)
         image_block = f'<div class="illustration" data-gsap="orange-glow"><img src="{rel}" alt="" /></div>'
+    elif svg_anim_path:
+        svg_inline = inline_svg_content(svg_anim_path)
+        image_block = f'<div class="illustration svg-anim" data-gsap="orange-glow">{svg_inline}</div>'
     else:
         image_block = f'''<div class="illustration placeholder">
           <p>Illustrazione mancante:<br>
-          <code>deck/assets/images/realistic_{slide["id"]}_*.svg</code></p>
+          <code>deck/assets/images/realistic_{slide["id"]}_*.png</code></p>
         </div>'''
     
     return REALISTIC_SLIDE_TEMPLATE.substitute(
@@ -269,12 +341,17 @@ def main():
     out_path.write_text(full_html, encoding="utf-8")
     
     # Report
-    missing_videos = sum(1 for s in STORY_SCENES if not find_scene_video(s["id"]))
-    missing_images = sum(1 for s in REALISTIC_SLIDES if not find_realistic_image(s["id"]))
-    
+    story_with_video = sum(1 for s in STORY_SCENES if find_scene_video(s["id"]))
+    story_with_svg = sum(1 for s in STORY_SCENES if not find_scene_video(s["id"]) and find_scene_animation_svg(s["id"]))
+    story_placeholder = len(STORY_SCENES) - story_with_video - story_with_svg
+
+    realistic_with_image = sum(1 for s in REALISTIC_SLIDES if find_realistic_image(s["id"]))
+    realistic_with_svg = sum(1 for s in REALISTIC_SLIDES if not find_realistic_image(s["id"]) and find_realistic_animation_svg(s["id"]))
+    realistic_placeholder = len(REALISTIC_SLIDES) - realistic_with_image - realistic_with_svg
+
     console.print(f"[green]✓ Deck generato:[/green] {out_path}")
-    console.print(f"  Story slides:     {len(STORY_SCENES)} (mancanti: {missing_videos} video)")
-    console.print(f"  Realistic slides: {len(REALISTIC_SLIDES)} (mancanti: {missing_images} illustrazioni)")
+    console.print(f"  Story slides ({len(STORY_SCENES)}): {story_with_video} MP4 + {story_with_svg} SVG anim + {story_placeholder} placeholder")
+    console.print(f"  Realistic slides ({len(REALISTIC_SLIDES)}): {realistic_with_image} PNG + {realistic_with_svg} SVG anim + {realistic_placeholder} placeholder")
     console.print(f"\n[cyan]Avvia il dev server:[/cyan] npx serve deck/ -l 8000")
     console.print(f"[cyan]Apri:[/cyan] http://localhost:8000")
     console.print(f"[cyan]Speaker view:[/cyan] premi [bold]S[/bold] dopo aver aperto")

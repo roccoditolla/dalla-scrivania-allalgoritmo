@@ -1,216 +1,474 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08A — Compass lights up">
-  <title>Scene 08A — Compass lights up (WOW 3)</title>
-  <desc>SVG animato della bussola arancione che si accende. 8 secondi totali. Hand-drawn ink style.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08A — Compass lights up (WOW 3, sacred moment) — Disney-pro">
+  <title>Scene 08A — La bussola si accende (WOW 3)</title>
+  <desc>Disney-pro 5-phase narrative: (1) silence + hand anticipation breath (0-2s), (2) glass rim ignites inner orange (2-3s), (3) needle pulses with squash 3x (3-4s), (4) cardinal tick-marks emerge staggered N→E→S→W (4-6s), (5) steady radiance + 3 concentric pulse rings + rising magic particles (6-8s). Orange #FF6B1A ONLY internal to the compass glass — never on background. Static camera macro. No text glyphs anywhere.</desc>
 
   <defs>
-    <!-- Sand background gradient -->
-    <radialGradient id="sandBg" cx="50%" cy="55%" r="70%">
+    <!-- Sand background — desaturated, blurred out of focus -->
+    <radialGradient id="s08_sandBg" cx="50%" cy="55%" r="72%">
       <stop offset="0%" stop-color="#F2E8D6"/>
       <stop offset="55%" stop-color="#E8DDC8"/>
       <stop offset="100%" stop-color="#C9BC9F"/>
     </radialGradient>
+    <!-- Cool ambient shadow gradient -->
+    <radialGradient id="s08_sandShadow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2A2420" stop-opacity="0.45"/>
+    </radialGradient>
 
-    <!-- Hand skin gradient — weathered, warm desaturated -->
-    <linearGradient id="handGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#C09478"/>
-      <stop offset="100%" stop-color="#8B6647"/>
+    <!-- Weathered hand skin -->
+    <linearGradient id="s08_hand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C49880"/>
+      <stop offset="100%" stop-color="#876142"/>
+    </linearGradient>
+    <linearGradient id="s08_handShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#604030" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Compass body metal -->
-    <radialGradient id="metalBody" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#3A322B"/>
+    <!-- Compass metal body -->
+    <radialGradient id="s08_metalBody" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#3F362E"/>
       <stop offset="70%" stop-color="#2A2420"/>
-      <stop offset="100%" stop-color="#1A1614"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </radialGradient>
+    <linearGradient id="s08_metalEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C4F44"/>
+      <stop offset="55%" stop-color="#3A322B"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </linearGradient>
+
+    <!-- Glass: off state -->
+    <radialGradient id="s08_glassOff" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#2C2622" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#1A1614" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0E0B09" stop-opacity="0.95"/>
     </radialGradient>
 
-    <!-- Hexagonal glass (off → on) -->
-    <radialGradient id="glassOff" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#2C2622" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#1A1614" stop-opacity="0.8"/>
+    <!-- Glass: ON state, internal radiant core (INTERNAL ORANGE ONLY) -->
+    <radialGradient id="s08_orangeCore" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#FFCB8A"/>
+      <stop offset="32%" stop-color="#FF9D52"/>
+      <stop offset="68%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#B33B00" stop-opacity="0.95"/>
     </radialGradient>
 
-    <!-- ORANGE INNER GLOW — il momento WOW -->
-    <radialGradient id="orangeCore" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFB066"/>
-      <stop offset="40%" stop-color="#FF6B1A"/>
-      <stop offset="100%" stop-color="#C24500" stop-opacity="0.9"/>
-    </radialGradient>
+    <!-- Subtle inner reflection on glass -->
+    <linearGradient id="s08_glassRefl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
 
-    <radialGradient id="orangeSpill" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.8"/>
-      <stop offset="55%" stop-color="#FF6B1A" stop-opacity="0.25"/>
+    <!-- Inner warm spill (stays INSIDE glass polygon) -->
+    <radialGradient id="s08_innerSpill" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFD89C" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#FF8A3A" stop-opacity="0.42"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Sand grain texture (subtle noise) -->
-    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
-      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.06 0"/>
+    <!-- Sand grain noise -->
+    <filter id="s08_grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0.16  0 0 0 0 0.13  0 0 0 0 0.09  0 0 0 0.07 0"/>
       <feComposite in2="SourceGraphic" operator="in"/>
     </filter>
 
-    <!-- Hexagonal glass shape -->
-    <polygon id="hexagon"
-      points="600,0 300,520 -300,520 -600,0 -300,-520 300,-520"
-      transform="scale(0.001)"/>
+    <!-- Bloom filters (used INSIDE the glass clip) -->
+    <filter id="s08_bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="s08_bloomStrong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="32"/>
+      <feComponentTransfer><feFuncA type="linear" slope="1.5"/></feComponentTransfer>
+    </filter>
 
-    <!-- Hand shape (semplificato, painterly) — solo dita ferme sul vetro -->
-    <path id="handShape" d="
-      M -640,-180
-      C -680,-90 -700,40 -680,140
-      C -660,260 -560,360 -380,360
-      C -240,360 -100,300 -20,200
-      L 60,80
-      C 80,40 70,-40 40,-80
-      C 10,-120 -40,-130 -100,-110
-      L -300,-50
-      C -380,-30 -480,-90 -540,-150
-      C -580,-190 -620,-200 -640,-180 Z
-    "/>
+    <!-- Painterly noise (cream/beige preserve) -->
+    <filter id="s08_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.85  0 0 0 0 0.78  0 0 0 0 0.65  0 0 0 0.04 0"/>
+    </filter>
 
-    <!-- Compass needle -->
-    <path id="needle" d="
+    <!-- ============ HEXAGONAL GLASS POLYGON (clip path) ============
+         Center: (960, 540). Points: rotated hex, height 440 -->
+    <clipPath id="s08_glassClip">
+      <polygon points="960,330 1190,455 1190,705 960,830 730,705 730,455"/>
+    </clipPath>
+
+    <!-- Needle path -->
+    <path id="s08_needle" d="
       M 0,-180
-      L 30,0
-      L 0,18
-      L -30,0 Z
+      L 28,0
+      L 0,16
+      L -28,0 Z
       M 0,180
-      L 30,0
-      L 0,-18
-      L -30,0 Z
-    "/>
+      L 28,0
+      L 0,-16
+      L -28,0 Z"/>
 
-    <!-- Filter: soft warm bloom for glow -->
-    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <filter id="bloomStrong" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="40"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="1.5"/>
-      </feComponentTransfer>
-    </filter>
+    <!-- Pulse ring shape - reused -->
+    <symbol id="s08_ring" overflow="visible">
+      <polygon points="0,-145 125,-72 125,72 0,145 -125,72 -125,-72"
+               fill="none" stroke="#FF6B1A" stroke-width="2"/>
+    </symbol>
   </defs>
 
-  <!-- Background: sand, blurred out of focus -->
-  <rect width="1920" height="1080" fill="url(#sandBg)"/>
-  <rect width="1920" height="1080" fill="url(#sandBg)" filter="url(#grain)" opacity="0.55"/>
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect width="1920" height="1080" fill="url(#s08_sandBg)"/>
+  <rect width="1920" height="1080" fill="url(#s08_sandBg)" filter="url(#s08_grain)" opacity="0.55"/>
+  <!-- Vignette-like sand shadow -->
+  <rect width="1920" height="1080" fill="url(#s08_sandShadow)"/>
+  <!-- Soft haze top -->
+  <rect width="1920" height="380" fill="#F5EFE6" opacity="0.32"/>
 
-  <!-- Soft haze overlay top -->
-  <rect width="1920" height="380" fill="#F5EFE6" opacity="0.35"/>
+  <!-- Subtle ground texture lines (sand grain ridges) -->
+  <g stroke="#A89478" stroke-width="0.6" opacity="0.18">
+    <path d="M 100,820 Q 540,800 1000,815 T 1820,820" fill="none"/>
+    <path d="M 80,880 Q 560,860 1040,875 T 1840,880" fill="none"/>
+    <path d="M 60,940 Q 580,920 1060,935 T 1860,940" fill="none"/>
+  </g>
 
-  <!-- ============== HAND + COMPASS GROUP (center) ============== -->
-  <g transform="translate(960 540)">
+  <!-- ===================== HAND + COMPASS GROUP =====================
+       Hand anticipation: starts -3px (lifted), descends to +3px (settled)
+       in 0.8s with slow-out, then steady. Tiny breathing motion thereafter. -->
+  <g class="s08_handGroup" transform="translate(120 280)">
+    <animateTransform attributeName="transform" type="translate"
+      values="120 277; 120 274; 120 280; 120 281; 120 280"
+      keyTimes="0;0.05;0.1;0.18;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.25 0.46 0.45 0.94;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
-    <!-- Hand (weathered, in shadow) -->
-    <g transform="translate(120 280) scale(1.05)" opacity="0.95">
-      <use href="#handShape" fill="url(#handGrad)"/>
-      <!-- Ink line work (hand wrinkles) -->
+    <!-- Hand shadow underneath (cool, on sand — NOT orange) -->
+    <g transform="translate(960 540) scale(1.08)" opacity="0.5">
+      <ellipse cx="-80" cy="340" rx="320" ry="38" fill="#000" opacity="0.32"/>
+    </g>
+
+    <!-- Hand silhouette -->
+    <g transform="translate(960 540) scale(1.05)" opacity="0.96">
+      <path d="
+        M -640,-180
+        C -680,-90 -700,40 -680,140
+        C -660,260 -560,360 -380,360
+        C -240,360 -100,300 -20,200
+        L 60,80
+        C 80,40 70,-40 40,-80
+        C 10,-120 -40,-130 -100,-110
+        L -300,-50
+        C -380,-30 -480,-90 -540,-150
+        C -580,-190 -620,-200 -640,-180 Z
+      " fill="url(#s08_hand)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- Top-edge shadow rim -->
       <path d="M -640,-180 C -680,-90 -700,40 -680,140 C -660,260 -560,360 -380,360"
-            fill="none" stroke="#1A1614" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+            fill="none" stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+      <!-- Wrinkle lines (painterly hand-drawn quality) -->
       <path d="M -500,-30 C -460,10 -380,30 -300,20" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.4"/>
       <path d="M -420,80 C -360,110 -280,120 -200,100" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.4"/>
       <path d="M -340,180 C -280,200 -200,200 -120,180" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.4"/>
+      <path d="M -560,-110 C -520,-80 -460,-70 -420,-90" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.3"/>
+      <!-- Knuckles -->
+      <ellipse cx="-360" cy="200" rx="38" ry="22" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.3"/>
+      <ellipse cx="-240" cy="220" rx="38" ry="22" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- ===================== COMPASS BODY (static center) ===================== -->
+
+  <!-- Outer hexagon — metal frame -->
+  <polygon
+    points="960,290 1220,440 1220,740 960,890 700,740 700,440"
+    fill="url(#s08_metalBody)" stroke="#0A0806" stroke-width="2"/>
+  <!-- Beveled rim highlight -->
+  <polygon
+    points="960,290 1220,440 1220,740 960,890 700,740 700,440"
+    fill="none" stroke="url(#s08_metalEdge)" stroke-width="6" stroke-linejoin="round" opacity="0.85"/>
+  <!-- Ink outline -->
+  <polygon
+    points="960,290 1220,440 1220,740 960,890 700,740 700,440"
+    fill="none" stroke="#1A1614" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <!-- Small decorative metal tabs at vertices -->
+  <g fill="#5C4F44" stroke="#1A1614" stroke-width="1.5">
+    <circle cx="960" cy="290" r="9"/>
+    <circle cx="1220" cy="440" r="9"/>
+    <circle cx="1220" cy="740" r="9"/>
+    <circle cx="960" cy="890" r="9"/>
+    <circle cx="700" cy="740" r="9"/>
+    <circle cx="700" cy="440" r="9"/>
+  </g>
+
+  <!-- ===================== GLASS LAYERS — CLIPPED INSIDE HEX =====================
+       All orange light is rendered INSIDE this clip path. Outside the glass,
+       only metal/hand/sand exist. -->
+  <g clip-path="url(#s08_glassClip)">
+    <!-- Phase 1 (0-2s): dark glass -->
+    <rect x="700" y="320" width="540" height="580" fill="url(#s08_glassOff)">
+      <animate attributeName="opacity"
+        values="1;1;0.95;0.55;0.2;0.06;0;0"
+        keyTimes="0;0.18;0.25;0.32;0.4;0.5;0.6;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+
+    <!-- Phase 2 (2-3s): inner orange core IGNITES from center -->
+    <rect x="700" y="320" width="540" height="580" fill="url(#s08_orangeCore)" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0.05;0.18;0.45;0.78;0.95;1"
+        keyTimes="0;0.2;0.25;0.32;0.42;0.55;0.75;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+
+    <!-- Inner warm spill that BREATHES once full -->
+    <circle cx="960" cy="540" r="220" fill="url(#s08_innerSpill)" opacity="0" filter="url(#s08_bloom)">
+      <animate attributeName="opacity"
+        values="0;0;0.18;0.45;0.7;0.65;0.78;0.7;0.75"
+        keyTimes="0;0.2;0.32;0.45;0.6;0.72;0.82;0.92;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="r"
+        values="180;180;200;220;230;225;235;228;232"
+        keyTimes="0;0.2;0.32;0.45;0.6;0.72;0.82;0.92;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+
+    <!-- Glass reflection (subtle, always present) -->
+    <polygon points="730,460 855,395 855,510 730,575" fill="url(#s08_glassRefl)"/>
+
+    <!-- ===================== NEEDLE (phase 3) =====================
+         Squash & stretch pulse: 1.0 → 1.06 → 1.0 → 1.04 → 1.0 → 1.02 → 1.0 -->
+    <g transform="translate(960 540)">
+      <!-- Dark needle fades out as orange one appears -->
+      <use href="#s08_needle" fill="#3A322B" opacity="1">
+        <animate attributeName="opacity"
+          values="1;1;0.85;0.4;0.1;0;0"
+          keyTimes="0;0.3;0.36;0.42;0.5;0.6;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+      <!-- Orange needle with squash pulse -->
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="1 1;1 1;1.06 0.94;1 1;1.04 0.96;1 1;1.02 0.98;1 1"
+          keyTimes="0;0.35;0.4;0.45;0.5;0.55;0.62;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1"/>
+        <use href="#s08_needle" fill="#FF6B1A" opacity="0" filter="url(#s08_bloom)">
+          <animate attributeName="opacity"
+            values="0;0;0.35;0.78;1;1;1"
+            keyTimes="0;0.3;0.38;0.46;0.55;0.75;1"
+            dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </use>
+        <!-- Needle center pin -->
+        <circle r="9" fill="#3A322B" stroke="#FF6B1A" stroke-width="2" opacity="0">
+          <animate attributeName="opacity"
+            values="0;0;0.4;0.9;1;1"
+            keyTimes="0;0.35;0.45;0.55;0.65;1"
+            dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </circle>
+      </g>
     </g>
 
-    <!-- Orange light spill on hand+sand (animated opacity) -->
-    <g class="orange-spill">
-      <circle cx="0" cy="0" r="520" fill="url(#orangeSpill)" filter="url(#bloomStrong)" opacity="0">
-        <animate attributeName="opacity" values="0;0;0.35;0.7;0.9;0.9" keyTimes="0;0.25;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
-        <animate attributeName="r" values="380;420;500;560;620;620" keyTimes="0;0.25;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
+    <!-- ===================== CARDINAL TICK MARKS (phase 4, NO TEXT) =====================
+         Stagger N→E→S→W with 0.4s offset, easing morbido.
+         Replaced text glyphs with geometric marks (chevrons/triangles/dots). -->
+    <g transform="translate(960 540)" filter="url(#s08_bloom)">
+      <!-- N — upward triangle -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.5;0.55;0.58;0.62;0.68;0.78;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="0,-258 -16,-228 16,-228" fill="#FF6B1A"/>
+        <polygon points="0,-220 -8,-205 8,-205" fill="#FFCB8A"/>
+      </g>
+      <!-- E — right chevron -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.55;0.60;0.63;0.67;0.73;0.83;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="228,0 198,-16 198,16" fill="#FF6B1A"/>
+        <polygon points="200,0 186,-8 186,8" fill="#FFCB8A"/>
+      </g>
+      <!-- S — downward triangle -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.60;0.65;0.68;0.72;0.78;0.88;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="0,258 -16,228 16,228" fill="#FF6B1A"/>
+        <polygon points="0,220 -8,205 8,205" fill="#FFCB8A"/>
+      </g>
+      <!-- W — left chevron -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.65;0.70;0.73;0.77;0.83;0.93;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="-228,0 -198,-16 -198,16" fill="#FF6B1A"/>
+        <polygon points="-200,0 -186,-8 -186,8" fill="#FFCB8A"/>
+      </g>
+
+      <!-- Smaller intercardinal tick marks (8 dots — subtle dial detail) -->
+      <g fill="#FF6B1A" opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.3;0.6;0.8"
+          keyTimes="0;0.7;0.78;0.82;0.88;0.95;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <circle cx="160" cy="-160" r="3.5"/>
+        <circle cx="-160" cy="-160" r="3.5"/>
+        <circle cx="160" cy="160" r="3.5"/>
+        <circle cx="-160" cy="160" r="3.5"/>
+      </g>
+    </g>
+
+    <!-- ===================== PHASE 5: PULSE RINGS (concentric, propagate outward, stay inside glass) ===================== -->
+    <g transform="translate(960 540)">
+      <!-- Ring 1 -->
+      <use href="#s08_ring" opacity="0">
+        <animateTransform attributeName="transform" type="scale"
+          values="0.6;0.6;0.6;1.0;1.4;1.7"
+          keyTimes="0;0.72;0.78;0.85;0.93;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity"
+          values="0;0;0;0.8;0.4;0"
+          keyTimes="0;0.72;0.78;0.85;0.93;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+      <!-- Ring 2 (offset by 0.06) -->
+      <use href="#s08_ring" opacity="0">
+        <animateTransform attributeName="transform" type="scale"
+          values="0.6;0.6;0.6;0.6;1.0;1.4;1.7"
+          keyTimes="0;0.78;0.82;0.84;0.91;0.99;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.7;0.3;0"
+          keyTimes="0;0.78;0.82;0.84;0.91;0.99;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+      <!-- Ring 3 (latest, smallest at end) -->
+      <use href="#s08_ring" opacity="0">
+        <animateTransform attributeName="transform" type="scale"
+          values="0.6;0.6;0.6;0.6;0.6;1.0;1.3"
+          keyTimes="0;0.84;0.86;0.88;0.9;0.97;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity"
+          values="0;0;0;0;0;0.6;0.25"
+          keyTimes="0;0.84;0.86;0.88;0.9;0.97;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+    </g>
+
+    <!-- ===================== MAGIC PARTICLES — rise slowly from compass ===================== -->
+    <g fill="#FFD89C" filter="url(#s08_bloom)">
+      <!-- Particle A -->
+      <circle cx="940" cy="610" r="3" opacity="0">
+        <animate attributeName="cy" values="610;610;540;460;380" keyTimes="0;0.4;0.6;0.8;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity" values="0;0;0.95;0.6;0" keyTimes="0;0.4;0.55;0.8;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="cx" values="940;940;948;938;950" keyTimes="0;0.4;0.65;0.85;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </circle>
+      <!-- Particle B -->
+      <circle cx="985" cy="600" r="2.2" opacity="0">
+        <animate attributeName="cy" values="600;600;600;530;420;360" keyTimes="0;0.5;0.6;0.75;0.95;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity" values="0;0;0;0.85;0.45;0" keyTimes="0;0.5;0.6;0.75;0.92;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="cx" values="985;985;985;992;980;988" keyTimes="0;0.5;0.6;0.75;0.92;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </circle>
+      <!-- Particle C -->
+      <circle cx="912" cy="620" r="2.8" opacity="0">
+        <animate attributeName="cy" values="620;620;620;620;540;440" keyTimes="0;0.6;0.7;0.75;0.9;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity" values="0;0;0;0;0.85;0.4" keyTimes="0;0.6;0.7;0.75;0.9;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="cx" values="912;912;912;912;918;908" keyTimes="0;0.6;0.7;0.75;0.9;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
       </circle>
     </g>
 
-    <!-- Compass body (hexagonal frame) -->
-    <g transform="translate(0 0) scale(420)">
-      <!-- Outer rim metal -->
-      <use href="#hexagon" fill="url(#metalBody)"/>
-    </g>
-
-    <!-- Compass body OUTLINE (ink) -->
-    <polygon
-      points="960,420 1240,540 1240,840 960,960 680,840 680,540"
-      transform="translate(-960 -540)"
-      fill="none" stroke="#1A1614" stroke-width="5" stroke-linejoin="round"/>
-
-    <!-- ============ Hexagonal GLASS face (the ones that lights up) ============ -->
-    <g class="compass-glass">
-      <!-- Glass: off state (dark) -->
-      <polygon
-        points="960,470 1190,570 1190,810 960,910 730,810 730,570"
-        transform="translate(-960 -540)"
-        fill="url(#glassOff)" stroke="#0E0B09" stroke-width="2">
-        <animate attributeName="fill-opacity" values="1;1;0.6;0.2;0;0" keyTimes="0;0.2;0.4;0.55;0.7;1" dur="8s" fill="freeze"/>
-      </polygon>
-
-      <!-- Glass: ON state — ORANGE CORE (revealed by animation) -->
-      <polygon
-        points="960,470 1190,570 1190,810 960,910 730,810 730,570"
-        transform="translate(-960 -540)"
-        fill="url(#orangeCore)" opacity="0">
-        <animate attributeName="opacity" values="0;0;0.15;0.4;0.7;0.95;1" keyTimes="0;0.15;0.3;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
-      </polygon>
-
-      <!-- Inner subtle reflection on glass -->
-      <polygon
-        points="780,560 880,510 880,610 780,660"
-        transform="translate(-960 -540)"
-        fill="#FFFFFF" opacity="0.08"/>
-    </g>
-
-    <!-- ============ Rim glow (first to light up) ============ -->
-    <polygon
-      points="960,470 1190,570 1190,810 960,910 730,810 730,570"
-      transform="translate(-960 -540)"
-      fill="none" stroke="#FF6B1A" stroke-width="0" stroke-linejoin="round"
-      filter="url(#bloom)">
-      <animate attributeName="stroke-width" values="0;0;4;6;8;6" keyTimes="0;0.1;0.2;0.35;0.5;1" dur="8s" fill="freeze"/>
-      <animate attributeName="opacity" values="0;0;0.5;0.85;1;0.85" keyTimes="0;0.1;0.2;0.35;0.5;1" dur="8s" fill="freeze"/>
-    </polygon>
-
-    <!-- ============ Compass NEEDLE (lights up second, pulses) ============ -->
-    <g class="compass-needle">
-      <use href="#needle" fill="#3A322B" opacity="1">
-        <animate attributeName="opacity" values="1;1;0.7;0.2;0;0" keyTimes="0;0.3;0.4;0.5;0.6;1" dur="8s" fill="freeze"/>
-      </use>
-      <use href="#needle" fill="#FF6B1A" opacity="0" filter="url(#bloom)">
-        <animate attributeName="opacity" values="0;0;0.4;0.8;1;1" keyTimes="0;0.3;0.4;0.5;0.65;1" dur="8s" fill="freeze"/>
-      </use>
-    </g>
-
-    <!-- ============ Numerali sul dial (light up one by one, last phase) ============ -->
-    <g class="dial-numerals" font-family="serif" font-size="38" font-weight="700" text-anchor="middle" fill="#FF6B1A" filter="url(#bloom)">
-      <text x="0" y="-260" opacity="0">N
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.55;0.6;0.62;0.68;0.78" dur="8s" fill="freeze"/>
-      </text>
-      <text x="225" y="0" opacity="0" dominant-baseline="middle">E
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.6;0.65;0.67;0.73;0.83" dur="8s" fill="freeze"/>
-      </text>
-      <text x="0" y="285" opacity="0">S
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.65;0.7;0.72;0.78;0.88" dur="8s" fill="freeze"/>
-      </text>
-      <text x="-225" y="0" opacity="0" dominant-baseline="middle">W
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.7;0.75;0.77;0.83;0.93" dur="8s" fill="freeze"/>
-      </text>
-    </g>
-
-    <!-- Final steady internal radiance pulse -->
-    <circle cx="0" cy="0" r="120" fill="#FFB066" opacity="0" filter="url(#bloomStrong)">
-      <animate attributeName="opacity" values="0;0;0;0;0.3;0.55;0.45;0.55" keyTimes="0;0.6;0.7;0.78;0.85;0.9;0.95;1" dur="8s" fill="freeze"/>
-      <animate attributeName="r" values="60;60;60;100;150;180;165;180" keyTimes="0;0.6;0.7;0.78;0.85;0.9;0.95;1" dur="8s" fill="freeze"/>
+    <!-- Final steady radiance — visible at end -->
+    <circle cx="960" cy="540" r="60" fill="#FFE0B0" opacity="0" filter="url(#s08_bloomStrong)">
+      <animate attributeName="opacity"
+        values="0;0;0;0.18;0.4;0.55;0.5;0.55"
+        keyTimes="0;0.5;0.65;0.75;0.85;0.92;0.97;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="r"
+        values="40;40;60;90;130;160;145;160"
+        keyTimes="0;0.5;0.65;0.75;0.85;0.92;0.97;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>
   </g>
 
-  <!-- Vignette dark edges -->
-  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
-    <stop offset="60%" stop-color="#000" stop-opacity="0"/>
-    <stop offset="100%" stop-color="#000" stop-opacity="0.35"/>
+  <!-- ===================== RIM GLOW (outline of hex, animated stroke) =====================
+       This is the only orange outside the glass interior, but it sits EXACTLY on
+       the glass boundary (rim = part of compass body). It does NOT spill to sand. -->
+  <polygon
+    points="960,330 1190,455 1190,705 960,830 730,705 730,455"
+    fill="none" stroke="#FF6B1A" stroke-width="0" stroke-linejoin="round">
+    <animate attributeName="stroke-width"
+      values="0;0;2;4.5;5.5;5;5.5"
+      keyTimes="0;0.2;0.28;0.4;0.55;0.85;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    <animate attributeName="opacity"
+      values="0;0;0.5;0.9;1;0.92;0.96"
+      keyTimes="0;0.2;0.28;0.4;0.55;0.85;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </polygon>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s08_painterly)" pointer-events="none"/>
+
+  <!-- Final cool vignette -->
+  <radialGradient id="s08_vig" cx="50%" cy="50%" r="78%">
+    <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
   </radialGradient>
-  <rect width="1920" height="1080" fill="url(#vignette)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="url(#s08_vig)" pointer-events="none"/>
 </svg>

@@ -562,156 +562,258 @@ E naviga ancora oggi."
       <section data-scene-id="03A" class="story-slide" data-background-color="#F5EFE6">
         
         <div class="full-bleed-svg" data-anim-scene="03A">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 03A — Storm at sea (WOW 1)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 03A — Storm at sea (WOW 1) — Disney-pro">
   <title>Scene 03A — Tempesta drammatica (WOW 1)</title>
-  <desc>Onda enorme alle spalle della nave, lampi brevi via SMIL, nave inclinata 60deg, pioggia diagonale, mare in furia. Camera bassa slow dolly indietro.</desc>
+  <desc>Disney-pro: 3 parallax layers (sky back, rain mid, ship front). Anticipation darkening before each lightning flash, multi-stratified bolts with bloom, follow-through on sails and rigging. 8s loop, cinematic easing, no text.</desc>
 
   <defs>
-    <!-- Storm sky base -->
-    <linearGradient id="stormSky03a" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#080B12"/>
-      <stop offset="50%" stop-color="#0F1A26"/>
-      <stop offset="100%" stop-color="#1A2A38"/>
+    <!-- =============== SKY GRADIENTS (3 parallax depths) =============== -->
+    <linearGradient id="s03_skyDeep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#060912"/>
+      <stop offset="55%" stop-color="#0E1A28"/>
+      <stop offset="100%" stop-color="#1B2C3E"/>
     </linearGradient>
-    <!-- Roiling cloud bank -->
-    <linearGradient id="clouds03a" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0B131D"/>
-      <stop offset="100%" stop-color="#1A2A38" stop-opacity="0"/>
+    <linearGradient id="s03_cloudFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#1B2C3E" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="s03_cloudMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B131F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1B2C3E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="s03_cloudNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#04060C" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0B131F" stop-opacity="0"/>
+    </linearGradient>
+
     <!-- Lightning flash overlay -->
-    <radialGradient id="flashRadial03a" cx="50%" cy="30%" r="80%">
-      <stop offset="0%" stop-color="#E0E8F2" stop-opacity="1"/>
-      <stop offset="35%" stop-color="#8B9CB0" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="#0B131D" stop-opacity="0"/>
+    <radialGradient id="s03_flashA" cx="22%" cy="28%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#C8D8E8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0B131F" stop-opacity="0"/>
     </radialGradient>
-    <!-- Wave water (deep furious) -->
-    <linearGradient id="waterFury03a" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A2A38"/>
-      <stop offset="50%" stop-color="#0E1A26"/>
-      <stop offset="100%" stop-color="#050810"/>
+    <radialGradient id="s03_flashB" cx="78%" cy="22%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#B8C8DC" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0B131F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="s03_flashC" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#D8E4F0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0B131F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Water -->
+    <linearGradient id="s03_waterDeep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B2C3E"/>
+      <stop offset="55%" stop-color="#0E1A28"/>
+      <stop offset="100%" stop-color="#04070D"/>
     </linearGradient>
-    <linearGradient id="waveCrest03a" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#E0EAF2"/>
+    <linearGradient id="s03_bigWave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3D4F62"/>
+      <stop offset="40%" stop-color="#1B2C3E"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="s03_waveCrest" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EAF1F8"/>
       <stop offset="55%" stop-color="#7B92AE"/>
-      <stop offset="100%" stop-color="#2A3D52" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2C4357" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="bigWave03a" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3A4E62"/>
-      <stop offset="40%" stop-color="#1A2A38"/>
-      <stop offset="100%" stop-color="#080F18"/>
+
+    <!-- Ship -->
+    <linearGradient id="s03_hull" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F1611"/>
+      <stop offset="100%" stop-color="#070504"/>
     </linearGradient>
-    <linearGradient id="hull03a" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A1410"/>
-      <stop offset="100%" stop-color="#080603"/>
-    </linearGradient>
-    <linearGradient id="sailTorn03a" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="s03_sail" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#D8C9A8"/>
-      <stop offset="100%" stop-color="#6E5230"/>
+      <stop offset="100%" stop-color="#5E4528"/>
     </linearGradient>
-    <filter id="painterly03a">
-      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="42"/>
-      <feDisplacementMap in="SourceGraphic" scale="3"/>
+
+    <!-- Painterly noise -->
+    <filter id="s03_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="42"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.4"/>
     </filter>
-    <filter id="bloom03a" x="-50%" y="-50%" width="200%" height="200%">
+    <filter id="s03_bloom" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="6"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="bloomBig03a" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="22"/>
+    <filter id="s03_bloomSoft" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="20"/>
     </filter>
-    <radialGradient id="vig03a" cx="50%" cy="50%" r="78%">
+
+    <radialGradient id="s03_vig" cx="50%" cy="50%" r="78%">
       <stop offset="45%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
     </radialGradient>
   </defs>
 
-  <!-- ===================== SKY ===================== -->
-  <rect width="1920" height="820" fill="url(#stormSky03a)"/>
+  <!-- ================= BASE SKY (back layer, anchored) ================= -->
+  <rect width="1920" height="1080" fill="url(#s03_skyDeep)"/>
 
-  <!-- Layered storm clouds, slow drift -->
+  <!-- ANTICIPATION pre-flash darkening: sky imperceptibly drops 0.08 opacity
+       0.07s before each flash. Implemented as a thin black overlay timed
+       precisely with the lightning beats. -->
+  <rect width="1920" height="1080" fill="#000000" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0.14;0;0;0.12;0;0;0.16;0;0;0.10;0"
+      keyTimes="0;0.075;0.082;0.10;0.345;0.352;0.385;0.605;0.612;0.66;0.835;0.842;0.875"
+      dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ================= PARALLAX BACK: distant cloud ridge (slow) ================= -->
   <g opacity="0.95">
     <animateTransform attributeName="transform" type="translate"
-      values="0 0; -40 0; -80 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
-    <path d="M -100,260 Q 240,160 540,240 Q 820,310 1100,210 Q 1380,140 1700,230 Q 1900,280 2020,200 L 2020,0 L -100,0 Z" fill="#070B12"/>
-    <path d="M -100,440 Q 300,360 660,420 Q 980,490 1320,400 Q 1620,330 2020,420 L 2020,180 L -100,180 Z" fill="url(#clouds03a)" opacity="0.85"/>
-    <path d="M -100,580 Q 320,510 720,560 Q 1100,620 1500,540 Q 1820,490 2020,560 L 2020,360 L -100,360 Z" fill="#0B131D" opacity="0.65"/>
+      values="0 0; -22 0; -44 0; -22 0; 0 0"
+      keyTimes="0;0.25;0.5;0.75;1"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <path d="M -120,230 Q 220,150 540,225 Q 820,295 1110,195 Q 1380,130 1700,220 Q 1900,265 2040,195 L 2040,0 L -120,0 Z"
+          fill="url(#s03_cloudFar)"/>
+    <path d="M -120,310 Q 320,250 700,310 Q 1040,360 1380,290 Q 1660,240 2040,300 L 2040,140 L -120,140 Z"
+          fill="#0A1320" opacity="0.55"/>
   </g>
 
-  <!-- ===================== LIGHTNING FLASH FULL-SCREEN OVERLAY ===================== -->
-  <!-- Multiple brief flashes: 0.05s each, at varied times -->
-  <rect width="1920" height="1080" fill="url(#flashRadial03a)" opacity="0">
-    <animate attributeName="opacity"
-      values="0;0;0.95;0.4;0;0;0.85;0.25;0;0;0.6;0;0;0.95;0.3;0"
-      keyTimes="0;0.08;0.085;0.095;0.12;0.36;0.365;0.378;0.42;0.62;0.625;0.66;0.85;0.855;0.87;1"
-      dur="8s" fill="freeze"/>
-  </rect>
-  <!-- Pure white flash (very brief) -->
+  <!-- ================= PARALLAX MID: roiling cloud bank (medium speed) ================= -->
+  <g opacity="0.92">
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; -55 2; -110 4; -55 2; 0 0"
+      keyTimes="0;0.25;0.5;0.75;1"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <path d="M -150,450 Q 260,370 660,430 Q 990,500 1330,410 Q 1640,340 2080,430 L 2080,200 L -150,200 Z"
+          fill="url(#s03_cloudMid)"/>
+    <path d="M -150,560 Q 320,490 740,545 Q 1110,610 1500,535 Q 1820,485 2080,555 L 2080,360 L -150,360 Z"
+          fill="#0C141F" opacity="0.78"/>
+  </g>
+
+  <!-- ================= PARALLAX NEAR: very dark cloud belly (fastest) ================= -->
+  <g opacity="0.85">
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; -90 6; -180 12; -90 6; 0 0"
+      keyTimes="0;0.25;0.5;0.75;1"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <path d="M -200,640 Q 360,540 820,610 Q 1280,690 1700,590 Q 1920,540 2120,605 L 2120,480 L -200,480 Z"
+          fill="url(#s03_cloudNear)"/>
+  </g>
+
+  <!-- ================= LIGHTNING — STRATIFIED ================= -->
+  <!-- Layer 1: full-screen white pop (1 frame ~0.005s of 8s = 0.0006 — but visible)
+       Layer 2: cool blue rim glow (~0.04s)
+       Layer 3: fork lightning visible (~0.15s)
+       Layer 4: sky recharges to slightly brighter than base for 0.3s after
+  -->
+  <!-- pure white pop -->
   <rect width="1920" height="1080" fill="#FFFFFF" opacity="0">
     <animate attributeName="opacity"
-      values="0;0;0.7;0;0;0.5;0;0;0.7;0"
-      keyTimes="0;0.085;0.09;0.1;0.365;0.37;0.385;0.855;0.86;0.875"
-      dur="8s" fill="freeze"/>
+      values="0;0;0.85;0;0;0.7;0;0;0.95;0"
+      keyTimes="0;0.099;0.103;0.114;0.394;0.398;0.41;0.881;0.885;0.9"
+      dur="8s" repeatCount="indefinite"/>
+  </rect>
+  <!-- cool blue rim glow A (left) -->
+  <rect width="1920" height="1080" fill="url(#s03_flashA)" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0.92;0.55;0.18;0"
+      keyTimes="0;0.100;0.106;0.118;0.135;0.16"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.25 0.1 0.25 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </rect>
+  <!-- cool blue rim glow B (right) -->
+  <rect width="1920" height="1080" fill="url(#s03_flashB)" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0.85;0.5;0.16;0"
+      keyTimes="0;0.395;0.402;0.418;0.44;0.47"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.25 0.1 0.25 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </rect>
+  <!-- cool blue rim glow C (center — peak WOW) -->
+  <rect width="1920" height="1080" fill="url(#s03_flashC)" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;1;0.7;0.3;0.08;0"
+      keyTimes="0;0.879;0.886;0.905;0.93;0.96;0.99"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.25 0.1 0.25 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
   </rect>
 
-  <!-- ===================== LIGHTNING BOLTS ===================== -->
-  <g stroke="#F0F4FA" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round" filter="url(#bloom03a)">
-    <!-- Bolt A (left, time ~0.08-0.10) -->
-    <path d="M 360,0 L 340,150 L 410,200 L 360,340 L 430,400 L 380,560" opacity="0">
+  <!-- Lightning bolts — fork shapes with bloom -->
+  <g stroke="#F0F5FA" stroke-width="3.2" fill="none" stroke-linejoin="round" stroke-linecap="round" filter="url(#s03_bloom)">
+    <!-- Bolt A (left, ~0.10) -->
+    <path d="M 360,0 L 332,160 L 408,212 L 358,348 L 432,408 L 380,572" opacity="0">
       <animate attributeName="opacity"
-        values="0;0;1;0.6;0;0"
-        keyTimes="0;0.08;0.085;0.092;0.1;1" dur="8s" fill="freeze"/>
+        values="0;0;1;0.55;0.12;0"
+        keyTimes="0;0.099;0.106;0.122;0.14;0.16"
+        dur="8s" repeatCount="indefinite"/>
     </path>
-    <!-- Branches on bolt A -->
-    <path d="M 360,340 L 290,420 M 430,400 L 500,460" opacity="0">
-      <animate attributeName="opacity"
-        values="0;0;1;0.4;0;0"
-        keyTimes="0;0.08;0.085;0.092;0.1;1" dur="8s" fill="freeze"/>
-    </path>
-
-    <!-- Bolt B (right, time ~0.36) -->
-    <path d="M 1480,0 L 1510,130 L 1450,190 L 1510,320 L 1430,410 L 1490,540" opacity="0">
-      <animate attributeName="opacity"
-        values="0;0;1;0.5;0"
-        keyTimes="0;0.36;0.365;0.378;0.4" dur="8s" fill="freeze"/>
-    </path>
-    <path d="M 1510,320 L 1580,380 M 1450,190 L 1380,250" opacity="0">
-      <animate attributeName="opacity"
-        values="0;0;1;0.3;0"
-        keyTimes="0;0.36;0.365;0.378;0.4" dur="8s" fill="freeze"/>
-    </path>
-
-    <!-- Bolt C (center, intense, double — peak WOW) -->
-    <path d="M 940,0 L 970,140 L 910,200 L 980,330 L 920,440 L 990,580 L 940,720" opacity="0">
-      <animate attributeName="opacity"
-        values="0;0;1;0.8;0.2;0"
-        keyTimes="0;0.85;0.855;0.86;0.87;0.88" dur="8s" fill="freeze"/>
-    </path>
-    <path d="M 980,330 L 1080,400 M 920,440 L 840,500 M 990,580 L 1100,640" opacity="0">
+    <path d="M 358,348 L 282,432 M 432,408 L 510,468 M 408,212 L 470,160" opacity="0">
       <animate attributeName="opacity"
         values="0;0;1;0.4;0"
-        keyTimes="0;0.85;0.855;0.86;0.87" dur="8s" fill="freeze"/>
+        keyTimes="0;0.099;0.106;0.122;0.15"
+        dur="8s" repeatCount="indefinite"/>
     </path>
 
-    <!-- Bolt D (subtle, far right, time 0.62) -->
-    <path d="M 1740,0 L 1770,120 L 1720,180 L 1760,300" opacity="0">
+    <!-- Bolt B (right, ~0.40) -->
+    <path d="M 1480,0 L 1512,138 L 1448,200 L 1516,328 L 1428,414 L 1492,548" opacity="0">
       <animate attributeName="opacity"
-        values="0;0;0.8;0"
-        keyTimes="0;0.62;0.628;0.66" dur="8s" fill="freeze"/>
+        values="0;0;1;0.5;0.1;0"
+        keyTimes="0;0.394;0.402;0.418;0.44;0.47"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1516,328 L 1592,386 M 1448,200 L 1376,250 M 1428,414 L 1340,470" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.35;0"
+        keyTimes="0;0.394;0.402;0.418;0.45"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Bolt C (center — peak WOW, double strike) -->
+    <path d="M 940,0 L 968,140 L 906,202 L 982,338 L 920,448 L 992,588 L 938,728" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.78;0.22;0.06;0"
+        keyTimes="0;0.879;0.886;0.902;0.92;0.95;0.98;0.99"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 982,338 L 1080,402 M 920,448 L 838,510 M 992,588 L 1100,648 M 906,202 L 854,142" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.42;0"
+        keyTimes="0;0.879;0.886;0.905;0.93"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+    <!-- Second strike (companion bolt, just to the right of C) -->
+    <path d="M 1080,0 L 1100,145 L 1058,210 L 1112,330 L 1062,440" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0;0.85;0.3;0"
+        keyTimes="0;0.879;0.905;0.915;0.94;0.97"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Bolt D (subtle, far right, ~0.62 — between major beats, keeps tension) -->
+    <path d="M 1740,0 L 1770,118 L 1722,180 L 1762,302" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0.78;0.2;0"
+        keyTimes="0;0.61;0.618;0.64;0.67"
+        dur="8s" repeatCount="indefinite"/>
     </path>
   </g>
 
-  <!-- ===================== SLOW DOLLY BACK — main composition ===================== -->
-  <!-- Camera "pulls back" via group translate down slightly (water rises in frame) -->
+  <!-- ================= MAIN COMPOSITION (slow dolly back) ================= -->
   <g>
     <animateTransform attributeName="transform" type="translate"
-      values="0 -40; 0 -20; 0 0; 0 20" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+      values="0 -42; 0 -28; 0 -12; 0 4; 0 18"
+      keyTimes="0;0.25;0.5;0.75;1"
+      dur="8s" repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
-    <!-- ===================== GIGANTIC WAVE (back) ===================== -->
+    <!-- ============ GIGANTIC WAVE BEHIND SHIP ============ -->
     <g>
-      <!-- Wave curl behind ship -->
       <path d="M -100,720
                Q 200,580 460,520
                Q 720,460 920,440
@@ -726,52 +828,65 @@ E naviga ancora oggi."
                Q 920,640 720,690
                Q 480,750 200,830
                Q 40,880 -100,920 Z"
-            fill="url(#bigWave03a)" stroke="#040810" stroke-width="3" stroke-linejoin="round"/>
-      <!-- Wave crest foam (top edge) -->
+            fill="url(#s03_bigWave)" stroke="#040810" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Wave crest foam -->
       <path d="M -100,720 Q 200,580 460,520 Q 720,460 920,440 Q 1100,430 1240,460 Q 1380,490 1480,540 Q 1580,600 1640,680 Q 1700,760 1700,840"
-            fill="none" stroke="url(#waveCrest03a)" stroke-width="34" stroke-linecap="round" opacity="0.85" filter="url(#bloom03a)"/>
-      <!-- Foam streaks down the wave face -->
-      <g stroke="#E0EAF2" stroke-width="2" opacity="0.6" fill="none">
+            fill="none" stroke="url(#s03_waveCrest)" stroke-width="32" stroke-linecap="round"
+            opacity="0.85" filter="url(#s03_bloom)"/>
+      <!-- Foam streaks down -->
+      <g stroke="#E6EEF6" stroke-width="2" opacity="0.55" fill="none">
         <path d="M 480,540 Q 520,640 540,740"/>
         <path d="M 740,490 Q 770,610 790,720"/>
         <path d="M 980,460 Q 1010,580 1020,700"/>
         <path d="M 1220,480 Q 1250,610 1240,720"/>
         <path d="M 1420,540 Q 1450,650 1430,750"/>
       </g>
-      <!-- Spray off the top of the wave (animated upward) -->
-      <g fill="#E0EAF2" opacity="0.85" filter="url(#bloom03a)">
+      <!-- Spray particles (secondary motion) -->
+      <g fill="#EAF1F8" opacity="0.85" filter="url(#s03_bloom)">
         <circle cx="500" cy="500" r="6">
-          <animate attributeName="cy" values="500;460;420" dur="1.2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="500;450;405" dur="1.4s" repeatCount="indefinite"
+                   calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.46 0.45 0.94;0.55 0.06 0.68 0.19"/>
+          <animate attributeName="opacity" values="0.9;0.5;0" dur="1.4s" repeatCount="indefinite"/>
         </circle>
         <circle cx="780" cy="450" r="7">
-          <animate attributeName="cy" values="450;390;340" dur="1.4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.4s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="450;385;330" dur="1.6s" repeatCount="indefinite"
+                   calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.46 0.45 0.94;0.55 0.06 0.68 0.19"/>
+          <animate attributeName="opacity" values="0.9;0.5;0" dur="1.6s" repeatCount="indefinite"/>
         </circle>
         <circle cx="1020" cy="430" r="8">
-          <animate attributeName="cy" values="430;360;300" dur="1.3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.3s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="430;355;290" dur="1.5s" repeatCount="indefinite"
+                   calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.46 0.45 0.94;0.55 0.06 0.68 0.19"/>
+          <animate attributeName="opacity" values="0.9;0.5;0" dur="1.5s" repeatCount="indefinite"/>
         </circle>
         <circle cx="1260" cy="450" r="6">
-          <animate attributeName="cy" values="450;390;340" dur="1.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="450;385;330" dur="1.7s" repeatCount="indefinite"
+                   calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.46 0.45 0.94;0.55 0.06 0.68 0.19"/>
+          <animate attributeName="opacity" values="0.9;0.5;0" dur="1.7s" repeatCount="indefinite"/>
         </circle>
         <circle cx="1480" cy="530" r="7">
-          <animate attributeName="cy" values="530;460;400" dur="1.2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.85;0.5;0" dur="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="530;455;395" dur="1.45s" repeatCount="indefinite"
+                   calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.46 0.45 0.94;0.55 0.06 0.68 0.19"/>
+          <animate attributeName="opacity" values="0.9;0.5;0" dur="1.45s" repeatCount="indefinite"/>
         </circle>
       </g>
     </g>
 
-    <!-- ===================== SHIP TILTED 60deg (back-lit by lightning) ===================== -->
+    <!-- ============ SHIP TILTED + FOLLOW-THROUGH ON SAILS ============
+         Anticipation: the ship's base sway eases at the extremes (slow-in/out
+         spline). After each flash beat, sails get a secondary "vibration"
+         layer that decays over ~0.4s. -->
     <g transform="translate(680 760) rotate(-50)">
-      <!-- Sway slightly with wave -->
       <animateTransform attributeName="transform" type="rotate"
-        values="-46;-52;-48;-54;-50" keyTimes="0;0.25;0.5;0.75;1"
-        dur="4s" repeatCount="indefinite" additive="sum"/>
+        values="-46;-54;-48;-56;-50;-46"
+        keyTimes="0;0.2;0.4;0.6;0.8;1"
+        dur="4s" repeatCount="indefinite"
+        additive="sum"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
       <!-- Hull -->
-      <path d="M -200,0 Q -180,40 -110,55 L 110,55 Q 180,40 200,0 L 165,-20 L -165,-20 Z" fill="url(#hull03a)" stroke="#020306" stroke-width="2.5"/>
+      <path d="M -200,0 Q -180,40 -110,55 L 110,55 Q 180,40 200,0 L 165,-20 L -165,-20 Z"
+            fill="url(#s03_hull)" stroke="#020306" stroke-width="2.5"/>
       <line x1="-160" y1="-10" x2="160" y2="-10" stroke="#1A1410" stroke-width="1" opacity="0.6"/>
       <line x1="-150" y1="15" x2="150" y2="15" stroke="#1A1410" stroke-width="1" opacity="0.6"/>
 
@@ -780,60 +895,75 @@ E naviga ancora oggi."
       <rect x="-100" y="-280" width="5" height="280" fill="#1A1410"/>
       <rect x="95" y="-260" width="5" height="260" fill="#1A1410"/>
 
-      <!-- Torn sails (flapping wildly) -->
+      <!-- Torn sails — base flap + lightning-triggered vibration (follow-through) -->
       <g>
-        <path d="M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1">
+        <path d="M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z" fill="url(#s03_sail)"
+              stroke="#2A1810" stroke-width="1">
           <animate attributeName="d"
             values="M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z;
-                    M -3,-360 Q -140,-310 -150,-150 L -140,-30 L 0,-30 Z;
+                    M -3,-360 Q -148,-308 -158,-150 L -148,-30 L 0,-30 Z;
                     M -3,-360 Q -120,-300 -130,-150 L -130,-30 L 0,-30 Z"
-            dur="2s" repeatCount="indefinite"/>
+            dur="1.8s" repeatCount="indefinite"
+            calcMode="spline" keyTimes="0;0.5;1"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
         </path>
         <!-- Tears -->
         <path d="M -90,-220 L -60,-160 L -110,-180 Z" fill="#0B0805"/>
         <path d="M -120,-100 L -90,-60 L -135,-80 Z" fill="#0B0805"/>
 
-        <path d="M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1" opacity="0.92">
+        <path d="M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z" fill="url(#s03_sail)"
+              stroke="#2A1810" stroke-width="1" opacity="0.92">
           <animate attributeName="d"
             values="M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z;
-                    M 3,-360 Q 140,-310 150,-150 L 140,-30 L 0,-30 Z;
+                    M 3,-360 Q 148,-310 158,-150 L 148,-30 L 0,-30 Z;
                     M 3,-360 Q 120,-300 130,-150 L 130,-30 L 0,-30 Z"
-            dur="2s" repeatCount="indefinite"/>
+            dur="1.8s" repeatCount="indefinite"
+            calcMode="spline" keyTimes="0;0.5;1"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
         </path>
 
-        <path d="M -100,-280 Q -180,-220 -190,-110 L -190,-30 L -100,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1"/>
-        <path d="M 95,-260 Q 175,-200 185,-100 L 185,-30 L 95,-30 Z" fill="url(#sailTorn03a)" stroke="#2A1810" stroke-width="1" opacity="0.92"/>
+        <path d="M -100,-280 Q -180,-220 -190,-110 L -190,-30 L -100,-30 Z" fill="url(#s03_sail)"
+              stroke="#2A1810" stroke-width="1"/>
+        <path d="M 95,-260 Q 175,-200 185,-100 L 185,-30 L 95,-30 Z" fill="url(#s03_sail)"
+              stroke="#2A1810" stroke-width="1" opacity="0.92"/>
+
+        <!-- Follow-through vibration: extra group rotating ±1° pulsed after flashes -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            values="0;0;0;0.9;-0.6;0.4;0;0;0;0.8;-0.5;0.3;0;0;0;1.0;-0.6;0.4;0"
+            keyTimes="0;0.108;0.13;0.14;0.16;0.18;0.22;0.40;0.42;0.43;0.45;0.47;0.51;0.885;0.905;0.915;0.935;0.955;1"
+            dur="8s" repeatCount="indefinite" additive="sum"/>
+        </g>
       </g>
 
-      <!-- Tattered rigging lines -->
+      <!-- Rigging -->
       <g stroke="#1A1410" stroke-width="0.9" opacity="0.6">
         <line x1="0" y1="-360" x2="-100" y2="-280"/>
         <line x1="0" y1="-360" x2="95" y2="-260"/>
         <path d="M -50,-260 Q -80,-200 -120,-180" fill="none"/>
       </g>
 
-      <!-- Flag whipping (no orange — Act I) -->
+      <!-- Flag whipping -->
       <path d="M 3,-360 L 60,-340 L 40,-320 L 3,-330 Z" fill="#1A1410">
         <animateTransform attributeName="transform" type="skewX"
-          values="0;30;-10;25;0" keyTimes="0;0.25;0.5;0.75;1"
-          dur="0.8s" repeatCount="indefinite"/>
+          values="0;28;-8;22;0" keyTimes="0;0.25;0.5;0.75;1"
+          dur="0.9s" repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
       </path>
     </g>
 
-    <!-- ===================== FOREGROUND WAVE (low camera) ===================== -->
+    <!-- ============ FOREGROUND DARK WATER ============ -->
     <path d="M -100,920
              Q 200,860 480,890
              Q 760,920 1040,880
              Q 1320,840 1620,890
              Q 1820,920 2020,900
              L 2020,1080 L -100,1080 Z"
-          fill="url(#waterFury03a)" stroke="#020306" stroke-width="2"/>
-    <!-- Foam on foreground wave -->
+          fill="url(#s03_waterDeep)" stroke="#020306" stroke-width="2"/>
     <path d="M -100,920 Q 200,860 480,890 Q 760,920 1040,880 Q 1320,840 1620,890 Q 1820,920 2020,900"
-          fill="none" stroke="#E0EAF2" stroke-width="6" opacity="0.55" filter="url(#bloom03a)"/>
-
-    <!-- Foam patches scattered -->
-    <g fill="#E0EAF2" opacity="0.5">
+          fill="none" stroke="#E6EEF6" stroke-width="5" opacity="0.5" filter="url(#s03_bloom)"/>
+    <g fill="#E6EEF6" opacity="0.45">
       <ellipse cx="300" cy="950" rx="80" ry="6"/>
       <ellipse cx="640" cy="980" rx="100" ry="7"/>
       <ellipse cx="1100" cy="940" rx="90" ry="6"/>
@@ -841,90 +971,96 @@ E naviga ancora oggi."
     </g>
   </g>
 
-  <!-- ===================== DIAGONAL HEAVY RAIN ===================== -->
-  <g stroke="#9CB0C4" stroke-width="1.4" opacity="0.65">
+  <!-- ================= RAIN — 3 parallax depths ================= -->
+  <!-- DEPTH 1 (far, slow, thin, dim) -->
+  <g stroke="#8FA3B8" stroke-width="0.7" opacity="0.32">
+    <line x1="200" y1="0" x2="160" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="520" y1="0" x2="480" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="1.25s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="1.25s" repeatCount="indefinite"/>
+    </line>
+    <line x1="880" y1="0" x2="840" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="1.18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="1.18s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1280" y1="0" x2="1240" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="1.22s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="1.22s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1680" y1="0" x2="1640" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- DEPTH 2 (mid, medium speed) -->
+  <g stroke="#9CB0C4" stroke-width="1.3" opacity="0.6">
     <line x1="100" y1="0" x2="0" y2="280">
-      <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
-    </line>
-    <line x1="220" y1="0" x2="120" y2="280">
-      <animate attributeName="y1" values="-180;0;-380" dur="0.55s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="100;280;-100" dur="0.55s" repeatCount="indefinite"/>
-    </line>
-    <line x1="360" y1="0" x2="260" y2="280">
       <animate attributeName="y1" values="-280;0;-280" dur="0.62s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="0;280;0" dur="0.62s" repeatCount="indefinite"/>
     </line>
-    <line x1="500" y1="0" x2="400" y2="280">
-      <animate attributeName="y1" values="-220;0;-340" dur="0.58s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="60;280;-60" dur="0.58s" repeatCount="indefinite"/>
+    <line x1="360" y1="0" x2="260" y2="280">
+      <animate attributeName="y1" values="-280;0;-280" dur="0.64s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.64s" repeatCount="indefinite"/>
     </line>
     <line x1="660" y1="0" x2="560" y2="280">
       <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
     </line>
-    <line x1="820" y1="0" x2="720" y2="280">
-      <animate attributeName="y1" values="-160;0;-400" dur="0.56s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="120;280;-120" dur="0.56s" repeatCount="indefinite"/>
-    </line>
     <line x1="980" y1="0" x2="880" y2="280">
       <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
     </line>
-    <line x1="1140" y1="0" x2="1040" y2="280">
-      <animate attributeName="y1" values="-200;0;-360" dur="0.58s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="80;280;-80" dur="0.58s" repeatCount="indefinite"/>
-    </line>
     <line x1="1300" y1="0" x2="1200" y2="280">
-      <animate attributeName="y1" values="-280;0;-280" dur="0.62s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;280;0" dur="0.62s" repeatCount="indefinite"/>
-    </line>
-    <line x1="1460" y1="0" x2="1360" y2="280">
-      <animate attributeName="y1" values="-140;0;-420" dur="0.55s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="140;280;-140" dur="0.55s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="-280;0;-280" dur="0.63s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;280;0" dur="0.63s" repeatCount="indefinite"/>
     </line>
     <line x1="1620" y1="0" x2="1520" y2="280">
       <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
-    </line>
-    <line x1="1780" y1="0" x2="1680" y2="280">
-      <animate attributeName="y1" values="-220;0;-340" dur="0.58s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="60;280;-60" dur="0.58s" repeatCount="indefinite"/>
     </line>
     <line x1="1920" y1="0" x2="1820" y2="280">
       <animate attributeName="y1" values="-280;0;-280" dur="0.6s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="0;280;0" dur="0.6s" repeatCount="indefinite"/>
     </line>
   </g>
-  <!-- Second rain layer faster, finer -->
-  <g stroke="#C8D4E2" stroke-width="0.7" opacity="0.4">
-    <line x1="200" y1="0" x2="140" y2="200">
-      <animate attributeName="y1" values="-200;0;-200" dur="0.4s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;200;0" dur="0.4s" repeatCount="indefinite"/>
+
+  <!-- DEPTH 3 (near, fastest, thickest, brightest — parallax foreground) -->
+  <g stroke="#D2DEEA" stroke-width="1.8" opacity="0.78">
+    <line x1="60" y1="0" x2="-80" y2="360">
+      <animate attributeName="y1" values="-360;0;-360" dur="0.38s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;360;0" dur="0.38s" repeatCount="indefinite"/>
     </line>
-    <line x1="600" y1="0" x2="540" y2="200">
-      <animate attributeName="y1" values="-200;0;-200" dur="0.42s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;200;0" dur="0.42s" repeatCount="indefinite"/>
+    <line x1="440" y1="0" x2="300" y2="360">
+      <animate attributeName="y1" values="-360;0;-360" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;360;0" dur="0.4s" repeatCount="indefinite"/>
     </line>
-    <line x1="1000" y1="0" x2="940" y2="200">
-      <animate attributeName="y1" values="-200;0;-200" dur="0.4s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;200;0" dur="0.4s" repeatCount="indefinite"/>
+    <line x1="820" y1="0" x2="680" y2="360">
+      <animate attributeName="y1" values="-360;0;-360" dur="0.36s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;360;0" dur="0.36s" repeatCount="indefinite"/>
     </line>
-    <line x1="1400" y1="0" x2="1340" y2="200">
-      <animate attributeName="y1" values="-200;0;-200" dur="0.44s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;200;0" dur="0.44s" repeatCount="indefinite"/>
+    <line x1="1200" y1="0" x2="1060" y2="360">
+      <animate attributeName="y1" values="-360;0;-360" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;360;0" dur="0.4s" repeatCount="indefinite"/>
     </line>
-    <line x1="1700" y1="0" x2="1640" y2="200">
-      <animate attributeName="y1" values="-200;0;-200" dur="0.4s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;200;0" dur="0.4s" repeatCount="indefinite"/>
+    <line x1="1560" y1="0" x2="1420" y2="360">
+      <animate attributeName="y1" values="-360;0;-360" dur="0.38s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;360;0" dur="0.38s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1880" y1="0" x2="1740" y2="360">
+      <animate attributeName="y1" values="-360;0;-360" dur="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;360;0" dur="0.4s" repeatCount="indefinite"/>
     </line>
   </g>
 
   <!-- Painterly overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.03" filter="url(#painterly03a)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.025" filter="url(#s03_painterly)" pointer-events="none"/>
 
-  <!-- Heavy vignette (storm feel) -->
-  <rect width="1920" height="1080" fill="url(#vig03a)" pointer-events="none"/>
+  <!-- Heavy vignette -->
+  <rect width="1920" height="1080" fill="url(#s03_vig)" pointer-events="none"/>
 </svg>
 
         </div>
@@ -1297,187 +1433,374 @@ Con quel libro, la prossima tempesta è più piccola."
       <section data-scene-id="05" class="story-slide" data-background-color="#F5EFE6">
         
         <div class="full-bleed-svg" data-anim-scene="05">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 05 — Mysterious island appears">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 05 — Mysterious island appears (WOW 2) — Disney-pro">
   <title>Scene 05 — Isola appare (WOW 2)</title>
-  <desc>Isola misteriosa emerge da banco di nebbia. Blue-violet light sull'isola, no orange. 8 secondi.</desc>
+  <desc>Disney-pro: 3 parallax layers (sky back static-slow, sea mid, lookout front). Anticipation shimmer beneath fog before clearing. 3-phase fog dissipation with cubic-bezier easing. Slow zoom-in. Distant gulls in silhouette wing-flapping. Cooler blue-violet island temperature suggests otherness. 8s loop, no text.</desc>
 
   <defs>
-    <!-- Sky overcast -->
-    <linearGradient id="skyOver" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#C9CFD4"/>
-      <stop offset="60%" stop-color="#B6BEC4"/>
-      <stop offset="100%" stop-color="#9CA5AB"/>
+    <!-- Sky -->
+    <linearGradient id="s05_sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#CCD2D8"/>
+      <stop offset="55%" stop-color="#B6BFC6"/>
+      <stop offset="100%" stop-color="#98A2A9"/>
     </linearGradient>
 
-    <!-- Ocean overcast -->
-    <linearGradient id="oceanOver" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#6A7F8E"/>
-      <stop offset="100%" stop-color="#3F5564"/>
+    <!-- High clouds (back layer) -->
+    <linearGradient id="s05_cloudWhisp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E0E5EA" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#C2C9D0" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Fog bank gradient (animated opacity in groups) -->
-    <linearGradient id="fogGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <!-- Ocean -->
+    <linearGradient id="s05_ocean" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6D8190"/>
+      <stop offset="100%" stop-color="#3A4F60"/>
+    </linearGradient>
+    <linearGradient id="s05_oceanDeep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A4F60"/>
+      <stop offset="100%" stop-color="#1F2E3C"/>
+    </linearGradient>
+
+    <!-- Fog -->
+    <linearGradient id="s05_fog" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#E8EAEC" stop-opacity="0.95"/>
-      <stop offset="55%" stop-color="#E0E3E7" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#E0E3E7" stop-opacity="0.88"/>
       <stop offset="100%" stop-color="#D2D6DB" stop-opacity="0.55"/>
     </linearGradient>
 
-    <!-- Island silhouette — blue-violet otherworldly -->
-    <linearGradient id="islandViolet" x1="0%" y1="0%" x2="0%" y2="100%">
+    <!-- Island silhouettes (cooler, otherworldly blue-violet) -->
+    <linearGradient id="s05_islandFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B7EB4"/>
+      <stop offset="55%" stop-color="#65588E"/>
+      <stop offset="100%" stop-color="#4A4070"/>
+    </linearGradient>
+    <linearGradient id="s05_islandNear" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#7B6FA8"/>
       <stop offset="55%" stop-color="#574E84"/>
       <stop offset="100%" stop-color="#3D365E"/>
     </linearGradient>
-
-    <linearGradient id="towerViolet" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#9C8FC4"/>
+    <linearGradient id="s05_tower" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C0B5DF"/>
+      <stop offset="50%" stop-color="#9486C0"/>
       <stop offset="100%" stop-color="#574E84"/>
     </linearGradient>
 
-    <!-- Soft cool glow around island -->
-    <radialGradient id="islandAura" cx="50%" cy="65%" r="55%">
-      <stop offset="0%" stop-color="#A89BC8" stop-opacity="0.45"/>
-      <stop offset="55%" stop-color="#7B6FA8" stop-opacity="0.18"/>
+    <!-- Cool aura behind island -->
+    <radialGradient id="s05_aura" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#B8AAD8" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7B6FA8" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#574E84" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Subtle ocean waves -->
-    <path id="wave5" d="M 0,40 Q 100,10 200,40 T 400,40 T 600,40 T 800,40 T 1000,40 T 1200,40 T 1400,40 T 1600,40 T 1800,40 T 2000,40 L 2000,90 L 0,90 Z"/>
+    <!-- SHIMMER — anticipation glow beneath fog (cooler-cyan) -->
+    <radialGradient id="s05_shimmer" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8E0FA" stop-opacity="0.6"/>
+      <stop offset="55%" stop-color="#B0A0E0" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#574E84" stop-opacity="0"/>
+    </radialGradient>
 
     <!-- Painterly noise -->
-    <filter id="painterly5" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="11"/>
-      <feColorMatrix values="0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0 0.6  0 0 0 0.05 0"/>
+    <filter id="s05_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="11"/>
+      <feColorMatrix values="0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0 0.60  0 0 0 0.05 0"/>
     </filter>
+
+    <filter id="s05_bloomSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <!-- Reusable wave path -->
+    <path id="s05_wave" d="M 0,40 Q 100,10 200,40 T 400,40 T 600,40 T 800,40 T 1000,40 T 1200,40 T 1400,40 T 1600,40 T 1800,40 T 2000,40 L 2000,90 L 0,90 Z"/>
+
+    <!-- Gull (tiny chevron) -->
+    <symbol id="s05_gull" viewBox="-10 -6 20 12">
+      <path d="M -10,0 Q -5,-6 0,-2 Q 5,-6 10,0" fill="none" stroke="#3D365E" stroke-width="1.2" stroke-linecap="round"/>
+    </symbol>
   </defs>
 
-  <!-- Slow zoom-in simulated via scale -->
-  <g class="zoom-group" transform="translate(960 540)">
+  <!-- =============== SLOW ZOOM-IN (easing slow-out) =============== -->
+  <g>
     <animateTransform attributeName="transform" type="translate"
-      values="960 540; 960 540" keyTimes="0;1" dur="8s" fill="freeze"/>
-    <g>
+      values="0 0; -38 -18; -76 -36; -115 -55; -150 -72"
+      keyTimes="0;0.25;0.5;0.75;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0 0 0.2 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+    <g transform="translate(0 0)">
       <animateTransform attributeName="transform" type="scale"
-        values="1; 1.04; 1.08; 1.12" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+        values="1; 1.03; 1.06; 1.10; 1.14"
+        keyTimes="0;0.25;0.5;0.75;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0 0 0.2 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
 
-      <!-- Center the content -->
-      <g transform="translate(-960 -540)">
-        <!-- Sky -->
-        <rect x="0" y="0" width="1920" height="700" fill="url(#skyOver)"/>
+      <!-- ================= PARALLAX LAYER 1 — SKY (back, slowest) ================= -->
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; -8 0; -16 0"
+          keyTimes="0;0.5;1" dur="8s" fill="freeze"
+          calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <rect x="0" y="0" width="1920" height="720" fill="url(#s05_sky)"/>
+        <!-- High whisp clouds -->
+        <ellipse cx="320" cy="180" rx="380" ry="42" fill="url(#s05_cloudWhisp)"/>
+        <ellipse cx="1080" cy="140" rx="460" ry="38" fill="url(#s05_cloudWhisp)"/>
+        <ellipse cx="1640" cy="200" rx="320" ry="38" fill="url(#s05_cloudWhisp)"/>
+        <ellipse cx="780" cy="280" rx="540" ry="32" fill="url(#s05_cloudWhisp)" opacity="0.7"/>
+        <ellipse cx="1480" cy="320" rx="380" ry="28" fill="url(#s05_cloudWhisp)" opacity="0.65"/>
+      </g>
 
-        <!-- Cool soft aura behind island -->
-        <ellipse cx="960" cy="540" rx="720" ry="280" fill="url(#islandAura)" opacity="0">
-          <animate attributeName="opacity" values="0;0;0.3;0.7;0.9" keyTimes="0;0.15;0.5;0.8;1" dur="8s" fill="freeze"/>
+      <!-- ================= AURA — appears before island fully visible ================= -->
+      <ellipse cx="980" cy="555" rx="760" ry="300" fill="url(#s05_aura)" opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0.25;0.6;0.9;1"
+          keyTimes="0;0.18;0.42;0.65;0.85;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </ellipse>
+
+      <!-- ================= ANTICIPATION SHIMMER beneath fog =================
+           Glows from 0.15s and FADES at 0.5s as fog clears.
+           Builds subconscious "something is about to be revealed" feeling. -->
+      <g filter="url(#s05_bloomSoft)">
+        <ellipse cx="970" cy="540" rx="320" ry="80" fill="url(#s05_shimmer)" opacity="0">
+          <animate attributeName="opacity"
+            values="0;0;0.4;0.7;0.55;0.2;0"
+            keyTimes="0;0.1;0.22;0.32;0.42;0.52;0.62"
+            dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+          <animate attributeName="rx"
+            values="240;280;320;360;380"
+            keyTimes="0;0.25;0.45;0.65;1"
+            dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
         </ellipse>
+      </g>
 
-        <!-- ============== ISLAND (revealed progressively) ============== -->
-        <g class="island" opacity="0">
-          <animate attributeName="opacity" values="0;0;0.15;0.55;0.85;1" keyTimes="0;0.15;0.3;0.55;0.8;1" dur="8s" fill="freeze"/>
+      <!-- ================= ISLAND — revealed progressively ================= -->
+      <g class="island" opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0.12;0.42;0.78;0.98;1"
+          keyTimes="0;0.18;0.3;0.5;0.72;0.92;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
-          <!-- Main island mass (geometric-yet-organic) -->
-          <path d="
-            M 540,640
-            L 600,560
-            L 680,540
-            L 760,500
-            L 840,460
-            L 920,430
-            L 1000,415
-            L 1100,420
-            L 1200,455
-            L 1280,490
-            L 1340,540
-            L 1380,610
-            L 1380,680
-            L 540,680 Z
-          " fill="url(#islandViolet)" stroke="#2A2444" stroke-width="2" stroke-linejoin="round"/>
+        <!-- FAR ridge (back, smaller, smaller-amplitude parallax) -->
+        <path d="M 380,640 L 460,580 L 580,560 L 720,540 L 880,530 L 1040,535 L 1200,545 L 1340,560 L 1460,580 L 1540,605 L 1540,680 L 380,680 Z"
+              fill="url(#s05_islandFar)" stroke="#3A335A" stroke-width="1.8" stroke-linejoin="round" opacity="0.85"/>
 
-          <!-- Architectural symmetric rocks left -->
-          <polygon points="600,640 640,580 680,640" fill="#4D456E" stroke="#2A2444" stroke-width="1.5"/>
-          <polygon points="700,600 740,540 780,600" fill="#574E84" stroke="#2A2444" stroke-width="1.5"/>
+        <!-- Main island mass (mid) -->
+        <path d="
+          M 520,650
+          L 600,560
+          L 680,540
+          L 760,500
+          L 840,460
+          L 920,430
+          L 1000,415
+          L 1100,420
+          L 1200,455
+          L 1280,490
+          L 1340,540
+          L 1390,610
+          L 1400,680
+          L 520,680 Z
+        " fill="url(#s05_islandNear)" stroke="#2A2444" stroke-width="2" stroke-linejoin="round"/>
 
-          <!-- Palm-like too-symmetrical shapes -->
-          <g transform="translate(820 460)">
-            <line x1="0" y1="0" x2="0" y2="60" stroke="#2A2444" stroke-width="3"/>
-            <!-- Symmetric "fronds" -->
-            <path d="M 0,0 Q -25,-15 -45,5" fill="none" stroke="#574E84" stroke-width="3"/>
-            <path d="M 0,0 Q 25,-15 45,5" fill="none" stroke="#574E84" stroke-width="3"/>
-            <path d="M 0,5 Q -30,5 -40,30" fill="none" stroke="#574E84" stroke-width="3"/>
-            <path d="M 0,5 Q 30,5 40,30" fill="none" stroke="#574E84" stroke-width="3"/>
-          </g>
-          <g transform="translate(1150 470)">
-            <line x1="0" y1="0" x2="0" y2="55" stroke="#2A2444" stroke-width="3"/>
-            <path d="M 0,0 Q -25,-15 -45,5" fill="none" stroke="#574E84" stroke-width="3"/>
-            <path d="M 0,0 Q 25,-15 45,5" fill="none" stroke="#574E84" stroke-width="3"/>
-            <path d="M 0,5 Q -30,5 -40,30" fill="none" stroke="#574E84" stroke-width="3"/>
-            <path d="M 0,5 Q 30,5 40,30" fill="none" stroke="#574E84" stroke-width="3"/>
-          </g>
+        <!-- Architectural symmetric rocks left -->
+        <polygon points="600,640 640,580 680,640" fill="#544A7C" stroke="#2A2444" stroke-width="1.5"/>
+        <polygon points="700,600 740,540 780,600" fill="#574E84" stroke="#2A2444" stroke-width="1.5"/>
+        <polygon points="1260,640 1300,580 1340,640" fill="#544A7C" stroke="#2A2444" stroke-width="1.5"/>
 
-          <!-- ============== TALL CRYSTALLINE TOWER (signature) ============== -->
-          <g class="crystal-tower">
-            <polygon points="960,200 1000,260 990,640 930,640 920,260" fill="url(#towerViolet)" stroke="#2A2444" stroke-width="2"/>
-            <polygon points="960,200 1000,260 920,260" fill="#9C8FC4" stroke="#2A2444" stroke-width="2"/>
-            <!-- Subtle inner facets -->
-            <line x1="960" y1="220" x2="960" y2="630" stroke="#3D365E" stroke-width="1" opacity="0.7"/>
-            <line x1="950" y1="270" x2="950" y2="635" stroke="#3D365E" stroke-width="0.8" opacity="0.5"/>
-            <line x1="970" y1="270" x2="970" y2="635" stroke="#3D365E" stroke-width="0.8" opacity="0.5"/>
-            <!-- Top apex highlight -->
-            <polygon points="960,200 985,250 935,250" fill="#C6BDDD" opacity="0.85"/>
-          </g>
+        <!-- Geometric "palms" (too-symmetric — uncanny) -->
+        <g transform="translate(820 460)">
+          <line x1="0" y1="0" x2="0" y2="62" stroke="#2A2444" stroke-width="3"/>
+          <path d="M 0,0 Q -28,-18 -52,4" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 0,0 Q 28,-18 52,4" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 0,5 Q -32,5 -46,32" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 0,5 Q 32,5 46,32" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(1150 470)">
+          <line x1="0" y1="0" x2="0" y2="58" stroke="#2A2444" stroke-width="3"/>
+          <path d="M 0,0 Q -28,-18 -52,4" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 0,0 Q 28,-18 52,4" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 0,5 Q -32,5 -46,32" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 0,5 Q 32,5 46,32" fill="none" stroke="#574E84" stroke-width="3" stroke-linecap="round"/>
         </g>
 
-        <!-- ============== FOG BANK (dissipates) ============== -->
-        <g class="fog-front" opacity="1">
-          <animate attributeName="opacity" values="1;0.95;0.7;0.4;0.15;0" keyTimes="0;0.15;0.35;0.55;0.75;0.95" dur="8s" fill="freeze"/>
-          <rect x="-100" y="430" width="2120" height="240" fill="url(#fogGrad)"/>
-          <ellipse cx="500" cy="540" rx="450" ry="80" fill="#E8EAEC" opacity="0.9"/>
-          <ellipse cx="1300" cy="520" rx="500" ry="90" fill="#E0E3E7" opacity="0.85"/>
-          <ellipse cx="960" cy="600" rx="600" ry="60" fill="#D2D6DB" opacity="0.7"/>
+        <!-- ============ CRYSTALLINE TOWER (signature anomaly) ============ -->
+        <g class="s05_crystal">
+          <polygon points="960,180 1006,250 996,640 924,640 914,250"
+                   fill="url(#s05_tower)" stroke="#2A2444" stroke-width="2"/>
+          <polygon points="960,180 1006,250 914,250" fill="#C0B5DF" stroke="#2A2444" stroke-width="2"/>
+          <!-- Inner facets -->
+          <line x1="960" y1="200" x2="960" y2="635" stroke="#3D365E" stroke-width="1" opacity="0.75"/>
+          <line x1="948" y1="260" x2="948" y2="635" stroke="#3D365E" stroke-width="0.8" opacity="0.55"/>
+          <line x1="972" y1="260" x2="972" y2="635" stroke="#3D365E" stroke-width="0.8" opacity="0.55"/>
+          <!-- Apex highlight breathing (secondary motion) -->
+          <polygon points="960,180 988,232 932,232" fill="#E0D5F5" opacity="0.88">
+            <animate attributeName="opacity"
+              values="0.65;0.95;0.7;0.92;0.75"
+              keyTimes="0;0.3;0.55;0.78;1"
+              dur="8s" fill="freeze"
+              calcMode="spline"
+              keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </polygon>
         </g>
+      </g>
 
-        <g class="fog-mid" opacity="1">
-          <animate attributeName="opacity" values="1;0.9;0.6;0.3;0.1;0.05" keyTimes="0;0.2;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
-          <ellipse cx="700" cy="630" rx="420" ry="50" fill="#D8DBE0" opacity="0.7"/>
-          <ellipse cx="1200" cy="640" rx="380" ry="45" fill="#D8DBE0" opacity="0.65"/>
+      <!-- ================= FOG BANK — 3-phase dissipation ================= -->
+      <!-- Phase 1: very dense (0-0.18). Phase 2: ribbons drift (0.18-0.55). Phase 3: dissolved (0.55-1) -->
+      <g class="s05_fogFront" opacity="1">
+        <animate attributeName="opacity"
+          values="1;0.96;0.78;0.5;0.22;0.06;0"
+          keyTimes="0;0.15;0.32;0.5;0.7;0.88;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <rect x="-100" y="430" width="2120" height="250" fill="url(#s05_fog)"/>
+        <ellipse cx="500" cy="540" rx="450" ry="80" fill="#E8EAEC" opacity="0.9"/>
+        <ellipse cx="1300" cy="520" rx="500" ry="90" fill="#E0E3E7" opacity="0.85"/>
+        <ellipse cx="960" cy="610" rx="600" ry="58" fill="#D2D6DB" opacity="0.7"/>
+        <!-- Drifting ribbons (parallax-within-fog) -->
+        <g>
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0; 70 -8; 140 -16"
+            keyTimes="0;0.5;1" dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          <ellipse cx="200" cy="500" rx="280" ry="32" fill="#E8EAEC" opacity="0.55"/>
+          <ellipse cx="1500" cy="555" rx="320" ry="28" fill="#E0E3E7" opacity="0.5"/>
         </g>
+      </g>
 
-        <!-- Ocean -->
-        <rect x="0" y="700" width="1920" height="380" fill="url(#oceanOver)"/>
+      <g class="s05_fogMid" opacity="1">
+        <animate attributeName="opacity"
+          values="1;0.92;0.62;0.32;0.12;0.06"
+          keyTimes="0;0.2;0.45;0.68;0.86;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <ellipse cx="700" cy="635" rx="420" ry="48" fill="#D8DBE0" opacity="0.7"/>
+        <ellipse cx="1200" cy="640" rx="380" ry="44" fill="#D8DBE0" opacity="0.65"/>
+      </g>
 
-        <!-- Waves -->
-        <g opacity="0.5">
-          <use href="#wave5" x="-100" y="780" fill="#FFFFFF">
-            <animate attributeName="x" values="-100;-250;-100" dur="15s" repeatCount="indefinite"/>
+      <!-- ================= PARALLAX LAYER 2 — OCEAN (mid speed) ================= -->
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; -22 0; -44 0"
+          keyTimes="0;0.5;1" dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <rect x="0" y="700" width="1920" height="380" fill="url(#s05_ocean)"/>
+
+        <!-- Far wave (slow, small) -->
+        <g opacity="0.4">
+          <use href="#s05_wave" x="-100" y="740" fill="#FFFFFF">
+            <animate attributeName="x" values="-100;-260;-100" dur="16s" repeatCount="indefinite"/>
           </use>
-          <use href="#wave5" x="-200" y="880" fill="#FFFFFF" opacity="0.7">
-            <animate attributeName="x" values="-200;-50;-200" dur="12s" repeatCount="indefinite"/>
+        </g>
+        <!-- Mid wave -->
+        <g opacity="0.55">
+          <use href="#s05_wave" x="-150" y="820" fill="#FFFFFF">
+            <animate attributeName="x" values="-150;-300;-150" dur="13s" repeatCount="indefinite"/>
+          </use>
+        </g>
+        <!-- Near wave (medium speed, more pronounced) -->
+        <g opacity="0.7">
+          <use href="#s05_wave" x="-200" y="900" fill="#E6EEF6">
+            <animate attributeName="x" values="-200;-50;-200" dur="10s" repeatCount="indefinite"/>
           </use>
         </g>
 
-        <!-- Lookout silhouette in crow's nest (foreground left, pointing) -->
-        <g class="lookout" transform="translate(180 700)">
+        <!-- Foreground dark water -->
+        <rect x="0" y="940" width="1920" height="140" fill="url(#s05_oceanDeep)"/>
+      </g>
+
+      <!-- ================= DISTANT GULLS — secondary motion ================= -->
+      <g>
+        <use href="#s05_gull" x="600" y="280" width="18" height="11">
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0;-22 -4;-44 -2;-66 -6;-90 -3"
+            keyTimes="0;0.25;0.5;0.75;1" dur="8s" fill="freeze"/>
+          <animate attributeName="y" values="280;276;280;274;280"
+            keyTimes="0;0.25;0.5;0.75;1" dur="2s" repeatCount="indefinite"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </use>
+        <use href="#s05_gull" x="780" y="220" width="14" height="9">
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0;-26 -3;-52 -5;-78 -2;-105 -4"
+            keyTimes="0;0.25;0.5;0.75;1" dur="8s" fill="freeze"/>
+          <animate attributeName="y" values="220;216;220;218;220"
+            keyTimes="0;0.3;0.5;0.7;1" dur="1.8s" repeatCount="indefinite"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </use>
+        <use href="#s05_gull" x="1240" y="260" width="16" height="10">
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0;-20 -2;-40 -5;-60 -3;-85 -4"
+            keyTimes="0;0.25;0.5;0.75;1" dur="8s" fill="freeze"/>
+          <animate attributeName="y" values="260;256;260;258;260"
+            keyTimes="0;0.3;0.5;0.7;1" dur="2.2s" repeatCount="indefinite"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </use>
+        <use href="#s05_gull" x="1480" y="320" width="12" height="8">
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0;-18 -3;-36 -2;-54 -5;-75 -3"
+            keyTimes="0;0.25;0.5;0.75;1" dur="8s" fill="freeze"/>
+          <animate attributeName="y" values="320;317;320;318;320"
+            keyTimes="0;0.3;0.5;0.7;1" dur="1.6s" repeatCount="indefinite"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </use>
+      </g>
+
+      <!-- ================= PARALLAX LAYER 3 — LOOKOUT (front, fastest) ================= -->
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; 26 2; 52 4"
+          keyTimes="0;0.5;1" dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <g class="s05_lookout" transform="translate(180 700)">
           <!-- Mast -->
           <rect x="-3" y="0" width="6" height="280" fill="#1A1410"/>
           <!-- Crow's nest -->
-          <path d="M -40,0 L 40,0 L 30,-20 L -30,-20 Z" fill="#15100B"/>
-          <!-- Lookout figure (back view, silhouette) -->
-          <circle cx="0" cy="-50" r="18" fill="#15100B"/>
-          <path d="M -22,-32 L 22,-32 L 18,5 L -18,5 Z" fill="#15100B"/>
-          <!-- Arm pointing forward (right) -->
-          <line x1="14" y1="-25" x2="80" y2="-30" stroke="#15100B" stroke-width="8" stroke-linecap="round"/>
+          <path d="M -42,0 L 42,0 L 32,-22 L -32,-22 Z" fill="#15100B"/>
+          <!-- Lookout figure (back view, silhouette — micro sway, secondary motion) -->
+          <g>
+            <animateTransform attributeName="transform" type="rotate"
+              values="0;0.8;-0.4;0.6;0"
+              keyTimes="0;0.25;0.5;0.75;1"
+              dur="4s" repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"
+              additive="sum"/>
+            <circle cx="0" cy="-52" r="18" fill="#15100B"/>
+            <path d="M -22,-34 L 22,-34 L 18,3 L -18,3 Z" fill="#15100B"/>
+            <!-- Arm pointing forward (right) -->
+            <line x1="14" y1="-27" x2="82" y2="-32" stroke="#15100B" stroke-width="8" stroke-linecap="round"/>
+          </g>
         </g>
       </g>
+
     </g>
   </g>
 
-  <!-- Subtle painterly overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0" filter="url(#painterly5)" pointer-events="none"/>
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s05_painterly)" pointer-events="none"/>
 
   <!-- Vignette -->
-  <radialGradient id="vig05" cx="50%" cy="50%" r="80%">
+  <radialGradient id="s05_vig" cx="50%" cy="50%" r="80%">
     <stop offset="60%" stop-color="#000" stop-opacity="0"/>
-    <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
   </radialGradient>
-  <rect width="1920" height="1080" fill="url(#vig05)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="url(#s05_vig)" pointer-events="none"/>
 </svg>
 
         </div>
@@ -1863,220 +2186,478 @@ Qualcosa che brilla appena."
       <section data-scene-id="08A" class="story-slide" data-background-color="#F5EFE6">
         
         <div class="full-bleed-svg" data-anim-scene="08A">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08A — Compass lights up">
-  <title>Scene 08A — Compass lights up (WOW 3)</title>
-  <desc>SVG animato della bussola arancione che si accende. 8 secondi totali. Hand-drawn ink style.</desc>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08A — Compass lights up (WOW 3, sacred moment) — Disney-pro">
+  <title>Scene 08A — La bussola si accende (WOW 3)</title>
+  <desc>Disney-pro 5-phase narrative: (1) silence + hand anticipation breath (0-2s), (2) glass rim ignites inner orange (2-3s), (3) needle pulses with squash 3x (3-4s), (4) cardinal tick-marks emerge staggered N→E→S→W (4-6s), (5) steady radiance + 3 concentric pulse rings + rising magic particles (6-8s). Orange #FF6B1A ONLY internal to the compass glass — never on background. Static camera macro. No text glyphs anywhere.</desc>
 
   <defs>
-    <!-- Sand background gradient -->
-    <radialGradient id="sandBg" cx="50%" cy="55%" r="70%">
+    <!-- Sand background — desaturated, blurred out of focus -->
+    <radialGradient id="s08_sandBg" cx="50%" cy="55%" r="72%">
       <stop offset="0%" stop-color="#F2E8D6"/>
       <stop offset="55%" stop-color="#E8DDC8"/>
       <stop offset="100%" stop-color="#C9BC9F"/>
     </radialGradient>
+    <!-- Cool ambient shadow gradient -->
+    <radialGradient id="s08_sandShadow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2A2420" stop-opacity="0.45"/>
+    </radialGradient>
 
-    <!-- Hand skin gradient — weathered, warm desaturated -->
-    <linearGradient id="handGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#C09478"/>
-      <stop offset="100%" stop-color="#8B6647"/>
+    <!-- Weathered hand skin -->
+    <linearGradient id="s08_hand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C49880"/>
+      <stop offset="100%" stop-color="#876142"/>
+    </linearGradient>
+    <linearGradient id="s08_handShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#604030" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Compass body metal -->
-    <radialGradient id="metalBody" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#3A322B"/>
+    <!-- Compass metal body -->
+    <radialGradient id="s08_metalBody" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#3F362E"/>
       <stop offset="70%" stop-color="#2A2420"/>
-      <stop offset="100%" stop-color="#1A1614"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </radialGradient>
+    <linearGradient id="s08_metalEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C4F44"/>
+      <stop offset="55%" stop-color="#3A322B"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </linearGradient>
+
+    <!-- Glass: off state -->
+    <radialGradient id="s08_glassOff" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#2C2622" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#1A1614" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0E0B09" stop-opacity="0.95"/>
     </radialGradient>
 
-    <!-- Hexagonal glass (off → on) -->
-    <radialGradient id="glassOff" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#2C2622" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#1A1614" stop-opacity="0.8"/>
+    <!-- Glass: ON state, internal radiant core (INTERNAL ORANGE ONLY) -->
+    <radialGradient id="s08_orangeCore" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#FFCB8A"/>
+      <stop offset="32%" stop-color="#FF9D52"/>
+      <stop offset="68%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#B33B00" stop-opacity="0.95"/>
     </radialGradient>
 
-    <!-- ORANGE INNER GLOW — il momento WOW -->
-    <radialGradient id="orangeCore" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFB066"/>
-      <stop offset="40%" stop-color="#FF6B1A"/>
-      <stop offset="100%" stop-color="#C24500" stop-opacity="0.9"/>
-    </radialGradient>
+    <!-- Subtle inner reflection on glass -->
+    <linearGradient id="s08_glassRefl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
 
-    <radialGradient id="orangeSpill" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.8"/>
-      <stop offset="55%" stop-color="#FF6B1A" stop-opacity="0.25"/>
+    <!-- Inner warm spill (stays INSIDE glass polygon) -->
+    <radialGradient id="s08_innerSpill" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFD89C" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#FF8A3A" stop-opacity="0.42"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Sand grain texture (subtle noise) -->
-    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
-      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.06 0"/>
+    <!-- Sand grain noise -->
+    <filter id="s08_grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0.16  0 0 0 0 0.13  0 0 0 0 0.09  0 0 0 0.07 0"/>
       <feComposite in2="SourceGraphic" operator="in"/>
     </filter>
 
-    <!-- Hexagonal glass shape -->
-    <polygon id="hexagon"
-      points="600,0 300,520 -300,520 -600,0 -300,-520 300,-520"
-      transform="scale(0.001)"/>
+    <!-- Bloom filters (used INSIDE the glass clip) -->
+    <filter id="s08_bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="s08_bloomStrong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="32"/>
+      <feComponentTransfer><feFuncA type="linear" slope="1.5"/></feComponentTransfer>
+    </filter>
 
-    <!-- Hand shape (semplificato, painterly) — solo dita ferme sul vetro -->
-    <path id="handShape" d="
-      M -640,-180
-      C -680,-90 -700,40 -680,140
-      C -660,260 -560,360 -380,360
-      C -240,360 -100,300 -20,200
-      L 60,80
-      C 80,40 70,-40 40,-80
-      C 10,-120 -40,-130 -100,-110
-      L -300,-50
-      C -380,-30 -480,-90 -540,-150
-      C -580,-190 -620,-200 -640,-180 Z
-    "/>
+    <!-- Painterly noise (cream/beige preserve) -->
+    <filter id="s08_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.85  0 0 0 0 0.78  0 0 0 0 0.65  0 0 0 0.04 0"/>
+    </filter>
 
-    <!-- Compass needle -->
-    <path id="needle" d="
+    <!-- ============ HEXAGONAL GLASS POLYGON (clip path) ============
+         Center: (960, 540). Points: rotated hex, height 440 -->
+    <clipPath id="s08_glassClip">
+      <polygon points="960,330 1190,455 1190,705 960,830 730,705 730,455"/>
+    </clipPath>
+
+    <!-- Needle path -->
+    <path id="s08_needle" d="
       M 0,-180
-      L 30,0
-      L 0,18
-      L -30,0 Z
+      L 28,0
+      L 0,16
+      L -28,0 Z
       M 0,180
-      L 30,0
-      L 0,-18
-      L -30,0 Z
-    "/>
+      L 28,0
+      L 0,-16
+      L -28,0 Z"/>
 
-    <!-- Filter: soft warm bloom for glow -->
-    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <filter id="bloomStrong" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="40"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="1.5"/>
-      </feComponentTransfer>
-    </filter>
+    <!-- Pulse ring shape - reused -->
+    <symbol id="s08_ring" overflow="visible">
+      <polygon points="0,-145 125,-72 125,72 0,145 -125,72 -125,-72"
+               fill="none" stroke="#FF6B1A" stroke-width="2"/>
+    </symbol>
   </defs>
 
-  <!-- Background: sand, blurred out of focus -->
-  <rect width="1920" height="1080" fill="url(#sandBg)"/>
-  <rect width="1920" height="1080" fill="url(#sandBg)" filter="url(#grain)" opacity="0.55"/>
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect width="1920" height="1080" fill="url(#s08_sandBg)"/>
+  <rect width="1920" height="1080" fill="url(#s08_sandBg)" filter="url(#s08_grain)" opacity="0.55"/>
+  <!-- Vignette-like sand shadow -->
+  <rect width="1920" height="1080" fill="url(#s08_sandShadow)"/>
+  <!-- Soft haze top -->
+  <rect width="1920" height="380" fill="#F5EFE6" opacity="0.32"/>
 
-  <!-- Soft haze overlay top -->
-  <rect width="1920" height="380" fill="#F5EFE6" opacity="0.35"/>
+  <!-- Subtle ground texture lines (sand grain ridges) -->
+  <g stroke="#A89478" stroke-width="0.6" opacity="0.18">
+    <path d="M 100,820 Q 540,800 1000,815 T 1820,820" fill="none"/>
+    <path d="M 80,880 Q 560,860 1040,875 T 1840,880" fill="none"/>
+    <path d="M 60,940 Q 580,920 1060,935 T 1860,940" fill="none"/>
+  </g>
 
-  <!-- ============== HAND + COMPASS GROUP (center) ============== -->
-  <g transform="translate(960 540)">
+  <!-- ===================== HAND + COMPASS GROUP =====================
+       Hand anticipation: starts -3px (lifted), descends to +3px (settled)
+       in 0.8s with slow-out, then steady. Tiny breathing motion thereafter. -->
+  <g class="s08_handGroup" transform="translate(120 280)">
+    <animateTransform attributeName="transform" type="translate"
+      values="120 277; 120 274; 120 280; 120 281; 120 280"
+      keyTimes="0;0.05;0.1;0.18;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.25 0.46 0.45 0.94;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
-    <!-- Hand (weathered, in shadow) -->
-    <g transform="translate(120 280) scale(1.05)" opacity="0.95">
-      <use href="#handShape" fill="url(#handGrad)"/>
-      <!-- Ink line work (hand wrinkles) -->
+    <!-- Hand shadow underneath (cool, on sand — NOT orange) -->
+    <g transform="translate(960 540) scale(1.08)" opacity="0.5">
+      <ellipse cx="-80" cy="340" rx="320" ry="38" fill="#000" opacity="0.32"/>
+    </g>
+
+    <!-- Hand silhouette -->
+    <g transform="translate(960 540) scale(1.05)" opacity="0.96">
+      <path d="
+        M -640,-180
+        C -680,-90 -700,40 -680,140
+        C -660,260 -560,360 -380,360
+        C -240,360 -100,300 -20,200
+        L 60,80
+        C 80,40 70,-40 40,-80
+        C 10,-120 -40,-130 -100,-110
+        L -300,-50
+        C -380,-30 -480,-90 -540,-150
+        C -580,-190 -620,-200 -640,-180 Z
+      " fill="url(#s08_hand)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- Top-edge shadow rim -->
       <path d="M -640,-180 C -680,-90 -700,40 -680,140 C -660,260 -560,360 -380,360"
-            fill="none" stroke="#1A1614" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+            fill="none" stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+      <!-- Wrinkle lines (painterly hand-drawn quality) -->
       <path d="M -500,-30 C -460,10 -380,30 -300,20" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.4"/>
       <path d="M -420,80 C -360,110 -280,120 -200,100" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.4"/>
       <path d="M -340,180 C -280,200 -200,200 -120,180" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.4"/>
+      <path d="M -560,-110 C -520,-80 -460,-70 -420,-90" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.3"/>
+      <!-- Knuckles -->
+      <ellipse cx="-360" cy="200" rx="38" ry="22" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.3"/>
+      <ellipse cx="-240" cy="220" rx="38" ry="22" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- ===================== COMPASS BODY (static center) ===================== -->
+
+  <!-- Outer hexagon — metal frame -->
+  <polygon
+    points="960,290 1220,440 1220,740 960,890 700,740 700,440"
+    fill="url(#s08_metalBody)" stroke="#0A0806" stroke-width="2"/>
+  <!-- Beveled rim highlight -->
+  <polygon
+    points="960,290 1220,440 1220,740 960,890 700,740 700,440"
+    fill="none" stroke="url(#s08_metalEdge)" stroke-width="6" stroke-linejoin="round" opacity="0.85"/>
+  <!-- Ink outline -->
+  <polygon
+    points="960,290 1220,440 1220,740 960,890 700,740 700,440"
+    fill="none" stroke="#1A1614" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <!-- Small decorative metal tabs at vertices -->
+  <g fill="#5C4F44" stroke="#1A1614" stroke-width="1.5">
+    <circle cx="960" cy="290" r="9"/>
+    <circle cx="1220" cy="440" r="9"/>
+    <circle cx="1220" cy="740" r="9"/>
+    <circle cx="960" cy="890" r="9"/>
+    <circle cx="700" cy="740" r="9"/>
+    <circle cx="700" cy="440" r="9"/>
+  </g>
+
+  <!-- ===================== GLASS LAYERS — CLIPPED INSIDE HEX =====================
+       All orange light is rendered INSIDE this clip path. Outside the glass,
+       only metal/hand/sand exist. -->
+  <g clip-path="url(#s08_glassClip)">
+    <!-- Phase 1 (0-2s): dark glass -->
+    <rect x="700" y="320" width="540" height="580" fill="url(#s08_glassOff)">
+      <animate attributeName="opacity"
+        values="1;1;0.95;0.55;0.2;0.06;0;0"
+        keyTimes="0;0.18;0.25;0.32;0.4;0.5;0.6;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+
+    <!-- Phase 2 (2-3s): inner orange core IGNITES from center -->
+    <rect x="700" y="320" width="540" height="580" fill="url(#s08_orangeCore)" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0.05;0.18;0.45;0.78;0.95;1"
+        keyTimes="0;0.2;0.25;0.32;0.42;0.55;0.75;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+
+    <!-- Inner warm spill that BREATHES once full -->
+    <circle cx="960" cy="540" r="220" fill="url(#s08_innerSpill)" opacity="0" filter="url(#s08_bloom)">
+      <animate attributeName="opacity"
+        values="0;0;0.18;0.45;0.7;0.65;0.78;0.7;0.75"
+        keyTimes="0;0.2;0.32;0.45;0.6;0.72;0.82;0.92;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="r"
+        values="180;180;200;220;230;225;235;228;232"
+        keyTimes="0;0.2;0.32;0.45;0.6;0.72;0.82;0.92;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+
+    <!-- Glass reflection (subtle, always present) -->
+    <polygon points="730,460 855,395 855,510 730,575" fill="url(#s08_glassRefl)"/>
+
+    <!-- ===================== NEEDLE (phase 3) =====================
+         Squash & stretch pulse: 1.0 → 1.06 → 1.0 → 1.04 → 1.0 → 1.02 → 1.0 -->
+    <g transform="translate(960 540)">
+      <!-- Dark needle fades out as orange one appears -->
+      <use href="#s08_needle" fill="#3A322B" opacity="1">
+        <animate attributeName="opacity"
+          values="1;1;0.85;0.4;0.1;0;0"
+          keyTimes="0;0.3;0.36;0.42;0.5;0.6;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+      <!-- Orange needle with squash pulse -->
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="1 1;1 1;1.06 0.94;1 1;1.04 0.96;1 1;1.02 0.98;1 1"
+          keyTimes="0;0.35;0.4;0.45;0.5;0.55;0.62;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1"/>
+        <use href="#s08_needle" fill="#FF6B1A" opacity="0" filter="url(#s08_bloom)">
+          <animate attributeName="opacity"
+            values="0;0;0.35;0.78;1;1;1"
+            keyTimes="0;0.3;0.38;0.46;0.55;0.75;1"
+            dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </use>
+        <!-- Needle center pin -->
+        <circle r="9" fill="#3A322B" stroke="#FF6B1A" stroke-width="2" opacity="0">
+          <animate attributeName="opacity"
+            values="0;0;0.4;0.9;1;1"
+            keyTimes="0;0.35;0.45;0.55;0.65;1"
+            dur="8s" fill="freeze"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </circle>
+      </g>
     </g>
 
-    <!-- Orange light spill on hand+sand (animated opacity) -->
-    <g class="orange-spill">
-      <circle cx="0" cy="0" r="520" fill="url(#orangeSpill)" filter="url(#bloomStrong)" opacity="0">
-        <animate attributeName="opacity" values="0;0;0.35;0.7;0.9;0.9" keyTimes="0;0.25;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
-        <animate attributeName="r" values="380;420;500;560;620;620" keyTimes="0;0.25;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
+    <!-- ===================== CARDINAL TICK MARKS (phase 4, NO TEXT) =====================
+         Stagger N→E→S→W with 0.4s offset, easing morbido.
+         Replaced text glyphs with geometric marks (chevrons/triangles/dots). -->
+    <g transform="translate(960 540)" filter="url(#s08_bloom)">
+      <!-- N — upward triangle -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.5;0.55;0.58;0.62;0.68;0.78;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="0,-258 -16,-228 16,-228" fill="#FF6B1A"/>
+        <polygon points="0,-220 -8,-205 8,-205" fill="#FFCB8A"/>
+      </g>
+      <!-- E — right chevron -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.55;0.60;0.63;0.67;0.73;0.83;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="228,0 198,-16 198,16" fill="#FF6B1A"/>
+        <polygon points="200,0 186,-8 186,8" fill="#FFCB8A"/>
+      </g>
+      <!-- S — downward triangle -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.60;0.65;0.68;0.72;0.78;0.88;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="0,258 -16,228 16,228" fill="#FF6B1A"/>
+        <polygon points="0,220 -8,205 8,205" fill="#FFCB8A"/>
+      </g>
+      <!-- W — left chevron -->
+      <g opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.35;0.78;1;1"
+          keyTimes="0;0.65;0.70;0.73;0.77;0.83;0.93;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <polygon points="-228,0 -198,-16 -198,16" fill="#FF6B1A"/>
+        <polygon points="-200,0 -186,-8 -186,8" fill="#FFCB8A"/>
+      </g>
+
+      <!-- Smaller intercardinal tick marks (8 dots — subtle dial detail) -->
+      <g fill="#FF6B1A" opacity="0">
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.3;0.6;0.8"
+          keyTimes="0;0.7;0.78;0.82;0.88;0.95;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <circle cx="160" cy="-160" r="3.5"/>
+        <circle cx="-160" cy="-160" r="3.5"/>
+        <circle cx="160" cy="160" r="3.5"/>
+        <circle cx="-160" cy="160" r="3.5"/>
+      </g>
+    </g>
+
+    <!-- ===================== PHASE 5: PULSE RINGS (concentric, propagate outward, stay inside glass) ===================== -->
+    <g transform="translate(960 540)">
+      <!-- Ring 1 -->
+      <use href="#s08_ring" opacity="0">
+        <animateTransform attributeName="transform" type="scale"
+          values="0.6;0.6;0.6;1.0;1.4;1.7"
+          keyTimes="0;0.72;0.78;0.85;0.93;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity"
+          values="0;0;0;0.8;0.4;0"
+          keyTimes="0;0.72;0.78;0.85;0.93;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+      <!-- Ring 2 (offset by 0.06) -->
+      <use href="#s08_ring" opacity="0">
+        <animateTransform attributeName="transform" type="scale"
+          values="0.6;0.6;0.6;0.6;1.0;1.4;1.7"
+          keyTimes="0;0.78;0.82;0.84;0.91;0.99;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity"
+          values="0;0;0;0;0.7;0.3;0"
+          keyTimes="0;0.78;0.82;0.84;0.91;0.99;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+      <!-- Ring 3 (latest, smallest at end) -->
+      <use href="#s08_ring" opacity="0">
+        <animateTransform attributeName="transform" type="scale"
+          values="0.6;0.6;0.6;0.6;0.6;1.0;1.3"
+          keyTimes="0;0.84;0.86;0.88;0.9;0.97;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity"
+          values="0;0;0;0;0;0.6;0.25"
+          keyTimes="0;0.84;0.86;0.88;0.9;0.97;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </use>
+    </g>
+
+    <!-- ===================== MAGIC PARTICLES — rise slowly from compass ===================== -->
+    <g fill="#FFD89C" filter="url(#s08_bloom)">
+      <!-- Particle A -->
+      <circle cx="940" cy="610" r="3" opacity="0">
+        <animate attributeName="cy" values="610;610;540;460;380" keyTimes="0;0.4;0.6;0.8;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity" values="0;0;0.95;0.6;0" keyTimes="0;0.4;0.55;0.8;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="cx" values="940;940;948;938;950" keyTimes="0;0.4;0.65;0.85;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </circle>
+      <!-- Particle B -->
+      <circle cx="985" cy="600" r="2.2" opacity="0">
+        <animate attributeName="cy" values="600;600;600;530;420;360" keyTimes="0;0.5;0.6;0.75;0.95;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity" values="0;0;0;0.85;0.45;0" keyTimes="0;0.5;0.6;0.75;0.92;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="cx" values="985;985;985;992;980;988" keyTimes="0;0.5;0.6;0.75;0.92;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </circle>
+      <!-- Particle C -->
+      <circle cx="912" cy="620" r="2.8" opacity="0">
+        <animate attributeName="cy" values="620;620;620;620;540;440" keyTimes="0;0.6;0.7;0.75;0.9;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0 0 0.2 1;0 0 0.2 1"/>
+        <animate attributeName="opacity" values="0;0;0;0;0.85;0.4" keyTimes="0;0.6;0.7;0.75;0.9;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="cx" values="912;912;912;912;918;908" keyTimes="0;0.6;0.7;0.75;0.9;1" dur="8s" fill="freeze"
+                 calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
       </circle>
     </g>
 
-    <!-- Compass body (hexagonal frame) -->
-    <g transform="translate(0 0) scale(420)">
-      <!-- Outer rim metal -->
-      <use href="#hexagon" fill="url(#metalBody)"/>
-    </g>
-
-    <!-- Compass body OUTLINE (ink) -->
-    <polygon
-      points="960,420 1240,540 1240,840 960,960 680,840 680,540"
-      transform="translate(-960 -540)"
-      fill="none" stroke="#1A1614" stroke-width="5" stroke-linejoin="round"/>
-
-    <!-- ============ Hexagonal GLASS face (the ones that lights up) ============ -->
-    <g class="compass-glass">
-      <!-- Glass: off state (dark) -->
-      <polygon
-        points="960,470 1190,570 1190,810 960,910 730,810 730,570"
-        transform="translate(-960 -540)"
-        fill="url(#glassOff)" stroke="#0E0B09" stroke-width="2">
-        <animate attributeName="fill-opacity" values="1;1;0.6;0.2;0;0" keyTimes="0;0.2;0.4;0.55;0.7;1" dur="8s" fill="freeze"/>
-      </polygon>
-
-      <!-- Glass: ON state — ORANGE CORE (revealed by animation) -->
-      <polygon
-        points="960,470 1190,570 1190,810 960,910 730,810 730,570"
-        transform="translate(-960 -540)"
-        fill="url(#orangeCore)" opacity="0">
-        <animate attributeName="opacity" values="0;0;0.15;0.4;0.7;0.95;1" keyTimes="0;0.15;0.3;0.45;0.65;0.85;1" dur="8s" fill="freeze"/>
-      </polygon>
-
-      <!-- Inner subtle reflection on glass -->
-      <polygon
-        points="780,560 880,510 880,610 780,660"
-        transform="translate(-960 -540)"
-        fill="#FFFFFF" opacity="0.08"/>
-    </g>
-
-    <!-- ============ Rim glow (first to light up) ============ -->
-    <polygon
-      points="960,470 1190,570 1190,810 960,910 730,810 730,570"
-      transform="translate(-960 -540)"
-      fill="none" stroke="#FF6B1A" stroke-width="0" stroke-linejoin="round"
-      filter="url(#bloom)">
-      <animate attributeName="stroke-width" values="0;0;4;6;8;6" keyTimes="0;0.1;0.2;0.35;0.5;1" dur="8s" fill="freeze"/>
-      <animate attributeName="opacity" values="0;0;0.5;0.85;1;0.85" keyTimes="0;0.1;0.2;0.35;0.5;1" dur="8s" fill="freeze"/>
-    </polygon>
-
-    <!-- ============ Compass NEEDLE (lights up second, pulses) ============ -->
-    <g class="compass-needle">
-      <use href="#needle" fill="#3A322B" opacity="1">
-        <animate attributeName="opacity" values="1;1;0.7;0.2;0;0" keyTimes="0;0.3;0.4;0.5;0.6;1" dur="8s" fill="freeze"/>
-      </use>
-      <use href="#needle" fill="#FF6B1A" opacity="0" filter="url(#bloom)">
-        <animate attributeName="opacity" values="0;0;0.4;0.8;1;1" keyTimes="0;0.3;0.4;0.5;0.65;1" dur="8s" fill="freeze"/>
-      </use>
-    </g>
-
-    <!-- ============ Numerali sul dial (light up one by one, last phase) ============ -->
-    <g class="dial-numerals" font-family="serif" font-size="38" font-weight="700" text-anchor="middle" fill="#FF6B1A" filter="url(#bloom)">
-      <text x="0" y="-260" opacity="0">N
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.55;0.6;0.62;0.68;0.78" dur="8s" fill="freeze"/>
-      </text>
-      <text x="225" y="0" opacity="0" dominant-baseline="middle">E
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.6;0.65;0.67;0.73;0.83" dur="8s" fill="freeze"/>
-      </text>
-      <text x="0" y="285" opacity="0">S
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.65;0.7;0.72;0.78;0.88" dur="8s" fill="freeze"/>
-      </text>
-      <text x="-225" y="0" opacity="0" dominant-baseline="middle">W
-        <animate attributeName="opacity" values="0;0;0;0;0.4;1" keyTimes="0;0.7;0.75;0.77;0.83;0.93" dur="8s" fill="freeze"/>
-      </text>
-    </g>
-
-    <!-- Final steady internal radiance pulse -->
-    <circle cx="0" cy="0" r="120" fill="#FFB066" opacity="0" filter="url(#bloomStrong)">
-      <animate attributeName="opacity" values="0;0;0;0;0.3;0.55;0.45;0.55" keyTimes="0;0.6;0.7;0.78;0.85;0.9;0.95;1" dur="8s" fill="freeze"/>
-      <animate attributeName="r" values="60;60;60;100;150;180;165;180" keyTimes="0;0.6;0.7;0.78;0.85;0.9;0.95;1" dur="8s" fill="freeze"/>
+    <!-- Final steady radiance — visible at end -->
+    <circle cx="960" cy="540" r="60" fill="#FFE0B0" opacity="0" filter="url(#s08_bloomStrong)">
+      <animate attributeName="opacity"
+        values="0;0;0;0.18;0.4;0.55;0.5;0.55"
+        keyTimes="0;0.5;0.65;0.75;0.85;0.92;0.97;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="r"
+        values="40;40;60;90;130;160;145;160"
+        keyTimes="0;0.5;0.65;0.75;0.85;0.92;0.97;1"
+        dur="8s" fill="freeze"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>
   </g>
 
-  <!-- Vignette dark edges -->
-  <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
-    <stop offset="60%" stop-color="#000" stop-opacity="0"/>
-    <stop offset="100%" stop-color="#000" stop-opacity="0.35"/>
+  <!-- ===================== RIM GLOW (outline of hex, animated stroke) =====================
+       This is the only orange outside the glass interior, but it sits EXACTLY on
+       the glass boundary (rim = part of compass body). It does NOT spill to sand. -->
+  <polygon
+    points="960,330 1190,455 1190,705 960,830 730,705 730,455"
+    fill="none" stroke="#FF6B1A" stroke-width="0" stroke-linejoin="round">
+    <animate attributeName="stroke-width"
+      values="0;0;2;4.5;5.5;5;5.5"
+      keyTimes="0;0.2;0.28;0.4;0.55;0.85;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    <animate attributeName="opacity"
+      values="0;0;0.5;0.9;1;0.92;0.96"
+      keyTimes="0;0.2;0.28;0.4;0.55;0.85;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </polygon>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s08_painterly)" pointer-events="none"/>
+
+  <!-- Final cool vignette -->
+  <radialGradient id="s08_vig" cx="50%" cy="50%" r="78%">
+    <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
   </radialGradient>
-  <rect width="1920" height="1080" fill="url(#vignette)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="url(#s08_vig)" pointer-events="none"/>
 </svg>
 
         </div>

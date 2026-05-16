@@ -233,4 +233,16 @@ Prima di muoversi oltre questi gate, serve approvazione esplicita di Rocco:
 - ✅ **MILESTONE**: il deck è **COMPLETO end-to-end**. Apri `deck/index.html` in Chrome (`npx serve deck/` o doppio click) e gira tutto: animazioni SMIL native, transizioni Reveal.js, audio sintetico SynthAudio Web Audio API, speaker view, fullscreen. **Zero MP4 Veo, zero PNG Nano Banana, zero MP3 Pixabay**. Cost: 0€.
 - 2026-05-16 16:30 — Commit `0495931` su GitHub (origin/main). Push ok.
 - 2026-05-16 16:35 — Repo reso pubblico (`gh repo edit --visibility public`), workflow GitHub Pages creato e committato (`893eab1`), Pages abilitato via API con build_type=workflow.
-- 2026-05-16 16:36 — **Deploy completato in 22s**. Deck LIVE su https://roccoditolla.github.io/dalla-scrivania-allalgoritmo/ — accessibile da qualunque browser/PC, auto-deploy ad ogni push.
+- 2026-05-16 16:36 — Deploy completato 22s. Deck LIVE su https://roccoditolla.github.io/dalla-scrivania-allalgoritmo/
+- 2026-05-16 16:50 — Iterazione feedback Rocco round 1:
+  * Cover slide: logo Conflavoro AI (palette teal→arancione), tolto "Eleven Digital", aggiunto "Responsabile Conflavoro AI" con AI accent arancione
+  * Logo dimensioni fixed (era 22vw gigante → 240px fissi)
+  * Aspect 16:9 ovunque: Reveal config a 1920×1080 (era 960×700 default), letterbox cream (era nero su story slides)
+  * 100vw/100vh → 100% su tutte le slide (rompeva con Reveal scaling)
+- 2026-05-16 17:05 — Iterazione feedback round 2:
+  * **5→6 piattaforme**: rimosso AppaltoAI, aggiunto Preventivatore (slide 17), Piattaforma HR (slide 20), Piattaforma Videoconferenze+eLearning (slide 21). Slide 22 Pattern con "6 bussole", BMAD shift a 23, Chiusura a 24.
+  * Speech riscritto: 1355 → 1890 parole parlate, 3 esempi storytelling più chiaro applicati ("chi ha visto la vostra giornata", "il dipendente non è una riga di Excel", "una bussola per ogni rotta che vi serve")
+  * 5 SVG Disney-pro (anticipation/squash/follow-through): slide_14 (6 bussole arco depth), slide_17 (Preventivatore con calcolatrice squash), slide_20 (HR cartelletta+chip), slide_21 (Videoconf+eLearning monitor LIVE), slide_22 (6 bussole esagono rotation)
+  * Music timeline: theme_minor (Cm-Gm-Ab-Eb, scene 08B-09B) → theme_major (Cmaj-Gmaj-Amin-Fmaj, scene 10-11) → outro_warm (scene 12) → realistic_uplift (F-Am-C-G, slide 13-23) → outro_warm (slide 24). Music sotto la voce live (-12 a -20 dB).
+  * Tutto pushato (commit 34ac2f5), deploy 19s, LIVE.
+- 2026-05-16 17:10 — Agent finale lanciato: Disney-pro upgrade su scene WOW story (03A tempesta, 05 isola, 08A bussola).

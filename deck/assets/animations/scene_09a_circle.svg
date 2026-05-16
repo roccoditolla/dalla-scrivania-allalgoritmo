@@ -1,147 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09A — Crew in circle around glowing compass">
-  <title>Scene 09A — Tre silhouette in cerchio attorno alla bussola arancione</title>
-  <desc>Crane down from above. Tre figure di spalle in cerchio. Bussola al centro che pulsa arancione. Ombre lunghe.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09A — Crew circle around glowing compass (top-down) — Cartoon Saloon">
+  <title>Scene 09A — Cerchio di 5 figure attorno alla bussola arancione</title>
+  <desc>Cartoon Saloon: top-down view dall'alto. 5 silhouette character (back-view dall'alto: vedi spalle/teste/cappelli/bandane) disposte in cerchio attorno alla bussola esagonale che brilla arancione al centro. Sabbia con grain. Spill arancione sui personaggi (luce dal basso). Ombre lunghe radiali (rivelazione collettiva). Dust particles arancio.</desc>
 
   <defs>
-    <radialGradient id="sandBg09a" cx="50%" cy="55%" r="80%">
-      <stop offset="0%" stop-color="#F0E6D0"/>
-      <stop offset="55%" stop-color="#D8C9A8"/>
-      <stop offset="100%" stop-color="#8C7858"/>
+    <radialGradient id="s09a_sandBg" cx="50%" cy="50%" r="74%">
+      <stop offset="0%" stop-color="#F2E8D6"/>
+      <stop offset="55%" stop-color="#E8DDC8"/>
+      <stop offset="100%" stop-color="#A89478"/>
     </radialGradient>
-    <radialGradient id="orangeSpill09a" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFB066" stop-opacity="0.95"/>
-      <stop offset="45%" stop-color="#FF6B1A" stop-opacity="0.6"/>
+    <radialGradient id="s09a_orangePool" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#FFCB8A" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#FF8A3A" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="orangeCore09a" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFCFA0"/>
-      <stop offset="50%" stop-color="#FF6B1A"/>
-      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.9"/>
+
+    <linearGradient id="s09a_char" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F0A06"/>
+      <stop offset="100%" stop-color="#1F1812"/>
+    </linearGradient>
+    <linearGradient id="s09a_charRim" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#FFCB8A" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <radialGradient id="s09a_metalBody" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#5C4F44"/>
+      <stop offset="55%" stop-color="#3F362E"/>
+      <stop offset="100%" stop-color="#15110E"/>
     </radialGradient>
-    <filter id="bloom09a" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="20"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="bloomStrong09a" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="48"/>
-    </filter>
-    <filter id="grain09a">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9"/>
-      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.05 0"/>
-    </filter>
-    <radialGradient id="vig09a" cx="50%" cy="50%" r="80%">
-      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+    <radialGradient id="s09a_orangeCore" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#FFE6B8"/>
+      <stop offset="38%" stop-color="#FF9D52"/>
+      <stop offset="100%" stop-color="#B33B00" stop-opacity="0.95"/>
     </radialGradient>
+
+    <filter id="s09a_sandGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="11"/>
+      <feColorMatrix values="0 0 0 0 0.20  0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0.14 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="s09a_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="22"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="s09a_bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="s09a_bloomStrong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="32"/>
+      <feComponentTransfer><feFuncA type="linear" slope="1.4"/></feComponentTransfer>
+    </filter>
+    <filter id="s09a_dustGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <!-- Character from above: shoulders + head + hat. Designed for top-down view -->
+    <symbol id="s09a_charA" overflow="visible">
+      <!-- Coat-shoulder oval (broad) -->
+      <ellipse cx="0" cy="14" rx="58" ry="38" fill="url(#s09a_char)" stroke="#020306" stroke-width="2"/>
+      <!-- Belt across shoulders -->
+      <path d="M -52,10 Q 0,18 52,10" fill="none" stroke="#3A2818" stroke-width="2.5" opacity="0.75"/>
+      <!-- Head (smaller, atop shoulders) -->
+      <ellipse cx="0" cy="-24" rx="22" ry="22" fill="url(#s09a_char)" stroke="#020306" stroke-width="2"/>
+      <!-- Tricorne hat (3-point) -->
+      <path d="M -28,-30 L 28,-30 L 22,-44 L -22,-44 Z" fill="#020306"/>
+      <path d="M -32,-30 Q 0,-50 32,-30 L 28,-26 L -28,-26 Z" fill="#020306"/>
+      <!-- Rim light from below (orange spill) -->
+      <ellipse cx="0" cy="42" rx="50" ry="6" fill="url(#s09a_charRim)" opacity="0.85"/>
+      <ellipse cx="0" cy="-8" rx="18" ry="3" fill="#FFCB8A" opacity="0.55"/>
+    </symbol>
+
+    <!-- Character B: bandana instead of tricorne -->
+    <symbol id="s09a_charB" overflow="visible">
+      <ellipse cx="0" cy="14" rx="52" ry="34" fill="url(#s09a_char)" stroke="#020306" stroke-width="2"/>
+      <path d="M -48,10 Q 0,16 48,10" fill="none" stroke="#3A2818" stroke-width="2.2" opacity="0.7"/>
+      <ellipse cx="0" cy="-22" rx="20" ry="20" fill="url(#s09a_char)" stroke="#020306" stroke-width="2"/>
+      <!-- Bandana wrap -->
+      <path d="M -22,-30 L 22,-30 L 24,-22 L -24,-22 Z" fill="#1F1812"/>
+      <!-- Bandana knot tail -->
+      <path d="M 18,-26 L 32,-18 L 22,-14 L 14,-22 Z" fill="#1F1812"/>
+      <ellipse cx="0" cy="40" rx="46" ry="5.5" fill="url(#s09a_charRim)" opacity="0.85"/>
+      <ellipse cx="0" cy="-8" rx="16" ry="3" fill="#FFCB8A" opacity="0.55"/>
+    </symbol>
+
+    <!-- Character C: skullcap + smaller (mozzo/cabin boy) -->
+    <symbol id="s09a_charC" overflow="visible">
+      <ellipse cx="0" cy="12" rx="46" ry="30" fill="url(#s09a_char)" stroke="#020306" stroke-width="2"/>
+      <path d="M -42,8 Q 0,14 42,8" fill="none" stroke="#3A2818" stroke-width="2" opacity="0.7"/>
+      <ellipse cx="0" cy="-20" rx="18" ry="18" fill="url(#s09a_char)" stroke="#020306" stroke-width="2"/>
+      <!-- Skullcap rounded -->
+      <path d="M -18,-26 Q 0,-38 18,-26 L 18,-20 L -18,-20 Z" fill="#0A0805"/>
+      <ellipse cx="0" cy="36" rx="40" ry="5" fill="url(#s09a_charRim)" opacity="0.85"/>
+      <ellipse cx="0" cy="-6" rx="14" ry="2.5" fill="#FFCB8A" opacity="0.55"/>
+    </symbol>
   </defs>
 
-  <!-- Sand background (slightly cooler than 08b) -->
-  <rect width="1920" height="1080" fill="url(#sandBg09a)"/>
-  <rect width="1920" height="1080" fill="#000" opacity="0.4" filter="url(#grain09a)"/>
+  <!-- ============ BACKGROUND SAND ============ -->
+  <rect width="1920" height="1080" fill="url(#s09a_sandBg)"/>
+  <rect width="1920" height="1080" fill="url(#s09a_sandBg)" filter="url(#s09a_sandGrain)" opacity="0.65"/>
 
-  <!-- Slow crane-down: start zoomed slightly tighter from above, end full top-down -->
+  <!-- Sand ridge contours (radial from compass) -->
+  <g stroke="#A89478" stroke-width="0.7" opacity="0.28" fill="none">
+    <circle cx="960" cy="540" r="280"/>
+    <circle cx="960" cy="540" r="400"/>
+    <circle cx="960" cy="540" r="540"/>
+    <circle cx="960" cy="540" r="700"/>
+    <circle cx="960" cy="540" r="860"/>
+  </g>
+  <g fill="#7B6244" opacity="0.4">
+    <circle cx="240" cy="160" r="1.3"/><circle cx="380" cy="240" r="1"/>
+    <circle cx="520" cy="120" r="1.4"/><circle cx="180" cy="800" r="1.2"/>
+    <circle cx="1280" cy="200" r="1.3"/><circle cx="1450" cy="140" r="1"/>
+    <circle cx="1620" cy="880" r="1.2"/><circle cx="1780" cy="320" r="1.1"/>
+    <circle cx="160" cy="480" r="1.1"/><circle cx="1700" cy="640" r="1.3"/>
+    <circle cx="240" cy="920" r="1.2"/><circle cx="1500" cy="980" r="1.1"/>
+    <circle cx="900" cy="120" r="1"/><circle cx="1100" cy="980" r="1.2"/>
+  </g>
+
+  <!-- ============ ORANGE POOL on ground (collective revelation) ============ -->
+  <ellipse cx="960" cy="540" rx="640" ry="380" fill="url(#s09a_orangePool)" filter="url(#s09a_bloomStrong)" opacity="0.85">
+    <animate attributeName="opacity" values="0.78;0.95;0.78" dur="3.6s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="620;680;620" dur="3.6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- ============ LONG RADIAL SHADOWS of characters ============ -->
+  <g opacity="0.55" fill="#0A0805">
+    <!-- Each character casts a long shadow OUTWARDS (light from center) -->
+    <ellipse cx="540" cy="290" rx="120" ry="32" transform="rotate(-130 540 290)"/>
+    <ellipse cx="1380" cy="290" rx="120" ry="32" transform="rotate(130 1380 290)"/>
+    <ellipse cx="1500" cy="600" rx="130" ry="34" transform="rotate(165 1500 600)"/>
+    <ellipse cx="1080" cy="900" rx="120" ry="32" transform="rotate(-105 1080 900)"/>
+    <ellipse cx="420" cy="640" rx="130" ry="34" transform="rotate(15 420 640)"/>
+  </g>
+
+  <!-- ============ COMPASS at center (top-down view, glowing) ============ -->
   <g transform="translate(960 540)">
-    <g>
-      <animateTransform attributeName="transform" type="scale"
-        values="1.12; 1.06; 1.0; 0.96" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+    <!-- Soft glow halo behind compass -->
+    <circle r="260" fill="#FF6B1A" opacity="0.18" filter="url(#s09a_bloomStrong)">
+      <animate attributeName="opacity" values="0.14;0.24;0.14" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="240;280;240" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
 
-      <!-- Soft warm aura on ground (orange spill) -->
-      <circle r="540" fill="url(#orangeSpill09a)" filter="url(#bloomStrong09a)" opacity="0.7">
-        <animate attributeName="opacity" values="0.55;0.7;0.85;0.75;0.9;0.8" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
-        <animate attributeName="r" values="480;540;600;560;620;580" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
-      </circle>
+    <!-- Hex compass body -->
+    <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"
+             fill="url(#s09a_metalBody)" stroke="#0A0806" stroke-width="2"/>
+    <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"
+             fill="none" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
 
-      <!-- Long radial shadows from 3 figures (low sun, top-down) -->
-      <g opacity="0.45" fill="#0E0B09">
-        <!-- Shadow figure 1 (top) -->
-        <path d="M 0,-250 L -40,-560 L 40,-560 Z"/>
-        <!-- Shadow figure 2 (bottom-left) -->
-        <path d="M -216,125 L -480,310 L -420,370 Z"/>
-        <!-- Shadow figure 3 (bottom-right) -->
-        <path d="M 216,125 L 480,310 L 420,370 Z"/>
-      </g>
+    <!-- Brushed streaks -->
+    <g stroke="#5C4F44" stroke-width="0.4" opacity="0.45">
+      <line x1="-115" y1="-60" x2="115" y2="-60"/>
+      <line x1="-125" y1="-30" x2="125" y2="-30"/>
+      <line x1="-128" y1="0" x2="128" y2="0"/>
+      <line x1="-125" y1="30" x2="125" y2="30"/>
+      <line x1="-115" y1="60" x2="115" y2="60"/>
+    </g>
 
-      <!-- ============== COMPASS at center (smaller, pulsing) ============== -->
-      <g transform="translate(0 0)">
-        <!-- Glow halo -->
-        <circle r="160" fill="#FFB066" opacity="0.7" filter="url(#bloomStrong09a)">
-          <animate attributeName="opacity" values="0.55;0.75;0.6;0.8;0.65;0.75" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="3.5s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="140;180;160;200;170;180" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <!-- Hex rim -->
-        <polygon points="0,-95 82,-47 82,47 0,95 -82,47 -82,-47"
-                 fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
-        <!-- Hex glass orange core -->
-        <polygon points="0,-72 62,-36 62,36 0,72 -62,36 -62,-36"
-                 fill="url(#orangeCore09a)" stroke="#5A1E00" stroke-width="1.5" stroke-linejoin="round"/>
-        <!-- Inner needle hint (faint, slow rotation) -->
-        <g>
-          <animateTransform attributeName="transform" type="rotate"
-            values="0;90;160;200;220;230;235" keyTimes="0;0.25;0.5;0.7;0.85;0.95;1"
-            dur="8s" fill="freeze"/>
-          <polygon points="0,-58 5,0 0,3 -5,0" fill="#FF8A3A" filter="url(#bloom09a)"/>
-          <polygon points="0,58 5,0 0,-3 -5,0" fill="#1A1410"/>
-        </g>
-        <!-- Center pulse -->
-        <circle r="32" fill="#FFCFA0" opacity="0.7" filter="url(#bloom09a)">
-          <animate attributeName="opacity" values="0.5;0.85;0.6;0.85;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
-        </circle>
-      </g>
+    <!-- Vertex tabs -->
+    <g fill="#5C4F44" stroke="#1A1614" stroke-width="1">
+      <circle cx="0" cy="-150" r="5"/>
+      <circle cx="130" cy="-75" r="5"/>
+      <circle cx="130" cy="75" r="5"/>
+      <circle cx="0" cy="150" r="5"/>
+      <circle cx="-130" cy="75" r="5"/>
+      <circle cx="-130" cy="-75" r="5"/>
+    </g>
 
-      <!-- ============== 3 FIGURES IN CIRCLE (top-down view) ============== -->
-      <!-- Each figure: head (ellipse) + shoulders (curved trapezoid) + arms pointing toward center -->
+    <!-- Glass + orange interior -->
+    <polygon points="0,-130 112,-65 112,65 0,130 -112,65 -112,-65" fill="url(#s09a_orangeCore)" filter="url(#s09a_bloom)">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2.4s" repeatCount="indefinite"/>
+    </polygon>
 
-      <!-- Figure 1: TOP (12 o'clock) -->
-      <g transform="translate(0 -250)">
-        <!-- Long cast shadow already drawn above -->
-        <!-- Shoulders (top view) -->
-        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
-        <!-- Head -->
-        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
-        <!-- Arms reaching toward center -->
-        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
-        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
-        <!-- Backlight rim (orange edge from compass below) -->
-        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
-        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
-        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
-      </g>
+    <!-- Cardinal marks (geometric, no text) -->
+    <polygon points="0,-118 -7,-100 0,-94 7,-100" fill="#FFE6B8"/>
+    <polygon points="110,0 96,-7 100,0 96,7" fill="#FFE6B8"/>
+    <polygon points="0,118 -7,100 0,94 7,100" fill="#FFE6B8"/>
+    <polygon points="-110,0 -96,-7 -100,0 -96,7" fill="#FFE6B8"/>
 
-      <!-- Figure 2: BOTTOM-LEFT (8 o'clock) -->
-      <g transform="translate(-216 125) rotate(120)">
-        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
-        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
-        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
-        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
-        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
-        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
-        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
-      </g>
+    <!-- Needle (pointing slightly off-N) -->
+    <g transform="rotate(-18)">
+      <polygon points="0,-95 10,0 0,8 -10,0" fill="#FFFBEF" stroke="#1A1614" stroke-width="1.2"/>
+      <polygon points="0,95 10,0 0,-8 -10,0" fill="#1A1614" opacity="0.85"/>
+    </g>
+    <!-- Pivot -->
+    <circle r="8" fill="#1A1614"/>
+    <circle r="3.5" fill="#FFCB8A">
+      <animate attributeName="r" values="3;5;3" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 
-      <!-- Figure 3: BOTTOM-RIGHT (4 o'clock) -->
-      <g transform="translate(216 125) rotate(-120)">
-        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
-        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
-        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
-        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
-        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
-        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
-        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
-      </g>
-
-      <!-- Sand drag-lines (paths leading to compass) -->
-      <g stroke="#7A6948" stroke-width="1.5" opacity="0.35" fill="none">
-        <path d="M -40,-180 Q -30,-130 -20,-100"/>
-        <path d="M -150,90 Q -110,80 -80,60"/>
-        <path d="M 150,90 Q 110,80 80,60"/>
-      </g>
+  <!-- ============ 5 CHARACTERS arranged in circle (top-down) ============ -->
+  <!-- Positions on a circle of r=400 around (960,540), evenly spaced (72°) -->
+  <g>
+    <!-- Pos 1: top (12 o'clock) — Captain (tricorne) -->
+    <g transform="translate(960 200) scale(1.0)">
+      <!-- breath -->
+      <animateTransform attributeName="transform" type="translate"
+        values="960 200;960 198;960 200;960 199;960 200" keyTimes="0;0.25;0.5;0.75;1" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <use href="#s09a_charA"/>
+    </g>
+    <!-- Pos 2: top-right (~4:48) — Bandana -->
+    <g transform="translate(1280 350) rotate(72) scale(0.95)">
+      <animateTransform attributeName="transform" type="translate"
+        values="1280 350;1280 348;1280 350;1280 349;1280 350" keyTimes="0;0.3;0.5;0.7;1" dur="6s" repeatCount="indefinite" additive="replace"/>
+      <use href="#s09a_charB"/>
+    </g>
+    <!-- Pos 3: bottom-right — Tricorne -->
+    <g transform="translate(1180 800) rotate(144) scale(0.92)">
+      <animateTransform attributeName="transform" type="translate"
+        values="1180 800;1180 798;1180 800;1180 799;1180 800" keyTimes="0;0.3;0.5;0.7;1" dur="5.5s" repeatCount="indefinite" additive="replace"/>
+      <use href="#s09a_charA"/>
+    </g>
+    <!-- Pos 4: bottom-left — Skullcap (mozzo) -->
+    <g transform="translate(740 800) rotate(216) scale(0.85)">
+      <animateTransform attributeName="transform" type="translate"
+        values="740 800;740 798;740 800;740 799;740 800" keyTimes="0;0.3;0.5;0.7;1" dur="6.5s" repeatCount="indefinite" additive="replace"/>
+      <use href="#s09a_charC"/>
+    </g>
+    <!-- Pos 5: top-left — Bandana -->
+    <g transform="translate(640 350) rotate(288) scale(0.95)">
+      <animateTransform attributeName="transform" type="translate"
+        values="640 350;640 348;640 350;640 349;640 350" keyTimes="0;0.3;0.5;0.7;1" dur="5.8s" repeatCount="indefinite" additive="replace"/>
+      <use href="#s09a_charB"/>
     </g>
   </g>
 
+  <!-- ============ DUST PARTICLES arancio rising from compass ============ -->
+  <g filter="url(#s09a_dustGlow)">
+    <circle cx="940" cy="540" r="2.5" fill="#FFCB8A">
+      <animate attributeName="cy" values="540;420;320" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.4;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="980" cy="530" r="2.2" fill="#FF9D52">
+      <animate attributeName="cy" values="530;400;290" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.5;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="920" cy="560" r="2" fill="#FFCB8A">
+      <animate attributeName="cy" values="560;440;330" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.75;0.4;0" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1010" cy="550" r="2.4" fill="#FFCB8A">
+      <animate attributeName="cy" values="550;430;310" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.45;0" dur="7.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="510" r="2.6" fill="#FFE6B8">
+      <animate attributeName="cy" values="510;380;260" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.5;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="895" cy="560" r="1.8" fill="#FF9D52">
+      <animate attributeName="cy" values="560;440;340" dur="6.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.4;0" dur="6.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1040" cy="560" r="2" fill="#FFCB8A">
+      <animate attributeName="cy" values="560;440;330" dur="7.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.75;0.4;0" dur="7.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s09a_painterly)" pointer-events="none"/>
+
   <!-- Vignette -->
-  <rect width="1920" height="1080" fill="url(#vig09a)" pointer-events="none"/>
+  <radialGradient id="s09a_vig" cx="50%" cy="50%" r="78%">
+    <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#s09a_vig)" pointer-events="none"/>
 </svg>

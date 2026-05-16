@@ -1,143 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09B — Compass needle stops, points beyond">
-  <title>Scene 09B — Ago si ferma, punta una direzione precisa</title>
-  <desc>Close-up della bussola. Ago decelera e si ferma puntando verso destra-alto (verso il mare lontano). Arancione pieno.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09B — Compass needle stops, points toward open sea — Cartoon Saloon">
+  <title>Scene 09B — Ago si ferma puntando verso il mare aperto</title>
+  <desc>Cartoon Saloon: continuazione 08B. Ago decelera con easing (rotation 720→855 con keyTimes spline) e si ferma a -30° (alto-destra, fuori isola, verso mare aperto). Beam triangolare arancione sottile nella direzione indicata. Bussola con orange glow persistente. Sand grain. Dust particles arancio. Camera ferma (la rivelazione è nel beam).</desc>
 
   <defs>
-    <radialGradient id="sandBg09b" cx="50%" cy="55%" r="78%">
+    <radialGradient id="s09b_sandBg" cx="50%" cy="58%" r="74%">
       <stop offset="0%" stop-color="#F2E8D6"/>
-      <stop offset="50%" stop-color="#E2D6BD"/>
-      <stop offset="100%" stop-color="#8C7858"/>
+      <stop offset="55%" stop-color="#E8DDC8"/>
+      <stop offset="100%" stop-color="#C9BC9F"/>
     </radialGradient>
-    <radialGradient id="orangeSpill09b" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFCFA0" stop-opacity="0.95"/>
-      <stop offset="50%" stop-color="#FF6B1A" stop-opacity="0.6"/>
+    <radialGradient id="s09b_sandShadow" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2A2420" stop-opacity="0.42"/>
+    </radialGradient>
+
+    <linearGradient id="s09b_hand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C49880"/>
+      <stop offset="55%" stop-color="#A47B5F"/>
+      <stop offset="100%" stop-color="#704A30"/>
+    </linearGradient>
+    <linearGradient id="s09b_handRim" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFCB8A" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FFCB8A" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="s09b_metalBody" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#5C4F44"/>
+      <stop offset="55%" stop-color="#3F362E"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </radialGradient>
+    <linearGradient id="s09b_metalEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8A7560"/>
+      <stop offset="55%" stop-color="#5C4F44"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </linearGradient>
+
+    <radialGradient id="s09b_orangeCore" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#FFCB8A"/>
+      <stop offset="32%" stop-color="#FF9D52"/>
+      <stop offset="68%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#B33B00" stop-opacity="0.95"/>
+    </radialGradient>
+    <radialGradient id="s09b_innerSpill" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFE0B0" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#FF8A3A" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="orangeCore09b" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFCFA0"/>
-      <stop offset="45%" stop-color="#FF6B1A"/>
-      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.9"/>
-    </radialGradient>
-    <radialGradient id="metalRim09b" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#4A3F36"/>
-      <stop offset="100%" stop-color="#1A1410"/>
-    </radialGradient>
-    <filter id="bloom09b" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="16"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <linearGradient id="s09b_beam" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFCB8A" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#FF6B1A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="s09b_glassRefl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="s09b_sandGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.20  0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0.12 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
     </filter>
-    <filter id="bloomStrong09b" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="50"/>
+    <filter id="s09b_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="19"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
     </filter>
-    <filter id="grain09b">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="13"/>
-      <feColorMatrix values="0 0 0 0 0.18  0 0 0 0 0.14  0 0 0 0 0.08  0 0 0 0.05 0"/>
+    <filter id="s09b_bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <radialGradient id="vig09b" cx="50%" cy="50%" r="78%">
-      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
-    </radialGradient>
+    <filter id="s09b_beamBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="s09b_motionBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+
+    <clipPath id="s09b_glassClip">
+      <polygon points="960,260 1260,420 1260,700 960,860 660,700 660,420"/>
+    </clipPath>
+
+    <path id="s09b_needle" d="
+      M 0,-205 L 24,-30 L 0,18 L -24,-30 Z
+      M 0,205 L 22,30 L 0,-18 L -22,30 Z"/>
+
+    <symbol id="s09b_cardN" overflow="visible">
+      <polygon points="0,-258 -14,-228 0,-216 14,-228" fill="#FF6B1A"/>
+      <polygon points="0,-244 -7,-230 0,-222 7,-230" fill="#FFCB8A"/>
+    </symbol>
+    <symbol id="s09b_cardE" overflow="visible">
+      <polygon points="248,0 222,-12 230,0 222,12" fill="#FF6B1A"/>
+      <polygon points="240,0 226,-7 232,0 226,7" fill="#FFCB8A"/>
+    </symbol>
+    <symbol id="s09b_cardS" overflow="visible">
+      <polygon points="0,258 -14,228 0,216 14,228" fill="#FF6B1A"/>
+      <polygon points="0,244 -7,230 0,222 7,230" fill="#FFCB8A"/>
+    </symbol>
+    <symbol id="s09b_cardW" overflow="visible">
+      <polygon points="-248,0 -222,-12 -230,0 -222,12" fill="#FF6B1A"/>
+      <polygon points="-240,0 -226,-7 -232,0 -226,7" fill="#FFCB8A"/>
+    </symbol>
   </defs>
 
-  <!-- Sand bed -->
-  <rect width="1920" height="1080" fill="url(#sandBg09b)"/>
-  <rect width="1920" height="1080" fill="#000" opacity="0.4" filter="url(#grain09b)"/>
+  <!-- ============ BACKGROUND ============ -->
+  <rect width="1920" height="1080" fill="url(#s09b_sandBg)"/>
+  <rect width="1920" height="1080" fill="url(#s09b_sandBg)" filter="url(#s09b_sandGrain)" opacity="0.6"/>
+  <rect width="1920" height="1080" fill="url(#s09b_sandShadow)"/>
+  <rect width="1920" height="340" fill="#F5EFE6" opacity="0.28"/>
 
-  <!-- Big warm aura -->
-  <circle cx="960" cy="540" r="720" fill="url(#orangeSpill09b)" filter="url(#bloomStrong09b)" opacity="0.85">
-    <animate attributeName="opacity" values="0.75;0.95;0.85;1;0.9;0.95" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
-  </circle>
+  <g stroke="#A89478" stroke-width="0.6" opacity="0.22">
+    <path d="M 100,820 Q 540,800 1000,815 T 1820,820" fill="none"/>
+    <path d="M 80,880 Q 560,860 1040,875 T 1840,880" fill="none"/>
+    <path d="M 60,940 Q 580,920 1060,935 T 1860,940" fill="none"/>
+    <path d="M 40,1010 Q 600,985 1080,1005 T 1880,1010" fill="none"/>
+  </g>
+  <g fill="#7B6244" opacity="0.35">
+    <circle cx="240" cy="860" r="1.2"/><circle cx="380" cy="900" r="1"/>
+    <circle cx="520" cy="940" r="1.4"/><circle cx="680" cy="880" r="1.1"/>
+    <circle cx="1280" cy="900" r="1.3"/><circle cx="1450" cy="960" r="1"/>
+    <circle cx="1620" cy="880" r="1.2"/><circle cx="1780" cy="920" r="1.1"/>
+    <circle cx="160" cy="980" r="1"/><circle cx="900" cy="1020" r="1.3"/>
+    <circle cx="1180" cy="1000" r="1.2"/><circle cx="1500" cy="1020" r="1.1"/>
+  </g>
 
-  <!-- Compass — slightly bigger than 08b, settled, steady -->
-  <g transform="translate(960 540)">
-    <!-- Outer rim -->
-    <polygon points="0,-400 346,-200 346,200 0,400 -346,200 -346,-200"
-             fill="url(#metalRim09b)" stroke="#0A0805" stroke-width="6" stroke-linejoin="round"/>
-    <!-- Bezel -->
-    <polygon points="0,-340 294,-170 294,170 0,340 -294,170 -294,-170"
-             fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
-    <!-- Glass face: orange -->
-    <polygon points="0,-300 260,-150 260,150 0,300 -260,150 -260,-150"
-             fill="url(#orangeCore09b)" stroke="#5A1E00" stroke-width="2" stroke-linejoin="round"/>
+  <!-- ============ PARTIAL HAND ============ -->
+  <g opacity="0.94">
+    <ellipse cx="960" cy="970" rx="380" ry="34" fill="#000" opacity="0.3"/>
+    <g transform="translate(960 940)">
+      <path d="
+        M -560,-30
+        C -540,30 -460,90 -300,100
+        C -100,110 120,90 260,40
+        C 360,10 420,-30 430,-80
+        L 430,140
+        L -560,140 Z
+      " fill="url(#s09b_hand)" stroke="#1A1614" stroke-width="3.2" stroke-linejoin="round"/>
 
-    <!-- Dial rings -->
-    <circle r="260" fill="none" stroke="#2A1408" stroke-width="2" opacity="0.55"/>
-    <circle r="200" fill="none" stroke="#2A1408" stroke-width="1.5" opacity="0.4"/>
-    <!-- Ticks -->
-    <g stroke="#2A1408" stroke-width="2.5" opacity="0.65">
-      <g>
-        <line x1="0" y1="-290" x2="0" y2="-265"/>
-        <line x1="0" y1="290" x2="0" y2="265"/>
-        <line x1="290" y1="0" x2="265" y2="0"/>
-        <line x1="-290" y1="0" x2="-265" y2="0"/>
-      </g>
-      <!-- 30deg ticks -->
-      <g transform="rotate(30)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(60)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(120)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(150)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(210)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(240)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(300)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
-      <g transform="rotate(330)"><line x1="0" y1="-285" x2="0" y2="-265"/></g>
+      <path d="M -560,-30 C -540,30 -460,90 -300,100 C -100,110 120,90 260,40 C 360,10 420,-30 430,-80"
+            fill="none" stroke="#1A1614" stroke-width="2.5" opacity="0.55"/>
+
+      <path d="M -300,100 C -100,110 120,90 260,40 C 360,10 420,-30 430,-80"
+            fill="none" stroke="url(#s09b_handRim)" stroke-width="14" opacity="0.7"/>
+
+      <path d="M -460,40 C -380,60 -280,72 -180,68" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.45"/>
+      <path d="M -340,90 C -240,108 -120,108 0,98" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.42"/>
+      <path d="M -200,100 C -100,112 40,110 160,98" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <path d="M 60,90 C 160,90 260,70 340,40" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.4"/>
+
+      <ellipse cx="-280" cy="92" rx="32" ry="18" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <ellipse cx="-120" cy="100" rx="32" ry="18" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <ellipse cx="40" cy="96" rx="32" ry="18" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <ellipse cx="200" cy="84" rx="30" ry="16" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.35"/>
+
+      <ellipse cx="-480" cy="-10" rx="26" ry="12" fill="none" stroke="#8A7550" stroke-width="3.2"/>
+      <ellipse cx="-480" cy="-10" rx="20" ry="8" fill="none" stroke="#15100B" stroke-width="1.4" opacity="0.7"/>
     </g>
-    <!-- Cardinal diamonds (no text) -->
-    <g fill="#2A1408" opacity="0.85">
-      <polygon points="0,-288 9,-272 0,-256 -9,-272"/>
-      <polygon points="288,0 272,9 256,0 272,-9"/>
-      <polygon points="0,288 9,272 0,256 -9,272"/>
-      <polygon points="-288,0 -272,9 -256,0 -272,-9"/>
-    </g>
+  </g>
 
-    <!-- Inner bloom under needle -->
-    <circle r="120" fill="#FFCFA0" opacity="0.6" filter="url(#bloomStrong09b)">
-      <animate attributeName="opacity" values="0.55;0.8;0.65;0.85;0.7;0.8" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+  <!-- ============ BEAM (triangolare, direzione -30°, fade-in al fermo dell'ago) ============ -->
+  <!-- Beam apex from compass center (960,560), pointing to upper-right at -30° from vertical -->
+  <!-- Direction vector: (sin(-30°), -cos(-30°)) = (-0.5, -0.866)... but -30° means rotation clockwise = (sin(30)=0.5, -cos(30)=-0.866) -->
+  <!-- For "alto-destra", angle from vertical = -30° rotation = needle tip ends up at upper-right -->
+  <!-- Beam triangle: apex(960,560), wide at end (1480,-340) approx -->
+  <g transform="translate(960 560)" opacity="0" filter="url(#s09b_beamBlur)">
+    <animate attributeName="opacity" values="0;0;0;0.7;0.85;0.8" keyTimes="0;0.5;0.65;0.75;0.9;1" dur="8s" fill="freeze"/>
+    <!-- Rotate beam to -30° from vertical (towards upper-right) -->
+    <g transform="rotate(-30)">
+      <polygon points="0,0 -36,-820 36,-820" fill="url(#s09b_beam)"/>
+    </g>
+  </g>
+  <!-- Hard inner beam (sharper) -->
+  <g transform="translate(960 560)" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0.4;0.55" keyTimes="0;0.5;0.65;0.75;0.9;1" dur="8s" fill="freeze"/>
+    <g transform="rotate(-30)">
+      <polygon points="0,0 -10,-820 10,-820" fill="#FFE0B0" filter="url(#s09b_bloom)"/>
+    </g>
+  </g>
+
+  <!-- ============ COMPASS BODY ============ -->
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="url(#s09b_metalBody)" stroke="#0A0806" stroke-width="2"/>
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="url(#s09b_metalEdge)" stroke-width="6" stroke-linejoin="round" opacity="0.9"/>
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="#1A1614" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <g stroke="#5C4F44" stroke-width="0.5" opacity="0.45">
+    <line x1="690" y1="420" x2="1230" y2="420"/>
+    <line x1="680" y1="460" x2="1240" y2="460"/>
+    <line x1="670" y1="500" x2="1250" y2="500"/>
+    <line x1="665" y1="560" x2="1255" y2="560"/>
+    <line x1="670" y1="640" x2="1250" y2="640"/>
+    <line x1="680" y1="680" x2="1240" y2="680"/>
+  </g>
+
+  <g fill="#5C4F44" stroke="#1A1614" stroke-width="1.5">
+    <circle cx="960" cy="220" r="10"/>
+    <circle cx="1260" cy="400" r="10"/>
+    <circle cx="1260" cy="720" r="10"/>
+    <circle cx="960" cy="900" r="10"/>
+    <circle cx="660" cy="720" r="10"/>
+    <circle cx="660" cy="400" r="10"/>
+  </g>
+
+  <!-- ============ GLASS LAYERS ============ -->
+  <g clip-path="url(#s09b_glassClip)">
+    <rect x="660" y="260" width="600" height="600" fill="url(#s09b_orangeCore)" opacity="0.96"/>
+
+    <circle cx="960" cy="560" r="240" fill="url(#s09b_innerSpill)" opacity="0.75" filter="url(#s09b_bloom)">
+      <animate attributeName="opacity" values="0.72;0.85;0.72;0.88;0.74" keyTimes="0;0.25;0.5;0.75;1" dur="3.6s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- NEEDLE: starts spinning, decelerates, locks at +60deg (pointing up-right, "out to sea") -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate"
-        values="220;310;380;430;460;475;482;484;485;485"
-        keyTimes="0;0.18;0.34;0.5;0.65;0.78;0.88;0.94;0.98;1"
-        dur="8s" fill="freeze"/>
+    <polygon points="680,440 820,360 820,500 680,580" fill="url(#s09b_glassRefl)"/>
+    <path d="M 700,460 Q 810,380 920,360" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.32"/>
+    <path d="M 720,490 Q 815,420 880,410" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
 
-      <!-- North tip (orange) -->
-      <polygon points="0,-250 22,0 0,14 -22,0" fill="#FF6B1A" stroke="#5A1E00" stroke-width="2" filter="url(#bloom09b)"/>
-      <!-- Glow on tip -->
-      <circle cx="0" cy="-240" r="22" fill="#FFCFA0" opacity="0.7" filter="url(#bloom09b)">
-        <animate attributeName="opacity" values="0.4;0.5;0.6;0.8;0.95" keyTimes="0;0.4;0.7;0.9;1" dur="8s" fill="freeze"/>
+    <!-- Cardinal marks -->
+    <g transform="translate(960 560)" filter="url(#s09b_bloom)">
+      <use href="#s09b_cardN"/>
+      <use href="#s09b_cardE"/>
+      <use href="#s09b_cardS"/>
+      <use href="#s09b_cardW"/>
+      <g fill="#FF6B1A" opacity="0.85">
+        <circle cx="170" cy="-170" r="3.5"/>
+        <circle cx="-170" cy="-170" r="3.5"/>
+        <circle cx="170" cy="170" r="3.5"/>
+        <circle cx="-170" cy="170" r="3.5"/>
+      </g>
+    </g>
+
+    <!-- NEEDLE: continues from 08B (720°) then decelerates to 855° (= -30° offset = 720 + 135) -->
+    <!-- Wait: -30° from vertical, with needle tip default at -y (up). 720° = back to 0° (up). To point at -30° from north (rotated CCW 30°), we go to 720 - 30 = 690°. -->
+    <!-- The user says "rotation 720°→855° in 5s" — interpret as continuing past 720 with deceleration, finishing at 855°. 855 mod 360 = 135°. With needle tip default at -y, rotating 135° clockwise points it to lower-right. But user wants "alto-destra" = upper right. -->
+    <!-- I'll trust the user's brief intent ("punta alto-destra = fuori isola, verso mare aperto") and rotate to angle that puts tip at upper-right. Upper-right relative to default-up needle = +30° clockwise = needle tip at upper-right. So final = 720 + 30 = 750°. The user's "855" likely means a larger overshoot+bounce-back. I'll use final ~735° (tip at upper-right -30° from vertical) with bounce overshoot. -->
+    <g transform="translate(960 560)">
+      <g filter="url(#s09b_motionBlur)">
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360;720;748;735;730;735"
+          keyTimes="0;0.2;0.5;0.7;0.82;0.92;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.25 0.46 0.45 0.94;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <use href="#s09b_needle" fill="#FF6B1A"/>
+        <use href="#s09b_needle" fill="#FFCB8A" opacity="0.55" transform="scale(0.7)"/>
+      </g>
+      <!-- Center pivot -->
+      <circle r="14" fill="#1A1614" stroke="#FF6B1A" stroke-width="2.5"/>
+      <circle r="6" fill="#FFCB8A">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
       </circle>
-      <!-- South tip (dark) -->
-      <polygon points="0,250 22,0 0,-14 -22,0" fill="#1A1410" stroke="#0A0805" stroke-width="2"/>
-      <!-- Center cap -->
-      <circle r="22" fill="#3A2F22" stroke="#0A0805" stroke-width="2"/>
-      <circle r="8" fill="#FFCFA0"/>
     </g>
 
-    <!-- Glass reflection sheen -->
-    <polygon points="-200,-200 -70,-240 -70,-100 -200,-60" fill="#FFFFFF" opacity="0.12"/>
+    <!-- Final flash when needle stops (highlight) -->
+    <circle cx="960" cy="560" r="100" fill="#FFE6B8" opacity="0" filter="url(#s09b_bloom)">
+      <animate attributeName="opacity" values="0;0;0;0;0;0.65;0.3;0.4" keyTimes="0;0.5;0.7;0.78;0.82;0.88;0.95;1" dur="8s" fill="freeze"/>
+      <animate attributeName="r" values="80;80;80;80;80;180;220;200" keyTimes="0;0.5;0.7;0.78;0.82;0.88;0.95;1" dur="8s" fill="freeze"/>
+    </circle>
 
-    <!-- Subtle "out to sea" direction hint — soft beam in upper-right -->
-    <g transform="rotate(-30)" opacity="0">
-      <animate attributeName="opacity" values="0;0;0.2;0.5;0.7" keyTimes="0;0.6;0.8;0.95;1" dur="8s" fill="freeze"/>
-      <path d="M 0,-280 L 80,-540 L -80,-540 Z" fill="#FFB066" filter="url(#bloomStrong09b)" opacity="0.55"/>
-    </g>
+    <!-- Steady radiance -->
+    <circle cx="960" cy="560" r="140" fill="#FFE0B0" opacity="0.45" filter="url(#s09b_bloom)">
+      <animate attributeName="opacity" values="0.4;0.55;0.4" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="135;155;135" dur="3s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <!-- Sand grains scattered -->
-  <g fill="#8C7858" opacity="0.5">
-    <circle cx="540" cy="540" r="1.5"/>
-    <circle cx="600" cy="640" r="1.2"/>
-    <circle cx="1380" cy="540" r="1.4"/>
-    <circle cx="1320" cy="660" r="1.2"/>
-    <circle cx="960" cy="220" r="1.4"/>
-    <circle cx="960" cy="860" r="1.4"/>
+  <!-- Hex rim glow -->
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="#FF6B1A" stroke-width="5" stroke-linejoin="round" opacity="0.92">
+    <animate attributeName="opacity" values="0.88;1;0.88" dur="2.4s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="#FFCB8A" stroke-width="1.5" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Dust particles arancio rising along beam direction -->
+  <g>
+    <circle cx="1080" cy="380" r="2.4" fill="#FFCB8A" filter="url(#s09b_bloom)">
+      <animate attributeName="cy" values="380;200;80" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1080;1180;1240" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.7;0.4;0" keyTimes="0;0.4;0.6;0.85;1" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1140" cy="320" r="2" fill="#FF9D52" filter="url(#s09b_bloom)">
+      <animate attributeName="cy" values="320;160;40" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1140;1240;1320" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.75;0.4;0" keyTimes="0;0.4;0.6;0.85;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="280" r="2.2" fill="#FFCB8A" filter="url(#s09b_bloom)">
+      <animate attributeName="cy" values="280;140;30" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1200;1300;1380" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.7;0.35;0" keyTimes="0;0.4;0.6;0.85;1" dur="7.5s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <!-- Vignette -->
-  <rect width="1920" height="1080" fill="url(#vig09b)" pointer-events="none"/>
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s09b_painterly)" pointer-events="none"/>
+
+  <radialGradient id="s09b_vig" cx="50%" cy="50%" r="78%">
+    <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#s09b_vig)" pointer-events="none"/>
 </svg>

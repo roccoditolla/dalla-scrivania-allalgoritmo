@@ -1,137 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 12 — Cinematic-to-realistic transition">
-  <title>Scene 12 — Bussola arancione riempie l'inquadratura, bridge verso slide 13 realistic</title>
-  <desc>Cream sky con bussola arancione esagonale al centro che cresce fino a riempire tutto. Bridge col realistic deck.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 12 — Transition to realistic deck — Cartoon Saloon">
+  <title>Scene 12 — Bussola arancione cresce esponenzialmente e bridge verso slide 13</title>
+  <desc>Cartoon Saloon transition: bussola circolare-windrose (geometria 1:1 con slide_13_anno_zero) parte a scale 0.4 al centro e cresce a 2.6x in 8s (crescita esponenziale ease-out). 2 rect overlay (arancione + cream) fade-in negli ultimi 1.2s. Match cromatico/geometrico 1:1 con slide 13: cream #F5EFE6, orange #FF6B1A, ink #1A1614, 8-point windrose, tick marks 12-step.</desc>
 
   <defs>
-    <radialGradient id="creamSky12" cx="50%" cy="50%" r="80%">
-      <stop offset="0%" stop-color="#FAF4E9"/>
-      <stop offset="60%" stop-color="#EFE6D2"/>
-      <stop offset="100%" stop-color="#D8C9A8"/>
+    <radialGradient id="s12_creamBg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#F5EFE6"/>
+      <stop offset="100%" stop-color="#E8DEC8"/>
     </radialGradient>
-    <radialGradient id="orangeCore12" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFCFA0"/>
-      <stop offset="40%" stop-color="#FF8A3A"/>
-      <stop offset="70%" stop-color="#FF6B1A"/>
-      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.95"/>
-    </radialGradient>
-    <radialGradient id="orangeBloom12" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" stop-color="#FFCFA0" stop-opacity="0.95"/>
-      <stop offset="45%" stop-color="#FF8A3A" stop-opacity="0.5"/>
+    <radialGradient id="s12_pulse" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="metalRim12" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#3A2F22"/>
-      <stop offset="100%" stop-color="#1A1410"/>
-    </radialGradient>
-    <filter id="bloom12" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="20"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="s12_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="42"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
     </filter>
-    <filter id="bloomBig12" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="60"/>
-    </filter>
-    <filter id="painterly12">
-      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="29"/>
-      <feDisplacementMap in="SourceGraphic" scale="2"/>
+    <filter id="s12_bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
     </filter>
   </defs>
 
-  <!-- Cream sky (dominant in first half, gets washed out by orange in second half) -->
-  <rect width="1920" height="1080" fill="url(#creamSky12)"/>
+  <!-- Cream background (match slide 13) -->
+  <rect width="1920" height="1080" fill="url(#s12_creamBg)"/>
 
-  <!-- Soft horizon mist (dissolving sea hint, vanishes early) -->
-  <g opacity="0.6">
-    <animate attributeName="opacity" values="0.6;0.4;0.2;0" keyTimes="0;0.3;0.5;0.7" dur="8s" fill="freeze"/>
-    <rect x="0" y="640" width="1920" height="160" fill="#C8B898" opacity="0.5"/>
-    <rect x="0" y="800" width="1920" height="280" fill="#7B8E9C" opacity="0.45"/>
-    <!-- Tiny ghost ship silhouette (dissolves) -->
-    <g transform="translate(1280 700) scale(0.18)" opacity="0.5">
-      <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="#1A1410"/>
-      <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
-      <path d="M -2,-220 Q -60,-170 -60,-80 L -60,-20 L 0,-20 Z" fill="#C8B898"/>
-      <path d="M 2,-220 Q 60,-170 60,-80 L 60,-20 L 0,-20 Z" fill="#C8B898" opacity="0.9"/>
-    </g>
-  </g>
+  <!-- Soft painterly grain -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s12_painterly)" pointer-events="none"/>
 
-  <!-- Outer halo (the orange "explodes" outward) -->
-  <circle cx="960" cy="540" r="200" fill="url(#orangeBloom12)" filter="url(#bloomBig12)" opacity="0">
-    <animate attributeName="opacity" values="0;0.3;0.6;0.85;1;1" keyTimes="0;0.2;0.4;0.6;0.85;1" dur="8s" fill="freeze"/>
-    <animate attributeName="r" values="180;320;520;760;1100;1400" keyTimes="0;0.2;0.4;0.6;0.85;1" dur="8s" fill="freeze"/>
-  </circle>
-
-  <!-- Compass — starts small, grows to dominate frame -->
+  <!-- ============ COMPASS CIRCULAR (1:1 match with slide_13_anno_zero) ============ -->
+  <!-- Scales 0.4 → 2.6 exponentially over 8s, then orange overlay fades in last 1.2s -->
   <g transform="translate(960 540)">
+    <!-- Growth animation (exponential ease-out) -->
+    <animateTransform attributeName="transform" type="scale"
+      values="0.4;0.5;0.7;1.0;1.4;1.9;2.4;2.6"
+      keyTimes="0;0.15;0.32;0.5;0.65;0.78;0.9;1"
+      dur="8s" fill="freeze" additive="sum"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+
+    <!-- Pulsing halo (orange) — geometria identica a slide_13 -->
+    <circle cx="0" cy="0" r="320" fill="#FF6B1A" opacity="0.06">
+      <animate attributeName="r" values="300;360;300" dur="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.04;0.10;0.04" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="240" fill="#FF6B1A" opacity="0.10">
+      <animate attributeName="r" values="220;270;220" dur="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.08;0.16;0.08" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Compass outer ring — identical to slide_13 -->
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#1A1614" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="190" fill="none" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Tick marks every 30° — identical to slide_13 -->
+    <g stroke="#1A1614" stroke-width="3" stroke-linecap="round">
+      <line x1="0" y1="-200" x2="0" y2="-175"/>
+      <line x1="100" y1="-173" x2="87" y2="-152"/>
+      <line x1="173" y1="-100" x2="151" y2="-87"/>
+      <line x1="200" y1="0" x2="175" y2="0"/>
+      <line x1="173" y1="100" x2="151" y2="87"/>
+      <line x1="100" y1="173" x2="87" y2="151"/>
+      <line x1="0" y1="200" x2="0" y2="175"/>
+      <line x1="-100" y1="173" x2="-87" y2="151"/>
+      <line x1="-173" y1="100" x2="-151" y2="87"/>
+      <line x1="-200" y1="0" x2="-175" y2="0"/>
+      <line x1="-173" y1="-100" x2="-151" y2="-87"/>
+      <line x1="-100" y1="-173" x2="-87" y2="-152"/>
+    </g>
+
+    <!-- Inner dial — identical to slide_13 -->
+    <circle cx="0" cy="0" r="135" fill="none" stroke="#1A1614" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Windrose 8-point star — identical to slide_13 -->
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#F5EFE6">
+      <polygon points="0,-130 18,0 0,130 -18,0"/>
+      <polygon points="-130,0 0,-18 130,0 0,18"/>
+      <polygon points="-90,-90 0,-12 90,90 0,12" opacity="0.35"/>
+      <polygon points="90,-90 12,0 -90,90 -12,0" opacity="0.35"/>
+    </g>
+
+    <!-- Needle — identical to slide_13 (orange N pointer + cream S, ink pivot) -->
     <g>
-      <animateTransform attributeName="transform" type="scale"
-        values="0.4;0.6;0.9;1.3;1.9;2.6" keyTimes="0;0.18;0.4;0.6;0.82;1" dur="8s" fill="freeze"/>
-
-      <!-- Soft rotation (slight, to feel alive) -->
-      <g>
-        <animateTransform attributeName="transform" type="rotate"
-          values="-6;-3;0;3;6;8" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="8s" fill="freeze"/>
-
-        <!-- Outer hex rim -->
-        <polygon points="0,-360 312,-180 312,180 0,360 -312,180 -312,-180"
-                 fill="url(#metalRim12)" stroke="#0A0805" stroke-width="6" stroke-linejoin="round"/>
-        <!-- Bezel -->
-        <polygon points="0,-300 260,-150 260,150 0,300 -260,150 -260,-150"
-                 fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
-        <!-- Glass face -->
-        <polygon points="0,-270 234,-135 234,135 0,270 -234,135 -234,-135"
-                 fill="url(#orangeCore12)" stroke="#5A1E00" stroke-width="2" stroke-linejoin="round"/>
-
-        <!-- Dial rings -->
-        <circle r="230" fill="none" stroke="#2A1408" stroke-width="2" opacity="0.55"/>
-        <circle r="170" fill="none" stroke="#2A1408" stroke-width="1.5" opacity="0.4"/>
-
-        <!-- Cardinal diamonds -->
-        <g fill="#2A1408" opacity="0.9">
-          <polygon points="0,-258 9,-244 0,-230 -9,-244"/>
-          <polygon points="258,0 244,8 230,0 244,-8"/>
-          <polygon points="0,258 9,244 0,230 -9,244"/>
-          <polygon points="-258,0 -244,8 -230,0 -244,-8"/>
-        </g>
-        <!-- 30deg ticks -->
-        <g stroke="#2A1408" stroke-width="2.5" opacity="0.65">
-          <g transform="rotate(30)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(60)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(120)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(150)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(210)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(240)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(300)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-          <g transform="rotate(330)"><line x1="0" y1="-255" x2="0" y2="-235"/></g>
-        </g>
-
-        <!-- Inner big bloom -->
-        <circle r="120" fill="#FFCFA0" opacity="0.75" filter="url(#bloom12)">
-          <animate attributeName="opacity" values="0.5;0.7;0.85;0.95;1" keyTimes="0;0.25;0.5;0.75;1" dur="8s" fill="freeze"/>
-        </circle>
-
-        <!-- Needle locked, pointing up (north into the future) -->
-        <polygon points="0,-220 22,0 0,12 -22,0" fill="#FF6B1A" stroke="#5A1E00" stroke-width="2" filter="url(#bloom12)"/>
-        <polygon points="0,220 22,0 0,-12 -22,0" fill="#1A1410" stroke="#0A0805" stroke-width="2"/>
-        <circle r="20" fill="#3A2F22" stroke="#0A0805" stroke-width="2"/>
-        <circle r="7" fill="#FFCFA0"/>
-
-        <!-- Glass sheen -->
-        <polygon points="-180,-180 -60,-220 -60,-100 -180,-60" fill="#FFFFFF" opacity="0.14"/>
-      </g>
+      <polygon points="0,-115 14,0 0,8 -14,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="0,115 14,0 0,-8 -14,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="0" cy="0" r="10" fill="#1A1614"/>
+      <circle cx="0" cy="0" r="4" fill="#FF6B1A">
+        <animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
     </g>
   </g>
 
-  <!-- Final wash: pure orange/cream takeover (last 1.5s) -->
+  <!-- ============ FINAL OVERLAY (orange + cream fade-in, last 1.2s of 8s = 85%→100%) ============ -->
+  <!-- Orange wash fills screen near end -->
   <rect width="1920" height="1080" fill="#FF6B1A" opacity="0">
-    <animate attributeName="opacity" values="0;0;0;0;0.1;0.25;0.4" keyTimes="0;0.5;0.7;0.85;0.92;0.97;1" dur="8s" fill="freeze"/>
+    <animate attributeName="opacity"
+      values="0;0;0;0.45;0.78"
+      keyTimes="0;0.6;0.85;0.95;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
   </rect>
-  <rect width="1920" height="1080" fill="#FAF4E9" opacity="0">
-    <animate attributeName="opacity" values="0;0;0;0;0;0.15;0.35" keyTimes="0;0.5;0.7;0.85;0.92;0.96;1" dur="8s" fill="freeze"/>
+  <!-- Cream warm overlay last frames -->
+  <rect width="1920" height="1080" fill="#F5EFE6" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0;0;0.35"
+      keyTimes="0;0.7;0.88;0.94;1"
+      dur="8s" fill="freeze"
+      calcMode="spline"
+      keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
   </rect>
-
-  <!-- Painterly noise overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.03" filter="url(#painterly12)" pointer-events="none"/>
 </svg>

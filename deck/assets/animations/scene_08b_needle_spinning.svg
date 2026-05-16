@@ -1,136 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08B — Compass needle spinning, searching">
-  <title>Scene 08B — Ago della bussola che ruota cercando direzione</title>
-  <desc>Top-down close-up. Bussola sulla sabbia, ago ruota 720deg poi rallenta. Orange glow attivo.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 08B — Compass needle spinning (continuazione 08A) — Cartoon Saloon">
+  <title>Scene 08B — L'ago della bussola gira veloce</title>
+  <desc>Cartoon Saloon: continuazione 08A. Camera leggermente più larga. Vede la bussola esagonale intera + parte della mano weathered sotto. Glow arancione interno persistente. Ago arancione che ruota 720° in 6s con motion blur. Numerali cardinali geometrici (rombo N + chevron E/S/W, no testo). Sand grain via turbulence. Brushed metal feel. Anello al pollice.</desc>
 
   <defs>
-    <radialGradient id="sandBg08b" cx="50%" cy="55%" r="78%">
+    <radialGradient id="s08b_sandBg" cx="50%" cy="58%" r="74%">
       <stop offset="0%" stop-color="#F2E8D6"/>
-      <stop offset="55%" stop-color="#E2D6BD"/>
-      <stop offset="100%" stop-color="#8C7858"/>
+      <stop offset="55%" stop-color="#E8DDC8"/>
+      <stop offset="100%" stop-color="#C9BC9F"/>
     </radialGradient>
-    <radialGradient id="orangeGlow08b" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFB066" stop-opacity="0.95"/>
-      <stop offset="50%" stop-color="#FF6B1A" stop-opacity="0.55"/>
+    <radialGradient id="s08b_sandShadow" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2A2420" stop-opacity="0.42"/>
+    </radialGradient>
+
+    <linearGradient id="s08b_hand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C49880"/>
+      <stop offset="55%" stop-color="#A47B5F"/>
+      <stop offset="100%" stop-color="#704A30"/>
+    </linearGradient>
+    <linearGradient id="s08b_handRim" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFCB8A" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FFCB8A" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="s08b_metalBody" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#5C4F44"/>
+      <stop offset="55%" stop-color="#3F362E"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </radialGradient>
+    <linearGradient id="s08b_metalEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8A7560"/>
+      <stop offset="55%" stop-color="#5C4F44"/>
+      <stop offset="100%" stop-color="#15110E"/>
+    </linearGradient>
+
+    <radialGradient id="s08b_orangeCore" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#FFCB8A"/>
+      <stop offset="32%" stop-color="#FF9D52"/>
+      <stop offset="68%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#B33B00" stop-opacity="0.95"/>
+    </radialGradient>
+    <radialGradient id="s08b_innerSpill" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFE0B0" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#FF8A3A" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="orangeCore08b" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#FFC68A"/>
-      <stop offset="45%" stop-color="#FF6B1A"/>
-      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.9"/>
-    </radialGradient>
-    <radialGradient id="metalRim08b" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#4A3F36"/>
-      <stop offset="100%" stop-color="#1A1410"/>
-    </radialGradient>
-    <filter id="bloom08b" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="14"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <linearGradient id="s08b_glassRefl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="s08b_sandGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="7"/>
+      <feColorMatrix values="0 0 0 0 0.20  0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0.12 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
     </filter>
-    <filter id="grain08b">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11"/>
-      <feColorMatrix values="0 0 0 0 0.18  0 0 0 0 0.14  0 0 0 0 0.08  0 0 0 0.05 0"/>
+    <filter id="s08b_painterly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="14"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
     </filter>
-    <radialGradient id="vig08b" cx="50%" cy="50%" r="75%">
-      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
-    </radialGradient>
+    <filter id="s08b_bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="s08b_motionBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <filter id="s08b_motionBlurFast" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <clipPath id="s08b_glassClip">
+      <polygon points="960,260 1260,420 1260,700 960,860 660,700 660,420"/>
+    </clipPath>
+
+    <path id="s08b_needle" d="
+      M 0,-205 L 24,-30 L 0,18 L -24,-30 Z
+      M 0,205 L 22,30 L 0,-18 L -22,30 Z"/>
+
+    <symbol id="s08b_cardN" overflow="visible">
+      <polygon points="0,-258 -14,-228 0,-216 14,-228" fill="#FF6B1A"/>
+      <polygon points="0,-244 -7,-230 0,-222 7,-230" fill="#FFCB8A"/>
+    </symbol>
+    <symbol id="s08b_cardE" overflow="visible">
+      <polygon points="248,0 222,-12 230,0 222,12" fill="#FF6B1A"/>
+      <polygon points="240,0 226,-7 232,0 226,7" fill="#FFCB8A"/>
+    </symbol>
+    <symbol id="s08b_cardS" overflow="visible">
+      <polygon points="0,258 -14,228 0,216 14,228" fill="#FF6B1A"/>
+      <polygon points="0,244 -7,230 0,222 7,230" fill="#FFCB8A"/>
+    </symbol>
+    <symbol id="s08b_cardW" overflow="visible">
+      <polygon points="-248,0 -222,-12 -230,0 -222,12" fill="#FF6B1A"/>
+      <polygon points="-240,0 -226,-7 -232,0 -226,7" fill="#FFCB8A"/>
+    </symbol>
   </defs>
 
-  <!-- Sand bed (top-down) -->
-  <rect width="1920" height="1080" fill="url(#sandBg08b)"/>
-  <rect width="1920" height="1080" fill="#000" opacity="0.4" filter="url(#grain08b)"/>
+  <!-- ============ BACKGROUND ============ -->
+  <rect width="1920" height="1080" fill="url(#s08b_sandBg)"/>
+  <rect width="1920" height="1080" fill="url(#s08b_sandBg)" filter="url(#s08b_sandGrain)" opacity="0.6"/>
+  <rect width="1920" height="1080" fill="url(#s08b_sandShadow)"/>
+  <rect width="1920" height="340" fill="#F5EFE6" opacity="0.28"/>
 
-  <!-- Subtle radial vignette already from background -->
-  <radialGradient id="warmAura08b" cx="50%" cy="50%" r="60%">
-    <stop offset="0%" stop-color="#FFE0BD" stop-opacity="0.55"/>
-    <stop offset="100%" stop-color="#FFE0BD" stop-opacity="0"/>
-  </radialGradient>
-  <rect width="1920" height="1080" fill="url(#warmAura08b)"/>
+  <g stroke="#A89478" stroke-width="0.6" opacity="0.22">
+    <path d="M 100,820 Q 540,800 1000,815 T 1820,820" fill="none"/>
+    <path d="M 80,880 Q 560,860 1040,875 T 1840,880" fill="none"/>
+    <path d="M 60,940 Q 580,920 1060,935 T 1860,940" fill="none"/>
+    <path d="M 40,1010 Q 600,985 1080,1005 T 1880,1010" fill="none"/>
+  </g>
+  <g fill="#7B6244" opacity="0.35">
+    <circle cx="240" cy="860" r="1.2"/><circle cx="380" cy="900" r="1"/>
+    <circle cx="520" cy="940" r="1.4"/><circle cx="680" cy="880" r="1.1"/>
+    <circle cx="1280" cy="900" r="1.3"/><circle cx="1450" cy="960" r="1"/>
+    <circle cx="1620" cy="880" r="1.2"/><circle cx="1780" cy="920" r="1.1"/>
+    <circle cx="160" cy="980" r="1"/><circle cx="900" cy="1020" r="1.3"/>
+    <circle cx="1180" cy="1000" r="1.2"/><circle cx="1500" cy="1020" r="1.1"/>
+  </g>
 
-  <!-- Orange ground spill (animated bloom) -->
-  <circle cx="960" cy="540" r="640" fill="url(#orangeGlow08b)" opacity="0.85" filter="url(#bloom08b)">
-    <animate attributeName="opacity" values="0.7;0.95;0.8;1;0.85;0.95" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
-    <animate attributeName="r" values="540;620;680;640;700;660" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
-  </circle>
+  <!-- ============ PARTIAL WEATHERED HAND under compass ============ -->
+  <g opacity="0.94">
+    <ellipse cx="960" cy="970" rx="380" ry="34" fill="#000" opacity="0.3"/>
+    <g transform="translate(960 940)">
+      <path d="
+        M -560,-30
+        C -540,30 -460,90 -300,100
+        C -100,110 120,90 260,40
+        C 360,10 420,-30 430,-80
+        L 430,140
+        L -560,140 Z
+      " fill="url(#s08b_hand)" stroke="#1A1614" stroke-width="3.2" stroke-linejoin="round"/>
 
-  <!-- ============== COMPASS top-down view ============== -->
-  <g transform="translate(960 540)">
-    <!-- Outer hexagonal metal rim -->
-    <polygon points="0,-360 312,-180 312,180 0,360 -312,180 -312,-180"
-             fill="url(#metalRim08b)" stroke="#0A0805" stroke-width="6" stroke-linejoin="round"/>
-    <!-- Inner hexagonal bezel -->
-    <polygon points="0,-300 260,-150 260,150 0,300 -260,150 -260,-150"
-             fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M -560,-30 C -540,30 -460,90 -300,100 C -100,110 120,90 260,40 C 360,10 420,-30 430,-80"
+            fill="none" stroke="#1A1614" stroke-width="2.5" opacity="0.55"/>
 
-    <!-- Hexagonal glass face (now lit orange) -->
-    <polygon points="0,-270 234,-135 234,135 0,270 -234,135 -234,-135"
-             fill="url(#orangeCore08b)" stroke="#5A1E00" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M -300,100 C -100,110 120,90 260,40 C 360,10 420,-30 430,-80"
+            fill="none" stroke="url(#s08b_handRim)" stroke-width="14" opacity="0.7"/>
 
-    <!-- Inner ring -->
-    <circle r="230" fill="none" stroke="#2A1408" stroke-width="2" opacity="0.55"/>
-    <circle r="170" fill="none" stroke="#2A1408" stroke-width="1.5" opacity="0.4"/>
-    <!-- Tick marks around dial -->
-    <g stroke="#2A1408" stroke-width="2.5" opacity="0.6">
-      <line x1="0" y1="-260" x2="0" y2="-235"/>
-      <line x1="130" y1="-225" x2="120" y2="-205" transform="rotate(0)"/>
-      <line x1="225" y1="-130" x2="205" y2="-120"/>
-      <line x1="260" y1="0" x2="235" y2="0"/>
-      <line x1="225" y1="130" x2="205" y2="120"/>
-      <line x1="130" y1="225" x2="120" y2="205"/>
-      <line x1="0" y1="260" x2="0" y2="235"/>
-      <line x1="-130" y1="225" x2="-120" y2="205"/>
-      <line x1="-225" y1="130" x2="-205" y2="120"/>
-      <line x1="-260" y1="0" x2="-235" y2="0"/>
-      <line x1="-225" y1="-130" x2="-205" y2="-120"/>
-      <line x1="-130" y1="-225" x2="-120" y2="-205"/>
+      <!-- Wrinkles -->
+      <path d="M -460,40 C -380,60 -280,72 -180,68" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.45"/>
+      <path d="M -340,90 C -240,108 -120,108 0,98" fill="none" stroke="#1A1614" stroke-width="2" opacity="0.42"/>
+      <path d="M -200,100 C -100,112 40,110 160,98" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <path d="M 60,90 C 160,90 260,70 340,40" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.4"/>
+
+      <!-- Knuckles -->
+      <ellipse cx="-280" cy="92" rx="32" ry="18" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <ellipse cx="-120" cy="100" rx="32" ry="18" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <ellipse cx="40" cy="96" rx="32" ry="18" fill="none" stroke="#1A1614" stroke-width="1.6" opacity="0.38"/>
+      <ellipse cx="200" cy="84" rx="30" ry="16" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.35"/>
+
+      <!-- Anello al pollice (brass) -->
+      <ellipse cx="-480" cy="-10" rx="26" ry="12" fill="none" stroke="#8A7550" stroke-width="3.2"/>
+      <ellipse cx="-480" cy="-10" rx="20" ry="8" fill="none" stroke="#15100B" stroke-width="1.4" opacity="0.7"/>
+      <ellipse cx="-480" cy="-14" rx="3" ry="2" fill="#D4B888" opacity="0.85"/>
     </g>
-    <!-- Cardinal marks (geometric, no text) — diamonds at N/E/S/W -->
-    <g fill="#2A1408" opacity="0.85">
-      <polygon points="0,-258 8,-244 0,-230 -8,-244"/>
-      <polygon points="258,0 244,8 230,0 244,-8"/>
-      <polygon points="0,258 8,244 0,230 -8,244"/>
-      <polygon points="-258,0 -244,8 -230,0 -244,-8"/>
-    </g>
+  </g>
 
-    <!-- Bloom radial under needle -->
-    <circle r="80" fill="#FFB066" opacity="0.6" filter="url(#bloom08b)">
-      <animate attributeName="opacity" values="0.4;0.7;0.5;0.8;0.6;0.7" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+  <!-- ============ COMPASS BODY (camera più larga) ============ -->
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="url(#s08b_metalBody)" stroke="#0A0806" stroke-width="2"/>
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="url(#s08b_metalEdge)" stroke-width="6" stroke-linejoin="round" opacity="0.9"/>
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="#1A1614" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <!-- Brushed metal streaks -->
+  <g stroke="#5C4F44" stroke-width="0.5" opacity="0.45">
+    <line x1="690" y1="420" x2="1230" y2="420"/>
+    <line x1="680" y1="460" x2="1240" y2="460"/>
+    <line x1="670" y1="500" x2="1250" y2="500"/>
+    <line x1="665" y1="560" x2="1255" y2="560"/>
+    <line x1="670" y1="640" x2="1250" y2="640"/>
+    <line x1="680" y1="680" x2="1240" y2="680"/>
+  </g>
+
+  <g fill="#5C4F44" stroke="#1A1614" stroke-width="1.5">
+    <circle cx="960" cy="220" r="10"/>
+    <circle cx="1260" cy="400" r="10"/>
+    <circle cx="1260" cy="720" r="10"/>
+    <circle cx="960" cy="900" r="10"/>
+    <circle cx="660" cy="720" r="10"/>
+    <circle cx="660" cy="400" r="10"/>
+  </g>
+
+  <!-- ============ GLASS LAYERS (CLIPPED) ============ -->
+  <g clip-path="url(#s08b_glassClip)">
+    <!-- Persistent orange core -->
+    <rect x="660" y="260" width="600" height="600" fill="url(#s08b_orangeCore)" opacity="0.96"/>
+
+    <!-- Warm spill breathing -->
+    <circle cx="960" cy="560" r="240" fill="url(#s08b_innerSpill)" opacity="0.75" filter="url(#s08b_bloom)">
+      <animate attributeName="opacity" values="0.72;0.82;0.72;0.84;0.74" keyTimes="0;0.25;0.5;0.75;1" dur="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="230;245;235;245;230" keyTimes="0;0.25;0.5;0.75;1" dur="3.6s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- ============== SPINNING NEEDLE ==============
-         Spins fast (720deg) in first 5s, decelerates, then slight oscillation -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate"
-        values="0;360;720;850;920;955;980;992;1000;1004;1002;1003"
-        keyTimes="0;0.25;0.5;0.62;0.72;0.8;0.86;0.91;0.94;0.97;0.99;1"
-        dur="8s" fill="freeze"/>
+    <!-- Glass reflection brushed metal -->
+    <polygon points="680,440 820,360 820,500 680,580" fill="url(#s08b_glassRefl)"/>
+    <path d="M 700,460 Q 810,380 920,360" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.32"/>
+    <path d="M 720,490 Q 815,420 880,410" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
 
-      <!-- Needle body — north tip orange, south dark -->
-      <polygon points="0,-220 18,0 0,12 -18,0" fill="#FF6B1A" stroke="#5A1E00" stroke-width="2" filter="url(#bloom08b)"/>
-      <polygon points="0,220 18,0 0,-12 -18,0" fill="#1A1410" stroke="#0A0805" stroke-width="2"/>
-      <!-- Center cap -->
-      <circle r="18" fill="#3A2F22" stroke="#0A0805" stroke-width="2"/>
-      <circle r="6" fill="#FFB066"/>
+    <!-- Cardinal marks all visible (continuazione di 08A) -->
+    <g transform="translate(960 560)" filter="url(#s08b_bloom)">
+      <use href="#s08b_cardN"/>
+      <use href="#s08b_cardE"/>
+      <use href="#s08b_cardS"/>
+      <use href="#s08b_cardW"/>
+      <g fill="#FF6B1A" opacity="0.85">
+        <circle cx="170" cy="-170" r="3.5"/>
+        <circle cx="-170" cy="-170" r="3.5"/>
+        <circle cx="170" cy="170" r="3.5"/>
+        <circle cx="-170" cy="170" r="3.5"/>
+      </g>
     </g>
 
-    <!-- Glass highlight (reflective sheen) -->
-    <polygon points="-180,-180 -60,-220 -60,-100 -180,-60" fill="#FFFFFF" opacity="0.12"/>
+    <!-- NEEDLE SPINNING 720° in 6s + decel motion blur -->
+    <g transform="translate(960 560)">
+      <g filter="url(#s08b_motionBlurFast)" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360;720;770;780"
+          keyTimes="0;0.35;0.75;0.92;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <use href="#s08b_needle" fill="#FF6B1A"/>
+      </g>
+      <g filter="url(#s08b_motionBlur)">
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360;720;770;780"
+          keyTimes="0;0.35;0.75;0.92;1"
+          dur="8s" fill="freeze"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <use href="#s08b_needle" fill="#FF6B1A"/>
+        <use href="#s08b_needle" fill="#FFCB8A" opacity="0.55" transform="scale(0.7)"/>
+      </g>
+      <!-- Static center pivot -->
+      <circle r="14" fill="#1A1614" stroke="#FF6B1A" stroke-width="2.5"/>
+      <circle r="6" fill="#FFCB8A">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Steady radiance -->
+    <circle cx="960" cy="560" r="140" fill="#FFE0B0" opacity="0.45" filter="url(#s08b_bloom)">
+      <animate attributeName="opacity" values="0.4;0.55;0.4" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="135;155;135" dur="3s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <!-- Tiny sand grains scattered around -->
-  <g fill="#8C7858" opacity="0.5">
-    <circle cx="640" cy="540" r="1.5"/>
-    <circle cx="700" cy="620" r="1.2"/>
-    <circle cx="1280" cy="540" r="1.4"/>
-    <circle cx="1200" cy="640" r="1.2"/>
-    <circle cx="960" cy="280" r="1.4"/>
-    <circle cx="960" cy="800" r="1.4"/>
-  </g>
+  <!-- Hex rim glow orange (persistent) -->
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="#FF6B1A" stroke-width="5" stroke-linejoin="round" opacity="0.92">
+    <animate attributeName="opacity" values="0.88;1;0.88" dur="2.4s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon
+    points="960,220 1260,400 1260,720 960,900 660,720 660,400"
+    fill="none" stroke="#FFCB8A" stroke-width="1.5" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s08b_painterly)" pointer-events="none"/>
 
   <!-- Vignette -->
-  <rect width="1920" height="1080" fill="url(#vig08b)" pointer-events="none"/>
+  <radialGradient id="s08b_vig" cx="50%" cy="50%" r="78%">
+    <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#s08b_vig)" pointer-events="none"/>
 </svg>

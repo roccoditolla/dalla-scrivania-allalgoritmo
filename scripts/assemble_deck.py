@@ -65,19 +65,20 @@ STORY_SCENES = [
     {"id": "12", "title": "Transizione al realistic"},
 ]
 
-# Sequenza slide realistic (13-23)
+# Sequenza slide realistic (13-24) — 6 piattaforme di prodotto
 REALISTIC_SLIDES = [
     {"id": "13", "title": "Anno zero", "big": "ANNO ZERO."},
-    {"id": "14", "title": "Chi siamo", "big": "5"},
+    {"id": "14", "title": "Chi siamo", "big": "6"},
     {"id": "15", "title": "Il problema", "big": "60%"},
-    {"id": "16", "title": "DVR Validator", "big": "12 min"},
-    {"id": "17", "title": "AppaltoAI", "big": "200 → 4"},
-    {"id": "18", "title": "LeadHunter AI", "big": "AUTO"},
-    {"id": "19", "title": "Project Manager AI", "big": "PENSA"},
-    {"id": "20", "title": "Videoconferenze + Welfare", "big": "PERSONE"},
-    {"id": "21", "title": "Il pattern", "big": "5 bussole"},
-    {"id": "22", "title": "Metodologia BMAD", "big": "BMAD"},
-    {"id": "23", "title": "Chiusura", "big": "ADESSO."},
+    {"id": "16", "title": "Piattaforma DVR", "big": "12 min"},
+    {"id": "17", "title": "Preventivatore", "big": "5 min"},
+    {"id": "18", "title": "Lead Hunter", "big": "AUTO"},
+    {"id": "19", "title": "Project Manager", "big": "PENSA"},
+    {"id": "20", "title": "Piattaforma HR", "big": "INSIDE"},
+    {"id": "21", "title": "Piattaforma Videoconferenze e e-Learning", "big": "LIVE"},
+    {"id": "22", "title": "Il pattern", "big": "6 bussole"},
+    {"id": "23", "title": "Metodologia BMAD", "big": "BMAD"},
+    {"id": "24", "title": "Chiusura", "big": "ADESSO."},
 ]
 
 
@@ -221,7 +222,7 @@ $realistic_slides
 
 
 STORY_SLIDE_TEMPLATE = Template("""
-      <section data-scene-id="$id" class="story-slide" data-background-color="#000000">
+      <section data-scene-id="$id" class="story-slide" data-background-color="#F5EFE6">
         $body
         <aside class="notes">$notes</aside>
       </section>""")

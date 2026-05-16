@@ -3374,120 +3374,237 @@ Tre anni nel mondo del lavoro sono una vita."
       <section data-slide-id="14" class="realistic-slide" data-background-color="#F5EFE6">
         <div class="realistic-grid">
           <div class="big-number" data-gsap="fade-up">6</div>
-          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 14 — Chi siamo Conflavoro: open office with floating compasses">
+          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 14 — Chi siamo Conflavoro: isometric building with six floating compasses">
   <title>Slide 14 — Chi siamo</title>
-  <desc>Edificio Conflavoro stilizzato con figure di spalle ai banchi, piccole bussole arancioni fluttuanti.</desc>
+  <desc>Edificio Conflavoro isometrico con figure di spalle e sei bussole arancioni fluttuanti in arco, ognuna pulsa in sequenza.</desc>
 
-  <!-- Cream background -->
+  <!-- =============================================================
+       BACKGROUND LAYER (depth 0 — atmosphere)
+       ============================================================= -->
   <rect width="1080" height="1080" fill="#F5EFE6"/>
 
-  <!-- Floor base shadow (flat fog) -->
-  <ellipse cx="540" cy="900" rx="380" ry="40" fill="#B8B5AD" opacity="0.25"/>
+  <!-- Distant atmospheric halo (very faint, slow breath) -->
+  <ellipse cx="540" cy="500" rx="500" ry="280" fill="#FF6B1A" opacity="0.04">
+    <animate attributeName="opacity" values="0.03;0.07;0.03" dur="6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
 
-  <!-- Building structure (isometric, simplified) -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-    <!-- Back wall -->
-    <polygon points="260,360 540,260 820,360 820,720 540,820 260,720"/>
-    <!-- Floor plate -->
-    <polygon points="260,720 540,820 820,720 540,620" fill="#F5EFE6"/>
+  <!-- =============================================================
+       MIDGROUND LAYER (depth 1 — building)
+       ============================================================= -->
+
+  <!-- Floor shadow under building -->
+  <ellipse cx="540" cy="890" rx="380" ry="34" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- Building back face (slight depth tint) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Volume outline -->
+    <polygon points="280,380 540,290 800,380 800,720 540,810 280,720" fill="#F5EFE6"/>
     <!-- Roof line -->
-    <polyline points="260,360 540,260 820,360" fill="none"/>
-    <!-- Vertical struts -->
-    <line x1="540" y1="260" x2="540" y2="620"/>
-    <line x1="260" y1="360" x2="260" y2="720"/>
-    <line x1="820" y1="360" x2="820" y2="720"/>
+    <polyline points="280,380 540,290 800,380" fill="none"/>
+    <!-- Central vertical edge -->
+    <line x1="540" y1="290" x2="540" y2="810"/>
+    <!-- Floor seam (where roof meets walls) -->
+    <line x1="280" y1="380" x2="280" y2="720"/>
+    <line x1="800" y1="380" x2="800" y2="720"/>
   </g>
 
-  <!-- Windows pattern (left face) -->
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45">
-    <rect x="305" y="430" width="50" height="40"/>
-    <rect x="375" y="450" width="50" height="40"/>
-    <rect x="445" y="470" width="50" height="40"/>
-    <rect x="305" y="530" width="50" height="40"/>
-    <rect x="375" y="550" width="50" height="40"/>
-    <rect x="445" y="570" width="50" height="40"/>
+  <!-- Subtle depth shade on right wall -->
+  <polygon points="540,290 800,380 800,720 540,810" fill="#B8B5AD" opacity="0.15"/>
+
+  <!-- Roof ridge accent (deep ocean blue, small) -->
+  <line x1="540" y1="290" x2="540" y2="305" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Windows LEFT face (grid, secondary motion: one window subtly lit) -->
+  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+    <rect x="320" y="445" width="48" height="38"/>
+    <rect x="320" y="510" width="48" height="38"/>
+    <rect x="320" y="575" width="48" height="38"/>
+    <rect x="392" y="465" width="48" height="38"/>
+    <rect x="392" y="530" width="48" height="38"/>
+    <rect x="392" y="595" width="48" height="38"/>
+    <rect x="464" y="485" width="48" height="38"/>
+    <rect x="464" y="550" width="48" height="38"/>
+    <rect x="464" y="615" width="48" height="38"/>
+  </g>
+  <!-- One lit window (life inside, secondary motion) -->
+  <rect x="392" y="530" width="48" height="38" fill="#FF6B1A" opacity="0.18">
+    <animate attributeName="opacity" values="0.10;0.28;0.10" dur="4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </rect>
+
+  <!-- Windows RIGHT face -->
+  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+    <rect x="572" y="485" width="48" height="38"/>
+    <rect x="572" y="550" width="48" height="38"/>
+    <rect x="572" y="615" width="48" height="38"/>
+    <rect x="644" y="465" width="48" height="38"/>
+    <rect x="644" y="530" width="48" height="38"/>
+    <rect x="644" y="595" width="48" height="38"/>
+    <rect x="716" y="445" width="48" height="38"/>
+    <rect x="716" y="510" width="48" height="38"/>
+    <rect x="716" y="575" width="48" height="38"/>
   </g>
 
-  <!-- Windows pattern (right face) -->
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45">
-    <rect x="585" y="470" width="50" height="40"/>
-    <rect x="655" y="450" width="50" height="40"/>
-    <rect x="725" y="430" width="50" height="40"/>
-    <rect x="585" y="570" width="50" height="40"/>
-    <rect x="655" y="550" width="50" height="40"/>
-    <rect x="725" y="530" width="50" height="40"/>
+  <!-- Front door (small, suggests scale) -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" fill="#F5EFE6">
+    <rect x="510" y="710" width="60" height="100" rx="2"/>
+    <line x1="540" y1="710" x2="540" y2="810"/>
   </g>
 
-  <!-- Three silhouette figures in front of building (back view, only shoulders + back of head) -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#1A1614">
-    <!-- Figure 1 -->
-    <g transform="translate(370 820)">
-      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
-      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
-    <!-- Figure 2 -->
-    <g transform="translate(540 845)">
-      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
-      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
-    <!-- Figure 3 -->
-    <g transform="translate(710 820)">
-      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
-      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
-  </g>
+  <!-- =============================================================
+       FOREGROUND LAYER (depth 2 — figures)
+       ============================================================= -->
 
-  <!-- 5 floating small compasses above (mini icons), evenly distributed -->
-  <g>
-    <!-- Compass 1 (top left) -->
-    <g transform="translate(280 200)">
-      <circle cx="0" cy="0" r="28" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-18 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,18 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="280,200; 280,185; 280,200" dur="4s" repeatCount="indefinite"/>
+  <!-- Three silhouette figures (back view, slight breathing) -->
+  <g fill="#1A1614">
+    <g transform="translate(370 870)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="370,870; 370,868; 370,870" dur="5s" repeatCount="indefinite"
+        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-    <!-- Compass 2 (top center-left) -->
-    <g transform="translate(420 150)">
-      <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-16 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,16 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="420,150; 420,135; 420,150" dur="4.6s" repeatCount="indefinite"/>
+    <g transform="translate(540 880)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="540,880; 540,878; 540,880" dur="5.4s" repeatCount="indefinite"
+        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-    <!-- Compass 3 (top center) -->
-    <g transform="translate(540 130)">
-      <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="540,130; 540,115; 540,130" dur="3.8s" repeatCount="indefinite"/>
-    </g>
-    <!-- Compass 4 (top center-right) -->
-    <g transform="translate(660 150)">
-      <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-16 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,16 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="660,150; 660,135; 660,150" dur="4.3s" repeatCount="indefinite"/>
-    </g>
-    <!-- Compass 5 (top right) -->
-    <g transform="translate(800 200)">
-      <circle cx="0" cy="0" r="28" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-18 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,18 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="800,200; 800,185; 800,200" dur="4.2s" repeatCount="indefinite"/>
+    <g transform="translate(710 870)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="710,870; 710,868; 710,870" dur="4.8s" repeatCount="indefinite"
+        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
   </g>
 
-  <!-- Thin vertical connection lines (compasses to building roof) -->
-  <g stroke="#1A1614" stroke-width="1" stroke-dasharray="3,5" opacity="0.25">
-    <line x1="280" y1="232" x2="280" y2="350"/>
-    <line x1="420" y1="180" x2="420" y2="290"/>
-    <line x1="540" y1="164" x2="540" y2="262"/>
-    <line x1="660" y1="180" x2="660" y2="290"/>
-    <line x1="800" y1="232" x2="800" y2="350"/>
+  <!-- =============================================================
+       SIX FLOATING COMPASSES (arc above the building)
+       Sequence-pulse: each pulses with phase shift (0, 0.16, 0.32, 0.48, 0.64, 0.80 of 4.8s cycle)
+       Each one has a thin dashed line connecting to roof (depth/parallax cue)
+       ============================================================= -->
+
+  <!-- Connection lines (back layer) -->
+  <g stroke="#1A1614" stroke-width="1" stroke-dasharray="3,5" opacity="0.28">
+    <line x1="220" y1="225" x2="280" y2="380"/>
+    <line x1="360" y1="170" x2="380" y2="335"/>
+    <line x1="490" y1="135" x2="500" y2="305"/>
+    <line x1="590" y1="135" x2="580" y2="305"/>
+    <line x1="720" y1="170" x2="700" y2="335"/>
+    <line x1="860" y1="225" x2="800" y2="380"/>
+  </g>
+
+  <!-- Compass 1 (far left, smaller — depth) -->
+  <g transform="translate(220 225)">
+    <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-17 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,17 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+    <!-- Pulse halo -->
+    <circle cx="0" cy="0" r="30" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="26;38;26" dur="4.8s" begin="0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <!-- Float (anticipation + ease) -->
+    <animateTransform attributeName="transform" type="translate"
+      values="220,225; 220,212; 220,225" dur="5s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 2 -->
+  <g transform="translate(360 170)">
+    <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="34" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="0.8s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="30;42;30" dur="4.8s" begin="0.8s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="360,170; 360,158; 360,170" dur="4.6s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 3 (left center, hero size) -->
+  <g transform="translate(490 135)">
+    <circle cx="0" cy="0" r="33" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-22 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,22 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="38" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="1.6s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="33;46;33" dur="4.8s" begin="1.6s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="490,135; 490,122; 490,135" dur="4.2s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 4 (right center, hero size) -->
+  <g transform="translate(590 135)">
+    <circle cx="0" cy="0" r="33" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-22 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,22 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="38" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="2.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="33;46;33" dur="4.8s" begin="2.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="590,135; 590,122; 590,135" dur="4.4s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 5 -->
+  <g transform="translate(720 170)">
+    <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="34" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="30;42;30" dur="4.8s" begin="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="720,170; 720,158; 720,170" dur="4.6s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 6 (far right, smaller — depth) -->
+  <g transform="translate(860 225)">
+    <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-17 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,17 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="30" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="4.0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="26;38;26" dur="4.8s" begin="4.0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="860,225; 860,212; 860,225" dur="5s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </g>
 </svg>
 </div>
@@ -3495,10 +3612,10 @@ Tre anni nel mondo del lavoro sono una vita."
         </div>
         <aside class="notes">## SLIDE 14 — Chi siamo (≈ 40s)
 
-"In Conflavoro AI stiamo costruendo non un tool.
+"In Conflavoro AI non stiamo costruendo un tool.
 Una flotta di tool.
 
-Cinque piattaforme.
+**Sei piattaforme.**
 Una visione:
 
 l'AI come supporto operativo per il consulente del lavoro.
@@ -3510,7 +3627,7 @@ Non roba generica.
 Non l'ennesima copia di ChatGPT con un logo sopra.
 
 Strumenti specifici.
-Costruiti da chi conosce il mestiere.
+Costruiti da chi ha visto la vostra giornata.
 Costruiti per il vostro mestiere."
 
 ---</aside>
@@ -3728,21 +3845,21 @@ Rubato al mestiere vero."
 </div>
           <div class="caption">Piattaforma DVR</div>
         </div>
-        <aside class="notes">## SLIDE 16 — DVR Validator (≈ 45s)
+        <aside class="notes">## SLIDE 16 — Piattaforma DVR (≈ 45s)
 
-"Primo tool. **DVR Validator**.
+"Prima bussola. **Piattaforma DVR**.
 Decreto legislativo ottantuno del duemilaotto.
 Sicurezza sul lavoro.
 
-Un consulente fa la validazione di un DVR in quattro ore.
-Noi la facciamo in dodici minuti.
+Un consulente oggi valida un DVR in quattro ore.
+Noi lo facciamo in dodici minuti.
 
 *[Pausa 1s]*
 
 Dodici minuti.
 
-Non per sostituirlo.
-Per liberargli **tre ore e quarantotto minuti** di tempo che torna ai clienti.
+Non per sostituire il consulente.
+Per restituirgli **tre ore e quarantotto minuti** che tornano ai clienti.
 
 Questo è il punto.
 Non togliere lavoro.
@@ -3754,27 +3871,282 @@ Ridarlo a chi conta."
       <section data-slide-id="17" class="realistic-slide" data-background-color="#F5EFE6">
         <div class="realistic-grid">
           <div class="big-number" data-gsap="fade-up">5 min</div>
-          <div class="illustration placeholder">
-          <p>Illustrazione mancante:<br>
-          <code>deck/assets/images/realistic_17_*.png</code></p>
-        </div>
+          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 17 — Preventivatore: isometric calculator with price list and speed arrow">
+  <title>Slide 17 — Preventivatore</title>
+  <desc>Calcolatrice isometrica che si compila da sola, listino prezzi a sinistra, freccia di velocità verso il totale arancione. Auto-fill with anticipation and follow-through.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange halo around the "result" zone (right side) -->
+  <ellipse cx="720" cy="540" rx="220" ry="180" fill="#FF6B1A" opacity="0.08">
+    <animate attributeName="opacity" values="0.06;0.14;0.06" dur="4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor shadow -->
+  <ellipse cx="540" cy="930" rx="380" ry="32" fill="#B8B5AD" opacity="0.25"/>
+
+  <!-- =============================================================
+       BACKGROUND LAYER — PRICE LIST (paper, left side)
+       Static, slightly tilted. Rows fill in over time (secondary motion)
+       ============================================================= -->
+  <g transform="translate(260 380)">
+    <!-- Paper -->
+    <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+      <polygon points="-90,-160 90,-180 110,160 -70,180" fill="#F5EFE6"/>
+      <!-- Side depth (subtle) -->
+      <polygon points="-90,-160 -90,-150 -70,190 -70,180" fill="#B8B5AD" opacity="0.3"/>
+    </g>
+
+    <!-- Header bar (deep ocean blue accent, tiny) -->
+    <line x1="-70" y1="-140" x2="80" y2="-156" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Price rows: 6 rows with a label line and a value box -->
+    <!-- Each row "fills" sequentially via opacity animation -->
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.65">
+      <!-- Row labels (always visible, gentle) -->
+      <line x1="-70" y1="-100" x2="20" y2="-108"/>
+      <line x1="-66" y1="-50" x2="14" y2="-58"/>
+      <line x1="-62" y1="0" x2="18" y2="-8"/>
+      <line x1="-58" y1="50" x2="22" y2="42"/>
+      <line x1="-54" y1="100" x2="26" y2="92"/>
+      <line x1="-50" y1="150" x2="30" y2="142"/>
+    </g>
+
+    <!-- Value boxes (small rectangles, fill in sequentially) -->
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
+      <rect x="42" y="-118" width="46" height="22" rx="2"/>
+      <rect x="38" y="-68" width="46" height="22" rx="2"/>
+      <rect x="36" y="-18" width="46" height="22" rx="2"/>
+      <rect x="44" y="32" width="46" height="22" rx="2"/>
+      <rect x="48" y="82" width="46" height="22" rx="2"/>
+      <rect x="52" y="132" width="46" height="22" rx="2"/>
+    </g>
+
+    <!-- Value fill bars (the "calculated" numbers — short black bars inside boxes, appear sequentially) -->
+    <g stroke="#1A1614" stroke-width="3" stroke-linecap="round">
+      <line x1="48" y1="-107" x2="78" y2="-107" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="0.3s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="44" y1="-57" x2="74" y2="-57" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="0.7s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="42" y1="-7" x2="72" y2="-7" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.1s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="50" y1="43" x2="80" y2="43" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.5s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="54" y1="93" x2="84" y2="93" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.9s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="58" y1="143" x2="88" y2="143" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="2.3s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       MIDGROUND LAYER — SPEED ARROW (chevrons left → right)
+       Three chevrons that travel sequentially toward the calculator
+       ============================================================= -->
+  <g stroke="#FF6B1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7">
+    <polyline points="430,540 460,520 460,560 430,540" opacity="0">
+      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.4s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.7;1" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </polyline>
+    <polyline points="475,540 505,520 505,560 475,540" opacity="0">
+      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.6s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.7;1" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </polyline>
+    <polyline points="520,540 550,520 550,560 520,540" opacity="0">
+      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.8s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.7;1" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </polyline>
+  </g>
+
+  <!-- =============================================================
+       FOREGROUND LAYER — CALCULATOR (isometric, right side)
+       Anticipation: subtle -8px y before result appears, then squash/stretch
+       ============================================================= -->
+  <g>
+    <!-- Anticipation+squash group: applies to the whole calculator at the "totale" moment -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,-8; 0,3; 0,0; 0,0"
+        dur="6s" begin="3.0s" repeatCount="indefinite"
+        keyTimes="0;0.05;0.13;0.25;1" calcMode="spline"
+        keySplines="0.25 0.1 0.25 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+
+      <!-- Calculator base shadow on desk (isometric ellipse) -->
+      <ellipse cx="720" cy="780" rx="180" ry="20" fill="#B8B5AD" opacity="0.3"/>
+
+      <!-- Calculator body (isometric) -->
+      <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Top face -->
+        <polygon points="600,380 870,360 870,720 600,740" fill="#F5EFE6"/>
+        <!-- Right depth face -->
+        <polygon points="870,360 900,375 900,735 870,720" fill="#B8B5AD" opacity="0.4"/>
+        <!-- Bottom depth face -->
+        <polygon points="600,740 870,720 900,735 630,755" fill="#B8B5AD" opacity="0.55"/>
+      </g>
+
+      <!-- Display screen (top portion) -->
+      <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round">
+        <polygon points="630,410 840,395 840,475 630,490" fill="#F5EFE6"/>
+      </g>
+
+      <!-- Display content: small input digits (left, dim) + RESULT (orange, large, appears) -->
+      <!-- Input digits — small bars in the upper portion -->
+      <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.5">
+        <line x1="645" y1="425" x2="665" y2="424" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="0.4s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+        <line x1="670" y1="424" x2="680" y2="423" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="0.8s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+        <line x1="685" y1="423" x2="710" y2="421" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="1.2s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+        <line x1="715" y1="421" x2="745" y2="419" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="1.6s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+      </g>
+
+      <!-- Equals separator line in screen -->
+      <line x1="640" y1="445" x2="830" y2="442" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+      <!-- RESULT — orange bar in lower screen (the "totale" appearing) -->
+      <g>
+        <rect x="700" y="455" width="130" height="20" rx="2" fill="#FF6B1A" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.5;0.55;0.93;1" calcMode="spline"
+                   keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+          <!-- Squash on appear -->
+          <animate attributeName="height" values="20;28;20;20;20" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.55;0.62;0.93;1" calcMode="spline"
+                   keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+          <animate attributeName="y" values="455;451;455;455;455" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.55;0.62;0.93;1" calcMode="spline"
+                   keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </rect>
+        <!-- Small "€" suggestion dot (orange dot, no text) -->
+        <circle cx="687" cy="465" r="4" fill="#FF6B1A" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.5;0.58;0.93;1" calcMode="spline"
+                   keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </circle>
+      </g>
+
+      <!-- Button grid (5 cols × 4 rows of small squares) -->
+      <g stroke="#1A1614" stroke-width="2" stroke-linejoin="round" fill="#F5EFE6">
+        <rect x="630" y="510" width="38" height="34" rx="3"/>
+        <rect x="676" y="508" width="38" height="34" rx="3"/>
+        <rect x="722" y="506" width="38" height="34" rx="3"/>
+        <rect x="768" y="504" width="38" height="34" rx="3"/>
+        <rect x="814" y="502" width="38" height="34" rx="3"/>
+
+        <rect x="630" y="552" width="38" height="34" rx="3"/>
+        <rect x="676" y="550" width="38" height="34" rx="3"/>
+        <rect x="722" y="548" width="38" height="34" rx="3"/>
+        <rect x="768" y="546" width="38" height="34" rx="3"/>
+        <rect x="814" y="544" width="38" height="34" rx="3"/>
+
+        <rect x="630" y="594" width="38" height="34" rx="3"/>
+        <rect x="676" y="592" width="38" height="34" rx="3"/>
+        <rect x="722" y="590" width="38" height="34" rx="3"/>
+        <rect x="768" y="588" width="38" height="34" rx="3"/>
+        <rect x="814" y="586" width="38" height="34" rx="3"/>
+
+        <rect x="630" y="636" width="38" height="34" rx="3"/>
+        <rect x="676" y="634" width="38" height="34" rx="3"/>
+        <rect x="722" y="632" width="38" height="34" rx="3"/>
+        <rect x="768" y="630" width="38" height="34" rx="3"/>
+        <rect x="814" y="628" width="38" height="34" rx="3"/>
+      </g>
+
+      <!-- "Pressed" key indicator — random buttons highlight briefly (secondary motion) -->
+      <rect x="676" y="550" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
+        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="0.5s" repeatCount="indefinite"
+                 keyTimes="0;0.06;0.12;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </rect>
+      <rect x="768" y="588" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
+        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="1.4s" repeatCount="indefinite"
+                 keyTimes="0;0.06;0.12;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </rect>
+      <rect x="722" y="632" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
+        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="2.2s" repeatCount="indefinite"
+                 keyTimes="0;0.06;0.12;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </rect>
+
+      <!-- The "=" button (orange, the trigger) -->
+      <rect x="814" y="628" width="38" height="76" rx="3" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="824" y1="660" x2="844" y2="659" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+      <line x1="824" y1="676" x2="844" y2="675" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       SECONDARY MOTION — a single orange spark above calculator
+       Follow-through: little dot oscillating after result appears
+       ============================================================= -->
+  <circle cx="735" cy="370" r="6" fill="#FF6B1A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.6;0" dur="6s" begin="0s" repeatCount="indefinite"
+             keyTimes="0;0.55;0.6;0.75;0.9" calcMode="spline"
+             keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    <animate attributeName="cy" values="370;370;355;345;340" dur="6s" begin="0s" repeatCount="indefinite"
+             keyTimes="0;0.55;0.62;0.78;0.9" calcMode="spline"
+             keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
+</svg>
+</div>
           <div class="caption">Preventivatore</div>
         </div>
-        <aside class="notes">## SLIDE 17 — AppaltoAI (≈ 40s)
+        <aside class="notes">## SLIDE 17 — Preventivatore (≈ 40s)
 
-"Secondo. **AppaltoAI**.
-Le gare pubbliche.
+"Seconda. **Preventivatore**.
+I preventivi del consulente.
 
-Duecento pagine di bando — lette in novanta secondi.
-Ridotte a un report di quattro pagine con le sole cose che servono a te.
+Un preventivo articolato — di quelli con dieci voci, sconti, fasce di fatturato — a un consulente prende trenta, quaranta minuti.
 
-Decisione di partecipare o no in dieci minuti.
-Non in due giorni di lettura.
+Noi lo facciamo in **cinque minuti**.
 
-E se decidi di partecipare, AppaltoAI ti prepara la prima bozza dell'offerta tecnica.
-Tu la rivedi.
-Tu decidi.
-Ma parti da una bozza fatta, non da una pagina bianca."
+*[Pausa 1s]*
+
+Anagrafica cliente in input.
+Listino tariffario del tuo studio applicato in automatico.
+Output PDF impaginato, pronto da inviare.
+
+Tu rileggi.
+Tu firmi.
+Niente più 'lo facciamo settimana prossima'."
 
 ---</aside>
       </section>
@@ -3892,9 +4264,9 @@ Ma parti da una bozza fatta, non da una pagina bianca."
 </div>
           <div class="caption">Lead Hunter</div>
         </div>
-        <aside class="notes">## SLIDE 18 — LeadHunter AI (≈ 35s)
+        <aside class="notes">## SLIDE 18 — Lead Hunter (≈ 35s)
 
-"Terzo. **LeadHunter AI**.
+"Terza. **Lead Hunter**.
 La generazione di clienti.
 
 Una piattaforma che cerca, qualifica e contatta lead nei canali giusti.
@@ -3904,7 +4276,7 @@ Già replicata per il primo cliente.
 L'AI che ti porta clienti mentre tu dormi.
 
 Non un'agenzia marketing.
-Non un crm.
+Non un CRM.
 Un agente che lavora ventiquattr'ore al giorno per riempirti l'agenda."
 
 ---</aside>
@@ -4027,22 +4399,22 @@ Un agente che lavora ventiquattr'ore al giorno per riempirti l'agenda."
 </div>
           <div class="caption">Project Manager</div>
         </div>
-        <aside class="notes">## SLIDE 19 — Project Manager AI (≈ 40s)
+        <aside class="notes">## SLIDE 19 — Project Manager (≈ 40s)
 
-"Quarto. Il **Project Manager AI**.
+"Quarta. Il **Project Manager**.
 
 Non è un cronoprogramma.
 Non è Trello con un nome diverso.
 
-È un agente che ti chiede 'hai sentito Mario? era previsto ieri.'
-Che ti suggerisce 'questa è una scadenza in conflitto.'
-Che ti avvisa 'questo progetto sta perdendo margine.'
+È un agente che ti chiede: 'hai sentito Mario? Era previsto ieri.'
+Che ti dice: 'questa è una scadenza in conflitto.'
+Che ti avvisa: 'questo progetto sta perdendo margine.'
 
 Pensa con te.
 Non al posto tuo.
 
 Tu resti il decisore.
-Lui ti tiene presente quello che ti sfugge."
+Lui ti tiene a mente quello che ti sfugge."
 
 ---</aside>
       </section>
@@ -4050,23 +4422,237 @@ Lui ti tiene presente quello che ti sfugge."
       <section data-slide-id="20" class="realistic-slide" data-background-color="#F5EFE6">
         <div class="realistic-grid">
           <div class="big-number" data-gsap="fade-up">INSIDE</div>
-          <div class="illustration placeholder">
-          <p>Illustrazione mancante:<br>
-          <code>deck/assets/images/realistic_20_*.png</code></p>
-        </div>
+          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 20 — HR: personnel folder with silhouette, chips and organizational icons">
+  <title>Slide 20 — HR</title>
+  <desc>Cartelletta personale isometrica con silhouette persona, chip orbitanti che si organizzano, e tre piccole icone HR (busta paga, contratto, presenze).</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange halo on the central HR icon zone -->
+  <ellipse cx="540" cy="540" rx="280" ry="220" fill="#FF6B1A" opacity="0.07">
+    <animate attributeName="opacity" values="0.05;0.12;0.05" dur="4.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor shadow under folder -->
+  <ellipse cx="540" cy="880" rx="320" ry="28" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- =============================================================
+       BACKGROUND LAYER — FOLDER (cartelletta personale, isometric)
+       The container of the whole HR system
+       ============================================================= -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Back flap (tab on top — like a tabbed folder) -->
+    <polygon points="380,300 460,290 480,310 380,320" fill="#F5EFE6"/>
+    <!-- Main folder body — isometric front -->
+    <polygon points="220,330 860,310 880,830 240,850" fill="#F5EFE6"/>
+    <!-- Side depth -->
+    <polygon points="220,330 240,850 240,860 220,340" fill="#B8B5AD" opacity="0.4"/>
+    <polygon points="860,310 880,830 880,840 860,320" fill="#B8B5AD" opacity="0.4"/>
+  </g>
+
+  <!-- Folder horizontal seam (mid line — suggests it opens) -->
+  <line x1="230" y1="585" x2="870" y2="565" stroke="#1A1614" stroke-width="1.5" stroke-dasharray="4,6" opacity="0.4"/>
+
+  <!-- Small badge/label area (top-left, deep ocean blue accent) -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
+    <rect x="260" y="360" width="120" height="38" rx="4"/>
+  </g>
+  <line x1="275" y1="380" x2="365" y2="378" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- =============================================================
+       MIDGROUND — PERSON SILHOUETTE (centered, back view, isometric bust)
+       The "personal file" — head + shoulders, hand-drawn
+       ============================================================= -->
+  <g transform="translate(540 525)">
+    <!-- Avatar circle behind silhouette (light cream, framed) -->
+    <circle cx="0" cy="0" r="105" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="98" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+
+    <!-- Silhouette: head + shoulders, fits inside circle -->
+    <g fill="#1A1614">
+      <!-- Head -->
+      <ellipse cx="0" cy="-22" rx="32" ry="38"/>
+      <!-- Shoulders/torso fan -->
+      <path d="M -68,80 C -65,40 -60,15 -45,5 C -28,-5 -10,-8 0,-8 C 10,-8 28,-5 45,5 C 60,15 65,40 68,80 Z"/>
+    </g>
+
+    <!-- HR badge dot (orange, on the shoulder — narrative accent) -->
+    <circle cx="36" cy="32" r="9" fill="#FF6B1A" stroke="#1A1614" stroke-width="2"/>
+    <circle cx="36" cy="32" r="3.5" fill="#F5EFE6"/>
+    <!-- Pulse on badge -->
+    <circle cx="36" cy="32" r="14" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="9;22;9" dur="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+
+  <!-- =============================================================
+       FOREGROUND — ORBIT OF CHIPS (small rounded rectangles around person)
+       Each chip moves into its "slot" with anticipation, then settles
+       ============================================================= -->
+
+  <!-- Orbit guide ring (faint) -->
+  <circle cx="540" cy="525" r="180" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,7" opacity="0.3"/>
+
+  <!-- Chip TOP-LEFT (snap-in with anticipation) -->
+  <g transform="translate(380 380)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <!-- anticipation: small pull-back then snap forward -->
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -4,-3; 2,1; 0,0; 0,0" dur="5s" begin="0s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- Chip TOP-RIGHT -->
+  <g transform="translate(700 380)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 4,-3; -2,1; 0,0; 0,0" dur="5s" begin="0.4s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- Chip LEFT-MID -->
+  <g transform="translate(330 540)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -5,0; 2,0; 0,0; 0,0" dur="5s" begin="0.8s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- Chip RIGHT-MID -->
+  <g transform="translate(750 540)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 5,0; -2,0; 0,0; 0,0" dur="5s" begin="1.2s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       BOTTOM ROW — 3 HR ICONS (busta paga, contratto, presenze)
+       Slide on a small isometric "shelf" inside the folder
+       ============================================================= -->
+
+  <!-- Shelf line -->
+  <line x1="280" y1="745" x2="820" y2="725" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- ICON 1 — PAYSLIP (busta paga) — small envelope-like rectangle with line bars -->
+  <g transform="translate(370 720)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <rect x="-32" y="-30" width="64" height="50" rx="3"/>
+    </g>
+    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <line x1="-22" y1="-16" x2="22" y2="-16"/>
+      <line x1="-22" y1="-6" x2="18" y2="-6"/>
+      <line x1="-22" y1="4" x2="14" y2="4"/>
+      <line x1="-22" y1="14" x2="10" y2="14"/>
+    </g>
+    <!-- Tiny breath -->
+    <animateTransform attributeName="transform" type="translate"
+      values="370,720; 370,716; 370,720" dur="4.6s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- ICON 2 — CONTRACT (contratto) — document with signature line -->
+  <g transform="translate(540 715)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <polygon points="-26,-32 20,-32 32,-20 32,22 -26,22"/>
+      <polyline points="20,-32 20,-20 32,-20" fill="none"/>
+    </g>
+    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <line x1="-18" y1="-12" x2="22" y2="-12"/>
+      <line x1="-18" y1="-2" x2="22" y2="-2"/>
+      <line x1="-18" y1="8" x2="18" y2="8"/>
+    </g>
+    <!-- Signature swoosh -->
+    <path d="M -16,16 C -10,18 -4,12 2,16 C 8,20 14,14 20,16" fill="none" stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
+    <animateTransform attributeName="transform" type="translate"
+      values="540,715; 540,711; 540,715" dur="4.2s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- ICON 3 — TIMESHEET (presenze) — small calendar grid with one orange cell -->
+  <g transform="translate(710 715)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <rect x="-28" y="-30" width="56" height="48" rx="3"/>
+      <line x1="-28" y1="-18" x2="28" y2="-18"/>
+    </g>
+    <!-- Header dots (3) -->
+    <g fill="#1A1614" opacity="0.6">
+      <circle cx="-18" cy="-24" r="2"/>
+      <circle cx="0" cy="-24" r="2"/>
+      <circle cx="18" cy="-24" r="2"/>
+    </g>
+    <!-- Grid 3x3 -->
+    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+      <line x1="-9" y1="-18" x2="-9" y2="18"/>
+      <line x1="9" y1="-18" x2="9" y2="18"/>
+      <line x1="-28" y1="-6" x2="28" y2="-6"/>
+      <line x1="-28" y1="6" x2="28" y2="6"/>
+    </g>
+    <!-- One orange cell (today, present — secondary motion: small breathing) -->
+    <rect x="-7" y="-4" width="14" height="8" fill="#FF6B1A" opacity="0.85">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+    <animateTransform attributeName="transform" type="translate"
+      values="710,715; 710,711; 710,715" dur="4.4s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- =============================================================
+       SECONDARY MOTION — thin connection arcs from person to chips
+       (suggests data flow inside the system)
+       ============================================================= -->
+  <g stroke="#FF6B1A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2,6" opacity="0.4" fill="none">
+    <path d="M 458 470 Q 420 425 380 380"/>
+    <path d="M 622 470 Q 660 425 700 380"/>
+    <path d="M 435 540 Q 380 540 330 540"/>
+    <path d="M 645 540 Q 700 540 750 540"/>
+  </g>
+</svg>
+</div>
           <div class="caption">Piattaforma HR</div>
         </div>
-        <aside class="notes">## SLIDE 20 — Videoconferenze + Welfare (≈ 35s)
+        <aside class="notes">## SLIDE 20 — Piattaforma HR (≈ 40s)
 
-"Quinto.
-Una piattaforma di **videoconferenze** pensata per il mondo del lavoro italiano.
-Con i flussi giusti, con la trascrizione integrata, con il salvataggio normativo automatico.
+"Quinta. **Piattaforma HR**.
 
-E una di **welfare sportivo** per i lavoratori.
-Per le aziende che vogliono dare ai dipendenti più della busta paga.
+La gestione del personale di un'azienda con quaranta dipendenti — busta paga, presenze, contratti, ferie, formazione obbligatoria — oggi è un Excel con sette schede.
 
-Perché le persone vengono prima dei processi.
-Sempre."
+Da noi è un sistema unico.
+
+*[Pausa 1s]*
+
+Il consulente vede tutto.
+L'azienda vede tutto.
+Il dipendente vede quello che gli serve.
+
+Una sola fonte di verità.
+Perché il dipendente non è una riga di Excel."
 
 ---</aside>
       </section>
@@ -4074,15 +4660,493 @@ Sempre."
       <section data-slide-id="21" class="realistic-slide" data-background-color="#F5EFE6">
         <div class="realistic-grid">
           <div class="big-number" data-gsap="fade-up">LIVE</div>
-          <div class="illustration placeholder">
-          <p>Illustrazione mancante:<br>
-          <code>deck/assets/images/realistic_21_*.png</code></p>
-        </div>
+          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 21 — Videoconferenze e eLearning: monitor with 4 participants grid, play symbol, book and diploma">
+  <title>Slide 21 — Videoconferenze + eLearning</title>
+  <desc>Monitor isometrico con griglia di 4 partecipanti silhouette che si attivano in sequenza, simbolo play centrale, libro e diploma sotto.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange halo behind monitor (the "LIVE" glow) -->
+  <ellipse cx="540" cy="480" rx="340" ry="240" fill="#FF6B1A" opacity="0.08">
+    <animate attributeName="opacity" values="0.06;0.14;0.06" dur="3.8s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor shadow -->
+  <ellipse cx="540" cy="940" rx="380" ry="30" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- =============================================================
+       BACKGROUND LAYER — MONITOR (isometric, slight tilt)
+       ============================================================= -->
+
+  <!-- Monitor stand (small triangle base) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+    <polygon points="500,780 580,780 620,820 460,820"/>
+    <line x1="540" y1="720" x2="540" y2="780"/>
+  </g>
+
+  <!-- Monitor bezel (the frame) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="200,280 880,260 880,720 200,740" fill="#F5EFE6"/>
+    <!-- depth side -->
+    <polygon points="880,260 900,275 900,735 880,720" fill="#B8B5AD" opacity="0.4"/>
+    <polygon points="200,740 880,720 900,735 220,755" fill="#B8B5AD" opacity="0.5"/>
+  </g>
+
+  <!-- Inner screen area -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="240,310 840,294 840,685 240,705" fill="#F5EFE6"/>
+  </g>
+
+  <!-- Top-right LIVE dot indicator (orange pulse) -->
+  <circle cx="810" cy="318" r="8" fill="#FF6B1A">
+    <animate attributeName="opacity" values="1;0.4;1" dur="1.6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
+  <!-- Outer LIVE ring -->
+  <circle cx="810" cy="318" r="12" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0.6">
+    <animate attributeName="r" values="8;18;8" dur="2.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+  </circle>
+
+  <!-- =============================================================
+       MIDGROUND — 4 PARTICIPANT TILES (2x2 grid inside screen)
+       Each activates in sequence: stroke + silhouette appear
+       ============================================================= -->
+
+  <!-- Tile 1 — TOP-LEFT -->
+  <g>
+    <rect x="280" y="350" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <!-- silhouette inside (head + shoulders) -->
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="400" cy="420" rx="22" ry="26"/>
+      <path d="M 360,485 C 362,465 368,448 380,442 C 388,438 412,438 420,442 C 432,448 438,465 440,485 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <!-- Highlight ring (orange, momentary, when activated) -->
+    <rect x="278" y="348" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="0s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- Tile 2 — TOP-RIGHT -->
+  <g>
+    <rect x="560" y="345" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="680" cy="415" rx="22" ry="26"/>
+      <path d="M 640,480 C 642,460 648,443 660,437 C 668,433 692,433 700,437 C 712,443 718,460 720,480 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="0.6s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <rect x="558" y="343" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="0.6s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- Tile 3 — BOTTOM-LEFT -->
+  <g>
+    <rect x="280" y="525" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="400" cy="595" rx="22" ry="26"/>
+      <path d="M 360,660 C 362,640 368,623 380,617 C 388,613 412,613 420,617 C 432,623 438,640 440,660 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="1.2s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <rect x="278" y="523" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="1.2s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- Tile 4 — BOTTOM-RIGHT -->
+  <g>
+    <rect x="560" y="520" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="680" cy="590" rx="22" ry="26"/>
+      <path d="M 640,655 C 642,635 648,618 660,612 C 668,608 692,608 700,612 C 712,618 718,635 720,655 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="1.8s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <rect x="558" y="518" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="1.8s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- =============================================================
+       CENTER PLAY SYMBOL — appears with anticipation after tiles light
+       Squash-stretch on appear
+       ============================================================= -->
+  <g transform="translate(540 510)">
+    <!-- Play button background circle (orange, narrative) -->
+    <g>
+      <circle cx="0" cy="0" r="50" fill="#FF6B1A" stroke="#1A1614" stroke-width="3" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="2.4s" repeatCount="indefinite"
+                 keyTimes="0;0.04;0.12;0.93;1" calcMode="spline"
+                 keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="r" values="50;60;50;50;50" dur="6s" begin="2.4s" repeatCount="indefinite"
+                 keyTimes="0;0.1;0.18;0.93;1" calcMode="spline"
+                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </circle>
+      <!-- Play triangle (inside, cream color) -->
+      <polygon points="-14,-22 -14,22 22,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="2.4s" repeatCount="indefinite"
+                 keyTimes="0;0.04;0.14;0.93;1" calcMode="spline"
+                 keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </polygon>
+    </g>
+    <!-- Outer pulse ring (follow-through) -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="50;80;50" dur="6s" begin="2.4s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.6" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="6s" begin="2.4s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.6" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+
+  <!-- =============================================================
+       FOREGROUND BOTTOM — BOOK + DIPLOMA (the "eLearning" half)
+       Slight breathing, depth via stacked layers
+       ============================================================= -->
+
+  <!-- BOOK (left of stand) — open book isometric -->
+  <g transform="translate(290 830)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <!-- Left page -->
+      <polygon points="-90,-30 0,-22 0,30 -85,38"/>
+      <!-- Right page -->
+      <polygon points="0,-22 90,-30 85,38 0,30"/>
+      <!-- Center spine -->
+      <line x1="0" y1="-22" x2="0" y2="30"/>
+    </g>
+    <!-- Page lines -->
+    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+      <line x1="-75" y1="-15" x2="-10" y2="-12"/>
+      <line x1="-75" y1="-5" x2="-12" y2="-2"/>
+      <line x1="-77" y1="5" x2="-14" y2="8"/>
+      <line x1="-79" y1="15" x2="-16" y2="18"/>
+
+      <line x1="10" y1="-12" x2="75" y2="-15"/>
+      <line x1="12" y1="-2" x2="73" y2="-5"/>
+      <line x1="14" y1="8" x2="71" y2="5"/>
+      <line x1="16" y1="18" x2="69" y2="15"/>
+    </g>
+    <!-- Breath -->
+    <animateTransform attributeName="transform" type="translate"
+      values="290,830; 290,826; 290,830" dur="4.4s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- DIPLOMA (right of stand) — rolled scroll with ribbon -->
+  <g transform="translate(790 830)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <!-- Scroll body -->
+      <rect x="-65" y="-32" width="130" height="60" rx="4"/>
+      <!-- Left rolled cap -->
+      <ellipse cx="-65" cy="-2" rx="10" ry="32"/>
+      <!-- Right rolled cap -->
+      <ellipse cx="65" cy="-2" rx="10" ry="32"/>
+    </g>
+    <!-- Diploma content lines (faint) -->
+    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+      <line x1="-50" y1="-18" x2="45" y2="-18"/>
+      <line x1="-45" y1="-8" x2="40" y2="-8"/>
+      <line x1="-50" y1="2" x2="50" y2="2"/>
+    </g>
+    <!-- Seal (small ocean-blue circle with orange center — accent) -->
+    <circle cx="-35" cy="18" r="9" fill="#F5EFE6" stroke="#1A1614" stroke-width="2"/>
+    <circle cx="-35" cy="18" r="4" fill="#2C4357"/>
+    <!-- Ribbon tails (deep ocean blue accent) -->
+    <g stroke="#2C4357" stroke-width="2.5" stroke-linecap="round" fill="none">
+      <path d="M -38,26 L -42,38"/>
+      <path d="M -32,26 L -28,38"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="790,830; 790,826; 790,830" dur="4.8s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+</svg>
+</div>
           <div class="caption">Piattaforma Videoconferenze e e-Learning</div>
         </div>
-        <aside class="notes">## SLIDE 21 — Il pattern (≈ 40s)
+        <aside class="notes">## SLIDE 21 — Videoconferenze e e-Learning (≈ 40s)
 
-"Cinque bussole.
+"Sesta. **Videoconferenze e e-Learning**.
+
+Videoconferenze pensate per il mondo del lavoro italiano.
+Con trascrizione integrata.
+Registrazione conforme al GDPR.
+Salvataggio automatico nel fascicolo del dipendente.
+
+E sopra ci abbiamo costruito una piattaforma di e-Learning per la formazione obbligatoria:
+sicurezza, antincendio, primo soccorso.
+
+Riconosciuta.
+Tracciabile.
+Fruibile dal telefono."
+
+---</aside>
+      </section>
+
+      <section data-slide-id="22" class="realistic-slide" data-background-color="#F5EFE6">
+        <div class="realistic-grid">
+          <div class="big-number" data-gsap="fade-up">6 bussole</div>
+          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 22 — Pattern: six orange compasses arranged in a hexagon with rotation and counter-rotation">
+  <title>Slide 22 — Il pattern (6 bussole)</title>
+  <desc>Sei bussole arancioni piccole disposte in esagono, sistema in rotation lenta con counter-rotation interna che mantiene ogni bussola verticale.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- =============================================================
+       CENTRAL HALO — pulsing core
+       ============================================================= -->
+  <g transform="translate(540 540)">
+    <circle cx="0" cy="0" r="120" fill="#FF6B1A" opacity="0.06">
+      <animate attributeName="r" values="100;140;100" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.04;0.10;0.04" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="80" fill="#FF6B1A" opacity="0.10">
+      <animate attributeName="r" values="60;100;60" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.08;0.18;0.08" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+
+  <!-- =============================================================
+       OUTER ORBIT RING (decorative, dashed)
+       ============================================================= -->
+  <circle cx="540" cy="540" r="320" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,8" opacity="0.32"/>
+  <circle cx="540" cy="540" r="280" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,6" opacity="0.22"/>
+
+  <!-- =============================================================
+       HEXAGON CONNECTION LINES (back layer, subtle)
+       Hexagon vertices at distance 300 from center, at angles
+       30°, 90°, 150°, 210°, 270°, 330°
+       Positions:
+         V1 (top-right):    (540 + 300*cos(-60°), 540 + 300*sin(-60°)) = (690, 280)
+         V2 (right):        (540 + 300*cos(0°),   540 + 300*sin(0°))   = (840, 540)
+         V3 (bottom-right): (540 + 300*cos(60°),  540 + 300*sin(60°))  = (690, 800)
+         V4 (bottom-left):  (540 + 300*cos(120°), 540 + 300*sin(120°)) = (390, 800)
+         V5 (left):         (540 + 300*cos(180°), 540 + 300*sin(180°)) = (240, 540)
+         V6 (top-left):     (540 + 300*cos(240°), 540 + 300*sin(240°)) = (390, 280)
+       ============================================================= -->
+
+  <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,6" opacity="0.4">
+    <!-- Hexagon perimeter -->
+    <line x1="690" y1="280" x2="840" y2="540"/>
+    <line x1="840" y1="540" x2="690" y2="800"/>
+    <line x1="690" y1="800" x2="390" y2="800"/>
+    <line x1="390" y1="800" x2="240" y2="540"/>
+    <line x1="240" y1="540" x2="390" y2="280"/>
+    <line x1="390" y1="280" x2="690" y2="280"/>
+
+    <!-- Inner star (every 2 vertices) — gives the "hexagram" feel -->
+    <line x1="690" y1="280" x2="690" y2="800" opacity="0.5"/>
+    <line x1="240" y1="540" x2="840" y2="540" opacity="0.5"/>
+    <line x1="390" y1="280" x2="390" y2="800" opacity="0.5"/>
+  </g>
+
+  <!-- =============================================================
+       ROTATING SYSTEM — wrapping group rotates slowly clockwise
+       Each compass inside counter-rotates so it stays upright
+       ============================================================= -->
+  <g transform="translate(540 540)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0" to="360" dur="60s" repeatCount="indefinite"/>
+
+      <!-- Compass at V1 (top-right of hex, position 150,-260 relative to center) -->
+      <g transform="translate(150 -260)">
+        <!-- Counter-rotation -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <!-- Tick marks (N,E,S,W) -->
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <!-- Needle -->
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Center pivot -->
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <!-- Pulsing core -->
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.2s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V2 (right, position 300, 0) -->
+      <g transform="translate(300 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.5s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V3 (bottom-right, position 150, 260) -->
+      <g transform="translate(150 260)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.4s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V4 (bottom-left, position -150, 260) -->
+      <g transform="translate(-150 260)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.7s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V5 (left, position -300, 0) -->
+      <g transform="translate(-300 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.3s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V6 (top-left, position -150, -260) -->
+      <g transform="translate(-150 -260)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.6s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       CENTER — convergence point (orange dot with expanding ring)
+       ============================================================= -->
+  <g transform="translate(540 540)">
+    <circle cx="0" cy="0" r="16" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="6" fill="#F5EFE6"/>
+    <!-- Expanding pulse rings -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0.5">
+      <animate attributeName="r" values="16;48;16" dur="3.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="3.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#FF6B1A" stroke-width="1.5" opacity="0.4">
+      <animate attributeName="r" values="16;38;16" dur="3.4s" begin="1.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3.4s" begin="1.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+</svg>
+</div>
+          <div class="caption">Il pattern</div>
+        </div>
+        <aside class="notes">## SLIDE 22 — Il pattern (≈ 40s)
+
+"**Sei bussole.**
 
 *[Pausa 1s]*
 
@@ -4097,173 +5161,8 @@ Non chatbot.
 Non assistenti generici.
 Non magia.
 
-Tool da consulenti per consulenti.
-Tool da PMI per PMI.
-
+Una piattaforma fatta da chi ha visto la vostra giornata.
 Una bussola per ogni rotta che vi serve."
-
----</aside>
-      </section>
-
-      <section data-slide-id="22" class="realistic-slide" data-background-color="#F5EFE6">
-        <div class="realistic-grid">
-          <div class="big-number" data-gsap="fade-up">6 bussole</div>
-          <div class="illustration svg-anim" data-gsap="orange-glow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 21 — Pattern: five orange compasses arranged in a circle">
-  <title>Slide 21 — Il pattern</title>
-  <desc>Cinque bussole arancioni piccole disposte in pentagono attorno al centro.</desc>
-
-  <!-- Cream background -->
-  <rect width="1080" height="1080" fill="#F5EFE6"/>
-
-  <!-- Soft central halo -->
-  <g transform="translate(540 540)">
-    <circle cx="0" cy="0" r="80" fill="#FF6B1A" opacity="0.06">
-      <animate attributeName="opacity" values="0.04;0.12;0.04" dur="4s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
-  <!-- Connection lines between compasses (forming a pentagonal star pattern) -->
-  <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,6" opacity="0.45">
-    <!-- Pentagon perimeter (connecting adjacent compasses) -->
-    <!-- Compasses at: top(540,200), upper-right(840,420), lower-right(720,800), lower-left(360,800), upper-left(240,420) -->
-    <line x1="540" y1="200" x2="840" y2="420"/>
-    <line x1="840" y1="420" x2="720" y2="800"/>
-    <line x1="720" y1="800" x2="360" y2="800"/>
-    <line x1="360" y1="800" x2="240" y2="420"/>
-    <line x1="240" y1="420" x2="540" y2="200"/>
-    <!-- Star (skipping one) — gives the "pentagram" feel -->
-    <line x1="540" y1="200" x2="720" y2="800" opacity="0.5"/>
-    <line x1="540" y1="200" x2="360" y2="800" opacity="0.5"/>
-    <line x1="240" y1="420" x2="720" y2="800" opacity="0.5"/>
-    <line x1="840" y1="420" x2="360" y2="800" opacity="0.5"/>
-    <line x1="240" y1="420" x2="840" y2="420" opacity="0.5"/>
-  </g>
-
-  <!-- Five small compasses at the pentagon vertices -->
-  <g>
-    <!-- Compass TOP (540,200) -->
-    <g transform="translate(540 200)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass UPPER-RIGHT (840,420) -->
-    <g transform="translate(840 420)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(72)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(72)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.6s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass LOWER-RIGHT (720,800) -->
-    <g transform="translate(720 800)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(144)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(144)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass LOWER-LEFT (360,800) -->
-    <g transform="translate(360 800)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(216)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(216)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.8s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass UPPER-LEFT (240,420) -->
-    <g transform="translate(240 420)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(288)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(288)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.5s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-  </g>
-
-  <!-- Center small dot (the convergence point) -->
-  <g transform="translate(540 540)">
-    <circle cx="0" cy="0" r="14" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-    <circle cx="0" cy="0" r="22" fill="none" stroke="#FF6B1A" stroke-width="1.5" opacity="0.5">
-      <animate attributeName="r" values="18;32;18" dur="3.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-</svg>
-</div>
-          <div class="caption">Il pattern</div>
-        </div>
-        <aside class="notes">## SLIDE 22 — Metodologia BMAD (≈ 40s)
-
-"E lo costruiamo con un metodo.
-Si chiama BMAD.
-
-**B**uild, **M**easure, **A**djust, **D**eploy.
-Una modifica alla volta.
-Testata.
-Confermata.
-Prossima.
-
-Niente big bang.
-Niente promesse impossibili.
-Niente roadmap a tre anni che cambiano ogni mese.
-
-Solo step verificabili.
-
-È così che si naviga in mare nuovo.
-Una bracciata alla volta.
-Senza prendere acqua."
 
 ---</aside>
       </section>
@@ -4359,40 +5258,26 @@ Senza prendere acqua."
 </div>
           <div class="caption">Metodologia BMAD</div>
         </div>
-        <aside class="notes">## SLIDE 23 — Chiusura (≈ 40s)
+        <aside class="notes">## SLIDE 23 — Metodologia BMAD (≈ 40s)
 
-*[Voce più calda, conclusiva. Rocco si avvicina al centro del palco.]*
+"E lo costruiamo con un metodo.
+Si chiama BMAD.
 
-"Siamo all'anno zero.
+**B**uild, **M**easure, **A**djust, **D**eploy.
+Una modifica alla volta.
+Testata.
+Confermata.
+Prossima.
 
-*[Pausa 2s]*
+Niente big bang.
+Niente promesse impossibili.
+Niente roadmap a tre anni che cambiano ogni mese.
 
-Adesso.
+Solo step verificabili.
 
-*[Pausa 2s]*
-
-E in Conflavoro AI abbiamo deciso di non aspettare.
-
-Abbiamo trovato la nostra isola.
-Abbiamo raccolto la bussola.
-Abbiamo capito che il mestiere — il vostro, il nostro — non si butta.
-Si amplifica.
-
-La bussola arancione è in mano nostra.
-
-*[Pausa 2s]*
-
-Possiamo metterla anche nella vostra.
-
-*[Pausa 3s]*
-
-Salpate con noi.
-
-*[Pausa 2s]*
-
-Grazie."
-
-*[Applauso. Rocco resta sul palco. La slide finale resta. Si attacca con i 35 minuti di Q&A / approfondimento a braccio.]*
+È così che si naviga in mare nuovo.
+Una bracciata alla volta.
+Senza prendere acqua."
 
 ---</aside>
       </section>
@@ -4540,7 +5425,42 @@ Grazie."
 </div>
           <div class="caption">Chiusura</div>
         </div>
-        <aside class="notes">[Speech per slide 24 non trovato]</aside>
+        <aside class="notes">## SLIDE 24 — Chiusura (≈ 40s)
+
+*[Voce più calda, conclusiva. Rocco si avvicina al centro del palco.]*
+
+"Siamo all'anno zero.
+
+*[Pausa 2s]*
+
+Adesso.
+
+*[Pausa 2s]*
+
+E in Conflavoro AI abbiamo deciso di non aspettare.
+
+Abbiamo trovato la nostra isola.
+Abbiamo raccolto la bussola.
+Abbiamo capito che il mestiere — il vostro, il nostro — non si butta.
+Si amplifica.
+
+La bussola arancione è in mano nostra.
+
+*[Pausa 2s]*
+
+Possiamo metterla anche nella vostra.
+
+*[Pausa 3s]*
+
+Salpate con noi.
+
+*[Pausa 2s]*
+
+Grazie."
+
+*[Applauso. Rocco resta sul palco. La slide finale resta. Si attacca con i 35 minuti di Q&A / approfondimento a braccio.]*
+
+---</aside>
       </section>
 
       <!-- Slide finale: black + logo che pulsa -->

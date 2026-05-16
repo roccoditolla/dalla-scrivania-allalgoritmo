@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 21 — Videoconferenze e eLearning: monitor with 4 participants grid, play symbol, book and diploma">
+  <title>Slide 21 — Videoconferenze + eLearning</title>
+  <desc>Monitor isometrico con griglia di 4 partecipanti silhouette che si attivano in sequenza, simbolo play centrale, libro e diploma sotto.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange halo behind monitor (the "LIVE" glow) -->
+  <ellipse cx="540" cy="480" rx="340" ry="240" fill="#FF6B1A" opacity="0.08">
+    <animate attributeName="opacity" values="0.06;0.14;0.06" dur="3.8s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor shadow -->
+  <ellipse cx="540" cy="940" rx="380" ry="30" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- =============================================================
+       BACKGROUND LAYER — MONITOR (isometric, slight tilt)
+       ============================================================= -->
+
+  <!-- Monitor stand (small triangle base) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+    <polygon points="500,780 580,780 620,820 460,820"/>
+    <line x1="540" y1="720" x2="540" y2="780"/>
+  </g>
+
+  <!-- Monitor bezel (the frame) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="200,280 880,260 880,720 200,740" fill="#F5EFE6"/>
+    <!-- depth side -->
+    <polygon points="880,260 900,275 900,735 880,720" fill="#B8B5AD" opacity="0.4"/>
+    <polygon points="200,740 880,720 900,735 220,755" fill="#B8B5AD" opacity="0.5"/>
+  </g>
+
+  <!-- Inner screen area -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="240,310 840,294 840,685 240,705" fill="#F5EFE6"/>
+  </g>
+
+  <!-- Top-right LIVE dot indicator (orange pulse) -->
+  <circle cx="810" cy="318" r="8" fill="#FF6B1A">
+    <animate attributeName="opacity" values="1;0.4;1" dur="1.6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
+  <!-- Outer LIVE ring -->
+  <circle cx="810" cy="318" r="12" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0.6">
+    <animate attributeName="r" values="8;18;8" dur="2.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+  </circle>
+
+  <!-- =============================================================
+       MIDGROUND — 4 PARTICIPANT TILES (2x2 grid inside screen)
+       Each activates in sequence: stroke + silhouette appear
+       ============================================================= -->
+
+  <!-- Tile 1 — TOP-LEFT -->
+  <g>
+    <rect x="280" y="350" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <!-- silhouette inside (head + shoulders) -->
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="400" cy="420" rx="22" ry="26"/>
+      <path d="M 360,485 C 362,465 368,448 380,442 C 388,438 412,438 420,442 C 432,448 438,465 440,485 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <!-- Highlight ring (orange, momentary, when activated) -->
+    <rect x="278" y="348" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="0s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- Tile 2 — TOP-RIGHT -->
+  <g>
+    <rect x="560" y="345" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="680" cy="415" rx="22" ry="26"/>
+      <path d="M 640,480 C 642,460 648,443 660,437 C 668,433 692,433 700,437 C 712,443 718,460 720,480 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="0.6s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <rect x="558" y="343" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="0.6s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- Tile 3 — BOTTOM-LEFT -->
+  <g>
+    <rect x="280" y="525" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="400" cy="595" rx="22" ry="26"/>
+      <path d="M 360,660 C 362,640 368,623 380,617 C 388,613 412,613 420,617 C 432,623 438,640 440,660 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="1.2s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <rect x="278" y="523" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="1.2s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- Tile 4 — BOTTOM-RIGHT -->
+  <g>
+    <rect x="560" y="520" width="240" height="155" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+    <g fill="#1A1614" opacity="0">
+      <ellipse cx="680" cy="590" rx="22" ry="26"/>
+      <path d="M 640,655 C 642,635 648,618 660,612 C 668,608 692,608 700,612 C 712,618 718,635 720,655 Z"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;1" dur="6s" begin="1.8s" repeatCount="indefinite"
+               keyTimes="0;0.1;0.18;0.85;0.92;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+    <rect x="558" y="518" width="244" height="159" rx="6" fill="none" stroke="#FF6B1A" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0;0" dur="6s" begin="1.8s" repeatCount="indefinite"
+               keyTimes="0;0.08;0.15;0.3;1" calcMode="spline"
+               keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+  </g>
+
+  <!-- =============================================================
+       CENTER PLAY SYMBOL — appears with anticipation after tiles light
+       Squash-stretch on appear
+       ============================================================= -->
+  <g transform="translate(540 510)">
+    <!-- Play button background circle (orange, narrative) -->
+    <g>
+      <circle cx="0" cy="0" r="50" fill="#FF6B1A" stroke="#1A1614" stroke-width="3" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="2.4s" repeatCount="indefinite"
+                 keyTimes="0;0.04;0.12;0.93;1" calcMode="spline"
+                 keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="r" values="50;60;50;50;50" dur="6s" begin="2.4s" repeatCount="indefinite"
+                 keyTimes="0;0.1;0.18;0.93;1" calcMode="spline"
+                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </circle>
+      <!-- Play triangle (inside, cream color) -->
+      <polygon points="-14,-22 -14,22 22,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="2.4s" repeatCount="indefinite"
+                 keyTimes="0;0.04;0.14;0.93;1" calcMode="spline"
+                 keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </polygon>
+    </g>
+    <!-- Outer pulse ring (follow-through) -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="50;80;50" dur="6s" begin="2.4s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.6" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="6s" begin="2.4s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.6" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+
+  <!-- =============================================================
+       FOREGROUND BOTTOM — BOOK + DIPLOMA (the "eLearning" half)
+       Slight breathing, depth via stacked layers
+       ============================================================= -->
+
+  <!-- BOOK (left of stand) — open book isometric -->
+  <g transform="translate(290 830)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <!-- Left page -->
+      <polygon points="-90,-30 0,-22 0,30 -85,38"/>
+      <!-- Right page -->
+      <polygon points="0,-22 90,-30 85,38 0,30"/>
+      <!-- Center spine -->
+      <line x1="0" y1="-22" x2="0" y2="30"/>
+    </g>
+    <!-- Page lines -->
+    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+      <line x1="-75" y1="-15" x2="-10" y2="-12"/>
+      <line x1="-75" y1="-5" x2="-12" y2="-2"/>
+      <line x1="-77" y1="5" x2="-14" y2="8"/>
+      <line x1="-79" y1="15" x2="-16" y2="18"/>
+
+      <line x1="10" y1="-12" x2="75" y2="-15"/>
+      <line x1="12" y1="-2" x2="73" y2="-5"/>
+      <line x1="14" y1="8" x2="71" y2="5"/>
+      <line x1="16" y1="18" x2="69" y2="15"/>
+    </g>
+    <!-- Breath -->
+    <animateTransform attributeName="transform" type="translate"
+      values="290,830; 290,826; 290,830" dur="4.4s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- DIPLOMA (right of stand) — rolled scroll with ribbon -->
+  <g transform="translate(790 830)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <!-- Scroll body -->
+      <rect x="-65" y="-32" width="130" height="60" rx="4"/>
+      <!-- Left rolled cap -->
+      <ellipse cx="-65" cy="-2" rx="10" ry="32"/>
+      <!-- Right rolled cap -->
+      <ellipse cx="65" cy="-2" rx="10" ry="32"/>
+    </g>
+    <!-- Diploma content lines (faint) -->
+    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+      <line x1="-50" y1="-18" x2="45" y2="-18"/>
+      <line x1="-45" y1="-8" x2="40" y2="-8"/>
+      <line x1="-50" y1="2" x2="50" y2="2"/>
+    </g>
+    <!-- Seal (small ocean-blue circle with orange center — accent) -->
+    <circle cx="-35" cy="18" r="9" fill="#F5EFE6" stroke="#1A1614" stroke-width="2"/>
+    <circle cx="-35" cy="18" r="4" fill="#2C4357"/>
+    <!-- Ribbon tails (deep ocean blue accent) -->
+    <g stroke="#2C4357" stroke-width="2.5" stroke-linecap="round" fill="none">
+      <path d="M -38,26 L -42,38"/>
+      <path d="M -32,26 L -28,38"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="790,830; 790,826; 790,830" dur="4.8s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+</svg>

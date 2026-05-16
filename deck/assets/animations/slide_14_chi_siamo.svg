@@ -1,117 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 14 — Chi siamo Conflavoro: open office with floating compasses">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 14 — Chi siamo Conflavoro: isometric building with six floating compasses">
   <title>Slide 14 — Chi siamo</title>
-  <desc>Edificio Conflavoro stilizzato con figure di spalle ai banchi, piccole bussole arancioni fluttuanti.</desc>
+  <desc>Edificio Conflavoro isometrico con figure di spalle e sei bussole arancioni fluttuanti in arco, ognuna pulsa in sequenza.</desc>
 
-  <!-- Cream background -->
+  <!-- =============================================================
+       BACKGROUND LAYER (depth 0 — atmosphere)
+       ============================================================= -->
   <rect width="1080" height="1080" fill="#F5EFE6"/>
 
-  <!-- Floor base shadow (flat fog) -->
-  <ellipse cx="540" cy="900" rx="380" ry="40" fill="#B8B5AD" opacity="0.25"/>
+  <!-- Distant atmospheric halo (very faint, slow breath) -->
+  <ellipse cx="540" cy="500" rx="500" ry="280" fill="#FF6B1A" opacity="0.04">
+    <animate attributeName="opacity" values="0.03;0.07;0.03" dur="6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
 
-  <!-- Building structure (isometric, simplified) -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-    <!-- Back wall -->
-    <polygon points="260,360 540,260 820,360 820,720 540,820 260,720"/>
-    <!-- Floor plate -->
-    <polygon points="260,720 540,820 820,720 540,620" fill="#F5EFE6"/>
+  <!-- =============================================================
+       MIDGROUND LAYER (depth 1 — building)
+       ============================================================= -->
+
+  <!-- Floor shadow under building -->
+  <ellipse cx="540" cy="890" rx="380" ry="34" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- Building back face (slight depth tint) -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Volume outline -->
+    <polygon points="280,380 540,290 800,380 800,720 540,810 280,720" fill="#F5EFE6"/>
     <!-- Roof line -->
-    <polyline points="260,360 540,260 820,360" fill="none"/>
-    <!-- Vertical struts -->
-    <line x1="540" y1="260" x2="540" y2="620"/>
-    <line x1="260" y1="360" x2="260" y2="720"/>
-    <line x1="820" y1="360" x2="820" y2="720"/>
+    <polyline points="280,380 540,290 800,380" fill="none"/>
+    <!-- Central vertical edge -->
+    <line x1="540" y1="290" x2="540" y2="810"/>
+    <!-- Floor seam (where roof meets walls) -->
+    <line x1="280" y1="380" x2="280" y2="720"/>
+    <line x1="800" y1="380" x2="800" y2="720"/>
   </g>
 
-  <!-- Windows pattern (left face) -->
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45">
-    <rect x="305" y="430" width="50" height="40"/>
-    <rect x="375" y="450" width="50" height="40"/>
-    <rect x="445" y="470" width="50" height="40"/>
-    <rect x="305" y="530" width="50" height="40"/>
-    <rect x="375" y="550" width="50" height="40"/>
-    <rect x="445" y="570" width="50" height="40"/>
+  <!-- Subtle depth shade on right wall -->
+  <polygon points="540,290 800,380 800,720 540,810" fill="#B8B5AD" opacity="0.15"/>
+
+  <!-- Roof ridge accent (deep ocean blue, small) -->
+  <line x1="540" y1="290" x2="540" y2="305" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Windows LEFT face (grid, secondary motion: one window subtly lit) -->
+  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+    <rect x="320" y="445" width="48" height="38"/>
+    <rect x="320" y="510" width="48" height="38"/>
+    <rect x="320" y="575" width="48" height="38"/>
+    <rect x="392" y="465" width="48" height="38"/>
+    <rect x="392" y="530" width="48" height="38"/>
+    <rect x="392" y="595" width="48" height="38"/>
+    <rect x="464" y="485" width="48" height="38"/>
+    <rect x="464" y="550" width="48" height="38"/>
+    <rect x="464" y="615" width="48" height="38"/>
+  </g>
+  <!-- One lit window (life inside, secondary motion) -->
+  <rect x="392" y="530" width="48" height="38" fill="#FF6B1A" opacity="0.18">
+    <animate attributeName="opacity" values="0.10;0.28;0.10" dur="4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </rect>
+
+  <!-- Windows RIGHT face -->
+  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+    <rect x="572" y="485" width="48" height="38"/>
+    <rect x="572" y="550" width="48" height="38"/>
+    <rect x="572" y="615" width="48" height="38"/>
+    <rect x="644" y="465" width="48" height="38"/>
+    <rect x="644" y="530" width="48" height="38"/>
+    <rect x="644" y="595" width="48" height="38"/>
+    <rect x="716" y="445" width="48" height="38"/>
+    <rect x="716" y="510" width="48" height="38"/>
+    <rect x="716" y="575" width="48" height="38"/>
   </g>
 
-  <!-- Windows pattern (right face) -->
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45">
-    <rect x="585" y="470" width="50" height="40"/>
-    <rect x="655" y="450" width="50" height="40"/>
-    <rect x="725" y="430" width="50" height="40"/>
-    <rect x="585" y="570" width="50" height="40"/>
-    <rect x="655" y="550" width="50" height="40"/>
-    <rect x="725" y="530" width="50" height="40"/>
+  <!-- Front door (small, suggests scale) -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" fill="#F5EFE6">
+    <rect x="510" y="710" width="60" height="100" rx="2"/>
+    <line x1="540" y1="710" x2="540" y2="810"/>
   </g>
 
-  <!-- Three silhouette figures in front of building (back view, only shoulders + back of head) -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#1A1614">
-    <!-- Figure 1 -->
-    <g transform="translate(370 820)">
-      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
-      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
-    <!-- Figure 2 -->
-    <g transform="translate(540 845)">
-      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
-      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
-    <!-- Figure 3 -->
-    <g transform="translate(710 820)">
-      <ellipse cx="0" cy="-95" rx="22" ry="26" fill="#1A1614"/>
-      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
-  </g>
+  <!-- =============================================================
+       FOREGROUND LAYER (depth 2 — figures)
+       ============================================================= -->
 
-  <!-- 5 floating small compasses above (mini icons), evenly distributed -->
-  <g>
-    <!-- Compass 1 (top left) -->
-    <g transform="translate(280 200)">
-      <circle cx="0" cy="0" r="28" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-18 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,18 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="280,200; 280,185; 280,200" dur="4s" repeatCount="indefinite"/>
+  <!-- Three silhouette figures (back view, slight breathing) -->
+  <g fill="#1A1614">
+    <g transform="translate(370 870)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="370,870; 370,868; 370,870" dur="5s" repeatCount="indefinite"
+        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-    <!-- Compass 2 (top center-left) -->
-    <g transform="translate(420 150)">
-      <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-16 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,16 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="420,150; 420,135; 420,150" dur="4.6s" repeatCount="indefinite"/>
+    <g transform="translate(540 880)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="540,880; 540,878; 540,880" dur="5.4s" repeatCount="indefinite"
+        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-    <!-- Compass 3 (top center) -->
-    <g transform="translate(540 130)">
-      <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="540,130; 540,115; 540,130" dur="3.8s" repeatCount="indefinite"/>
-    </g>
-    <!-- Compass 4 (top center-right) -->
-    <g transform="translate(660 150)">
-      <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-16 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,16 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="660,150; 660,135; 660,150" dur="4.3s" repeatCount="indefinite"/>
-    </g>
-    <!-- Compass 5 (top right) -->
-    <g transform="translate(800 200)">
-      <circle cx="0" cy="0" r="28" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <polygon points="0,-18 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,18 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="3" fill="#1A1614"/>
-      <animateTransform attributeName="transform" type="translate" values="800,200; 800,185; 800,200" dur="4.2s" repeatCount="indefinite"/>
+    <g transform="translate(710 870)">
+      <ellipse cx="0" cy="-95" rx="22" ry="26"/>
+      <path d="M -38,-55 C -38,-25 -45,30 -42,70 L 42,70 C 45,30 38,-25 38,-55 C 38,-72 22,-78 0,-78 C -22,-78 -38,-72 -38,-55 Z"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="710,870; 710,868; 710,870" dur="4.8s" repeatCount="indefinite"
+        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
   </g>
 
-  <!-- Thin vertical connection lines (compasses to building roof) -->
-  <g stroke="#1A1614" stroke-width="1" stroke-dasharray="3,5" opacity="0.25">
-    <line x1="280" y1="232" x2="280" y2="350"/>
-    <line x1="420" y1="180" x2="420" y2="290"/>
-    <line x1="540" y1="164" x2="540" y2="262"/>
-    <line x1="660" y1="180" x2="660" y2="290"/>
-    <line x1="800" y1="232" x2="800" y2="350"/>
+  <!-- =============================================================
+       SIX FLOATING COMPASSES (arc above the building)
+       Sequence-pulse: each pulses with phase shift (0, 0.16, 0.32, 0.48, 0.64, 0.80 of 4.8s cycle)
+       Each one has a thin dashed line connecting to roof (depth/parallax cue)
+       ============================================================= -->
+
+  <!-- Connection lines (back layer) -->
+  <g stroke="#1A1614" stroke-width="1" stroke-dasharray="3,5" opacity="0.28">
+    <line x1="220" y1="225" x2="280" y2="380"/>
+    <line x1="360" y1="170" x2="380" y2="335"/>
+    <line x1="490" y1="135" x2="500" y2="305"/>
+    <line x1="590" y1="135" x2="580" y2="305"/>
+    <line x1="720" y1="170" x2="700" y2="335"/>
+    <line x1="860" y1="225" x2="800" y2="380"/>
+  </g>
+
+  <!-- Compass 1 (far left, smaller — depth) -->
+  <g transform="translate(220 225)">
+    <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-17 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,17 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+    <!-- Pulse halo -->
+    <circle cx="0" cy="0" r="30" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="26;38;26" dur="4.8s" begin="0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <!-- Float (anticipation + ease) -->
+    <animateTransform attributeName="transform" type="translate"
+      values="220,225; 220,212; 220,225" dur="5s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 2 -->
+  <g transform="translate(360 170)">
+    <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="34" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="0.8s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="30;42;30" dur="4.8s" begin="0.8s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="360,170; 360,158; 360,170" dur="4.6s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 3 (left center, hero size) -->
+  <g transform="translate(490 135)">
+    <circle cx="0" cy="0" r="33" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-22 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,22 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="38" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="1.6s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="33;46;33" dur="4.8s" begin="1.6s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="490,135; 490,122; 490,135" dur="4.2s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 4 (right center, hero size) -->
+  <g transform="translate(590 135)">
+    <circle cx="0" cy="0" r="33" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-22 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,22 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="38" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="2.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="33;46;33" dur="4.8s" begin="2.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="590,135; 590,122; 590,135" dur="4.4s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 5 -->
+  <g transform="translate(720 170)">
+    <circle cx="0" cy="0" r="30" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-20 5,0 0,2 -5,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,20 5,0 0,-2 -5,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="34" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="30;42;30" dur="4.8s" begin="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="720,170; 720,158; 720,170" dur="4.6s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Compass 6 (far right, smaller — depth) -->
+  <g transform="translate(860 225)">
+    <circle cx="0" cy="0" r="26" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+    <polygon points="0,-17 4,0 0,2 -4,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="0,17 4,0 0,-2 -4,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3" fill="#1A1614"/>
+    <circle cx="0" cy="0" r="30" fill="#FF6B1A" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0" dur="4.8s" begin="4.0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="r" values="26;38;26" dur="4.8s" begin="4.0s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.2;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate"
+      values="860,225; 860,212; 860,225" dur="5s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </g>
 </svg>

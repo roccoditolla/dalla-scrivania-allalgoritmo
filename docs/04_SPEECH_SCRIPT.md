@@ -276,10 +276,10 @@ Tre anni nel mondo del lavoro sono una vita."
 
 ## SLIDE 14 — Chi siamo (≈ 40s)
 
-"In Conflavoro AI stiamo costruendo non un tool.
+"In Conflavoro AI non stiamo costruendo un tool.
 Una flotta di tool.
 
-Cinque piattaforme.
+**Sei piattaforme.**
 Una visione:
 
 l'AI come supporto operativo per il consulente del lavoro.
@@ -291,7 +291,7 @@ Non roba generica.
 Non l'ennesima copia di ChatGPT con un logo sopra.
 
 Strumenti specifici.
-Costruiti da chi conosce il mestiere.
+Costruiti da chi ha visto la vostra giornata.
 Costruiti per il vostro mestiere."
 
 ---
@@ -315,21 +315,21 @@ Rubato al mestiere vero."
 
 ---
 
-## SLIDE 16 — DVR Validator (≈ 45s)
+## SLIDE 16 — Piattaforma DVR (≈ 45s)
 
-"Primo tool. **DVR Validator**.
+"Prima bussola. **Piattaforma DVR**.
 Decreto legislativo ottantuno del duemilaotto.
 Sicurezza sul lavoro.
 
-Un consulente fa la validazione di un DVR in quattro ore.
-Noi la facciamo in dodici minuti.
+Un consulente oggi valida un DVR in quattro ore.
+Noi lo facciamo in dodici minuti.
 
 *[Pausa 1s]*
 
 Dodici minuti.
 
-Non per sostituirlo.
-Per liberargli **tre ore e quarantotto minuti** di tempo che torna ai clienti.
+Non per sostituire il consulente.
+Per restituirgli **tre ore e quarantotto minuti** che tornano ai clienti.
 
 Questo è il punto.
 Non togliere lavoro.
@@ -337,27 +337,30 @@ Ridarlo a chi conta."
 
 ---
 
-## SLIDE 17 — AppaltoAI (≈ 40s)
+## SLIDE 17 — Preventivatore (≈ 40s)
 
-"Secondo. **AppaltoAI**.
-Le gare pubbliche.
+"Seconda. **Preventivatore**.
+I preventivi del consulente.
 
-Duecento pagine di bando — lette in novanta secondi.
-Ridotte a un report di quattro pagine con le sole cose che servono a te.
+Un preventivo articolato — di quelli con dieci voci, sconti, fasce di fatturato — a un consulente prende trenta, quaranta minuti.
 
-Decisione di partecipare o no in dieci minuti.
-Non in due giorni di lettura.
+Noi lo facciamo in **cinque minuti**.
 
-E se decidi di partecipare, AppaltoAI ti prepara la prima bozza dell'offerta tecnica.
-Tu la rivedi.
-Tu decidi.
-Ma parti da una bozza fatta, non da una pagina bianca."
+*[Pausa 1s]*
+
+Anagrafica cliente in input.
+Listino tariffario del tuo studio applicato in automatico.
+Output PDF impaginato, pronto da inviare.
+
+Tu rileggi.
+Tu firmi.
+Niente più 'lo facciamo settimana prossima'."
 
 ---
 
-## SLIDE 18 — LeadHunter AI (≈ 35s)
+## SLIDE 18 — Lead Hunter (≈ 35s)
 
-"Terzo. **LeadHunter AI**.
+"Terza. **Lead Hunter**.
 La generazione di clienti.
 
 Una piattaforma che cerca, qualifica e contatta lead nei canali giusti.
@@ -367,47 +370,70 @@ Già replicata per il primo cliente.
 L'AI che ti porta clienti mentre tu dormi.
 
 Non un'agenzia marketing.
-Non un crm.
+Non un CRM.
 Un agente che lavora ventiquattr'ore al giorno per riempirti l'agenda."
 
 ---
 
-## SLIDE 19 — Project Manager AI (≈ 40s)
+## SLIDE 19 — Project Manager (≈ 40s)
 
-"Quarto. Il **Project Manager AI**.
+"Quarta. Il **Project Manager**.
 
 Non è un cronoprogramma.
 Non è Trello con un nome diverso.
 
-È un agente che ti chiede 'hai sentito Mario? era previsto ieri.'
-Che ti suggerisce 'questa è una scadenza in conflitto.'
-Che ti avvisa 'questo progetto sta perdendo margine.'
+È un agente che ti chiede: 'hai sentito Mario? Era previsto ieri.'
+Che ti dice: 'questa è una scadenza in conflitto.'
+Che ti avvisa: 'questo progetto sta perdendo margine.'
 
 Pensa con te.
 Non al posto tuo.
 
 Tu resti il decisore.
-Lui ti tiene presente quello che ti sfugge."
+Lui ti tiene a mente quello che ti sfugge."
 
 ---
 
-## SLIDE 20 — Videoconferenze + Welfare (≈ 35s)
+## SLIDE 20 — Piattaforma HR (≈ 40s)
 
-"Quinto.
-Una piattaforma di **videoconferenze** pensata per il mondo del lavoro italiano.
-Con i flussi giusti, con la trascrizione integrata, con il salvataggio normativo automatico.
+"Quinta. **Piattaforma HR**.
 
-E una di **welfare sportivo** per i lavoratori.
-Per le aziende che vogliono dare ai dipendenti più della busta paga.
+La gestione del personale di un'azienda con quaranta dipendenti — busta paga, presenze, contratti, ferie, formazione obbligatoria — oggi è un Excel con sette schede.
 
-Perché le persone vengono prima dei processi.
-Sempre."
+Da noi è un sistema unico.
+
+*[Pausa 1s]*
+
+Il consulente vede tutto.
+L'azienda vede tutto.
+Il dipendente vede quello che gli serve.
+
+Una sola fonte di verità.
+Perché il dipendente non è una riga di Excel."
 
 ---
 
-## SLIDE 21 — Il pattern (≈ 40s)
+## SLIDE 21 — Videoconferenze e e-Learning (≈ 40s)
 
-"Cinque bussole.
+"Sesta. **Videoconferenze e e-Learning**.
+
+Videoconferenze pensate per il mondo del lavoro italiano.
+Con trascrizione integrata.
+Registrazione conforme al GDPR.
+Salvataggio automatico nel fascicolo del dipendente.
+
+E sopra ci abbiamo costruito una piattaforma di e-Learning per la formazione obbligatoria:
+sicurezza, antincendio, primo soccorso.
+
+Riconosciuta.
+Tracciabile.
+Fruibile dal telefono."
+
+---
+
+## SLIDE 22 — Il pattern (≈ 40s)
+
+"**Sei bussole.**
 
 *[Pausa 1s]*
 
@@ -422,14 +448,12 @@ Non chatbot.
 Non assistenti generici.
 Non magia.
 
-Tool da consulenti per consulenti.
-Tool da PMI per PMI.
-
+Una piattaforma fatta da chi ha visto la vostra giornata.
 Una bussola per ogni rotta che vi serve."
 
 ---
 
-## SLIDE 22 — Metodologia BMAD (≈ 40s)
+## SLIDE 23 — Metodologia BMAD (≈ 40s)
 
 "E lo costruiamo con un metodo.
 Si chiama BMAD.
@@ -452,7 +476,7 @@ Senza prendere acqua."
 
 ---
 
-## SLIDE 23 — Chiusura (≈ 40s)
+## SLIDE 24 — Chiusura (≈ 40s)
 
 *[Voce più calda, conclusiva. Rocco si avvicina al centro del palco.]*
 
@@ -503,6 +527,6 @@ Grazie."
 ## Conteggio target
 
 - Sezione storia (atti I-III, scene 01-12, ~10 min): ~870 parole parlate
-- Sezione realistica (slide 13-23, ~5 min): ~880 parole parlate
-- **Totale parole parlate:** ~1.750 parole su 15 minuti = ~117 wpm, ritmo lento e drammatico ✓
-- (Il `wc -w` complessivo del file restituirà ~2.300 perché conta anche header markdown, direzioni di scena, marker pausa.)
+- Sezione realistica (slide 13-24, ~5 min): ~1.020 parole parlate
+- **Totale parole parlate:** ~1.890 parole su 15 minuti = ~126 wpm, ritmo lento e drammatico ✓
+- (Il `wc -w` complessivo del file restituirà ~2.450 perché conta anche header markdown, direzioni di scena, marker pausa.)

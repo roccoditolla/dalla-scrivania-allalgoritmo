@@ -23,7 +23,9 @@
     ctx: null,
     masterGain: null,
     currentAmbient: null, // { stop: fn, label: str }
+    currentMusic: null,   // { stop: fn, label: str }
     fadeMs: 1000,
+    musicFadeMs: 2200,    // music ha fade più lungo per non strappare lo spettatore
 
     /**
      * Inizializza l'AudioContext (deve avvenire dopo user gesture).
@@ -112,6 +114,32 @@
       }
       const gain = this.dbToGain(db);
       builder.call(this, gain);
+    },
+
+    /**
+     * Music layer (sopra l'ambient).
+     * type: 'theme_minor' (suspense, atto III early), 'theme_major' (joy/discovery, atto III peak),
+     *       'realistic_uplift' (business cinematic, sez. realistic), 'outro_warm' (chiusura).
+     */
+    playMusic(type, targetDb = -14) {
+      if (!this.ctx) this.init();
+      if (!this.ctx) return;
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+
+      if (this.currentMusic && this.currentMusic.label === type) return;
+      if (this.currentMusic) this.currentMusic.stop(this.musicFadeMs);
+
+      const builder = MUSIC_BUILDERS[type];
+      if (!builder) { this.currentMusic = null; return; }
+      this.currentMusic = builder.call(this, this.dbToGain(targetDb));
+      this.currentMusic.label = type;
+    },
+
+    stopMusic() {
+      if (this.currentMusic) {
+        this.currentMusic.stop(this.musicFadeMs);
+        this.currentMusic = null;
+      }
     },
   };
 
@@ -549,6 +577,135 @@
   };
 
   // ============================================================================
+  // MUSIC BUILDERS — chord progressions sotto la voce
+  // Suspense (minore) -> rivelazione (maggiore) -> business cinematic -> outro
+  // ============================================================================
+
+  /**
+   * Suona una progressione di accordi loopata.
+   * Ogni chord è un array di freq in Hz; stride = secondi per accordo.
+   * Costruito con sine layers e ADSR per ogni nota.
+   */
+  function buildChordLoop(progression, strideS, targetGain, options = {}) {
+    const ctx = SynthAudio.ctx;
+    const out = makeGain(0);
+    const reverb = SynthAudio.createReverb(2.8, 1.8);
+    const wet = makeGain(options.wet ?? 0.35);
+    const dry = makeGain(options.dry ?? 0.65);
+    out.connect(SynthAudio.masterGain);
+    reverb.connect(wet).connect(out);
+
+    let chordIdx = 0;
+    const activeOscs = new Set();
+
+    function playChord(freqs) {
+      const t = ctx.currentTime;
+      freqs.forEach((f, i) => {
+        const o = makeOsc(f, options.waveform ?? 'sine', (Math.random() * 4 - 2));
+        const g = makeGain(0);
+        o.connect(g);
+        g.connect(dry).connect(out);
+        g.connect(reverb);
+        const peak = (options.notePeak ?? 0.18) * (1 - i * 0.06);
+        o.start(t);
+        // ADSR: attack 0.6s, sustain to 80% of stride, release 0.8s
+        g.gain.linearRampToValueAtTime(peak, t + (options.attackS ?? 0.6));
+        g.gain.setValueAtTime(peak, t + strideS * 0.8);
+        g.gain.linearRampToValueAtTime(0, t + strideS + (options.releaseS ?? 0.8));
+        o.stop(t + strideS + (options.releaseS ?? 0.8) + 0.1);
+        activeOscs.add(o);
+        setTimeout(() => activeOscs.delete(o), (strideS + 1) * 1000);
+      });
+    }
+
+    let stopped = false;
+    playChord(progression[0]);
+    const interval = setInterval(() => {
+      if (stopped) return;
+      chordIdx = (chordIdx + 1) % progression.length;
+      playChord(progression[chordIdx]);
+    }, strideS * 1000);
+
+    out.gain.linearRampToValueAtTime(targetGain, ctx.currentTime + 2);
+
+    return {
+      stop(fadeMs) {
+        stopped = true;
+        clearInterval(interval);
+        out.gain.linearRampToValueAtTime(0, ctx.currentTime + fadeMs / 1000);
+        setTimeout(() => activeOscs.forEach(o => { try { o.stop(); } catch (e) {} }), fadeMs + 200);
+      }
+    };
+  }
+
+  const MUSIC_BUILDERS = {
+    /**
+     * theme_minor — suspense risolutiva (atto III early: scene 08B/09A).
+     * Cm – Gm – A♭ – E♭ (i – v – VI – III).
+     * Suono: pad caldo ma malinconico, slow stride 4s.
+     */
+    theme_minor(targetGain) {
+      const progression = [
+        [130.81, 155.56, 196.00, 311.13], // Cm: C3 Eb3 G3 Eb4
+        [98.00, 116.54, 146.83, 233.08],  // Gm: G2 Bb2 D3 Bb3
+        [103.83, 130.81, 155.56, 311.13], // Ab: Ab2 C3 Eb3 Eb4
+        [155.56, 196.00, 233.08, 311.13], // Eb: Eb3 G3 Bb3 Eb4
+      ];
+      return buildChordLoop(progression, 4.0, targetGain, {
+        waveform: 'sine', notePeak: 0.16, attackS: 0.8, releaseS: 1.2, wet: 0.4, dry: 0.6
+      });
+    },
+
+    /**
+     * theme_major — rivelazione/discovery (atto III peak: scene 10/11).
+     * I–V–vi–IV in C major (Cmaj – Gmaj – Amin – Fmaj).
+     * Stride 3.5s, leggermente più mosso del minor.
+     */
+    theme_major(targetGain) {
+      const progression = [
+        [130.81, 164.81, 196.00, 261.63], // Cmaj: C3 E3 G3 C4
+        [98.00, 146.83, 196.00, 246.94],  // Gmaj: G2 D3 G3 B3
+        [110.00, 130.81, 164.81, 220.00], // Amin: A2 C3 E3 A3
+        [87.31, 130.81, 174.61, 220.00],  // Fmaj: F2 C3 F3 A3
+      ];
+      return buildChordLoop(progression, 3.5, targetGain, {
+        waveform: 'sine', notePeak: 0.20, attackS: 0.6, releaseS: 1.0, wet: 0.35, dry: 0.65
+      });
+    },
+
+    /**
+     * realistic_uplift — business cinematic per slide 13-23.
+     * F – Am – C – G ostinato, stride 3s, leggero.
+     * Sotto la voce di Rocco (-18dB consigliato).
+     */
+    realistic_uplift(targetGain) {
+      const progression = [
+        [87.31, 130.81, 174.61, 261.63], // Fmaj: F2 C3 F3 C4
+        [110.00, 130.81, 164.81, 220.00], // Amin: A2 C3 E3 A3
+        [130.81, 164.81, 196.00, 261.63], // Cmaj: C3 E3 G3 C4
+        [98.00, 146.83, 196.00, 246.94],  // Gmaj: G2 D3 G3 B3
+      ];
+      return buildChordLoop(progression, 3.0, targetGain, {
+        waveform: 'sine', notePeak: 0.14, attackS: 0.5, releaseS: 0.8, wet: 0.3, dry: 0.7
+      });
+    },
+
+    /**
+     * outro_warm — chiusura (slide 24 + transizione 12).
+     * Cmaj sustained con II-IV variation lentissima, stride 6s.
+     */
+    outro_warm(targetGain) {
+      const progression = [
+        [130.81, 196.00, 261.63, 392.00], // Cmaj sustained: C3 G3 C4 G4
+        [130.81, 174.61, 261.63, 349.23], // Fmaj/C: C3 F3 C4 F4
+      ];
+      return buildChordLoop(progression, 6.0, targetGain, {
+        waveform: 'sine', notePeak: 0.22, attackS: 1.5, releaseS: 2.0, wet: 0.5, dry: 0.5
+      });
+    },
+  };
+
+  // ============================================================================
   // Mappa scene → ambient (usata da transitions.js)
   // ============================================================================
 
@@ -583,7 +740,36 @@
     '20': { type: 'realistic_intro', db: -18 },
     '21': { type: 'realistic_intro', db: -18 },
     '22': { type: 'realistic_intro', db: -18 },
-    '23': { type: 'end_pulse', db: -10 },
+    '23': { type: 'realistic_intro', db: -18 },
+    '24': { type: 'end_pulse', db: -10 },
+  };
+
+  // Music timeline: suspense (atto III early) -> joy (rivelazione/discovery)
+  //                  -> business cinematic (realistic) -> outro warm (chiusura)
+  SynthAudio.MUSIC_FOR_SCENE = {
+    // Scene 01-08A: NESSUNA music. La storia funziona col silenzio + ambient.
+    '08B': { type: 'theme_minor', db: -20 },   // entra molto sotto, suspense
+    '09A': { type: 'theme_minor', db: -16 },   // cresce
+    '09B': { type: 'theme_minor', db: -14 },
+    '10':  { type: 'theme_major', db: -14 },   // CROSSFADE in maggiore (joy)
+    '11A': { type: 'theme_major', db: -12 },   // peak
+    '11B': { type: 'theme_major', db: -12 },
+    '12':  { type: 'outro_warm',  db: -14 },   // bridge musicale
+  };
+
+  SynthAudio.MUSIC_FOR_SLIDE = {
+    '13': { type: 'realistic_uplift', db: -18 },
+    '14': { type: 'realistic_uplift', db: -18 },
+    '15': { type: 'realistic_uplift', db: -20 }, // problema, più sotto
+    '16': { type: 'realistic_uplift', db: -18 },
+    '17': { type: 'realistic_uplift', db: -18 },
+    '18': { type: 'realistic_uplift', db: -18 },
+    '19': { type: 'realistic_uplift', db: -18 },
+    '20': { type: 'realistic_uplift', db: -18 },
+    '21': { type: 'realistic_uplift', db: -18 },
+    '22': { type: 'realistic_uplift', db: -16 }, // pattern, più presente
+    '23': { type: 'realistic_uplift', db: -16 }, // BMAD
+    '24': { type: 'outro_warm',       db: -12 }, // chiusura
   };
 
   window.SynthAudio = SynthAudio;

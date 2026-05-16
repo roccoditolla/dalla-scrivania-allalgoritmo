@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 17 — Preventivatore: isometric calculator with price list and speed arrow">
+  <title>Slide 17 — Preventivatore</title>
+  <desc>Calcolatrice isometrica che si compila da sola, listino prezzi a sinistra, freccia di velocità verso il totale arancione. Auto-fill with anticipation and follow-through.</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange halo around the "result" zone (right side) -->
+  <ellipse cx="720" cy="540" rx="220" ry="180" fill="#FF6B1A" opacity="0.08">
+    <animate attributeName="opacity" values="0.06;0.14;0.06" dur="4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor shadow -->
+  <ellipse cx="540" cy="930" rx="380" ry="32" fill="#B8B5AD" opacity="0.25"/>
+
+  <!-- =============================================================
+       BACKGROUND LAYER — PRICE LIST (paper, left side)
+       Static, slightly tilted. Rows fill in over time (secondary motion)
+       ============================================================= -->
+  <g transform="translate(260 380)">
+    <!-- Paper -->
+    <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+      <polygon points="-90,-160 90,-180 110,160 -70,180" fill="#F5EFE6"/>
+      <!-- Side depth (subtle) -->
+      <polygon points="-90,-160 -90,-150 -70,190 -70,180" fill="#B8B5AD" opacity="0.3"/>
+    </g>
+
+    <!-- Header bar (deep ocean blue accent, tiny) -->
+    <line x1="-70" y1="-140" x2="80" y2="-156" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Price rows: 6 rows with a label line and a value box -->
+    <!-- Each row "fills" sequentially via opacity animation -->
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.65">
+      <!-- Row labels (always visible, gentle) -->
+      <line x1="-70" y1="-100" x2="20" y2="-108"/>
+      <line x1="-66" y1="-50" x2="14" y2="-58"/>
+      <line x1="-62" y1="0" x2="18" y2="-8"/>
+      <line x1="-58" y1="50" x2="22" y2="42"/>
+      <line x1="-54" y1="100" x2="26" y2="92"/>
+      <line x1="-50" y1="150" x2="30" y2="142"/>
+    </g>
+
+    <!-- Value boxes (small rectangles, fill in sequentially) -->
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
+      <rect x="42" y="-118" width="46" height="22" rx="2"/>
+      <rect x="38" y="-68" width="46" height="22" rx="2"/>
+      <rect x="36" y="-18" width="46" height="22" rx="2"/>
+      <rect x="44" y="32" width="46" height="22" rx="2"/>
+      <rect x="48" y="82" width="46" height="22" rx="2"/>
+      <rect x="52" y="132" width="46" height="22" rx="2"/>
+    </g>
+
+    <!-- Value fill bars (the "calculated" numbers — short black bars inside boxes, appear sequentially) -->
+    <g stroke="#1A1614" stroke-width="3" stroke-linecap="round">
+      <line x1="48" y1="-107" x2="78" y2="-107" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="0.3s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="44" y1="-57" x2="74" y2="-57" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="0.7s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="42" y1="-7" x2="72" y2="-7" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.1s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="50" y1="43" x2="80" y2="43" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.5s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="54" y1="93" x2="84" y2="93" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.9s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+      <line x1="58" y1="143" x2="88" y2="143" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="2.3s" repeatCount="indefinite"
+                 keyTimes="0;0.08;0.83;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       MIDGROUND LAYER — SPEED ARROW (chevrons left → right)
+       Three chevrons that travel sequentially toward the calculator
+       ============================================================= -->
+  <g stroke="#FF6B1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7">
+    <polyline points="430,540 460,520 460,560 430,540" opacity="0">
+      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.4s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.7;1" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </polyline>
+    <polyline points="475,540 505,520 505,560 475,540" opacity="0">
+      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.6s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.7;1" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </polyline>
+    <polyline points="520,540 550,520 550,560 520,540" opacity="0">
+      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.8s" repeatCount="indefinite"
+               keyTimes="0;0.3;0.7;1" calcMode="spline"
+               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </polyline>
+  </g>
+
+  <!-- =============================================================
+       FOREGROUND LAYER — CALCULATOR (isometric, right side)
+       Anticipation: subtle -8px y before result appears, then squash/stretch
+       ============================================================= -->
+  <g>
+    <!-- Anticipation+squash group: applies to the whole calculator at the "totale" moment -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,-8; 0,3; 0,0; 0,0"
+        dur="6s" begin="3.0s" repeatCount="indefinite"
+        keyTimes="0;0.05;0.13;0.25;1" calcMode="spline"
+        keySplines="0.25 0.1 0.25 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+
+      <!-- Calculator base shadow on desk (isometric ellipse) -->
+      <ellipse cx="720" cy="780" rx="180" ry="20" fill="#B8B5AD" opacity="0.3"/>
+
+      <!-- Calculator body (isometric) -->
+      <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Top face -->
+        <polygon points="600,380 870,360 870,720 600,740" fill="#F5EFE6"/>
+        <!-- Right depth face -->
+        <polygon points="870,360 900,375 900,735 870,720" fill="#B8B5AD" opacity="0.4"/>
+        <!-- Bottom depth face -->
+        <polygon points="600,740 870,720 900,735 630,755" fill="#B8B5AD" opacity="0.55"/>
+      </g>
+
+      <!-- Display screen (top portion) -->
+      <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round">
+        <polygon points="630,410 840,395 840,475 630,490" fill="#F5EFE6"/>
+      </g>
+
+      <!-- Display content: small input digits (left, dim) + RESULT (orange, large, appears) -->
+      <!-- Input digits — small bars in the upper portion -->
+      <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.5">
+        <line x1="645" y1="425" x2="665" y2="424" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="0.4s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+        <line x1="670" y1="424" x2="680" y2="423" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="0.8s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+        <line x1="685" y1="423" x2="710" y2="421" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="1.2s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+        <line x1="715" y1="421" x2="745" y2="419" opacity="0">
+          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="1.6s" repeatCount="indefinite"
+                   keyTimes="0;0.08;0.83;1" calcMode="spline"
+                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </line>
+      </g>
+
+      <!-- Equals separator line in screen -->
+      <line x1="640" y1="445" x2="830" y2="442" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+      <!-- RESULT — orange bar in lower screen (the "totale" appearing) -->
+      <g>
+        <rect x="700" y="455" width="130" height="20" rx="2" fill="#FF6B1A" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.5;0.55;0.93;1" calcMode="spline"
+                   keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+          <!-- Squash on appear -->
+          <animate attributeName="height" values="20;28;20;20;20" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.55;0.62;0.93;1" calcMode="spline"
+                   keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+          <animate attributeName="y" values="455;451;455;455;455" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.55;0.62;0.93;1" calcMode="spline"
+                   keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </rect>
+        <!-- Small "€" suggestion dot (orange dot, no text) -->
+        <circle cx="687" cy="465" r="4" fill="#FF6B1A" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
+                   keyTimes="0;0.5;0.58;0.93;1" calcMode="spline"
+                   keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        </circle>
+      </g>
+
+      <!-- Button grid (5 cols × 4 rows of small squares) -->
+      <g stroke="#1A1614" stroke-width="2" stroke-linejoin="round" fill="#F5EFE6">
+        <rect x="630" y="510" width="38" height="34" rx="3"/>
+        <rect x="676" y="508" width="38" height="34" rx="3"/>
+        <rect x="722" y="506" width="38" height="34" rx="3"/>
+        <rect x="768" y="504" width="38" height="34" rx="3"/>
+        <rect x="814" y="502" width="38" height="34" rx="3"/>
+
+        <rect x="630" y="552" width="38" height="34" rx="3"/>
+        <rect x="676" y="550" width="38" height="34" rx="3"/>
+        <rect x="722" y="548" width="38" height="34" rx="3"/>
+        <rect x="768" y="546" width="38" height="34" rx="3"/>
+        <rect x="814" y="544" width="38" height="34" rx="3"/>
+
+        <rect x="630" y="594" width="38" height="34" rx="3"/>
+        <rect x="676" y="592" width="38" height="34" rx="3"/>
+        <rect x="722" y="590" width="38" height="34" rx="3"/>
+        <rect x="768" y="588" width="38" height="34" rx="3"/>
+        <rect x="814" y="586" width="38" height="34" rx="3"/>
+
+        <rect x="630" y="636" width="38" height="34" rx="3"/>
+        <rect x="676" y="634" width="38" height="34" rx="3"/>
+        <rect x="722" y="632" width="38" height="34" rx="3"/>
+        <rect x="768" y="630" width="38" height="34" rx="3"/>
+        <rect x="814" y="628" width="38" height="34" rx="3"/>
+      </g>
+
+      <!-- "Pressed" key indicator — random buttons highlight briefly (secondary motion) -->
+      <rect x="676" y="550" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
+        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="0.5s" repeatCount="indefinite"
+                 keyTimes="0;0.06;0.12;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </rect>
+      <rect x="768" y="588" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
+        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="1.4s" repeatCount="indefinite"
+                 keyTimes="0;0.06;0.12;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </rect>
+      <rect x="722" y="632" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
+        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="2.2s" repeatCount="indefinite"
+                 keyTimes="0;0.06;0.12;1" calcMode="spline"
+                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </rect>
+
+      <!-- The "=" button (orange, the trigger) -->
+      <rect x="814" y="628" width="38" height="76" rx="3" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="824" y1="660" x2="844" y2="659" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+      <line x1="824" y1="676" x2="844" y2="675" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       SECONDARY MOTION — a single orange spark above calculator
+       Follow-through: little dot oscillating after result appears
+       ============================================================= -->
+  <circle cx="735" cy="370" r="6" fill="#FF6B1A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.6;0" dur="6s" begin="0s" repeatCount="indefinite"
+             keyTimes="0;0.55;0.6;0.75;0.9" calcMode="spline"
+             keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    <animate attributeName="cy" values="370;370;355;345;340" dur="6s" begin="0s" repeatCount="indefinite"
+             keyTimes="0;0.55;0.62;0.78;0.9" calcMode="spline"
+             keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
+</svg>

@@ -1,134 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 21 — Pattern: five orange compasses arranged in a circle">
-  <title>Slide 21 — Il pattern</title>
-  <desc>Cinque bussole arancioni piccole disposte in pentagono attorno al centro.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 22 — Pattern: six orange compasses arranged in a hexagon with rotation and counter-rotation">
+  <title>Slide 22 — Il pattern (6 bussole)</title>
+  <desc>Sei bussole arancioni piccole disposte in esagono, sistema in rotation lenta con counter-rotation interna che mantiene ogni bussola verticale.</desc>
 
   <!-- Cream background -->
   <rect width="1080" height="1080" fill="#F5EFE6"/>
 
-  <!-- Soft central halo -->
+  <!-- =============================================================
+       CENTRAL HALO — pulsing core
+       ============================================================= -->
   <g transform="translate(540 540)">
-    <circle cx="0" cy="0" r="80" fill="#FF6B1A" opacity="0.06">
-      <animate attributeName="opacity" values="0.04;0.12;0.04" dur="4s" repeatCount="indefinite"/>
+    <circle cx="0" cy="0" r="120" fill="#FF6B1A" opacity="0.06">
+      <animate attributeName="r" values="100;140;100" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.04;0.10;0.04" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="80" fill="#FF6B1A" opacity="0.10">
+      <animate attributeName="r" values="60;100;60" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.08;0.18;0.08" dur="4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>
   </g>
 
-  <!-- Connection lines between compasses (forming a pentagonal star pattern) -->
-  <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,6" opacity="0.45">
-    <!-- Pentagon perimeter (connecting adjacent compasses) -->
-    <!-- Compasses at: top(540,200), upper-right(840,420), lower-right(720,800), lower-left(360,800), upper-left(240,420) -->
-    <line x1="540" y1="200" x2="840" y2="420"/>
-    <line x1="840" y1="420" x2="720" y2="800"/>
-    <line x1="720" y1="800" x2="360" y2="800"/>
-    <line x1="360" y1="800" x2="240" y2="420"/>
-    <line x1="240" y1="420" x2="540" y2="200"/>
-    <!-- Star (skipping one) — gives the "pentagram" feel -->
-    <line x1="540" y1="200" x2="720" y2="800" opacity="0.5"/>
-    <line x1="540" y1="200" x2="360" y2="800" opacity="0.5"/>
-    <line x1="240" y1="420" x2="720" y2="800" opacity="0.5"/>
-    <line x1="840" y1="420" x2="360" y2="800" opacity="0.5"/>
-    <line x1="240" y1="420" x2="840" y2="420" opacity="0.5"/>
+  <!-- =============================================================
+       OUTER ORBIT RING (decorative, dashed)
+       ============================================================= -->
+  <circle cx="540" cy="540" r="320" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,8" opacity="0.32"/>
+  <circle cx="540" cy="540" r="280" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,6" opacity="0.22"/>
+
+  <!-- =============================================================
+       HEXAGON CONNECTION LINES (back layer, subtle)
+       Hexagon vertices at distance 300 from center, at angles
+       30°, 90°, 150°, 210°, 270°, 330°
+       Positions:
+         V1 (top-right):    (540 + 300*cos(-60°), 540 + 300*sin(-60°)) = (690, 280)
+         V2 (right):        (540 + 300*cos(0°),   540 + 300*sin(0°))   = (840, 540)
+         V3 (bottom-right): (540 + 300*cos(60°),  540 + 300*sin(60°))  = (690, 800)
+         V4 (bottom-left):  (540 + 300*cos(120°), 540 + 300*sin(120°)) = (390, 800)
+         V5 (left):         (540 + 300*cos(180°), 540 + 300*sin(180°)) = (240, 540)
+         V6 (top-left):     (540 + 300*cos(240°), 540 + 300*sin(240°)) = (390, 280)
+       ============================================================= -->
+
+  <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,6" opacity="0.4">
+    <!-- Hexagon perimeter -->
+    <line x1="690" y1="280" x2="840" y2="540"/>
+    <line x1="840" y1="540" x2="690" y2="800"/>
+    <line x1="690" y1="800" x2="390" y2="800"/>
+    <line x1="390" y1="800" x2="240" y2="540"/>
+    <line x1="240" y1="540" x2="390" y2="280"/>
+    <line x1="390" y1="280" x2="690" y2="280"/>
+
+    <!-- Inner star (every 2 vertices) — gives the "hexagram" feel -->
+    <line x1="690" y1="280" x2="690" y2="800" opacity="0.5"/>
+    <line x1="240" y1="540" x2="840" y2="540" opacity="0.5"/>
+    <line x1="390" y1="280" x2="390" y2="800" opacity="0.5"/>
   </g>
 
-  <!-- Five small compasses at the pentagon vertices -->
-  <g>
-    <!-- Compass TOP (540,200) -->
-    <g transform="translate(540 200)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass UPPER-RIGHT (840,420) -->
-    <g transform="translate(840 420)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(72)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(72)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.6s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass LOWER-RIGHT (720,800) -->
-    <g transform="translate(720 800)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(144)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(144)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass LOWER-LEFT (360,800) -->
-    <g transform="translate(360 800)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(216)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(216)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.8s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Compass UPPER-LEFT (240,420) -->
-    <g transform="translate(240 420)">
-      <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-      <circle cx="0" cy="0" r="52" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-      <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
-        <line x1="0" y1="-58" x2="0" y2="-50"/>
-        <line x1="58" y1="0" x2="50" y2="0"/>
-        <line x1="0" y1="58" x2="0" y2="50"/>
-        <line x1="-58" y1="0" x2="-50" y2="0"/>
-      </g>
-      <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" transform="rotate(288)"/>
-      <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" transform="rotate(288)"/>
-      <circle cx="0" cy="0" r="5" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="2" fill="#FF6B1A">
-        <animate attributeName="r" values="1.5;3.5;1.5" dur="2.5s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-  </g>
-
-  <!-- Center small dot (the convergence point) -->
+  <!-- =============================================================
+       ROTATING SYSTEM — wrapping group rotates slowly clockwise
+       Each compass inside counter-rotates so it stays upright
+       ============================================================= -->
   <g transform="translate(540 540)">
-    <circle cx="0" cy="0" r="14" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-    <circle cx="0" cy="0" r="22" fill="none" stroke="#FF6B1A" stroke-width="1.5" opacity="0.5">
-      <animate attributeName="r" values="18;32;18" dur="3.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0" to="360" dur="60s" repeatCount="indefinite"/>
+
+      <!-- Compass at V1 (top-right of hex, position 150,-260 relative to center) -->
+      <g transform="translate(150 -260)">
+        <!-- Counter-rotation -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <!-- Tick marks (N,E,S,W) -->
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <!-- Needle -->
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Center pivot -->
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <!-- Pulsing core -->
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.2s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V2 (right, position 300, 0) -->
+      <g transform="translate(300 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.5s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V3 (bottom-right, position 150, 260) -->
+      <g transform="translate(150 260)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.4s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V4 (bottom-left, position -150, 260) -->
+      <g transform="translate(-150 260)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.7s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V5 (left, position -300, 0) -->
+      <g transform="translate(-300 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.3s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Compass at V6 (top-left, position -150, -260) -->
+      <g transform="translate(-150 -260)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="60s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="58" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+          <circle cx="0" cy="0" r="50" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+          <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
+            <line x1="0" y1="-58" x2="0" y2="-48"/>
+            <line x1="58" y1="0" x2="48" y2="0"/>
+            <line x1="0" y1="58" x2="0" y2="48"/>
+            <line x1="-58" y1="0" x2="-48" y2="0"/>
+          </g>
+          <polygon points="0,-36 8,0 0,4 -8,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="0,36 8,0 0,-4 -8,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+          <circle cx="0" cy="0" r="2" fill="#FF6B1A">
+            <animate attributeName="r" values="1.5;3.5;1.5" dur="2.6s" repeatCount="indefinite"
+                     calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+          </circle>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       CENTER — convergence point (orange dot with expanding ring)
+       ============================================================= -->
+  <g transform="translate(540 540)">
+    <circle cx="0" cy="0" r="16" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="6" fill="#F5EFE6"/>
+    <!-- Expanding pulse rings -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0.5">
+      <animate attributeName="r" values="16;48;16" dur="3.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="3.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#FF6B1A" stroke-width="1.5" opacity="0.4">
+      <animate attributeName="r" values="16;38;16" dur="3.4s" begin="1.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3.4s" begin="1.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
     </circle>
   </g>
 </svg>

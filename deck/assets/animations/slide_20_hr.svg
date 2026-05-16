@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 20 — HR: personnel folder with silhouette, chips and organizational icons">
+  <title>Slide 20 — HR</title>
+  <desc>Cartelletta personale isometrica con silhouette persona, chip orbitanti che si organizzano, e tre piccole icone HR (busta paga, contratto, presenze).</desc>
+
+  <!-- Cream background -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Soft orange halo on the central HR icon zone -->
+  <ellipse cx="540" cy="540" rx="280" ry="220" fill="#FF6B1A" opacity="0.07">
+    <animate attributeName="opacity" values="0.05;0.12;0.05" dur="4.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor shadow under folder -->
+  <ellipse cx="540" cy="880" rx="320" ry="28" fill="#B8B5AD" opacity="0.28"/>
+
+  <!-- =============================================================
+       BACKGROUND LAYER — FOLDER (cartelletta personale, isometric)
+       The container of the whole HR system
+       ============================================================= -->
+  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Back flap (tab on top — like a tabbed folder) -->
+    <polygon points="380,300 460,290 480,310 380,320" fill="#F5EFE6"/>
+    <!-- Main folder body — isometric front -->
+    <polygon points="220,330 860,310 880,830 240,850" fill="#F5EFE6"/>
+    <!-- Side depth -->
+    <polygon points="220,330 240,850 240,860 220,340" fill="#B8B5AD" opacity="0.4"/>
+    <polygon points="860,310 880,830 880,840 860,320" fill="#B8B5AD" opacity="0.4"/>
+  </g>
+
+  <!-- Folder horizontal seam (mid line — suggests it opens) -->
+  <line x1="230" y1="585" x2="870" y2="565" stroke="#1A1614" stroke-width="1.5" stroke-dasharray="4,6" opacity="0.4"/>
+
+  <!-- Small badge/label area (top-left, deep ocean blue accent) -->
+  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
+    <rect x="260" y="360" width="120" height="38" rx="4"/>
+  </g>
+  <line x1="275" y1="380" x2="365" y2="378" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- =============================================================
+       MIDGROUND — PERSON SILHOUETTE (centered, back view, isometric bust)
+       The "personal file" — head + shoulders, hand-drawn
+       ============================================================= -->
+  <g transform="translate(540 525)">
+    <!-- Avatar circle behind silhouette (light cream, framed) -->
+    <circle cx="0" cy="0" r="105" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
+    <circle cx="0" cy="0" r="98" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
+
+    <!-- Silhouette: head + shoulders, fits inside circle -->
+    <g fill="#1A1614">
+      <!-- Head -->
+      <ellipse cx="0" cy="-22" rx="32" ry="38"/>
+      <!-- Shoulders/torso fan -->
+      <path d="M -68,80 C -65,40 -60,15 -45,5 C -28,-5 -10,-8 0,-8 C 10,-8 28,-5 45,5 C 60,15 65,40 68,80 Z"/>
+    </g>
+
+    <!-- HR badge dot (orange, on the shoulder — narrative accent) -->
+    <circle cx="36" cy="32" r="9" fill="#FF6B1A" stroke="#1A1614" stroke-width="2"/>
+    <circle cx="36" cy="32" r="3.5" fill="#F5EFE6"/>
+    <!-- Pulse on badge -->
+    <circle cx="36" cy="32" r="14" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="9;22;9" dur="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+
+  <!-- =============================================================
+       FOREGROUND — ORBIT OF CHIPS (small rounded rectangles around person)
+       Each chip moves into its "slot" with anticipation, then settles
+       ============================================================= -->
+
+  <!-- Orbit guide ring (faint) -->
+  <circle cx="540" cy="525" r="180" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,7" opacity="0.3"/>
+
+  <!-- Chip TOP-LEFT (snap-in with anticipation) -->
+  <g transform="translate(380 380)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <!-- anticipation: small pull-back then snap forward -->
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -4,-3; 2,1; 0,0; 0,0" dur="5s" begin="0s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- Chip TOP-RIGHT -->
+  <g transform="translate(700 380)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 4,-3; -2,1; 0,0; 0,0" dur="5s" begin="0.4s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- Chip LEFT-MID -->
+  <g transform="translate(330 540)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -5,0; 2,0; 0,0; 0,0" dur="5s" begin="0.8s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- Chip RIGHT-MID -->
+  <g transform="translate(750 540)">
+    <g>
+      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
+      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 5,0; -2,0; 0,0; 0,0" dur="5s" begin="1.2s" repeatCount="indefinite"
+        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
+        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       BOTTOM ROW — 3 HR ICONS (busta paga, contratto, presenze)
+       Slide on a small isometric "shelf" inside the folder
+       ============================================================= -->
+
+  <!-- Shelf line -->
+  <line x1="280" y1="745" x2="820" y2="725" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- ICON 1 — PAYSLIP (busta paga) — small envelope-like rectangle with line bars -->
+  <g transform="translate(370 720)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <rect x="-32" y="-30" width="64" height="50" rx="3"/>
+    </g>
+    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <line x1="-22" y1="-16" x2="22" y2="-16"/>
+      <line x1="-22" y1="-6" x2="18" y2="-6"/>
+      <line x1="-22" y1="4" x2="14" y2="4"/>
+      <line x1="-22" y1="14" x2="10" y2="14"/>
+    </g>
+    <!-- Tiny breath -->
+    <animateTransform attributeName="transform" type="translate"
+      values="370,720; 370,716; 370,720" dur="4.6s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- ICON 2 — CONTRACT (contratto) — document with signature line -->
+  <g transform="translate(540 715)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <polygon points="-26,-32 20,-32 32,-20 32,22 -26,22"/>
+      <polyline points="20,-32 20,-20 32,-20" fill="none"/>
+    </g>
+    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <line x1="-18" y1="-12" x2="22" y2="-12"/>
+      <line x1="-18" y1="-2" x2="22" y2="-2"/>
+      <line x1="-18" y1="8" x2="18" y2="8"/>
+    </g>
+    <!-- Signature swoosh -->
+    <path d="M -16,16 C -10,18 -4,12 2,16 C 8,20 14,14 20,16" fill="none" stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
+    <animateTransform attributeName="transform" type="translate"
+      values="540,715; 540,711; 540,715" dur="4.2s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- ICON 3 — TIMESHEET (presenze) — small calendar grid with one orange cell -->
+  <g transform="translate(710 715)">
+    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
+      <rect x="-28" y="-30" width="56" height="48" rx="3"/>
+      <line x1="-28" y1="-18" x2="28" y2="-18"/>
+    </g>
+    <!-- Header dots (3) -->
+    <g fill="#1A1614" opacity="0.6">
+      <circle cx="-18" cy="-24" r="2"/>
+      <circle cx="0" cy="-24" r="2"/>
+      <circle cx="18" cy="-24" r="2"/>
+    </g>
+    <!-- Grid 3x3 -->
+    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+      <line x1="-9" y1="-18" x2="-9" y2="18"/>
+      <line x1="9" y1="-18" x2="9" y2="18"/>
+      <line x1="-28" y1="-6" x2="28" y2="-6"/>
+      <line x1="-28" y1="6" x2="28" y2="6"/>
+    </g>
+    <!-- One orange cell (today, present — secondary motion: small breathing) -->
+    <rect x="-7" y="-4" width="14" height="8" fill="#FF6B1A" opacity="0.85">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </rect>
+    <animateTransform attributeName="transform" type="translate"
+      values="710,715; 710,711; 710,715" dur="4.4s" repeatCount="indefinite"
+      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- =============================================================
+       SECONDARY MOTION — thin connection arcs from person to chips
+       (suggests data flow inside the system)
+       ============================================================= -->
+  <g stroke="#FF6B1A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2,6" opacity="0.4" fill="none">
+    <path d="M 458 470 Q 420 425 380 380"/>
+    <path d="M 622 470 Q 660 425 700 380"/>
+    <path d="M 435 540 Q 380 540 330 540"/>
+    <path d="M 645 540 Q 700 540 750 540"/>
+  </g>
+</svg>

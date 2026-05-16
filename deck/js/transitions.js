@@ -173,21 +173,36 @@ function activateAudioForSlide(slideEl) {
   const sceneId = slideEl.dataset.sceneId;
   const slideId = slideEl.dataset.slideId;
   let cfg = null;
-  if (sceneId && window.SynthAudio.AMBIENT_FOR_SCENE[sceneId]) {
+  let musicCfg = null;
+  if (sceneId) {
     cfg = window.SynthAudio.AMBIENT_FOR_SCENE[sceneId];
-  } else if (slideId && window.SynthAudio.AMBIENT_FOR_SLIDE[slideId]) {
+    musicCfg = window.SynthAudio.MUSIC_FOR_SCENE && window.SynthAudio.MUSIC_FOR_SCENE[sceneId];
+  } else if (slideId) {
     cfg = window.SynthAudio.AMBIENT_FOR_SLIDE[slideId];
+    musicCfg = window.SynthAudio.MUSIC_FOR_SLIDE && window.SynthAudio.MUSIC_FOR_SLIDE[slideId];
   }
-  if (!cfg) { window.SynthAudio.stopAmbient(); return; }
 
-  if (cfg.type) {
+  // Ambient (mp3 di fallback)
+  if (!cfg) {
+    window.SynthAudio.stopAmbient();
+  } else if (cfg.type) {
     window.SynthAudio.playAmbient(cfg.type, cfg.db);
   } else {
     window.SynthAudio.stopAmbient();
   }
-  if (cfg.sfx) {
-    // Delay per dare respiro narrativo (scena 08A: silenzio iniziale + shimmer dopo 2s)
+
+  // SFX one-shot (es. compass shimmer scena 08A)
+  if (cfg && cfg.sfx) {
     setTimeout(() => window.SynthAudio.playSFX(cfg.sfx, cfg.sfxDb || -6), 2000);
+  }
+
+  // Music layer (suspense -> joy -> realistic uplift -> outro)
+  if (!musicCfg) {
+    window.SynthAudio.stopMusic();
+  } else if (musicCfg.type) {
+    window.SynthAudio.playMusic(musicCfg.type, musicCfg.db);
+  } else {
+    window.SynthAudio.stopMusic();
   }
 }
 

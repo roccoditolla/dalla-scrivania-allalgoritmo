@@ -32,10 +32,24 @@
 }
 
 /* === Reset reveal.js theme con la nostra palette === */
+html, body {
+  background: var(--color-cream);
+}
+
 .reveal {
   font-family: var(--font-display);
   color: var(--color-ink);
-  background: var(--color-ink);
+  background: var(--color-cream);
+}
+
+.reveal-viewport {
+  background: var(--color-cream);
+}
+
+/* Slide story con bg ink: ribaltiamo il letterbox */
+.reveal .slides section.story-slide,
+.reveal .slides section.end-slide {
+  background: transparent;
 }
 
 .reveal .slides {
@@ -58,25 +72,27 @@
 .cover-slide {
   background: var(--color-cream);
   color: var(--color-ink);
+  width: 1920px;
+  height: 1080px;
   display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center !important;
-  padding: var(--slide-padding);
-  gap: 3vh;
+  padding: 0;
+  gap: 40px;
 }
 
 .cover-slide h1 {
-  font-size: 5.5vw;
+  font-size: 110px;
   font-weight: 900;
   margin: 0;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.0;
 }
 
 .cover-slide .subtitle {
-  font-size: 1.6vw;
+  font-size: 34px;
   font-weight: 500;
   color: var(--color-ink-soft);
   margin: 0;
@@ -90,10 +106,10 @@
 }
 
 .cover-slide .cover-logo {
-  width: 22vw;
-  max-width: 420px;
+  width: 320px;
+  max-width: 28vw;
   height: auto;
-  margin-top: 2vh;
+  margin-top: 20px;
   filter: drop-shadow(0 2px 8px rgba(26, 22, 20, 0.08));
   opacity: 0;
   animation: cover-logo-in 1.2s 0.4s ease-out forwards;
@@ -106,10 +122,13 @@
 
 .cover-slide .hint {
   position: absolute;
-  bottom: 4vh;
-  font-size: 0.9vw;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  font-size: 18px;
   color: var(--color-fog);
   opacity: 0.6;
+  margin: 0;
 }
 
 /* ============================================================================

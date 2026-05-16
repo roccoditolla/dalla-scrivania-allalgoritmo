@@ -200,6 +200,11 @@ $realistic_slides
   <script src="js/transitions.js"></script>
   <script>
     Reveal.initialize({
+      width: 1920,
+      height: 1080,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0,
       controls: true,
       progress: true,
       hash: true,

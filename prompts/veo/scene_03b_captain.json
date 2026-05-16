@@ -1,0 +1,28 @@
+{
+  "scene_id": "03B",
+  "scene_title": "Il capitano nella tempesta",
+  "narrative_role": "Atto I, climax — la leadership che resiste alla tempesta.",
+  "duration_seconds": 6,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Static medium shot",
+    "subject": "a captain figure standing at the top of a wooden ship's stairway, in complete backlight against a stormy sky",
+    "action": "the captain shouts silent orders to the crew (no audible voice), gestures with one arm with decisive authority, a long coat flapping in the wind; a lightning bolt cracks behind them mid-shot, silhouetting them sharply",
+    "environment": "stormy ship deck at night, rain pouring, dark waves visible beyond the rail, masts straining",
+    "camera_movement": "completely static, the chaos around moves but the camera does not",
+    "lighting": "near-black except for two flashes of cold blue lightning that briefly illuminate the captain's silhouette",
+    "mood": "heroic, calm in chaos, the figure of command",
+    "audio_hint": "heavy rain, howling wind, rolling thunder, a deafening single thunderclap synced with the lightning flash, no music"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Il capitano in silhouette totale, mai volto visibile",
+    "Almeno un lampo durante il clip",
+    "Camera assolutamente ferma",
+    "Audio: tuono sincrono al lampo"
+  ]
+}

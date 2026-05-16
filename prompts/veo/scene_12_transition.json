@@ -1,0 +1,29 @@
+{
+  "scene_id": "12",
+  "scene_title": "Transizione dallo story al realistic",
+  "narrative_role": "Ponte narrativo. La bussola arancione diventa il logo di Conflavoro AI.",
+  "duration_seconds": 6,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Static close-up with morphing background",
+    "subject": "the orange-glowing compass in foreground, isolated on a clean cream-white background",
+    "action": "the compass remains prominent and glowing in the foreground; behind it, the world dissolves gradually from the ship/ocean environment to a stylized isometric illustration of a modern Italian office or meeting room, all rendered in the same painterly cartoon style as the story but with subtle modern details (laptops as abstract shapes, modern furniture in line-art); the compass at the center could be interpreted as a glowing logo mark",
+    "environment": "begins ship-like, ends clean modern stylized office; transition via gradient and soft dissolve",
+    "camera_movement": "completely static",
+    "lighting": "the compass remains the dominant light source throughout, the background lighting shifts from warm afternoon to clean modern soft daylight",
+    "mood": "bridge between past and present, the metaphor becoming the brand",
+    "audio_hint": "the warm resonance fades, replaced by a subtle modern ambient pad, like the gentle hum of a high-end studio — neutral and inviting"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 4,
+  "_critical_note": "Scena difficile per Veo. Se non viene bene: alternativa = generare statica con Imagen 3 + animare il dissolve in reveal.js con CSS transition.",
+  "acceptance_criteria": [
+    "Bussola arancione resta nitida in foreground per tutto il clip",
+    "Background si trasforma in modo riconoscibile",
+    "Stile coerente: stesso painterly cartoon dello story",
+    "Audio: transizione sonora chiara da mythic a modern"
+  ]
+}

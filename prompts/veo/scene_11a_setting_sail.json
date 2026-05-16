@@ -1,0 +1,28 @@
+{
+  "scene_id": "11A",
+  "scene_title": "La nave salpa verso la nuova rotta",
+  "narrative_role": "Atto III, risoluzione. La nuova rotta è iniziata.",
+  "duration_seconds": 6,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Wide static shot from the shore POV",
+    "subject": "the antique sailing ship, now turned, beginning to sail away toward the horizon with sails fully set",
+    "action": "the ship gains speed, sails catching the wind, water churning at the bow; from this POV (the island's shore), we watch it leave",
+    "environment": "open ocean opening up before the ship, low golden sun creating a dramatic backlight, the ship as a silhouette against the warm horizon",
+    "camera_movement": "completely static wide shot, the ship moves through frame",
+    "lighting": "strong directional golden hour from the horizon, the ship in beautiful silhouette",
+    "mood": "majestic, the beginning of a new chapter, hopeful and forward-moving",
+    "audio_hint": "sails snapping in wind, water cutting through bow, distant gulls, music swelling to a peaceful climax"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Nave in silhouette contro l'orizzonte dorato",
+    "Camera ferma, la nave si muove dentro il frame",
+    "Mood: hopeful, mai trionfalistico esagerato",
+    "Audio: climax musicale qui"
+  ]
+}

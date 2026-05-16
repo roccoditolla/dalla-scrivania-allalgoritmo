@@ -1,0 +1,29 @@
+{
+  "scene_id": "11B",
+  "scene_title": "Due bussole sul ponte — la simbiosi vecchio/nuovo",
+  "narrative_role": "Atto III, sintesi narrativa. L'AI come complemento del passato.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Close-up on the ship's binnacle (compass pedestal)",
+    "subject": "an antique brass binnacle pedestal on the ship's deck, holding TWO compasses side by side: the old brass compass (familiar, traditional) and the new orange-glowing compass (with hexagonal glass)",
+    "action": "both compasses' needles work in harmony, the orange one pulsing gently with its inner light; in the background, blurred, the helmsman's back is visible at the wheel; in the far distance, beyond the deck rail, OTHER SHIPS are visible — but they are completely still, not moving",
+    "environment": "ship's deck in afternoon light, wood texture, sea visible beyond, other distant ships motionless on horizon",
+    "camera_movement": "slow dolly in toward the two compasses, ending at intimate close framing",
+    "lighting": "warm afternoon light, plus the steady orange inner glow of the new compass",
+    "mood": "synthesis, victory of those who understood first — but quiet, not arrogant",
+    "audio_hint": "gentle wood creaking, soft wind, the warm resonance of the orange compass, music at peaceful resolution"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 4,
+  "_critical_note": "Le altre navi all'orizzonte = competitor che non l'hanno ancora capito. Devono essere visibili ma immobili.",
+  "acceptance_criteria": [
+    "Due bussole entrambe visibili e distinte",
+    "La nuova è arancione, la vecchia è ottone tradizionale",
+    "Altre navi in lontananza, IMMOBILI",
+    "Mood: quieto trionfo, non vanaglorioso"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "scene_id": "08A",
+  "scene_title": "La bussola si accende — WOW 3 (climax visivo)",
+  "narrative_role": "Il momento chiave dell'intero racconto. Deve essere PERFETTO. Budget per rigenerazioni multiple.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "negative_prompt_ref": "00_style_bible.md::NEGATIVE_PROMPT",
+  "style_dna_ref": "00_style_bible.md::STYLE_DNA",
+  "prompt_components": {
+    "shot_type": "Macro close-up",
+    "subject": "a weathered hand lifting an old metal compass from white beach sand, the compass has an unusual hexagonal glass face",
+    "action": "the fingertip gently touches the glass, and instantly a vibrant warm saturated orange (#FF6B1A) light awakens inside the compass — first the rim glows, then the needle pulses orange, then the numerals on the dial illuminate one by one, building to a steady internal radiance",
+    "environment": "extreme close-up on the compass and hand, white beach sand softly blurred in the background, soft warm haze",
+    "camera_movement": "completely static macro close-up, no camera movement, the light itself does the moving",
+    "lighting": "ambient soft daylight from above, but the dominant light source becomes the inner orange glow of the compass itself, casting warm light on the surrounding fingers and sand",
+    "mood": "magical, sacred, the awakening of something ancient yet new — like discovering a relic that has been waiting",
+    "audio_hint": "crystalline magical shimmer sound as the rim lights up, building into a deep warm low resonance, with a subtle ethereal hum at the moment of full illumination, no music"
+  },
+  "critical_constraints": [
+    "The orange MUST be saturated #FF6B1A, NOT yellow, NOT red, NOT muted",
+    "The glow MUST originate from INSIDE the compass (it is the light source itself), not from a reflection",
+    "Camera MUST be static — no zoom, no pan, the light is the only motion",
+    "Hand MUST be weathered/old, suggesting experience — never young, never delicate",
+    "Background sand MUST be softly out of focus to keep all attention on the compass"
+  ],
+  "assembled_prompt_preview": "Macro close-up of a weathered hand lifting an old metal compass with an unusual hexagonal glass face from white beach sand. The fingertip gently touches the glass, and instantly a vibrant warm saturated orange light (orange color #FF6B1A) awakens INSIDE the compass — first the rim glows, then the needle pulses orange, then the numerals on the dial illuminate one by one, building to a steady internal radiance. Background: white beach sand softly blurred behind, warm soft haze. Camera: completely static macro close-up — no camera movement, the LIGHT itself does the moving. Lighting: ambient soft daylight from above, but the dominant light source becomes the inner orange glow of the compass itself, casting warm orange light on the surrounding fingers and sand grains. Mood: magical, sacred, the awakening of something ancient yet new. Audio: crystalline magical shimmer sound as the rim lights up, building into a deep warm low resonance, with a subtle ethereal hum at the moment of full illumination. No music yet — just sound design. [STYLE_DNA INJECTED] [NEGATIVE_PROMPT INJECTED, plus: 'no flashing strobes, no electric blue, no green, no yellow, no red, no rainbow, no neon, no sci-fi feel, keep it mythic and warm']",
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 5,
+  "fallback_strategy_if_failing": "If after 5 quality generations the result is not satisfactory: switch to image-to-video. Generate a perfect static frame with Imagen 3 of the compass mid-glow, then use Veo 3.1 frames-to-video to animate the lighting transition from that frame to a 'fully glowing' end frame.",
+  "acceptance_criteria": [
+    "L'arancione è saturato e caldo (#FF6B1A), riconoscibile anche per Rocco senza dover guardare un riferimento",
+    "Il glow viene chiaramente dall'interno della bussola",
+    "La mano sembra esperta, segnata dal tempo",
+    "Niente movimento di camera",
+    "L'audio nativo Veo include shimmer + resonance",
+    "Lo spettatore al primo sguardo dice 'wow'"
+  ]
+}

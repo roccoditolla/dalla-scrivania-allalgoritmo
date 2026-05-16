@@ -1,0 +1,29 @@
+{
+  "scene_id": "08B",
+  "scene_title": "Ago della bussola che ruota",
+  "narrative_role": "Atto III, continuazione del WOW 3. La bussola dimostra di essere VIVA.",
+  "duration_seconds": 4,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Top-down close-up",
+    "subject": "the now-glowing orange compass held in an open weathered palm, viewed from above",
+    "action": "the orange needle rotates in deliberate motion — not the frantic spin of a broken compass, but a thoughtful searching movement; it pauses, rotates again slightly, then settles on a direction; in the soft background, slightly out of focus, two other figures lean in from the edges of frame in slow motion",
+    "environment": "macro top-down on hand and compass, white sand softly blurred behind, warm light suffused",
+    "camera_movement": "very slow gradual zoom out, revealing slightly more of the surrounding context",
+    "lighting": "the compass continues to emit its inner orange glow, casting warm light on the palm and faintly on the figures leaning in",
+    "mood": "magical, contemplative, the dawning of understanding",
+    "audio_hint": "sustained warm low resonance, soft crystalline overtones, very faint whispered breath from the surrounding figures (no words), no music yet (music enters in 09)"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "_critical_note": "Estensione narrativa di 08A. L'arancione deve essere coerente con la scena precedente (#FF6B1A saturated).",
+  "acceptance_criteria": [
+    "L'ago si muove in modo deliberato, non casuale",
+    "Il glow arancione è continuo, non pulsante",
+    "Le figure ai bordi visibili ma indistinte",
+    "Audio: resonance che continua, nessuna musica"
+  ]
+}

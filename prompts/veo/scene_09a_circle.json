@@ -1,0 +1,28 @@
+{
+  "scene_id": "09A",
+  "scene_title": "Cerchio attorno alla bussola",
+  "narrative_role": "Atto III, la rivelazione collettiva. Il gruppo comprende insieme.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "High-angle wide shot (slow crane from above)",
+    "subject": "three figures forming a circle around the glowing orange compass which now rests on the white sand, the compass continues to pulse warm orange light",
+    "action": "the figures stand still, contemplating; their long shadows extend outward from the compass in three directions; one slowly kneels closer; the orange light from the compass illuminates the underside of their faces and hands without revealing features",
+    "environment": "white beach sand in soft afternoon golden light, ocean visible in the distance, the mysterious island's strange geometry just visible at frame edges",
+    "camera_movement": "slow vertical crane downward from above, ending at a medium-high angle on the circle of figures",
+    "lighting": "afternoon golden hour overall, plus the localized orange glow of the compass casting warm light upward onto the figures",
+    "mood": "sacred, communal, the shared moment of understanding",
+    "audio_hint": "gentle wind, distant waves, the sustained warm resonance of the compass continuing underneath, music begins to enter — a single piano note, sustained"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Tre figure visibili, mai volti chiari",
+    "Ombre lunghe che convergono al compasso",
+    "Glow arancione dal basso sulle figure",
+    "Audio: prima nota di musica entra"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "scene_id": "10",
+  "scene_title": "Il ritorno alla nave",
+  "narrative_role": "Atto III, decisione presa. Il viaggio di ritorno con la bussola.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Lateral tracking shot (mirror of scene 06)",
+    "subject": "the same wooden rowing boat with three figures, now rowing back toward the larger sailing ship visible in the distance",
+    "action": "the boat moves with more decision and pace than in scene 06; one of the figures cradles the orange compass in their hands — only the warm orange glow filtering between their fingers is visible",
+    "environment": "calmer ocean in late afternoon light, the larger sailing ship visible on the horizon, the mysterious island receding behind",
+    "camera_movement": "slow lateral tracking, opposite direction from scene 06 (mirror composition)",
+    "lighting": "warm golden afternoon light, plus the orange glow of the compass in the boat",
+    "mood": "purposeful, hopeful, return with a treasure of knowledge",
+    "audio_hint": "wooden oars in calmer water, a bit more pace than scene 06, returning gulls, music continues at low volume"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "_critical_note": "Mirror composition con scena 06 (andata vs ritorno). Stessa angolazione ma direzione opposta.",
+  "acceptance_criteria": [
+    "L'arancione visibile tra le mani del personaggio centrale",
+    "Composizione mirror rispetto a scena 06",
+    "Nave grande visibile in lontananza",
+    "Audio: musica a basso volume continua"
+  ]
+}

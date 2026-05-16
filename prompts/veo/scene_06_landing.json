@@ -1,0 +1,29 @@
+{
+  "scene_id": "06",
+  "scene_title": "Lo sbarco — scialuppa verso l'isola",
+  "narrative_role": "Atto II, l'esplorazione cauta. Primo accenno di arancione narrativo.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Lateral tracking shot",
+    "subject": "a small wooden rowing boat (a scialuppa) with three figures rowing, all seen from behind or in profile silhouette",
+    "action": "the boat moves steadily toward a white sandy beach; the rowers pull oars in slow synchronized rhythm",
+    "environment": "shallow turquoise-grey water transitioning to a white beach with very subtle warm orange tints in the sand reflection (subtle, not obvious), the mysterious island looms beyond with its strange geometric formations",
+    "camera_movement": "slow lateral tracking, parallel to the boat's motion, maintaining steady distance",
+    "lighting": "diffused midday light with a slight golden tint, the beach catches a barely-perceptible warm glow that hints at what is to come",
+    "mood": "cautious, exploratory, the threshold of discovery",
+    "audio_hint": "wooden oars slicing through calm water, distant gulls, gentle wind, low ambient drone from the island still present"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "_critical_note": "PRIMO ACCENNO di arancione narrativo. Deve essere SOTTILE, quasi subliminale. Mai vistoso.",
+  "acceptance_criteria": [
+    "L'arancione nella sabbia è appena percepibile, non saturo",
+    "Tre figure visibili nella scialuppa, mai volti",
+    "La sagoma dell'isola sullo sfondo è coerente con scena 05",
+    "Audio: remi predominanti"
+  ]
+}

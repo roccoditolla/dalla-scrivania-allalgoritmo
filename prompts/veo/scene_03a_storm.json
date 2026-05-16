@@ -1,0 +1,28 @@
+{
+  "scene_id": "03A",
+  "scene_title": "La tempesta — WOW 1",
+  "narrative_role": "Atto I climax. Mostrare che la ciurma ha già affrontato l'impossibile.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Wide cinematic shot from low angle, side of the ship",
+    "subject": "the same antique wooden sailing ship, sails partly furled, being pounded by a massive ocean storm",
+    "action": "a towering wave rises behind the ship; the ship tilts dangerously to 60 degrees; rain pours sideways; one lightning bolt cracks across the black sky in the background",
+    "environment": "stormy open sea at night, pitch-black clouds, white-capped waves, heavy rain visible as streaks, no visible land",
+    "camera_movement": "slow dolly back from the ship side, low to the water, slight roll of the camera with the waves (subtle, not shaky)",
+    "lighting": "blue-black stormy darkness, lit only by intermittent flashes of lightning that silhouette the ship, ominous and dramatic, completely desaturated except for occasional cold blue lightning rim",
+    "mood": "epic, dangerous, the trial that forges experience",
+    "audio_hint": "rolling thunder, heavy rain on wood, howling wind, ship wood creaking under stress, distant crash of waves — NO music"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Mood drammatico ma non horror",
+    "Ancora nessun arancione",
+    "Movimento di camera lento, mai shaky cam",
+    "Audio Veo include tuono e legno che cede"
+  ]
+}

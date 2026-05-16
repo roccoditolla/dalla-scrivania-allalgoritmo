@@ -1,0 +1,27 @@
+{
+  "scene_id": "04",
+  "scene_title": "Il mare calmo dopo la tempesta",
+  "narrative_role": "Atto I, risoluzione — la quiete che permette la riflessione e la scrittura del metodo.",
+  "duration_seconds": 6,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Wide shot",
+    "subject": "the same antique sailing ship, sails partially set, moving slowly through a now-calm grey ocean",
+    "action": "the ship glides forward at a leisurely pace; on deck, in distant silhouette, one figure can be seen writing on a logbook, the others standing contemplative",
+    "environment": "post-storm ocean, calm surface with small ripples, overcast grey sky, low atmospheric mist, no land visible",
+    "camera_movement": "slow horizontal pan from right to left, following the ship's motion",
+    "lighting": "diffused soft grey daylight, no harsh shadows, contemplative and muted",
+    "mood": "reflective, the calm of survival, the moment of learning",
+    "audio_hint": "small gentle waves lapping, single distant seagull cry, soft wind, faint creak of wood settling"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 2,
+  "acceptance_criteria": [
+    "Mood contemplativo, MAI eccessivo o drammatico",
+    "Palette molto desaturata, blu-grigio",
+    "Almeno una figura visibile sul ponte ma in lontananza"
+  ]
+}

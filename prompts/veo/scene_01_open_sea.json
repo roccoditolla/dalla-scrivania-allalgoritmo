@@ -1,0 +1,32 @@
+{
+  "scene_id": "01",
+  "scene_title": "Open Sea — La nave all'alba",
+  "narrative_role": "Apertura assoluta. Stabilisce mondo, tono, palette.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "negative_prompt_ref": "00_style_bible.md::NEGATIVE_PROMPT",
+  "style_dna_ref": "00_style_bible.md::STYLE_DNA",
+  "prompt_components": {
+    "shot_type": "Wide cinematic shot",
+    "subject": "an antique wooden sailing ship with cream-white sails and dark wood hull",
+    "action": "gliding smoothly through calm dawn ocean waters, no people visible on deck",
+    "environment": "open sea at dawn, soft mist on the horizon, pastel sky transitioning from pale pink to cream white, no land visible",
+    "camera_movement": "slow crane down from the sky to the ship's bow, ending on a static framing of the prow cutting through water",
+    "lighting": "golden hour light from low east, long warm shadows on the sails, atmospheric haze over horizon",
+    "mood": "contemplative, mythic, the beginning of an unknown journey",
+    "audio_hint": "soft ocean waves lapping against the hull, distant seagulls, gentle wind through sails, low ambient hum"
+  },
+  "assembled_prompt_preview": "Wide cinematic shot of an antique wooden sailing ship with cream-white sails and dark wood hull gliding smoothly through calm dawn ocean waters, no people visible on deck. Setting: open sea at dawn, soft mist on the horizon, pastel sky transitioning from pale pink to cream white, no land visible. Camera: slow crane down from the sky to the ship's bow, ending on a static framing of the prow cutting through water. Lighting: golden hour light from low east, long warm shadows on the sails, atmospheric haze over horizon. Mood: contemplative, mythic, the beginning of an unknown journey. Audio: soft ocean waves lapping against the hull, distant seagulls, gentle wind through sails, low ambient hum. [STYLE_DNA INJECTED] [NEGATIVE_PROMPT INJECTED]",
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Sfondo cream white #F5EFE6 chiaramente visibile in cielo e foschia",
+    "Nessun arancione nella scena (non è ancora il momento narrativo)",
+    "Nessuna persona visibile sul ponte",
+    "Movimento di camera fluido, non shaky",
+    "Audio Veo include onde, gabbiani, vento"
+  ]
+}

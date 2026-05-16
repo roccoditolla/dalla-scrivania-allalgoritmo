@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "description": "Configurazione search terms per scaricare ambient + SFX da Pixabay (primario) e Freesound (fallback). Ogni entry produce un file MP3 in deck/assets/audio/.",
+    "sources": ["pixabay", "freesound"],
+    "license_filter_freesound": "Creative Commons 0 OR Attribution",
+    "license_pixabay": "Pixabay License (commercial use, no attribution)"
+  },
+  "audio_items": [
+    {
+      "id": "01_ocean_dawn",
+      "scene": "01",
+      "query": "ocean waves calm dawn ambient",
+      "description": "Mare calmo all'alba, atmosfera contemplativa",
+      "filename": "ambient_01_ocean_dawn.mp3",
+      "min_duration": 8,
+      "max_duration": 30,
+      "loop_target": true,
+      "volume_db_in_deck": -14
+    },
+    {
+      "id": "02_deck_work",
+      "scene": "02A_02B",
+      "query": "rope creaking wood ship deck",
+      "description": "Suoni di lavoro su una nave a vela: corde, scricchiolii, legno",
+      "filename": "ambient_02_deck_work.mp3",
+      "min_duration": 5,
+      "max_duration": 15,
+      "loop_target": false,
+      "volume_db_in_deck": -12
+    },
+    {
+      "id": "03_thunderstorm",
+      "scene": "03A_03B",
+      "query": "thunderstorm rain heavy thunder",
+      "description": "Tempesta drammatica: tuoni, pioggia, vento — WOW 1",
+      "filename": "ambient_03_thunderstorm.mp3",
+      "min_duration": 10,
+      "max_duration": 30,
+      "loop_target": false,
+      "volume_db_in_deck": -8
+    },
+    {
+      "id": "04_calm_after",
+      "scene": "04",
+      "query": "calm ocean gentle waves seagull distant",
+      "description": "Mare dopo la tempesta: onde gentili, gabbiani lontani",
+      "filename": "ambient_04_calm_after.mp3",
+      "min_duration": 8,
+      "max_duration": 20,
+      "loop_target": true,
+      "volume_db_in_deck": -14
+    },
+    {
+      "id": "05_island_appears",
+      "scene": "05",
+      "query": "mystery atmosphere drone ambient mysterious",
+      "description": "Atmosfera misteriosa quando appare l'isola — WOW 2",
+      "filename": "ambient_05_island_appears.mp3",
+      "min_duration": 8,
+      "max_duration": 20,
+      "loop_target": false,
+      "volume_db_in_deck": -10
+    },
+    {
+      "id": "06_rowing",
+      "scene": "06",
+      "query": "rowing oars water wooden boat",
+      "description": "Remi che fendono l'acqua, scialuppa di legno",
+      "filename": "ambient_06_rowing.mp3",
+      "min_duration": 6,
+      "max_duration": 15,
+      "loop_target": false,
+      "volume_db_in_deck": -12
+    },
+    {
+      "id": "07_sand_shift",
+      "scene": "07",
+      "query": "sand granular movement gentle whisper",
+      "description": "Sabbia che si muove sotto le dita, quasi silenzio",
+      "filename": "ambient_07_sand_shift.mp3",
+      "min_duration": 3,
+      "max_duration": 10,
+      "loop_target": false,
+      "volume_db_in_deck": -16
+    },
+    {
+      "id": "08_compass_shimmer",
+      "scene": "08A_08B",
+      "query": "magical shimmer chime crystal ethereal",
+      "description": "Shimmer magico quando la bussola si accende — WOW 3 critico",
+      "filename": "sfx_08_compass_shimmer.mp3",
+      "min_duration": 3,
+      "max_duration": 12,
+      "loop_target": false,
+      "volume_db_in_deck": -6
+    },
+    {
+      "id": "09_revelation",
+      "scene": "09A_09B",
+      "query": "warm resonance sustained ambient inspirational",
+      "description": "Risonanza calda durante la rivelazione collettiva",
+      "filename": "ambient_09_revelation.mp3",
+      "min_duration": 10,
+      "max_duration": 25,
+      "loop_target": true,
+      "volume_db_in_deck": -12
+    },
+    {
+      "id": "10_returning",
+      "scene": "10",
+      "query": "rowing return purposeful gentle ocean",
+      "description": "Remi del ritorno, più decisi di quelli dell'andata",
+      "filename": "ambient_10_returning.mp3",
+      "min_duration": 6,
+      "max_duration": 15,
+      "loop_target": false,
+      "volume_db_in_deck": -12
+    },
+    {
+      "id": "11_sails_wind",
+      "scene": "11A",
+      "query": "sails wind ship sailing majestic",
+      "description": "Vele al vento, nave che salpa",
+      "filename": "ambient_11_sails.mp3",
+      "min_duration": 6,
+      "max_duration": 15,
+      "loop_target": false,
+      "volume_db_in_deck": -10
+    },
+    {
+      "id": "12_transition_pad",
+      "scene": "12",
+      "query": "smooth ambient pad transition modern",
+      "description": "Pad ambient di transizione dal mondo storico al moderno",
+      "filename": "ambient_12_transition.mp3",
+      "min_duration": 6,
+      "max_duration": 15,
+      "loop_target": false,
+      "volume_db_in_deck": -14
+    },
+    {
+      "id": "13_realistic_intro",
+      "scene": "13",
+      "query": "modern ambient corporate uplifting subtle",
+      "description": "Sottofondo neutro per le slide realistic",
+      "filename": "ambient_13_realistic.mp3",
+      "min_duration": 30,
+      "max_duration": 120,
+      "loop_target": true,
+      "volume_db_in_deck": -18
+    },
+    {
+      "id": "23_end_pulse",
+      "scene": "23",
+      "query": "warm closing pulse ambient resolution",
+      "description": "Pulse caldo finale, bussola che pulsa nera",
+      "filename": "ambient_23_end.mp3",
+      "min_duration": 8,
+      "max_duration": 20,
+      "loop_target": true,
+      "volume_db_in_deck": -10
+    }
+  ]
+}

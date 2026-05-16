@@ -1,0 +1,28 @@
+{
+  "scene_id": "02A",
+  "scene_title": "La ciurma sul ponte",
+  "narrative_role": "Atto I, presentazione dei personaggi. La competenza che diventa visibile.",
+  "duration_seconds": 8,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Medium shot",
+    "subject": "Four figures on the deck of an antique sailing ship, all seen from behind or in heavy backlight, faces in shadow",
+    "action": "one ties a rope into a complex knot, one peers through a brass spyglass at the horizon, one writes with a quill pen in a heavy leather-bound logbook, one grips a wooden wheel with both weathered hands",
+    "environment": "ship deck in soft morning light, wooden planks, cream sails partially visible above, ocean horizon in distance",
+    "camera_movement": "slow dolly forward, gentle, ending at medium framing of the four figures",
+    "lighting": "warm diffused morning light from low east, long backlit shadows on the deck, characters as silhouettes against pale cream sky",
+    "mood": "competent, methodical, the dignity of skilled work",
+    "audio_hint": "rope creaking through wooden pulleys, quill scratching on parchment, soft ocean waves, gentle wind in sails, occasional distant gull"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Tutti e 4 i personaggi visibili ma con volti non chiari",
+    "Composizione bilanciata, non affollata",
+    "Palette panna + ink, nessun arancione",
+    "Audio Veo include almeno 2 dei suoni di lavoro"
+  ]
+}

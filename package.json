@@ -1,0 +1,26 @@
+{
+  "name": "dalla-scrivania-allalgoritmo",
+  "version": "1.0.0",
+  "description": "Presentazione cinematic live per Conflavoro PMI — Rocco Di Tolla",
+  "private": true,
+  "scripts": {
+    "deck": "serve deck/ -l 8000",
+    "deck:open": "open http://localhost:8000",
+    "render:backup": "node scripts/render_backup.js",
+    "validate": "node scripts/validate_assets.js"
+  },
+  "dependencies": {
+    "reveal.js": "^5.1.0",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3",
+    "decktape": "^3.12.0",
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "Rocco Di Tolla / Eleven Digital and AI Consulting",
+  "license": "UNLICENSED"
+}

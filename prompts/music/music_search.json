@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "description": "Configurazione search terms per Pixabay Music. Due tracce: main theme (entra dalla scena 8 alla 11) + outro (slide finale).",
+    "source": "Pixabay Music",
+    "license": "Pixabay License (commercial use, no attribution required)"
+  },
+  "music_briefs": [
+    {
+      "id": "main_theme",
+      "filename": "music_main_theme.mp3",
+      "description": "Tema principale che entra silenzioso alla scena 9 (rivelazione), cresce nella scena 11 (la nave salpa), si dissolve nella scena 12. Mood: hopeful, cinematic, contemplative, NON drammatico, NON corporate, NON epic. Riferimenti: Ólafur Arnalds, Max Richter, Nils Frahm. Strumentazione ideale: piano + strings + ambient pad. NO drums, NO percussion, NO lyrics.",
+      "search_queries": [
+        "cinematic piano strings emotional",
+        "ambient piano hopeful inspirational",
+        "olafur arnalds inspired neoclassical",
+        "contemplative piano cinematic slow"
+      ],
+      "min_duration": 60,
+      "max_duration": 180,
+      "scene_usage": "09A → 11B (fade in scena 9, peak in scena 11A, fade out scena 12)",
+      "volume_db_in_deck": -10,
+      "alternative_keywords_if_no_match": [
+        "soft piano background",
+        "slow cinematic ambient",
+        "emotional underscore"
+      ]
+    },
+    {
+      "id": "outro",
+      "filename": "music_outro.mp3",
+      "description": "Outro musicale per la slide finale (23) — bussola arancione che pulsa su nero. Mood: caldo, risoluto, MAI trionfalistico. Durata: 30-60s in loop. Riferimenti: tema main ma più rarefatto. Strumentazione: pad ambient + piano molto sparso. NO percussion.",
+      "search_queries": [
+        "ambient piano warm closing",
+        "cinematic outro slow piano",
+        "warm ambient pad piano peaceful",
+        "neoclassical resolution warm"
+      ],
+      "min_duration": 30,
+      "max_duration": 90,
+      "scene_usage": "slide 23 (end-slide), loop fino a fade-out applauso",
+      "volume_db_in_deck": -12,
+      "alternative_keywords_if_no_match": [
+        "soft ending piano ambient",
+        "minimal piano warm"
+      ]
+    }
+  ]
+}

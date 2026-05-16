@@ -1,0 +1,28 @@
+{
+  "scene_id": "07",
+  "scene_title": "La mano sulla sabbia — il momento prima della scoperta",
+  "narrative_role": "Atto III, setup del WOW 3. La tensione cresce.",
+  "duration_seconds": 6,
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "model": "veo-3.1-generate-001",
+  "audio_generation": true,
+  "prompt_components": {
+    "shot_type": "Macro close-up, low angle",
+    "subject": "a single weathered hand sweeping away white fine sand with two fingers",
+    "action": "the fingers move slowly, gently, brushing the sand aside; gradually a curved metallic edge becomes visible — the outline of something round and metallic just below the surface; the hand pauses on revealing it",
+    "environment": "macro framing on white beach sand grains, soft daylight, depth of field very shallow with background completely out of focus",
+    "camera_movement": "completely static macro shot, no camera movement, only the hand moves",
+    "lighting": "natural midday with soft warm tint, intimate and quiet",
+    "mood": "anticipatory, sacred, the moment before revelation — like an archaeologist finding something profound",
+    "audio_hint": "very soft sand granular shifting sound, barely audible, then near silence as the metallic edge appears, a single distant ethereal bell chime faintly in atmosphere"
+  },
+  "estimated_cost_usd": 6.0,
+  "max_regenerations_allowed": 3,
+  "acceptance_criteria": [
+    "Mano: weathered, esperta, mai giovane",
+    "Sand grains visibili come dettaglio macro",
+    "Il bordo metallico appare ma NON si accende ancora (succede in 08A)",
+    "Audio: praticamente silenzio + sand shift"
+  ]
+}

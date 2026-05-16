@@ -172,11 +172,11 @@ DECK_TEMPLATE = Template("""<!DOCTYPE html>
 <body>
   <div class="reveal">
     <div class="slides">
-      <!-- Slide 0: cover (logo) -->
+      <!-- Slide 0: cover (logo Conflavoro AI) -->
       <section class="cover-slide">
-        <div class="logo-mark"></div>
         <h1>Dalla Scrivania all'Algoritmo</h1>
-        <p class="subtitle">Rocco Di Tolla — Eleven Digital and AI Consulting</p>
+        <p class="subtitle">Rocco Di Tolla &mdash; Responsabile Conflavoro <span class="ai-accent">AI</span></p>
+        <img class="cover-logo" src="assets/images/conflavoro_ai_logo.svg" alt="Conflavoro AI" />
         <p class="hint">Premere F per fullscreen, poi SPACE per iniziare</p>
       </section>
 

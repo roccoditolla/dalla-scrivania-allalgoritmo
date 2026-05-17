@@ -239,7 +239,8 @@ html, body {
   max-height: 100%;
 }
 
-/* Foto AI (Pollinations) full-bleed con Ken Burns subtle zoom */
+/* Foto AI (Pollinations) full-bleed con AGGRESSIVE Ken Burns + filter breathing
+   "video-like" feel: zoom drammatico + saturation/contrast pulse + parallax */
 .full-bleed-photo {
   position: absolute;
   inset: 0;
@@ -248,13 +249,67 @@ html, body {
   background-size: cover;
   background-position: center center;
   background-color: var(--color-cream);
-  transform: scale(1.04);
-  animation: scene-kenburns 14s ease-in-out infinite alternate;
+  transform: scale(1.05);
+  animation:
+    scene-kenburns-aggressive 18s ease-in-out infinite alternate,
+    scene-filter-breath 9s ease-in-out infinite alternate;
+  will-change: transform, filter;
 }
 
-@keyframes scene-kenburns {
-  0%   { transform: scale(1.04) translate(0px, 0px); }
-  100% { transform: scale(1.10) translate(-18px, -8px); }
+@keyframes scene-kenburns-aggressive {
+  0%   { transform: scale(1.05) translate(0, 0) rotate(0deg); }
+  25%  { transform: scale(1.12) translate(-22px, -12px) rotate(0.15deg); }
+  50%  { transform: scale(1.18) translate(-32px, 8px) rotate(-0.1deg); }
+  75%  { transform: scale(1.22) translate(8px, -14px) rotate(0.08deg); }
+  100% { transform: scale(1.28) translate(-18px, 16px) rotate(0deg); }
+}
+
+@keyframes scene-filter-breath {
+  0%   { filter: saturate(1.0)  contrast(1.02) brightness(1.0); }
+  50%  { filter: saturate(1.12) contrast(1.08) brightness(1.04); }
+  100% { filter: saturate(1.0)  contrast(1.02) brightness(1.0); }
+}
+
+/* Layer parallax foreground: stessa foto in alto con blur leggero + scale + offset
+   Crea l'illusione di depth e movimento volumetrico, "stile video" */
+.full-bleed-photo::after {
+  content: '';
+  position: absolute;
+  inset: -5%;
+  background: inherit;
+  background-size: cover;
+  background-position: center center;
+  filter: blur(8px) saturate(1.15);
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  animation: scene-parallax-fg 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes scene-parallax-fg {
+  0%   { transform: scale(1.0) translate(0, 0); opacity: 0.25; }
+  100% { transform: scale(1.08) translate(20px, -10px); opacity: 0.38; }
+}
+
+/* Color grading cinematic overlay: lieve cromia arancio/blu alternata
+   per simulare color grading da DI cinema */
+.full-bleed-photo + .photo-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 140, 60, 0.06),
+    rgba(50, 80, 130, 0.08)
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  animation: scene-grade 12s ease-in-out infinite alternate;
+}
+
+@keyframes scene-grade {
+  0%   { opacity: 0.6; }
+  100% { opacity: 1.0; }
 }
 
 /* Overlay SVG sopra la foto: vignette + dust particles + future caption */
@@ -310,32 +365,51 @@ html, body {
   height: auto;
 }
 
-/* Foto AI Pollinations per slide realistic: bordo morbido + ombra Disney */
+/* Foto AI Pollinations per slide realistic: bordo morbido + ombra + Ken Burns soft */
 .illustration.photo-ai {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
 .illustration.photo-ai img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   border-radius: 14px;
   box-shadow: 0 12px 36px rgba(26, 22, 20, 0.18),
               0 2px 6px rgba(26, 22, 20, 0.08);
-  object-fit: contain;
-  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  object-fit: cover;
+  transform: scale(1.02);
+  animation:
+    realistic-kenburns 16s ease-in-out infinite alternate,
+    realistic-filter-breath 8s ease-in-out infinite alternate;
+}
+
+@keyframes realistic-kenburns {
+  0%   { transform: scale(1.02) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-14px, -8px); }
+}
+
+@keyframes realistic-filter-breath {
+  0%   { filter: saturate(1.0)  contrast(1.02); }
+  50%  { filter: saturate(1.10) contrast(1.06); }
+  100% { filter: saturate(1.0)  contrast(1.02); }
 }
 
 .reveal section.present.realistic-slide .illustration.photo-ai img {
-  animation: photo-ai-in 1s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation:
+    photo-ai-in 1s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both,
+    realistic-kenburns 16s 1.35s ease-in-out infinite alternate,
+    realistic-filter-breath 8s 1.35s ease-in-out infinite alternate;
 }
 
 @keyframes photo-ai-in {
   from { opacity: 0; transform: scale(0.92); }
-  to   { opacity: 1; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1.02); }
 }
 
 .placeholder-slide {

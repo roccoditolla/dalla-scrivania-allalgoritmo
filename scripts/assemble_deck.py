@@ -46,23 +46,34 @@ PROMPTS_DIR = ROOT / "prompts"
 
 # Sequenza scene story (1-12) — IDs come da storyboard
 STORY_SCENES = [
-    {"id": "01", "title": "Open Sea"},
-    {"id": "02A", "title": "Ciurma sul ponte"},
-    {"id": "02B", "title": "Mani al lavoro"},
-    {"id": "03A", "title": "Tempesta — WOW 1"},
-    {"id": "03B", "title": "Capitano nella tempesta"},
-    {"id": "04", "title": "Mare calmo dopo"},
-    {"id": "05", "title": "Isola appare — WOW 2"},
-    {"id": "06", "title": "Sbarco"},
-    {"id": "07", "title": "Mano sulla sabbia"},
-    {"id": "08A", "title": "Bussola si accende — WOW 3"},
-    {"id": "08B", "title": "Ago della bussola"},
-    {"id": "09A", "title": "Cerchio attorno alla bussola"},
-    {"id": "09B", "title": "Ago si ferma"},
-    {"id": "10", "title": "Ritorno alla nave"},
-    {"id": "11A", "title": "Nave salpa"},
-    {"id": "11B", "title": "Due bussole sul ponte"},
-    {"id": "12", "title": "Transizione al realistic"},
+    {"id": "01",  "title": "Una ciurma in mare aperto",
+     "caption": "I consulenti del lavoro navigano. Da sempre."},
+    {"id": "02A", "title": "La ciurma sul ponte",
+     "caption": "Ognuno con il suo mestiere. Anni di esperienza addosso."},
+    {"id": "03A", "title": "La tempesta",
+     "caption": "Hanno passato tempeste. Hanno imparato la rotta."},
+    {"id": "03B", "title": "Il capitano nella tempesta",
+     "caption": "Chi non ha cicatrici non sa navigare."},
+    {"id": "04",  "title": "Dopo la tempesta",
+     "caption": "Quello che hanno imparato resta. Diventa metodo."},
+    {"id": "05",  "title": "Appare un'isola",
+     "caption": "Un giorno appare qualcosa che non era nei libri."},
+    {"id": "06",  "title": "Lo sbarco",
+     "caption": "Chi sa navigare non si butta. Studia, poi decide."},
+    {"id": "08A", "title": "La bussola si accende",
+     "caption": "Sulla sabbia trovano una bussola. Arancione."},
+    {"id": "08B", "title": "L'ago della bussola",
+     "caption": "Non punta a nord. Punta dove tu vuoi arrivare."},
+    {"id": "09A", "title": "La rivelazione",
+     "caption": "Funziona solo in mano a chi sa già navigare."},
+    {"id": "10",  "title": "Tornano alla nave",
+     "caption": "Non gettano niente. Aggiungono. Bussola vecchia + nuova."},
+    {"id": "11A", "title": "La nave salpa",
+     "caption": "Altre navi all'orizzonte. Ferme. Non hanno ancora capito."},
+    {"id": "11B", "title": "Due bussole sul ponte",
+     "caption": "La vecchia dice da dove vieni. La nuova dove vuoi andare."},
+    {"id": "12",  "title": "Anno zero",
+     "caption": "Quella nave siamo noi. Adesso."},
 ]
 
 # Sequenza slide realistic (13-25) — 7 piattaforme di prodotto.
@@ -324,6 +335,10 @@ $realistic_slides
 STORY_SLIDE_TEMPLATE = Template("""
       <section data-scene-id="$id" class="story-slide" data-background-color="#F5EFE6">
         $body
+        <div class="story-caption">
+          <h3 class="story-caption-title">$title</h3>
+          <p class="story-caption-text">$caption</p>
+        </div>
         <aside class="notes">$notes</aside>
       </section>""")
 
@@ -398,6 +413,8 @@ def build_story_slide_html(scene: dict) -> str:
 
     return STORY_SLIDE_TEMPLATE.substitute(
         id=scene["id"],
+        title=scene.get("title", ""),
+        caption=scene.get("caption", ""),
         body=body,
         notes=notes or f"[Speech per scena {scene['id']} non trovato in docs/04_SPEECH_SCRIPT.md]",
     )

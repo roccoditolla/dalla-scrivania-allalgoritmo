@@ -65,10 +65,9 @@ STORY_SCENES = [
     {"id": "12", "title": "Transizione al realistic"},
 ]
 
-# Sequenza slide realistic (13-24) — 6 piattaforme di prodotto.
-# `bullets`: punti che si animano in sequenza sotto/lato illustrazione.
-#   Devono comunicare VALORE concreto (prima/ora/effetto), non decorazione.
-#   Massimo 4 bullet per slide, brevi (5-12 parole).
+# Sequenza slide realistic (13-25) — 7 piattaforme di prodotto.
+# Big number concettuali (NON tempi/numeri specifici come richiesto da Rocco).
+# Bullet descrivono input/output concettuali, non quanto-veloci-siamo.
 REALISTIC_SLIDES = [
     {
         "id": "13", "title": "Anno zero", "big": "ANNO ZERO.",
@@ -79,16 +78,16 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "14", "title": "Conflavoro AI", "big": "6",
+        "id": "14", "title": "Conflavoro AI", "big": "7",
         "bullets": [
-            "Sei piattaforme. Una visione.",
+            "Sette piattaforme. Una visione.",
             "Per consulente, PMI e lavoratore",
             "Non chatbot — strumenti specifici verticali",
             "Costruiti da chi ha visto la vostra giornata",
         ],
     },
     {
-        "id": "15", "title": "Il problema", "big": "60%",
+        "id": "15", "title": "Il problema", "big": "TEMPO",
         "bullets": [
             "Compliance, controlli, refresh normativo",
             "Tempo rubato al cliente, alla relazione, al mestiere",
@@ -96,41 +95,48 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "16", "title": "Piattaforma DVR", "big": "12 min",
+        "id": "16", "title": "Piattaforma DVR", "big": "RAPIDO",
         "bullets": [
-            "Prima: 4 ore per validare un DVR",
-            "Ora: 12 minuti, conforme D.Lgs. 81/08",
-            "Libera 3h 48min per ogni cliente",
-            "Non sostituire — ridare tempo a chi conta",
+            "Input: documento normativo + dati azienda",
+            "Output: DVR validato, conforme, completo",
+            "Non per togliere lavoro. Per ridarlo a chi conta.",
         ],
     },
     {
-        "id": "17", "title": "Preventivatore", "big": "5 min",
+        "id": "17", "title": "Preventivatore", "big": "FIRMA",
         "bullets": [
-            "Prima: 30-40 min per articolare un preventivo",
-            "Ora: anagrafica → listino → PDF in 5 min",
-            "Tu rileggi e firmi, niente più 'settimana prossima'",
-            "Più preventivi inviati = più clienti chiusi",
+            "Input: anagrafica cliente + listino dello studio",
+            "Output: PDF impaginato pronto all'invio",
+            "Il preventivo non aspetta più la settimana prossima",
         ],
     },
     {
-        "id": "18", "title": "Lead Hunter", "big": "AUTO",
+        "id": "18", "title": "Lead Hunter", "big": "AGENDA",
         "bullets": [
             "Cerca, qualifica e contatta lead nei canali giusti",
             "Già attivo per noi e per il primo cliente",
-            "L'agente che riempie l'agenda mentre dormi",
+            "Un agente che vi riempie l'agenda mentre dormite",
         ],
     },
     {
-        "id": "19", "title": "Project Manager", "big": "PENSA",
+        "id": "19", "title": "Project Manager", "big": "360°",
         "bullets": [
-            "Non un cronoprogramma — un agente che ragiona",
-            "'Hai sentito Mario?' / 'Scadenza in conflitto'",
-            "Tu resti il decisore, lui ti tiene presente tutto",
+            "Allinea l'organizzazione interna a 360°",
+            "Velocizza l'operatività di tutto lo studio",
+            "Pensa con voi. Non al posto vostro.",
         ],
     },
     {
-        "id": "20", "title": "Piattaforma HR", "big": "INSIDE",
+        "id": "20", "title": "Falco AI", "big": "VOCE",
+        "bullets": [
+            "Agenti vocali che operano per conto dell'azienda",
+            "Sotto-agenti coordinati che lavorano come umani",
+            "Si integra dentro il Project Manager",
+            "L'azienda parla, gli agenti eseguono",
+        ],
+    },
+    {
+        "id": "21", "title": "Piattaforma HR", "big": "UNICO",
         "bullets": [
             "Busta paga, presenze, contratti, ferie, formazione",
             "Un sistema unico — fine dell'Excel a sette schede",
@@ -139,16 +145,16 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "21", "title": "Videoconferenze e e-Learning", "big": "LIVE",
+        "id": "22", "title": "Videoconferenze e e-Learning", "big": "LIVE",
         "bullets": [
             "Videoconferenze GDPR + trascrizione automatica",
             "Salvataggio nel fascicolo del dipendente",
             "e-Learning per formazione obbligatoria",
-            "Riconosciuta. Tracciabile. Dal telefono.",
+            "La formazione smette di essere una scartoffia. Torna a essere un sapere.",
         ],
     },
     {
-        "id": "22", "title": "Il pattern", "big": "6 bussole",
+        "id": "23", "title": "Il pattern", "big": "7 bussole",
         "bullets": [
             "Ogni processo del lavoro ha il suo strumento AI",
             "Specifico. Verticale. Fatto da chi conosce il settore.",
@@ -156,7 +162,7 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "23", "title": "Metodologia BMAD", "big": "BMAD",
+        "id": "24", "title": "Metodologia BMAD", "big": "BMAD",
         "bullets": [
             "Build → Measure → Adjust → Deploy",
             "Una modifica alla volta, testata e confermata",
@@ -165,12 +171,12 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "24", "title": "Chiusura", "big": "ADESSO.",
+        "id": "25", "title": "Chiusura", "big": "ADESSO.",
         "bullets": [
             "Anno zero. Adesso.",
             "Abbiamo trovato la nostra isola",
             "La bussola arancione è in mano nostra",
-            "Possiamo metterla anche nella vostra",
+            "All'orizzonte altre navi ferme. La vostra no.",
         ],
     },
 ]

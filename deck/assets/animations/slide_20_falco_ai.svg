@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 20 — Falco AI: stylized falcon silhouette with voice wave, orbiting sub-agents">
+  <title>Slide 20 — Falco AI</title>
+  <desc>Silhouette di un falco stilizzato in posa di richiamo, onda sonora che esce dal becco; quattro sotto-agenti orbitano (telefono, calendario, email, documento) connessi al Project Manager via linea di fondo.</desc>
+
+  <defs>
+    <!-- Painterly noise filter (Cartoon Saloon signature) -->
+    <filter id="painterly20" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="9"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <!-- Soft contact shadow blur -->
+    <filter id="contactBlur20" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <!-- Atmospheric haze for background layer -->
+    <filter id="hazeFalco" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+
+    <!-- Form shading on falcon body (warm, top-right light) -->
+    <radialGradient id="falconBody" cx="35%" cy="22%" r="80%">
+      <stop offset="0%" stop-color="#3A2C24"/>
+      <stop offset="55%" stop-color="#211814"/>
+      <stop offset="100%" stop-color="#0F0B09"/>
+    </radialGradient>
+
+    <!-- Falcon wing (slightly cooler shadow) -->
+    <radialGradient id="falconWing" cx="40%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#2C2018"/>
+      <stop offset="100%" stop-color="#0D0A08"/>
+    </radialGradient>
+
+    <!-- Falcon chest / golden underbelly -->
+    <linearGradient id="falconChest" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="55%" stop-color="#D9B98A"/>
+      <stop offset="100%" stop-color="#9C7A52"/>
+    </linearGradient>
+
+    <!-- Beak gradient (golden warm) -->
+    <linearGradient id="beakGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2D29A"/>
+      <stop offset="100%" stop-color="#8A5C2A"/>
+    </linearGradient>
+
+    <!-- Voice wave: orange gradient with falloff -->
+    <radialGradient id="voiceWaveGrad" cx="0%" cy="50%" r="100%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FF8A3D" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sub-agent card background -->
+    <radialGradient id="agentCard" cx="32%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#E5DCC9"/>
+    </radialGradient>
+
+    <!-- Falcon eye (catch light) -->
+    <radialGradient id="eyeGrad" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FFD580"/>
+      <stop offset="55%" stop-color="#D9941C"/>
+      <stop offset="100%" stop-color="#3B240E"/>
+    </radialGradient>
+
+    <!-- Orange accent halo gradient -->
+    <radialGradient id="haloFalco" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#FF6B1A" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Vignette mask gradient -->
+    <radialGradient id="vignette20" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.28"/>
+    </radialGradient>
+  </defs>
+
+  <!-- =========================================================
+       BG LAYER 0 — cream + atmospheric vignette
+       ========================================================= -->
+  <rect width="1080" height="1080" fill="#F5EFE6"/>
+
+  <!-- Painterly grain over background (Cartoon Saloon overlay) -->
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly20)"/>
+
+  <!-- =========================================================
+       BG LAYER 1 (far) — decorative geometric overlay
+       Cartoon Saloon concentric mandala behind falcon
+       ========================================================= -->
+  <g transform="translate(540 510)" opacity="0.34" filter="url(#hazeFalco)">
+    <circle r="360" fill="none" stroke="#1A1614" stroke-width="1.1" stroke-dasharray="1,9"/>
+    <circle r="318" fill="none" stroke="#1A1614" stroke-width="1.3" stroke-dasharray="3,7"/>
+    <circle r="266" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <circle r="214" fill="none" stroke="#1A1614" stroke-width="1.5" stroke-dasharray="4,10"/>
+    <!-- 12 micro-ticks around the inner circle -->
+    <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round">
+      <line x1="0" y1="-330" x2="0" y2="-310"/>
+      <line x1="165" y1="-285" x2="155" y2="-268"/>
+      <line x1="285" y1="-165" x2="268" y2="-155"/>
+      <line x1="330" y1="0" x2="310" y2="0"/>
+      <line x1="285" y1="165" x2="268" y2="155"/>
+      <line x1="165" y1="285" x2="155" y2="268"/>
+      <line x1="0" y1="330" x2="0" y2="310"/>
+      <line x1="-165" y1="285" x2="-155" y2="268"/>
+      <line x1="-285" y1="165" x2="-268" y2="155"/>
+      <line x1="-330" y1="0" x2="-310" y2="0"/>
+      <line x1="-285" y1="-165" x2="-268" y2="-155"/>
+      <line x1="-165" y1="-285" x2="-155" y2="-268"/>
+    </g>
+    <!-- Slow rotation of the whole mandala (Disney 'living world') -->
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="120s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
+
+  <!-- =========================================================
+       BG LAYER 2 (mid) — connection line to Project Manager
+       Subtle background tie, near bottom-right corner
+       ========================================================= -->
+  <g opacity="0.5">
+    <!-- Soft curve from falcon (near 540,510) to a hub dot bottom-right (920,940) -->
+    <path d="M 612 588 C 720 660 820 760 900 920" fill="none"
+          stroke="#1A1614" stroke-width="1.4" stroke-dasharray="2,7" opacity="0.55"/>
+    <!-- Project Manager hub dot (small) -->
+    <g transform="translate(910 935)">
+      <circle r="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.2"/>
+      <circle r="6" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.7"/>
+      <!-- 4 micro-spokes suggesting the hub -->
+      <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round" opacity="0.65">
+        <line x1="-14" y1="0" x2="-22" y2="0"/>
+        <line x1="14" y1="0" x2="22" y2="0"/>
+        <line x1="0" y1="-14" x2="0" y2="-22"/>
+        <line x1="0" y1="14" x2="0" y2="22"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       SOFT ORANGE HALO behind falcon (anticipation pulse)
+       ========================================================= -->
+  <ellipse cx="540" cy="510" rx="260" ry="220" fill="url(#haloFalco)">
+    <animate attributeName="rx" values="240;290;240" dur="4.6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4.6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+
+  <!-- Floor contact shadow under falcon perch -->
+  <ellipse cx="540" cy="780" rx="200" ry="22" fill="#1A1614" opacity="0.22" filter="url(#contactBlur20)"/>
+
+  <!-- =========================================================
+       PERCH (slight wedge, isometric)
+       ========================================================= -->
+  <g>
+    <path d="M 420 770 Q 540 758 660 770 Q 670 778 660 786 Q 540 798 420 786 Q 410 778 420 770 Z"
+          fill="#D9B98A" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M 432 778 Q 540 770 648 778" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+  </g>
+
+  <!-- =========================================================
+       VOICE WAVE — emanates from beak (right side of falcon)
+       Three arcs, staggered with anticipation (0.3s pre-load)
+       ========================================================= -->
+  <g transform="translate(680 478)">
+    <!-- Anticipation core (small ember that 'charges' before wave) -->
+    <circle r="6" fill="#FF6B1A" opacity="0.9">
+      <animate attributeName="r" values="3;7;3" dur="2.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.3;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.3;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+    </circle>
+
+    <!-- Wave arc 1 (closest, thick) -->
+    <path d="M 18 -40 Q 60 0 18 40" fill="none"
+          stroke="url(#voiceWaveGrad)" stroke-width="6" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.95;0" dur="2.4s" begin="0.3s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.4;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0,0;18,0" dur="2.4s" begin="0.3s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Wave arc 2 (mid) -->
+    <path d="M 38 -64 Q 95 0 38 64" fill="none"
+          stroke="url(#voiceWaveGrad)" stroke-width="4.5" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.75;0" dur="2.4s" begin="0.6s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.4;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0,0;30,0" dur="2.4s" begin="0.6s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Wave arc 3 (far, thin) -->
+    <path d="M 60 -90 Q 134 0 60 90" fill="none"
+          stroke="url(#voiceWaveGrad)" stroke-width="3" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.55;0" dur="2.4s" begin="0.9s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.4;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0,0;46,0" dur="2.4s" begin="0.9s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- =========================================================
+       FALCON SILHOUETTE — stylized, line of action curved
+       Pose: perched, head up + slightly turned right (calling)
+       Line of action: gentle S-curve from tail-tip to beak
+       ========================================================= -->
+  <g transform="translate(540 540)">
+
+    <!-- Subtle pulse on the whole falcon (anticipation breath) -->
+    <g>
+      <animateTransform attributeName="transform" type="scale"
+                        values="1 1;1.012 0.988;1 1" dur="4.6s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
+                        additive="sum"/>
+
+      <!-- Tail feathers (wedge, asymmetric) — drawn behind body -->
+      <path d="M -78 168 C -110 220 -130 240 -120 248 C -90 246 -50 230 -10 218 C -22 240 -38 248 -64 254
+               C -94 256 -118 246 -128 230 C -134 214 -118 188 -98 168 Z"
+            fill="url(#falconBody)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Tail feather highlight stroke (rim light, top-right) -->
+      <path d="M -78 168 C -110 220 -130 240 -120 248" fill="none"
+            stroke="#D9B98A" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+
+      <!-- Folded wing (right side, dominant volume — bulk of body) -->
+      <path d="M -48 -36 C -10 -90 78 -86 132 -38 C 168 -2 188 60 178 122
+               C 168 168 142 200 96 214 C 36 222 -28 200 -64 156
+               C -86 122 -82 64 -68 16 C -60 -8 -52 -22 -48 -36 Z"
+            fill="url(#falconWing)" stroke="#0A0706" stroke-width="5" stroke-linejoin="round"/>
+
+      <!-- Wing detail lines (variable weight feather bars) -->
+      <g stroke="#0A0706" stroke-linecap="round" fill="none" opacity="0.7">
+        <path d="M 20 -50 C 60 -28 92 0 110 30" stroke-width="2.5"/>
+        <path d="M 30 -20 C 70 0 102 32 122 70" stroke-width="2.2"/>
+        <path d="M 22 14 C 64 32 100 60 122 100" stroke-width="2"/>
+        <path d="M 4 50 C 44 64 84 88 110 132" stroke-width="1.8"/>
+        <path d="M -22 80 C 18 92 60 110 90 148" stroke-width="1.6"/>
+      </g>
+
+      <!-- Chest (golden underbelly) — peeks from below the wing -->
+      <path d="M -64 6 C -50 56 -36 110 -10 152 C 14 180 38 188 60 184
+               C 38 196 4 200 -28 192 C -64 180 -82 152 -86 116
+               C -90 78 -82 36 -68 6 Z"
+            fill="url(#falconChest)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Chest feather streaks (variable weight) -->
+      <g stroke="#5C3E22" stroke-linecap="round" fill="none" opacity="0.45">
+        <path d="M -52 32 C -42 60 -32 92 -16 124" stroke-width="1.6"/>
+        <path d="M -36 16 C -28 56 -22 96 -8 130" stroke-width="1.3"/>
+        <path d="M -20 8 C -16 50 -12 96 0 134" stroke-width="1.2"/>
+      </g>
+
+      <!-- Foot / talon — minimal, attached to perch (line of action anchor) -->
+      <g stroke="#0A0706" stroke-width="3.5" stroke-linecap="round" fill="url(#beakGrad)">
+        <path d="M 22 196 C 22 212 26 224 36 232 L 48 240 L 56 232 L 50 222 L 44 208 Z"
+              stroke-linejoin="round"/>
+        <path d="M -6 196 C -10 214 -6 226 4 234 L 16 240 L 22 230 L 14 220 L 8 208 Z"
+              stroke-linejoin="round"/>
+      </g>
+
+      <!-- Neck connector (curving from body up to head) — line of action peak -->
+      <path d="M -8 -32 C 4 -68 36 -98 84 -110 C 110 -114 132 -108 142 -94
+               C 130 -86 110 -78 92 -68 C 64 -54 38 -38 22 -16 Z"
+            fill="url(#falconBody)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
+
+      <!-- HEAD — slightly tilted right, asymmetric ellipse (squash & stretch) -->
+      <path d="M 70 -160 C 110 -176 154 -168 174 -140 C 188 -116 184 -88 162 -72
+               C 138 -58 106 -62 86 -78 C 66 -94 60 -132 70 -160 Z"
+            fill="url(#falconBody)" stroke="#0A0706" stroke-width="5" stroke-linejoin="round"/>
+
+      <!-- Head rim light (top-right, faint warm streak) -->
+      <path d="M 96 -166 C 130 -174 156 -168 170 -154" fill="none"
+            stroke="#D9B98A" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
+
+      <!-- Eye socket dark shape -->
+      <ellipse cx="142" cy="-122" rx="14" ry="11" fill="#0A0706"/>
+      <!-- Eye iris (golden hero spark — but small, not orange) -->
+      <ellipse cx="144" cy="-122" rx="9" ry="7" fill="url(#eyeGrad)"/>
+      <!-- Catch light (Disney sparkle) -->
+      <ellipse cx="146" cy="-126" rx="3" ry="2" fill="#FFF" opacity="0.95"/>
+      <circle cx="148.5" cy="-119" r="1.1" fill="#FFF" opacity="0.7"/>
+
+      <!-- Brow ridge (asymmetric, gives 'sharp gaze') -->
+      <path d="M 124 -140 C 138 -146 156 -146 168 -138" fill="none"
+            stroke="#0A0706" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- BEAK — golden hook, downturned tip -->
+      <path d="M 166 -118 C 186 -114 200 -106 206 -94 C 200 -82 184 -78 168 -82
+               C 158 -88 156 -106 166 -118 Z"
+            fill="url(#beakGrad)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Beak nostril (cere detail) -->
+      <circle cx="178" cy="-100" r="1.5" fill="#0A0706" opacity="0.7"/>
+
+      <!-- Head crest feathers (tiny, top of head — asymmetric line of action) -->
+      <g stroke="#0A0706" stroke-width="2.2" stroke-linecap="round" fill="none">
+        <path d="M 96 -172 C 92 -184 90 -192 96 -200"/>
+        <path d="M 110 -174 C 108 -188 110 -196 116 -202"/>
+        <path d="M 124 -172 C 124 -184 128 -192 134 -198"/>
+      </g>
+
+      <!-- Ambient occlusion line under head-to-body junction -->
+      <path d="M 60 -82 C 76 -68 96 -60 116 -56" fill="none"
+            stroke="#000" stroke-width="2.5" opacity="0.4" filter="url(#contactBlur20)"/>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       FOUR SUB-AGENTS orbiting (cards with task icons)
+       Each card has gradient, soft shadow, slight breathing
+       Positioned: top-left phone, top-right calendar,
+                   bottom-left email,  bottom-right document
+       ========================================================= -->
+
+  <!-- Sub-agent 1 — PHONE (top-left) -->
+  <g transform="translate(220 285)">
+    <!-- soft shadow -->
+    <ellipse cx="0" cy="62" rx="46" ry="6" fill="#1A1614" opacity="0.22" filter="url(#contactBlur20)"/>
+    <!-- card -->
+    <g>
+      <path d="M -54 -36 Q -54 -46 -44 -46 L 44 -46 Q 54 -46 54 -36 L 54 36 Q 54 46 44 46 L -44 46 Q -54 46 -54 36 Z"
+            fill="url(#agentCard)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+      <!-- phone receiver icon (curved) -->
+      <path d="M -18 -14 C -22 -8 -22 0 -16 8 C -8 18 4 22 14 18 C 20 16 22 10 20 4 L 14 -2
+               C 10 -6 4 -4 2 0 C -4 -4 -10 -10 -12 -16 C -8 -18 -6 -22 -10 -26 L -14 -32 C -20 -34 -26 -28 -18 -14 Z"
+            fill="#1A1614"/>
+      <!-- small "signal" arcs -->
+      <g stroke="#1A1614" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6">
+        <path d="M 10 -20 Q 20 -24 28 -16"/>
+        <path d="M 16 -28 Q 30 -34 40 -24"/>
+      </g>
+      <!-- Breathing -->
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 0 -6; 0 0" dur="5.4s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+  <!-- Connector arc from falcon to phone -->
+  <path d="M 440 470 Q 360 380 260 320" fill="none"
+        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+
+  <!-- Sub-agent 2 — CALENDAR (top-right) -->
+  <g transform="translate(860 285)">
+    <ellipse cx="0" cy="62" rx="46" ry="6" fill="#1A1614" opacity="0.22" filter="url(#contactBlur20)"/>
+    <g>
+      <path d="M -54 -36 Q -54 -46 -44 -46 L 44 -46 Q 54 -46 54 -36 L 54 36 Q 54 46 44 46 L -44 46 Q -54 46 -54 36 Z"
+            fill="url(#agentCard)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+      <!-- calendar header -->
+      <path d="M -34 -28 Q -34 -32 -30 -32 L 30 -32 Q 34 -32 34 -28 L 34 -22 L -34 -22 Z"
+            fill="#1A1614"/>
+      <!-- ring binders -->
+      <path d="M -24 -38 Q -22 -42 -20 -38 L -20 -28 Q -22 -24 -24 -28 Z" fill="#1A1614"/>
+      <path d="M 24 -38 Q 22 -42 20 -38 L 20 -28 Q 22 -24 24 -28 Z" fill="#1A1614"/>
+      <!-- body grid -->
+      <g stroke="#1A1614" stroke-width="1.6" stroke-linecap="round" opacity="0.55" fill="none">
+        <path d="M -34 -10 L 34 -10"/>
+        <path d="M -34 4 L 34 4"/>
+        <path d="M -34 18 L 34 18"/>
+        <path d="M -14 -22 L -14 32"/>
+        <path d="M 14 -22 L 14 32"/>
+      </g>
+      <!-- orange highlighted day (the booking) -->
+      <rect x="-12" y="6" width="24" height="10" rx="2" fill="#FF6B1A"/>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 0 -6; 0 0" dur="5s" begin="0.6s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+  <path d="M 660 470 Q 750 380 830 320" fill="none"
+        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+
+  <!-- Sub-agent 3 — EMAIL (bottom-left) -->
+  <g transform="translate(200 720)">
+    <ellipse cx="0" cy="62" rx="46" ry="6" fill="#1A1614" opacity="0.22" filter="url(#contactBlur20)"/>
+    <g>
+      <path d="M -54 -36 Q -54 -46 -44 -46 L 44 -46 Q 54 -46 54 -36 L 54 36 Q 54 46 44 46 L -44 46 Q -54 46 -54 36 Z"
+            fill="url(#agentCard)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+      <!-- envelope -->
+      <path d="M -34 -16 Q -34 -22 -28 -22 L 28 -22 Q 34 -22 34 -16 L 34 16 Q 34 22 28 22 L -28 22 Q -34 22 -34 16 Z"
+            fill="#F5EFE6" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <!-- envelope flap (open) -->
+      <path d="M -34 -16 Q 0 14 34 -16" fill="none" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <!-- small dot indicating unread -->
+      <circle cx="26" cy="-14" r="5" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.4"/>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 0 -6; 0 0" dur="5.2s" begin="1.2s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+  <path d="M 440 612 Q 340 670 240 698" fill="none"
+        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+
+  <!-- Sub-agent 4 — DOCUMENT (bottom-right) -->
+  <g transform="translate(880 720)">
+    <ellipse cx="0" cy="62" rx="46" ry="6" fill="#1A1614" opacity="0.22" filter="url(#contactBlur20)"/>
+    <g>
+      <path d="M -54 -36 Q -54 -46 -44 -46 L 44 -46 Q 54 -46 54 -36 L 54 36 Q 54 46 44 46 L -44 46 Q -54 46 -54 36 Z"
+            fill="url(#agentCard)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+      <!-- document with folded corner -->
+      <path d="M -22 -28 L 16 -28 Q 28 -16 28 -16 L 28 26 L -22 26 Z"
+            fill="#F5EFE6" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M 16 -28 L 16 -16 L 28 -16" fill="none" stroke="#1A1614" stroke-width="2.2"/>
+      <!-- text lines (just bars) -->
+      <g stroke="#1A1614" stroke-width="1.8" stroke-linecap="round" opacity="0.5">
+        <path d="M -14 -8 Q 0 -10 18 -8"/>
+        <path d="M -14 2 Q 4 4 22 2"/>
+        <path d="M -14 12 Q -4 10 12 12"/>
+      </g>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 0 -6; 0 0" dur="4.8s" begin="1.8s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </g>
+  </g>
+  <path d="M 660 612 Q 760 670 840 700" fill="none"
+        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+
+  <!-- =========================================================
+       FINAL VIGNETTE — darken corners gently
+       ========================================================= -->
+  <rect width="1080" height="1080" fill="url(#vignette20)" pointer-events="none"/>
+</svg>

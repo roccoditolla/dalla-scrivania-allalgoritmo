@@ -1,213 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 20 — HR: personnel folder with silhouette, chips and organizational icons">
-  <title>Slide 20 — HR</title>
-  <desc>Cartelletta personale isometrica con silhouette persona, chip orbitanti che si organizzano, e tre piccole icone HR (busta paga, contratto, presenze).</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 21 — HR: isometric folder with organic life-icons inside and employee silhouette looking from outside">
+  <title>Slide 21 — HR (cartella personale)</title>
+  <desc>Cartella personale isometrica aperta con dentro busta paga arancione, contratto, calendario presenze e certificato formazione. Una silhouette di dipendente di profilo guarda dall'esterno con dignità.</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly21" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="11"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur21" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazeHR" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+
+    <!-- Folder front (cream warm with subtle vertical gradient) -->
+    <linearGradient id="folderFront" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FAF3E5"/>
+      <stop offset="100%" stop-color="#E5DCC2"/>
+    </linearGradient>
+
+    <!-- Folder inside (slightly darker, recessed) -->
+    <linearGradient id="folderInside" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#D6CBB0"/>
+      <stop offset="100%" stop-color="#B8A580"/>
+    </linearGradient>
+
+    <!-- Payslip orange gradient -->
+    <radialGradient id="payslipGrad" cx="30%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#FFB570"/>
+      <stop offset="50%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#9C3A0E"/>
+    </radialGradient>
+
+    <!-- Document neutral gradient -->
+    <linearGradient id="docGrad21" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#D6CCB6"/>
+    </linearGradient>
+
+    <!-- Employee silhouette -->
+    <linearGradient id="employeeBody" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#2C4357"/>
+      <stop offset="100%" stop-color="#11202D"/>
+    </linearGradient>
+
+    <radialGradient id="haloHR" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette21" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.26"/>
+    </radialGradient>
+
+    <!-- Warm light from right (window) -->
+    <linearGradient id="warmLight21" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD9A8" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#FFD9A8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFD9A8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BG cream + grain -->
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly21)"/>
 
-  <!-- Soft orange halo on the central HR icon zone -->
-  <ellipse cx="540" cy="540" rx="280" ry="220" fill="#FF6B1A" opacity="0.07">
-    <animate attributeName="opacity" values="0.05;0.12;0.05" dur="4.4s" repeatCount="indefinite"
+  <!-- Warm light wash from right -->
+  <rect width="1080" height="1080" fill="url(#warmLight21)"/>
+
+  <!-- BG mandala (Cartoon Saloon decorative) -->
+  <g transform="translate(600 540)" opacity="0.28" filter="url(#hazeHR)">
+    <circle r="380" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,8"/>
+    <circle r="328" fill="none" stroke="#1A1614" stroke-width="1.3" stroke-dasharray="3,9"/>
+    <circle r="276" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+  </g>
+
+  <!-- Halo behind folder -->
+  <ellipse cx="620" cy="560" rx="280" ry="220" fill="url(#haloHR)">
+    <animate attributeName="rx" values="260;300;260" dur="5s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </ellipse>
 
   <!-- Floor shadow under folder -->
-  <ellipse cx="540" cy="880" rx="320" ry="28" fill="#B8B5AD" opacity="0.28"/>
+  <ellipse cx="620" cy="880" rx="330" ry="28" fill="#1A1614" opacity="0.22" filter="url(#contactBlur21)"/>
 
-  <!-- =============================================================
-       BACKGROUND LAYER — FOLDER (cartelletta personale, isometric)
-       The container of the whole HR system
-       ============================================================= -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-    <!-- Back flap (tab on top — like a tabbed folder) -->
-    <polygon points="380,300 460,290 480,310 380,320" fill="#F5EFE6"/>
-    <!-- Main folder body — isometric front -->
-    <polygon points="220,330 860,310 880,830 240,850" fill="#F5EFE6"/>
-    <!-- Side depth -->
-    <polygon points="220,330 240,850 240,860 220,340" fill="#B8B5AD" opacity="0.4"/>
-    <polygon points="860,310 880,830 880,840 860,320" fill="#B8B5AD" opacity="0.4"/>
-  </g>
+  <!-- =========================================================
+       FOLDER (isometric, slightly tilted, OPEN — back flap visible)
+       Position: shifted right to leave space for employee on left
+       ========================================================= -->
+  <g transform="translate(620 540)">
 
-  <!-- Folder horizontal seam (mid line — suggests it opens) -->
-  <line x1="230" y1="585" x2="870" y2="565" stroke="#1A1614" stroke-width="1.5" stroke-dasharray="4,6" opacity="0.4"/>
+    <!-- Back flap (taller, behind the front) — isometric perspective -->
+    <path d="M -250 -180 Q -252 -188 -240 -190 L 230 -210 Q 244 -210 246 -200 L 256 200 Q 256 210 244 210 L -240 230 Q -252 228 -252 218 Z"
+          fill="url(#folderInside)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round"/>
 
-  <!-- Small badge/label area (top-left, deep ocean blue accent) -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
-    <rect x="260" y="360" width="120" height="38" rx="4"/>
-  </g>
-  <line x1="275" y1="380" x2="365" y2="378" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
-
-  <!-- =============================================================
-       MIDGROUND — PERSON SILHOUETTE (centered, back view, isometric bust)
-       The "personal file" — head + shoulders, hand-drawn
-       ============================================================= -->
-  <g transform="translate(540 525)">
-    <!-- Avatar circle behind silhouette (light cream, framed) -->
-    <circle cx="0" cy="0" r="105" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <circle cx="0" cy="0" r="98" fill="none" stroke="#1A1614" stroke-width="1.2" opacity="0.4"/>
-
-    <!-- Silhouette: head + shoulders, fits inside circle -->
-    <g fill="#1A1614">
-      <!-- Head -->
-      <ellipse cx="0" cy="-22" rx="32" ry="38"/>
-      <!-- Shoulders/torso fan -->
-      <path d="M -68,80 C -65,40 -60,15 -45,5 C -28,-5 -10,-8 0,-8 C 10,-8 28,-5 45,5 C 60,15 65,40 68,80 Z"/>
+    <!-- Tab label area on back flap (top-left, deep blue accent) -->
+    <g transform="translate(-180 -198)">
+      <path d="M -42 -10 Q -42 -18 -34 -18 L 38 -22 Q 46 -22 46 -14 L 46 6 Q 46 14 38 14 L -34 10 Q -42 10 -42 2 Z"
+            fill="#F5EFE6" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -30 -4 Q -6 -8 36 -4" stroke="#2C4357" stroke-width="3" stroke-linecap="round" fill="none"/>
     </g>
 
-    <!-- HR badge dot (orange, on the shoulder — narrative accent) -->
-    <circle cx="36" cy="32" r="9" fill="#FF6B1A" stroke="#1A1614" stroke-width="2"/>
-    <circle cx="36" cy="32" r="3.5" fill="#F5EFE6"/>
-    <!-- Pulse on badge -->
-    <circle cx="36" cy="32" r="14" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0">
-      <animate attributeName="r" values="9;22;9" dur="3.2s" repeatCount="indefinite"
-               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
-      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"
-               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
-    </circle>
-  </g>
+    <!-- ============ Items INSIDE the folder ============ -->
 
-  <!-- =============================================================
-       FOREGROUND — ORBIT OF CHIPS (small rounded rectangles around person)
-       Each chip moves into its "slot" with anticipation, then settles
-       ============================================================= -->
-
-  <!-- Orbit guide ring (faint) -->
-  <circle cx="540" cy="525" r="180" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,7" opacity="0.3"/>
-
-  <!-- Chip TOP-LEFT (snap-in with anticipation) -->
-  <g transform="translate(380 380)">
-    <g>
-      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
-      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-      <!-- anticipation: small pull-back then snap forward -->
+    <!-- ITEM 1 — PAYSLIP (orange, top-left, hero element with breathing) -->
+    <g transform="translate(-140 -50)">
+      <!-- subtle drop shadow -->
+      <path d="M -68 -40 L 70 -50 L 76 70 L -60 80 Z"
+            fill="#1A1614" opacity="0.18" filter="url(#contactBlur21)" transform="translate(4 6)"/>
+      <!-- payslip body (rotated slightly: line of action asymmetry) -->
+      <g transform="rotate(-3)">
+        <path d="M -68 -40 Q -70 -46 -62 -48 L 64 -54 Q 72 -54 72 -46 L 76 64 Q 76 72 68 74 L -56 78 Q -64 76 -64 68 Z"
+              fill="url(#payslipGrad)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Header bar -->
+        <path d="M -58 -34 L 60 -40" stroke="#FAF3E5" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <!-- Text bars (4 lines, varying length) -->
+        <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55" fill="none">
+          <path d="M -54 -10 Q -10 -14 46 -12"/>
+          <path d="M -54 4 Q -4 2 38 4"/>
+          <path d="M -54 18 Q -16 16 28 20"/>
+          <path d="M -54 32 Q -10 32 50 34"/>
+        </g>
+        <!-- "amount" highlight -->
+        <path d="M 20 50 L 60 48" stroke="#1A1614" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+      </g>
+      <!-- Breathing -->
       <animateTransform attributeName="transform" type="translate"
-        values="0,0; -4,-3; 2,1; 0,0; 0,0" dur="5s" begin="0s" repeatCount="indefinite"
-        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
-        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+                        values="-140 -50; -140 -56; -140 -50" dur="5.4s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-  </g>
 
-  <!-- Chip TOP-RIGHT -->
-  <g transform="translate(700 380)">
-    <g>
-      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
-      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <!-- ITEM 2 — CONTRACT (top-right, asymmetric rotation) -->
+    <g transform="translate(120 -60)">
+      <path d="M -54 -50 L 38 -54 Q 56 -52 56 -36 L 60 64 Q 60 74 50 76 L -48 80 Q -56 78 -56 68 Z"
+            fill="#1A1614" opacity="0.18" filter="url(#contactBlur21)" transform="translate(4 6)"/>
+      <g transform="rotate(4)">
+        <path d="M -54 -50 L 38 -54 Q 56 -52 56 -36 L 60 64 Q 60 74 50 76 L -48 80 Q -56 78 -56 68 Z"
+              fill="url(#docGrad21)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+        <!-- folded corner top-right -->
+        <path d="M 38 -54 L 38 -36 L 56 -36" fill="none" stroke="#1A1614" stroke-width="2.4"/>
+        <path d="M 38 -54 Q 48 -50 56 -36" fill="#E5DCC2" stroke="#1A1614" stroke-width="2" opacity="0.7"/>
+        <!-- text lines -->
+        <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55" fill="none">
+          <path d="M -42 -22 Q 0 -24 42 -22"/>
+          <path d="M -42 -8 Q 4 -10 42 -8"/>
+          <path d="M -42 6 Q -2 4 36 6"/>
+          <path d="M -42 22 Q 0 22 38 24"/>
+        </g>
+        <!-- signature swoosh -->
+        <path d="M -36 56 C -22 60 -8 50 6 56 C 20 62 32 50 44 56" fill="none"
+              stroke="#1A1614" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
       <animateTransform attributeName="transform" type="translate"
-        values="0,0; 4,-3; -2,1; 0,0; 0,0" dur="5s" begin="0.4s" repeatCount="indefinite"
-        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
-        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+                        values="120 -60; 120 -54; 120 -60" dur="5s" begin="0.6s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-  </g>
 
-  <!-- Chip LEFT-MID -->
-  <g transform="translate(330 540)">
-    <g>
-      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
-      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <!-- ITEM 3 — ATTENDANCE CALENDAR (bottom-left) -->
+    <g transform="translate(-130 110)">
+      <path d="M -54 -42 Q -56 -50 -48 -50 L 50 -52 Q 58 -50 58 -42 L 60 60 Q 60 70 50 70 L -48 72 Q -56 70 -56 60 Z"
+            fill="#1A1614" opacity="0.18" filter="url(#contactBlur21)" transform="translate(4 6)"/>
+      <g transform="rotate(-2)">
+        <path d="M -54 -42 Q -56 -50 -48 -50 L 50 -52 Q 58 -50 58 -42 L 60 60 Q 60 70 50 70 L -48 72 Q -56 70 -56 60 Z"
+              fill="url(#docGrad21)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+        <!-- header bar (dark) -->
+        <path d="M -54 -28 L 58 -32" stroke="#1A1614" stroke-width="6" stroke-linecap="round"/>
+        <!-- ring binders -->
+        <path d="M -32 -56 Q -28 -62 -24 -56 L -24 -42 Q -28 -38 -32 -42 Z" fill="#1A1614"/>
+        <path d="M 32 -58 Q 36 -64 40 -58 L 40 -44 Q 36 -40 32 -44 Z" fill="#1A1614"/>
+        <!-- grid 4x4 (asymmetric: one cell highlighted orange) -->
+        <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round" opacity="0.5" fill="none">
+          <path d="M -54 -14 L 58 -16"/>
+          <path d="M -54 2 L 60 0"/>
+          <path d="M -54 18 L 60 16"/>
+          <path d="M -54 34 L 60 32"/>
+          <path d="M -28 -28 L -28 50"/>
+          <path d="M 0 -28 L 0 50"/>
+          <path d="M 28 -28 L 28 50"/>
+        </g>
+        <!-- Today (present) -->
+        <rect x="2" y="4" width="24" height="12" rx="2" fill="#FF6B1A"/>
+      </g>
       <animateTransform attributeName="transform" type="translate"
-        values="0,0; -5,0; 2,0; 0,0; 0,0" dur="5s" begin="0.8s" repeatCount="indefinite"
-        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
-        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+                        values="-130 110; -130 104; -130 110" dur="5.2s" begin="1.1s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
-  </g>
 
-  <!-- Chip RIGHT-MID -->
-  <g transform="translate(750 540)">
-    <g>
-      <rect x="-32" y="-12" width="64" height="24" rx="6" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.5"/>
-      <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-      <line x1="-22" y1="6" x2="14" y2="6" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <!-- ITEM 4 — TRAINING CERTIFICATE (bottom-right) -->
+    <g transform="translate(110 100)">
+      <path d="M -56 -42 Q -58 -50 -50 -50 L 50 -52 Q 58 -50 58 -42 L 60 50 Q 60 60 50 60 L -50 62 Q -58 60 -58 50 Z"
+            fill="#1A1614" opacity="0.18" filter="url(#contactBlur21)" transform="translate(4 6)"/>
+      <g transform="rotate(3)">
+        <path d="M -56 -42 Q -58 -50 -50 -50 L 50 -52 Q 58 -50 58 -42 L 60 50 Q 60 60 50 60 L -50 62 Q -58 60 -58 50 Z"
+              fill="url(#docGrad21)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+        <!-- decorative border -->
+        <path d="M -48 -34 L 50 -36 L 52 50 L -48 52 Z" fill="none"
+              stroke="#1A1614" stroke-width="1" stroke-dasharray="3,4" opacity="0.45"/>
+        <!-- Medal/seal -->
+        <circle cx="-22" cy="-2" r="14" fill="#D9B98A" stroke="#1A1614" stroke-width="2.4"/>
+        <circle cx="-22" cy="-2" r="6" fill="#FAF5EC" stroke="#1A1614" stroke-width="1.5"/>
+        <!-- Ribbon -->
+        <path d="M -28 10 L -28 28 L -22 22 L -16 30 L -16 12 Z"
+              fill="#FF6B1A" stroke="#1A1614" stroke-width="2" stroke-linejoin="round"/>
+        <!-- text lines on right -->
+        <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55" fill="none">
+          <path d="M 0 -12 Q 22 -14 46 -12"/>
+          <path d="M 0 2 Q 24 0 44 4"/>
+          <path d="M 0 16 Q 18 14 38 18"/>
+        </g>
+        <!-- bottom signature -->
+        <path d="M 2 40 Q 22 36 46 40" fill="none" stroke="#1A1614" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+      </g>
       <animateTransform attributeName="transform" type="translate"
-        values="0,0; 5,0; -2,0; 0,0; 0,0" dur="5s" begin="1.2s" repeatCount="indefinite"
-        keyTimes="0;0.12;0.2;0.32;1" calcMode="spline"
-        keySplines="0.5 0 0.5 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+                        values="110 100; 110 94; 110 100" dur="4.8s" begin="1.7s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
+
+    <!-- =========================================================
+         FRONT POCKET of the folder — the "front fold" rises from below
+         Adds the "inside the folder" reading
+         ========================================================= -->
+    <path d="M -260 100 Q -262 92 -252 90 L 244 80 Q 256 80 258 90 L 268 220 Q 268 232 256 232 L -240 246 Q -254 244 -254 232 Z"
+          fill="url(#folderFront)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round"/>
+    <!-- Front pocket subtle stitch -->
+    <path d="M -240 110 Q -8 102 240 92" fill="none"
+          stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,5" opacity="0.45"/>
   </g>
 
-  <!-- =============================================================
-       BOTTOM ROW — 3 HR ICONS (busta paga, contratto, presenze)
-       Slide on a small isometric "shelf" inside the folder
-       ============================================================= -->
+  <!-- =========================================================
+       EMPLOYEE SILHOUETTE — outside the folder, on the left
+       Profile view (not back, not face) — dignity
+       Looks toward the folder. Line of action: gentle backward C
+       ========================================================= -->
+  <g transform="translate(190 600)">
 
-  <!-- Shelf line -->
-  <line x1="280" y1="745" x2="820" y2="725" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    <!-- Subtle ground contact shadow -->
+    <ellipse cx="0" cy="220" rx="80" ry="10" fill="#1A1614" opacity="0.2" filter="url(#contactBlur21)"/>
 
-  <!-- ICON 1 — PAYSLIP (busta paga) — small envelope-like rectangle with line bars -->
-  <g transform="translate(370 720)">
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-      <rect x="-32" y="-30" width="64" height="50" rx="3"/>
+    <!-- Body (profile, contrapposto) -->
+    <g>
+      <!-- Legs (left forward, right back) — asymmetric stance -->
+      <path d="M -22 60 C -28 100 -32 150 -30 200 L -10 210 L -2 200 C -2 160 4 110 14 60 Z"
+            fill="url(#employeeBody)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 6 60 C 10 100 18 150 28 195 L 44 205 L 50 196 C 46 156 38 110 30 60 Z"
+            fill="url(#employeeBody)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round" opacity="0.92"/>
+
+      <!-- Torso (line of action curving slightly backward, head leaning forward) -->
+      <path d="M -36 -50 C -44 -20 -42 20 -28 60
+               L 38 64 C 56 28 60 -10 50 -42
+               C 40 -60 22 -64 0 -64
+               C -22 -64 -32 -60 -36 -50 Z"
+            fill="url(#employeeBody)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+
+      <!-- Arm forward (toward folder) — line of action -->
+      <path d="M 26 -10 C 50 -8 78 4 96 24
+               C 102 36 96 42 86 40
+               C 70 30 54 22 32 24 Z"
+            fill="url(#employeeBody)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+
+      <!-- Head (profile, slightly tilted forward — contemplating the folder) -->
+      <!-- Asymmetric ellipse, no facial features (dignity, no clear face) -->
+      <path d="M 16 -100 C 32 -112 56 -110 64 -92
+               C 70 -76 66 -56 50 -50
+               C 36 -46 22 -54 14 -68
+               C 8 -82 6 -94 16 -100 Z"
+            fill="url(#employeeBody)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+
+      <!-- Hair line / nape (back of head curve) -->
+      <path d="M 14 -82 Q 8 -68 16 -54" fill="none"
+            stroke="#0A0706" stroke-width="2.4" stroke-linecap="round" opacity="0.85"/>
+
+      <!-- Rim light (top of head, top-right warm) -->
+      <path d="M 36 -110 C 50 -108 60 -100 64 -90" fill="none"
+            stroke="#D9B98A" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+
+      <!-- Subtle neck shadow (ambient occlusion) -->
+      <path d="M 22 -52 Q 36 -46 50 -52" fill="none"
+            stroke="#000" stroke-width="2.2" opacity="0.4" filter="url(#contactBlur21)"/>
+
+      <!-- Collar / shirt suggestion (front) -->
+      <path d="M -16 -42 Q 6 -34 30 -40" fill="none"
+            stroke="#F5EFE6" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
     </g>
-    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.6">
-      <line x1="-22" y1="-16" x2="22" y2="-16"/>
-      <line x1="-22" y1="-6" x2="18" y2="-6"/>
-      <line x1="-22" y1="4" x2="14" y2="4"/>
-      <line x1="-22" y1="14" x2="10" y2="14"/>
-    </g>
-    <!-- Tiny breath -->
+
+    <!-- Subtle breathing animation -->
     <animateTransform attributeName="transform" type="translate"
-      values="370,720; 370,716; 370,720" dur="4.6s" repeatCount="indefinite"
-      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+                      values="190 600; 190 596; 190 600" dur="6s" repeatCount="indefinite"
+                      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </g>
 
-  <!-- ICON 2 — CONTRACT (contratto) — document with signature line -->
-  <g transform="translate(540 715)">
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-      <polygon points="-26,-32 20,-32 32,-20 32,22 -26,22"/>
-      <polyline points="20,-32 20,-20 32,-20" fill="none"/>
-    </g>
-    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.6">
-      <line x1="-18" y1="-12" x2="22" y2="-12"/>
-      <line x1="-18" y1="-2" x2="22" y2="-2"/>
-      <line x1="-18" y1="8" x2="18" y2="8"/>
-    </g>
-    <!-- Signature swoosh -->
-    <path d="M -16,16 C -10,18 -4,12 2,16 C 8,20 14,14 20,16" fill="none" stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
-    <animateTransform attributeName="transform" type="translate"
-      values="540,715; 540,711; 540,715" dur="4.2s" repeatCount="indefinite"
-      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-  </g>
+  <!-- Soft connection line from employee's gaze to folder (orange, suggests his focus) -->
+  <path d="M 270 510 Q 400 480 500 500" fill="none"
+        stroke="#FF6B1A" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2,8" opacity="0.5"/>
 
-  <!-- ICON 3 — TIMESHEET (presenze) — small calendar grid with one orange cell -->
-  <g transform="translate(710 715)">
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-      <rect x="-28" y="-30" width="56" height="48" rx="3"/>
-      <line x1="-28" y1="-18" x2="28" y2="-18"/>
-    </g>
-    <!-- Header dots (3) -->
-    <g fill="#1A1614" opacity="0.6">
-      <circle cx="-18" cy="-24" r="2"/>
-      <circle cx="0" cy="-24" r="2"/>
-      <circle cx="18" cy="-24" r="2"/>
-    </g>
-    <!-- Grid 3x3 -->
-    <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
-      <line x1="-9" y1="-18" x2="-9" y2="18"/>
-      <line x1="9" y1="-18" x2="9" y2="18"/>
-      <line x1="-28" y1="-6" x2="28" y2="-6"/>
-      <line x1="-28" y1="6" x2="28" y2="6"/>
-    </g>
-    <!-- One orange cell (today, present — secondary motion: small breathing) -->
-    <rect x="-7" y="-4" width="14" height="8" fill="#FF6B1A" opacity="0.85">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"
-               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-    </rect>
-    <animateTransform attributeName="transform" type="translate"
-      values="710,715; 710,711; 710,715" dur="4.4s" repeatCount="indefinite"
-      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-  </g>
-
-  <!-- =============================================================
-       SECONDARY MOTION — thin connection arcs from person to chips
-       (suggests data flow inside the system)
-       ============================================================= -->
-  <g stroke="#FF6B1A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2,6" opacity="0.4" fill="none">
-    <path d="M 458 470 Q 420 425 380 380"/>
-    <path d="M 622 470 Q 660 425 700 380"/>
-    <path d="M 435 540 Q 380 540 330 540"/>
-    <path d="M 645 540 Q 700 540 750 540"/>
-  </g>
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette21)" pointer-events="none"/>
 </svg>

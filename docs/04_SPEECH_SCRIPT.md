@@ -205,28 +205,30 @@ Punta dove tu vuoi arrivare.
 
 *[Pausa 2s]*
 
-L'ago legge l'intenzione.
-Non il magnetismo della terra.
-
-E lì, sulla sabbia, capiscono una cosa sola.
-Una cosa che cambia tutto.
+Tu dici dove devi andare.
+L'ago si muove.
+E ti indica la rotta.
 
 *[Pausa 2s]*
 
-Per usare questa bussola serve sapere già navigare.
-Serve sapere già cos'è una rotta.
+Ma c'è una condizione.
+
+*[Pausa 2s]*
+
+Funziona solo in mano a chi sa già navigare.
+Chi sa cos'è una rotta.
 Cos'è una corrente.
 Cos'è una stella.
 
 *[Pausa 2s]*
 
-Senza quel sapere, la bussola brilla.
+Nelle mani sbagliate, la bussola brilla.
 Ma non porta da nessuna parte.
 
 *[Pausa 2s]*
 
 Non sostituisce il navigatore.
-Lo amplifica."
+Lo rende più veloce."
 
 ---
 
@@ -256,7 +258,13 @@ Insieme — insieme — ti danno la rotta."
 
 "E quella nave parte.
 
-Mentre altre, all'orizzonte, restano ferme.
+Con due bussole sul ponte.
+La vecchia di ottone.
+La nuova arancione.
+
+*[Pausa 2s]*
+
+All'orizzonte, altre navi restano ferme.
 Non hanno cercato l'isola.
 Non hanno raccolto niente dalla sabbia.
 
@@ -274,7 +282,7 @@ Anno zero.
 
 *[Pausa 2s]*
 
-La bussola è qui.
+La bussola arancione è qui.
 In questa sala.
 Per chi sa già navigare."
 
@@ -317,8 +325,8 @@ Per **anni**.
 
 *[Pausa 2s]*
 
-Lo studio che integra AI nei prossimi diciotto mesi prende tre anni di vantaggio sugli altri.
-Tre anni nel nostro mestiere non si recuperano.
+Lo studio che integra AI adesso prende un vantaggio che gli altri non recuperano.
+Nel nostro mestiere il tempo non torna indietro.
 
 *[Pausa 2s]*
 
@@ -334,7 +342,7 @@ Il treno passa una volta sola."
 
 Costruiamo una flotta.
 
-**Sei piattaforme.**
+**Sette piattaforme.**
 Un'unica idea:
 
 uno strumento che pensa con voi.
@@ -359,57 +367,59 @@ Costruiti per il vostro mestiere."
 
 *[Pausa 2s]*
 
-Il problema è il tempo.
+Il problema è il **tempo**.
 
 *[Pausa 2s]*
 
-Il consulente del lavoro oggi passa il sessanta per cento delle ore in adempimenti, controlli, aggiornamento normativo.
+Il consulente del lavoro oggi passa la maggior parte delle ore dietro a circolari, controlli INPS, aggiornamenti normativi.
 
-Sessanta per cento.
+Non a parlare con i clienti.
 
 *[Pausa 2s]*
 
-Non sul valore al cliente.
 Non sulla strategia dello studio.
 Non sulla relazione che vi distingue.
 
 *[Pausa 2s]*
 
-Ogni minuto a leggere un decreto di trecento pagine è un minuto rubato.
+Ogni ora passata a leggere un decreto di trecento pagine è un'ora tolta.
 
 Al cliente.
 Alla famiglia.
-Al mestiere vero."
+Al mestiere vero.
+
+*[Pausa 2s]*
+
+Noi non aggiungiamo strumenti.
+Vi restituiamo tempo."
 
 ---
 
-## SLIDE 16 — Piattaforma DVR (≈ 45s)
+## SLIDE 16 — Piattaforma DVR (≈ 40s)
 
 "Prima bussola. **DVR Validator**.
 
-Decreto legislativo ottantuno del duemilaotto.
+Il documento di valutazione dei rischi.
+Decreto legislativo ottantuno.
 Sicurezza sul lavoro.
 
 *[Pausa 2s]*
 
-Oggi validare un DVR per un cliente da venti dipendenti porta via quattro ore.
-Quattro ore di confronto incrociato con la normativa.
-
-Noi lo facciamo in **dodici minuti**.
+**Input:** la normativa aggiornata e la realtà dell'azienda del cliente.
+**Output:** il DVR completo, conforme, pronto per la firma.
 
 *[Pausa 2s]*
 
-Dodici minuti.
+**Rapido.**
 
 *[Pausa 2s]*
 
-Non per sostituire il consulente.
-Per restituirgli **tre ore e quarantotto minuti** che tornano ai clienti.
+Quello che prima richiedeva un pomeriggio intero, adesso lo gestite mentre il caffè è ancora caldo.
 
 *[Pausa 2s]*
 
-Non per togliere lavoro.
-Per ridarlo a chi conta."
+Non per togliere lavoro al consulente.
+Per restituirgli le ore che si era rubato da solo."
 
 ---
 
@@ -421,22 +431,25 @@ Il preventivo del consulente del lavoro.
 
 *[Pausa 2s]*
 
-Un preventivo serio — dieci voci, sconti, fasce di fatturato — oggi vi prende trenta, quaranta minuti.
-
-Noi lo facciamo in **cinque**.
+**Input:** l'anagrafica del cliente e il listino del vostro studio.
+**Output:** un preventivo serio, impaginato, pronto per essere mandato.
 
 *[Pausa 2s]*
 
-Anagrafica del cliente in entrata.
-Listino del vostro studio applicato in automatico.
-PDF impaginato, pronto sul desk.
+**Firma.**
 
 *[Pausa 2s]*
 
 Voi rileggete.
 Voi firmate.
+Voi mandate.
 
-Il preventivo non aspetta più la settimana prossima."
+*[Pausa 2s]*
+
+Il preventivo non si scrive più di notte.
+Non aspetta più la settimana prossima.
+
+Esce dallo studio mentre il cliente è ancora in linea."
 
 ---
 
@@ -444,13 +457,16 @@ Il preventivo non aspetta più la settimana prossima."
 
 "Terza bussola. **Lead Hunter**.
 
-La generazione di nuovi clienti.
+La ricerca di nuovi clienti.
 
 *[Pausa 2s]*
 
-Una piattaforma che cerca, qualifica e contatta lead nei canali giusti.
-Già attiva su di noi.
-Già replicata sul primo cliente esterno.
+**Input:** il tipo di cliente che cercate — settore, dimensione, zona.
+**Output:** una lista di aziende qualificate, già contattate, pronte all'appuntamento.
+
+*[Pausa 2s]*
+
+**Agenda.**
 
 *[Pausa 2s]*
 
@@ -463,7 +479,7 @@ Un agente che vi riempie l'agenda mentre dormite."
 
 ---
 
-## SLIDE 19 — Project Manager (≈ 40s)
+## SLIDE 19 — Project Manager (≈ 45s)
 
 "Quarta bussola. **Project Manager**.
 
@@ -474,60 +490,118 @@ Non Trello con un nome diverso.
 
 *[Pausa 2s]*
 
-È un agente che vi chiede: 'avete sentito Mario? Era previsto ieri.'
-Che vi dice: 'questa scadenza è in conflitto.'
-Che vi avvisa: 'questo progetto sta perdendo margine.'
+**Input:** le pratiche aperte, le scadenze, le persone dello studio.
+**Output:** lo studio allineato. Tutti sanno cosa fare. Niente cade.
+
+*[Pausa 2s]*
+
+**Trecentosessanta gradi.**
+
+*[Pausa 2s]*
+
+Allinea l'organizzazione interna.
+Velocizza l'operatività di tutto lo studio.
+
+Sa chi sta facendo cosa.
+Sa cosa è in ritardo.
+Sa dove serve una mano.
 
 *[Pausa 2s]*
 
 Pensa con voi.
-Non al posto vostro.
-
-*[Pausa 2s]*
-
-Voi restate il decisore.
-Lui tiene a mente quello che vi sfugge."
+Non al posto vostro."
 
 ---
 
-## SLIDE 20 — Piattaforma HR (≈ 40s)
+## SLIDE 20 — Falco AI (≈ 50s)
 
-"Quinta bussola. **Piattaforma HR**.
+*[Tono che si alza un poco. Questa è la slide più "wow" del listino.]*
 
-*[Pausa 2s]*
-
-Un'azienda con quaranta dipendenti — buste paga, presenze, contratti, ferie, formazione obbligatoria — oggi vive in un Excel con sette schede e tre persone che si scambiano file via mail.
+"Quinta bussola. **Falco AI**.
 
 *[Pausa 2s]*
 
-Da noi è un sistema unico.
+Agenti vocali.
+Parlano per voi.
+Agiscono per voi.
+
+*[Pausa 2s]*
+
+**Input:** una vostra istruzione, anche solo a voce.
+**Output:** chiamate fatte, appuntamenti fissati, mail scritte, follow-up partiti.
+
+*[Pausa 2s]*
+
+**Voce.**
+
+*[Pausa 2s]*
+
+Sotto Falco ci sono sotto-agenti.
+Uno chiama il cliente per la scadenza della busta paga.
+Uno scrive la mail al commercialista.
+Uno prenota la sala riunioni.
+Uno richiama il fornitore che non ha risposto.
+
+*[Pausa 2s]*
+
+Coordinati.
+Vivono dentro il Project Manager.
+
+*[Pausa 2s]*
+
+Voi date la voce.
+Loro fanno il lavoro."
+
+---
+
+## SLIDE 21 — Piattaforma HR (≈ 40s)
+
+"Sesta bussola. **Piattaforma HR**.
+
+*[Pausa 2s]*
+
+Buste paga, presenze, contratti, ferie, formazione obbligatoria — oggi quasi sempre vivono in un Excel con sette schede e tre persone che si scambiano file via mail.
+
+*[Pausa 2s]*
+
+**Input:** i dati del dipendente, le presenze, i contratti.
+**Output:** tutto in un unico posto. Per il consulente, per l'azienda, per il dipendente.
+
+*[Pausa 2s]*
+
+**Unico.**
+
+*[Pausa 2s]*
 
 Il consulente vede tutto.
-L'azienda vede tutto.
-Il dipendente vede quello che gli serve.
+L'azienda vede quello che le serve.
+Il dipendente vede la sua busta paga, le sue ferie, i suoi corsi.
 
 *[Pausa 2s]*
 
 Una sola fonte di verità.
 
-*[Pausa 2s]*
-
 Perché il dipendente non è una riga di Excel."
 
 ---
 
-## SLIDE 21 — Videoconferenze ed e-Learning (≈ 40s)
+## SLIDE 22 — Videoconferenze ed e-Learning (≈ 40s)
 
-"Sesta bussola. **Videoconferenze ed e-Learning**.
+"Settima bussola. **Videoconferenze ed e-Learning**.
+
+*[Pausa 2s]*
+
+**Input:** una riunione con il cliente, o un corso obbligatorio da fare.
+**Output:** trascrizione, registrazione a norma, attestato salvato nel fascicolo del dipendente.
+
+*[Pausa 2s]*
+
+**Live.**
 
 *[Pausa 2s]*
 
 Videoconferenze pensate per il lavoro italiano.
-Trascrizione integrata.
-Registrazione conforme al GDPR.
-Salvataggio automatico nel fascicolo del dipendente.
-
-*[Pausa 2s]*
+Conformi al GDPR.
 
 E sopra ci abbiamo costruito una piattaforma di e-Learning per la formazione obbligatoria:
 sicurezza, antincendio, primo soccorso.
@@ -543,15 +617,15 @@ Torna a essere un sapere."
 
 ---
 
-## SLIDE 22 — Il pattern (≈ 40s)
+## SLIDE 23 — Il pattern (≈ 40s)
 
-"**Sei bussole.**
+"**Sette bussole.**
 
 *[Pausa 2s]*
 
 Una sola idea:
 
-ogni processo del lavoro italiano può avere il suo strumento AI.
+ogni processo del consulente del lavoro può avere il suo strumento AI.
 
 Specifico.
 Verticale.
@@ -569,7 +643,7 @@ Una bussola per ogni rotta che vi serve."
 
 ---
 
-## SLIDE 23 — Metodologia BMAD (≈ 40s)
+## SLIDE 24 — Metodologia BMAD (≈ 40s)
 
 "E lo costruiamo con un metodo.
 
@@ -601,7 +675,7 @@ Senza prendere acqua."
 
 ---
 
-## SLIDE 24 — Chiusura (≈ 40s)
+## SLIDE 25 — Chiusura (≈ 40s)
 
 *[Voce più calda, conclusiva. Rocco si avvicina al centro del palco.]*
 
@@ -661,6 +735,6 @@ Grazie."
 ## Conteggio target
 
 - Sezione storia (atti I-III, scene 01-12, ~10 min): ~830 parole parlate
-- Sezione realistica (slide 13-24, ~5 min): ~990 parole parlate
-- **Totale parole parlate:** ~1.820 parole su 15 minuti = ~121 wpm, ritmo lento e drammatico ✓
+- Sezione realistica (slide 13-25, ~5 min): ~1.060 parole parlate (7 piattaforme)
+- **Totale parole parlate:** ~1.890 parole su 15 minuti = ~126 wpm, ritmo lento e drammatico ✓
 - (Il `wc -w` complessivo del file restituirà di più perché conta anche header markdown, direzioni di scena, marker pausa.)

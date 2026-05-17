@@ -1,112 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 19 — Project Manager AI: kanban board with one orange task">
-  <title>Slide 19 — Project Manager AI</title>
-  <desc>Kanban a 3 colonne in vista isometrica, una task arancione in progress.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 19 — Project Manager AI: 360 hub with central figure and eight radiating process icons">
+  <title>Slide 19 — Project Manager AI (hub 360°)</title>
+  <desc>Hub centrale con persona stilizzata e otto raggi che si irradiano verso icone di processo: kanban, calendario, persone, email, file, chat, alert, grafico.</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly19" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur19" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazePM" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+
+    <!-- Central hub disk gradient (top-right light) -->
+    <radialGradient id="hubDisk" cx="35%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#FFE3C2"/>
+      <stop offset="50%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#9C3A0E"/>
+    </radialGradient>
+
+    <!-- Cream node card -->
+    <radialGradient id="nodeCard19" cx="32%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#E0D6C0"/>
+    </radialGradient>
+
+    <!-- Figure (central person) body -->
+    <linearGradient id="figureBody" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#2A1F18"/>
+      <stop offset="100%" stop-color="#0E0907"/>
+    </linearGradient>
+
+    <radialGradient id="haloPM" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.18"/>
+      <stop offset="70%" stop-color="#FF6B1A" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette19" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.26"/>
+    </radialGradient>
+  </defs>
+
+  <!-- BG cream + painterly grain -->
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly19)"/>
 
-  <!-- Floor shadow under board -->
-  <ellipse cx="540" cy="900" rx="380" ry="34" fill="#B8B5AD" opacity="0.22"/>
-
-  <!-- BOARD baseplate (slight isometric tilt) -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-    <!-- Board background -->
-    <polygon points="180,260 900,220 940,820 220,860" fill="#F5EFE6"/>
-    <!-- Board side (depth) -->
-    <polygon points="180,260 220,860 220,880 180,280" fill="#B8B5AD" opacity="0.35"/>
-    <polygon points="900,220 940,820 940,840 900,240" fill="#B8B5AD" opacity="0.35"/>
+  <!-- BG LAYER 1 (far) — Cartoon Saloon concentric mandala -->
+  <g transform="translate(540 540)" opacity="0.35" filter="url(#hazePM)">
+    <circle r="430" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,8"/>
+    <circle r="388" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,9"/>
+    <circle r="346" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <!-- Mandala counter-rotation -->
+    <animateTransform attributeName="transform" type="rotate"
+                      values="360 0 0;0 0 0" dur="140s" repeatCount="indefinite"
+                      additive="sum"/>
   </g>
 
-  <!-- 3 columns (separators) -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
-    <line x1="420" y1="245" x2="450" y2="845"/>
-    <line x1="660" y1="225" x2="690" y2="825"/>
-  </g>
+  <!-- Soft orange halo behind hub -->
+  <circle cx="540" cy="540" r="260" fill="url(#haloPM)">
+    <animate attributeName="r" values="230;280;230" dur="5.2s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
 
-  <!-- Column headers (just thin underlines, no text) -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linecap="round">
-    <line x1="220" y1="320" x2="420" y2="308"/>
-    <line x1="455" y1="306" x2="660" y2="294"/>
-    <line x1="690" y1="293" x2="900" y2="280"/>
-  </g>
+  <!-- =========================================================
+       ROTATING SYSTEM — wheel of 8 spokes + nodes
+       The spokes group rotates slowly clockwise.
+       Node icons inside counter-rotate so they stay upright.
+       ========================================================= -->
+  <g transform="translate(540 540)">
 
-  <!-- COLUMN 1 (TODO) — 3 cards, all black/cream outlined -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
-    <rect x="240" y="360" width="160" height="80" rx="6"/>
-    <rect x="245" y="470" width="160" height="80" rx="6"/>
-    <rect x="250" y="580" width="160" height="80" rx="6"/>
-  </g>
-  <!-- card content lines (no text, just bars) -->
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55">
-    <line x1="258" y1="384" x2="350" y2="384"/>
-    <line x1="258" y1="404" x2="380" y2="404"/>
-    <line x1="258" y1="422" x2="330" y2="422"/>
+    <!-- Main slow rotation for spokes + ring -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="0;360" dur="90s" repeatCount="indefinite"/>
 
-    <line x1="263" y1="494" x2="355" y2="494"/>
-    <line x1="263" y1="514" x2="385" y2="514"/>
-    <line x1="263" y1="532" x2="335" y2="532"/>
+      <!-- Inner ring -->
+      <circle r="200" fill="none" stroke="#1A1614" stroke-width="2" stroke-dasharray="4,8" opacity="0.45"/>
+      <!-- Outer ring -->
+      <circle r="370" fill="none" stroke="#1A1614" stroke-width="1.8" stroke-dasharray="2,10" opacity="0.4"/>
 
-    <line x1="268" y1="604" x2="360" y2="604"/>
-    <line x1="268" y1="624" x2="390" y2="624"/>
-    <line x1="268" y1="642" x2="340" y2="642"/>
-  </g>
+      <!-- 8 SPOKES (curves, not straight lines — Disney organic) -->
+      <!-- Each spoke: starts at r~110, ends at r~360. We draw 8 at 45° steps. -->
+      <g stroke="#1A1614" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.7">
+        <!-- 0° right -->
+        <path d="M 110 0 Q 230 -8 360 0"/>
+        <!-- 45° -->
+        <path d="M 78 78 Q 168 168 254 254"/>
+        <!-- 90° -->
+        <path d="M 0 110 Q 8 230 0 360"/>
+        <!-- 135° -->
+        <path d="M -78 78 Q -168 168 -254 254"/>
+        <!-- 180° -->
+        <path d="M -110 0 Q -230 8 -360 0"/>
+        <!-- 225° -->
+        <path d="M -78 -78 Q -168 -168 -254 -254"/>
+        <!-- 270° -->
+        <path d="M 0 -110 Q -8 -230 0 -360"/>
+        <!-- 315° -->
+        <path d="M 78 -78 Q 168 -168 254 -254"/>
+      </g>
 
-  <!-- COLUMN 2 (IN PROGRESS) — 2 cards, the TOP one is ORANGE (narrative) -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round">
-    <!-- THE ORANGE TASK (in progress) -->
-    <rect x="468" y="355" width="170" height="84" rx="6" fill="#FF6B1A"/>
-    <rect x="468" y="355" width="170" height="84" rx="6" fill="none" stroke="#1A1614"/>
-    <!-- Pulsing glow halo -->
-    <rect x="458" y="345" width="190" height="104" rx="10" fill="#FF6B1A" opacity="0">
-      <animate attributeName="opacity" values="0;0.18;0" dur="2.6s" repeatCount="indefinite"/>
-    </rect>
+      <!-- Variable-weight accents on every other spoke (Disney peso variabile) -->
+      <g stroke="#1A1614" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.55">
+        <path d="M 200 0 Q 260 -4 320 0"/>
+        <path d="M 0 200 Q -4 260 0 320"/>
+        <path d="M -200 0 Q -260 4 -320 0"/>
+        <path d="M 0 -200 Q 4 -260 0 -320"/>
+      </g>
 
-    <!-- Second card (normal) -->
-    <rect x="472" y="470" width="170" height="80" rx="6" fill="#F5EFE6"/>
-  </g>
-  <g stroke="#F5EFE6" stroke-width="2.5" stroke-linecap="round" opacity="0.95">
-    <line x1="486" y1="382" x2="585" y2="382"/>
-    <line x1="486" y1="404" x2="615" y2="404"/>
-    <line x1="486" y1="424" x2="555" y2="424"/>
-  </g>
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55">
-    <line x1="490" y1="494" x2="585" y2="494"/>
-    <line x1="490" y1="514" x2="615" y2="514"/>
-    <line x1="490" y1="532" x2="555" y2="532"/>
-  </g>
+      <!-- Orange traveling pulses along the rings (energy flow) -->
+      <circle r="6" fill="#FF6B1A" opacity="0.85">
+        <animateMotion path="M 200 0 A 200 200 0 1 1 199.9 0 Z" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="4" fill="#FF6B1A" opacity="0.7">
+        <animateMotion path="M 370 0 A 370 370 0 1 0 369.9 0 Z" dur="14s" repeatCount="indefinite"/>
+      </circle>
 
-  <!-- COLUMN 3 (DONE) — 2 cards -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
-    <rect x="705" y="345" width="160" height="80" rx="6"/>
-    <rect x="710" y="455" width="160" height="80" rx="6"/>
-  </g>
-  <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.55">
-    <line x1="723" y1="369" x2="815" y2="369"/>
-    <line x1="723" y1="389" x2="845" y2="389"/>
-    <line x1="723" y1="407" x2="795" y2="407"/>
+      <!-- 8 NODE positions — at radius 380, every 45° -->
+      <!-- Each node is a small card; inside we counter-rotate to keep it upright -->
 
-    <line x1="728" y1="479" x2="820" y2="479"/>
-    <line x1="728" y1="499" x2="850" y2="499"/>
-    <line x1="728" y1="517" x2="800" y2="517"/>
-  </g>
-  <!-- Small checkmark on done cards -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <polyline points="845,355 852,365 868,348"/>
-    <polyline points="850,465 857,475 873,458"/>
-  </g>
+      <!-- NODE 1 (right) — KANBAN -->
+      <g transform="translate(380 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <!-- kanban columns inside -->
+          <g stroke="#1A1614" stroke-width="2" stroke-linecap="round" fill="none">
+            <path d="M -22 -16 L -22 16"/>
+            <path d="M -2 -16 L -2 16"/>
+            <path d="M 18 -16 L 18 16"/>
+          </g>
+          <rect x="-19" y="-12" width="14" height="8" rx="1.5" fill="#1A1614" opacity="0.55"/>
+          <rect x="1" y="-12" width="14" height="8" rx="1.5" fill="#FF6B1A"/>
+          <rect x="21" y="-12" width="14" height="8" rx="1.5" fill="#1A1614" opacity="0.4"/>
+          <rect x="-19" y="-2" width="14" height="6" rx="1.5" fill="#1A1614" opacity="0.4"/>
+          <rect x="1" y="2" width="14" height="6" rx="1.5" fill="#1A1614" opacity="0.4"/>
+        </g>
+      </g>
 
-  <!-- Two silhouette figures flanking the board, back view -->
-  <g fill="#1A1614">
-    <!-- Left figure -->
-    <g transform="translate(120 760)">
-      <ellipse cx="0" cy="-90" rx="24" ry="28" fill="#1A1614"/>
-      <path d="M -38,-55 C -40,-25 -46,30 -42,70 L 42,70 C 46,30 40,-25 38,-55 C 35,-72 22,-78 0,-78 C -22,-78 -35,-72 -38,-55 Z" fill="#1A1614"/>
+      <!-- NODE 2 (45°) — CALENDAR -->
+      <g transform="translate(268.7 268.7)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <path d="M -22 -18 L 22 -18 L 22 -10 L -22 -10 Z" fill="#1A1614"/>
+          <path d="M -16 -22 Q -14 -26 -12 -22 L -12 -14 Q -14 -10 -16 -14 Z" fill="#1A1614"/>
+          <path d="M 16 -22 Q 14 -26 12 -22 L 12 -14 Q 14 -10 16 -14 Z" fill="#1A1614"/>
+          <g stroke="#1A1614" stroke-width="1.2" fill="none" opacity="0.5">
+            <path d="M -22 0 L 22 0"/>
+            <path d="M -22 8 L 22 8"/>
+            <path d="M -8 -10 L -8 18"/>
+            <path d="M 8 -10 L 8 18"/>
+          </g>
+          <rect x="-6" y="2" width="12" height="6" fill="#FF6B1A"/>
+        </g>
+      </g>
+
+      <!-- NODE 3 (90° bottom) — PEOPLE -->
+      <g transform="translate(0 380)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <!-- 3 silhouette dots: classic group icon, asymmetric -->
+          <circle cx="-14" cy="-6" r="6" fill="#1A1614"/>
+          <path d="M -22 12 C -22 4 -14 0 -6 0 L -6 14 Z" fill="#1A1614"/>
+          <circle cx="0" cy="-10" r="7" fill="#1A1614"/>
+          <path d="M -10 18 C -10 8 -2 4 0 4 C 2 4 10 8 10 18 Z" fill="#1A1614"/>
+          <circle cx="14" cy="-6" r="6" fill="#1A1614"/>
+          <path d="M 6 12 C 6 4 14 0 22 0 L 22 14 Z" fill="#1A1614"/>
+        </g>
+      </g>
+
+      <!-- NODE 4 (135°) — EMAIL -->
+      <g transform="translate(-268.7 268.7)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <path d="M -22 -10 Q -22 -16 -16 -16 L 16 -16 Q 22 -16 22 -10 L 22 12 Q 22 18 16 18 L -16 18 Q -22 18 -22 12 Z"
+                fill="#F5EFE6" stroke="#1A1614" stroke-width="2.2"/>
+          <path d="M -22 -10 Q 0 8 22 -10" fill="none" stroke="#1A1614" stroke-width="2.2"/>
+          <circle cx="16" cy="-10" r="3.5" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.2"/>
+        </g>
+      </g>
+
+      <!-- NODE 5 (180° left) — FILE -->
+      <g transform="translate(-380 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <path d="M -14 -20 L 8 -20 Q 20 -8 20 -8 L 20 18 L -14 18 Z"
+                fill="#F5EFE6" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M 8 -20 L 8 -8 L 20 -8" fill="none" stroke="#1A1614" stroke-width="2"/>
+          <g stroke="#1A1614" stroke-width="1.6" stroke-linecap="round" opacity="0.55">
+            <path d="M -8 -2 Q 0 -4 14 -2"/>
+            <path d="M -8 6 Q 4 8 14 6"/>
+            <path d="M -8 14 Q -2 12 8 14"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- NODE 6 (225°) — CHAT -->
+      <g transform="translate(-268.7 -268.7)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <!-- bubble 1 (big) -->
+          <path d="M -22 -12 Q -22 -22 -12 -22 L 16 -22 Q 26 -22 26 -12 L 26 0 Q 26 8 18 8 L -4 8 L -10 14 L -10 8 Q -22 8 -22 0 Z"
+                fill="#F5EFE6" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- bubble 2 (small) -->
+          <path d="M -8 6 Q -8 -2 0 -2 L 18 -2 Q 26 -2 26 6 L 26 14 Q 26 22 18 22 L 10 22 L 6 26 L 6 22 Q -8 22 -8 14 Z"
+                fill="#FF6B1A" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round" opacity="0.95"/>
+        </g>
+      </g>
+
+      <!-- NODE 7 (270° top) — ALERT -->
+      <g transform="translate(0 -380)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <!-- bell (curved, Disney) -->
+          <path d="M -18 8 Q -22 -2 -18 -10 Q -10 -22 0 -22 Q 10 -22 18 -10 Q 22 -2 18 8 Z"
+                fill="#FF6B1A" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M -22 8 L 22 8" stroke="#1A1614" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M -4 12 Q 0 16 4 12" fill="#1A1614"/>
+          <circle cx="0" cy="-24" r="3" fill="#1A1614"/>
+        </g>
+      </g>
+
+      <!-- NODE 8 (315°) — CHART (KPI) -->
+      <g transform="translate(268.7 -268.7)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="0;-360" dur="90s" repeatCount="indefinite"/>
+          <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
+          <!-- 3 ascending bars -->
+          <rect x="-22" y="0" width="10" height="16" rx="1.5" fill="#1A1614" opacity="0.7"/>
+          <rect x="-6" y="-8" width="10" height="24" rx="1.5" fill="#1A1614" opacity="0.85"/>
+          <rect x="10" y="-18" width="10" height="34" rx="1.5" fill="#FF6B1A"/>
+          <!-- baseline -->
+          <path d="M -24 18 L 22 18" stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </g>
+
     </g>
-    <!-- Right figure -->
-    <g transform="translate(990 740)">
-      <ellipse cx="0" cy="-90" rx="24" ry="28" fill="#1A1614"/>
-      <path d="M -38,-55 C -40,-25 -46,30 -42,70 L 42,70 C 46,30 40,-25 38,-55 C 35,-72 22,-78 0,-78 C -22,-78 -35,-72 -38,-55 Z" fill="#1A1614"/>
-    </g>
   </g>
+
+  <!-- =========================================================
+       CENTRAL HUB DISK + PERSON (back view, dignity)
+       NOT rotating — stays anchored
+       ========================================================= -->
+  <g transform="translate(540 540)">
+    <!-- Outer hub ring -->
+    <circle r="118" fill="url(#hubDisk)" stroke="#1A1614" stroke-width="4"/>
+    <!-- Inner cream disk where person sits -->
+    <circle r="92" fill="#F5EFE6" stroke="#1A1614" stroke-width="2.4"/>
+    <!-- Decorative inner ring (Cartoon Saloon detail) -->
+    <circle r="78" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,5" opacity="0.55"/>
+
+    <!-- Person silhouette (back view, slight contrapposto — line of action S) -->
+    <g>
+      <!-- Head (slightly tilted right, asymmetric ellipse) -->
+      <ellipse cx="4" cy="-32" rx="22" ry="26" fill="url(#figureBody)" stroke="#0A0706" stroke-width="2.5"/>
+      <!-- Subtle rim light on head (top-right) -->
+      <path d="M 14 -52 C 22 -50 26 -42 26 -36" fill="none"
+            stroke="#D9B98A" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+      <!-- Shoulders / torso (asymmetric: left shoulder higher = contrapposto) -->
+      <path d="M -38 -4 C -42 14 -48 38 -44 62
+               C -28 70 0 72 30 70
+               C 50 64 52 38 48 12
+               C 44 -6 30 -14 8 -16
+               C -14 -16 -32 -14 -38 -4 Z"
+            fill="url(#figureBody)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+      <!-- Subtle hair / nape line -->
+      <path d="M -10 -42 Q 4 -56 22 -46" fill="none"
+            stroke="#0A0706" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+      <!-- Ambient occlusion under head -->
+      <path d="M -16 -16 Q 4 -10 24 -16" fill="none"
+            stroke="#000" stroke-width="2.2" opacity="0.45" filter="url(#contactBlur19)"/>
+    </g>
+
+    <!-- "360°" implied — small orange ring marker that orbits the figure -->
+    <circle cx="0" cy="0" r="106" fill="none" stroke="#FF6B1A" stroke-width="3" stroke-dasharray="80,360" stroke-linecap="round" opacity="0.85">
+      <animateTransform attributeName="transform" type="rotate"
+                        values="0;360" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette19)" pointer-events="none"/>
 </svg>

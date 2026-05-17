@@ -536,7 +536,7 @@ Agiscono per voi.
 
 *[Pausa 2s]*
 
-Sotto Falco ci sono sotto-agenti.
+Sotto Falco ci sono sotto agenti.
 Uno chiama il cliente per la scadenza della busta paga.
 Uno scrive la mail al commercialista.
 Uno prenota la sala riunioni.

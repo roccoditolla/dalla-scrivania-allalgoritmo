@@ -130,7 +130,7 @@ REALISTIC_SLIDES = [
         "id": "20", "title": "Falco AI", "big": "VOCE",
         "bullets": [
             "Agenti vocali che operano per conto dell'azienda",
-            "Sotto-agenti coordinati che lavorano come umani",
+            "Sotto agenti coordinati che lavorano come umani",
             "Si integra dentro il Project Manager",
             "L'azienda parla, gli agenti eseguono",
         ],

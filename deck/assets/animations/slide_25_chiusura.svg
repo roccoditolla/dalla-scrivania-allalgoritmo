@@ -1,138 +1,323 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 23 — Chiusura: central orange compass with 5 orbiting tool icons">
-  <title>Slide 23 — Chiusura</title>
-  <desc>Bussola arancione centrale con 5 piccole icone tool che orbitano lentamente.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 25 — Chiusura: large central orange compass with seven small platform tool icons orbiting (DVR, Preventivatore, LeadHunter, Project Manager, Falco AI, HR, Videoconf-eLearning) and two-three distant ship silhouettes stuck on horizon">
+  <title>Slide 25 — Chiusura (Adesso. 7 piattaforme + navi ferme)</title>
+  <desc>Bussola arancione centrale grande + 7 piccole icone tool che orbitano attorno: DVR, Preventivatore, LeadHunter, Project Manager, Falco AI, HR, Videoconf-eLearning. Rotation lenta + counter-rotation interna. All'orizzonte 2-3 silhouette di nave ferme.</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly25" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="25"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur25" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazeChiusura" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <filter id="softGlow25" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="distantHaze" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+
+    <!-- Compass -->
+    <radialGradient id="caseChiusura" cx="32%" cy="22%" r="85%">
+      <stop offset="0%" stop-color="#FFC890"/>
+      <stop offset="48%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#6E2308"/>
+    </radialGradient>
+    <radialGradient id="faceChiusura" cx="32%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#D9CCAE"/>
+    </radialGradient>
+    <linearGradient id="needleHotChi" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FFC890"/>
+      <stop offset="100%" stop-color="#9C3A0E"/>
+    </linearGradient>
+    <linearGradient id="needleDarkChi" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#3A2C1A"/>
+      <stop offset="100%" stop-color="#0A0706"/>
+    </linearGradient>
+
+    <!-- Orbiting card -->
+    <radialGradient id="cardChi" cx="32%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#E0D6C0"/>
+    </radialGradient>
+
+    <!-- Horizon distant -->
+    <linearGradient id="horizonChi" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5EFE6"/>
+      <stop offset="100%" stop-color="#C8C0AE"/>
+    </linearGradient>
+    <linearGradient id="distantShip" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#7A8794"/>
+      <stop offset="100%" stop-color="#2C4357"/>
+    </linearGradient>
+
+    <radialGradient id="haloChi" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.34"/>
+      <stop offset="60%" stop-color="#FF6B1A" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette25" cx="50%" cy="50%" r="70%">
+      <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.34"/>
+    </radialGradient>
+  </defs>
+
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.045" filter="url(#painterly25)"/>
 
-  <!-- Soft pulsing halo (stronger than slide 13 — culmination) -->
-  <g transform="translate(540 540)">
-    <circle cx="0" cy="0" r="340" fill="#FF6B1A" opacity="0.06">
-      <animate attributeName="r" values="320;380;320" dur="3.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.06;0.14;0.06" dur="3.6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="0" cy="0" r="260" fill="#FF6B1A" opacity="0.12">
-      <animate attributeName="r" values="240;290;240" dur="3.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.10;0.22;0.10" dur="3.6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="0" cy="0" r="180" fill="#FF6B1A" opacity="0.15">
-      <animate attributeName="opacity" values="0.12;0.25;0.12" dur="3.6s" repeatCount="indefinite"/>
-    </circle>
+  <!-- =========================================================
+       FAR HORIZON BAND with distant ships (3 silhouettes ferme)
+       Far layer = atmospheric perspective, hazy, low saturation
+       ========================================================= -->
+  <g opacity="0.7" filter="url(#distantHaze)">
+    <!-- horizon wash -->
+    <rect x="0" y="180" width="1080" height="58" fill="url(#horizonChi)" opacity="0.7"/>
+    <!-- horizon line -->
+    <path d="M 60 238 Q 540 230 1020 238" fill="none" stroke="#1A1614" stroke-width="1.4" opacity="0.4"/>
+
+    <!-- Ship 1 (left, very small) -->
+    <g transform="translate(160 232)">
+      <path d="M -22 0 Q -8 6 14 6 Q 24 4 22 -2 Q 14 -4 -16 -4 Q -24 -3 -22 0 Z"
+            fill="url(#distantShip)" stroke="#0A0706" stroke-width="1" stroke-linejoin="round"/>
+      <path d="M -2 -4 L -2 -22" stroke="#0A0706" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M -2 -20 Q 8 -16 14 -10" fill="none" stroke="#0A0706" stroke-width="1.2"/>
+    </g>
+
+    <!-- Ship 2 (center-right, slightly bigger) -->
+    <g transform="translate(640 230)">
+      <path d="M -28 0 Q -10 8 18 8 Q 30 6 28 -2 Q 18 -4 -20 -4 Q -32 -2 -28 0 Z"
+            fill="url(#distantShip)" stroke="#0A0706" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M -4 -4 L -4 -28" stroke="#0A0706" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M -4 -26 Q 10 -20 18 -12" fill="none" stroke="#0A0706" stroke-width="1.2"/>
+      <path d="M -4 -16 Q -16 -10 -22 -6" fill="none" stroke="#0A0706" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- Ship 3 (far right, smallest) -->
+    <g transform="translate(900 234)">
+      <path d="M -16 0 Q -6 4 12 4 Q 20 3 18 -2 Q 10 -3 -12 -3 Q -18 -2 -16 0 Z"
+            fill="url(#distantShip)" stroke="#0A0706" stroke-width="0.9" stroke-linejoin="round"/>
+      <path d="M 0 -3 L 0 -18" stroke="#0A0706" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M 0 -16 Q 8 -12 12 -8" fill="none" stroke="#0A0706" stroke-width="1"/>
+    </g>
   </g>
 
-  <!-- Orbit ring (almost invisible thin black circle) -->
-  <circle cx="540" cy="540" r="380" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,8" opacity="0.35"/>
-
-  <!-- CENTRAL COMPASS (same identity as slide 13, slightly larger glow) -->
-  <g transform="translate(540 540)">
-    <!-- Outer ring -->
-    <circle cx="0" cy="0" r="180" fill="#F5EFE6" stroke="#1A1614" stroke-width="3.5" stroke-linecap="round"/>
-    <circle cx="0" cy="0" r="170" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.5"/>
-
-    <!-- Ticks -->
-    <g stroke="#1A1614" stroke-width="3" stroke-linecap="round">
-      <line x1="0" y1="-180" x2="0" y2="-158"/>
-      <line x1="90" y1="-156" x2="78" y2="-136"/>
-      <line x1="156" y1="-90" x2="136" y2="-78"/>
-      <line x1="180" y1="0" x2="158" y2="0"/>
-      <line x1="156" y1="90" x2="136" y2="78"/>
-      <line x1="90" y1="156" x2="78" y2="136"/>
-      <line x1="0" y1="180" x2="0" y2="158"/>
-      <line x1="-90" y1="156" x2="-78" y2="136"/>
-      <line x1="-156" y1="90" x2="-136" y2="78"/>
-      <line x1="-180" y1="0" x2="-158" y2="0"/>
-      <line x1="-156" y1="-90" x2="-136" y2="-78"/>
-      <line x1="-90" y1="-156" x2="-78" y2="-136"/>
+  <!-- =========================================================
+       Mandala (Cartoon Saloon)
+       ========================================================= -->
+  <g transform="translate(540 600)" opacity="0.42" filter="url(#hazeChiusura)">
+    <circle r="478" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="426" fill="none" stroke="#1A1614" stroke-width="1.4" stroke-dasharray="3,8"/>
+    <circle r="382" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <circle r="334" fill="none" stroke="#1A1614" stroke-width="1.6" stroke-dasharray="5,11"/>
+    <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round">
+      <line x1="0" y1="-478" x2="0" y2="-460"/>
+      <line x1="338" y1="-338" x2="326" y2="-326"/>
+      <line x1="478" y1="0" x2="460" y2="0"/>
+      <line x1="338" y1="338" x2="326" y2="326"/>
+      <line x1="0" y1="478" x2="0" y2="460"/>
+      <line x1="-338" y1="338" x2="-326" y2="326"/>
+      <line x1="-478" y1="0" x2="-460" y2="0"/>
+      <line x1="-338" y1="-338" x2="-326" y2="-326"/>
     </g>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="200s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
 
-    <!-- Inner dial -->
-    <circle cx="0" cy="0" r="122" fill="none" stroke="#1A1614" stroke-width="2.5"/>
+  <!-- Big halo behind compass -->
+  <ellipse cx="540" cy="600" rx="340" ry="320" fill="url(#haloChi)">
+    <animate attributeName="rx" values="310;360;310" dur="5.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    <animate attributeName="ry" values="296;340;296" dur="5.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+  <circle cx="540" cy="600" r="180" fill="#FF6B1A" opacity="0.14" filter="url(#softGlow25)">
+    <animate attributeName="opacity" values="0.08;0.22;0.08" dur="5.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
 
-    <!-- Windrose petals -->
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#F5EFE6">
-      <polygon points="0,-118 16,0 0,118 -16,0"/>
-      <polygon points="-118,0 0,-16 118,0 0,16"/>
-      <polygon points="-82,-82 0,-11 82,82 0,11" opacity="0.35"/>
-      <polygon points="82,-82 11,0 -82,82 -11,0" opacity="0.35"/>
-    </g>
-
-    <!-- Needle (orange, narrative — slow rotation suggesting "arrived" gentle drift) -->
+  <!-- =========================================================
+       7 ORBITING ICONS — at radius 320 from center (540, 600)
+       Slow rotation (60s), with counter-rotation per node
+       Order: DVR, Preventivatore, Lead, PM, Falco, HR, Videoconf
+       ========================================================= -->
+  <g transform="translate(540 600)">
     <g>
-      <g>
-        <polygon points="0,-104 12,0 0,7 -12,0" fill="#FF6B1A" stroke="#1A1614" stroke-width="2" stroke-linejoin="round"/>
-        <polygon points="0,104 12,0 0,-7 -12,0" fill="#F5EFE6" stroke="#1A1614" stroke-width="2" stroke-linejoin="round"/>
-        <animateTransform attributeName="transform" type="rotate" values="-4;4;-4" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="0;360" dur="60s" repeatCount="indefinite"/>
+
+      <!-- NODE 1 — DVR (checkmark clipboard) at 0° (right) -->
+      <g transform="translate(320 0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- clip on top -->
+          <path d="M -10 -28 Q -10 -34 -4 -34 L 4 -34 Q 10 -34 10 -28 L 10 -22 L -10 -22 Z" fill="#1A1614"/>
+          <!-- doc lines -->
+          <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round" opacity="0.55">
+            <path d="M -18 -12 Q -2 -14 14 -12"/>
+            <path d="M -18 -4 Q 0 -6 16 -4"/>
+            <path d="M -18 4 Q -4 2 10 4"/>
+          </g>
+          <!-- orange check -->
+          <path d="M -10 14 Q -2 22 4 24 Q 12 16 22 4" fill="none" stroke="#FF6B1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
       </g>
-      <circle cx="0" cy="0" r="10" fill="#1A1614"/>
-      <circle cx="0" cy="0" r="5" fill="#FF6B1A">
-        <animate attributeName="r" values="3;7;3" dur="1.8s" repeatCount="indefinite"/>
-      </circle>
+
+      <!-- NODE 2 — Preventivatore (price sheet + signature) at ~51° -->
+      <g transform="translate(201.4 248.7)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- sheet -->
+          <path d="M -18 -20 Q -22 -24 -14 -24 L 16 -24 Q 24 -24 22 -20 L 22 22 Q 24 26 18 26 L -16 26 Q -22 26 -22 22 Z"
+                fill="#FAF5EC" stroke="#1A1614" stroke-width="2"/>
+          <!-- lines -->
+          <g stroke="#1A1614" stroke-width="1.2" stroke-linecap="round" opacity="0.55">
+            <path d="M -14 -12 Q 0 -14 12 -12"/>
+            <path d="M -14 -4 Q 2 -6 16 -4"/>
+            <path d="M -14 4 Q -2 2 8 4"/>
+          </g>
+          <!-- orange signature flourish -->
+          <path d="M -12 16 Q -4 8 4 14 Q 10 22 18 14" fill="none" stroke="#FF6B1A" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+      </g>
+
+      <!-- NODE 3 — LeadHunter (map pin) at ~103° -->
+      <g transform="translate(-71.9 312.0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- pin -->
+          <path d="M 0 -16 Q 14 -16 14 0 Q 14 12 0 22 Q -14 12 -14 0 Q -14 -16 0 -16 Z"
+                fill="#FF6B1A" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+          <circle cx="0" cy="-2" r="4" fill="#FAF5EC"/>
+        </g>
+      </g>
+
+      <!-- NODE 4 — Project Manager (kanban) at ~154° -->
+      <g transform="translate(-287.6 140.2)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- kanban -->
+          <g stroke="#1A1614" stroke-width="1.6" stroke-linecap="round" fill="none">
+            <path d="M -22 -14 L -22 18"/>
+            <path d="M -2 -14 L -2 18"/>
+            <path d="M 18 -14 L 18 18"/>
+          </g>
+          <rect x="-19" y="-10" width="14" height="8" rx="1.5" fill="#1A1614" opacity="0.5"/>
+          <rect x="1" y="-10" width="14" height="8" rx="1.5" fill="#FF6B1A"/>
+          <rect x="21" y="-10" width="14" height="8" rx="1.5" fill="#1A1614" opacity="0.4"/>
+          <rect x="-19" y="2" width="14" height="6" rx="1.5" fill="#1A1614" opacity="0.4"/>
+          <rect x="1" y="4" width="14" height="6" rx="1.5" fill="#1A1614" opacity="0.4"/>
+        </g>
+      </g>
+
+      <!-- NODE 5 — Falco AI (voice wave + bird) at ~206° -->
+      <g transform="translate(-287.6 -140.2)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- simplified falcon head silhouette -->
+          <path d="M -10 -4 Q -6 -16 6 -16 Q 18 -14 22 -2 Q 16 4 6 4 Q -8 6 -10 -4 Z" fill="#1A1614"/>
+          <!-- beak -->
+          <path d="M 18 -4 Q 26 -2 24 4 Q 18 4 16 0 Z" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.2"/>
+          <!-- voice arcs -->
+          <g stroke="#FF6B1A" stroke-width="2" stroke-linecap="round" fill="none">
+            <path d="M -18 10 Q -22 14 -18 20"/>
+            <path d="M -14 16 Q -20 22 -14 28"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- NODE 6 — HR / Welfare (people + heart) at ~257° -->
+      <g transform="translate(-71.9 -312.0)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- 2 people silhouettes -->
+          <circle cx="-10" cy="-6" r="5" fill="#1A1614"/>
+          <path d="M -18 8 Q -18 0 -10 -2 L -10 12 Z" fill="#1A1614"/>
+          <circle cx="8" cy="-8" r="6" fill="#1A1614"/>
+          <path d="M -2 10 Q -2 0 8 -2 Q 18 0 18 10 Z" fill="#1A1614"/>
+          <!-- heart accent -->
+          <path d="M 12 18 Q 8 14 4 18 Q 4 22 12 26 Q 20 22 20 18 Q 16 14 12 18 Z" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.2"/>
+        </g>
+      </g>
+
+      <!-- NODE 7 — Videoconf / eLearning (screen + play) at ~309° -->
+      <g transform="translate(201.4 -248.7)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
+          <circle r="36" fill="url(#cardChi)" stroke="#1A1614" stroke-width="2.8"/>
+          <!-- screen -->
+          <path d="M -22 -14 Q -24 -18 -18 -18 L 18 -18 Q 24 -18 22 -14 L 22 12 Q 24 16 18 16 L -18 16 Q -24 16 -22 12 Z"
+                fill="#1A1614" stroke="#1A1614" stroke-width="1.6"/>
+          <!-- screen inner -->
+          <rect x="-18" y="-14" width="36" height="26" rx="2" fill="#FAF5EC" opacity="0.9"/>
+          <!-- play triangle (orange) -->
+          <path d="M -5 -5 L 9 0 L -5 5 Z" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.2" stroke-linejoin="round"/>
+          <!-- stand -->
+          <path d="M -8 22 Q 0 18 8 22" fill="none" stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </g>
     </g>
   </g>
 
-  <!-- 5 ORBITING TOOL ICONS (each at a vertex of a pentagon, all in black ink) -->
-  <!-- Wrapped in a group with rotation animation -->
-  <g transform="translate(540 540)">
+  <!-- =========================================================
+       CENTRAL HERO COMPASS (large)
+       ========================================================= -->
+  <g transform="translate(540 600)">
+    <ellipse cx="0" cy="170" rx="160" ry="20" fill="#1A1614" opacity="0.26" filter="url(#contactBlur25)"/>
+
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
-
-      <!-- Icon 1: TOP — Stack of papers (DVR Validator) -->
-      <g transform="translate(0 -380)">
-        <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-          <rect x="-22" y="-22" width="40" height="50" rx="3"/>
-          <rect x="-18" y="-16" width="40" height="50" rx="3"/>
-          <rect x="-14" y="-10" width="40" height="50" rx="3"/>
+      <animateTransform attributeName="transform" type="scale"
+                        values="1 1;1.025 1.025;1 1" dur="5.4s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
+                        additive="sum"/>
+      <g transform="rotate(-2)">
+        <circle r="158" fill="url(#caseChiusura)" stroke="#0A0706" stroke-width="4.5"/>
+        <circle r="146" fill="none" stroke="#0A0706" stroke-width="1.4" opacity="0.55"/>
+        <circle r="140" fill="none" stroke="#0A0706" stroke-width="1" stroke-dasharray="2,5" opacity="0.4"/>
+        <circle r="126" fill="url(#faceChiusura)" stroke="#0A0706" stroke-width="2.8"/>
+        <g stroke="#0A0706" stroke-width="2.2" stroke-linecap="round">
+          <line x1="0" y1="-126" x2="0" y2="-108"/>
+          <line x1="64" y1="-108" x2="56" y2="-94"/>
+          <line x1="108" y1="-62" x2="94" y2="-56"/>
+          <line x1="126" y1="0" x2="108" y2="0"/>
+          <line x1="108" y1="62" x2="94" y2="56"/>
+          <line x1="64" y1="108" x2="56" y2="94"/>
+          <line x1="0" y1="126" x2="0" y2="108"/>
+          <line x1="-64" y1="108" x2="-56" y2="94"/>
+          <line x1="-108" y1="62" x2="-94" y2="56"/>
+          <line x1="-126" y1="0" x2="-108" y2="0"/>
+          <line x1="-108" y1="-62" x2="-94" y2="-56"/>
+          <line x1="-64" y1="-108" x2="-56" y2="-94"/>
         </g>
-        <!-- Tiny checkmark on top sheet -->
-        <polyline points="-2,12 4,18 14,4" fill="none" stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Counter-rotate so icon stays upright -->
-        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="40s" repeatCount="indefinite" additive="sum"/>
-      </g>
-
-      <!-- Icon 2: UPPER-RIGHT — Funnel (AppaltoAI) -->
-      <g transform="translate(361 -117)">
-        <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-          <polygon points="-28,-22 28,-22 12,8 12,28 -12,28 -12,8"/>
+        <path d="M -110 -80 Q -72 -136 0 -144" fill="none"
+              stroke="#FFE3C2" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="-84" cy="-96" r="5.5" fill="#FFF" opacity="0.9"/>
+        <circle cx="-60" cy="-118" r="2.2" fill="#FFF" opacity="0.7"/>
+        <g>
+          <path d="M 0 -104 L 14 0 L 0 12 L -14 0 Z" fill="url(#needleHotChi)" stroke="#0A0706" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M 0 12 L 14 0 L 0 104 L -14 0 Z" fill="url(#needleDarkChi)" stroke="#0A0706" stroke-width="1.8" stroke-linejoin="round"/>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="-2;2;-2" dur="5s" repeatCount="indefinite"
+                            calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
         </g>
-        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="40s" repeatCount="indefinite" additive="sum"/>
-      </g>
-
-      <!-- Icon 3: LOWER-RIGHT — Map pin (LeadHunter) -->
-      <g transform="translate(223 307)">
-        <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-          <path d="M 0,-25 C 14,-25 22,-14 22,0 C 22,16 0,32 0,32 C 0,32 -22,16 -22,0 C -22,-14 -14,-25 0,-25 Z"/>
-          <circle cx="0" cy="-3" r="6" fill="#1A1614"/>
-        </g>
-        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="40s" repeatCount="indefinite" additive="sum"/>
-      </g>
-
-      <!-- Icon 4: LOWER-LEFT — Kanban card (Project Manager) -->
-      <g transform="translate(-223 307)">
-        <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-          <rect x="-25" y="-18" width="50" height="36" rx="4"/>
-          <line x1="-15" y1="-6" x2="15" y2="-6" stroke-width="2" opacity="0.7"/>
-          <line x1="-15" y1="2" x2="10" y2="2" stroke-width="2" opacity="0.7"/>
-          <line x1="-15" y1="10" x2="12" y2="10" stroke-width="2" opacity="0.7"/>
-        </g>
-        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="40s" repeatCount="indefinite" additive="sum"/>
-      </g>
-
-      <!-- Icon 5: UPPER-LEFT — Heart (Welfare) -->
-      <g transform="translate(-361 -117)">
-        <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-          <path d="
-            M 0,22
-            C -12,12 -28,0 -28,-12
-            C -28,-22 -18,-28 -10,-25
-            C -4,-23 0,-18 0,-13
-            C 0,-18 4,-23 10,-25
-            C 18,-28 28,-22 28,-12
-            C 28,0 12,12 0,22 Z
-          "/>
-        </g>
-        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="40s" repeatCount="indefinite" additive="sum"/>
+        <circle r="9" fill="#0A0706"/>
+        <circle r="3.5" fill="#FFE3C2" opacity="0.6"/>
       </g>
     </g>
   </g>
+
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette25)" pointer-events="none"/>
 </svg>

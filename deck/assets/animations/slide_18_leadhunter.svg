@@ -1,108 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 18 — LeadHunter AI: stylized map of Italy with orange pins">
-  <title>Slide 18 — LeadHunter AI</title>
-  <desc>Mappa Italia stilizzata, lente di ingrandimento, 5 pin arancioni distribuiti.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 18 — LeadHunter: pictorial silhouette of Italy with seven pulsing orange pins and an isometric magnifying glass moving across">
+  <title>Slide 18 — LeadHunter (mappa + 7 pin + lente)</title>
+  <desc>Mappa Italia stilizzata Cartoon Saloon (silhouette pittorica, NON precisa geograficamente) con 7 pin arancioni che pulsano in posti diversi + lente d'ingrandimento isometrica che si muove sopra.</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly18" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="18"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur18" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazeMap" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="softGlow18" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <!-- Italy silhouette gradient (cool deep navy → ink) -->
+    <linearGradient id="italyFill" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A4D60"/>
+      <stop offset="55%" stop-color="#22303E"/>
+      <stop offset="100%" stop-color="#0E141C"/>
+    </linearGradient>
+
+    <!-- Pin -->
+    <linearGradient id="pin18" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FFC890"/>
+      <stop offset="60%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#7A2A0A"/>
+    </linearGradient>
+
+    <!-- Magnifying glass lens (cream tinted) -->
+    <radialGradient id="lensFill" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FAF5EC" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#FAF5EC" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FAF5EC" stop-opacity="0.05"/>
+    </radialGradient>
+    <linearGradient id="lensRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A3826"/>
+      <stop offset="100%" stop-color="#1A0F08"/>
+    </linearGradient>
+    <linearGradient id="lensHandle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3F3328"/>
+      <stop offset="100%" stop-color="#1A1209"/>
+    </linearGradient>
+
+    <radialGradient id="vignette18" cx="50%" cy="50%" r="70%">
+      <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.28"/>
+    </radialGradient>
+  </defs>
+
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly18)"/>
 
-  <!-- ITALY OUTLINE — stylized "boot" shape, single continuous line, simplified -->
-  <g transform="translate(540 540)" fill="#F5EFE6" stroke="#1A1614" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-    <!-- Mainland boot, simplified path -->
-    <path d="
-      M -80,-300
-      C -60,-310 -20,-300 10,-280
-      C 60,-260 100,-250 140,-220
-      C 170,-200 175,-160 160,-130
-      C 145,-100 110,-90 80,-70
-      C 50,-50 30,-20 20,20
-      C 10,50 0,90 -10,130
-      C -25,170 -50,200 -85,230
-      C -120,255 -150,260 -160,290
-      C -165,310 -150,330 -120,330
-      C -85,335 -50,310 -20,290
-      C 10,275 40,260 70,260
-      C 100,260 130,275 140,300
-      C 150,320 130,345 100,350
-      C 60,355 20,345 -20,360
-      C -50,370 -80,395 -120,400
-      C -160,403 -200,388 -220,360
-      C -240,330 -240,290 -225,260
-      C -200,220 -180,180 -170,140
-      C -160,90 -160,30 -150,-20
-      C -140,-70 -130,-130 -120,-180
-      C -115,-220 -110,-260 -95,-285
-      C -88,-298 -85,-303 -80,-300 Z
-    "/>
-    <!-- Sicily (separate small island) -->
-    <ellipse cx="-130" cy="430" rx="55" ry="22" transform="rotate(-12 -130 430)"/>
-    <!-- Sardinia (separate, to the left) -->
-    <ellipse cx="-280" cy="250" rx="34" ry="56" transform="rotate(8 -280 250)"/>
+  <!-- Mandala -->
+  <g transform="translate(540 540)" opacity="0.3" filter="url(#hazeMap)">
+    <circle r="470" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="416" fill="none" stroke="#1A1614" stroke-width="1.3" stroke-dasharray="3,8"/>
+    <circle r="364" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="220s" repeatCount="indefinite"
+                      additive="sum"/>
   </g>
 
-  <!-- 5 ORANGE PIN dots scattered across the boot, distributed naturally -->
+  <!-- Ground/sea wash beneath Italy -->
+  <ellipse cx="540" cy="900" rx="320" ry="22" fill="#1A1614" opacity="0.22" filter="url(#contactBlur18)"/>
+
+  <!-- =========================================================
+       ITALY — pictorial silhouette (Cartoon Saloon, all Q Bezier)
+       Asymmetric, not anatomically precise
+       ========================================================= -->
+  <g transform="translate(540 540)">
+
+    <!-- Mainland -->
+    <path d="M -40 -340
+             Q -10 -360 30 -344
+             Q 56 -334 60 -312
+             Q 64 -288 50 -270
+             Q 60 -260 80 -252
+             Q 100 -240 92 -218
+             Q 86 -200 64 -196
+             Q 52 -190 50 -170
+             Q 56 -148 78 -140
+             Q 110 -128 122 -100
+             Q 132 -76 118 -54
+             Q 100 -32 70 -28
+             Q 50 -22 44 -8
+             Q 40 16 50 38
+             Q 60 60 70 88
+             Q 76 116 60 138
+             Q 40 158 14 162
+             Q -8 168 -10 192
+             Q -8 222 6 248
+             Q 20 282 6 314
+             Q -8 340 -38 336
+             Q -64 326 -62 296
+             Q -56 264 -68 232
+             Q -82 200 -82 168
+             Q -82 142 -64 122
+             Q -42 102 -38 76
+             Q -38 50 -56 30
+             Q -76 8 -82 -22
+             Q -86 -54 -68 -76
+             Q -50 -94 -38 -118
+             Q -32 -142 -42 -168
+             Q -56 -198 -58 -228
+             Q -58 -260 -52 -288
+             Q -50 -318 -40 -340 Z"
+          fill="url(#italyFill)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- Sicily (rough triangle, Bezier) -->
+    <path d="M -110 350 Q -80 340 -50 358 Q -28 370 -56 384 Q -90 388 -114 372 Q -124 360 -110 350 Z"
+          fill="url(#italyFill)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+
+    <!-- Sardinia -->
+    <path d="M -240 80 Q -226 60 -210 70 Q -200 96 -208 132 Q -218 156 -236 148 Q -252 124 -250 100 Q -250 86 -240 80 Z"
+          fill="url(#italyFill)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+
+    <!-- Inner contour detail (variable weight, organic) -->
+    <g stroke="#0A0706" stroke-width="1.2" fill="none" opacity="0.5">
+      <path d="M -40 -300 Q -10 -320 24 -304"/>
+      <path d="M 60 -100 Q 80 -84 100 -72"/>
+      <path d="M -10 100 Q 8 120 -2 152"/>
+    </g>
+
+    <!-- Rim light (top-right, atmospheric) -->
+    <path d="M 20 -348 Q 50 -340 60 -316" fill="none"
+          stroke="#FAF5EC" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- =========================================================
+         7 ORANGE PINS in different cities (asymmetric)
+         Each pulses on its own timing
+         ========================================================= -->
+
+    <!-- Pin 1 — north (Milan area) -->
+    <g transform="translate(-10 -240)">
+      <circle cx="0" cy="0" r="22" fill="#FF6B1A" opacity="0.2" filter="url(#softGlow18)">
+        <animate attributeName="r" values="14;30;14" dur="3s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -18 Q 12 -18 12 -6 Q 12 6 0 18 Q -12 6 -12 -6 Q -12 -18 0 -18 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="0" cy="-6" r="4" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+
+    <!-- Pin 2 — Venice area -->
+    <g transform="translate(40 -200)">
+      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.2" filter="url(#softGlow18)">
+        <animate attributeName="r" values="12;26;12" dur="3.4s" begin="0.3s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.4s" begin="0.3s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -14 Q 9 -14 9 -4 Q 9 4 0 14 Q -9 4 -9 -4 Q -9 -14 0 -14 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="0" cy="-4" r="3" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+
+    <!-- Pin 3 — Florence area -->
+    <g transform="translate(-20 -110)">
+      <circle cx="0" cy="0" r="20" fill="#FF6B1A" opacity="0.2" filter="url(#softGlow18)">
+        <animate attributeName="r" values="13;28;13" dur="3.2s" begin="0.6s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.2s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -16 Q 11 -16 11 -5 Q 11 5 0 16 Q -11 5 -11 -5 Q -11 -16 0 -16 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.3" stroke-linejoin="round"/>
+      <circle cx="0" cy="-5" r="3.5" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+
+    <!-- Pin 4 — Rome area -->
+    <g transform="translate(8 -10)">
+      <circle cx="0" cy="0" r="24" fill="#FF6B1A" opacity="0.22" filter="url(#softGlow18)">
+        <animate attributeName="r" values="16;32;16" dur="3.6s" begin="0.9s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.12;0.45;0.12" dur="3.6s" begin="0.9s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -20 Q 13 -20 13 -6 Q 13 6 0 20 Q -13 6 -13 -6 Q -13 -20 0 -20 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.6" stroke-linejoin="round"/>
+      <circle cx="0" cy="-6" r="4.5" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+
+    <!-- Pin 5 — Naples area -->
+    <g transform="translate(36 80)">
+      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.2" filter="url(#softGlow18)">
+        <animate attributeName="r" values="12;26;12" dur="3.2s" begin="1.2s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -14 Q 9 -14 9 -4 Q 9 4 0 14 Q -9 4 -9 -4 Q -9 -14 0 -14 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="0" cy="-4" r="3" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+
+    <!-- Pin 6 — south (Bari area) -->
+    <g transform="translate(-32 200)">
+      <circle cx="0" cy="0" r="20" fill="#FF6B1A" opacity="0.2" filter="url(#softGlow18)">
+        <animate attributeName="r" values="13;28;13" dur="3.4s" begin="1.5s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.4s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -16 Q 11 -16 11 -5 Q 11 5 0 16 Q -11 5 -11 -5 Q -11 -16 0 -16 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.3" stroke-linejoin="round"/>
+      <circle cx="0" cy="-5" r="3.5" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+
+    <!-- Pin 7 — Sicily -->
+    <g transform="translate(-86 366)">
+      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.2" filter="url(#softGlow18)">
+        <animate attributeName="r" values="12;26;12" dur="3.8s" begin="1.8s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.8s" begin="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 0 -14 Q 9 -14 9 -4 Q 9 4 0 14 Q -9 4 -9 -4 Q -9 -14 0 -14 Z"
+            fill="url(#pin18)" stroke="#0A0706" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="0" cy="-4" r="3" fill="#FAF5EC" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       MAGNIFYING GLASS — moves across the map (Bezier path)
+       ========================================================= -->
   <g>
-    <!-- Pin 1 (Milano area, top) -->
-    <g transform="translate(485 305)">
-      <circle cx="0" cy="0" r="12" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-      <circle cx="0" cy="0" r="20" fill="#FF6B1A" opacity="0.18">
-        <animate attributeName="r" values="14;26;14" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    <!-- Pin 2 (Veneto area) -->
-    <g transform="translate(600 360)">
-      <circle cx="0" cy="0" r="11" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.18">
-        <animate attributeName="r" values="13;24;13" dur="3.4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.4s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    <!-- Pin 3 (Roma/Lazio center) -->
-    <g transform="translate(560 580)">
-      <circle cx="0" cy="0" r="14" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-      <circle cx="0" cy="0" r="22" fill="#FF6B1A" opacity="0.18">
-        <animate attributeName="r" values="16;30;16" dur="3.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    <!-- Pin 4 (Napoli/Campania) -->
-    <g transform="translate(530 720)">
-      <circle cx="0" cy="0" r="11" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-      <circle cx="0" cy="0" r="18" fill="#FF6B1A" opacity="0.18">
-        <animate attributeName="r" values="13;24;13" dur="3.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.6s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    <!-- Pin 5 (Sicilia) -->
-    <g transform="translate(420 970)">
-      <circle cx="0" cy="0" r="10" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-      <circle cx="0" cy="0" r="17" fill="#FF6B1A" opacity="0.18">
-        <animate attributeName="r" values="12;22;12" dur="3.8s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.8s" repeatCount="indefinite"/>
-      </circle>
+    <g transform="translate(540 540)">
+      <!-- glass shadow -->
+      <ellipse cx="0" cy="116" rx="92" ry="10" fill="#1A1614" opacity="0.32" filter="url(#contactBlur18)"/>
+      <!-- handle -->
+      <path d="M 60 60 Q 90 90 124 124 Q 148 144 154 138 Q 160 132 138 110 Q 104 76 76 48 Z"
+            fill="url(#lensHandle)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- lens rim -->
+      <circle r="92" fill="none" stroke="url(#lensRim)" stroke-width="9"/>
+      <circle r="92" fill="url(#lensFill)" stroke="#0A0706" stroke-width="2.6"/>
+      <!-- inner rim detail -->
+      <circle r="80" fill="none" stroke="#0A0706" stroke-width="1.4" opacity="0.4"/>
+      <!-- specular highlight (Disney sparkle) -->
+      <path d="M -64 -46 Q -36 -78 16 -82" fill="none"
+            stroke="#FFE3C2" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+      <circle cx="-48" cy="-58" r="5" fill="#FFF" opacity="0.85"/>
+      <circle cx="-22" cy="-78" r="2.4" fill="#FFF" opacity="0.7"/>
+
+      <!-- glass moves on a curved Bezier path across the map -->
+      <animateTransform attributeName="transform" type="translate"
+                        values="380,440; 560,520; 480,640; 600,560; 380,440"
+                        keyTimes="0;0.25;0.5;0.75;1"
+                        dur="22s" repeatCount="indefinite"
+                        calcMode="spline"
+                        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
   </g>
 
-  <!-- Thin connection lines between some pins (sparse constellation) -->
-  <g stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.45" stroke-dasharray="3,5">
-    <line x1="485" y1="305" x2="600" y2="360"/>
-    <line x1="600" y1="360" x2="560" y2="580"/>
-    <line x1="560" y1="580" x2="530" y2="720"/>
-    <line x1="530" y1="720" x2="420" y2="970"/>
-  </g>
-
-  <!-- MAGNIFYING GLASS — over a pin (upper right area, hovering near pin 2) -->
-  <g transform="translate(740 380)">
-    <!-- Handle -->
-    <line x1="60" y1="60" x2="120" y2="120" stroke="#1A1614" stroke-width="10" stroke-linecap="round"/>
-    <line x1="60" y1="60" x2="120" y2="120" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
-    <!-- Lens -->
-    <circle cx="0" cy="0" r="65" fill="#F5EFE6" stroke="#1A1614" stroke-width="5"/>
-    <circle cx="0" cy="0" r="58" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.4"/>
-    <!-- Reflection highlight -->
-    <path d="M -40,-30 Q -50,-50 -25,-50" fill="none" stroke="#1A1614" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-    <!-- Animation: gentle hover -->
-    <animateTransform attributeName="transform" type="translate" values="740,380; 740,365; 740,380" dur="4.4s" repeatCount="indefinite"/>
-  </g>
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette18)" pointer-events="none"/>
 </svg>

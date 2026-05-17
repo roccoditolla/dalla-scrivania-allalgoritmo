@@ -1,376 +1,349 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 11A — Setting sail at sunset (Act III climax) — Cartoon Saloon">
-  <title>Scene 11A — Nave salpa al tramonto, vele gonfie</title>
-  <desc>Cartoon Saloon Act III climax: tramonto pittorico (cielo orange→viola→nero), mare 3-layer parallax con riflessi specchiati arancioni, god rays dorati dal sole, nostra nave POV poppa con capitano+ciurma in silhouette back-view che guardano l'orizzonte, 2 navi distanti FERME in silhouette (storyboard cue), bandiera arancione che sventola. Arancione tramonto permesso (atto III culmine).</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 11A — Setting sail at sunset (Disney polish, Act III)">
+  <title>Scene 11A — Nave salpa al tramonto, 3 navi ferme</title>
+  <desc>Disney rewrite per nuovo testo chiusura "altre navi ferme": tramonto pittorico arancione, nave principale che salpa con 4-5 silhouette ciurma (capitano line of action S = dynamic, altri C/I per ruolo), 3 navi ferme distinte in lontananza (vele ammainate / a metà / immobile = diverse fasi di chi non si muove). Stroke variabile, mandala tramonto, vignette.</desc>
 
   <defs>
-    <linearGradient id="s11_sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3A1F4A"/>
-      <stop offset="22%" stop-color="#7A3A4E"/>
-      <stop offset="48%" stop-color="#E08A38"/>
-      <stop offset="72%" stop-color="#F8B868"/>
-      <stop offset="100%" stop-color="#FBE0B8"/>
-    </linearGradient>
-    <linearGradient id="s11_seaFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#A88060"/><stop offset="100%" stop-color="#704A38"/>
-    </linearGradient>
-    <linearGradient id="s11_seaMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#704A38"/><stop offset="100%" stop-color="#3A2A2C"/>
-    </linearGradient>
-    <linearGradient id="s11_seaClose" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3A2A2C"/><stop offset="100%" stop-color="#15100E"/>
-    </linearGradient>
-    <linearGradient id="s11_hull" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2A1810"/>
-      <stop offset="100%" stop-color="#0A0805"/>
-    </linearGradient>
-    <linearGradient id="s11_sail" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FAE0B8"/>
-      <stop offset="55%" stop-color="#E0A468"/>
-      <stop offset="100%" stop-color="#8B5A28"/>
-    </linearGradient>
-    <linearGradient id="s11_sailShadow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#5A3818" stop-opacity="0.35"/>
-      <stop offset="50%" stop-color="#5A3818" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#5A3818" stop-opacity="0.32"/>
-    </linearGradient>
-    <linearGradient id="s11_hullRim" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#FFB870" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="#FFB870" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="s11_sun" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#FFE6B8"/>
-      <stop offset="35%" stop-color="#FFB868"/>
-      <stop offset="70%" stop-color="#F8884A" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#F8884A" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="s11_rays" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#FFD898" stop-opacity="0.7"/>
-      <stop offset="55%" stop-color="#FFD898" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#FFD898" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s11_glitter" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFE6B8" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#FF8A3A" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s11_char" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0A0805"/>
-      <stop offset="100%" stop-color="#020306"/>
-    </linearGradient>
-    <linearGradient id="s11_charRim" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#FFB870" stop-opacity="0.55"/>
-      <stop offset="50%" stop-color="#FFB870" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="s11_woodGrain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.4" numOctaves="3" seed="23"/>
-      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.10  0 0 0 0 0.06  0 0 0 0.55 0"/>
-      <feComposite in2="SourceGraphic" operator="in"/>
-    </filter>
-    <filter id="s11_painterly" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="31"/>
+    <filter id="painterly11a" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="77"/>
       <feDisplacementMap in="SourceGraphic" scale="6"/>
     </filter>
-    <filter id="s11_bloom" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="14"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="haze11a" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.6"/>
     </filter>
-    <filter id="s11_softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3"/>
+    <filter id="softBlur11a" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
     </filter>
-    <filter id="s11_rayBlur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="22"/>
+    <filter id="sunGlow11a" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16"/>
     </filter>
-    <path id="s11_waveBack" d="M 0,0 Q 120,-8 240,0 T 480,0 T 720,0 T 960,0 T 1200,0 T 1440,0 T 1680,0 T 1920,0 L 1920,40 L 0,40 Z"/>
-    <path id="s11_waveMid"  d="M 0,0 Q 90,-12 180,0 T 360,0 T 540,0 T 720,0 T 900,0 T 1080,0 T 1260,0 T 1440,0 T 1620,0 T 1800,0 L 1920,0 L 1920,50 L 0,50 Z"/>
-    <circle id="s11_dust" r="2" fill="#FFD898" filter="url(#s11_softGlow)"/>
+
+    <!-- Sunset sky: orange → violet → ink (single light: sun centered) -->
+    <linearGradient id="sunsetSky" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#3F2854"/>
+      <stop offset="35%" stop-color="#9C4830"/>
+      <stop offset="65%" stop-color="#FF8A3D"/>
+      <stop offset="90%" stop-color="#FFB570"/>
+      <stop offset="100%" stop-color="#F2D9C2"/>
+    </linearGradient>
+
+    <!-- Sun core (off-center horizontal for asymmetry) -->
+    <radialGradient id="sunCore" cx="48%" cy="65%" r="22%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#FFE0B0" stop-opacity="0.95"/>
+      <stop offset="80%" stop-color="#FF8A3D" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FF8A3D" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sea sunset (reflective, warm) -->
+    <linearGradient id="seaFar11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFB570"/>
+      <stop offset="100%" stop-color="#A86040"/>
+    </linearGradient>
+    <linearGradient id="seaMid11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7A3A2A"/>
+      <stop offset="100%" stop-color="#3A1E20"/>
+    </linearGradient>
+    <linearGradient id="seaNear11a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A1820"/>
+      <stop offset="100%" stop-color="#0A0508"/>
+    </linearGradient>
+
+    <radialGradient id="hullSunset" cx="30%" cy="25%" r="100%">
+      <stop offset="0%" stop-color="#2A1812"/>
+      <stop offset="55%" stop-color="#160B08"/>
+      <stop offset="100%" stop-color="#04020A"/>
+    </radialGradient>
+    <radialGradient id="sailSunset" cx="50%" cy="20%" r="100%">
+      <stop offset="0%" stop-color="#FFE0B0"/>
+      <stop offset="50%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#7A3A2A"/>
+    </radialGradient>
+
+    <radialGradient id="vignette11a" cx="50%" cy="55%" r="68%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+    </radialGradient>
   </defs>
 
-  <!-- Slow dolly forward -->
-  <g transform="translate(960 540)">
+  <!-- SKY -->
+  <rect width="1920" height="700" fill="url(#sunsetSky)"/>
+  <rect width="1920" height="700" fill="#A86040" opacity="0.06" filter="url(#painterly11a)"/>
+
+  <!-- DECORATIVE MANDALA tramonto -->
+  <g transform="translate(960 480)" opacity="0.3" filter="url(#haze11a)">
+    <circle r="400" fill="none" stroke="#FF6B1A" stroke-width="1.1" stroke-dasharray="1,9"/>
+    <circle r="344" fill="none" stroke="#FF6B1A" stroke-width="1.3" stroke-dasharray="3,7"/>
+    <circle r="288" fill="none" stroke="#FF6B1A" stroke-width="1" stroke-dasharray="1,5"/>
+    <circle r="232" fill="none" stroke="#FF6B1A" stroke-width="1.5" stroke-dasharray="4,10"/>
+    <g stroke="#FF6B1A" stroke-width="1.4" stroke-linecap="round">
+      <line x1="0" y1="-376" x2="0" y2="-358"/>
+      <line x1="188" y1="-326" x2="178" y2="-310"/>
+      <line x1="326" y1="-188" x2="310" y2="-178"/>
+      <line x1="376" y1="0" x2="358" y2="0"/>
+      <line x1="326" y1="188" x2="310" y2="178"/>
+      <line x1="188" y1="326" x2="178" y2="310"/>
+      <line x1="0" y1="376" x2="0" y2="358"/>
+      <line x1="-188" y1="326" x2="-178" y2="310"/>
+      <line x1="-326" y1="188" x2="-310" y2="178"/>
+      <line x1="-376" y1="0" x2="-358" y2="0"/>
+      <line x1="-326" y1="-188" x2="-310" y2="-178"/>
+      <line x1="-188" y1="-326" x2="-178" y2="-310"/>
+    </g>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="180s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
+
+  <!-- SUN -->
+  <circle cx="920" cy="660" r="140" fill="url(#sunCore)" filter="url(#sunGlow11a)">
+    <animate attributeName="r" values="140;160;140" dur="6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
+  <circle cx="920" cy="660" r="80" fill="#FFE0B0" opacity="0.95"/>
+  <circle cx="920" cy="660" r="60" fill="#FFFFFF" opacity="0.7"/>
+
+  <!-- HORIZON HAZE -->
+  <rect x="0" y="688" width="1920" height="24" fill="#FF8A3D" opacity="0.45" filter="url(#haze11a)"/>
+
+  <!-- SEA FAR (with horizon reflection of sun) -->
+  <rect x="0" y="700" width="1920" height="120" fill="url(#seaFar11a)"/>
+  <!-- Sun reflection column on water (Disney sparkle) -->
+  <path d="M 880 700 Q 920 760 940 820 Q 920 880 880 820 Q 860 760 880 700 Z"
+        fill="#FFE0B0" opacity="0.7" filter="url(#softBlur11a)"/>
+  <g stroke="#FFE0B0" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M 60 738 Q 160 730 240 738 T 400 738 T 560 736 T 720 742"/>
+    <path d="M 1180 760 Q 1280 752 1360 760 T 1520 760 T 1680 758 T 1840 764"/>
+  </g>
+
+  <!-- =====================================================
+       3 NAVI FERME (distinte, in lontananza, lato sinistro)
+       NEW STORYTELLING: diverse fasi di chi non si muove
+       Ship A: vele ammainate (estrema sinistra)
+       Ship B: vele a metà (centro-sinistra)
+       Ship C: completamente immobile, vele giù totalmente (vicino-sinistra)
+       ===================================================== -->
+
+  <!-- SHIP A — vele AMMAINATE (lontana, piccola, sinistra estrema) -->
+  <g transform="translate(180 720)" opacity="0.65" filter="url(#haze11a)">
+    <!-- hull -->
+    <path d="M -40 8 C -32 18 -10 22 10 22 C 28 22 42 18 46 10 L 42 -2
+             C 28 2 0 4 -22 2 C -32 0 -40 -2 -38 -2 Z"
+          fill="#04020A" stroke="#04020A" stroke-width="2" stroke-linejoin="round"/>
+    <!-- 2 bare masts (no sails — ammainate = furled) -->
+    <path d="M -16 -2 L -16 -36" stroke="#04020A" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M 12 -2 L 12 -40" stroke="#04020A" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <!-- yard arms (furled sails as small bundles) -->
+    <path d="M -22 -26 L -10 -26" stroke="#04020A" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 6 -30 L 18 -30" stroke="#04020A" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- micro-furl bundle -->
+    <ellipse cx="-16" cy="-26" rx="6" ry="2" fill="#3A2A1A" opacity="0.7"/>
+    <ellipse cx="12" cy="-30" rx="6" ry="2" fill="#3A2A1A" opacity="0.7"/>
+  </g>
+
+  <!-- SHIP B — vele A METÀ (media distanza, sinistra) -->
+  <g transform="translate(440 700)" opacity="0.78" filter="url(#haze11a)">
+    <!-- hull -->
+    <path d="M -56 12 C -42 26 -14 30 14 30 C 38 30 58 26 64 14 L 60 -2
+             C 40 4 0 6 -32 4 C -46 2 -56 -2 -54 -2 Z"
+          fill="#04020A" stroke="#04020A" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- 2 masts -->
+    <path d="M -22 -2 L -22 -56" stroke="#04020A" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M 16 -2 L 16 -68" stroke="#04020A" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- HALF sails (only bottom half, like dropped/lowered) -->
+    <path d="M -22 -22 C -2 -18 14 -14 22 -2 C 16 8 -4 10 -22 4 C -28 -6 -26 -16 -22 -22 Z"
+          fill="#6F6256" stroke="#04020A" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M 16 -34 C 32 -30 44 -26 50 -14 C 44 -4 26 -2 14 -8 C 8 -18 12 -28 16 -34 Z"
+          fill="#6F6256" stroke="#04020A" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>
+    <!-- horizontal yard arms (clearly only half-deployed) -->
+    <path d="M -28 -22 L -16 -22" stroke="#04020A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M 10 -34 L 22 -34" stroke="#04020A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- SHIP C — COMPLETAMENTE IMMOBILE, vele giù totalmente, scafo inclinato (più vicina) -->
+  <g transform="translate(680 690) rotate(2)" opacity="0.85" filter="url(#haze11a)">
+    <!-- hull (slightly tilted = giving up vibe) -->
+    <path d="M -64 14 C -48 30 -16 34 16 34 C 44 34 66 30 72 18 L 68 -2
+             C 46 4 0 6 -36 4 C -52 2 -64 -2 -62 -2 Z"
+          fill="#04020A" stroke="#04020A" stroke-width="3" stroke-linejoin="round"/>
+    <!-- 3 masts (all bare, no sails at all) -->
+    <path d="M -30 -2 L -30 -64" stroke="#04020A" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M 0 -2 L 0 -80" stroke="#04020A" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M 30 -2 L 30 -68" stroke="#04020A" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- empty cross-yards (totally furled, no sail visible) -->
+    <path d="M -42 -34 L -18 -34" stroke="#04020A" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M -12 -44 L 12 -44" stroke="#04020A" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 18 -36 L 42 -36" stroke="#04020A" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- tiny figure standing immobile on deck (silhouette) -->
+    <ellipse cx="-4" cy="-6" rx="2.5" ry="6" fill="#04020A"/>
+  </g>
+
+  <!-- SEA MID -->
+  <path d="M 0 820 Q 240 802 480 820 T 960 820 T 1440 820 T 1920 824 L 1920 940 L 0 940 Z"
+        fill="url(#seaMid11a)"/>
+  <!-- Sun reflection mid (broken into sparkles) -->
+  <g stroke="#FFB570" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.7">
+    <path d="M 860 840 Q 920 836 980 840"/>
+    <path d="M 860 870 Q 920 866 980 870"/>
+    <path d="M 880 900 Q 920 896 960 900"/>
+  </g>
+  <g stroke="#7A3A2A" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M 100 852 Q 220 844 340 856 T 580 854"/>
+    <path d="M 1240 864 Q 1360 856 1480 868 T 1720 866"/>
+  </g>
+
+  <!-- SEA NEAR -->
+  <path d="M 0 940 Q 240 924 480 940 T 960 940 T 1440 940 T 1920 940 L 1920 1080 L 0 1080 Z"
+        fill="url(#seaNear11a)"/>
+  <g stroke="#5A2A20" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.7">
+    <path d="M 60 980 Q 200 968 340 982 Q 480 998 620 982 T 880 984"/>
+    <path d="M 1040 992 Q 1180 980 1320 994 Q 1460 1010 1600 994 T 1860 996"/>
+  </g>
+
+  <!-- ============== MAIN SHIP (POV poppa, vele gonfie, salpa) ============== -->
+  <g transform="translate(1240 660)">
     <g>
-      <animateTransform attributeName="transform" type="scale"
-        values="1.0; 0.98; 0.96; 0.94" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
-      <g transform="translate(-960 -540)">
+      <!-- pitch breathing -->
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 6 -4; 0 0; -6 3; 0 0" dur="9s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.25;0.5;0.75;1"
+                        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
-        <!-- SKY tramonto pittorico -->
-        <rect x="0" y="0" width="1920" height="700" fill="url(#s11_sky)"/>
+      <ellipse cx="0" cy="260" rx="280" ry="20" fill="#000" opacity="0.55" filter="url(#softBlur11a)"/>
 
-        <!-- Painterly clouds dorate -->
-        <g opacity="0.6" filter="url(#s11_painterly)">
-          <ellipse cx="280" cy="160" rx="380" ry="22" fill="#FBE0B8"/>
-          <ellipse cx="720" cy="120" rx="320" ry="20" fill="#F8C880"/>
-          <ellipse cx="1240" cy="180" rx="420" ry="24" fill="#FBE0B8"/>
-          <ellipse cx="1680" cy="140" rx="280" ry="18" fill="#F8884A" opacity="0.7"/>
-          <ellipse cx="900" cy="280" rx="640" ry="20" fill="#F0A858" opacity="0.55"/>
-        </g>
+      <!-- HULL (line of action gentle C — Bezier) -->
+      <path d="M -260 220 C -220 252 -150 268 -40 274 C 80 280 200 274 280 256
+               C 320 248 340 236 342 224 L 320 180 C 280 192 180 200 60 200
+               C -80 200 -200 192 -260 178 Z"
+            fill="url(#hullSunset)" stroke="#04020A" stroke-width="5" stroke-linejoin="round"/>
+      <!-- internal plank -->
+      <path d="M -240 200 C -130 206 0 208 130 206 C 220 204 280 200 296 196" fill="none"
+            stroke="#04020A" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <!-- detail caulking -->
+      <path d="M -200 220 C -100 224 0 226 100 224 C 180 222 240 220 270 218" fill="none"
+            stroke="#04020A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <!-- WARM rim light (sunset hits hull top) -->
+      <path d="M -260 178 C -120 188 20 192 160 188 C 240 186 300 182 326 178" fill="none"
+            stroke="#FFB570" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
 
-        <!-- GOD RAYS dorati dal sole -->
-        <g filter="url(#s11_rayBlur)" opacity="0.78">
-          <polygon points="940,700 880,700 700,-50 820,-50"  fill="url(#s11_rays)"/>
-          <polygon points="980,700 1040,700 1240,-50 1100,-50" fill="url(#s11_rays)" opacity="0.85"/>
-          <polygon points="700,700 600,700 320,-50 540,-50"  fill="url(#s11_rays)" opacity="0.55"/>
-          <polygon points="1200,700 1320,700 1620,-50 1380,-50" fill="url(#s11_rays)" opacity="0.6"/>
-          <polygon points="540,700 460,700 220,-50 380,-50" fill="url(#s11_rays)" opacity="0.32"/>
-        </g>
+      <!-- Mast main -->
+      <path d="M -6 180 C -4 80 -2 -40 0 -160" fill="none"
+            stroke="#04020A" stroke-width="5" stroke-linecap="round"/>
+      <!-- Mast fore -->
+      <path d="M -130 180 C -132 100 -134 20 -136 -90" fill="none"
+            stroke="#04020A" stroke-width="4.5" stroke-linecap="round"/>
 
-        <!-- Setting sun -->
-        <circle cx="960" cy="540" r="180" fill="url(#s11_sun)" filter="url(#s11_bloom)"/>
-        <circle cx="960" cy="540" r="70" fill="#FFE6B8" filter="url(#s11_bloom)"/>
-        <circle cx="960" cy="540" r="40" fill="#FFFBEF"/>
+      <!-- MAIN SAIL (full, billowing, Bezier) -->
+      <path d="M -10 -158 C 80 -144 156 -116 188 -52 C 196 -16 178 16 132 28
+               C 86 36 30 32 -10 26 C -28 -20 -22 -98 -10 -158 Z"
+            fill="url(#sailSunset)" stroke="#04020A" stroke-width="4.5" stroke-linejoin="round"/>
+      <!-- fold lines (variable weight) -->
+      <g stroke="#7A3A2A" stroke-linecap="round" fill="none">
+        <path d="M 16 -144 C 50 -110 80 -64 86 -8" stroke-width="2.4" opacity="0.6"/>
+        <path d="M 60 -130 C 96 -90 124 -38 130 18" stroke-width="1.8" opacity="0.5"/>
+        <path d="M 110 -106 C 142 -66 168 -24 178 22" stroke-width="1.4" opacity="0.4"/>
+      </g>
+      <!-- WARM rim light top edge -->
+      <path d="M -10 -158 C 70 -150 144 -126 184 -78" fill="none"
+            stroke="#FFE0B0" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
 
-        <!-- ============ DISTANT STILL SHIPS (storyboard cue: altre navi ferme) ============ -->
-        <g transform="translate(280 656) scale(0.20)" opacity="0.55">
-          <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="#1A1410"/>
-          <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
-          <rect x="-72" y="-170" width="4" height="170" fill="#1F1810"/>
-          <rect x="68" y="-160" width="4" height="160" fill="#1F1810"/>
-          <path d="M -2,-220 Q -60,-170 -60,-80 L -60,-20 L 0,-20 Z" fill="#3A2A18" opacity="0.85"/>
-          <path d="M 2,-220 Q 60,-170 60,-80 L 60,-20 L 0,-20 Z" fill="#3A2A18" opacity="0.8"/>
-          <path d="M -72,-170 Q -130,-130 -130,-60 L -130,-20 L -72,-20 Z" fill="#3A2A18" opacity="0.75"/>
-          <!-- Tiny reflection -->
-          <path d="M -160,45 L 160,45 L 130,70 L -130,70 Z" fill="#0A0805" opacity="0.5"/>
-        </g>
-        <g transform="translate(1640 664) scale(0.17)" opacity="0.5">
-          <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="#1A1410"/>
-          <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
-          <rect x="-72" y="-170" width="4" height="170" fill="#1F1810"/>
-          <path d="M -2,-220 Q -60,-170 -60,-80 L -60,-20 L 0,-20 Z" fill="#3A2A18" opacity="0.8"/>
-          <path d="M 2,-220 Q 60,-170 60,-80 L 60,-20 L 0,-20 Z" fill="#3A2A18" opacity="0.75"/>
-          <path d="M -72,-170 Q -130,-130 -130,-60 L -130,-20 L -72,-20 Z" fill="#3A2A18" opacity="0.7"/>
-          <path d="M -160,45 L 160,45 L 130,70 L -130,70 Z" fill="#0A0805" opacity="0.5"/>
-        </g>
+      <!-- FORESAIL (full) -->
+      <path d="M -136 -88 C -90 -76 -54 -56 -36 -22 C -28 4 -50 24 -84 26
+               C -116 28 -142 20 -152 0 C -154 -28 -148 -62 -136 -88 Z"
+            fill="url(#sailSunset)" stroke="#04020A" stroke-width="3.5" stroke-linejoin="round"/>
+      <g stroke="#7A3A2A" stroke-linecap="round" fill="none" opacity="0.55">
+        <path d="M -116 -78 C -90 -56 -76 -28 -72 6" stroke-width="1.8"/>
+        <path d="M -88 -64 C -68 -42 -58 -16 -54 14" stroke-width="1.5"/>
+      </g>
+      <path d="M -136 -88 C -98 -80 -64 -68 -42 -42" fill="none"
+            stroke="#FFE0B0" stroke-width="1.4" stroke-linecap="round" opacity="0.85"/>
 
-        <!-- Foreground beach silhouette -->
-        <rect x="0" y="1000" width="1920" height="80" fill="#0A0805"/>
-        <path d="M 0,1000 Q 480,990 960,1005 Q 1440,1020 1920,1000 L 1920,1080 L 0,1080 Z" fill="#0A0805"/>
+      <!-- RIGGING -->
+      <g stroke="#04020A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7">
+        <path d="M -6 -160 C -80 -100 -160 -10 -260 180"/>
+        <path d="M 0 -160 C 80 -100 180 -10 320 180"/>
+        <path d="M -136 -90 C -180 -40 -220 30 -260 180"/>
+        <path d="M -136 -90 C -100 -40 -60 30 -20 180"/>
+      </g>
 
-        <!-- ============ MARE 3-LAYER PARALLAX (con riflessi arancioni) ============ -->
-        <rect x="0" y="700" width="1920" height="80" fill="url(#s11_seaFar)"/>
-        <use href="#s11_waveBack" x="-100" y="720" fill="#FFE0B8" opacity="0.55">
-          <animate attributeName="x" values="-100;-340;-100" dur="22s" repeatCount="indefinite"/>
-        </use>
-        <use href="#s11_waveBack" x="-200" y="750" fill="#FFD898" opacity="0.4">
-          <animate attributeName="x" values="-200;-40;-200" dur="18s" repeatCount="indefinite"/>
-        </use>
+      <!-- ORANGE FLAG (sventola) -->
+      <path d="M 2 -168 Q 40 -180 70 -170 Q 80 -160 70 -150 Q 40 -158 2 -154 Z"
+            fill="#FF6B1A" stroke="#04020A" stroke-width="1.8" stroke-linejoin="round">
+        <animateTransform attributeName="transform" type="scale"
+                          values="1 1;1.06 0.94;1 1" dur="2.6s" repeatCount="indefinite"
+                          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </path>
 
-        <rect x="0" y="780" width="1920" height="120" fill="url(#s11_seaMid)"/>
-        <use href="#s11_waveMid" x="-50" y="800" fill="#FAE0B8" opacity="0.55">
-          <animate attributeName="x" values="-50;-280;-50" dur="14s" repeatCount="indefinite"/>
-        </use>
-        <use href="#s11_waveMid" x="-150" y="840" fill="#F8B868" opacity="0.42">
-          <animate attributeName="x" values="-150;30;-150" dur="11s" repeatCount="indefinite"/>
-        </use>
+      <!-- ===== CREW (poppa back-view, 5 silhouette) ===== -->
+      <!-- CAPTAIN center, line of action S (dynamic, dominant) -->
+      <g transform="translate(40 150)">
+        <!-- legs (asymmetric, weight on right) -->
+        <path d="M -8 0 C -10 30 -16 60 -20 90" fill="none" stroke="#04020A" stroke-width="11" stroke-linecap="round"/>
+        <path d="M 10 0 C 12 32 18 64 22 92" fill="none" stroke="#04020A" stroke-width="11" stroke-linecap="round"/>
+        <!-- torso (S curve, shoulders left, hips right = contrapposto) -->
+        <path d="M -22 0 C -20 -30 -16 -56 -10 -78 C -4 -86 4 -86 10 -78
+                 C 14 -56 16 -30 18 0 C 12 4 -16 4 -22 0 Z"
+              fill="url(#hullSunset)" stroke="#04020A" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- head -->
+        <ellipse cx="2" cy="-92" rx="14" ry="16" fill="url(#hullSunset)" stroke="#04020A" stroke-width="3"/>
+        <!-- tricorn hat -->
+        <path d="M -14 -104 C -4 -120 16 -120 22 -104 C 16 -100 -14 -100 -14 -104 Z"
+              fill="#04020A" stroke="#04020A" stroke-width="2"/>
+        <!-- right arm pointing forward to horizon -->
+        <path d="M 16 -50 C 32 -60 50 -68 64 -76" fill="none" stroke="#04020A" stroke-width="8" stroke-linecap="round"/>
+        <!-- WARM rim light (sunset glow on captain) -->
+        <path d="M -18 -10 C -12 -50 -8 -80 -4 -90" fill="none"
+              stroke="#FFB570" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+      </g>
 
-        <rect x="0" y="900" width="1920" height="120" fill="url(#s11_seaClose)"/>
-        <use href="#s11_waveMid" x="0" y="920" fill="#FAE6C0" opacity="0.6" transform="scale(1.6 1)">
-          <animate attributeName="x" values="0;-180;0" dur="9s" repeatCount="indefinite"/>
-        </use>
+      <!-- CREW 1 (left of captain, line of action I — straight, attentive) -->
+      <g transform="translate(-20 150)">
+        <path d="M -6 0 C -6 30 -10 60 -12 90" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 6 0 C 6 30 10 60 12 90" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M -16 0 C -14 -26 -10 -50 -4 -70 C 0 -76 4 -76 8 -70
+                 C 12 -50 14 -26 14 0 C 8 4 -12 4 -16 0 Z"
+              fill="url(#hullSunset)" stroke="#04020A" stroke-width="3.5" stroke-linejoin="round"/>
+        <ellipse cx="2" cy="-82" rx="12" ry="14" fill="url(#hullSunset)" stroke="#04020A" stroke-width="3"/>
+        <!-- bandana -->
+        <path d="M -10 -88 C -2 -94 12 -92 16 -84 C 12 -80 -10 -82 -10 -88 Z"
+              fill="#6F8390" stroke="#04020A" stroke-width="2"/>
+      </g>
 
-        <!-- Golden glitter band riflesso sole (specchiato) -->
-        <ellipse cx="960" cy="720" rx="240" ry="32" fill="url(#s11_glitter)" filter="url(#s11_bloom)" opacity="0.85"/>
-        <ellipse cx="960" cy="780" rx="180" ry="22" fill="url(#s11_glitter)" filter="url(#s11_bloom)" opacity="0.7"/>
-        <ellipse cx="960" cy="860" rx="140" ry="18" fill="url(#s11_glitter)" filter="url(#s11_bloom)" opacity="0.55"/>
+      <!-- CREW 2 (right of captain, line of action C — leaning slightly forward) -->
+      <g transform="translate(96 152)">
+        <path d="M -6 0 C -8 30 -14 60 -18 90" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 8 0 C 10 30 16 60 20 90" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M -16 0 C -10 -26 -4 -48 2 -68 C 6 -74 12 -72 16 -64
+                 C 18 -42 20 -22 22 0 C 14 4 -12 4 -16 0 Z"
+              fill="url(#hullSunset)" stroke="#04020A" stroke-width="3.5" stroke-linejoin="round"/>
+        <ellipse cx="8" cy="-78" rx="12" ry="14" fill="url(#hullSunset)" stroke="#04020A" stroke-width="3"/>
+        <!-- cap -->
+        <path d="M -2 -90 C 8 -98 22 -94 26 -86 C 22 -82 0 -84 -2 -90 Z"
+              fill="#3F2810" stroke="#04020A" stroke-width="2"/>
+      </g>
 
-        <!-- Small glitter sparkles -->
-        <g fill="#FFE6B8" opacity="0.85" filter="url(#s11_softGlow)">
-          <circle cx="840" cy="740" r="2.5">
-            <animate attributeName="opacity" values="0.3;0.95;0.3" dur="1.4s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="1080" cy="760" r="2">
-            <animate attributeName="opacity" values="0.4;0.85;0.4" dur="1.6s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="900" cy="800" r="2.2">
-            <animate attributeName="opacity" values="0.35;0.9;0.35" dur="1.8s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="1020" cy="820" r="1.8">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.3s" repeatCount="indefinite"/>
-          </circle>
-        </g>
+      <!-- CREW 3 (far left, smaller — perspective) -->
+      <g transform="translate(-90 160) scale(0.85)">
+        <path d="M -6 0 C -6 28 -10 56 -12 84" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 6 0 C 6 28 10 56 12 84" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M -14 0 C -12 -24 -8 -46 -2 -64 C 2 -70 4 -70 8 -64
+                 C 12 -46 14 -24 14 0 C 8 4 -10 4 -14 0 Z"
+              fill="url(#hullSunset)" stroke="#04020A" stroke-width="3.5" stroke-linejoin="round"/>
+        <ellipse cx="2" cy="-76" rx="11" ry="13" fill="url(#hullSunset)" stroke="#04020A" stroke-width="3"/>
+      </g>
 
-        <!-- ============ OUR SHIP — POV poppa, con CIURMA back-view ============ -->
-        <g>
-          <animateTransform attributeName="transform" type="translate"
-            values="0 0; 0 -5; 0 -10; 0 -12"
-            keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
-
-          <g transform="translate(960 740) scale(0.95)">
-
-            <!-- Stern hull (wider, back of ship) -->
-            <path d="M -180,0 Q -160,40 -100,55 L 100,55 Q 160,40 180,0 L 150,-18 L -150,-18 Z"
-                  fill="url(#s11_hull)" stroke="#0A0805" stroke-width="2.5"/>
-            <path d="M -180,0 Q -160,40 -100,55 L 100,55 Q 160,40 180,0 L 150,-18 L -150,-18 Z"
-                  fill="url(#s11_hull)" filter="url(#s11_woodGrain)" opacity="0.6"/>
-            <line x1="-150" y1="-8" x2="150" y2="-8" stroke="#0A0805" stroke-width="1" opacity="0.55"/>
-            <line x1="-145" y1="10" x2="145" y2="10" stroke="#0A0805" stroke-width="1" opacity="0.55"/>
-            <line x1="-140" y1="30" x2="140" y2="30" stroke="#0A0805" stroke-width="1" opacity="0.5"/>
-            <rect x="-150" y="-22" width="300" height="6" fill="#0A0805"/>
-
-            <!-- Rim light (right side, warm sunset) -->
-            <path d="M 150,-18 Q 178,12 150,40 L 100,55 L 130,-10 Z" fill="url(#s11_hullRim)"/>
-
-            <!-- Stern windows lit warm -->
-            <rect x="-50" y="-10" width="20" height="22" fill="#FFCB8A" opacity="0.9" filter="url(#s11_softGlow)"/>
-            <rect x="-20" y="-10" width="20" height="22" fill="#FFCB8A" opacity="0.9" filter="url(#s11_softGlow)"/>
-            <rect x="10" y="-10" width="20" height="22" fill="#FFCB8A" opacity="0.9" filter="url(#s11_softGlow)"/>
-            <rect x="40" y="-10" width="20" height="22" fill="#FFCB8A" opacity="0.9" filter="url(#s11_softGlow)"/>
-
-            <!-- Masts -->
-            <rect x="-3" y="-360" width="6" height="360" fill="#1F1810"/>
-            <rect x="-100" y="-300" width="5" height="300" fill="#1F1810"/>
-            <rect x="95" y="-280" width="5" height="280" fill="#1F1810"/>
-            <!-- Yards -->
-            <rect x="-100" y="-300" width="200" height="3.5" fill="#1F1810"/>
-            <rect x="-130" y="-218" width="260" height="3.5" fill="#1F1810"/>
-
-            <!-- Sails BILLOWED FULL with pieghe -->
-            <g>
-              <animateTransform attributeName="transform" type="translate"
-                values="0 0;4 -2;0 0;-3 -2;0 0"
-                keyTimes="0;0.25;0.5;0.75;1" dur="9s" repeatCount="indefinite"/>
-              <path d="M -3,-360 Q -120,-300 -130,-150 L -130,-20 L 130,-20 L 130,-150 Q 120,-300 3,-360 Z"
-                    fill="url(#s11_sail)" stroke="#8B5A28" stroke-width="1.5"/>
-              <path d="M -85,-280 Q -95,-160 -90,-20" fill="none" stroke="#B07440" stroke-width="1.5" opacity="0.55"/>
-              <path d="M -40,-310 Q -50,-170 -42,-20" fill="none" stroke="#B07440" stroke-width="1.5" opacity="0.5"/>
-              <path d="M 40,-310 Q 50,-170 42,-20" fill="none" stroke="#B07440" stroke-width="1.5" opacity="0.5"/>
-              <path d="M 85,-280 Q 95,-160 90,-20" fill="none" stroke="#B07440" stroke-width="1.5" opacity="0.55"/>
-              <path d="M -3,-360 Q -120,-300 -130,-150 L -130,-20 L 130,-20 L 130,-150 Q 120,-300 3,-360 Z"
-                    fill="url(#s11_sailShadow)"/>
-            </g>
-
-            <!-- Fore sail -->
-            <g>
-              <animateTransform attributeName="transform" type="translate"
-                values="0 0;-3 -2;0 0;2 -2;0 0"
-                keyTimes="0;0.25;0.5;0.75;1" dur="8s" repeatCount="indefinite"/>
-              <path d="M -100,-300 Q -180,-240 -190,-110 L -190,-20 L -100,-20 Z" fill="url(#s11_sail)" stroke="#8B5A28" stroke-width="1.4"/>
-              <path d="M -150,-220 Q -160,-100 -160,-20" fill="none" stroke="#B07440" stroke-width="1.2" opacity="0.5"/>
-            </g>
-            <!-- Mizzen -->
-            <g>
-              <animateTransform attributeName="transform" type="translate"
-                values="0 0;2 -2;0 0;-2 -1;0 0"
-                keyTimes="0;0.25;0.5;0.75;1" dur="8.5s" repeatCount="indefinite"/>
-              <path d="M 95,-280 Q 175,-220 185,-100 L 185,-20 L 95,-20 Z" fill="url(#s11_sail)" stroke="#8B5A28" stroke-width="1.4" opacity="0.96"/>
-              <path d="M 145,-200 Q 155,-90 155,-20" fill="none" stroke="#B07440" stroke-width="1.2" opacity="0.5"/>
-            </g>
-
-            <!-- Rigging -->
-            <g stroke="#1F1810" stroke-width="0.8" opacity="0.55">
-              <line x1="0" y1="-360" x2="-100" y2="-300"/>
-              <line x1="0" y1="-360" x2="95" y2="-280"/>
-              <line x1="-130" y1="-150" x2="-190" y2="-110"/>
-              <line x1="130" y1="-150" x2="185" y2="-100"/>
-              <line x1="0" y1="-360" x2="-148" y2="-22"/>
-              <line x1="0" y1="-360" x2="148" y2="-22"/>
-            </g>
-
-            <!-- FLAG arancione (Act III culmine) -->
-            <path d="M 3,-360 L 60,-340 L 50,-320 L 3,-330 Z" fill="#FF6B1A" filter="url(#s11_bloom)">
-              <animateTransform attributeName="transform" type="skewX"
-                values="0;6;0;-4;0" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
-            </path>
-
-            <!-- ============ CAPITANO + CIURMA back-view on poppa ============ -->
-            <!-- Capitano centro (al timone) -->
-            <g transform="translate(0 -36)">
-              <animateTransform attributeName="transform" type="translate"
-                values="0 -36; 0 -38; 0 -36; 0 -37; 0 -36"
-                keyTimes="0;0.25;0.5;0.75;1" dur="5s" repeatCount="indefinite"/>
-              <!-- Coat (long flowing) -->
-              <path d="M -22,-12 L -36,46 L 36,46 L 22,-12 Z" fill="url(#s11_char)"/>
-              <!-- Belt -->
-              <rect x="-22" y="14" width="44" height="5" fill="#020306"/>
-              <rect x="-3" y="14" width="6" height="5" fill="#3A2818"/>
-              <!-- Shoulders -->
-              <path d="M -22,-12 L -28,-2 L 28,-2 L 22,-12 L 18,-20 L -18,-20 Z" fill="url(#s11_char)"/>
-              <!-- Neck + head -->
-              <rect x="-5" y="-28" width="10" height="8" fill="url(#s11_char)"/>
-              <ellipse cx="0" cy="-38" rx="10" ry="11" fill="url(#s11_char)"/>
-              <!-- Tricorne -->
-              <path d="M -16,-46 L 16,-46 L 18,-42 L -18,-42 Z" fill="#020306"/>
-              <path d="M -18,-46 L 18,-46 L 10,-58 L -10,-58 Z" fill="#020306"/>
-              <!-- Rim light from sunset on left back-edge -->
-              <path d="M -22,-12 L -36,46 L -40,46 L -25,-10 Z" fill="url(#s11_charRim)" opacity="0.7"/>
-            </g>
-
-            <!-- Crew member 1 (left of captain) -->
-            <g transform="translate(-44 -30)">
-              <animateTransform attributeName="transform" type="translate"
-                values="-44 -30; -44 -32; -44 -30; -44 -31; -44 -30"
-                keyTimes="0;0.3;0.5;0.7;1" dur="6s" repeatCount="indefinite"/>
-              <path d="M -16,-10 L -22,40 L 22,40 L 16,-10 Z" fill="url(#s11_char)"/>
-              <path d="M -16,-10 L -20,0 L 20,0 L 16,-10 L 14,-16 L -14,-16 Z" fill="url(#s11_char)"/>
-              <rect x="-4" y="-22" width="8" height="6" fill="url(#s11_char)"/>
-              <ellipse cx="0" cy="-30" rx="8" ry="9" fill="url(#s11_char)"/>
-              <!-- Bandana -->
-              <path d="M -10,-36 L 10,-36 L 12,-30 L -12,-30 Z" fill="#020306"/>
-            </g>
-
-            <!-- Crew member 2 (right of captain, shorter) -->
-            <g transform="translate(42 -28)">
-              <animateTransform attributeName="transform" type="translate"
-                values="42 -28; 42 -30; 42 -28; 42 -29; 42 -28"
-                keyTimes="0;0.3;0.5;0.7;1" dur="5.5s" repeatCount="indefinite"/>
-              <path d="M -14,-8 L -18,38 L 18,38 L 14,-8 Z" fill="url(#s11_char)"/>
-              <path d="M -14,-8 L -18,2 L 18,2 L 14,-8 L 12,-14 L -12,-14 Z" fill="url(#s11_char)"/>
-              <rect x="-4" y="-20" width="8" height="6" fill="url(#s11_char)"/>
-              <ellipse cx="0" cy="-28" rx="8" ry="9" fill="url(#s11_char)"/>
-              <!-- Skullcap -->
-              <path d="M -8,-34 Q 0,-40 8,-34 L 8,-28 L -8,-28 Z" fill="#020306"/>
-            </g>
-
-            <!-- Crew member 3 (left-far, smaller) -->
-            <g transform="translate(-78 -22)">
-              <animateTransform attributeName="transform" type="translate"
-                values="-78 -22; -78 -24; -78 -22; -78 -23; -78 -22"
-                keyTimes="0;0.3;0.5;0.7;1" dur="6.5s" repeatCount="indefinite"/>
-              <path d="M -12,-6 L -16,36 L 16,36 L 12,-6 Z" fill="url(#s11_char)"/>
-              <path d="M -12,-6 L -16,4 L 16,4 L 12,-6 L 10,-12 L -10,-12 Z" fill="url(#s11_char)"/>
-              <rect x="-4" y="-18" width="8" height="6" fill="url(#s11_char)"/>
-              <ellipse cx="0" cy="-25" rx="7" ry="8" fill="url(#s11_char)"/>
-            </g>
-
-            <!-- Wake V-shape -->
-            <path d="M -200,55 L -380,180 L -180,90 Z" fill="#FAE6C0" opacity="0.55"/>
-            <path d="M 200,55 L 380,180 L 180,90 Z" fill="#FAE6C0" opacity="0.55"/>
-            <path d="M -160,80 Q 0,90 160,80 Q 0,110 -160,80 Z" fill="#FAF4E9" opacity="0.7"/>
-          </g>
-        </g>
-
-        <!-- Dust particles nei rays (warm) -->
-        <g>
-          <use href="#s11_dust" x="820" y="200">
-            <animate attributeName="y" values="200;600" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.75;0.5;0" dur="9s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s11_dust" x="1080" y="160">
-            <animate attributeName="y" values="160;620" dur="11s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.7;0.5;0" dur="11s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s11_dust" x="700" y="280">
-            <animate attributeName="y" values="280;680" dur="10s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.65;0.4;0" dur="10s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s11_dust" x="1220" y="240">
-            <animate attributeName="y" values="240;640" dur="12s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.4;0" dur="12s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s11_dust" x="1380" y="320">
-            <animate attributeName="y" values="320;700" dur="10s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.4;0" dur="10s" repeatCount="indefinite"/>
-          </use>
-        </g>
+      <!-- CREW 4 (far right, slightly turned) -->
+      <g transform="translate(160 156) scale(0.88)">
+        <path d="M -6 0 C -8 28 -14 56 -18 86" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 8 0 C 10 28 16 56 20 86" fill="none" stroke="#04020A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M -16 0 C -10 -24 -4 -44 2 -62 C 6 -68 10 -66 12 -58
+                 C 16 -40 18 -20 20 0 C 12 4 -12 4 -16 0 Z"
+              fill="url(#hullSunset)" stroke="#04020A" stroke-width="3.5" stroke-linejoin="round"/>
+        <ellipse cx="6" cy="-72" rx="11" ry="13" fill="url(#hullSunset)" stroke="#04020A" stroke-width="3"/>
       </g>
     </g>
   </g>
 
-  <!-- Painterly overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s11_painterly)" pointer-events="none"/>
-
-  <!-- Vignette -->
-  <radialGradient id="s11_vig" cx="50%" cy="55%" r="80%">
-    <stop offset="58%" stop-color="#000" stop-opacity="0"/>
-    <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
-  </radialGradient>
-  <rect width="1920" height="1080" fill="url(#s11_vig)" pointer-events="none"/>
+  <!-- VIGNETTE -->
+  <rect width="1920" height="1080" fill="url(#vignette11a)" pointer-events="none"/>
 </svg>

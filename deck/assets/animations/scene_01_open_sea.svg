@@ -1,281 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 01 — Open sea at dawn (Cartoon Saloon)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 01 — Open sea at dawn (Disney polish)">
   <title>Scene 01 — Open Sea (apertura)</title>
-  <desc>Cartoon Saloon upgrade: painterly dawn sky (pink→cream→gold), god rays from horizon, 3-layer parallax sea, wooden ship with grain texture + sails with folds + rigging, distant gulls in silhouette, dust particles, atmospheric haze, slow crane-down. Zero arancione.</desc>
+  <desc>Disney polish: alba con luce singola top-right, cielo a gradient direzionale rosa-cream-blu, mandala decorative concentrico, mare a 3 layer parallax con curve Bezier, nave-silhouette con stroke a peso variabile (5px outline + 3px interno + 1.5px dettagli), gabbiani con line of action asimmetrica, painterly noise via feTurbulence, vignette finale. Zero arancione.</desc>
 
   <defs>
-    <linearGradient id="s01_sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F8D8C6"/>
-      <stop offset="28%" stop-color="#F8E2CE"/>
-      <stop offset="58%" stop-color="#F5EFE6"/>
-      <stop offset="85%" stop-color="#F0DDB8"/>
-      <stop offset="100%" stop-color="#E0BC82"/>
-    </linearGradient>
-    <linearGradient id="s01_seaFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#A8B6BE"/><stop offset="100%" stop-color="#6F8390"/>
-    </linearGradient>
-    <linearGradient id="s01_seaMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#5E7A8C"/><stop offset="100%" stop-color="#3F5A6E"/>
-    </linearGradient>
-    <linearGradient id="s01_seaClose" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3A5060"/><stop offset="100%" stop-color="#1F2E3C"/>
-    </linearGradient>
-    <linearGradient id="s01_hull" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3A2818"/>
-      <stop offset="55%" stop-color="#241810"/>
-      <stop offset="100%" stop-color="#0A0805"/>
-    </linearGradient>
-    <linearGradient id="s01_sail" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FBF4E5"/>
-      <stop offset="55%" stop-color="#EFE0BE"/>
-      <stop offset="100%" stop-color="#C8B186"/>
-    </linearGradient>
-    <linearGradient id="s01_sailShadow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8B6E3C" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#8B6E3C" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#8B6E3C" stop-opacity="0.22"/>
-    </linearGradient>
-    <linearGradient id="s01_rays" x1="50%" y1="100%" x2="50%" y2="0%">
-      <stop offset="0%" stop-color="#FFE9C2" stop-opacity="0.55"/>
-      <stop offset="55%" stop-color="#FFE9C2" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#FFE9C2" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s01_haze" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F5EFE6" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#F5EFE6" stop-opacity="0.62"/>
-      <stop offset="100%" stop-color="#F5EFE6" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s01_hullRim" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#F8D8B0" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#F8D8B0" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="s01_woodGrain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.4" numOctaves="3" seed="11"/>
-      <feColorMatrix values="0 0 0 0 0.18  0 0 0 0 0.12  0 0 0 0 0.07  0 0 0 0.5 0"/>
-      <feComposite in2="SourceGraphic" operator="in"/>
-    </filter>
-    <filter id="s01_painterly" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="7"/>
+    <filter id="painterly01" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="7"/>
       <feDisplacementMap in="SourceGraphic" scale="6"/>
     </filter>
-    <filter id="s01_softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3"/>
+    <filter id="haze01" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.2"/>
     </filter>
-    <filter id="s01_rayBlur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="22"/>
+    <filter id="softBlur01" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
     </filter>
-    <path id="s01_waveBack" d="M 0,0 Q 120,-8 240,0 T 480,0 T 720,0 T 960,0 T 1200,0 T 1440,0 T 1680,0 T 1920,0 L 1920,40 L 0,40 Z"/>
-    <path id="s01_waveMid"  d="M 0,0 Q 90,-12 180,0 T 360,0 T 540,0 T 720,0 T 900,0 T 1080,0 T 1260,0 T 1440,0 T 1620,0 T 1800,0 L 1920,0 L 1920,50 L 0,50 Z"/>
-    <circle id="s01_dust" r="2" fill="#FFE9C2" filter="url(#s01_softGlow)"/>
-    <symbol id="s01_gull" viewBox="-12 -8 24 16">
-      <path d="M -12,2 Q -6,-7 0,-1 Q 6,-7 12,2" fill="none" stroke="#1A1614" stroke-width="1.4" stroke-linecap="round">
-        <animate attributeName="d"
-          values="M -12,2 Q -6,-7 0,-1 Q 6,-7 12,2;
-                  M -12,-1 Q -6,2 0,-1 Q 6,2 12,-1;
-                  M -12,2 Q -6,-7 0,-1 Q 6,-7 12,2"
-          dur="1.4s" repeatCount="indefinite"/>
-      </path>
-    </symbol>
+
+    <!-- Sky gradient: single light source top-right (dawn) -->
+    <linearGradient id="skyDawn" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2D9C2"/>
+      <stop offset="35%" stop-color="#E9C8B0"/>
+      <stop offset="70%" stop-color="#B7AFA3"/>
+      <stop offset="100%" stop-color="#7B8893"/>
+    </linearGradient>
+
+    <!-- Sun glow radial (off-center, top-right) -->
+    <radialGradient id="sunGlow" cx="78%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#FAEBD2" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#E9C8B0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E9C8B0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sea far -->
+    <linearGradient id="seaFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8FA0AC"/>
+      <stop offset="100%" stop-color="#6F8390"/>
+    </linearGradient>
+    <linearGradient id="seaMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5F7686"/>
+      <stop offset="100%" stop-color="#3F5A6E"/>
+    </linearGradient>
+    <linearGradient id="seaNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#37526A"/>
+      <stop offset="100%" stop-color="#1E3140"/>
+    </linearGradient>
+
+    <radialGradient id="hullForm" cx="30%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#3A2C24"/>
+      <stop offset="55%" stop-color="#211814"/>
+      <stop offset="100%" stop-color="#0A0706"/>
+    </radialGradient>
+    <radialGradient id="sailForm" cx="80%" cy="20%" r="100%">
+      <stop offset="0%" stop-color="#F2E0C8"/>
+      <stop offset="50%" stop-color="#C8B89A"/>
+      <stop offset="100%" stop-color="#6F6256"/>
+    </radialGradient>
+
+    <radialGradient id="vignette01" cx="50%" cy="50%" r="70%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.32"/>
+    </radialGradient>
   </defs>
 
-  <!-- CRANE DOWN -->
-  <g class="craneGroup">
+  <!-- SKY (gradient + sun glow) -->
+  <rect width="1920" height="720" fill="url(#skyDawn)"/>
+  <rect width="1920" height="720" fill="url(#sunGlow)"/>
+  <rect width="1920" height="720" fill="#C8B89A" opacity="0.05" filter="url(#painterly01)"/>
+
+  <!-- DECORATIVE MANDALA (Cartoon Saloon, near sun) -->
+  <g transform="translate(1500 240)" opacity="0.22" filter="url(#haze01)">
+    <circle r="360" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="304" fill="none" stroke="#1A1614" stroke-width="1.3" stroke-dasharray="3,7"/>
+    <circle r="248" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <circle r="192" fill="none" stroke="#1A1614" stroke-width="1.4" stroke-dasharray="4,10"/>
+    <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round">
+      <line x1="0" y1="-336" x2="0" y2="-318"/>
+      <line x1="168" y1="-290" x2="158" y2="-274"/>
+      <line x1="290" y1="-168" x2="274" y2="-158"/>
+      <line x1="336" y1="0" x2="318" y2="0"/>
+      <line x1="290" y1="168" x2="274" y2="158"/>
+      <line x1="168" y1="290" x2="158" y2="274"/>
+      <line x1="0" y1="336" x2="0" y2="318"/>
+      <line x1="-168" y1="290" x2="-158" y2="274"/>
+      <line x1="-290" y1="168" x2="-274" y2="158"/>
+      <line x1="-336" y1="0" x2="-318" y2="0"/>
+      <line x1="-290" y1="-168" x2="-274" y2="-158"/>
+      <line x1="-168" y1="-290" x2="-158" y2="-274"/>
+    </g>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="180s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
+
+  <!-- GULLS (asymmetric pose) -->
+  <g opacity="0.55" filter="url(#haze01)">
+    <path d="M 360 240 Q 380 218 408 236 Q 432 218 458 240" fill="none"
+          stroke="#1A1614" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M 580 200 Q 612 188 644 208 Q 678 188 716 204" fill="none"
+          stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 1140 290 Q 1156 274 1180 286 Q 1202 274 1224 288" fill="none"
+          stroke="#1A1614" stroke-width="1.8" stroke-linecap="round"
+          transform="rotate(-6 1180 286)"/>
+    <path d="M 1400 320 Q 1412 308 1432 320 Q 1450 308 1472 322" fill="none"
+          stroke="#1A1614" stroke-width="1.5" stroke-linecap="round"
+          transform="rotate(4 1432 320)"/>
     <animateTransform attributeName="transform" type="translate"
-      values="0 -120; 0 -60; 0 0; 0 0"
-      keyTimes="0;0.45;0.85;1" dur="8s" fill="freeze"
-      calcMode="spline" keySplines="0 0 0.2 1;0 0 0.2 1;0.42 0 0.58 1"/>
+                      values="0 0; -60 -12; 0 0" dur="42s" repeatCount="indefinite"
+                      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
 
-    <!-- SKY -->
-    <rect x="0" y="0" width="1920" height="740" fill="url(#s01_sky)"/>
+  <!-- HORIZON HAZE BAND -->
+  <rect x="0" y="708" width="1920" height="20" fill="#F2D9C2" opacity="0.5" filter="url(#haze01)"/>
 
-    <!-- Painterly clouds -->
-    <g opacity="0.55" filter="url(#s01_painterly)">
-      <ellipse cx="320" cy="200" rx="380" ry="24" fill="#FFFBEF"/>
-      <ellipse cx="1280" cy="160" rx="540" ry="28" fill="#FFFBEF"/>
-      <ellipse cx="960" cy="290" rx="640" ry="20" fill="#F5EFE6"/>
-      <ellipse cx="1680" cy="260" rx="280" ry="14" fill="#F5EFE6"/>
-      <ellipse cx="160" cy="340" rx="280" ry="12" fill="#FAE6C8" opacity="0.7"/>
-    </g>
+  <!-- SEA FAR -->
+  <rect x="0" y="720" width="1920" height="160" fill="url(#seaFar)"/>
+  <g stroke="#F2E0C8" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.45">
+    <path d="M 80 760 Q 160 754 240 760 T 400 760 T 560 758 T 720 762"/>
+    <path d="M 920 790 Q 1000 784 1080 790 T 1240 790 T 1400 788 T 1560 792"/>
+    <path d="M 320 820 Q 400 814 480 820 T 640 820 T 800 818 T 960 822"/>
+  </g>
 
-    <!-- GOD RAYS — mattutini dall'orizzonte -->
-    <g filter="url(#s01_rayBlur)" opacity="0.85">
-      <polygon points="940,740 880,740 700,-50 820,-50"  fill="url(#s01_rays)"/>
-      <polygon points="980,740 1040,740 1240,-50 1100,-50" fill="url(#s01_rays)" opacity="0.85"/>
-      <polygon points="700,740 600,740 320,-50 540,-50"  fill="url(#s01_rays)" opacity="0.55"/>
-      <polygon points="1200,740 1320,740 1620,-50 1380,-50" fill="url(#s01_rays)" opacity="0.6"/>
-      <polygon points="540,740 460,740 220,-50 380,-50" fill="url(#s01_rays)" opacity="0.32"/>
-    </g>
+  <!-- SEA MID -->
+  <path d="M 0 880 Q 240 866 480 878 T 960 880 T 1440 878 T 1920 882 L 1920 980 L 0 980 Z"
+        fill="url(#seaMid)"/>
+  <g stroke="#9FB7C8" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M 100 906 Q 180 898 264 910 T 432 908"/>
+    <path d="M 540 924 Q 620 916 704 928 T 872 926"/>
+    <path d="M 1100 916 Q 1180 908 1264 920 T 1432 918"/>
+    <path d="M 1500 940 Q 1580 932 1664 944 T 1832 942"/>
+  </g>
+  <g stroke="#9FB7C8" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.4">
+    <path d="M 220 950 Q 320 944 420 952 T 620 950"/>
+    <path d="M 720 962 Q 820 956 920 964 T 1120 962"/>
+    <path d="M 1240 952 Q 1340 946 1440 954 T 1640 952"/>
+  </g>
 
-    <!-- ATMOSPHERIC HAZE banda orizzonte -->
-    <rect x="0" y="600" width="1920" height="220" fill="url(#s01_haze)"/>
+  <!-- SEA NEAR -->
+  <path d="M 0 980 Q 240 968 480 982 T 960 980 T 1440 982 T 1920 980 L 1920 1080 L 0 1080 Z"
+        fill="url(#seaNear)"/>
+  <g stroke="#6F8390" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M 80 1012 Q 200 1002 320 1014 Q 440 1024 560 1014 T 800 1014"/>
+    <path d="M 920 1028 Q 1040 1018 1160 1030 Q 1280 1040 1400 1030 T 1640 1030"/>
+  </g>
+  <g stroke="#37526A" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.65">
+    <path d="M 60 1050 Q 180 1042 300 1052 T 540 1050"/>
+    <path d="M 660 1062 Q 780 1054 900 1064 T 1140 1062"/>
+    <path d="M 1260 1052 Q 1380 1044 1500 1054 T 1740 1052"/>
+  </g>
 
-    <!-- MARE multi-layer parallax -->
-    <rect x="0" y="740" width="1920" height="90" fill="url(#s01_seaFar)"/>
-    <use href="#s01_waveBack" x="-100" y="740" fill="#FFFFFF" opacity="0.5">
-      <animate attributeName="x" values="-100;-340;-100" dur="22s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s01_waveBack" x="-200" y="770" fill="#FFFFFF" opacity="0.32">
-      <animate attributeName="x" values="-200;-40;-200" dur="18s" repeatCount="indefinite"/>
-    </use>
-    <rect x="0" y="830" width="1920" height="130" fill="url(#s01_seaMid)"/>
-    <use href="#s01_waveMid" x="-50" y="850" fill="#FFFFFF" opacity="0.6">
-      <animate attributeName="x" values="-50;-280;-50" dur="14s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s01_waveMid" x="-150" y="890" fill="#FFFFFF" opacity="0.42">
-      <animate attributeName="x" values="-150;30;-150" dur="11s" repeatCount="indefinite"/>
-    </use>
-    <rect x="0" y="960" width="1920" height="120" fill="url(#s01_seaClose)"/>
-    <use href="#s01_waveMid" x="0" y="970" fill="#FFFFFF" opacity="0.68" transform="scale(1.6 1)">
-      <animate attributeName="x" values="0;-180;0" dur="9s" repeatCount="indefinite"/>
-    </use>
-
-    <!-- SHIP — silhouette wooden con grain texture -->
-    <g class="ship">
+  <!-- SHIP — silhouette with variable-weight stroke -->
+  <g transform="translate(960 710)">
+    <g>
       <animateTransform attributeName="transform" type="translate"
-        values="0 0; 0 -7; 0 0; 0 -5; 0 0"
-        keyTimes="0;0.25;0.5;0.75;1" dur="6s" repeatCount="indefinite"/>
+                        values="0 0; 4 -3; 0 0; -4 2; 0 0" dur="9s" repeatCount="indefinite"
+                        calcMode="spline" keyTimes="0;0.25;0.5;0.75;1"
+                        keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
 
-      <g transform="translate(960 800)">
-        <!-- Hull base + grain -->
-        <path d="M -200,0 Q -180,42 -110,58 L 110,58 Q 180,42 200,0 L 165,-22 L -165,-22 Z"
-              fill="url(#s01_hull)" stroke="#0A0805" stroke-width="2.5"/>
-        <path d="M -200,0 Q -180,42 -110,58 L 110,58 Q 180,42 200,0 L 165,-22 L -165,-22 Z"
-              fill="url(#s01_hull)" filter="url(#s01_woodGrain)" opacity="0.6"/>
-        <!-- Planks -->
-        <line x1="-165" y1="-8" x2="165" y2="-8" stroke="#0A0805" stroke-width="1" opacity="0.55"/>
-        <line x1="-160" y1="10" x2="160" y2="10" stroke="#0A0805" stroke-width="1" opacity="0.55"/>
-        <line x1="-150" y1="30" x2="150" y2="30" stroke="#0A0805" stroke-width="1" opacity="0.5"/>
-        <!-- Gunwale band -->
-        <rect x="-165" y="-26" width="330" height="6" fill="#1A0F08"/>
-        <!-- Rim light (right side) -->
-        <path d="M 165,-22 Q 188,12 165,40 L 110,55 L 130,-12 Z" fill="url(#s01_hullRim)"/>
-        <!-- Reflection on water -->
-        <path d="M -200,58 L 200,58 L 165,96 L -165,96 Z" fill="#1A1614" opacity="0.3"/>
+      <ellipse cx="0" cy="186" rx="220" ry="14" fill="#1A1614" opacity="0.35" filter="url(#softBlur01)"/>
 
-        <!-- Masts -->
-        <rect x="-3" y="-330" width="6" height="330" fill="#1A1410"/>
-        <rect x="-100" y="-260" width="5" height="260" fill="#1A1410"/>
-        <rect x="95" y="-240" width="5" height="240" fill="#1A1410"/>
+      <!-- HULL (line of action gentle C, Bezier only) -->
+      <path d="M -210 168 C -180 192 -130 202 -60 206 C 30 210 110 206 168 196
+               C 196 192 210 184 212 174 L 200 142 C 168 150 110 156 40 158
+               C -50 160 -130 154 -190 142 Z"
+            fill="url(#hullForm)" stroke="#0A0706" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M -188 156 C -110 162 -10 164 100 162 C 160 160 192 158 200 156" fill="none"
+            stroke="#0A0706" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      <path d="M -160 172 C -90 176 -20 178 60 176 C 130 174 170 172 180 170" fill="none"
+            stroke="#0A0706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <!-- rim light along top edge (warm dawn catch) -->
+      <path d="M -190 142 C -100 152 0 156 100 154 C 170 152 198 148 208 142" fill="none"
+            stroke="#F2D9C2" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
 
-        <!-- Yards horizontal -->
-        <rect x="-100" y="-260" width="200" height="3.5" fill="#1A1410"/>
-        <rect x="-130" y="-188" width="260" height="3.5" fill="#1A1410"/>
+      <!-- MAIN MAST -->
+      <path d="M -2 144 C -1 60 0 -28 1 -120" fill="none"
+            stroke="#0A0706" stroke-width="5" stroke-linecap="round"/>
+      <!-- FORE MAST -->
+      <path d="M -94 144 C -96 80 -98 16 -100 -56" fill="none"
+            stroke="#0A0706" stroke-width="4.5" stroke-linecap="round"/>
 
-        <!-- Rigging -->
-        <g stroke="#1A1410" stroke-width="0.9" opacity="0.55">
-          <line x1="0" y1="-330" x2="-100" y2="-260"/>
-          <line x1="0" y1="-330" x2="95" y2="-240"/>
-          <line x1="-100" y1="-260" x2="-160" y2="-22"/>
-          <line x1="95" y1="-240" x2="155" y2="-22"/>
-          <line x1="0" y1="-330" x2="-160" y2="-22"/>
-          <line x1="0" y1="-330" x2="155" y2="-22"/>
-        </g>
-
-        <!-- Main sail con pieghe (sway) -->
-        <g>
-          <animateTransform attributeName="transform" type="translate"
-            values="0 0;5 -3;0 0;-4 -2;0 0"
-            keyTimes="0;0.25;0.5;0.75;1" dur="9s" repeatCount="indefinite"/>
-          <path d="M -3,-330 Q -110,-260 -118,-130 L -118,-30 L 118,-30 L 118,-130 Q 110,-260 3,-330 Z"
-                fill="url(#s01_sail)" stroke="#8B6E3C" stroke-width="1.5"/>
-          <!-- Folds -->
-          <path d="M -82,-250 Q -90,-150 -90,-30" fill="none" stroke="#A8915C" stroke-width="1.5" opacity="0.55"/>
-          <path d="M -40,-280 Q -50,-150 -42,-30" fill="none" stroke="#A8915C" stroke-width="1.5" opacity="0.5"/>
-          <path d="M 40,-280 Q 50,-150 42,-30" fill="none" stroke="#A8915C" stroke-width="1.5" opacity="0.5"/>
-          <path d="M 82,-250 Q 90,-150 90,-30" fill="none" stroke="#A8915C" stroke-width="1.5" opacity="0.55"/>
-          <path d="M -3,-330 Q -110,-260 -118,-130 L -118,-30 L 118,-30 L 118,-130 Q 110,-260 3,-330 Z"
-                fill="url(#s01_sailShadow)"/>
-        </g>
-
-        <!-- Fore sail -->
-        <g>
-          <animateTransform attributeName="transform" type="translate"
-            values="0 0;-4 -2;0 0;3 -2;0 0"
-            keyTimes="0;0.25;0.5;0.75;1" dur="8s" repeatCount="indefinite"/>
-          <path d="M -100,-260 Q -178,-200 -188,-90 L -188,-30 L -100,-30 Z"
-                fill="url(#s01_sail)" stroke="#8B6E3C" stroke-width="1.4" opacity="0.96"/>
-          <path d="M -148,-180 Q -158,-100 -158,-30" fill="none" stroke="#A8915C" stroke-width="1.2" opacity="0.5"/>
-          <path d="M -118,-220 Q -125,-120 -125,-30" fill="none" stroke="#A8915C" stroke-width="1.2" opacity="0.45"/>
-        </g>
-
-        <!-- Mizzen sail -->
-        <g>
-          <animateTransform attributeName="transform" type="translate"
-            values="0 0;3 -2;0 0;-3 -1;0 0"
-            keyTimes="0;0.25;0.5;0.75;1" dur="8.5s" repeatCount="indefinite"/>
-          <path d="M 95,-240 Q 175,-180 185,-80 L 185,-30 L 95,-30 Z"
-                fill="url(#s01_sail)" stroke="#8B6E3C" stroke-width="1.4" opacity="0.94"/>
-          <path d="M 145,-160 Q 155,-90 155,-30" fill="none" stroke="#A8915C" stroke-width="1.2" opacity="0.5"/>
-          <path d="M 115,-200 Q 122,-110 122,-30" fill="none" stroke="#A8915C" stroke-width="1.2" opacity="0.45"/>
-        </g>
-
-        <!-- Flag silhouette (dark — no arancione) -->
-        <path d="M 3,-330 L 50,-318 L 38,-302 L 3,-310 Z" fill="#1A1410">
-          <animateTransform attributeName="transform" type="skewX"
-            values="0;6;-2;5;0" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite"/>
-        </path>
+      <!-- MAIN SAIL (Bezier only) -->
+      <path d="M -10 -118 C 56 -106 110 -84 130 -34 C 134 -10 122 14 92 24
+               C 60 32 22 30 -8 22 C -22 -20 -18 -68 -10 -118 Z"
+            fill="url(#sailForm)" stroke="#0A0706" stroke-width="4.5" stroke-linejoin="round"/>
+      <g stroke="#6F6256" stroke-linecap="round" fill="none">
+        <path d="M 14 -106 C 38 -78 56 -42 60 -4" stroke-width="2.2" opacity="0.55"/>
+        <path d="M 44 -94 C 68 -62 88 -22 92 18" stroke-width="1.8" opacity="0.5"/>
+        <path d="M 80 -76 C 102 -48 118 -18 124 14" stroke-width="1.4" opacity="0.4"/>
       </g>
-    </g>
+      <path d="M -10 -118 C 50 -110 102 -90 126 -50" fill="none"
+            stroke="#FAEBD2" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
 
-    <!-- DISTANT GULLS in silhouette -->
-    <g>
-      <use href="#s01_gull" x="420" y="320" width="24" height="16">
-        <animateTransform attributeName="transform" type="translate"
-          values="0 0;30 -8;60 -4;90 -10;130 -3"
-          keyTimes="0;0.25;0.5;0.75;1" dur="14s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_gull" x="1280" y="260" width="20" height="14">
-        <animateTransform attributeName="transform" type="translate"
-          values="0 0;-32 -6;-64 -3;-96 -8;-130 -2"
-          keyTimes="0;0.25;0.5;0.75;1" dur="16s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_gull" x="780" y="380" width="16" height="11">
-        <animateTransform attributeName="transform" type="translate"
-          values="0 0;22 -4;48 -7;72 -3;100 -6"
-          keyTimes="0;0.25;0.5;0.75;1" dur="13s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_gull" x="1520" y="400" width="14" height="10">
-        <animateTransform attributeName="transform" type="translate"
-          values="0 0;-20 -5;-40 -2;-60 -6;-85 -3"
-          keyTimes="0;0.25;0.5;0.75;1" dur="15s" repeatCount="indefinite"/>
-      </use>
-    </g>
+      <!-- FORESAIL -->
+      <path d="M -100 -54 C -64 -46 -36 -32 -22 -8 C -16 6 -28 22 -54 26
+               C -82 28 -106 22 -114 6 C -114 -16 -110 -36 -100 -54 Z"
+            fill="url(#sailForm)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+      <g stroke="#6F6256" stroke-linecap="round" fill="none" opacity="0.55">
+        <path d="M -86 -46 C -70 -28 -58 -8 -54 14" stroke-width="1.6"/>
+        <path d="M -66 -36 C -48 -18 -38 0 -34 18" stroke-width="1.3"/>
+      </g>
+      <path d="M -100 -54 C -68 -48 -42 -38 -24 -18" fill="none"
+            stroke="#FAEBD2" stroke-width="1.4" stroke-linecap="round" opacity="0.65"/>
 
-    <!-- DUST PARTICLES nei god rays -->
-    <g>
-      <use href="#s01_dust" x="820" y="180">
-        <animate attributeName="y" values="180;620" dur="9s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.8;0.5;0" dur="9s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_dust" x="960" y="120">
-        <animate attributeName="y" values="120;640" dur="11s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.7;0.5;0" dur="11s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_dust" x="1080" y="240">
-        <animate attributeName="y" values="240;680" dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.7;0.4;0" dur="10s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_dust" x="700" y="280">
-        <animate attributeName="y" values="280;700" dur="12s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.65;0.4;0" dur="12s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_dust" x="1220" y="160">
-        <animate attributeName="y" values="160;640" dur="13s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.65;0.42;0" dur="13s" repeatCount="indefinite"/>
-      </use>
-      <use href="#s01_dust" x="1380" y="320">
-        <animate attributeName="y" values="320;720" dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.6;0.4;0" dur="10s" repeatCount="indefinite"/>
-      </use>
+      <!-- RIGGING (1.2px fine) -->
+      <g stroke="#0A0706" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7">
+        <path d="M -2 -120 C -60 -70 -120 -10 -190 140"/>
+        <path d="M 0 -120 C 60 -70 120 -10 200 140"/>
+        <path d="M -100 -56 C -130 -20 -160 30 -188 140"/>
+        <path d="M -100 -56 C -70 -20 -40 30 -10 140"/>
+      </g>
+
+      <!-- FLAG -->
+      <path d="M 1 -126 Q 22 -132 36 -122 Q 22 -114 1 -120 Z"
+            fill="#3F5A6E" stroke="#0A0706" stroke-width="1.4" stroke-linejoin="round">
+        <animateTransform attributeName="transform" type="scale"
+                          values="1 1;1.05 0.95;1 1" dur="3.4s" repeatCount="indefinite"
+                          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </path>
     </g>
   </g>
 
   <!-- VIGNETTE -->
-  <defs>
-    <radialGradient id="s01_vig" cx="50%" cy="50%" r="80%">
-      <stop offset="62%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.38"/>
-    </radialGradient>
-  </defs>
-  <rect width="1920" height="1080" fill="url(#s01_vig)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="url(#vignette01)" pointer-events="none"/>
 </svg>

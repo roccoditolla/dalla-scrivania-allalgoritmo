@@ -82,7 +82,7 @@ REALISTIC_SLIDES = [
         "bullets": [
             "Sette piattaforme. Una visione.",
             "Per consulente, PMI e lavoratore",
-            "Non chatbot — strumenti specifici verticali",
+            "Non chatbot. Strumenti specifici verticali",
             "Costruiti da chi ha visto la vostra giornata",
         ],
     },
@@ -139,17 +139,17 @@ REALISTIC_SLIDES = [
         "id": "21", "title": "Piattaforma HR", "big": "UNICO",
         "bullets": [
             "Busta paga, presenze, contratti, ferie, formazione",
-            "Un sistema unico — fine dell'Excel a sette schede",
+            "Un sistema unico. Fine dell'Excel a sette schede",
             "Consulente, azienda e dipendente: stessa verità",
             "Il dipendente non è una riga di Excel",
         ],
     },
     {
-        "id": "22", "title": "Videoconferenze e e-Learning", "big": "LIVE",
+        "id": "22", "title": "Videoconferenze ed eLearning", "big": "LIVE",
         "bullets": [
             "Videoconferenze GDPR + trascrizione automatica",
             "Salvataggio nel fascicolo del dipendente",
-            "e-Learning per formazione obbligatoria",
+            "Formazione obbligatoria sempre disponibile",
             "La formazione smette di essere una scartoffia. Torna a essere un sapere.",
         ],
     },
@@ -164,7 +164,7 @@ REALISTIC_SLIDES = [
     {
         "id": "24", "title": "Metodologia BMAD", "big": "BMAD",
         "bullets": [
-            "Build → Measure → Adjust → Deploy",
+            "Build. Measure. Adjust. Deploy.",
             "Una modifica alla volta, testata e confermata",
             "Niente big bang, niente promesse impossibili",
             "Si naviga in mare nuovo una bracciata alla volta",

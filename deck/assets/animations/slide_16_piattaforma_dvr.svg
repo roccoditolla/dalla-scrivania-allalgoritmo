@@ -1,92 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 16 — DVR Validator: same desk, illuminated by orange light">
-  <title>Slide 16 — DVR Validator</title>
-  <desc>Stessa scrivania della slide 15, ora illuminata: laptop con glow arancione, pile ordinate, checkmark.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 16 — DVR Validator: same desk as slide 15 but now illuminated by orange glow from above, organized desk with orange checkmark clipboard and DVR compliant document, employee figure standing upright in S-curve line of action">
+  <title>Slide 16 — DVR Validator (continuità con slide 15)</title>
+  <desc>STESSA scrivania della slide 15, ora illuminata da glow arancione dall'alto. Scrivania ORGANIZZATA, checkmark arancione + clipboard DVR + documento conforme. Figura dipendente in posa eretta, line of action S (energia restored).</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly16" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="16"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur16" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazeDVR" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="softGlow16" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    <!-- Desk top — same base as slide 15 but warmed by orange ambient -->
+    <linearGradient id="deskTop16" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9C8AE"/>
+      <stop offset="60%" stop-color="#A89880"/>
+      <stop offset="100%" stop-color="#6A5848"/>
+    </linearGradient>
+    <linearGradient id="deskSide16" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6A5848"/>
+      <stop offset="100%" stop-color="#2A2018"/>
+    </linearGradient>
+
+    <linearGradient id="paperStack16" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#D9CCAE"/>
+    </linearGradient>
+
+    <!-- Clipboard board -->
+    <linearGradient id="clipboard16" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3F3328"/>
+      <stop offset="100%" stop-color="#1A1209"/>
+    </linearGradient>
+
+    <!-- Orange beam from above -->
+    <linearGradient id="beamOrange" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Figure body (silhouette warmer / illuminated) -->
+    <linearGradient id="figure16" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#2A2018"/>
+      <stop offset="100%" stop-color="#0E0907"/>
+    </linearGradient>
+
+    <radialGradient id="haloOrange16" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#FF6B1A" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette16" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.26"/>
+    </radialGradient>
+  </defs>
+
+  <!-- BG cream (warm now) -->
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.05" filter="url(#painterly16)"/>
 
-  <!-- Soft orange glow halo behind desk (the light from the laptop) -->
-  <g>
-    <ellipse cx="540" cy="600" rx="380" ry="280" fill="#FF6B1A" opacity="0.08">
-      <animate attributeName="opacity" values="0.06;0.12;0.06" dur="3.6s" repeatCount="indefinite"/>
-    </ellipse>
-    <ellipse cx="540" cy="600" rx="240" ry="170" fill="#FF6B1A" opacity="0.12">
-      <animate attributeName="opacity" values="0.10;0.18;0.10" dur="3.6s" repeatCount="indefinite"/>
-    </ellipse>
+  <!-- Mandala -->
+  <g transform="translate(540 540)" opacity="0.38" filter="url(#hazeDVR)">
+    <circle r="470" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="418" fill="none" stroke="#1A1614" stroke-width="1.3" stroke-dasharray="3,8"/>
+    <circle r="368" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="180s" repeatCount="indefinite"
+                      additive="sum"/>
   </g>
 
-  <!-- Floor shadow under desk -->
-  <ellipse cx="540" cy="880" rx="340" ry="34" fill="#B8B5AD" opacity="0.28"/>
+  <!-- =========================================================
+       ORANGE BEAM from above (cone) — "light of the solution"
+       ========================================================= -->
+  <path d="M 360 0 L 720 0 Q 760 0 760 30 L 820 680 Q 820 740 760 760 L 320 760 Q 260 740 260 680 L 320 30 Q 320 0 360 0 Z"
+        fill="url(#beamOrange)" opacity="0.85"/>
+  <!-- Halo at top -->
+  <ellipse cx="540" cy="120" rx="240" ry="120" fill="url(#haloOrange16)">
+    <animate attributeName="rx" values="220;260;220" dur="5.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </ellipse>
+  <circle cx="540" cy="120" r="80" fill="#FF6B1A" opacity="0.18" filter="url(#softGlow16)"/>
 
-  <!-- Clock on wall (calm, hands at gentle position) -->
-  <g transform="translate(840 240)">
-    <circle cx="0" cy="0" r="78" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
-      <line x1="0" y1="-68" x2="0" y2="-58"/>
-      <line x1="68" y1="0" x2="58" y2="0"/>
-      <line x1="0" y1="68" x2="0" y2="58"/>
-      <line x1="-68" y1="0" x2="-58" y2="0"/>
+  <!-- Floor shadow -->
+  <ellipse cx="540" cy="860" rx="360" ry="20" fill="#1A1614" opacity="0.28" filter="url(#contactBlur16)"/>
+
+  <!-- =========================================================
+       DESK — SAME geometry as slide 15 (continuity), now warmed
+       ========================================================= -->
+  <g transform="translate(540 690)">
+    <!-- desk top -->
+    <path d="M -340 0 Q -350 -14 -334 -16 L 340 -16 Q 354 -14 340 0 L 360 8 Q 360 18 344 20 L -344 20 Q -360 18 -360 8 Z"
+          fill="url(#deskTop16)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round"/>
+    <!-- side -->
+    <path d="M -360 8 Q -360 18 -344 20 L 344 20 Q 360 18 360 8 L 360 80 Q 354 92 340 92 L -340 92 Q -354 92 -360 80 Z"
+          fill="url(#deskSide16)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round"/>
+    <!-- legs -->
+    <path d="M -320 92 Q -322 130 -316 168" fill="none" stroke="#1A1614" stroke-width="3"/>
+    <path d="M 320 92 Q 322 130 316 168" fill="none" stroke="#1A1614" stroke-width="3"/>
+
+    <!-- Desk-top highlight strip (rim light from orange beam) -->
+    <path d="M -320 -10 Q 0 -16 320 -10" fill="none"
+          stroke="#FFE3C2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- =========================================================
+         ORGANIZED ELEMENTS on desk
+         - Clipboard DVR (left) with orange CHECKMARK
+         - Compliant document (center) with check
+         - Stack neat papers (right)
+         ========================================================= -->
+
+    <!-- Clipboard with DVR doc + ORANGE CHECKMARK -->
+    <g transform="translate(-200 -38)">
+      <!-- shadow -->
+      <ellipse cx="0" cy="52" rx="84" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur16)"/>
+      <!-- board -->
+      <path d="M -78 -78 Q -82 -86 -72 -86 L 72 -86 Q 82 -86 78 -78 L 78 42 Q 82 50 72 50 L -72 50 Q -82 50 -78 42 Z"
+            fill="url(#clipboard16)" stroke="#0A0706" stroke-width="2.8" stroke-linejoin="round"/>
+      <!-- clip -->
+      <path d="M -22 -94 Q -22 -100 -14 -100 L 14 -100 Q 22 -100 22 -94 L 22 -84 Q 22 -78 14 -78 L -14 -78 Q -22 -78 -22 -84 Z"
+            fill="#3F3328" stroke="#0A0706" stroke-width="2.4"/>
+      <!-- paper -->
+      <path d="M -68 -72 Q -72 -78 -64 -78 L 64 -78 Q 72 -78 68 -72 L 68 36 Q 72 44 64 44 L -64 44 Q -72 44 -68 36 Z"
+            fill="#FAF5EC" stroke="#0A0706" stroke-width="2"/>
+      <!-- text lines -->
+      <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round" opacity="0.6">
+        <path d="M -54 -56 Q -10 -58 32 -56"/>
+        <path d="M -54 -42 Q 4 -44 54 -42"/>
+        <path d="M -54 -28 Q -20 -30 18 -28"/>
+        <path d="M -54 -14 Q 8 -16 54 -14"/>
+        <path d="M -54 0 Q -16 -2 28 0"/>
+      </g>
+      <!-- ORANGE CHECKMARK -->
+      <g transform="translate(20 22)">
+        <circle r="24" fill="#FF6B1A" stroke="#0A0706" stroke-width="2.6"/>
+        <path d="M -12 0 Q -6 8 -2 10 Q 6 4 14 -8" fill="none"
+              stroke="#FAF5EC" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- subtle pulse -->
+        <animateTransform attributeName="transform" type="scale" values="1 1;1.08 1.08;1 1" dur="3.6s" repeatCount="indefinite"
+                          additive="sum" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </g>
     </g>
-    <line x1="0" y1="0" x2="20" y2="-32" stroke="#1A1614" stroke-width="4.5" stroke-linecap="round"/>
-    <line x1="0" y1="0" x2="0" y2="-55" stroke="#1A1614" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+
+    <!-- Compliant document (center) -->
+    <g transform="translate(-10 -20)">
+      <ellipse cx="0" cy="42" rx="64" ry="5" fill="#1A1614" opacity="0.22" filter="url(#contactBlur16)"/>
+      <path d="M -52 -52 L 30 -52 Q 56 -28 56 -28 L 56 36 Q 56 42 50 42 L -52 42 Q -58 42 -58 36 L -58 -46 Q -58 -52 -52 -52 Z"
+            fill="#FAF5EC" stroke="#0A0706" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M 30 -52 L 30 -28 L 56 -28" fill="none" stroke="#0A0706" stroke-width="2.2"/>
+      <!-- Doc lines -->
+      <g stroke="#1A1614" stroke-width="1.4" stroke-linecap="round" opacity="0.55">
+        <path d="M -44 -30 Q -10 -32 24 -30"/>
+        <path d="M -44 -18 Q 4 -20 38 -18"/>
+        <path d="M -44 -6 Q -16 -8 18 -6"/>
+        <path d="M -44 6 Q 8 4 42 6"/>
+      </g>
+      <!-- small orange check at bottom -->
+      <g transform="translate(34 26)">
+        <path d="M -8 0 Q -4 6 -2 7 Q 4 2 10 -6" fill="none"
+              stroke="#FF6B1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- Neat stack (right) — organized -->
+    <g transform="translate(180 -10)">
+      <path d="M -56 0 Q -60 -8 -50 -10 L 56 -12 Q 64 -10 60 -2 Q 56 4 50 4 Z" fill="url(#paperStack16)" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M -54 -10 Q -58 -18 -48 -20 L 58 -22 Q 66 -20 62 -12 Q 58 -6 52 -6 Z" fill="url(#paperStack16)" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M -52 -20 Q -56 -28 -46 -30 L 60 -32 Q 68 -30 64 -22 Q 60 -16 54 -16 Z" fill="url(#paperStack16)" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+      <g stroke="#1A1614" stroke-width="1" opacity="0.4">
+        <path d="M -30 -28 Q 0 -32 30 -28"/>
+      </g>
+    </g>
   </g>
 
-  <!-- DESK — same isometric layout as slide 15 -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-    <!-- Desk top -->
-    <polygon points="270,720 540,820 810,720 540,640" fill="#F5EFE6"/>
-    <!-- Desk front face -->
-    <polygon points="270,720 540,820 540,860 270,760" fill="#B8B5AD" opacity="0.35"/>
-    <polygon points="540,820 810,720 810,760 540,860" fill="#B8B5AD" opacity="0.5"/>
-    <!-- Desk legs -->
-    <line x1="290" y1="755" x2="290" y2="870"/>
-    <line x1="540" y1="855" x2="540" y2="965"/>
-    <line x1="790" y1="755" x2="790" y2="870"/>
+  <!-- =========================================================
+       FIGURE — same position as slide 15, but now UPRIGHT, line of action S
+       ========================================================= -->
+  <g transform="translate(670 540)">
+    <ellipse cx="0" cy="210" rx="58" ry="8" fill="#1A1614" opacity="0.3" filter="url(#contactBlur16)"/>
+
+    <!-- Chair back (same wood, warmer) -->
+    <path d="M -68 70 Q -72 -10 -60 -90 L -40 -98 Q -34 -10 -42 70 Z" fill="#3A2C1A" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Body — torso upright with subtle S curve (shoulders open, chest forward) -->
+    <path d="M -48 36 Q -64 -32 -38 -86 Q -6 -116 32 -110 Q 68 -96 76 -52 Q 80 18 64 70 Q 30 100 -10 96 Q -50 90 -48 36 Z"
+          fill="url(#figure16)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- Shoulders OPEN (asymmetric: left shoulder slightly higher = contrapposto opposite) -->
+    <path d="M -32 -78 Q -4 -110 32 -106 Q 60 -96 66 -78" fill="none"
+          stroke="#0A0706" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Head — upright, slightly tilted UP (looking at the solution) -->
+    <ellipse cx="4" cy="-128" rx="32" ry="36" fill="url(#figure16)" stroke="#0A0706" stroke-width="3.5"
+             transform="rotate(6 4 -128)"/>
+
+    <!-- Rim light on head (top-right, warm — from orange beam) -->
+    <path d="M 16 -158 Q 30 -156 36 -140" fill="none"
+          stroke="#FFE3C2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- Hair nape line -->
+    <path d="M -18 -144 Q 4 -160 28 -142" fill="none" stroke="#0A0706" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- Arm pointing forward toward solution -->
+    <path d="M -42 -10 Q -90 4 -118 38 Q -134 58 -126 78 Q -106 80 -84 60 Q -56 32 -36 18 Z"
+          fill="url(#figure16)" stroke="#0A0706" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- Ambient occlusion under head -->
+    <path d="M -30 -90 Q 0 -76 38 -90" fill="none"
+          stroke="#000" stroke-width="2.4" opacity="0.45" filter="url(#contactBlur16)"/>
+
+    <!-- Subtle breath (alive, energized) -->
+    <animateTransform attributeName="transform" type="translate"
+                      values="670 540;670 537;670 540" dur="4.8s" repeatCount="indefinite"
+                      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </g>
 
-  <!-- Tidy ORDERED paper pile (low, aligned) — replaces the chaotic mess -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
-    <!-- bottom -->
-    <polygon points="340,705 600,705 625,720 365,720" fill="#F5EFE6"/>
-    <polygon points="345,685 605,685 630,700 370,700" fill="#F5EFE6"/>
-    <polygon points="350,665 610,665 635,680 375,680" fill="#F5EFE6"/>
-    <polygon points="355,645 615,645 640,660 380,660" fill="#F5EFE6"/>
-    <!-- top sheet with checkmark -->
-    <polygon points="365,620 625,620 650,635 390,635" fill="#F5EFE6"/>
-  </g>
-
-  <!-- Orange CHECKMARK on the top sheet (narrative orange) -->
-  <g transform="translate(505 612)" stroke="#FF6B1A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <polyline points="-18,0 -4,12 22,-14"/>
-  </g>
-
-  <!-- LAPTOP on the desk (left of pile), emitting orange glow -->
-  <g transform="translate(360 600)">
-    <!-- Laptop base (isometric) -->
-    <polygon points="-90,40 90,40 120,55 -60,55" fill="#1A1614" stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round"/>
-    <!-- Laptop screen (open, glowing) -->
-    <polygon points="-90,40 -90,-50 70,-50 70,40" fill="#F5EFE6" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
-    <polygon points="-90,40 -90,-50 70,-50 70,40" fill="#FF6B1A" opacity="0.55">
-      <animate attributeName="opacity" values="0.45;0.7;0.45" dur="3.6s" repeatCount="indefinite"/>
-    </polygon>
-    <!-- Screen inner light core -->
-    <rect x="-78" y="-38" width="138" height="68" fill="#FF6B1A" opacity="0.35"/>
-  </g>
-
-  <!-- Light beam (from laptop to papers, dashed soft orange) -->
-  <g stroke="#FF6B1A" stroke-width="2" stroke-linecap="round" opacity="0.5">
-    <line x1="430" y1="595" x2="490" y2="615" stroke-dasharray="4,4"/>
-    <line x1="420" y1="610" x2="490" y2="625" stroke-dasharray="4,4"/>
-    <line x1="425" y1="580" x2="490" y2="605" stroke-dasharray="4,4"/>
-  </g>
-
-  <!-- Figure (back view, RELAXED — leaning slightly back) -->
-  <g transform="translate(200 770)">
-    <!-- back of head (upright) -->
-    <ellipse cx="0" cy="-115" rx="32" ry="38" fill="#1A1614"/>
-    <!-- shoulders/back, relaxed straight posture -->
-    <path d="M -72,-70 C -75,-30 -78,40 -75,100 L 75,100 C 78,40 75,-30 72,-70 C 68,-92 36,-100 0,-100 C -36,-100 -68,-92 -72,-70 Z" fill="#1A1614"/>
-  </g>
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette16)" pointer-events="none"/>
 </svg>

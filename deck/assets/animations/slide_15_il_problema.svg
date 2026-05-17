@@ -1,90 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 15 — Il problema: oppressive desk, no orange">
-  <title>Slide 15 — Il problema</title>
-  <desc>Scrivania sommersa di carte, figura di spalle curva, orologio. Zero arancione.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 15 — Il problema: isometric desk oppressed by paper piles, silhouette employee in contrapposto C compressed pose, clock at 23:00, zero orange">
+  <title>Slide 15 — Il problema (zero arancione)</title>
+  <desc>Scrivania isometrica oppressa da pile di carte e cartelle in curve Bezier morbide, figura silhouette dipendente in contrapposto C compressa e sopraffatta, clock alle 23:00 in alto. Palette: solo cream/ink/blu/fog. Zero arancione (è il PRIMA della soluzione).</desc>
 
-  <!-- Cream background -->
-  <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <defs>
+    <filter id="painterly15" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="15"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur15" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazeProblem" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+
+    <!-- Desk top (cool wood, no warm) -->
+    <linearGradient id="deskTop15" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8B5AD"/>
+      <stop offset="60%" stop-color="#8A867D"/>
+      <stop offset="100%" stop-color="#54514A"/>
+    </linearGradient>
+    <linearGradient id="deskSide15" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#54514A"/>
+      <stop offset="100%" stop-color="#2A2722"/>
+    </linearGradient>
+
+    <!-- Paper stack (cream-grey) -->
+    <linearGradient id="paperStack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#B8B5AD"/>
+    </linearGradient>
+    <linearGradient id="folder15" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7A8794"/>
+      <stop offset="100%" stop-color="#2C4357"/>
+    </linearGradient>
+
+    <!-- Figure body (silhouette, cool indigo) -->
+    <linearGradient id="figure15" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#0A0F18"/>
+    </linearGradient>
+
+    <!-- Clock face -->
+    <radialGradient id="clockFace15" cx="32%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#B8B5AD"/>
+    </radialGradient>
+
+    <radialGradient id="vignette15" cx="50%" cy="50%" r="70%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- BG cool grey-cream (oppressive feel) -->
+  <rect width="1080" height="1080" fill="#E8E3D8"/>
+  <rect width="1080" height="1080" fill="#54514A" opacity="0.06" filter="url(#painterly15)"/>
+
+  <!-- Mandala cool/distant -->
+  <g transform="translate(540 540)" opacity="0.22" filter="url(#hazeProblem)">
+    <circle r="460" fill="none" stroke="#2A2722" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="404" fill="none" stroke="#2A2722" stroke-width="1.3" stroke-dasharray="3,7"/>
+    <circle r="350" fill="none" stroke="#2A2722" stroke-width="1" stroke-dasharray="1,5"/>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;-360 0 0" dur="220s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
+
+  <!-- Wall clock — 23:00 (top, distant) -->
+  <g transform="translate(540 200)">
+    <circle r="72" fill="url(#clockFace15)" stroke="#1A1614" stroke-width="3.5"/>
+    <circle r="64" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,4" opacity="0.5"/>
+    <!-- 12 ticks -->
+    <g stroke="#1A1614" stroke-width="2" stroke-linecap="round">
+      <line x1="0" y1="-66" x2="0" y2="-56"/>
+      <line x1="33" y1="-57" x2="29" y2="-48"/>
+      <line x1="57" y1="-33" x2="48" y2="-29"/>
+      <line x1="66" y1="0" x2="56" y2="0"/>
+      <line x1="57" y1="33" x2="48" y2="29"/>
+      <line x1="33" y1="57" x2="29" y2="48"/>
+      <line x1="0" y1="66" x2="0" y2="56"/>
+      <line x1="-33" y1="57" x2="-29" y2="48"/>
+      <line x1="-57" y1="33" x2="-48" y2="29"/>
+      <line x1="-66" y1="0" x2="-56" y2="0"/>
+      <line x1="-57" y1="-33" x2="-48" y2="-29"/>
+      <line x1="-33" y1="-57" x2="-29" y2="-48"/>
+    </g>
+    <!-- Hands at 23:00 (hour 11, min 12) -->
+    <path d="M 0 6 L -28 -28" stroke="#1A1614" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 0 8 L 0 -46" stroke="#1A1614" stroke-width="3.5" stroke-linecap="round"/>
+    <circle r="4" fill="#1A1614"/>
+    <!-- subtle shadow -->
+    <ellipse cx="0" cy="78" rx="58" ry="5" fill="#1A1614" opacity="0.22" filter="url(#contactBlur15)"/>
+    <!-- rim highlight (cool, not warm) -->
+    <path d="M -52 -38 Q -34 -64 4 -68" fill="none" stroke="#FAF5EC" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+  </g>
 
   <!-- Floor shadow under desk -->
-  <ellipse cx="540" cy="880" rx="340" ry="34" fill="#B8B5AD" opacity="0.32"/>
+  <ellipse cx="540" cy="860" rx="360" ry="20" fill="#1A1614" opacity="0.3" filter="url(#contactBlur15)"/>
 
-  <!-- Clock on wall (upper right, fog gray face) -->
-  <g transform="translate(840 240)">
-    <circle cx="0" cy="0" r="78" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <!-- ticks -->
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round">
-      <line x1="0" y1="-68" x2="0" y2="-58"/>
-      <line x1="68" y1="0" x2="58" y2="0"/>
-      <line x1="0" y1="68" x2="0" y2="58"/>
-      <line x1="-68" y1="0" x2="-58" y2="0"/>
-      <line x1="48" y1="-48" x2="42" y2="-42" opacity="0.6"/>
-      <line x1="48" y1="48" x2="42" y2="42" opacity="0.6"/>
-      <line x1="-48" y1="48" x2="-42" y2="42" opacity="0.6"/>
-      <line x1="-48" y1="-48" x2="-42" y2="-42" opacity="0.6"/>
+  <!-- =========================================================
+       DESK — isometric with depth (Bezier corners, not L L L)
+       ========================================================= -->
+  <g transform="translate(540 690)">
+    <!-- desk top -->
+    <path d="M -340 0 Q -350 -14 -334 -16 L 340 -16 Q 354 -14 340 0 L 360 8 Q 360 18 344 20 L -344 20 Q -360 18 -360 8 Z"
+          fill="url(#deskTop15)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round"/>
+    <!-- side/front -->
+    <path d="M -360 8 Q -360 18 -344 20 L 344 20 Q 360 18 360 8 L 360 80 Q 354 92 340 92 L -340 92 Q -354 92 -360 80 Z"
+          fill="url(#deskSide15)" stroke="#1A1614" stroke-width="3.5" stroke-linejoin="round"/>
+    <!-- legs (subtle, Bezier) -->
+    <path d="M -320 92 Q -322 130 -316 168" fill="none" stroke="#1A1614" stroke-width="3"/>
+    <path d="M 320 92 Q 322 130 316 168" fill="none" stroke="#1A1614" stroke-width="3"/>
+
+    <!-- =========================================================
+         PAPER PILES + FOLDERS oppressing the desk
+         All Bezier curves, asymmetric, leaning
+         ========================================================= -->
+    <!-- Pile A (left, tall, leaning right) -->
+    <g transform="translate(-220 -22)">
+      <path d="M -56 0 Q -60 -10 -50 -12 L 50 -16 Q 62 -16 60 -8 Q 56 0 50 0 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -50 -12 Q -52 -22 -42 -24 L 52 -28 Q 64 -28 62 -20 Q 60 -12 52 -12 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -42 -24 Q -46 -36 -36 -38 L 56 -42 Q 68 -42 64 -32 Q 62 -24 54 -24 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -36 -38 Q -38 -50 -28 -52 L 58 -58 Q 68 -56 66 -48 Q 64 -38 56 -38 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -28 -52 Q -30 -66 -20 -68 L 60 -76 Q 70 -74 68 -64 Q 66 -54 58 -54 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <!-- detail lines on top sheet -->
+      <g stroke="#1A1614" stroke-width="1" opacity="0.45">
+        <path d="M -16 -64 Q 4 -68 28 -64"/>
+        <path d="M -10 -60 Q 14 -62 32 -60"/>
+      </g>
     </g>
-    <!-- Hour hand -->
-    <line x1="0" y1="0" x2="0" y2="-38" stroke="#1A1614" stroke-width="4.5" stroke-linecap="round">
-      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
-    </line>
-    <!-- Minute hand (faster) -->
-    <line x1="0" y1="0" x2="0" y2="-55" stroke="#1A1614" stroke-width="3" stroke-linecap="round">
-      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1.4s" repeatCount="indefinite"/>
-    </line>
-    <circle cx="0" cy="0" r="5" fill="#1A1614"/>
+
+    <!-- Folder B (center, blue) -->
+    <g transform="translate(-30 -28)">
+      <path d="M -70 0 Q -76 -10 -64 -12 Q -50 -28 -34 -28 L 56 -28 Q 72 -28 76 -16 L 76 4 Q 70 8 60 8 L -60 8 Q -74 8 -70 0 Z"
+            fill="url(#folder15)" stroke="#1A1614" stroke-width="2.6" stroke-linejoin="round"/>
+      <!-- tab -->
+      <path d="M -34 -28 Q -30 -36 -20 -38 L 8 -38 Q 18 -36 22 -28" fill="none" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+      <!-- sheets escaping -->
+      <path d="M -40 -10 Q -32 -16 -16 -14 L 30 -14 Q 42 -12 40 -4" fill="#FAF5EC" stroke="#1A1614" stroke-width="1.6"/>
+      <path d="M -30 -6 Q -22 -10 -10 -8 L 26 -8 Q 38 -6 38 0" fill="#FAF5EC" stroke="#1A1614" stroke-width="1.6"/>
+    </g>
+
+    <!-- Pile C (right tall, leaning left) -->
+    <g transform="translate(200 -16)">
+      <path d="M -50 0 Q -54 -10 -44 -12 L 56 -16 Q 66 -16 62 -8 Q 58 0 50 0 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -44 -12 Q -50 -22 -38 -26 L 60 -32 Q 70 -32 66 -22 Q 62 -14 54 -14 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -38 -26 Q -44 -42 -32 -46 L 62 -52 Q 72 -52 68 -40 Q 64 -32 56 -32 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M -32 -46 Q -38 -60 -26 -64 L 66 -70 Q 76 -68 72 -58 Q 68 -50 60 -50 Z" fill="url(#paperStack)" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+      <g stroke="#1A1614" stroke-width="1" opacity="0.45">
+        <path d="M -16 -56 Q 6 -60 32 -56"/>
+      </g>
+    </g>
+
+    <!-- Scattered single sheets (Bezier) -->
+    <g transform="translate(80 6)">
+      <path d="M 0 0 Q 8 -16 26 -12 L 70 -8 Q 80 0 72 8 L 12 14 Q -4 14 0 0 Z" fill="#FAF5EC" stroke="#1A1614" stroke-width="1.8" stroke-linejoin="round"/>
+      <g stroke="#1A1614" stroke-width="0.9" opacity="0.45">
+        <path d="M 16 -4 Q 32 -6 56 -4"/>
+        <path d="M 18 4 Q 34 2 56 4"/>
+      </g>
+    </g>
   </g>
 
-  <!-- DESK — isometric 3/4 view -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-    <!-- Desk top -->
-    <polygon points="270,720 540,820 810,720 540,640" fill="#F5EFE6"/>
-    <!-- Desk front face -->
-    <polygon points="270,720 540,820 540,860 270,760" fill="#B8B5AD" opacity="0.35"/>
-    <polygon points="540,820 810,720 810,760 540,860" fill="#B8B5AD" opacity="0.5"/>
-    <!-- Desk legs -->
-    <line x1="290" y1="755" x2="290" y2="870" stroke-width="3"/>
-    <line x1="540" y1="855" x2="540" y2="965"/>
-    <line x1="790" y1="755" x2="790" y2="870"/>
+  <!-- =========================================================
+       FIGURE — silhouette, contrapposto C compressed (sopraffatta)
+       Shoulders sloped, head tilted down, line of action C
+       ========================================================= -->
+  <g transform="translate(670 550)">
+    <!-- contact shadow on chair -->
+    <ellipse cx="0" cy="200" rx="58" ry="8" fill="#1A1614" opacity="0.3" filter="url(#contactBlur15)"/>
+
+    <!-- Chair back (cool wood, simple Bezier) -->
+    <path d="M -68 60 Q -72 -10 -60 -90 L -40 -98 Q -34 -10 -42 60 Z" fill="#2A2722" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Body — torso curved forward (C compressed), shoulders slumped -->
+    <path d="M -56 28 Q -68 -34 -42 -76 Q -10 -110 30 -100 Q 70 -84 76 -38 Q 78 18 64 60 Q 30 92 -10 86 Q -50 76 -56 28 Z"
+          fill="url(#figure15)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- Shoulder slope detail (asymmetric: right shoulder lower) -->
+    <path d="M -38 -68 Q -10 -102 26 -98 Q 54 -90 62 -70" fill="none"
+          stroke="#0A0706" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Head (tilted down, line of action peak — overwhelmed) -->
+    <ellipse cx="2" cy="-118" rx="32" ry="36" fill="url(#figure15)" stroke="#0A0706" stroke-width="3.5"
+             transform="rotate(-14 2 -118)"/>
+
+    <!-- Hair nape line -->
+    <path d="M -22 -132 Q 0 -148 24 -130" fill="none" stroke="#0A0706" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- Arm draped forward over desk (heavy, defeated) -->
+    <path d="M 38 -16 Q 80 0 110 36 Q 130 56 124 78 Q 106 80 86 64 Q 56 36 30 22 Z"
+          fill="url(#figure15)" stroke="#0A0706" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- Ambient occlusion under head/torso junction -->
+    <path d="M -32 -80 Q 0 -64 36 -78" fill="none"
+          stroke="#000" stroke-width="2.4" opacity="0.45" filter="url(#contactBlur15)"/>
+
+    <!-- Subtle breathing (slow, weary) -->
+    <animateTransform attributeName="transform" type="translate"
+                      values="670 550;670 553;670 550" dur="6s" repeatCount="indefinite"
+                      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </g>
 
-  <!-- Massive paper pile (leaning, exaggerated) on the desk -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
-    <!-- bottom papers (wide) -->
-    <polygon points="370,690 660,690 690,710 400,710" fill="#F5EFE6"/>
-    <polygon points="380,665 670,665 700,685 410,685" fill="#F5EFE6"/>
-    <polygon points="370,640 660,640 690,660 400,660" fill="#F5EFE6" opacity="0.95"/>
-    <polygon points="385,615 675,615 705,635 415,635" fill="#F5EFE6"/>
-    <!-- mid pile, drifting -->
-    <polygon points="375,575 665,580 695,600 405,595" fill="#F5EFE6" opacity="0.95"/>
-    <polygon points="395,545 685,540 715,560 425,565" fill="#F5EFE6"/>
-    <polygon points="380,510 670,515 700,535 410,530" fill="#F5EFE6" opacity="0.95"/>
-    <!-- upper, leaning right -->
-    <polygon points="410,475 700,470 730,490 440,495" fill="#F5EFE6"/>
-    <polygon points="425,440 715,440 745,460 455,460" fill="#F5EFE6" opacity="0.95"/>
-    <polygon points="445,405 735,400 765,420 475,425" fill="#F5EFE6"/>
-    <polygon points="465,370 755,365 785,385 495,390" fill="#F5EFE6" opacity="0.95"/>
-    <!-- topmost, tilting -->
-    <polygon points="490,335 780,325 808,345 518,355" fill="#F5EFE6"/>
-    <polygon points="510,300 800,290 828,310 538,320" fill="#F5EFE6" opacity="0.95"/>
-    <polygon points="530,265 818,253 846,273 558,285" fill="#F5EFE6"/>
-    <polygon points="555,232 840,218 868,238 583,252" fill="#F5EFE6" opacity="0.95"/>
-
-    <!-- Single sheet falling off (fog gray) -->
-    <polygon points="220,560 320,545 340,575 240,590" fill="#B8B5AD" opacity="0.45">
-      <animateTransform attributeName="transform" type="translate" values="0,-40; 0,40; 0,-40" dur="6s" repeatCount="indefinite"/>
-    </polygon>
-  </g>
-
-  <!-- Figure (back view, slumped) seated behind/to-the-side of the desk -->
-  <g transform="translate(200 770)">
-    <!-- back of head (down, slumped) -->
-    <ellipse cx="0" cy="-100" rx="34" ry="40" fill="#1A1614"/>
-    <!-- shoulders/back, curved -->
-    <path d="M -75,-60 C -78,-30 -85,40 -78,100 L 78,100 C 75,40 65,-20 60,-55 C 56,-78 30,-90 0,-90 C -32,-90 -72,-78 -75,-60 Z" fill="#1A1614"/>
-    <!-- subtle fog overlay on figure -->
-    <ellipse cx="0" cy="-20" rx="80" ry="100" fill="#B8B5AD" opacity="0.2"/>
-  </g>
-
-  <!-- Overall fog overlay top half (heavy mood) -->
-  <rect x="0" y="0" width="1080" height="540" fill="#B8B5AD" opacity="0.08"/>
+  <!-- Vignette (heavy — oppressive feel) -->
+  <rect width="1080" height="1080" fill="url(#vignette15)" pointer-events="none"/>
 </svg>

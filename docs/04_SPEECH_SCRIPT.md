@@ -1,4 +1,4 @@
-# 04 — Speech Script (15 min con slide)
+# 04 . Speech Script (15 min con slide)
 
 > Lo script completo di cosa Rocco dice durante la parte con slide.
 > I 35 min successivi sono a braccio e non sono qui.
@@ -8,7 +8,7 @@
 
 ---
 
-## Apertura — Prima della scena 01 (≈ 35s)
+## Apertura . Prima della scena 01 (≈ 35s)
 *[Buio. Solo la luce sul palco. Rocco entra, lascia 3 secondi di silenzio. Poi:]*
 
 "Buonasera.
@@ -42,7 +42,7 @@ E perché ci riguarda tutti."
 
 ---
 
-## Durante SCENA 01 (8s di video) — Rocco dice (≈ 22s)
+## Durante SCENA 01 (8s di video) . Rocco dice (≈ 22s)
 
 "C'è una ciurma.
 Da sempre c'è una ciurma.
@@ -51,7 +51,7 @@ E naviga ancora oggi."
 
 ---
 
-## Durante SCENA 02 (14s di video) — Rocco dice (≈ 40s)
+## Durante SCENA 02 (14s di video) . Rocco dice (≈ 40s)
 
 "Sono navigatori. Contabili.
 Vedette. Timonieri.
@@ -72,7 +72,7 @@ Il mestiere è loro."
 
 ---
 
-## Durante SCENA 03 (12s di video) — La tempesta — (≈ 32s)
+## Durante SCENA 03 (12s di video) . La tempesta . (≈ 32s)
 
 *[Rocco rallenta. Sound design forte sul palco.]*
 
@@ -98,7 +98,7 @@ E aver imparato come si tiene la barra."
 
 ---
 
-## Durante SCENA 04 (6s di video) — (≈ 28s)
+## Durante SCENA 04 (6s di video) . (≈ 28s)
 
 *[Tono che si ammorbidisce.]*
 
@@ -130,7 +130,7 @@ Con quel libro, la tempesta diventa più piccola."
 
 ---
 
-## Durante SCENA 05 (8s) — L'isola appare — (≈ 28s)
+## Durante SCENA 05 (8s) . L'isola appare . (≈ 28s)
 
 "All'orizzonte, qualcosa che non c'era.
 
@@ -148,7 +148,7 @@ Con forme che il mare non ha mai conosciuto."
 
 ---
 
-## Durante SCENA 06 (8s) — Lo sbarco — (≈ 22s)
+## Durante SCENA 06 (8s) . Lo sbarco . (≈ 22s)
 
 "E sbarcano.
 Con cautela.
@@ -166,7 +166,7 @@ Solo dopo decide."
 
 ---
 
-## Durante SCENA 07 (6s) — La sabbia — (≈ 20s)
+## Durante SCENA 07 (6s) . La sabbia . (≈ 20s)
 
 "E sulla sabbia bianca…"
 
@@ -180,7 +180,7 @@ Qualcosa che brilla appena."
 
 ---
 
-## Durante SCENA 08 (12s) — LA BUSSOLA SI ACCENDE — (≈ **SILENZIO** + sussurro)
+## Durante SCENA 08 (12s) . LA BUSSOLA SI ACCENDE . (≈ **SILENZIO** + sussurro)
 
 *[QUI ROCCO NON PARLA. Silenzio totale dal palco. 8 secondi. La slide parla. Il sound design parla. Rocco fissa la slide, poi il pubblico.]*
 
@@ -194,7 +194,7 @@ Qualcosa che brilla appena."
 
 ---
 
-## Durante SCENA 09 (14s) — La rivelazione — (≈ 45s)
+## Durante SCENA 09 (14s) . La rivelazione . (≈ 45s)
 
 *[Voce torna normale, più intensa.]*
 
@@ -232,7 +232,7 @@ Lo rende più veloce."
 
 ---
 
-## Durante SCENA 10 (8s) — Tornano alla nave — (≈ 30s)
+## Durante SCENA 10 (8s) . Tornano alla nave . (≈ 30s)
 
 "Tornano alla nave.
 
@@ -250,11 +250,11 @@ Perché una sola non basta.
 La vecchia ti dice da dove vieni.
 La nuova ti dice dove vuoi andare.
 
-Insieme — insieme — ti danno la rotta."
+Insieme . insieme . ti danno la rotta."
 
 ---
 
-## Durante SCENA 11 (14s) — La nave salpa — (≈ 40s)
+## Durante SCENA 11 (14s) . La nave salpa . (≈ 40s)
 
 "E quella nave parte.
 
@@ -290,7 +290,7 @@ Per chi sa già navigare."
 
 ---
 
-## Durante SCENA 12 (6s) — Transizione — (≈ 20s)
+## Durante SCENA 12 (6s) . Transizione . (≈ 20s)
 
 *[Tono cambia. Più diretto. Rocco si avvicina di un passo al pubblico.]*
 
@@ -304,11 +304,11 @@ Quella che usiamo ogni giorno in Conflavoro AI."
 
 ---
 
-# Sezione realistica — 5 minuti
+# Sezione realistica . 5 minuti
 
 ---
 
-## SLIDE 13 — Anno zero (≈ 35s)
+## SLIDE 13 . Anno zero (≈ 35s)
 
 "Quello che avete visto non è fantascienza.
 È il calendario di quest'anno.
@@ -334,7 +334,7 @@ Il treno passa una volta sola."
 
 ---
 
-## SLIDE 14 — Chi siamo (≈ 40s)
+## SLIDE 14 . Chi siamo (≈ 40s)
 
 "In Conflavoro AI non costruiamo un programma.
 
@@ -361,7 +361,7 @@ Costruiti per il vostro mestiere."
 
 ---
 
-## SLIDE 15 — Il problema (≈ 40s)
+## SLIDE 15 . Il problema (≈ 40s)
 
 "Il problema vero non è l'AI.
 
@@ -395,7 +395,7 @@ Vi restituiamo tempo."
 
 ---
 
-## SLIDE 16 — Piattaforma DVR (≈ 40s)
+## SLIDE 16 . Piattaforma DVR (≈ 40s)
 
 "Prima bussola. **DVR Validator**.
 
@@ -423,7 +423,7 @@ Per restituirgli le ore che si era rubato da solo."
 
 ---
 
-## SLIDE 17 — Preventivatore (≈ 40s)
+## SLIDE 17 . Preventivatore (≈ 40s)
 
 "Seconda bussola. **Preventivatore**.
 
@@ -453,7 +453,7 @@ Esce dallo studio mentre il cliente è ancora in linea."
 
 ---
 
-## SLIDE 18 — Lead Hunter (≈ 35s)
+## SLIDE 18 . Lead Hunter (≈ 35s)
 
 "Terza bussola. **Lead Hunter**.
 
@@ -461,7 +461,7 @@ La ricerca di nuovi clienti.
 
 *[Pausa 2s]*
 
-**Input:** il tipo di cliente che cercate — settore, dimensione, zona.
+**Input:** il tipo di cliente che cercate . settore, dimensione, zona.
 **Output:** una lista di aziende qualificate, già contattate, pronte all'appuntamento.
 
 *[Pausa 2s]*
@@ -479,7 +479,7 @@ Un agente che vi riempie l'agenda mentre dormite."
 
 ---
 
-## SLIDE 19 — Project Manager (≈ 45s)
+## SLIDE 19 . Project Manager (≈ 45s)
 
 "Quarta bussola. **Project Manager**.
 
@@ -513,7 +513,7 @@ Non al posto vostro."
 
 ---
 
-## SLIDE 20 — Falco AI (≈ 50s)
+## SLIDE 20 . Falco AI (≈ 50s)
 
 *[Tono che si alza un poco. Questa è la slide più "wow" del listino.]*
 
@@ -554,13 +554,13 @@ Loro fanno il lavoro."
 
 ---
 
-## SLIDE 21 — Piattaforma HR (≈ 40s)
+## SLIDE 21 . Piattaforma HR (≈ 40s)
 
 "Sesta bussola. **Piattaforma HR**.
 
 *[Pausa 2s]*
 
-Buste paga, presenze, contratti, ferie, formazione obbligatoria — oggi quasi sempre vivono in un Excel con sette schede e tre persone che si scambiano file via mail.
+Buste paga, presenze, contratti, ferie, formazione obbligatoria . oggi quasi sempre vivono in un Excel con sette schede e tre persone che si scambiano file via mail.
 
 *[Pausa 2s]*
 
@@ -585,9 +585,9 @@ Perché il dipendente non è una riga di Excel."
 
 ---
 
-## SLIDE 22 — Videoconferenze ed e-Learning (≈ 40s)
+## SLIDE 22 . Videoconferenze ed eLearning (≈ 40s)
 
-"Settima bussola. **Videoconferenze ed e-Learning**.
+"Settima bussola. **Videoconferenze ed eLearning**.
 
 *[Pausa 2s]*
 
@@ -603,7 +603,7 @@ Perché il dipendente non è una riga di Excel."
 Videoconferenze pensate per il lavoro italiano.
 Conformi al GDPR.
 
-E sopra ci abbiamo costruito una piattaforma di e-Learning per la formazione obbligatoria:
+E sopra ci abbiamo costruito una piattaforma di eLearning per la formazione obbligatoria:
 sicurezza, antincendio, primo soccorso.
 
 Riconosciuta.
@@ -617,7 +617,7 @@ Torna a essere un sapere."
 
 ---
 
-## SLIDE 23 — Il pattern (≈ 40s)
+## SLIDE 23 . Il pattern (≈ 40s)
 
 "**Sette bussole.**
 
@@ -643,7 +643,7 @@ Una bussola per ogni rotta che vi serve."
 
 ---
 
-## SLIDE 24 — Metodologia BMAD (≈ 40s)
+## SLIDE 24 . Metodologia BMAD (≈ 40s)
 
 "E lo costruiamo con un metodo.
 
@@ -675,7 +675,7 @@ Senza prendere acqua."
 
 ---
 
-## SLIDE 25 — Chiusura (≈ 40s)
+## SLIDE 25 . Chiusura (≈ 40s)
 
 *[Voce più calda, conclusiva. Rocco si avvicina al centro del palco.]*
 
@@ -728,7 +728,7 @@ Grazie."
 - **Sguardo.** Quando la slide parla (es. scena 8), guarda il pubblico, non lo schermo. Il pubblico segue te, non la slide.
 - **Mani.** Niente clicker visibile. Idealmente: un assistente in regia fa partire le scene su tuo cenno o una pedaliera.
 - **Acqua.** Avere acqua sul palco. Bere prima della scena 8 (silenzio). Bere prima della slide 23 (chiusura).
-- **Format pause.** In tutto lo speech il marker è `*[Pausa Xs]*`. Se trovi varianti diverse, sono refusi — applica il format fisso.
+- **Format pause.** In tutto lo speech il marker è `*[Pausa Xs]*`. Se trovi varianti diverse, sono refusi . applica il format fisso.
 
 ---
 

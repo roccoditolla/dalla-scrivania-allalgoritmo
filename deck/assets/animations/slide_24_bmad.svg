@@ -1,86 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 22 — BMAD: four horizontal boxes connected by arrows, one orange cycling">
-  <title>Slide 22 — BMAD methodology</title>
-  <desc>Quattro caselle Build/Measure/Adjust/Deploy connesse da frecce, una freccia arancione che cicla.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 24 — BMAD: four horizontal boxes Build/Measure/Adjust/Deploy connected by Bezier arrows in a cycle, Deploy box glows orange, employee silhouette above with semantic curves, decorative geometric overlay">
+  <title>Slide 24 — BMAD (ciclo Build-Measure-Adjust-Deploy)</title>
+  <desc>Quattro box orizzontali connessi da frecce Bezier che ciclano. Deploy ha glow arancione. Sopra: dipendente silhouette con shape language semantico curve/dignità. Decorative overlay geometrico Cartoon Saloon.</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly24" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="24"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur24" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazeBMAD" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="softGlow24" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    <!-- Box gradients (deep cool ink) -->
+    <linearGradient id="boxIdle" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3F3328"/>
+      <stop offset="100%" stop-color="#1A1209"/>
+    </linearGradient>
+    <linearGradient id="boxDeploy" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC890"/>
+      <stop offset="55%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#7A2A0A"/>
+    </linearGradient>
+    <linearGradient id="figureBMAD" x1="40%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#2A2018"/>
+      <stop offset="100%" stop-color="#0E0907"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FF6B1A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="haloBMAD" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#FF6B1A" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette24" cx="50%" cy="50%" r="70%">
+      <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.28"/>
+    </radialGradient>
+  </defs>
+
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly24)"/>
 
-  <!-- Card 1: BUILD (block being placed) -->
-  <g transform="translate(140 480)">
-    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <!-- Pictogram: a wooden block being placed (hand-like arrow + block) -->
-    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-      <!-- Block (isometric small cube) -->
-      <polygon points="-32,8 0,-12 32,8 0,28"/>
-      <polygon points="-32,8 -32,36 0,56 0,28" fill="#B8B5AD" fill-opacity="0.45"/>
-      <polygon points="0,28 32,8 32,36 0,56" fill="#B8B5AD" fill-opacity="0.55"/>
-      <!-- Drop arrow from above -->
-      <line x1="0" y1="-50" x2="0" y2="-22" stroke-width="3"/>
-      <polyline points="-6,-28 0,-18 6,-28" fill="none"/>
+  <!-- =========================================================
+       Decorative geometric overlay (Cartoon Saloon mandala)
+       ========================================================= -->
+  <g transform="translate(540 540)" opacity="0.32" filter="url(#hazeBMAD)">
+    <circle r="478" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="424" fill="none" stroke="#1A1614" stroke-width="1.4" stroke-dasharray="3,8"/>
+    <circle r="372" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <circle r="318" fill="none" stroke="#1A1614" stroke-width="1.6" stroke-dasharray="5,11"/>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="200s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
+
+  <!-- =========================================================
+       FIGURE — employee silhouette ABOVE the cycle
+       Semantic curves (dignity), line of action S
+       ========================================================= -->
+  <g transform="translate(540 280)">
+    <ellipse cx="0" cy="160" rx="80" ry="9" fill="#1A1614" opacity="0.28" filter="url(#contactBlur24)"/>
+
+    <!-- Body: shoulders open, S curve -->
+    <path d="M -56 30 Q -68 -50 -38 -100 Q -2 -134 38 -126 Q 70 -114 76 -68 Q 80 16 60 70 Q 24 100 -14 94 Q -54 84 -56 30 Z"
+          fill="url(#figureBMAD)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- Head (upright, slight tilt, asymmetric ellipse) -->
+    <ellipse cx="6" cy="-140" rx="32" ry="36" fill="url(#figureBMAD)" stroke="#0A0706" stroke-width="3.5"
+             transform="rotate(4 6 -140)"/>
+
+    <!-- Rim light (warm) -->
+    <path d="M 18 -170 Q 32 -168 38 -152" fill="none" stroke="#FFE3C2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- Hair nape -->
+    <path d="M -18 -158 Q 4 -174 28 -156" fill="none" stroke="#0A0706" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- Open arms (left + right) — gesturing toward the cycle -->
+    <path d="M -38 -28 Q -88 -10 -116 28 Q -132 52 -120 64 Q -100 64 -76 44 Q -50 22 -36 6 Z"
+          fill="url(#figureBMAD)" stroke="#0A0706" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M 42 -28 Q 92 -10 120 28 Q 136 52 124 64 Q 104 64 80 44 Q 54 22 40 6 Z"
+          fill="url(#figureBMAD)" stroke="#0A0706" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- Ambient occlusion under head -->
+    <path d="M -28 -100 Q 4 -86 38 -100" fill="none" stroke="#000" stroke-width="2.4" opacity="0.45" filter="url(#contactBlur24)"/>
+
+    <!-- breath -->
+    <animateTransform attributeName="transform" type="translate"
+                      values="540 280;540 277;540 280" dur="5.4s" repeatCount="indefinite"
+                      calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </g>
+
+  <!-- =========================================================
+       4 BOXES horizontal (B / M / A / D)
+       Each box: rect with rounded corners, abstract icon
+       Deploy (last) has orange fill + halo
+       ========================================================= -->
+  <g transform="translate(540 720)">
+
+    <!-- Halo behind Deploy -->
+    <circle cx="270" cy="0" r="130" fill="url(#haloBMAD)">
+      <animate attributeName="r" values="110;150;110" dur="5s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle cx="270" cy="0" r="80" fill="#FF6B1A" opacity="0.18" filter="url(#softGlow24)">
+      <animate attributeName="opacity" values="0.10;0.24;0.10" dur="5s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+
+    <!-- BOX 1 — Build -->
+    <g transform="translate(-360 0)">
+      <ellipse cx="0" cy="62" rx="68" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur24)"/>
+      <path d="M -78 -54 Q -82 -64 -72 -64 L 72 -64 Q 82 -64 78 -54 L 78 50 Q 82 58 72 58 L -72 58 Q -82 58 -78 50 Z"
+            fill="url(#boxIdle)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- icon: brick/hammer (build) — semantic rectangles -->
+      <g stroke="#FAF5EC" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <rect x="-30" y="-26" width="60" height="14" rx="3" fill="#FAF5EC" opacity="0.9" stroke="none"/>
+        <rect x="-30" y="-8" width="60" height="14" rx="3" fill="#FAF5EC" opacity="0.6" stroke="none"/>
+        <rect x="-30" y="10" width="36" height="14" rx="3" fill="#FAF5EC" opacity="0.4" stroke="none"/>
+      </g>
+    </g>
+
+    <!-- BOX 2 — Measure -->
+    <g transform="translate(-120 0)">
+      <ellipse cx="0" cy="62" rx="68" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur24)"/>
+      <path d="M -78 -54 Q -82 -64 -72 -64 L 72 -64 Q 82 -64 78 -54 L 78 50 Q 82 58 72 58 L -72 58 Q -82 58 -78 50 Z"
+            fill="url(#boxIdle)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- icon: bar chart -->
+      <g>
+        <rect x="-34" y="0" width="14" height="22" rx="2" fill="#FAF5EC" opacity="0.6"/>
+        <rect x="-12" y="-12" width="14" height="34" rx="2" fill="#FAF5EC" opacity="0.85"/>
+        <rect x="10" y="-24" width="14" height="46" rx="2" fill="#FAF5EC"/>
+        <path d="M -38 26 Q 0 28 30 26" fill="none" stroke="#FAF5EC" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+      </g>
+    </g>
+
+    <!-- BOX 3 — Adjust -->
+    <g transform="translate(120 0)">
+      <ellipse cx="0" cy="62" rx="68" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur24)"/>
+      <path d="M -78 -54 Q -82 -64 -72 -64 L 72 -64 Q 82 -64 78 -54 L 78 50 Q 82 58 72 58 L -72 58 Q -82 58 -78 50 Z"
+            fill="url(#boxIdle)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+      <!-- icon: gear (Bezier petals, no L L L) -->
+      <g transform="translate(0 -2)">
+        <g>
+          <path d="M -8 -28 Q 0 -32 8 -28 L 10 -22 Q 22 -20 28 -10 L 32 -8 Q 34 0 32 8 L 28 10 Q 22 20 10 22 L 8 28 Q 0 32 -8 28 L -10 22 Q -22 20 -28 10 L -32 8 Q -34 0 -32 -8 L -28 -10 Q -22 -20 -10 -22 Z"
+                fill="#FAF5EC" stroke="#FAF5EC" stroke-width="1.4" stroke-linejoin="round" opacity="0.85"/>
+          <circle r="8" fill="#1A1209" stroke="#FAF5EC" stroke-width="1.6"/>
+          <animateTransform attributeName="transform" type="rotate" values="0;360" dur="10s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- BOX 4 — Deploy (ORANGE HERO) -->
+    <g transform="translate(360 0)">
+      <ellipse cx="0" cy="62" rx="72" ry="7" fill="#1A1614" opacity="0.3" filter="url(#contactBlur24)"/>
+      <path d="M -82 -58 Q -86 -68 -76 -68 L 76 -68 Q 86 -68 82 -58 L 82 54 Q 86 62 76 62 L -76 62 Q -86 62 -82 54 Z"
+            fill="url(#boxDeploy)" stroke="#0A0706" stroke-width="3.5" stroke-linejoin="round"/>
+      <!-- rim light -->
+      <path d="M -72 -56 Q -38 -64 26 -62" fill="none" stroke="#FFE3C2" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+      <!-- icon: rocket / upward arrow (Bezier) -->
+      <g>
+        <path d="M 0 -34 Q 14 -18 18 4 Q 14 18 0 30 Q -14 18 -18 4 Q -14 -18 0 -34 Z"
+              fill="#FAF5EC" stroke="#0A0706" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="0" cy="-4" r="5" fill="#FF6B1A" stroke="#0A0706" stroke-width="1.6"/>
+        <!-- flames -->
+        <path d="M -6 30 Q -2 42 0 38 Q 2 42 6 30" fill="#FAF5EC" stroke="#0A0706" stroke-width="1.6"/>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="2.4s" repeatCount="indefinite"
+                          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </g>
+    </g>
+
+    <!-- =========================================================
+         BEZIER ARROWS connecting B → M → A → D
+         Each: subtle path + arrowhead + traveling pulse
+         ========================================================= -->
+    <!-- B → M -->
+    <g>
+      <path d="M -278 0 Q -240 -22 -200 0" fill="none" stroke="#1A1614" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+      <path d="M -210 -8 Q -200 0 -210 8" fill="none" stroke="#1A1614" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+      <!-- traveling pulse -->
+      <circle r="5" fill="#FF6B1A" opacity="0.9">
+        <animateMotion path="M -278 0 Q -240 -22 -200 0" dur="3.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- M → A -->
+    <g>
+      <path d="M -38 0 Q 0 -22 40 0" fill="none" stroke="#1A1614" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 30 -8 Q 40 0 30 8" fill="none" stroke="#1A1614" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+      <circle r="5" fill="#FF6B1A" opacity="0.9">
+        <animateMotion path="M -38 0 Q 0 -22 40 0" dur="3.6s" begin="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.6s" begin="0.9s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- A → D -->
+    <g>
+      <path d="M 202 0 Q 240 -22 282 0" fill="none" stroke="#1A1614" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 272 -8 Q 282 0 272 8" fill="none" stroke="#1A1614" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+      <circle r="5" fill="#FF6B1A" opacity="0.95">
+        <animateMotion path="M 202 0 Q 240 -22 282 0" dur="3.6s" begin="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.6s" begin="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- D → B (loop, big curved underline) -->
+    <g>
+      <path d="M 360 70 Q 360 160 0 170 Q -360 160 -360 70" fill="none"
+            stroke="#FF6B1A" stroke-width="3" stroke-linecap="round" stroke-dasharray="6,8" opacity="0.65"/>
+      <path d="M -350 60 Q -360 70 -350 80" fill="none" stroke="#FF6B1A" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+      <circle r="5" fill="#FF6B1A" opacity="0.85">
+        <animateMotion path="M 360 70 Q 360 160 0 170 Q -360 160 -360 70" dur="5.4s" begin="2.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="5.4s" begin="2.7s" repeatCount="indefinite"/>
+      </circle>
     </g>
   </g>
 
-  <!-- Card 2: MEASURE (magnifying glass on dot) -->
-  <g transform="translate(390 480)">
-    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none">
-      <!-- Magnifying glass lens -->
-      <circle cx="-8" cy="-8" r="30" fill="#F5EFE6"/>
-      <!-- Handle -->
-      <line x1="14" y1="14" x2="36" y2="36" stroke-width="6"/>
-      <!-- Tiny dot inside -->
-      <circle cx="-8" cy="-8" r="5" fill="#1A1614"/>
-    </g>
-  </g>
-
-  <!-- Card 3: ADJUST (gear / circular arrow) -->
-  <g transform="translate(640 480)">
-    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none">
-      <!-- Circular arrow (refresh icon) -->
-      <path d="M 30,-8 A 36 36 0 1 1 -28,-22" fill="none"/>
-      <polyline points="30,-22 30,-8 16,-8" fill="none"/>
-      <polyline points="-28,-22 -42,-22 -42,-8" fill="none"/>
-      <!-- Small dot center -->
-      <circle cx="0" cy="0" r="4" fill="#1A1614"/>
-    </g>
-  </g>
-
-  <!-- Card 4: DEPLOY (forward arrow / rocket-like) -->
-  <g transform="translate(890 480)">
-    <rect x="0" y="0" width="180" height="180" rx="14" fill="#F5EFE6" stroke="#1A1614" stroke-width="3"/>
-    <g transform="translate(90 90)" stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#F5EFE6">
-      <!-- Paper plane / forward arrow -->
-      <polygon points="-40,-20 40,0 -40,20 -22,0"/>
-      <line x1="-22" y1="0" x2="-40" y2="0" stroke-width="3"/>
-    </g>
-  </g>
-
-  <!-- Arrows between cards (3 arrows total) — the THIRD arrow is the cycling orange -->
-  <!-- Arrow 1: Build -> Measure -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <line x1="325" y1="570" x2="380" y2="570"/>
-    <polyline points="370,562 384,570 370,578"/>
-  </g>
-  <!-- Arrow 2: Measure -> Adjust -->
-  <g stroke="#1A1614" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <line x1="575" y1="570" x2="630" y2="570"/>
-    <polyline points="620,562 634,570 620,578"/>
-  </g>
-  <!-- Arrow 3: Adjust -> Deploy (ORANGE — the narrative arrow) -->
-  <g stroke="#FF6B1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <line x1="825" y1="570" x2="880" y2="570"/>
-    <polyline points="870,560 886,570 870,580"/>
-    <!-- Pulsing halo on this arrow -->
-    <line x1="825" y1="570" x2="880" y2="570" stroke="#FF6B1A" stroke-width="10" opacity="0">
-      <animate attributeName="opacity" values="0;0.35;0" dur="2.4s" repeatCount="indefinite"/>
-    </line>
-  </g>
-
-  <!-- Bottom loop arrow (deploy → back to build, closing the BMAD cycle) — dashed, subtle -->
-  <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="6,8" opacity="0.5">
-    <path d="M 980,680 C 980,800 600,840 230,800 C 200,795 180,780 180,720 L 180,680"/>
-    <polyline points="172,690 180,676 188,690"/>
-  </g>
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette24)" pointer-events="none"/>
 </svg>

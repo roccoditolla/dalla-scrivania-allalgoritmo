@@ -1,256 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 17 — Preventivatore: isometric calculator with price list and speed arrow">
-  <title>Slide 17 — Preventivatore</title>
-  <desc>Calcolatrice isometrica che si compila da sola, listino prezzi a sinistra, freccia di velocità verso il totale arancione. Auto-fill with anticipation and follow-through.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 17 — Preventivatore: a quote sheet writing itself, lines auto-fill with Bezier curves, final element is an orange client signature with a send arrow">
+  <title>Slide 17 — Preventivatore (firma cliente)</title>
+  <desc>Foglio listino/preventivo che si forma da solo, righe che si compilano come una mano invisibile scrive, ultimo elemento = firma cliente arancione + freccia di send verso destra. Curve Bezier sulle righe (no L L L).</desc>
 
-  <!-- Cream background -->
+  <defs>
+    <filter id="painterly17" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="17"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <filter id="contactBlur17" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="hazePrev" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="softGlow17" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- Sheet -->
+    <linearGradient id="sheet17" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5EC"/>
+      <stop offset="100%" stop-color="#E0D6C0"/>
+    </linearGradient>
+    <!-- Sheet shadow -->
+    <linearGradient id="sheetShadow17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9CCAE"/>
+      <stop offset="100%" stop-color="#9A8A6C"/>
+    </linearGradient>
+    <!-- Header bar -->
+    <linearGradient id="header17" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3F3328"/>
+      <stop offset="100%" stop-color="#1A1209"/>
+    </linearGradient>
+    <!-- Send arrow -->
+    <linearGradient id="sendArrow17" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#FFC890"/>
+      <stop offset="100%" stop-color="#9C3A0E"/>
+    </linearGradient>
+
+    <radialGradient id="haloOrange17" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#FF6B1A" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette17" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.28"/>
+    </radialGradient>
+  </defs>
+
   <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#D9B98A" opacity="0.045" filter="url(#painterly17)"/>
 
-  <!-- Soft orange halo around the "result" zone (right side) -->
-  <ellipse cx="720" cy="540" rx="220" ry="180" fill="#FF6B1A" opacity="0.08">
-    <animate attributeName="opacity" values="0.06;0.14;0.06" dur="4s" repeatCount="indefinite"
-             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-  </ellipse>
+  <!-- Mandala -->
+  <g transform="translate(540 540)" opacity="0.34" filter="url(#hazePrev)">
+    <circle r="460" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
+    <circle r="408" fill="none" stroke="#1A1614" stroke-width="1.3" stroke-dasharray="3,8"/>
+    <circle r="356" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,5"/>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="0 0 0;360 0 0" dur="200s" repeatCount="indefinite"
+                      additive="sum"/>
+  </g>
 
-  <!-- Floor shadow -->
-  <ellipse cx="540" cy="930" rx="380" ry="32" fill="#B8B5AD" opacity="0.25"/>
+  <!-- Shadow behind sheet -->
+  <g transform="translate(540 540)">
+    <path d="M -270 -322 Q -284 -338 -266 -342 L 282 -340 Q 298 -340 286 -322 L 304 320 Q 304 340 286 342 L -270 340 Q -286 340 -286 320 Z"
+          fill="url(#sheetShadow17)" opacity="0.5" transform="translate(18 22)" filter="url(#contactBlur17)"/>
+  </g>
 
-  <!-- =============================================================
-       BACKGROUND LAYER — PRICE LIST (paper, left side)
-       Static, slightly tilted. Rows fill in over time (secondary motion)
-       ============================================================= -->
-  <g transform="translate(260 380)">
-    <!-- Paper -->
-    <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-      <polygon points="-90,-160 90,-180 110,160 -70,180" fill="#F5EFE6"/>
-      <!-- Side depth (subtle) -->
-      <polygon points="-90,-160 -90,-150 -70,190 -70,180" fill="#B8B5AD" opacity="0.3"/>
+  <!-- =========================================================
+       SHEET (isometric-tilt, Bezier corners)
+       ========================================================= -->
+  <g transform="translate(540 540)">
+
+    <!-- Subtle orange halo behind right-bottom (suggests "signed area glows") -->
+    <ellipse cx="120" cy="220" rx="200" ry="120" fill="url(#haloOrange17)"/>
+
+    <!-- Sheet body -->
+    <path d="M -270 -322 Q -284 -338 -266 -342 L 282 -340 Q 298 -340 286 -322 L 304 320 Q 304 340 286 342 L -270 340 Q -286 340 -286 320 Z"
+          fill="url(#sheet17)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- Header bar -->
+    <path d="M -270 -322 Q -284 -338 -266 -342 L 282 -340 Q 298 -340 286 -322 L 290 -260 Q 290 -252 282 -252 L -278 -252 Q -286 -252 -286 -260 Z"
+          fill="url(#header17)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Header marks (3 dots, no text) -->
+    <g fill="#FAF5EC" opacity="0.7">
+      <circle cx="-244" cy="-292" r="5"/>
+      <circle cx="-220" cy="-292" r="5"/>
+      <circle cx="-196" cy="-292" r="5"/>
+    </g>
+    <!-- Header title bar (decorative) -->
+    <path d="M -156 -296 Q -60 -302 80 -298" fill="none"
+          stroke="#FAF5EC" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+    <path d="M -156 -286 Q -40 -290 20 -288" fill="none"
+          stroke="#FAF5EC" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+
+    <!-- Vertical column separator (Bezier) -->
+    <path d="M 140 -250 Q 142 0 144 320" fill="none"
+          stroke="#1A1614" stroke-width="1.6" stroke-dasharray="3,6" opacity="0.45"/>
+
+    <!-- =========================================================
+         AUTO-FILLING ROWS — 7 rows of (label-curve) + (value-curve)
+         Each row appears with a stagger animate
+         All curves are Q Bezier (no L L L on form-organic content)
+         ========================================================= -->
+    <g stroke="#1A1614" stroke-linecap="round" fill="none">
+      <!-- Row 1 -->
+      <g opacity="0">
+        <path d="M -240 -190 Q -160 -194 -60 -190" stroke-width="3"/>
+        <path d="M 174 -190 Q 220 -192 264 -190" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.05;1" repeatCount="indefinite"/>
+      </g>
+      <!-- Row 2 -->
+      <g opacity="0">
+        <path d="M -240 -148 Q -130 -152 -10 -148" stroke-width="3"/>
+        <path d="M 174 -148 Q 230 -150 264 -148" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.15;1" repeatCount="indefinite"/>
+      </g>
+      <!-- Row 3 -->
+      <g opacity="0">
+        <path d="M -240 -106 Q -120 -110 -34 -106" stroke-width="3"/>
+        <path d="M 174 -106 Q 226 -108 264 -106" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.25;1" repeatCount="indefinite"/>
+      </g>
+      <!-- Row 4 -->
+      <g opacity="0">
+        <path d="M -240 -64 Q -140 -68 -50 -64" stroke-width="3"/>
+        <path d="M 174 -64 Q 220 -66 264 -64" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.35;1" repeatCount="indefinite"/>
+      </g>
+      <!-- Row 5 -->
+      <g opacity="0">
+        <path d="M -240 -22 Q -160 -26 -76 -22" stroke-width="3"/>
+        <path d="M 174 -22 Q 232 -24 264 -22" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.45;1" repeatCount="indefinite"/>
+      </g>
+      <!-- Row 6 -->
+      <g opacity="0">
+        <path d="M -240 20 Q -100 16 -2 20" stroke-width="3"/>
+        <path d="M 174 20 Q 222 18 264 20" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.55;1" repeatCount="indefinite"/>
+      </g>
+      <!-- Row 7 -->
+      <g opacity="0">
+        <path d="M -240 62 Q -140 58 -40 62" stroke-width="3"/>
+        <path d="M 174 62 Q 230 60 264 62" stroke-width="3"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.65;1" repeatCount="indefinite"/>
+      </g>
+
+      <!-- Subtotal divider (bolder) -->
+      <g opacity="0">
+        <path d="M -240 110 Q 0 106 264 110" stroke-width="2" opacity="0.55"/>
+        <animate attributeName="opacity" values="0;0.55;0.55" dur="6s" keyTimes="0;0.72;1" repeatCount="indefinite"/>
+      </g>
+
+      <!-- TOTALE row (heavier) -->
+      <g opacity="0">
+        <path d="M -240 144 Q -140 140 -60 144" stroke-width="5"/>
+        <path d="M 160 144 Q 210 140 268 144" stroke-width="5"/>
+        <animate attributeName="opacity" values="0;1;1" dur="6s" keyTimes="0;0.8;1" repeatCount="indefinite"/>
+      </g>
     </g>
 
-    <!-- Header bar (deep ocean blue accent, tiny) -->
-    <line x1="-70" y1="-140" x2="80" y2="-156" stroke="#2C4357" stroke-width="3" stroke-linecap="round"/>
-
-    <!-- Price rows: 6 rows with a label line and a value box -->
-    <!-- Each row "fills" sequentially via opacity animation -->
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.65">
-      <!-- Row labels (always visible, gentle) -->
-      <line x1="-70" y1="-100" x2="20" y2="-108"/>
-      <line x1="-66" y1="-50" x2="14" y2="-58"/>
-      <line x1="-62" y1="0" x2="18" y2="-8"/>
-      <line x1="-58" y1="50" x2="22" y2="42"/>
-      <line x1="-54" y1="100" x2="26" y2="92"/>
-      <line x1="-50" y1="150" x2="30" y2="142"/>
-    </g>
-
-    <!-- Value boxes (small rectangles, fill in sequentially) -->
-    <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round" fill="#F5EFE6">
-      <rect x="42" y="-118" width="46" height="22" rx="2"/>
-      <rect x="38" y="-68" width="46" height="22" rx="2"/>
-      <rect x="36" y="-18" width="46" height="22" rx="2"/>
-      <rect x="44" y="32" width="46" height="22" rx="2"/>
-      <rect x="48" y="82" width="46" height="22" rx="2"/>
-      <rect x="52" y="132" width="46" height="22" rx="2"/>
-    </g>
-
-    <!-- Value fill bars (the "calculated" numbers — short black bars inside boxes, appear sequentially) -->
-    <g stroke="#1A1614" stroke-width="3" stroke-linecap="round">
-      <line x1="48" y1="-107" x2="78" y2="-107" opacity="0">
-        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="0.3s" repeatCount="indefinite"
-                 keyTimes="0;0.08;0.83;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </line>
-      <line x1="44" y1="-57" x2="74" y2="-57" opacity="0">
-        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="0.7s" repeatCount="indefinite"
-                 keyTimes="0;0.08;0.83;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </line>
-      <line x1="42" y1="-7" x2="72" y2="-7" opacity="0">
-        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.1s" repeatCount="indefinite"
-                 keyTimes="0;0.08;0.83;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </line>
-      <line x1="50" y1="43" x2="80" y2="43" opacity="0">
-        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.5s" repeatCount="indefinite"
-                 keyTimes="0;0.08;0.83;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </line>
-      <line x1="54" y1="93" x2="84" y2="93" opacity="0">
-        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="1.9s" repeatCount="indefinite"
-                 keyTimes="0;0.08;0.83;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </line>
-      <line x1="58" y1="143" x2="88" y2="143" opacity="0">
-        <animate attributeName="opacity" values="0;1;1;1" dur="6s" begin="2.3s" repeatCount="indefinite"
-                 keyTimes="0;0.08;0.83;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </line>
+    <!-- =========================================================
+         ORANGE CLIENT SIGNATURE — bottom area, hero element
+         A flowing Bezier signature that appears last
+         ========================================================= -->
+    <g transform="translate(-80 240)">
+      <g opacity="0">
+        <!-- Signature line (cream guide) -->
+        <path d="M -150 32 Q 0 28 200 32" fill="none" stroke="#1A1614" stroke-width="1.5" opacity="0.45" stroke-dasharray="3,5"/>
+        <!-- The signature (Bezier flowing — orange) -->
+        <path d="M -140 14 C -120 -10 -100 -4 -88 12 C -80 22 -76 14 -68 -2 C -56 -24 -38 -16 -28 4 C -18 22 -8 16 4 -4 C 18 -28 32 -22 40 -2 C 48 16 64 14 80 -6 C 92 -22 110 -16 122 8 C 132 26 152 24 168 0"
+              fill="none" stroke="#FF6B1A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Tail flourish -->
+        <path d="M 168 0 Q 184 -10 196 4 Q 200 14 188 18" fill="none"
+              stroke="#FF6B1A" stroke-width="4" stroke-linecap="round"/>
+        <animate attributeName="opacity" values="0;0;1;1" dur="6s" keyTimes="0;0.86;0.92;1" repeatCount="indefinite"/>
+      </g>
     </g>
   </g>
 
-  <!-- =============================================================
-       MIDGROUND LAYER — SPEED ARROW (chevrons left → right)
-       Three chevrons that travel sequentially toward the calculator
-       ============================================================= -->
-  <g stroke="#FF6B1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7">
-    <polyline points="430,540 460,520 460,560 430,540" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.4s" repeatCount="indefinite"
-               keyTimes="0;0.3;0.7;1" calcMode="spline"
-               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    </polyline>
-    <polyline points="475,540 505,520 505,560 475,540" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.6s" repeatCount="indefinite"
-               keyTimes="0;0.3;0.7;1" calcMode="spline"
-               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    </polyline>
-    <polyline points="520,540 550,520 550,560 520,540" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" dur="2.4s" begin="2.8s" repeatCount="indefinite"
-               keyTimes="0;0.3;0.7;1" calcMode="spline"
-               keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    </polyline>
-  </g>
+  <!-- =========================================================
+       SEND ARROW (right-pointing Bezier curve, orange, gradient)
+       Outside sheet → emphasizing "preventivo va al cliente"
+       ========================================================= -->
+  <g transform="translate(880 720)">
+    <g opacity="0">
+      <!-- Arrow body (Bezier swoosh) -->
+      <path d="M -80 0 Q -20 -24 60 -8" fill="none"
+            stroke="url(#sendArrow17)" stroke-width="9" stroke-linecap="round"/>
+      <!-- Arrowhead -->
+      <path d="M 50 -22 Q 64 -10 70 -8 Q 60 4 48 8 Q 56 -2 50 -22 Z"
+            fill="#FF6B1A" stroke="#0A0706" stroke-width="2"/>
+      <!-- subtle motion trail -->
+      <path d="M -110 6 Q -88 -14 -72 -8" fill="none"
+            stroke="#FF6B1A" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+      <path d="M -120 14 Q -98 -2 -84 0" fill="none"
+            stroke="#FF6B1A" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
 
-  <!-- =============================================================
-       FOREGROUND LAYER — CALCULATOR (isometric, right side)
-       Anticipation: subtle -8px y before result appears, then squash/stretch
-       ============================================================= -->
-  <g>
-    <!-- Anticipation+squash group: applies to the whole calculator at the "totale" moment -->
-    <g>
+      <animate attributeName="opacity" values="0;0;1;1" dur="6s" keyTimes="0;0.92;0.96;1" repeatCount="indefinite"/>
       <animateTransform attributeName="transform" type="translate"
-        values="0,0; 0,-8; 0,3; 0,0; 0,0"
-        dur="6s" begin="3.0s" repeatCount="indefinite"
-        keyTimes="0;0.05;0.13;0.25;1" calcMode="spline"
-        keySplines="0.25 0.1 0.25 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-
-      <!-- Calculator base shadow on desk (isometric ellipse) -->
-      <ellipse cx="720" cy="780" rx="180" ry="20" fill="#B8B5AD" opacity="0.3"/>
-
-      <!-- Calculator body (isometric) -->
-      <g stroke="#1A1614" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-        <!-- Top face -->
-        <polygon points="600,380 870,360 870,720 600,740" fill="#F5EFE6"/>
-        <!-- Right depth face -->
-        <polygon points="870,360 900,375 900,735 870,720" fill="#B8B5AD" opacity="0.4"/>
-        <!-- Bottom depth face -->
-        <polygon points="600,740 870,720 900,735 630,755" fill="#B8B5AD" opacity="0.55"/>
-      </g>
-
-      <!-- Display screen (top portion) -->
-      <g stroke="#1A1614" stroke-width="2.5" stroke-linejoin="round">
-        <polygon points="630,410 840,395 840,475 630,490" fill="#F5EFE6"/>
-      </g>
-
-      <!-- Display content: small input digits (left, dim) + RESULT (orange, large, appears) -->
-      <!-- Input digits — small bars in the upper portion -->
-      <g stroke="#1A1614" stroke-width="2.5" stroke-linecap="round" opacity="0.5">
-        <line x1="645" y1="425" x2="665" y2="424" opacity="0">
-          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="0.4s" repeatCount="indefinite"
-                   keyTimes="0;0.08;0.83;1" calcMode="spline"
-                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-        </line>
-        <line x1="670" y1="424" x2="680" y2="423" opacity="0">
-          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="0.8s" repeatCount="indefinite"
-                   keyTimes="0;0.08;0.83;1" calcMode="spline"
-                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-        </line>
-        <line x1="685" y1="423" x2="710" y2="421" opacity="0">
-          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="1.2s" repeatCount="indefinite"
-                   keyTimes="0;0.08;0.83;1" calcMode="spline"
-                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-        </line>
-        <line x1="715" y1="421" x2="745" y2="419" opacity="0">
-          <animate attributeName="opacity" values="0;0.5;0.5;0.5" dur="6s" begin="1.6s" repeatCount="indefinite"
-                   keyTimes="0;0.08;0.83;1" calcMode="spline"
-                   keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-        </line>
-      </g>
-
-      <!-- Equals separator line in screen -->
-      <line x1="640" y1="445" x2="830" y2="442" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
-
-      <!-- RESULT — orange bar in lower screen (the "totale" appearing) -->
-      <g>
-        <rect x="700" y="455" width="130" height="20" rx="2" fill="#FF6B1A" opacity="0">
-          <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
-                   keyTimes="0;0.5;0.55;0.93;1" calcMode="spline"
-                   keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-          <!-- Squash on appear -->
-          <animate attributeName="height" values="20;28;20;20;20" dur="6s" begin="0s" repeatCount="indefinite"
-                   keyTimes="0;0.55;0.62;0.93;1" calcMode="spline"
-                   keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-          <animate attributeName="y" values="455;451;455;455;455" dur="6s" begin="0s" repeatCount="indefinite"
-                   keyTimes="0;0.55;0.62;0.93;1" calcMode="spline"
-                   keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-        </rect>
-        <!-- Small "€" suggestion dot (orange dot, no text) -->
-        <circle cx="687" cy="465" r="4" fill="#FF6B1A" opacity="0">
-          <animate attributeName="opacity" values="0;0;1;1;1" dur="6s" begin="0s" repeatCount="indefinite"
-                   keyTimes="0;0.5;0.58;0.93;1" calcMode="spline"
-                   keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-        </circle>
-      </g>
-
-      <!-- Button grid (5 cols × 4 rows of small squares) -->
-      <g stroke="#1A1614" stroke-width="2" stroke-linejoin="round" fill="#F5EFE6">
-        <rect x="630" y="510" width="38" height="34" rx="3"/>
-        <rect x="676" y="508" width="38" height="34" rx="3"/>
-        <rect x="722" y="506" width="38" height="34" rx="3"/>
-        <rect x="768" y="504" width="38" height="34" rx="3"/>
-        <rect x="814" y="502" width="38" height="34" rx="3"/>
-
-        <rect x="630" y="552" width="38" height="34" rx="3"/>
-        <rect x="676" y="550" width="38" height="34" rx="3"/>
-        <rect x="722" y="548" width="38" height="34" rx="3"/>
-        <rect x="768" y="546" width="38" height="34" rx="3"/>
-        <rect x="814" y="544" width="38" height="34" rx="3"/>
-
-        <rect x="630" y="594" width="38" height="34" rx="3"/>
-        <rect x="676" y="592" width="38" height="34" rx="3"/>
-        <rect x="722" y="590" width="38" height="34" rx="3"/>
-        <rect x="768" y="588" width="38" height="34" rx="3"/>
-        <rect x="814" y="586" width="38" height="34" rx="3"/>
-
-        <rect x="630" y="636" width="38" height="34" rx="3"/>
-        <rect x="676" y="634" width="38" height="34" rx="3"/>
-        <rect x="722" y="632" width="38" height="34" rx="3"/>
-        <rect x="768" y="630" width="38" height="34" rx="3"/>
-        <rect x="814" y="628" width="38" height="34" rx="3"/>
-      </g>
-
-      <!-- "Pressed" key indicator — random buttons highlight briefly (secondary motion) -->
-      <rect x="676" y="550" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
-        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="0.5s" repeatCount="indefinite"
-                 keyTimes="0;0.06;0.12;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </rect>
-      <rect x="768" y="588" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
-        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="1.4s" repeatCount="indefinite"
-                 keyTimes="0;0.06;0.12;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </rect>
-      <rect x="722" y="632" width="38" height="34" rx="3" fill="#1A1614" opacity="0">
-        <animate attributeName="opacity" values="0;0.7;0;0" dur="6s" begin="2.2s" repeatCount="indefinite"
-                 keyTimes="0;0.06;0.12;1" calcMode="spline"
-                 keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-      </rect>
-
-      <!-- The "=" button (orange, the trigger) -->
-      <rect x="814" y="628" width="38" height="76" rx="3" fill="#FF6B1A" stroke="#1A1614" stroke-width="2.5"/>
-      <line x1="824" y1="660" x2="844" y2="659" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
-      <line x1="824" y1="676" x2="844" y2="675" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+                        values="0 0;14 -4;0 0" dur="6s" keyTimes="0;0.96;1" repeatCount="indefinite"/>
     </g>
   </g>
 
-  <!-- =============================================================
-       SECONDARY MOTION — a single orange spark above calculator
-       Follow-through: little dot oscillating after result appears
-       ============================================================= -->
-  <circle cx="735" cy="370" r="6" fill="#FF6B1A" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;0.6;0" dur="6s" begin="0s" repeatCount="indefinite"
-             keyTimes="0;0.55;0.6;0.75;0.9" calcMode="spline"
-             keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <animate attributeName="cy" values="370;370;355;345;340" dur="6s" begin="0s" repeatCount="indefinite"
-             keyTimes="0;0.55;0.62;0.78;0.9" calcMode="spline"
-             keySplines="0.42 0 0.58 1;0.25 0.1 0.25 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-  </circle>
+  <!-- Soft glow behind signature -->
+  <circle cx="540" cy="800" r="140" fill="#FF6B1A" opacity="0.08" filter="url(#softGlow17)"/>
+
+  <!-- Vignette -->
+  <rect width="1080" height="1080" fill="url(#vignette17)" pointer-events="none"/>
 </svg>

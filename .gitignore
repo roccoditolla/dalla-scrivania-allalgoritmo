@@ -18,6 +18,11 @@ deck/assets/images/*.png
 deck/assets/images/*.jpg
 !deck/assets/images/logo.svg
 !deck/assets/images/.gitkeep
+# Foto AI generate via Pollinations (scene story + slide realistic) DEVONO essere in repo
+!deck/assets/images/scenes/
+!deck/assets/images/scenes/*
+!deck/assets/images/realistic/
+!deck/assets/images/realistic/*
 
 # Solo gli SVG vettoriali dei loghi/icone vanno in repo
 # I PNG/JPG generati no — troppo grandi

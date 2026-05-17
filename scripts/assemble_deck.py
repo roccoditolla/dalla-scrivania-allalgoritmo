@@ -210,6 +210,15 @@ def find_scene_animation_svg(scene_id: str) -> Path | None:
     return candidates[0] if candidates else None
 
 
+def find_scene_photo(scene_id: str) -> Path | None:
+    """Trova foto-illustrazione AI (Pollinations) per una scena."""
+    sid = scene_id.lower()
+    photo_dir = DECK_DIR / "assets" / "images" / "scenes"
+    candidates = list(photo_dir.glob(f"scene_{sid}.jpg"))
+    candidates += list(photo_dir.glob(f"scene_{sid}.png"))
+    return candidates[0] if candidates else None
+
+
 def find_realistic_image(slide_id: str) -> Path | None:
     """Trova l'illustrazione PNG/SVG per una slide realistic (in deck/assets/images)."""
     candidates = list(IMAGES_DIR.glob(f"realistic_{slide_id}_*.svg"))
@@ -220,6 +229,14 @@ def find_realistic_image(slide_id: str) -> Path | None:
 def find_realistic_animation_svg(slide_id: str) -> Path | None:
     """Trova SVG animato per una slide realistic (fallback se manca PNG/SVG generato)."""
     candidates = list(ANIMATIONS_DIR.glob(f"slide_{slide_id}_*.svg"))
+    return candidates[0] if candidates else None
+
+
+def find_realistic_photo(slide_id: str) -> Path | None:
+    """Trova foto-illustrazione AI Pollinations per una slide realistic."""
+    photo_dir = DECK_DIR / "assets" / "images" / "realistic"
+    candidates = list(photo_dir.glob(f"slide_{slide_id}.jpg"))
+    candidates += list(photo_dir.glob(f"slide_{slide_id}.png"))
     return candidates[0] if candidates else None
 
 
@@ -367,15 +384,13 @@ def build_story_slide_html(scene: dict) -> str:
     Ordine di preferenza per il visual:
       1. MP4 video Veo finale (deck/assets/videos/scene_XX_FINAL.mp4)
       2. MP4 versione precedente (scene_XX_vN.mp4)
-      3. SVG animato fatto in-code (deck/assets/animations/scene_XX_*.svg)
-      4. Placeholder testuale (ultima spiaggia)
-
-    Per l'audio:
-      - Se esiste l'MP3 in deck/assets/audio/, lo usa
-      - Altrimenti il transitions.js fa fallback su SynthAudio (sintetico in-browser)
-        attivato via data-synth-ambient="scene_id"
+      3. JPG/PNG AI fotorealistic (deck/assets/images/scenes/scene_XX.jpg)
+         con overlay SVG per movimento (particles, caption, transitions)
+      4. SVG animato in-code (deck/assets/animations/scene_XX_*.svg)
+      5. Placeholder testuale (ultima spiaggia)
     """
     video_path = find_scene_video(scene["id"])
+    photo_path = find_scene_photo(scene["id"])
     svg_anim_path = find_scene_animation_svg(scene["id"])
     ambient, ambient_db = find_ambient_for_scene(scene["id"])
     notes = extract_speech_for(f"SCENA {scene['id']}")
@@ -386,6 +401,41 @@ def build_story_slide_html(scene: dict) -> str:
         <video data-autoplay class="full-bleed-video"
                src="{rel_video}"
                preload="auto" playsinline></video>'''
+    elif photo_path:
+        # AI photo background (Pollinations) + overlay SVG per movimento.
+        rel_photo = photo_path.relative_to(DECK_DIR)
+        body = f'''
+        <div class="full-bleed-photo" style="background-image: url('{rel_photo}');"></div>
+        <div class="photo-overlay">
+          <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" class="photo-overlay-svg">
+            <defs>
+              <radialGradient id="vig_{scene["id"]}" cx="50%" cy="50%" r="78%">
+                <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+                <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+              </radialGradient>
+              <filter id="dustGlow_{scene["id"]}"><feGaussianBlur stdDeviation="3"/></filter>
+            </defs>
+            <rect width="1920" height="1080" fill="url(#vig_{scene["id"]})" pointer-events="none"/>
+            <g class="dust-layer">
+              <circle r="2.5" cx="320" cy="140" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
+                <animate attributeName="cy" values="140;680" dur="9s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.6;0" dur="9s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2" cx="780" cy="220" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
+                <animate attributeName="cy" values="220;780" dur="11s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.5;0" dur="11s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2.5" cx="1240" cy="180" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
+                <animate attributeName="cy" values="180;720" dur="13s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.55;0" dur="13s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2" cx="1620" cy="240" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
+                <animate attributeName="cy" values="240;820" dur="10s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.5;0" dur="10s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+          </svg>
+        </div>'''
     elif svg_anim_path:
         # Fallback SVG animato in-code (zero costi, sempre disponibile)
         svg_inline = inline_svg_content(svg_anim_path)
@@ -428,12 +478,16 @@ def build_realistic_slide_html(slide: dict) -> str:
       3. Placeholder testuale
     """
     image_path = find_realistic_image(slide["id"])
+    photo_path = find_realistic_photo(slide["id"])
     svg_anim_path = find_realistic_animation_svg(slide["id"])
     notes = extract_speech_for(f"SLIDE {slide['id']}")
 
     if image_path:
         rel = image_path.relative_to(DECK_DIR)
         image_block = f'<div class="illustration"><img src="{rel}" alt="" /></div>'
+    elif photo_path:
+        rel = photo_path.relative_to(DECK_DIR)
+        image_block = f'<div class="illustration photo-ai"><img src="{rel}" alt="" /></div>'
     elif svg_anim_path:
         svg_inline = inline_svg_content(svg_anim_path)
         image_block = f'<div class="illustration svg-anim">{svg_inline}</div>'

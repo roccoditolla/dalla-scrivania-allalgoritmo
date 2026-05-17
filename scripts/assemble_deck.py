@@ -226,6 +226,21 @@ def find_scene_photo(scene_id: str) -> Path | None:
     return candidates[0] if candidates else None
 
 
+def find_scene_lottie(scene_id: str) -> Path | None:
+    """Trova animazione Lottie JSON per una scena (priorità sopra la foto)."""
+    sid = scene_id.lower()
+    lottie_dir = DECK_DIR / "assets" / "lottie"
+    candidates = list(lottie_dir.glob(f"scene_{sid}.json"))
+    return candidates[0] if candidates else None
+
+
+def find_realistic_lottie(slide_id: str) -> Path | None:
+    """Trova animazione Lottie JSON per una slide realistic."""
+    lottie_dir = DECK_DIR / "assets" / "lottie"
+    candidates = list(lottie_dir.glob(f"slide_{slide_id}.json"))
+    return candidates[0] if candidates else None
+
+
 def find_realistic_image(slide_id: str) -> Path | None:
     """Trova l'illustrazione PNG/SVG per una slide realistic (in deck/assets/images)."""
     candidates = list(IMAGES_DIR.glob(f"realistic_{slide_id}_*.svg"))
@@ -332,7 +347,9 @@ $realistic_slides
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <script src="js/synth_audio.js"></script>
+  <script src="js/lottie_init.js"></script>
   <script src="js/transitions.js"></script>
   <script>
     Reveal.initialize({
@@ -397,6 +414,7 @@ def build_story_slide_html(scene: dict) -> str:
       5. Placeholder testuale (ultima spiaggia)
     """
     video_path = find_scene_video(scene["id"])
+    lottie_path = find_scene_lottie(scene["id"])
     photo_path = find_scene_photo(scene["id"])
     svg_anim_path = find_scene_animation_svg(scene["id"])
     ambient, ambient_db = find_ambient_for_scene(scene["id"])
@@ -408,6 +426,10 @@ def build_story_slide_html(scene: dict) -> str:
         <video data-autoplay class="full-bleed-video"
                src="{rel_video}"
                preload="auto" playsinline></video>'''
+    elif lottie_path:
+        rel_lottie = lottie_path.relative_to(DECK_DIR)
+        body = f'''
+        <div class="full-bleed-lottie" data-lottie="{rel_lottie}"></div>'''
     elif photo_path:
         # AI photo background (Pollinations) + overlay SVG specifico per scena.
         rel_photo = photo_path.relative_to(DECK_DIR)
@@ -474,6 +496,7 @@ def build_realistic_slide_html(slide: dict) -> str:
       3. Placeholder testuale
     """
     image_path = find_realistic_image(slide["id"])
+    lottie_path = find_realistic_lottie(slide["id"])
     photo_path = find_realistic_photo(slide["id"])
     svg_anim_path = find_realistic_animation_svg(slide["id"])
     notes = extract_speech_for(f"SLIDE {slide['id']}")
@@ -481,6 +504,9 @@ def build_realistic_slide_html(slide: dict) -> str:
     if image_path:
         rel = image_path.relative_to(DECK_DIR)
         image_block = f'<div class="illustration"><img src="{rel}" alt="" /></div>'
+    elif lottie_path:
+        rel = lottie_path.relative_to(DECK_DIR)
+        image_block = f'<div class="illustration lottie-illustration" data-lottie="{rel}"></div>'
     elif photo_path:
         rel = photo_path.relative_to(DECK_DIR)
         image_block = f'<div class="illustration photo-ai"><img src="{rel}" alt="" /></div>'

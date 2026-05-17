@@ -24,6 +24,13 @@ import re
 from pathlib import Path
 from string import Template
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from scene_overlays import SCENE_OVERLAYS
+except ImportError:
+    SCENE_OVERLAYS = {}
+
 try:
     from rich.console import Console as _RichConsole
     console = _RichConsole()
@@ -402,10 +409,15 @@ def build_story_slide_html(scene: dict) -> str:
                src="{rel_video}"
                preload="auto" playsinline></video>'''
     elif photo_path:
-        # AI photo background (Pollinations) + overlay SVG per movimento.
+        # AI photo background (Pollinations) + overlay SVG specifico per scena.
         rel_photo = photo_path.relative_to(DECK_DIR)
-        body = f'''
-        <div class="full-bleed-photo" style="background-image: url('{rel_photo}');"></div>
+        # Overlay dedicato per la scena (animazioni vere: lampi/onde/glow/particelle).
+        # Fallback: vignette + dust generico se la scena non ha overlay dedicato.
+        scene_overlay = SCENE_OVERLAYS.get(scene["id"].upper())
+        if scene_overlay:
+            overlay_html = f'<div class="photo-overlay">{scene_overlay}</div>'
+        else:
+            overlay_html = f'''
         <div class="photo-overlay">
           <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" class="photo-overlay-svg">
             <defs>
@@ -413,29 +425,13 @@ def build_story_slide_html(scene: dict) -> str:
                 <stop offset="60%" stop-color="#000" stop-opacity="0"/>
                 <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
               </radialGradient>
-              <filter id="dustGlow_{scene["id"]}"><feGaussianBlur stdDeviation="3"/></filter>
             </defs>
             <rect width="1920" height="1080" fill="url(#vig_{scene["id"]})" pointer-events="none"/>
-            <g class="dust-layer">
-              <circle r="2.5" cx="320" cy="140" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
-                <animate attributeName="cy" values="140;680" dur="9s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.6;0" dur="9s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2" cx="780" cy="220" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
-                <animate attributeName="cy" values="220;780" dur="11s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.5;0" dur="11s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2.5" cx="1240" cy="180" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
-                <animate attributeName="cy" values="180;720" dur="13s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.55;0" dur="13s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2" cx="1620" cy="240" fill="#FFE9C2" filter="url(#dustGlow_{scene["id"]})">
-                <animate attributeName="cy" values="240;820" dur="10s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.5;0" dur="10s" repeatCount="indefinite"/>
-              </circle>
-            </g>
           </svg>
         </div>'''
+        body = f'''
+        <div class="full-bleed-photo" style="background-image: url('{rel_photo}');"></div>
+        {overlay_html}'''
     elif svg_anim_path:
         # Fallback SVG animato in-code (zero costi, sempre disponibile)
         svg_inline = inline_svg_content(svg_anim_path)

@@ -52,43 +52,64 @@ DOCS_DIR = ROOT / "docs"
 PROMPTS_DIR = ROOT / "prompts"
 
 # Sequenza scene story (1-12) — IDs come da storyboard
+# title  = cattivante (3-6 parole) per spingere il pubblico alla prossima slide
+# caption = chiarimento per il pubblico (≤14 parole) "ah, ho capito cosa vedo"
+# cue    = micro-promemoria delivery per Rocco al palco (≤8 parole)
 STORY_SCENES = [
-    {"id": "01",  "title": "Una ciurma in mare aperto",
-     "caption": "I consulenti del lavoro navigano. Da sempre."},
-    {"id": "02A", "title": "La ciurma sul ponte",
-     "caption": "Ognuno con il suo mestiere. Anni di esperienza addosso."},
-    {"id": "03A", "title": "La tempesta",
-     "caption": "Hanno passato tempeste. Hanno imparato la rotta."},
-    {"id": "03B", "title": "Il capitano nella tempesta",
-     "caption": "Chi non ha cicatrici non sa navigare."},
-    {"id": "04",  "title": "Dopo la tempesta",
-     "caption": "Quello che hanno imparato resta. Diventa metodo."},
-    {"id": "05",  "title": "Appare un'isola",
-     "caption": "Un giorno appare qualcosa che non era nei libri."},
-    {"id": "06",  "title": "Lo sbarco",
-     "caption": "Chi sa navigare non si butta. Studia, poi decide."},
-    {"id": "08A", "title": "La bussola si accende",
-     "caption": "Sulla sabbia trovano una bussola. Arancione."},
-    {"id": "08B", "title": "L'ago della bussola",
-     "caption": "Non punta a nord. Punta dove tu vuoi arrivare."},
-    {"id": "09A", "title": "La rivelazione",
-     "caption": "Funziona solo in mano a chi sa già navigare."},
-    {"id": "10",  "title": "Tornano alla nave",
-     "caption": "Non gettano niente. Aggiungono. Bussola vecchia + nuova."},
-    {"id": "11A", "title": "La nave salpa",
-     "caption": "Altre navi all'orizzonte. Ferme. Non hanno ancora capito."},
-    {"id": "11B", "title": "Due bussole sul ponte",
-     "caption": "La vecchia dice da dove vieni. La nuova dove vuoi andare."},
-    {"id": "12",  "title": "Anno zero",
-     "caption": "Quella nave siamo noi. Adesso."},
+    {"id": "01",  "title": "C'è sempre stata una ciurma",
+     "caption": "Voi navigate da prima che si parlasse di tecnologia.",
+     "cue": "Voce bassa. Pausa 3s prima."},
+    {"id": "02A", "title": "Un sapere che vale ancora",
+     "caption": "Ognuno ha un mestiere addosso. Anni nelle mani.",
+     "cue": "Indica il pubblico. Tono caldo."},
+    {"id": "03A", "title": "Le tempeste le conoscete",
+     "caption": "Anni di norme che cambiano. Scadenze impossibili.",
+     "cue": "Rallenta. Volume cresce sul suono."},
+    {"id": "03B", "title": "Chi ha cicatrici sa navigare",
+     "caption": "La differenza non è la fortuna. È l'esperienza.",
+     "cue": "Frase chiave. 'Chi non ha cicatrici.'"},
+    {"id": "04",  "title": "Ogni tempesta diventa metodo",
+     "caption": "Quello che imparate resta. Diventa il vostro libro mastro.",
+     "cue": "Ammorbidisci. Sguardo lungo."},
+    {"id": "05",  "title": "Poi un giorno, un'isola",
+     "caption": "Sull'orizzonte appare qualcosa che non era nei libri.",
+     "cue": "Sussurra: 'E un giorno...' Pausa 2s."},
+    {"id": "06",  "title": "Non si corre. Si studia.",
+     "caption": "Chi sa il mestiere sbarca con cautela. Ascolta prima.",
+     "cue": "Passo avanti. Calma assoluta."},
+    {"id": "08A", "title": "Sulla sabbia, qualcosa brilla",
+     "caption": "Trovano una bussola. Si accende. Arancione.",
+     "cue": "SILENZIO 8s. Poi sussurra: 'Una bussola.'"},
+    {"id": "08B", "title": "Non punta a nord",
+     "caption": "Punta dove tu vuoi arrivare. Tu dici la rotta.",
+     "cue": "Indica con la mano. Voce intensa."},
+    {"id": "09A", "title": "Funziona solo per chi sa",
+     "caption": "Nelle mani sbagliate brilla, ma non porta nulla.",
+     "cue": "Pausa lunga. 'Funziona solo se sapete navigare.'"},
+    {"id": "10",  "title": "Non si butta nulla, si aggiunge",
+     "caption": "Tornano alla nave con la nuova bussola accanto alla vecchia.",
+     "cue": "Tono fermo. Gesto: due mani vicine."},
+    {"id": "11A", "title": "Altre navi sono ferme",
+     "caption": "All'orizzonte chi non ha cercato l'isola. Non si muove.",
+     "cue": "Sguardo lontano. Pausa 3s."},
+    {"id": "11B", "title": "Due bussole, una rotta",
+     "caption": "La vecchia dice da dove venite. La nuova dove andate.",
+     "cue": "Voce piena. Crescendo."},
+    {"id": "12",  "title": "Quella nave siamo noi",
+     "caption": "Fine della storia. Adesso vi mostro la bussola vera.",
+     "cue": "Passo avanti. Cambio registro. Sorridi."},
 ]
 
 # Sequenza slide realistic (13-25) — 7 piattaforme di prodotto.
 # Big number concettuali (NON tempi/numeri specifici come richiesto da Rocco).
 # Bullet descrivono input/output concettuali, non quanto-veloci-siamo.
+# caption + cue: stesso schema della story (chiarimento pubblico + delivery Rocco).
 REALISTIC_SLIDES = [
     {
-        "id": "13", "title": "Anno zero", "big": "ANNO ZERO.",
+        "id": "13", "title": "La storia era vera",
+        "big": "ANNO ZERO.",
+        "caption": "Non era fantascienza. È il calendario di quest'anno.",
+        "cue": "Cambio registro. Tono diretto, voce piena.",
         "bullets": [
             "Il presente, non la fantascienza",
             "Chi capisce l'AI prima costruisce un vantaggio",
@@ -96,7 +117,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "14", "title": "Conflavoro AI", "big": "7",
+        "id": "14", "title": "Non un programma. Una flotta.",
+        "big": "7",
+        "caption": "Sette strumenti per voi, per le PMI, per i lavoratori.",
+        "cue": "Indica il pubblico. 'Costruita per voi.'"
+        ,
         "bullets": [
             "Sette piattaforme. Una visione.",
             "Per consulente, PMI e lavoratore",
@@ -105,7 +130,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "15", "title": "Il problema", "big": "TEMPO",
+        "id": "15", "title": "Il vero ladro è il tempo",
+        "big": "TEMPO",
+        "caption": "Ogni ora su circolari è un'ora tolta al cliente.",
+        "cue": "Pausa dopo 'tempo'. Sguardo al pubblico."
+        ,
         "bullets": [
             "Compliance, controlli, refresh normativo",
             "Tempo rubato al cliente, alla relazione, al mestiere",
@@ -113,7 +142,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "16", "title": "Piattaforma DVR", "big": "RAPIDO",
+        "id": "16", "title": "Prima bussola: il DVR pronto",
+        "big": "RAPIDO",
+        "caption": "Documento di valutazione rischi pronto mentre il caffè è caldo.",
+        "cue": "Frase chiave: 'mentre il caffè è caldo'."
+        ,
         "bullets": [
             "Input: documento normativo + dati azienda",
             "Output: DVR validato, conforme, completo",
@@ -121,7 +154,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "17", "title": "Preventivatore", "big": "FIRMA",
+        "id": "17", "title": "Seconda bussola: preventivi al volo",
+        "big": "FIRMA",
+        "caption": "Il preventivo esce mentre il cliente è ancora in linea.",
+        "cue": "Tono pratico. 'Mentre il cliente è in linea.'"
+        ,
         "bullets": [
             "Input: anagrafica cliente + listino dello studio",
             "Output: PDF impaginato pronto all'invio",
@@ -129,7 +166,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "18", "title": "Lead Hunter", "big": "AGENDA",
+        "id": "18", "title": "Terza bussola: clienti che arrivano",
+        "big": "AGENDA",
+        "caption": "Un agente cerca e contatta i clienti giusti. Anche di notte.",
+        "cue": "Sorridi. 'Mentre voi dormite.'"
+        ,
         "bullets": [
             "Cerca, qualifica e contatta lead nei canali giusti",
             "Già attivo per noi e per il primo cliente",
@@ -137,7 +178,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "19", "title": "Project Manager", "big": "360°",
+        "id": "19", "title": "Quarta bussola: studio allineato",
+        "big": "360°",
+        "caption": "Sa chi fa cosa. Sa cosa è in ritardo. Sa dove serve mano.",
+        "cue": "Voce calma. 'Pensa con voi, non al posto vostro.'"
+        ,
         "bullets": [
             "Allinea l'organizzazione interna a 360°",
             "Velocizza l'operatività di tutto lo studio",
@@ -145,7 +190,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "20", "title": "Falco AI", "big": "VOCE",
+        "id": "20", "title": "Quinta bussola: agenti che parlano",
+        "big": "VOCE",
+        "caption": "Voi date una voce. Loro chiamano, scrivono, prenotano.",
+        "cue": "Alza energia. Questa è la più 'wow'."
+        ,
         "bullets": [
             "Agenti vocali che operano per conto dell'azienda",
             "Sotto agenti coordinati che lavorano come umani",
@@ -154,7 +203,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "21", "title": "Piattaforma HR", "big": "UNICO",
+        "id": "21", "title": "Sesta bussola: HR in un posto solo",
+        "big": "UNICO",
+        "caption": "Buste paga, presenze, ferie. Una sola fonte di verità.",
+        "cue": "Frase cuore. 'Non è una riga di Excel.'"
+        ,
         "bullets": [
             "Busta paga, presenze, contratti, ferie, formazione",
             "Un sistema unico. Fine dell'Excel a sette schede",
@@ -163,7 +216,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "22", "title": "Videoconferenze ed eLearning", "big": "LIVE",
+        "id": "22", "title": "Settima bussola: formazione che vale",
+        "big": "LIVE",
+        "caption": "Videoconferenze a norma e corsi obbligatori dal telefono.",
+        "cue": "Chiudi la sezione prodotti. Tono pieno."
+        ,
         "bullets": [
             "Videoconferenze GDPR + trascrizione automatica",
             "Salvataggio nel fascicolo del dipendente",
@@ -172,7 +229,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "23", "title": "Il pattern", "big": "7 bussole",
+        "id": "23", "title": "Sette processi, sette bussole",
+        "big": "7 bussole",
+        "caption": "Ogni rotta del vostro lavoro ha il suo strumento dedicato.",
+        "cue": "Frase chiave: 'una bussola per ogni rotta'."
+        ,
         "bullets": [
             "Ogni processo del lavoro ha il suo strumento AI",
             "Specifico. Verticale. Fatto da chi conosce il settore.",
@@ -180,7 +241,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "24", "title": "Metodologia BMAD", "big": "BMAD",
+        "id": "24", "title": "Come lo facciamo davvero",
+        "big": "BMAD",
+        "caption": "Un metodo: una bracciata alla volta, testata e confermata.",
+        "cue": "Calma. 'Niente big bang.' Gesto netto."
+        ,
         "bullets": [
             "Build. Measure. Adjust. Deploy.",
             "Una modifica alla volta, testata e confermata",
@@ -189,7 +254,11 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "25", "title": "Chiusura", "big": "ADESSO.",
+        "id": "25", "title": "La vostra nave non resta ferma",
+        "big": "ADESSO.",
+        "caption": "Altri stanno fermi all'orizzonte. Voi avete la bussola.",
+        "cue": "Voce calda. Pausa 3s prima di 'Grazie'."
+        ,
         "bullets": [
             "Anno zero. Adesso.",
             "Abbiamo trovato la nostra isola",
@@ -380,7 +449,7 @@ STORY_SLIDE_TEMPLATE = Template("""
           <h3 class="story-caption-title">$title</h3>
           <p class="story-caption-text">$caption</p>
         </div>
-        <aside class="notes">$notes</aside>
+        <aside class="notes"><div class="cue-card">🎯 CUE: $cue</div>$notes</aside>
       </section>""")
 
 
@@ -395,8 +464,9 @@ REALISTIC_SLIDE_TEMPLATE = Template("""
             <div class="r-visual" data-anim="visual">$image_block</div>
             <ul class="r-bullets">$bullets</ul>
           </div>
+          <p class="r-caption" data-anim="caption">$caption</p>
         </div>
-        <aside class="notes">$notes</aside>
+        <aside class="notes"><div class="cue-card">🎯 CUE: $cue</div>$notes</aside>
       </section>""")
 
 
@@ -446,6 +516,7 @@ def build_story_slide_html(scene: dict) -> str:
             id=scene["id"],
             title=scene.get("title", ""),
             caption=scene.get("caption", ""),
+            cue=scene.get("cue", ""),
             body=body,
             notes=notes or f"[Speech per scena {scene['id']} non trovato in docs/04_SPEECH_SCRIPT.md]",
         )
@@ -495,6 +566,7 @@ def build_story_slide_html(scene: dict) -> str:
         id=scene["id"],
         title=scene.get("title", ""),
         caption=scene.get("caption", ""),
+        cue=scene.get("cue", ""),
         body=body,
         notes=notes or f"[Speech per scena {scene['id']} non trovato in docs/04_SPEECH_SCRIPT.md]",
     )
@@ -541,6 +613,8 @@ def build_realistic_slide_html(slide: dict) -> str:
         id=slide["id"],
         big=slide["big"],
         title=slide["title"],
+        caption=slide.get("caption", ""),
+        cue=slide.get("cue", ""),
         image_block=image_block,
         bullets=bullets_html,
         notes=notes or f"[Speech per slide {slide['id']} non trovato]",

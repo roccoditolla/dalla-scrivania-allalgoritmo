@@ -415,11 +415,14 @@ def build_story_slide_html(scene: dict) -> str:
     """
     video_path = find_scene_video(scene["id"])
     lottie_path = find_scene_lottie(scene["id"])
-    photo_path = find_scene_photo(scene["id"])
     svg_anim_path = find_scene_animation_svg(scene["id"])
+    photo_path = find_scene_photo(scene["id"])
     ambient, ambient_db = find_ambient_for_scene(scene["id"])
     notes = extract_speech_for(f"SCENA {scene['id']}")
 
+    # Priorità: video MP4 > Lottie JSON > SVG procedurale animato (preferito,
+    # racconta la storia con disegni dedicati) > Foto AI (fallback solo se SVG
+    # mancante) > placeholder testuale.
     if video_path:
         rel_video = video_path.relative_to(DECK_DIR)
         body = f'''
@@ -430,6 +433,22 @@ def build_story_slide_html(scene: dict) -> str:
         rel_lottie = lottie_path.relative_to(DECK_DIR)
         body = f'''
         <div class="full-bleed-lottie" data-lottie="{rel_lottie}"></div>'''
+    elif svg_anim_path:
+        # SVG procedurale: racconta la storia con animazioni dedicate
+        svg_inline = inline_svg_content(svg_anim_path)
+        body = f'''
+        <div class="full-bleed-svg" data-anim-scene="{scene["id"]}">
+          {svg_inline}
+        </div>'''
+        # Scene SVG: NON aggiungiamo overlay foto-style sopra (vignette/dust).
+        # Le SVG hanno gia i propri overlay narrativi dentro.
+        return STORY_SLIDE_TEMPLATE.substitute(
+            id=scene["id"],
+            title=scene.get("title", ""),
+            caption=scene.get("caption", ""),
+            body=body,
+            notes=notes or f"[Speech per scena {scene['id']} non trovato in docs/04_SPEECH_SCRIPT.md]",
+        )
     elif photo_path:
         # AI photo background (Pollinations) + overlay SVG specifico per scena.
         rel_photo = photo_path.relative_to(DECK_DIR)
@@ -454,13 +473,6 @@ def build_story_slide_html(scene: dict) -> str:
         body = f'''
         <div class="full-bleed-photo" style="background-image: url('{rel_photo}');"></div>
         {overlay_html}'''
-    elif svg_anim_path:
-        # Fallback SVG animato in-code (zero costi, sempre disponibile)
-        svg_inline = inline_svg_content(svg_anim_path)
-        body = f'''
-        <div class="full-bleed-svg" data-anim-scene="{scene["id"]}">
-          {svg_inline}
-        </div>'''
     else:
         body = f'''
         <div class="placeholder-slide">
@@ -501,18 +513,19 @@ def build_realistic_slide_html(slide: dict) -> str:
     svg_anim_path = find_realistic_animation_svg(slide["id"])
     notes = extract_speech_for(f"SLIDE {slide['id']}")
 
+    # Priorità slide realistic: PNG manuale > Lottie > SVG procedurale (preferito) > Foto AI
     if image_path:
         rel = image_path.relative_to(DECK_DIR)
         image_block = f'<div class="illustration"><img src="{rel}" alt="" /></div>'
     elif lottie_path:
         rel = lottie_path.relative_to(DECK_DIR)
         image_block = f'<div class="illustration lottie-illustration" data-lottie="{rel}"></div>'
-    elif photo_path:
-        rel = photo_path.relative_to(DECK_DIR)
-        image_block = f'<div class="illustration photo-ai"><img src="{rel}" alt="" /></div>'
     elif svg_anim_path:
         svg_inline = inline_svg_content(svg_anim_path)
         image_block = f'<div class="illustration svg-anim">{svg_inline}</div>'
+    elif photo_path:
+        rel = photo_path.relative_to(DECK_DIR)
+        image_block = f'<div class="illustration photo-ai"><img src="{rel}" alt="" /></div>'
     else:
         image_block = f'''<div class="illustration placeholder">
           <p>Illustrazione mancante:<br>

@@ -42,7 +42,12 @@ E perché ci riguarda tutti."
 
 ---
 
-## Durante SCENA 01 (8s di video) . Rocco dice (≈ 22s)
+## SCENA 01 (8s di video) . (≈ 22s)
+
+> **Titolo a schermo:** "C'è sempre stata una ciurma"
+> **Cue palco:** Voce bassa. Pausa 3s prima.
+
+*[Pausa 3s]*
 
 "C'è una ciurma.
 Da sempre c'è una ciurma.
@@ -51,9 +56,15 @@ E naviga ancora oggi."
 
 ---
 
-## Durante SCENA 02 (14s di video) . Rocco dice (≈ 40s)
+## SCENA 02A (10s di video) . (≈ 30s)
 
-"Sono navigatori. Contabili.
+> **Titolo a schermo:** "Un sapere che vale ancora"
+> **Cue palco:** Indica il pubblico. Tono caldo.
+
+"Quel sapere vale ancora.
+Vale oggi come ieri.
+
+Sono navigatori. Contabili.
 Vedette. Timonieri.
 Ognuno con un mestiere preciso addosso.
 
@@ -62,21 +73,23 @@ Sanno leggere il mare.
 Sanno quando una corda sta per cedere.
 Prima che ceda.
 
-Sanno scrivere sul libro mastro quello che hanno imparato.
-E tornano a leggerlo. Sempre.
-
 *[Pausa 2s]*
 
-Il libro mastro è il mestiere.
-Il mestiere è loro."
+Il mestiere è loro.
+Sta nelle mani."
 
 ---
 
-## Durante SCENA 03 (12s di video) . La tempesta . (≈ 32s)
+## SCENA 03A (8s di video) . La tempesta . (≈ 28s)
+
+> **Titolo a schermo:** "Le tempeste le conoscete"
+> **Cue palco:** Rallenta. Volume cresce sul suono.
 
 *[Rocco rallenta. Sound design forte sul palco.]*
 
-"Hanno visto tempeste.
+"Le tempeste, voi le conoscete.
+
+Hanno visto tempeste.
 Le hanno passate.
 
 *[Pausa 2s]*
@@ -84,13 +97,18 @@ Le hanno passate.
 Ogni cicatrice sulla nave è una notte che qualcuno non ha dormito.
 Ogni nodo nuovo nel legno è una norma cambiata all'ultimo.
 Una scadenza spostata.
-Un cliente da rassicurare al telefono.
+Un cliente da rassicurare al telefono."
 
-*[Pausa 2s]*
+---
 
-Chi non ha cicatrici non sa navigare.
+## SCENA 03B (6s di video) . La frase chiave . (≈ 20s)
 
-*[Pausa 2s]*
+> **Titolo a schermo:** "Chi ha cicatrici sa navigare"
+> **Cue palco:** Frase chiave. 'Chi non ha cicatrici.'
+
+"Chi non ha cicatrici non sa navigare.
+
+*[Pausa 3s]*
 
 La differenza tra chi affonda e chi passa non è la fortuna.
 È averla già vista, una tempesta.
@@ -98,11 +116,14 @@ E aver imparato come si tiene la barra."
 
 ---
 
-## Durante SCENA 04 (6s di video) . (≈ 28s)
+## SCENA 04 (6s di video) . (≈ 28s)
+
+> **Titolo a schermo:** "Ogni tempesta diventa metodo"
+> **Cue palco:** Ammorbidisci. Sguardo lungo.
 
 *[Tono che si ammorbidisce.]*
 
-"E dopo ogni tempesta, hanno scritto.
+"E ogni tempesta, quando passa, diventa metodo.
 
 Hanno scritto cosa hanno imparato.
 Hanno scritto cosa non vogliono ripetere.
@@ -110,7 +131,6 @@ Hanno scritto cosa non vogliono ripetere.
 *[Pausa 2s]*
 
 Quel libro mastro è la loro forza.
-È il metodo.
 È il motivo per cui sono ancora qui.
 
 Senza quel libro, la tempesta torna sempre nuova.
@@ -118,21 +138,18 @@ Con quel libro, la tempesta diventa più piccola."
 
 ---
 
-## Transizione (≈ 12s)
+## SCENA 05 (8s) . L'isola appare . (≈ 28s)
 
-*[Rocco guarda il pubblico.]*
+> **Titolo a schermo:** "Poi un giorno, un'isola"
+> **Cue palco:** Sussurra: 'E un giorno...' Pausa 2s.
+
+*[Sussurra:]*
 
 "E un giorno…"
 
 *[Pausa 2s]*
 
-"…succede qualcosa che non era scritto in nessun libro mastro."
-
----
-
-## Durante SCENA 05 (8s) . L'isola appare . (≈ 28s)
-
-"All'orizzonte, qualcosa che non c'era.
+"…all'orizzonte, qualcosa che non c'era.
 
 Sulla carta non era segnato.
 Sui libri non era scritto.
@@ -148,17 +165,22 @@ Con forme che il mare non ha mai conosciuto."
 
 ---
 
-## Durante SCENA 06 (8s) . Lo sbarco . (≈ 22s)
+## SCENA 06 (8s) . Lo sbarco . (≈ 24s)
 
-"E sbarcano.
-Con cautela.
+> **Titolo a schermo:** "Non si corre. Si studia."
+> **Cue palco:** Passo avanti. Calma assoluta.
+
+*[Passo avanti verso il pubblico.]*
+
+"Non si corre.
+Si studia.
 
 *[Pausa 2s]*
 
 Chi naviga davvero non si butta.
 Non corre verso quello che non conosce.
 
-Studia.
+Sbarca con cautela.
 Esplora.
 Ascolta.
 
@@ -166,23 +188,14 @@ Solo dopo decide."
 
 ---
 
-## Durante SCENA 07 (6s) . La sabbia . (≈ 20s)
+## SCENA 08A (12s) . LA BUSSOLA SI ACCENDE . (≈ **SILENZIO** + sussurro)
 
-"E sulla sabbia bianca…"
-
-*[Pausa 2s, sguardo sulla slide.]*
-
-"Mezza sepolta.
-Quasi invisibile.
-
-Trovano qualcosa.
-Qualcosa che brilla appena."
-
----
-
-## Durante SCENA 08 (12s) . LA BUSSOLA SI ACCENDE . (≈ **SILENZIO** + sussurro)
+> **Titolo a schermo:** "Sulla sabbia, qualcosa brilla"
+> **Cue palco:** SILENZIO 8s. Poi sussurra: 'Una bussola.'
 
 *[QUI ROCCO NON PARLA. Silenzio totale dal palco. 8 secondi. La slide parla. Il sound design parla. Rocco fissa la slide, poi il pubblico.]*
+
+*[Pausa 8s]*
 
 *[Dopo 8 secondi, sussurra:]*
 
@@ -194,28 +207,39 @@ Qualcosa che brilla appena."
 
 ---
 
-## Durante SCENA 09 (14s) . La rivelazione . (≈ 45s)
+## SCENA 08B (8s) . Punta dove vuoi . (≈ 25s)
 
-*[Voce torna normale, più intensa.]*
+> **Titolo a schermo:** "Non punta a nord"
+> **Cue palco:** Indica con la mano. Voce intensa.
 
-"Questa bussola è diversa.
+*[Voce torna normale, più intensa. Indica con la mano.]*
 
-Non punta a nord.
-Punta dove tu vuoi arrivare.
+"Non punta a nord.
 
 *[Pausa 2s]*
+
+Punta dove tu vuoi arrivare.
 
 Tu dici dove devi andare.
 L'ago si muove.
-E ti indica la rotta.
+E ti indica la rotta."
+
+---
+
+## SCENA 09A (10s) . La condizione . (≈ 32s)
+
+> **Titolo a schermo:** "Funziona solo per chi sa"
+> **Cue palco:** Pausa lunga. 'Funziona solo se sapete navigare.'
+
+"Ma c'è una condizione.
+
+*[Pausa 3s]*
+
+Funziona solo per chi sa.
+Funziona solo se sapete navigare.
 
 *[Pausa 2s]*
 
-Ma c'è una condizione.
-
-*[Pausa 2s]*
-
-Funziona solo in mano a chi sa già navigare.
 Chi sa cos'è una rotta.
 Cos'è una corrente.
 Cos'è una stella.
@@ -232,19 +256,20 @@ Lo rende più veloce."
 
 ---
 
-## Durante SCENA 10 (8s) . Tornano alla nave . (≈ 30s)
+## SCENA 10 (8s) . Tornano alla nave . (≈ 28s)
 
-"Tornano alla nave.
+> **Titolo a schermo:** "Non si butta nulla, si aggiunge"
+> **Cue palco:** Tono fermo. Gesto: due mani vicine.
+
+*[Gesto: due mani vicine, parallele.]*
+
+"Non si butta nulla.
+Si aggiunge.
 
 *[Pausa 2s]*
 
-Non gettano via niente.
-Non buttano la bussola vecchia.
-Aggiungono.
-
+Tornano alla nave.
 Mettono la nuova accanto alla vecchia.
-
-*[Pausa 2s]*
 
 Perché una sola non basta.
 La vecchia ti dice da dove vieni.
@@ -254,52 +279,68 @@ Insieme . insieme . ti danno la rotta."
 
 ---
 
-## Durante SCENA 11 (14s) . La nave salpa . (≈ 40s)
+## SCENA 11A (8s) . Altre navi ferme . (≈ 22s)
 
-"E quella nave parte.
+> **Titolo a schermo:** "Altre navi sono ferme"
+> **Cue palco:** Sguardo lontano. Pausa 3s.
 
-Con due bussole sul ponte.
-La vecchia di ottone.
-La nuova arancione.
+*[Sguardo lontano, oltre il pubblico.]*
 
-*[Pausa 2s]*
+"All'orizzonte, altre navi restano ferme.
 
-All'orizzonte, altre navi restano ferme.
+*[Pausa 3s]*
+
 Non hanno cercato l'isola.
 Non hanno raccolto niente dalla sabbia.
 
 *[Pausa 2s]*
 
-Siamo all'anno zero.
-
-*[Pausa 2s]*
-
-Adesso.
-
-*[Pausa 2s]*
-
-Anno zero.
-
-*[Pausa 2s]*
-
-La bussola arancione è qui.
-In questa sala.
-Per chi sa già navigare."
-
-*[Pausa 3s. Le scene 11A e 11B passano. Crescendo musicale.]*
+Sono ferme.
+E il mare passa."
 
 ---
 
-## Durante SCENA 12 (6s) . Transizione . (≈ 20s)
+## SCENA 11B (10s) . Due bussole, una rotta . (≈ 30s)
 
-*[Tono cambia. Più diretto. Rocco si avvicina di un passo al pubblico.]*
+> **Titolo a schermo:** "Due bussole, una rotta"
+> **Cue palco:** Voce piena. Crescendo.
 
-"Fine della storia."
+*[Voce piena. Crescendo.]*
+
+"Due bussole sul ponte.
+La vecchia di ottone.
+La nuova arancione.
 
 *[Pausa 2s]*
 
-"Adesso vi mostro la nostra bussola arancione.
-Quella vera.
+La vecchia dice da dove venite.
+La nuova dice dove andate.
+
+*[Pausa 2s]*
+
+Una sola rotta.
+La vostra."
+
+*[Pausa 3s. Crescendo musicale che si chiude.]*
+
+---
+
+## SCENA 12 (6s) . Quella nave siamo noi . (≈ 22s)
+
+> **Titolo a schermo:** "Quella nave siamo noi"
+> **Cue palco:** Passo avanti. Cambio registro. Sorridi.
+
+*[Tono cambia. Più diretto. Rocco si avvicina di un passo al pubblico. Sorride.]*
+
+"Quella nave siamo noi.
+
+*[Pausa 2s]*
+
+Fine della storia.
+
+*[Pausa 2s]*
+
+Adesso vi mostro la bussola vera.
 Quella che usiamo ogni giorno in Conflavoro AI."
 
 ---
@@ -310,7 +351,20 @@ Quella che usiamo ogni giorno in Conflavoro AI."
 
 ## SLIDE 13 . Anno zero (≈ 35s)
 
-"Quello che avete visto non è fantascienza.
+> **Titolo a schermo:** "La storia era vera"
+> **Cue palco:** Cambio registro. Tono diretto, voce piena.
+
+*[Cambio registro. Voce piena, diretta.]*
+
+"La storia era vera.
+
+*[Pausa 2s]*
+
+Anno zero.
+
+*[Pausa 2s]*
+
+Non era fantascienza.
 È il calendario di quest'anno.
 
 *[Pausa 2s]*
@@ -318,36 +372,32 @@ Quella che usiamo ogni giorno in Conflavoro AI."
 Siamo nel momento esatto in cui chi capisce l'AI prima degli altri costruisce un vantaggio che gli altri rincorreranno per anni.
 
 Non per mesi.
-
-*[Pausa 2s]*
-
 Per **anni**.
 
 *[Pausa 2s]*
 
-Lo studio che integra AI adesso prende un vantaggio che gli altri non recuperano.
-Nel nostro mestiere il tempo non torna indietro.
-
-*[Pausa 2s]*
-
+Nel nostro mestiere tre anni sono una vita.
 Il treno passa una volta sola."
 
 ---
 
 ## SLIDE 14 . Chi siamo (≈ 40s)
 
-"In Conflavoro AI non costruiamo un programma.
+> **Titolo a schermo:** "Non un programma. Una flotta."
+> **Cue palco:** Indica il pubblico. 'Costruita per voi.'
+
+*[Indica il pubblico.]*
+
+"Non un programma.
+Una flotta.
 
 *[Pausa 2s]*
 
-Costruiamo una flotta.
-
 **Sette piattaforme.**
-Un'unica idea:
+Costruite per voi.
 
-uno strumento che pensa con voi.
 Per il consulente del lavoro.
-Per l'impresa PMI.
+Per la PMI.
 Per il dipendente.
 
 *[Pausa 2s]*
@@ -356,22 +406,21 @@ Non chatbot.
 Non l'ennesima copia di ChatGPT con sopra un logo nuovo.
 
 Strumenti specifici.
-Costruiti da chi ha letto la vostra agenda.
-Costruiti per il vostro mestiere."
+Verticali.
+Costruiti da chi ha letto la vostra agenda."
 
 ---
 
 ## SLIDE 15 . Il problema (≈ 40s)
 
-"Il problema vero non è l'AI.
+> **Titolo a schermo:** "Il vero ladro è il tempo"
+> **Cue palco:** Pausa dopo 'tempo'. Sguardo al pubblico.
+
+"Il vero ladro è il **tempo**.
 
 *[Pausa 2s]*
 
-Il problema è il **tempo**.
-
-*[Pausa 2s]*
-
-Il consulente del lavoro oggi passa la maggior parte delle ore dietro a circolari, controlli INPS, aggiornamenti normativi.
+Il consulente del lavoro oggi passa la maggior parte delle ore dietro a circolari, controlli, aggiornamenti normativi.
 
 Non a parlare con i clienti.
 
@@ -390,23 +439,25 @@ Al mestiere vero.
 
 *[Pausa 2s]*
 
-Noi non aggiungiamo strumenti.
-Vi restituiamo tempo."
+L'AI non vi toglie il mestiere.
+Vi restituisce il tempo."
 
 ---
 
-## SLIDE 16 . Piattaforma DVR (≈ 40s)
+## SLIDE 16 . Piattaforma DVR (≈ 38s)
+
+> **Titolo a schermo:** "Prima bussola: il DVR pronto"
+> **Cue palco:** Frase chiave: 'mentre il caffè è caldo'.
 
 "Prima bussola. **DVR Validator**.
 
 Il documento di valutazione dei rischi.
 Decreto legislativo ottantuno.
-Sicurezza sul lavoro.
 
 *[Pausa 2s]*
 
-**Input:** la normativa aggiornata e la realtà dell'azienda del cliente.
-**Output:** il DVR completo, conforme, pronto per la firma.
+**Input:** la normativa aggiornata e i dati dell'azienda.
+**Output:** il DVR validato, conforme, completo.
 
 *[Pausa 2s]*
 
@@ -418,12 +469,15 @@ Quello che prima richiedeva un pomeriggio intero, adesso lo gestite mentre il ca
 
 *[Pausa 2s]*
 
-Non per togliere lavoro al consulente.
-Per restituirgli le ore che si era rubato da solo."
+Non per togliere lavoro.
+Per ridarlo a chi conta."
 
 ---
 
-## SLIDE 17 . Preventivatore (≈ 40s)
+## SLIDE 17 . Preventivatore (≈ 38s)
+
+> **Titolo a schermo:** "Seconda bussola: preventivi al volo"
+> **Cue palco:** Tono pratico. 'Mentre il cliente è in linea.'
 
 "Seconda bussola. **Preventivatore**.
 
@@ -431,8 +485,8 @@ Il preventivo del consulente del lavoro.
 
 *[Pausa 2s]*
 
-**Input:** l'anagrafica del cliente e il listino del vostro studio.
-**Output:** un preventivo serio, impaginato, pronto per essere mandato.
+**Input:** anagrafica cliente e listino del vostro studio.
+**Output:** un PDF impaginato, pronto per essere mandato.
 
 *[Pausa 2s]*
 
@@ -446,23 +500,26 @@ Voi mandate.
 
 *[Pausa 2s]*
 
-Il preventivo non si scrive più di notte.
-Non aspetta più la settimana prossima.
-
-Esce dallo studio mentre il cliente è ancora in linea."
+Il preventivo non aspetta più la settimana prossima.
+Esce mentre il cliente è ancora in linea."
 
 ---
 
 ## SLIDE 18 . Lead Hunter (≈ 35s)
 
+> **Titolo a schermo:** "Terza bussola: clienti che arrivano"
+> **Cue palco:** Sorridi. 'Mentre voi dormite.'
+
+*[Sorride.]*
+
 "Terza bussola. **Lead Hunter**.
 
-La ricerca di nuovi clienti.
+Clienti che arrivano.
 
 *[Pausa 2s]*
 
 **Input:** il tipo di cliente che cercate . settore, dimensione, zona.
-**Output:** una lista di aziende qualificate, già contattate, pronte all'appuntamento.
+**Output:** aziende qualificate, contattate, pronte all'appuntamento.
 
 *[Pausa 2s]*
 
@@ -470,8 +527,8 @@ La ricerca di nuovi clienti.
 
 *[Pausa 2s]*
 
-Non un'agenzia di marketing.
-Non un CRM con un nome elegante.
+Già attivo per noi.
+Già attivo per il primo cliente.
 
 *[Pausa 2s]*
 
@@ -479,19 +536,21 @@ Un agente che vi riempie l'agenda mentre dormite."
 
 ---
 
-## SLIDE 19 . Project Manager (≈ 45s)
+## SLIDE 19 . Project Manager (≈ 42s)
+
+> **Titolo a schermo:** "Quarta bussola: studio allineato"
+> **Cue palco:** Voce calma. 'Pensa con voi, non al posto vostro.'
+
+*[Voce calma.]*
 
 "Quarta bussola. **Project Manager**.
 
-*[Pausa 2s]*
-
-Non un cronoprogramma.
-Non Trello con un nome diverso.
+Lo studio allineato.
 
 *[Pausa 2s]*
 
-**Input:** le pratiche aperte, le scadenze, le persone dello studio.
-**Output:** lo studio allineato. Tutti sanno cosa fare. Niente cade.
+**Input:** pratiche aperte, scadenze, persone dello studio.
+**Output:** tutti sanno cosa fare. Niente cade.
 
 *[Pausa 2s]*
 
@@ -515,9 +574,14 @@ Non al posto vostro."
 
 ## SLIDE 20 . Falco AI (≈ 50s)
 
-*[Tono che si alza un poco. Questa è la slide più "wow" del listino.]*
+> **Titolo a schermo:** "Quinta bussola: agenti che parlano"
+> **Cue palco:** Alza energia. Questa è la più 'wow'.
+
+*[Tono che si alza. Questa è la più 'wow'.]*
 
 "Quinta bussola. **Falco AI**.
+
+Agenti che parlano.
 
 *[Pausa 2s]*
 
@@ -554,18 +618,23 @@ Loro fanno il lavoro."
 
 ---
 
-## SLIDE 21 . Piattaforma HR (≈ 40s)
+## SLIDE 21 . Piattaforma HR (≈ 42s)
+
+> **Titolo a schermo:** "Sesta bussola: HR in un posto solo"
+> **Cue palco:** Frase cuore. 'Non è una riga di Excel.'
 
 "Sesta bussola. **Piattaforma HR**.
 
-*[Pausa 2s]*
-
-Buste paga, presenze, contratti, ferie, formazione obbligatoria . oggi quasi sempre vivono in un Excel con sette schede e tre persone che si scambiano file via mail.
+HR in un posto solo.
 
 *[Pausa 2s]*
 
-**Input:** i dati del dipendente, le presenze, i contratti.
-**Output:** tutto in un unico posto. Per il consulente, per l'azienda, per il dipendente.
+Buste paga, presenze, contratti, ferie, formazione obbligatoria . oggi vivono in un Excel a sette schede e tre persone che si scambiano file via mail.
+
+*[Pausa 2s]*
+
+**Input:** dati del dipendente, presenze, contratti.
+**Output:** tutto in un unico posto. Per consulente, azienda, dipendente.
 
 *[Pausa 2s]*
 
@@ -573,26 +642,29 @@ Buste paga, presenze, contratti, ferie, formazione obbligatoria . oggi quasi sem
 
 *[Pausa 2s]*
 
-Il consulente vede tutto.
-L'azienda vede quello che le serve.
-Il dipendente vede la sua busta paga, le sue ferie, i suoi corsi.
+Una sola fonte di verità.
 
 *[Pausa 2s]*
-
-Una sola fonte di verità.
 
 Perché il dipendente non è una riga di Excel."
 
 ---
 
-## SLIDE 22 . Videoconferenze ed eLearning (≈ 40s)
+## SLIDE 22 . Videoconferenze ed eLearning (≈ 38s)
+
+> **Titolo a schermo:** "Settima bussola: formazione che vale"
+> **Cue palco:** Chiudi la sezione prodotti. Tono pieno.
+
+*[Tono pieno. Si chiude la sezione prodotti.]*
 
 "Settima bussola. **Videoconferenze ed eLearning**.
 
+Formazione che vale.
+
 *[Pausa 2s]*
 
-**Input:** una riunione con il cliente, o un corso obbligatorio da fare.
-**Output:** trascrizione, registrazione a norma, attestato salvato nel fascicolo del dipendente.
+**Input:** una riunione con il cliente, o un corso obbligatorio.
+**Output:** trascrizione, registrazione a norma, attestato nel fascicolo del dipendente.
 
 *[Pausa 2s]*
 
@@ -600,14 +672,11 @@ Perché il dipendente non è una riga di Excel."
 
 *[Pausa 2s]*
 
-Videoconferenze pensate per il lavoro italiano.
-Conformi al GDPR.
+Videoconferenze conformi al GDPR.
+Trascrizione automatica.
 
-E sopra ci abbiamo costruito una piattaforma di eLearning per la formazione obbligatoria:
-sicurezza, antincendio, primo soccorso.
-
-Riconosciuta.
-Tracciabile.
+Sopra ci abbiamo costruito una piattaforma di eLearning per la formazione obbligatoria.
+Sicurezza, antincendio, primo soccorso.
 Fatta dal telefono in pausa pranzo.
 
 *[Pausa 2s]*
@@ -617,15 +686,17 @@ Torna a essere un sapere."
 
 ---
 
-## SLIDE 23 . Il pattern (≈ 40s)
+## SLIDE 23 . Il pattern (≈ 35s)
 
-"**Sette bussole.**
+> **Titolo a schermo:** "Sette processi, sette bussole"
+> **Cue palco:** Frase chiave: 'una bussola per ogni rotta'.
+
+"Sette processi.
+**Sette bussole.**
 
 *[Pausa 2s]*
 
-Una sola idea:
-
-ogni processo del consulente del lavoro può avere il suo strumento AI.
+Ogni processo del lavoro ha il suo strumento AI.
 
 Specifico.
 Verticale.
@@ -645,7 +716,12 @@ Una bussola per ogni rotta che vi serve."
 
 ## SLIDE 24 . Metodologia BMAD (≈ 40s)
 
-"E lo costruiamo con un metodo.
+> **Titolo a schermo:** "Come lo facciamo davvero"
+> **Cue palco:** Calma. 'Niente big bang.' Gesto netto.
+
+*[Calma. Gesto netto.]*
+
+"Come lo facciamo davvero.
 
 *[Pausa 2s]*
 
@@ -671,23 +747,27 @@ Niente roadmap a tre anni che cambia ogni mese.
 Solo passi verificabili.
 Una bracciata alla volta.
 
-Senza prendere acqua."
+In mare nuovo, senza prendere acqua."
 
 ---
 
-## SLIDE 25 . Chiusura (≈ 40s)
+## SLIDE 25 . Chiusura (≈ 42s)
+
+> **Titolo a schermo:** "La vostra nave non resta ferma"
+> **Cue palco:** Voce calda. Pausa 3s prima di 'Grazie'.
 
 *[Voce più calda, conclusiva. Rocco si avvicina al centro del palco.]*
 
-"Siamo all'anno zero.
+"La vostra nave non resta ferma.
 
 *[Pausa 2s]*
 
+Anno zero.
 Adesso.
 
 *[Pausa 2s]*
 
-In Conflavoro AI abbiamo deciso di non aspettare.
+In Conflavoro AI non abbiamo aspettato.
 
 Abbiamo trovato la nostra isola.
 Abbiamo raccolto la bussola.
@@ -715,6 +795,11 @@ La vostra no.
 
 *[Pausa 3s]*
 
+La ciurma siete voi.
+La bussola è qui.
+
+*[Pausa 3s]*
+
 Grazie."
 
 *[Applauso. Rocco resta sul palco. La slide finale resta. Si attacca con i 35 minuti di Q&A / approfondimento a braccio.]*
@@ -725,16 +810,17 @@ Grazie."
 
 - **Pause = potere.** Le pause indicate (`*[Pausa Xs]*`) non sono opzionali. Sono il 30% dell'impatto.
 - **Volume.** Mai gridare. La storia funziona se viene sussurrata e poi alzata gradualmente.
-- **Sguardo.** Quando la slide parla (es. scena 8), guarda il pubblico, non lo schermo. Il pubblico segue te, non la slide.
+- **Sguardo.** Quando la slide parla (es. scena 08A), guarda il pubblico, non lo schermo. Il pubblico segue te, non la slide.
 - **Mani.** Niente clicker visibile. Idealmente: un assistente in regia fa partire le scene su tuo cenno o una pedaliera.
-- **Acqua.** Avere acqua sul palco. Bere prima della scena 8 (silenzio). Bere prima della slide 23 (chiusura).
+- **Acqua.** Avere acqua sul palco. Bere prima della scena 08A (silenzio). Bere prima della slide 23 (chiusura).
 - **Format pause.** In tutto lo speech il marker è `*[Pausa Xs]*`. Se trovi varianti diverse, sono refusi . applica il format fisso.
+- **Titoli a schermo.** Ogni sezione ha l'header con Titolo a schermo + Cue palco. Mentre il pubblico legge il titolo, la prima frase dello speech deve risuonarci sopra.
 
 ---
 
 ## Conteggio target
 
-- Sezione storia (atti I-III, scene 01-12, ~10 min): ~830 parole parlate
+- Sezione storia (atti I-III, 14 scene 01-12, ~10 min): ~830 parole parlate
 - Sezione realistica (slide 13-25, ~5 min): ~1.060 parole parlate (7 piattaforme)
 - **Totale parole parlate:** ~1.890 parole su 15 minuti = ~126 wpm, ritmo lento e drammatico ✓
 - (Il `wc -w` complessivo del file restituirà di più perché conta anche header markdown, direzioni di scena, marker pausa.)

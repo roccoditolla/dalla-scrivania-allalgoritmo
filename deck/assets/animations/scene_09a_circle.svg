@@ -1,297 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09A — Crew circle around glowing compass (top-down, Disney polish)">
-  <title>Scene 09A — Cerchio di 5 figure attorno alla bussola</title>
-  <desc>Disney rewrite per nuovo testo "Funziona solo in mano a chi sa già navigare". Top-down: 5 figure con line of action distinta — 3 chinate verso bussola (apprendimento), 2 in contrapposto laterale (esperti che capiscono). Bussola arancione centrale con onde concentriche mandala vivente. Stroke a peso variabile, painterly noise.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 09A — Crew in circle around glowing compass">
+  <title>Scene 09A — Tre silhouette in cerchio attorno alla bussola arancione</title>
+  <desc>Crane down from above. Tre figure di spalle in cerchio. Bussola al centro che pulsa arancione. Ombre lunghe.</desc>
 
   <defs>
-    <filter id="painterly09a" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" seed="55"/>
-      <feDisplacementMap in="SourceGraphic" scale="6"/>
-    </filter>
-    <filter id="sandGrain09a" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="11"/>
-      <feColorMatrix values="0 0 0 0 0.55  0 0 0 0 0.44  0 0 0 0 0.30  0 0 0 0.4 0"/>
-      <feComposite in2="SourceGraphic" operator="in"/>
-    </filter>
-    <filter id="contactBlur09a" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6"/>
-    </filter>
-    <filter id="softGlow09a" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="16"/>
-    </filter>
-
-    <linearGradient id="sandGrad09a" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#F2E0C0"/>
-      <stop offset="100%" stop-color="#A88858"/>
-    </linearGradient>
-
-    <radialGradient id="compassGlow" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#FFE0B0" stop-opacity="1"/>
-      <stop offset="35%" stop-color="#FFB570" stop-opacity="0.9"/>
-      <stop offset="70%" stop-color="#FF6B1A" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#9C3A0E" stop-opacity="0.2"/>
+    <radialGradient id="sandBg09a" cx="50%" cy="55%" r="80%">
+      <stop offset="0%" stop-color="#F0E6D0"/>
+      <stop offset="55%" stop-color="#D8C9A8"/>
+      <stop offset="100%" stop-color="#8C7858"/>
     </radialGradient>
-
-    <radialGradient id="compassHalo" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.5"/>
-      <stop offset="60%" stop-color="#FF6B1A" stop-opacity="0.15"/>
+    <radialGradient id="orangeSpill09a" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFB066" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FF6B1A" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
-
-    <radialGradient id="brassRim09a" cx="35%" cy="35%" r="80%">
-      <stop offset="0%" stop-color="#F0D49C"/>
-      <stop offset="55%" stop-color="#A87C44"/>
-      <stop offset="100%" stop-color="#3F2810"/>
+    <radialGradient id="orangeCore09a" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFCFA0"/>
+      <stop offset="50%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#A83B00" stop-opacity="0.9"/>
     </radialGradient>
-
-    <radialGradient id="figureTop" cx="40%" cy="30%" r="100%">
-      <stop offset="0%" stop-color="#2A2018"/>
-      <stop offset="55%" stop-color="#161108"/>
-      <stop offset="100%" stop-color="#04020A"/>
-    </radialGradient>
-
-    <radialGradient id="vignette09a" cx="50%" cy="55%" r="65%">
+    <filter id="bloom09a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bloomStrong09a" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="grain09a">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.05 0"/>
+    </filter>
+    <radialGradient id="vig09a" cx="50%" cy="50%" r="80%">
       <stop offset="55%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
     </radialGradient>
   </defs>
 
-  <!-- SAND -->
-  <rect width="1920" height="1080" fill="url(#sandGrad09a)"/>
-  <rect width="1920" height="1080" fill="#A88858" opacity="0.06" filter="url(#painterly09a)"/>
-  <rect width="1920" height="1080" fill="#8B6E3C" opacity="0.2" filter="url(#sandGrain09a)"/>
+  <!-- Sand background (slightly cooler than 08b) -->
+  <rect width="1920" height="1080" fill="url(#sandBg09a)"/>
+  <rect width="1920" height="1080" fill="#000" opacity="0.4" filter="url(#grain09a)"/>
 
-  <!-- MANDALA VIVENTE — onde concentriche che escono dalla bussola (Cartoon Saloon, orange) -->
+  <!-- Slow crane-down: start zoomed slightly tighter from above, end full top-down -->
   <g transform="translate(960 540)">
-    <g opacity="0.5">
-      <!-- 5 concentric rings, expanding -->
-      <circle r="220" fill="none" stroke="#FF6B1A" stroke-width="2.5" opacity="0">
-        <animate attributeName="r" values="220;420;220" dur="4s" repeatCount="indefinite"
-                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
-        <animate attributeName="opacity" values="0;0.7;0" dur="4s" repeatCount="indefinite"
-                 keyTimes="0;0.3;1"/>
-      </circle>
-      <circle r="220" fill="none" stroke="#FF6B1A" stroke-width="2" opacity="0">
-        <animate attributeName="r" values="220;480;220" dur="4s" begin="0.7s" repeatCount="indefinite"
-                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
-        <animate attributeName="opacity" values="0;0.55;0" dur="4s" begin="0.7s" repeatCount="indefinite"
-                 keyTimes="0;0.3;1"/>
-      </circle>
-      <circle r="220" fill="none" stroke="#FF6B1A" stroke-width="1.6" opacity="0">
-        <animate attributeName="r" values="220;540;220" dur="4s" begin="1.4s" repeatCount="indefinite"
-                 calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
-        <animate attributeName="opacity" values="0;0.42;0" dur="4s" begin="1.4s" repeatCount="indefinite"
-                 keyTimes="0;0.3;1"/>
-      </circle>
-    </g>
-
-    <!-- Static decorative mandala ticks (rotating slowly, Cartoon Saloon) -->
-    <g opacity="0.4">
-      <g stroke="#9C3A0E" stroke-width="1.4" stroke-linecap="round">
-        <line x1="0" y1="-260" x2="0" y2="-244"/>
-        <line x1="130" y1="-225" x2="122" y2="-210"/>
-        <line x1="225" y1="-130" x2="212" y2="-122"/>
-        <line x1="260" y1="0" x2="244" y2="0"/>
-        <line x1="225" y1="130" x2="212" y2="122"/>
-        <line x1="130" y1="225" x2="122" y2="210"/>
-        <line x1="0" y1="260" x2="0" y2="244"/>
-        <line x1="-130" y1="225" x2="-122" y2="210"/>
-        <line x1="-225" y1="130" x2="-212" y2="122"/>
-        <line x1="-260" y1="0" x2="-244" y2="0"/>
-        <line x1="-225" y1="-130" x2="-212" y2="-122"/>
-        <line x1="-130" y1="-225" x2="-122" y2="-210"/>
-      </g>
-      <animateTransform attributeName="transform" type="rotate"
-                        values="0 0 0;360 0 0" dur="80s" repeatCount="indefinite"
-                        additive="sum"/>
-    </g>
-  </g>
-
-  <!-- LONG RADIAL SHADOWS from figures (collective revelation) -->
-  <g opacity="0.35" filter="url(#contactBlur09a)">
-    <!-- 5 figures positioned around compass at radius ~340 -->
-    <!-- Figure 1 (top, chinata - bowed) → shadow extends outward upward -->
-    <ellipse cx="960" cy="120" rx="50" ry="120" fill="#1A0E04"/>
-    <!-- Figure 2 (right, contrapposto laterale - expert) -->
-    <ellipse cx="1280" cy="430" rx="120" ry="60" fill="#1A0E04" transform="rotate(28 1280 430)"/>
-    <!-- Figure 3 (bottom-right, chinata) -->
-    <ellipse cx="1240" cy="800" rx="120" ry="60" fill="#1A0E04" transform="rotate(58 1240 800)"/>
-    <!-- Figure 4 (bottom-left, chinata) -->
-    <ellipse cx="680" cy="800" rx="120" ry="60" fill="#1A0E04" transform="rotate(122 680 800)"/>
-    <!-- Figure 5 (left, contrapposto laterale - expert) -->
-    <ellipse cx="640" cy="430" rx="120" ry="60" fill="#1A0E04" transform="rotate(152 640 430)"/>
-  </g>
-
-  <!-- HALO around compass -->
-  <circle cx="960" cy="540" r="280" fill="url(#compassHalo)" filter="url(#softGlow09a)">
-    <animate attributeName="r" values="220;320;220" dur="4.6s" repeatCount="indefinite"
-             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-  </circle>
-
-  <!-- CENTRAL COMPASS (top-down, hexagonal case) -->
-  <g transform="translate(960 540)">
-    <!-- Hexagonal brass case (Bezier rounded corners) -->
-    <path d="M 0 -100 Q 92 -80 100 0 Q 92 80 0 100 Q -92 80 -100 0 Q -92 -80 0 -100 Z"
-          fill="url(#brassRim09a)" stroke="#1A0E04" stroke-width="5" stroke-linejoin="round"/>
-    <!-- Inner brass ring (3px) -->
-    <circle r="86" fill="none" stroke="#1A0E04" stroke-width="3" opacity="0.7"/>
-    <!-- Inner glow disc -->
-    <circle r="78" fill="url(#compassGlow)">
-      <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"
-               calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-    </circle>
-    <!-- Cardinal marks variable weight -->
-    <g stroke="#1A0E04" stroke-linecap="round">
-      <line x1="0" y1="-78" x2="0" y2="-66" stroke-width="2.4"/>
-      <line x1="78" y1="0" x2="66" y2="0" stroke-width="2.4"/>
-      <line x1="0" y1="78" x2="0" y2="66" stroke-width="2.4"/>
-      <line x1="-78" y1="0" x2="-66" y2="0" stroke-width="2.4"/>
-      <line x1="55" y1="-55" x2="48" y2="-48" stroke-width="1.5"/>
-      <line x1="55" y1="55" x2="48" y2="48" stroke-width="1.5"/>
-      <line x1="-55" y1="55" x2="-48" y2="48" stroke-width="1.5"/>
-      <line x1="-55" y1="-55" x2="-48" y2="-48" stroke-width="1.5"/>
-    </g>
-    <!-- Needle pointing up (steady, just micro-wobble) -->
     <g>
-      <path d="M 0 -62 L 9 0 L 0 10 L -9 0 Z" fill="#FFB570" stroke="#1A0E04" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M 0 10 L 9 0 L 0 62 L -9 0 Z" fill="#1A0E04" stroke="#1A0E04" stroke-width="1.8" stroke-linejoin="round"/>
-      <animateTransform attributeName="transform" type="rotate"
-                        values="-2;2;-2" dur="4.6s" repeatCount="indefinite"
-                        calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+      <animateTransform attributeName="transform" type="scale"
+        values="1.12; 1.06; 1.0; 0.96" keyTimes="0;0.4;0.7;1" dur="8s" fill="freeze"/>
+
+      <!-- Soft warm aura on ground (orange spill) -->
+      <circle r="540" fill="url(#orangeSpill09a)" filter="url(#bloomStrong09a)" opacity="0.7">
+        <animate attributeName="opacity" values="0.55;0.7;0.85;0.75;0.9;0.8" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+        <animate attributeName="r" values="480;540;600;560;620;580" keyTimes="0;0.25;0.5;0.7;0.85;1" dur="8s" fill="freeze"/>
+      </circle>
+
+      <!-- Long radial shadows from 3 figures (low sun, top-down) -->
+      <g opacity="0.45" fill="#0E0B09">
+        <!-- Shadow figure 1 (top) -->
+        <path d="M 0,-250 L -40,-560 L 40,-560 Z"/>
+        <!-- Shadow figure 2 (bottom-left) -->
+        <path d="M -216,125 L -480,310 L -420,370 Z"/>
+        <!-- Shadow figure 3 (bottom-right) -->
+        <path d="M 216,125 L 480,310 L 420,370 Z"/>
+      </g>
+
+      <!-- ============== COMPASS at center (smaller, pulsing) ============== -->
+      <g transform="translate(0 0)">
+        <!-- Glow halo -->
+        <circle r="160" fill="#FFB066" opacity="0.7" filter="url(#bloomStrong09a)">
+          <animate attributeName="opacity" values="0.55;0.75;0.6;0.8;0.65;0.75" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="140;180;160;200;170;180" keyTimes="0;0.2;0.4;0.6;0.8;1" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Hex rim -->
+        <polygon points="0,-95 82,-47 82,47 0,95 -82,47 -82,-47"
+                 fill="#2A2420" stroke="#0A0805" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Hex glass orange core -->
+        <polygon points="0,-72 62,-36 62,36 0,72 -62,36 -62,-36"
+                 fill="url(#orangeCore09a)" stroke="#5A1E00" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Inner needle hint (faint, slow rotation) -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            values="0;90;160;200;220;230;235" keyTimes="0;0.25;0.5;0.7;0.85;0.95;1"
+            dur="8s" fill="freeze"/>
+          <polygon points="0,-58 5,0 0,3 -5,0" fill="#FF8A3A" filter="url(#bloom09a)"/>
+          <polygon points="0,58 5,0 0,-3 -5,0" fill="#1A1410"/>
+        </g>
+        <!-- Center pulse -->
+        <circle r="32" fill="#FFCFA0" opacity="0.7" filter="url(#bloom09a)">
+          <animate attributeName="opacity" values="0.5;0.85;0.6;0.85;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- ============== 3 FIGURES IN CIRCLE (top-down view) ============== -->
+      <!-- Each figure: head (ellipse) + shoulders (curved trapezoid) + arms pointing toward center -->
+
+      <!-- Figure 1: TOP (12 o'clock) -->
+      <g transform="translate(0 -250)">
+        <!-- Long cast shadow already drawn above -->
+        <!-- Shoulders (top view) -->
+        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
+        <!-- Head -->
+        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
+        <!-- Arms reaching toward center -->
+        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
+        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
+        <!-- Backlight rim (orange edge from compass below) -->
+        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
+      </g>
+
+      <!-- Figure 2: BOTTOM-LEFT (8 o'clock) -->
+      <g transform="translate(-216 125) rotate(120)">
+        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
+        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
+        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
+        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
+        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
+      </g>
+
+      <!-- Figure 3: BOTTOM-RIGHT (4 o'clock) -->
+      <g transform="translate(216 125) rotate(-120)">
+        <path d="M -80,40 Q -90,0 -70,-30 Q 0,-60 70,-30 Q 90,0 80,40 Z" fill="#0E0B09"/>
+        <ellipse cx="0" cy="-10" rx="38" ry="44" fill="#0E0B09"/>
+        <path d="M -55,0 L -30,120 L -15,115 L -40,-5 Z" fill="#0E0B09"/>
+        <path d="M 55,0 L 30,120 L 15,115 L 40,-5 Z" fill="#0E0B09"/>
+        <path d="M -38,-30 Q -40,10 -38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M 38,-30 Q 40,10 38,40" stroke="#FF8A3A" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#bloom09a)"/>
+        <path d="M -80,40 L 80,40" stroke="#FFB066" stroke-width="2.5" opacity="0.65" filter="url(#bloom09a)"/>
+      </g>
+
+      <!-- Sand drag-lines (paths leading to compass) -->
+      <g stroke="#7A6948" stroke-width="1.5" opacity="0.35" fill="none">
+        <path d="M -40,-180 Q -30,-130 -20,-100"/>
+        <path d="M -150,90 Q -110,80 -80,60"/>
+        <path d="M 150,90 Q 110,80 80,60"/>
+      </g>
     </g>
-    <circle r="5" fill="#1A0E04"/>
-    <!-- Glass sparkle asymmetric -->
-    <path d="M -60 -50 Q -40 -78 0 -80" fill="none"
-          stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
-    <circle cx="-44" cy="-58" r="3" fill="#FFF" opacity="0.9"/>
   </g>
 
-  <!-- =====================================================
-       5 FIGURES (top-down view: shoulders + heads + hats)
-       Line of action distinta per ognuna:
-       - 3 chinate (apprendimento): top, bottom-right, bottom-left
-       - 2 contrapposto laterale (esperti): right, left
-       ===================================================== -->
-
-  <!-- FIGURE 1: TOP, chinata in avanti (apprendimento) - line of action C verso compass -->
-  <g transform="translate(960 240)">
-    <!-- shoulders (Bezier C-shape leaning forward) -->
-    <path d="M -56 30 C -36 0 -10 -16 14 -16 C 38 -16 60 0 76 30
-             C 70 60 36 76 8 76 C -22 76 -52 60 -56 30 Z"
-          fill="url(#figureTop)" stroke="#04020A" stroke-width="4" stroke-linejoin="round"/>
-    <!-- head leaning forward (squashed asymmetric ellipse) -->
-    <ellipse cx="10" cy="-2" rx="30" ry="26" fill="url(#figureTop)" stroke="#04020A" stroke-width="3.5"/>
-    <!-- hat (cap, asymmetric) -->
-    <path d="M -22 -16 C -10 -28 26 -32 42 -22 C 44 -16 42 -10 36 -8
-             C 16 -4 -10 -4 -22 -10 C -26 -14 -26 -16 -22 -16 Z"
-          fill="#3F2810" stroke="#04020A" stroke-width="2.5" stroke-linejoin="round"/>
-    <!-- arms forward (reaching toward compass) -->
-    <path d="M -34 36 C -50 60 -56 90 -48 130" fill="none"
-          stroke="url(#figureTop)" stroke-width="22" stroke-linecap="round"/>
-    <path d="M 56 36 C 70 60 76 90 68 130" fill="none"
-          stroke="url(#figureTop)" stroke-width="22" stroke-linecap="round"/>
-    <!-- warm rim from compass (orange spill from below) -->
-    <path d="M -50 28 C -20 12 14 8 50 14" fill="none"
-          stroke="#FF8A3D" stroke-width="2.4" stroke-linecap="round" opacity="0.6"/>
-    <path d="M -16 -18 C 0 -22 22 -22 36 -18" fill="none"
-          stroke="#FF8A3D" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
-  </g>
-
-  <!-- FIGURE 2: RIGHT, contrapposto laterale (esperto) - line of action I quasi dritta -->
-  <g transform="translate(1320 540)">
-    <!-- shoulders rotated 90° (lateral view) -->
-    <path d="M -30 -50 C -20 -70 0 -78 18 -76 C 36 -74 50 -60 56 -40
-             L 56 40 C 50 60 36 74 18 76 C 0 78 -20 70 -30 50 Z"
-          fill="url(#figureTop)" stroke="#04020A" stroke-width="4" stroke-linejoin="round"/>
-    <ellipse cx="32" cy="0" rx="26" ry="28" fill="url(#figureTop)" stroke="#04020A" stroke-width="3.5"/>
-    <!-- bandana (lateral) -->
-    <path d="M 14 -22 C 28 -32 50 -28 56 -16 C 50 -10 22 -12 14 -16 C 10 -20 10 -22 14 -22 Z"
-          fill="#6F8390" stroke="#04020A" stroke-width="2.5" stroke-linejoin="round"/>
-    <!-- arms crossed across chest (expert posture) -->
-    <path d="M -16 -28 C -36 -16 -50 0 -46 22" fill="none"
-          stroke="url(#figureTop)" stroke-width="18" stroke-linecap="round"/>
-    <path d="M -16 28 C -40 36 -54 16 -56 -8" fill="none"
-          stroke="url(#figureTop)" stroke-width="18" stroke-linecap="round"/>
-    <!-- warm rim spill (subtler — expert is further from light) -->
-    <path d="M -22 -40 C -10 -44 18 -44 30 -38" fill="none"
-          stroke="#FF8A3D" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
-  </g>
-
-  <!-- FIGURE 3: BOTTOM-RIGHT, chinata (apprendimento) - line of action C -->
-  <g transform="translate(1200 840) rotate(30)">
-    <path d="M -56 30 C -36 0 -10 -16 14 -16 C 38 -16 60 0 76 30
-             C 70 60 36 76 8 76 C -22 76 -52 60 -56 30 Z"
-          fill="url(#figureTop)" stroke="#04020A" stroke-width="4" stroke-linejoin="round"/>
-    <ellipse cx="10" cy="-2" rx="30" ry="26" fill="url(#figureTop)" stroke="#04020A" stroke-width="3.5"/>
-    <!-- different hat: tricorne -->
-    <path d="M -28 -16 C -16 -34 30 -36 46 -20 C 40 -14 -20 -10 -28 -16 Z"
-          fill="#04020A" stroke="#04020A" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M -34 -16 C -22 -22 38 -22 50 -16" fill="none"
-          stroke="#3F2810" stroke-width="2.4" stroke-linecap="round"/>
-    <!-- arms reaching forward -->
-    <path d="M -34 36 C -54 56 -60 86 -50 122" fill="none"
-          stroke="url(#figureTop)" stroke-width="22" stroke-linecap="round"/>
-    <path d="M 56 36 C 70 60 76 90 68 130" fill="none"
-          stroke="url(#figureTop)" stroke-width="22" stroke-linecap="round"/>
-    <!-- warm rim spill -->
-    <path d="M -50 28 C -20 12 14 8 50 14" fill="none"
-          stroke="#FF8A3D" stroke-width="2.4" stroke-linecap="round" opacity="0.6"/>
-  </g>
-
-  <!-- FIGURE 4: BOTTOM-LEFT, chinata (apprendimento) - line of action C -->
-  <g transform="translate(720 840) rotate(-30)">
-    <path d="M -56 30 C -36 0 -10 -16 14 -16 C 38 -16 60 0 76 30
-             C 70 60 36 76 8 76 C -22 76 -52 60 -56 30 Z"
-          fill="url(#figureTop)" stroke="#04020A" stroke-width="4" stroke-linejoin="round"/>
-    <ellipse cx="10" cy="-2" rx="30" ry="26" fill="url(#figureTop)" stroke="#04020A" stroke-width="3.5"/>
-    <!-- bandana wrap -->
-    <path d="M -22 -12 C -8 -22 30 -22 42 -12 C 40 -6 22 -4 10 -4 C -8 -4 -22 -6 -22 -12 Z"
-          fill="#3F5A6E" stroke="#04020A" stroke-width="2.5" stroke-linejoin="round"/>
-    <!-- arms reaching -->
-    <path d="M -34 36 C -50 60 -56 90 -48 130" fill="none"
-          stroke="url(#figureTop)" stroke-width="22" stroke-linecap="round"/>
-    <path d="M 56 36 C 76 56 82 86 74 122" fill="none"
-          stroke="url(#figureTop)" stroke-width="22" stroke-linecap="round"/>
-    <path d="M -50 28 C -20 12 14 8 50 14" fill="none"
-          stroke="#FF8A3D" stroke-width="2.4" stroke-linecap="round" opacity="0.6"/>
-  </g>
-
-  <!-- FIGURE 5: LEFT, contrapposto laterale (esperto) - line of action I -->
-  <g transform="translate(600 540) scale(-1 1)">
-    <path d="M -30 -50 C -20 -70 0 -78 18 -76 C 36 -74 50 -60 56 -40
-             L 56 40 C 50 60 36 74 18 76 C 0 78 -20 70 -30 50 Z"
-          fill="url(#figureTop)" stroke="#04020A" stroke-width="4" stroke-linejoin="round"/>
-    <ellipse cx="32" cy="0" rx="26" ry="28" fill="url(#figureTop)" stroke="#04020A" stroke-width="3.5"/>
-    <path d="M 14 -22 C 28 -32 50 -28 56 -16 C 50 -10 22 -12 14 -16 C 10 -20 10 -22 14 -22 Z"
-          fill="#8B6E3C" stroke="#04020A" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M -16 -28 C -36 -16 -50 0 -46 22" fill="none"
-          stroke="url(#figureTop)" stroke-width="18" stroke-linecap="round"/>
-    <path d="M -16 28 C -40 36 -54 16 -56 -8" fill="none"
-          stroke="url(#figureTop)" stroke-width="18" stroke-linecap="round"/>
-    <path d="M -22 -40 C -10 -44 18 -44 30 -38" fill="none"
-          stroke="#FF8A3D" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
-  </g>
-
-  <!-- DUST PARTICLES (orange, rising) -->
-  <g fill="#FFB570">
-    <circle cx="900" cy="540" r="2" opacity="0">
-      <animate attributeName="cy" values="540;380" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1020" cy="540" r="2.2" opacity="0">
-      <animate attributeName="cy" values="540;360" dur="4.4s" begin="0.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="4.4s" begin="0.6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="950" cy="560" r="1.8" opacity="0">
-      <animate attributeName="cy" values="560;380" dur="3.8s" begin="1.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="3.8s" begin="1.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="980" cy="560" r="1.6" opacity="0">
-      <animate attributeName="cy" values="560;360" dur="4.2s" begin="1.8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="4.2s" begin="1.8s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
-  <!-- VIGNETTE -->
-  <rect width="1920" height="1080" fill="url(#vignette09a)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig09a)" pointer-events="none"/>
 </svg>

@@ -1,198 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 04 — Calma dopo la tempesta (Cartoon Saloon)">
-  <title>Scene 04 — Mare calmo, atmosfera contemplativa</title>
-  <desc>Cartoon Saloon: cielo che si schiarisce gradualmente (gradient grigio cream soft golden), nuvole painterly che si dissolvono via parallax, mare quasi piatto in 3-layer parallax slow, nave silhouette piccolissima in distanza, gabbiano singolo che vira in cerchio largo. Atmosfera contemplativa. Vignette finale. Zero arancione, zero volti, zero testo.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 04 — Calm sea after the storm">
+  <title>Scene 04 — Mare calmo post-tempesta</title>
+  <desc>Mare calmo, nave silhouette piccola, foschia, gabbiani lontani. Pan lento destra-sinistra.</desc>
 
   <defs>
-    <linearGradient id="s04_sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#6F8390"/>
-      <stop offset="22%" stop-color="#9DAFBA"/>
-      <stop offset="48%" stop-color="#E0D6C0"/>
-      <stop offset="72%" stop-color="#F2E8D6"/>
-      <stop offset="100%" stop-color="#E8DDC8"/>
+    <linearGradient id="sky04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D5D8DC"/>
+      <stop offset="55%" stop-color="#C4C8CE"/>
+      <stop offset="100%" stop-color="#A8AEB6"/>
     </linearGradient>
-    <linearGradient id="s04_cloudHigh" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#E8DDC8" stop-opacity="0"/>
+    <linearGradient id="ocean04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7B8E9C"/>
+      <stop offset="100%" stop-color="#475866"/>
     </linearGradient>
-    <linearGradient id="s04_cloudLow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#9DAFBA" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#E8DDC8" stop-opacity="0"/>
+    <linearGradient id="haze04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D5D8DC" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#D5D8DC" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="s04_haze" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F2E8D6" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#F2E8D6" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#F2E8D6" stop-opacity="0"/>
+    <linearGradient id="hull04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F1810"/>
+      <stop offset="100%" stop-color="#0E0A06"/>
     </linearGradient>
-    <linearGradient id="s04_seaFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#9DAFBA"/>
-      <stop offset="100%" stop-color="#6F8390"/>
+    <linearGradient id="sail04" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8E0D0"/>
+      <stop offset="100%" stop-color="#B8AC95"/>
     </linearGradient>
-    <linearGradient id="s04_seaMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#6F8390"/>
-      <stop offset="100%" stop-color="#3F5A6E"/>
-    </linearGradient>
-    <linearGradient id="s04_seaClose" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3F5A6E"/>
-      <stop offset="100%" stop-color="#1F2E3C"/>
-    </linearGradient>
-    <radialGradient id="s04_sunGlow" cx="62%" cy="42%" r="42%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
-      <stop offset="35%" stop-color="#F5EFE6" stop-opacity="0.32"/>
-      <stop offset="100%" stop-color="#E8DDC8" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="s04_rays" x1="60%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#F2E8D6" stop-opacity="0.4"/>
-      <stop offset="65%" stop-color="#F2E8D6" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#F2E8D6" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s04_ship" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3F5A6E"/>
-      <stop offset="100%" stop-color="#1F2E3C"/>
-    </linearGradient>
-    <filter id="s04_painterly" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="41"/>
-      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    <path id="wave04" d="M 0,30 Q 150,0 300,30 T 600,30 T 900,30 T 1200,30 T 1500,30 T 1800,30 T 2100,30 L 2100,80 L 0,80 Z"/>
+    <filter id="painterly04">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="22"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.5"/>
     </filter>
-    <filter id="s04_softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3"/>
-    </filter>
-    <filter id="s04_rayBlur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="22"/>
-    </filter>
-    <radialGradient id="s04_vig" cx="50%" cy="50%" r="80%">
+    <radialGradient id="vig04" cx="50%" cy="50%" r="80%">
       <stop offset="60%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.3"/>
     </radialGradient>
-    <path id="s04_waveFar"   d="M 0,0 Q 160,-3 320,0 T 640,0 T 960,0 T 1280,0 T 1600,0 T 1920,0 L 1920,30 L 0,30 Z"/>
-    <path id="s04_waveMid"   d="M 0,0 Q 130,-5 260,0 T 520,0 T 780,0 T 1040,0 T 1300,0 T 1560,0 T 1820,0 L 1920,0 L 1920,40 L 0,40 Z"/>
-    <path id="s04_waveClose" d="M 0,0 Q 100,-8 200,0 T 400,0 T 600,0 T 800,0 T 1000,0 T 1200,0 T 1400,0 T 1600,0 T 1800,0 L 1920,0 L 1920,50 L 0,50 Z"/>
-    <symbol id="s04_gull" viewBox="-14 -8 28 16">
-      <path d="M -14,2 Q -7,-7 0,-1 Q 7,-7 14,2" fill="none" stroke="#1A1614" stroke-width="1.6" stroke-linecap="round">
-        <animate attributeName="d"
-          values="M -14,2 Q -7,-7 0,-1 Q 7,-7 14,2;
-                  M -14,-1 Q -7,2 0,-1 Q 7,2 14,-1;
-                  M -14,2 Q -7,-7 0,-1 Q 7,-7 14,2"
-          dur="2.4s" repeatCount="indefinite"/>
-      </path>
-    </symbol>
   </defs>
 
-  <!-- BASE SKY -->
-  <rect width="1920" height="1080" fill="url(#s04_sky)"/>
-
-  <!-- SUN soft glow -->
-  <ellipse cx="1190" cy="420" rx="320" ry="220" fill="url(#s04_sunGlow)"/>
-
-  <!-- Sun rays soft -->
-  <g filter="url(#s04_rayBlur)" opacity="0.55">
-    <polygon points="1320,200 1240,200 1080,1080 880,1080" fill="url(#s04_rays)"/>
-    <polygon points="1180,180 1110,180 940,1080 760,1080" fill="url(#s04_rays)" opacity="0.7"/>
-    <polygon points="1060,160 990,160 800,1080 640,1080" fill="url(#s04_rays)" opacity="0.5"/>
-  </g>
-
-  <!-- HIGH altitude wispy clouds -->
-  <g opacity="0.85">
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; -80 -4; -160 -8; -80 -4; 0 0"
-      keyTimes="0;0.25;0.5;0.75;1" dur="22s" repeatCount="indefinite"
-      calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <ellipse cx="280" cy="150" rx="380" ry="22" fill="url(#s04_cloudHigh)" filter="url(#s04_painterly)"/>
-    <ellipse cx="780" cy="120" rx="460" ry="18" fill="url(#s04_cloudHigh)" filter="url(#s04_painterly)"/>
-    <ellipse cx="1380" cy="180" rx="420" ry="24" fill="url(#s04_cloudHigh)" filter="url(#s04_painterly)"/>
-    <ellipse cx="1740" cy="240" rx="280" ry="16" fill="url(#s04_cloudHigh)" filter="url(#s04_painterly)" opacity="0.75"/>
-  </g>
-
-  <!-- MID altitude residue clouds -->
-  <g opacity="0.55">
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; -120 0; -240 0; -120 0; 0 0"
-      keyTimes="0;0.25;0.5;0.75;1" dur="18s" repeatCount="indefinite"
-      calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <path d="M -120,360 Q 220,280 540,340 Q 820,400 1110,330 Q 1380,275 1700,335 Q 1900,370 2040,310 L 2040,440 L -120,440 Z"
-          fill="url(#s04_cloudLow)" filter="url(#s04_painterly)"/>
-    <ellipse cx="420" cy="380" rx="280" ry="32" fill="#9DAFBA" opacity="0.35" filter="url(#s04_painterly)"/>
-    <ellipse cx="1380" cy="400" rx="340" ry="28" fill="#9DAFBA" opacity="0.32" filter="url(#s04_painterly)"/>
-  </g>
-
-  <!-- LOW mist sopra orizzonte -->
-  <rect x="0" y="600" width="1920" height="160" fill="url(#s04_haze)"/>
-  <g opacity="0.5">
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; -50 0; -100 0; -50 0; 0 0"
-      keyTimes="0;0.25;0.5;0.75;1" dur="26s" repeatCount="indefinite"/>
-    <ellipse cx="380" cy="660" rx="340" ry="18" fill="#F2E8D6" opacity="0.7"/>
-    <ellipse cx="1240" cy="650" rx="420" ry="22" fill="#F2E8D6" opacity="0.65"/>
-    <ellipse cx="1700" cy="680" rx="240" ry="14" fill="#F2E8D6" opacity="0.55"/>
-  </g>
-
-  <!-- NAVE silhouette piccolissima -->
-  <g transform="translate(1280 700)" opacity="0.78">
-    <animateTransform attributeName="transform" type="translate"
-      values="1280 700; 1280 698; 1280 700; 1280 699; 1280 700"
-      keyTimes="0;0.3;0.5;0.7;1" dur="14s" repeatCount="indefinite"/>
-    <path d="M -32,0 Q -28,8 -20,10 L 20,10 Q 28,8 32,0 L 26,-3 L -26,-3 Z" fill="url(#s04_ship)" stroke="#0A1320" stroke-width="0.8"/>
-    <line x1="-32" y1="2" x2="32" y2="2" stroke="#FFFFFF" stroke-width="0.6" opacity="0.5"/>
-    <rect x="-0.8" y="-46" width="1.6" height="44" fill="#1F2E3C"/>
-    <path d="M 0,-46 Q -10,-30 -14,-3 L 0,-3 Z" fill="#E0D6C0" opacity="0.85" stroke="#3F5A6E" stroke-width="0.5"/>
-    <path d="M 0,-46 Q 10,-30 14,-3 L 0,-3 Z" fill="#F2E8D6" opacity="0.9" stroke="#3F5A6E" stroke-width="0.5"/>
-    <path d="M -32,12 Q -28,18 -20,20 L 20,20 Q 28,18 32,12 L 26,15 L -26,15 Z" fill="#3F5A6E" opacity="0.35"/>
-    <line x1="-2" y1="12" x2="-2" y2="38" stroke="#3F5A6E" stroke-width="0.6" opacity="0.4"/>
-  </g>
-
-  <!-- MARE 3-LAYER parallax slow -->
+  <!-- Slow pan right-to-left via translate -->
   <g>
-    <rect x="0" y="720" width="1920" height="70" fill="url(#s04_seaFar)"/>
-    <use href="#s04_waveFar" x="-100" y="735" fill="#FFFFFF" opacity="0.5">
-      <animate attributeName="x" values="-100;-280;-100" dur="32s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s04_waveFar" x="-200" y="760" fill="#FFFFFF" opacity="0.35">
-      <animate attributeName="x" values="-200;-40;-200" dur="28s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s04_waveFar" x="-50" y="775" fill="#F2E8D6" opacity="0.32">
-      <animate attributeName="x" values="-50;-220;-50" dur="36s" repeatCount="indefinite"/>
-    </use>
+    <animateTransform attributeName="transform" type="translate"
+      values="80 0; 0 0; -80 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
 
-    <rect x="0" y="790" width="1920" height="110" fill="url(#s04_seaMid)"/>
-    <use href="#s04_waveMid" x="-50" y="810" fill="#FFFFFF" opacity="0.5">
-      <animate attributeName="x" values="-50;-260;-50" dur="22s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s04_waveMid" x="-150" y="850" fill="#FFFFFF" opacity="0.4">
-      <animate attributeName="x" values="-150;30;-150" dur="18s" repeatCount="indefinite"/>
-    </use>
+    <!-- Sky -->
+    <rect x="-200" y="0" width="2300" height="720" fill="url(#sky04)"/>
 
-    <rect x="0" y="900" width="1920" height="180" fill="url(#s04_seaClose)"/>
-    <use href="#s04_waveClose" x="0" y="920" fill="#9DAFBA" opacity="0.55">
-      <animate attributeName="x" values="0;-180;0" dur="14s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s04_waveClose" x="-100" y="960" fill="#F2E8D6" opacity="0.35">
-      <animate attributeName="x" values="-100;-280;-100" dur="16s" repeatCount="indefinite"/>
-    </use>
-
-    <!-- Riflesso del sole -->
-    <g opacity="0.55" filter="url(#s04_softGlow)">
-      <ellipse cx="1180" cy="820" rx="180" ry="6" fill="#F5EFE6"/>
-      <ellipse cx="1180" cy="850" rx="220" ry="5" fill="#F5EFE6" opacity="0.7"/>
-      <ellipse cx="1180" cy="880" rx="160" ry="4" fill="#F5EFE6" opacity="0.55"/>
-      <ellipse cx="1180" cy="920" rx="240" ry="6" fill="#F5EFE6" opacity="0.5"/>
-      <ellipse cx="1180" cy="970" rx="200" ry="5" fill="#F5EFE6" opacity="0.4"/>
+    <!-- Distant cloud bands (thinning, post-storm) -->
+    <g opacity="0.5">
+      <ellipse cx="280" cy="220" rx="280" ry="32" fill="#D8DCE0"/>
+      <ellipse cx="900" cy="160" rx="340" ry="36" fill="#C8CCD0"/>
+      <ellipse cx="1500" cy="240" rx="260" ry="28" fill="#B8BCC0"/>
+      <ellipse cx="1880" cy="180" rx="200" ry="24" fill="#D0D4D8"/>
     </g>
+
+    <!-- Soft sun-glow trying to break through -->
+    <radialGradient id="sun04" cx="68%" cy="32%" r="22%">
+      <stop offset="0%" stop-color="#F0E8D6" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#F0E8D6" stop-opacity="0"/>
+    </radialGradient>
+    <rect x="-200" y="0" width="2300" height="600" fill="url(#sun04)"/>
+
+    <!-- Horizon haze -->
+    <rect x="-200" y="600" width="2300" height="240" fill="url(#haze04)"/>
+
+    <!-- Ocean -->
+    <rect x="-200" y="720" width="2300" height="400" fill="url(#ocean04)"/>
+
+    <!-- Small distant gulls (3) -->
+    <g fill="#1A1614" opacity="0.6">
+      <path d="M 0,0 q 8,-5 14,0 q 6,-5 14,0" transform="translate(540 360)">
+        <animateTransform attributeName="transform" type="translate"
+          values="540 360; 600 354; 660 360" dur="12s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 0,0 q 6,-4 12,0 q 6,-4 12,0" transform="translate(1200 320)">
+        <animateTransform attributeName="transform" type="translate"
+          values="1200 320; 1140 314; 1080 320" dur="13s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 0,0 q 5,-3 10,0 q 5,-3 10,0" transform="translate(1640 380)">
+        <animateTransform attributeName="transform" type="translate"
+          values="1640 380; 1580 374; 1520 380" dur="15s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Small ship in distance -->
+    <g transform="translate(1180 720) scale(0.5)" opacity="0.95">
+      <!-- Hull -->
+      <path d="M -160,0 Q -140,30 -80,45 L 80,45 Q 140,30 160,0 L 130,-14 L -130,-14 Z" fill="url(#hull04)" stroke="#0A0805" stroke-width="2"/>
+      <!-- Masts -->
+      <rect x="-2" y="-220" width="4" height="220" fill="#1F1810"/>
+      <rect x="-72" y="-180" width="4" height="180" fill="#1F1810"/>
+      <rect x="68" y="-170" width="4" height="170" fill="#1F1810"/>
+      <!-- Main sail (slack — calm wind) -->
+      <path d="M -2,-220 Q -65,-180 -65,-80 L -65,-20 L 0,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1"/>
+      <path d="M 2,-220 Q 65,-180 65,-80 L 65,-20 L 0,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1" opacity="0.9"/>
+      <!-- Fore -->
+      <path d="M -72,-180 Q -115,-140 -115,-70 L -115,-20 L -72,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1"/>
+      <path d="M 68,-170 Q 110,-130 110,-65 L 110,-20 L 68,-20 Z" fill="url(#sail04)" stroke="#A0937A" stroke-width="1" opacity="0.9"/>
+      <!-- Tiny silhouette of figure on deck (writing) -->
+      <ellipse cx="20" cy="-30" rx="6" ry="8" fill="#0A0805"/>
+      <rect x="14" y="-22" width="12" height="20" fill="#0A0805"/>
+      <!-- Reflection -->
+      <path d="M -160,45 L 160,45 L 130,75 L -130,75 Z" fill="#1A1614" opacity="0.35"/>
+    </g>
+
+    <!-- Calm waves -->
+    <g opacity="0.4">
+      <use href="#wave04" x="-200" y="820" fill="#E8EAEC">
+        <animate attributeName="x" values="-200;-280;-200" dur="18s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.32">
+      <use href="#wave04" x="-300" y="900" fill="#FAF4E9">
+        <animate attributeName="x" values="-300;-160;-300" dur="16s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.25">
+      <use href="#wave04" x="-100" y="980" fill="#FFFFFF" transform="scale(1.4 0.7)">
+        <animate attributeName="x" values="-100;-250;-100" dur="14s" repeatCount="indefinite"/>
+      </use>
+    </g>
+
+    <!-- Reflection of distant ship -->
+    <ellipse cx="1180" cy="800" rx="100" ry="6" fill="#1A1614" opacity="0.2"/>
   </g>
 
-  <!-- GABBIANO SINGOLO che vira in cerchio largo -->
-  <g>
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; 80 -20; 160 -10; 220 30; 180 80; 60 90; -40 60; -60 10; 0 0"
-      keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
-      dur="18s" repeatCount="indefinite"
-      calcMode="spline"
-      keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <use href="#s04_gull" x="640" y="380" width="44" height="26"/>
-  </g>
-
-  <!-- Painterly overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.03" filter="url(#s04_painterly)" pointer-events="none"/>
-
-  <!-- VIGNETTE -->
-  <rect width="1920" height="1080" fill="url(#s04_vig)" pointer-events="none"/>
+  <!-- Soft painterly overlay -->
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#painterly04)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig04)" pointer-events="none"/>
 </svg>

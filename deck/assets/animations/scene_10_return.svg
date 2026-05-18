@@ -1,404 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 10 — Rowboat returning to ship (Act III) — Cartoon Saloon">
-  <title>Scene 10 — Scialuppa torna alla nave con due bussole</title>
-  <desc>Cartoon Saloon Atto III: scialuppa (4 rematori back-view, 1 in piedi a prua con due bussole - vecchia ottone + nuova arancione) che rema decisa verso la grande nave in lontananza. Mare 3-layer parallax con golden glitter (tardo pomeriggio caldo). Cielo che vira al warm gold/peach. Distant gulls. Dust particles warm. Painterly clouds.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 10 — Rowboat returning to ship">
+  <title>Scene 10 — Ritorno alla nave grande con la bussola</title>
+  <desc>Mirror della 06: scialuppa che torna alla nave. Una mano stringe la bussola arancione, luce filtra tra le dita. Slow tracking opposto.</desc>
 
   <defs>
-    <linearGradient id="s10_sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#A8B0BC"/>
-      <stop offset="35%" stop-color="#D8B898"/>
-      <stop offset="65%" stop-color="#F2C088"/>
-      <stop offset="100%" stop-color="#FBE0B8"/>
+    <linearGradient id="sky10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5E2C0"/>
+      <stop offset="50%" stop-color="#E2C088"/>
+      <stop offset="100%" stop-color="#B88858"/>
     </linearGradient>
-    <linearGradient id="s10_seaFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#8A7060"/><stop offset="100%" stop-color="#5A4838"/>
+    <linearGradient id="water10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6E7E8C"/>
+      <stop offset="100%" stop-color="#3A4A58"/>
     </linearGradient>
-    <linearGradient id="s10_seaMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#5A4838"/><stop offset="100%" stop-color="#352A24"/>
+    <linearGradient id="hull10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A2018"/>
+      <stop offset="100%" stop-color="#15100B"/>
     </linearGradient>
-    <linearGradient id="s10_seaClose" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#352A24"/><stop offset="100%" stop-color="#15100C"/>
+    <linearGradient id="sail10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2D8B0"/>
+      <stop offset="100%" stop-color="#C49868"/>
     </linearGradient>
-    <linearGradient id="s10_hull" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3A2818"/>
-      <stop offset="100%" stop-color="#15100A"/>
-    </linearGradient>
-    <linearGradient id="s10_hullRim" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#FFB870" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#FFB870" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s10_glitter" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFE6B8" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#FF8A3A" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s10_char" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0A0805"/>
-      <stop offset="100%" stop-color="#020306"/>
-    </linearGradient>
-    <linearGradient id="s10_charRim" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#FFB870" stop-opacity="0.55"/>
-      <stop offset="50%" stop-color="#FFB870" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="s10_brassGlow" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#E0BC78"/>
-      <stop offset="100%" stop-color="#8B6E3C"/>
+    <radialGradient id="orangeFinger10" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFCFA0" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#FF6B1A" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="s10_orangeGlow" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#FFE6B8"/>
-      <stop offset="55%" stop-color="#FF9D52"/>
-      <stop offset="100%" stop-color="#B33B00"/>
+    <filter id="bloom10" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="painterly10">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="20"/>
+      <feDisplacementMap in="SourceGraphic" scale="2"/>
+    </filter>
+    <radialGradient id="vig10" cx="50%" cy="50%" r="78%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
     </radialGradient>
-    <filter id="s10_woodGrain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.4" numOctaves="3" seed="29"/>
-      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.10  0 0 0 0 0.06  0 0 0 0.55 0"/>
-      <feComposite in2="SourceGraphic" operator="in"/>
-    </filter>
-    <filter id="s10_painterly" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="33"/>
-      <feDisplacementMap in="SourceGraphic" scale="6"/>
-    </filter>
-    <filter id="s10_bloom" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="14"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="s10_softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3"/>
-    </filter>
-    <filter id="s10_rayBlur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="22"/>
-    </filter>
-    <path id="s10_waveBack" d="M 0,0 Q 120,-8 240,0 T 480,0 T 720,0 T 960,0 T 1200,0 T 1440,0 T 1680,0 T 1920,0 L 1920,40 L 0,40 Z"/>
-    <path id="s10_waveMid"  d="M 0,0 Q 90,-12 180,0 T 360,0 T 540,0 T 720,0 T 900,0 T 1080,0 T 1260,0 T 1440,0 T 1620,0 T 1800,0 L 1920,0 L 1920,50 L 0,50 Z"/>
-    <circle id="s10_dust" r="2" fill="#FFD898" filter="url(#s10_softGlow)"/>
-    <symbol id="s10_gull" viewBox="-12 -8 24 16">
-      <path d="M -12,2 Q -6,-7 0,-1 Q 6,-7 12,2" fill="none" stroke="#3A2818" stroke-width="1.4" stroke-linecap="round">
-        <animate attributeName="d" values="M -12,2 Q -6,-7 0,-1 Q 6,-7 12,2;M -12,-1 Q -6,2 0,-1 Q 6,2 12,-1;M -12,2 Q -6,-7 0,-1 Q 6,-7 12,2" dur="1.6s" repeatCount="indefinite"/>
-      </path>
-    </symbol>
+    <path id="wave10" d="M 0,30 Q 150,5 300,30 T 600,30 T 900,30 T 1200,30 T 1500,30 T 1800,30 T 2100,30 L 2100,80 L 0,80 Z"/>
   </defs>
 
-  <!-- Slow dolly forward (camera following) -->
-  <g transform="translate(960 540)">
-    <g>
-      <animateTransform attributeName="transform" type="scale" values="1.0; 1.02; 1.04" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
-      <g transform="translate(-960 -540)">
+  <!-- Slow tracking right-to-left (opposite of scene 06) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="60 0; 0 0; -60 0" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
 
-        <!-- SKY late afternoon warm -->
-        <rect x="0" y="0" width="1920" height="720" fill="url(#s10_sky)"/>
+    <!-- Warm sky (sunset/golden hour) -->
+    <rect x="-100" y="0" width="2120" height="640" fill="url(#sky10)"/>
+    <!-- Distant clouds streaked -->
+    <g opacity="0.5">
+      <ellipse cx="420" cy="200" rx="320" ry="22" fill="#FAE6C0"/>
+      <ellipse cx="1280" cy="160" rx="380" ry="26" fill="#F0CC90"/>
+      <ellipse cx="1700" cy="240" rx="260" ry="20" fill="#E2B070"/>
+    </g>
+    <!-- Sun bloom -->
+    <circle cx="640" cy="320" r="140" fill="#F8D898" opacity="0.7" filter="url(#bloom10)"/>
 
-        <!-- Painterly clouds -->
-        <g opacity="0.55" filter="url(#s10_painterly)">
-          <ellipse cx="280" cy="180" rx="380" ry="22" fill="#FBE0B8"/>
-          <ellipse cx="780" cy="140" rx="340" ry="20" fill="#F8C880"/>
-          <ellipse cx="1300" cy="200" rx="420" ry="24" fill="#FBE0B8"/>
-          <ellipse cx="1700" cy="160" rx="240" ry="18" fill="#E8A868" opacity="0.65"/>
-          <ellipse cx="900" cy="320" rx="640" ry="22" fill="#F0A858" opacity="0.45"/>
-        </g>
+    <!-- Ocean -->
+    <rect x="-100" y="640" width="2120" height="440" fill="url(#water10)"/>
+    <!-- Sun-glitter band on water -->
+    <ellipse cx="640" cy="720" rx="320" ry="40" fill="#F8D898" opacity="0.45" filter="url(#bloom10)"/>
 
-        <!-- Soft god rays from upper-right (sole alto-destra) -->
-        <g filter="url(#s10_rayBlur)" opacity="0.6">
-          <polygon points="1620,-50 1500,-50 900,720 1080,720" fill="#FFE0B0"/>
-          <polygon points="1480,-50 1400,-50 700,720 820,720" fill="#FFE0B0" opacity="0.7"/>
-          <polygon points="1720,-50 1620,-50 1080,720 1240,720" fill="#FFE0B0" opacity="0.55"/>
-        </g>
+    <!-- BIG SHIP — distant, anchored, waiting -->
+    <g transform="translate(1450 700) scale(0.7)">
+      <!-- Hull -->
+      <path d="M -200,0 Q -180,45 -110,60 L 110,60 Q 180,45 200,0 L 165,-20 L -165,-20 Z" fill="url(#hull10)" stroke="#0A0805" stroke-width="2"/>
+      <line x1="-160" y1="-10" x2="160" y2="-10" stroke="#1F1810" stroke-width="1" opacity="0.6"/>
+      <line x1="-150" y1="10" x2="150" y2="10" stroke="#1F1810" stroke-width="1" opacity="0.6"/>
+      <!-- Masts -->
+      <rect x="-3" y="-300" width="6" height="300" fill="#1F1810"/>
+      <rect x="-100" y="-240" width="5" height="240" fill="#1F1810"/>
+      <rect x="95" y="-220" width="5" height="220" fill="#1F1810"/>
+      <!-- Sails (slack, warm light) -->
+      <path d="M -3,-300 Q -100,-240 -100,-110 L -100,-30 L 0,-30 Z" fill="url(#sail10)" stroke="#A8807A" stroke-width="1"/>
+      <path d="M 3,-300 Q 100,-240 100,-110 L 100,-30 L 0,-30 Z" fill="url(#sail10)" stroke="#A8807A" stroke-width="1" opacity="0.9"/>
+      <path d="M -100,-240 Q -160,-180 -160,-90 L -160,-30 L -100,-30 Z" fill="url(#sail10)" stroke="#A8807A" stroke-width="1"/>
+      <path d="M 95,-220 Q 155,-160 155,-90 L 155,-30 L 95,-30 Z" fill="url(#sail10)" stroke="#A8807A" stroke-width="1" opacity="0.9"/>
+      <!-- Reflection -->
+      <path d="M -200,60 L 200,60 L 165,100 L -165,100 Z" fill="#1A1614" opacity="0.35"/>
+    </g>
 
-        <!-- ============ DISTANT SHIP (la grande nave dove tornano) ============ -->
-        <g transform="translate(960 600) scale(0.55)" opacity="0.9">
-          <!-- Hull -->
-          <path d="M -180,0 Q -160,30 -100,45 L 100,45 Q 160,30 180,0 L 150,-18 L -150,-18 Z" fill="url(#s10_hull)" stroke="#020306" stroke-width="2.5"/>
-          <path d="M -180,0 Q -160,30 -100,45 L 100,45 Q 160,30 180,0 L 150,-18 L -150,-18 Z" fill="url(#s10_hull)" filter="url(#s10_woodGrain)" opacity="0.55"/>
-          <!-- Plank lines -->
-          <line x1="-145" y1="-8" x2="145" y2="-8" stroke="#020306" stroke-width="1" opacity="0.6"/>
-          <line x1="-140" y1="10" x2="140" y2="10" stroke="#020306" stroke-width="1" opacity="0.5"/>
-          <!-- Masts -->
-          <rect x="-3" y="-340" width="6" height="340" fill="#1F1410"/>
-          <rect x="-95" y="-280" width="5" height="280" fill="#1F1410"/>
-          <rect x="90" y="-260" width="5" height="260" fill="#1F1410"/>
-          <!-- Yards -->
-          <rect x="-100" y="-280" width="200" height="3.5" fill="#1F1410"/>
-          <rect x="-128" y="-200" width="256" height="3.5" fill="#1F1410"/>
-          <!-- Sails furled (small triangular tops) -->
-          <path d="M -3,-340 Q -110,-280 -120,-150 L -120,-20 L 120,-20 L 120,-150 Q 110,-280 3,-340 Z" fill="#D8B888" stroke="#5A3818" stroke-width="1.5" opacity="0.85"/>
-          <path d="M -95,-280 Q -170,-220 -180,-110 L -180,-20 L -95,-20 Z" fill="#D8B888" stroke="#5A3818" stroke-width="1.2" opacity="0.8"/>
-          <path d="M 90,-260 Q 165,-210 175,-100 L 175,-20 L 90,-20 Z" fill="#D8B888" stroke="#5A3818" stroke-width="1.2" opacity="0.8"/>
-          <!-- Lit stern windows -->
-          <rect x="-44" y="-10" width="18" height="20" fill="#FFCB8A" opacity="0.85" filter="url(#s10_softGlow)"/>
-          <rect x="-18" y="-10" width="18" height="20" fill="#FFCB8A" opacity="0.85" filter="url(#s10_softGlow)"/>
-          <rect x="8" y="-10" width="18" height="20" fill="#FFCB8A" opacity="0.85" filter="url(#s10_softGlow)"/>
-          <rect x="34" y="-10" width="18" height="20" fill="#FFCB8A" opacity="0.85" filter="url(#s10_softGlow)"/>
-          <!-- Flag arancione -->
-          <path d="M 3,-340 L 56,-320 L 46,-302 L 3,-310 Z" fill="#FF6B1A">
-            <animateTransform attributeName="transform" type="skewX" values="0;4;0;-3;0" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
-          </path>
-          <!-- Rim light right side -->
-          <path d="M 150,-18 Q 178,12 150,40 L 100,45 L 130,-10 Z" fill="url(#s10_hullRim)"/>
-        </g>
+    <!-- ROWBOAT — foreground, moving toward ship (right side) -->
+    <g transform="translate(820 760)">
+      <animateTransform attributeName="transform" type="translate"
+        values="700 760; 780 758; 860 760" keyTimes="0;0.5;1" dur="8s" fill="freeze"/>
+      <!-- Reflection -->
+      <ellipse cx="0" cy="60" rx="220" ry="14" fill="#1A1614" opacity="0.3"/>
 
-        <!-- ============ MARE 3-LAYER PARALLAX ============ -->
-        <rect x="0" y="700" width="1920" height="80" fill="url(#s10_seaFar)"/>
-        <use href="#s10_waveBack" x="-100" y="720" fill="#FFE0B8" opacity="0.55">
-          <animate attributeName="x" values="-100;-340;-100" dur="22s" repeatCount="indefinite"/>
-        </use>
-        <use href="#s10_waveBack" x="-200" y="750" fill="#FFD898" opacity="0.4">
-          <animate attributeName="x" values="-200;-40;-200" dur="18s" repeatCount="indefinite"/>
-        </use>
+      <!-- Hull -->
+      <path d="M -220,-20 Q -200,35 -130,55 L 130,55 Q 200,35 220,-20 L 185,-32 L -185,-32 Z" fill="url(#hull10)" stroke="#0A0805" stroke-width="2"/>
+      <line x1="-185" y1="-12" x2="185" y2="-12" stroke="#1F1810" stroke-width="1" opacity="0.6"/>
+      <line x1="-170" y1="10" x2="170" y2="10" stroke="#1F1810" stroke-width="1" opacity="0.6"/>
+      <line x1="-160" y1="32" x2="160" y2="32" stroke="#1F1810" stroke-width="1" opacity="0.5"/>
 
-        <rect x="0" y="780" width="1920" height="120" fill="url(#s10_seaMid)"/>
-        <use href="#s10_waveMid" x="-50" y="800" fill="#FAE0B8" opacity="0.55">
-          <animate attributeName="x" values="-50;-280;-50" dur="14s" repeatCount="indefinite"/>
-        </use>
-        <use href="#s10_waveMid" x="-150" y="840" fill="#F8B868" opacity="0.42">
-          <animate attributeName="x" values="-150;30;-150" dur="11s" repeatCount="indefinite"/>
-        </use>
-
-        <rect x="0" y="900" width="1920" height="180" fill="url(#s10_seaClose)"/>
-        <use href="#s10_waveMid" x="0" y="920" fill="#FAE6C0" opacity="0.6" transform="scale(1.6 1)">
-          <animate attributeName="x" values="0;-180;0" dur="9s" repeatCount="indefinite"/>
-        </use>
-
-        <!-- Golden reflection from sun (alto-destra) — diagonal band -->
-        <ellipse cx="1180" cy="780" rx="220" ry="28" fill="url(#s10_glitter)" filter="url(#s10_bloom)" opacity="0.75"/>
-        <ellipse cx="1240" cy="840" rx="180" ry="22" fill="url(#s10_glitter)" filter="url(#s10_bloom)" opacity="0.6"/>
-
-        <!-- Small glitter sparkles -->
-        <g fill="#FFE6B8" filter="url(#s10_softGlow)">
-          <circle cx="1100" cy="790" r="2.4">
-            <animate attributeName="opacity" values="0.3;0.95;0.3" dur="1.4s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="1280" cy="810" r="2">
-            <animate attributeName="opacity" values="0.4;0.85;0.4" dur="1.6s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="1180" cy="860" r="2.2">
-            <animate attributeName="opacity" values="0.35;0.9;0.35" dur="1.8s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Distant gulls -->
-        <g>
-          <use href="#s10_gull" x="640" y="240" width="22" height="14">
-            <animateTransform attributeName="transform" type="translate" values="0 0;30 -4;60 4;90 -3;120 -2" keyTimes="0;0.25;0.5;0.75;1" dur="10s" fill="freeze"/>
-          </use>
-          <use href="#s10_gull" x="1280" y="200" width="20" height="14">
-            <animateTransform attributeName="transform" type="translate" values="0 0;25 4;50 -5;75 3;100 -4" keyTimes="0;0.25;0.5;0.75;1" dur="10s" fill="freeze"/>
-          </use>
-          <use href="#s10_gull" x="1480" y="280" width="16" height="11">
-            <animateTransform attributeName="transform" type="translate" values="0 0;-18 -3;-36 4;-54 -5;-75 -3" keyTimes="0;0.25;0.5;0.75;1" dur="10s" fill="freeze"/>
-          </use>
-        </g>
-
-        <!-- ============ SCIALUPPA (rowboat in foreground) ============ -->
-        <g>
-          <animateTransform attributeName="transform" type="translate"
-            values="0 0;0 -3;0 -6;0 -8;0 -6"
-            keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
-
-          <g transform="translate(960 850) scale(1.1)">
-            <!-- Hull base -->
-            <path d="M -260,0 Q -240,50 -160,72 L 160,72 Q 240,50 260,0 L 220,-18 L -220,-18 Z"
-                  fill="url(#s10_hull)" stroke="#020306" stroke-width="2.8"/>
-            <path d="M -260,0 Q -240,50 -160,72 L 160,72 Q 240,50 260,0 L 220,-18 L -220,-18 Z"
-                  fill="url(#s10_hull)" filter="url(#s10_woodGrain)" opacity="0.65"/>
-            <!-- Top plank line -->
-            <rect x="-220" y="-22" width="440" height="6" fill="#020306"/>
-            <!-- Inner ribs -->
-            <line x1="-200" y1="-10" x2="-180" y2="60" stroke="#020306" stroke-width="1.5" opacity="0.6"/>
-            <line x1="-130" y1="-10" x2="-120" y2="65" stroke="#020306" stroke-width="1.5" opacity="0.6"/>
-            <line x1="-50" y1="-10" x2="-45" y2="68" stroke="#020306" stroke-width="1.5" opacity="0.6"/>
-            <line x1="50" y1="-10" x2="45" y2="68" stroke="#020306" stroke-width="1.5" opacity="0.6"/>
-            <line x1="130" y1="-10" x2="120" y2="65" stroke="#020306" stroke-width="1.5" opacity="0.6"/>
-            <line x1="200" y1="-10" x2="180" y2="60" stroke="#020306" stroke-width="1.5" opacity="0.6"/>
-            <!-- Rim light right -->
-            <path d="M 220,-18 Q 258,18 220,50 L 160,72 L 200,-10 Z" fill="url(#s10_hullRim)"/>
-
-            <!-- ============ 4 ROWERS (back-view, rowing decisi) ============ -->
-            <!-- Rower 1 (back-left) -->
-            <g transform="translate(-150 -50)">
-              <animateTransform attributeName="transform" type="translate"
-                values="-150 -50;-150 -56;-150 -50;-150 -54;-150 -50"
-                keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite"/>
-              <!-- torso -->
-              <path d="M -18,-8 L -22,30 L 22,30 L 18,-8 Z" fill="url(#s10_char)"/>
-              <!-- shoulders -->
-              <path d="M -18,-8 L -22,2 L 22,2 L 18,-8 L 16,-14 L -16,-14 Z" fill="url(#s10_char)"/>
-              <!-- neck + head -->
-              <rect x="-5" y="-22" width="10" height="8" fill="url(#s10_char)"/>
-              <ellipse cx="0" cy="-30" rx="10" ry="11" fill="url(#s10_char)"/>
-              <!-- bandana -->
-              <path d="M -11,-37 L 11,-37 L 13,-30 L -13,-30 Z" fill="#020306"/>
-              <!-- arms forward (rowing) -->
-              <g>
-                <animateTransform attributeName="transform" type="rotate"
-                  values="-20 0 -10;15 0 -10;-20 0 -10"
-                  keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite"/>
-                <path d="M -18,-12 L -52,-28 L -48,-18 L -16,-4 Z" fill="url(#s10_char)"/>
-                <path d="M 18,-12 L 52,-28 L 48,-18 L 16,-4 Z" fill="url(#s10_char)"/>
-              </g>
-              <!-- Rim light -->
-              <path d="M 18,-8 L 22,30 L 26,30 L 22,-6 Z" fill="url(#s10_charRim)"/>
-            </g>
-
-            <!-- Rower 2 -->
-            <g transform="translate(-50 -52)">
-              <animateTransform attributeName="transform" type="translate"
-                values="-50 -52;-50 -58;-50 -52;-50 -56;-50 -52"
-                keyTimes="0;0.25;0.5;0.75;1" dur="2.3s" repeatCount="indefinite"/>
-              <path d="M -18,-8 L -22,30 L 22,30 L 18,-8 Z" fill="url(#s10_char)"/>
-              <path d="M -18,-8 L -22,2 L 22,2 L 18,-8 L 16,-14 L -16,-14 Z" fill="url(#s10_char)"/>
-              <rect x="-5" y="-22" width="10" height="8" fill="url(#s10_char)"/>
-              <ellipse cx="0" cy="-30" rx="10" ry="11" fill="url(#s10_char)"/>
-              <!-- Tricorne -->
-              <path d="M -16,-38 L 16,-38 L 18,-34 L -18,-34 Z" fill="#020306"/>
-              <path d="M -18,-38 L 18,-38 L 10,-50 L -10,-50 Z" fill="#020306"/>
-              <g>
-                <animateTransform attributeName="transform" type="rotate"
-                  values="-20 0 -10;15 0 -10;-20 0 -10"
-                  keyTimes="0;0.5;1" dur="2.3s" repeatCount="indefinite"/>
-                <path d="M -18,-12 L -52,-28 L -48,-18 L -16,-4 Z" fill="url(#s10_char)"/>
-                <path d="M 18,-12 L 52,-28 L 48,-18 L 16,-4 Z" fill="url(#s10_char)"/>
-              </g>
-              <path d="M 18,-8 L 22,30 L 26,30 L 22,-6 Z" fill="url(#s10_charRim)"/>
-            </g>
-
-            <!-- Rower 3 -->
-            <g transform="translate(50 -52)">
-              <animateTransform attributeName="transform" type="translate"
-                values="50 -52;50 -58;50 -52;50 -56;50 -52"
-                keyTimes="0;0.25;0.5;0.75;1" dur="2.4s" repeatCount="indefinite"/>
-              <path d="M -18,-8 L -22,30 L 22,30 L 18,-8 Z" fill="url(#s10_char)"/>
-              <path d="M -18,-8 L -22,2 L 22,2 L 18,-8 L 16,-14 L -16,-14 Z" fill="url(#s10_char)"/>
-              <rect x="-5" y="-22" width="10" height="8" fill="url(#s10_char)"/>
-              <ellipse cx="0" cy="-30" rx="10" ry="11" fill="url(#s10_char)"/>
-              <!-- Skullcap -->
-              <path d="M -9,-38 Q 0,-44 9,-38 L 9,-32 L -9,-32 Z" fill="#020306"/>
-              <g>
-                <animateTransform attributeName="transform" type="rotate"
-                  values="-20 0 -10;15 0 -10;-20 0 -10"
-                  keyTimes="0;0.5;1" dur="2.4s" repeatCount="indefinite"/>
-                <path d="M -18,-12 L -52,-28 L -48,-18 L -16,-4 Z" fill="url(#s10_char)"/>
-                <path d="M 18,-12 L 52,-28 L 48,-18 L 16,-4 Z" fill="url(#s10_char)"/>
-              </g>
-              <path d="M 18,-8 L 22,30 L 26,30 L 22,-6 Z" fill="url(#s10_charRim)"/>
-            </g>
-
-            <!-- Rower 4 (back-right) -->
-            <g transform="translate(150 -50)">
-              <animateTransform attributeName="transform" type="translate"
-                values="150 -50;150 -56;150 -50;150 -54;150 -50"
-                keyTimes="0;0.25;0.5;0.75;1" dur="2.5s" repeatCount="indefinite"/>
-              <path d="M -18,-8 L -22,30 L 22,30 L 18,-8 Z" fill="url(#s10_char)"/>
-              <path d="M -18,-8 L -22,2 L 22,2 L 18,-8 L 16,-14 L -16,-14 Z" fill="url(#s10_char)"/>
-              <rect x="-5" y="-22" width="10" height="8" fill="url(#s10_char)"/>
-              <ellipse cx="0" cy="-30" rx="10" ry="11" fill="url(#s10_char)"/>
-              <path d="M -11,-37 L 11,-37 L 13,-30 L -13,-30 Z" fill="#020306"/>
-              <g>
-                <animateTransform attributeName="transform" type="rotate"
-                  values="-20 0 -10;15 0 -10;-20 0 -10"
-                  keyTimes="0;0.5;1" dur="2.5s" repeatCount="indefinite"/>
-                <path d="M -18,-12 L -52,-28 L -48,-18 L -16,-4 Z" fill="url(#s10_char)"/>
-                <path d="M 18,-12 L 52,-28 L 48,-18 L 16,-4 Z" fill="url(#s10_char)"/>
-              </g>
-              <path d="M 18,-8 L 22,30 L 26,30 L 22,-6 Z" fill="url(#s10_charRim)"/>
-            </g>
-
-            <!-- ============ STANDING FIGURE A PRUA (foreground, holding two compasses) ============ -->
-            <g transform="translate(0 -80)">
-              <animateTransform attributeName="transform" type="translate"
-                values="0 -80; 0 -82; 0 -80; 0 -81; 0 -80"
-                keyTimes="0;0.25;0.5;0.75;1" dur="5s" repeatCount="indefinite"/>
-              <!-- Long coat -->
-              <path d="M -28,0 L -42,68 L 42,68 L 28,0 Z" fill="url(#s10_char)"/>
-              <!-- Belt -->
-              <rect x="-28" y="22" width="56" height="6" fill="#020306"/>
-              <rect x="-4" y="22" width="8" height="6" fill="#3A2818"/>
-              <!-- Shoulders -->
-              <path d="M -28,0 L -34,12 L 34,12 L 28,0 L 24,-8 L -24,-8 Z" fill="url(#s10_char)"/>
-              <!-- Neck + head -->
-              <rect x="-6" y="-18" width="12" height="10" fill="url(#s10_char)"/>
-              <ellipse cx="0" cy="-30" rx="12" ry="13" fill="url(#s10_char)"/>
-              <!-- Tricorne (captain) -->
-              <path d="M -20,-38 L 20,-38 L 22,-34 L -22,-34 Z" fill="#020306"/>
-              <path d="M -22,-38 L 22,-38 L 12,-52 L -12,-52 Z" fill="#020306"/>
-              <!-- Rim light -->
-              <path d="M 28,0 L 42,68 L 46,68 L 32,0 Z" fill="url(#s10_charRim)" opacity="0.75"/>
-
-              <!-- LEFT ARM holding OLD BRASS COMPASS -->
-              <g transform="translate(-36 6)">
-                <!-- arm -->
-                <path d="M 0,0 L -18,30 L -10,38 L 8,12 Z" fill="url(#s10_char)"/>
-                <!-- hand -->
-                <ellipse cx="-14" cy="36" rx="8" ry="6" fill="url(#s10_char)"/>
-                <!-- OLD compass (octagonal brass) -->
-                <g transform="translate(-22 44)">
-                  <polygon points="0,-18 13,-13 18,0 13,13 0,18 -13,13 -18,0 -13,-13" fill="url(#s10_brassGlow)" stroke="#1F1410" stroke-width="1.5"/>
-                  <circle r="13" fill="#15100A" opacity="0.85"/>
-                  <!-- needle pointing N -->
-                  <polygon points="0,-10 3,0 0,2 -3,0" fill="#E0BC78"/>
-                  <polygon points="0,10 3,0 0,-2 -3,0" fill="#5A3818"/>
-                  <circle r="1.8" fill="#1F1410"/>
-                </g>
-              </g>
-
-              <!-- RIGHT ARM holding NEW ORANGE COMPASS (with glow) -->
-              <g transform="translate(36 6)">
-                <path d="M 0,0 L 18,30 L 10,38 L -8,12 Z" fill="url(#s10_char)"/>
-                <ellipse cx="14" cy="36" rx="8" ry="6" fill="url(#s10_char)"/>
-                <!-- glow halo -->
-                <circle cx="22" cy="44" r="22" fill="#FF6B1A" opacity="0.4" filter="url(#s10_bloom)">
-                  <animate attributeName="opacity" values="0.32;0.5;0.32" dur="2.8s" repeatCount="indefinite"/>
-                </circle>
-                <!-- NEW compass hexagonal -->
-                <g transform="translate(22 44)">
-                  <polygon points="0,-18 16,-9 16,9 0,18 -16,9 -16,-9" fill="#1F1410" stroke="#FF6B1A" stroke-width="2"/>
-                  <polygon points="0,-16 14,-8 14,8 0,16 -14,8 -14,-8" fill="url(#s10_orangeGlow)" filter="url(#s10_bloom)" opacity="0.95">
-                    <animate attributeName="opacity" values="0.85;1;0.85" dur="2.4s" repeatCount="indefinite"/>
-                  </polygon>
-                  <!-- needle -->
-                  <polygon points="0,-11 3,0 0,2 -3,0" fill="#FFE6B8" transform="rotate(-30)"/>
-                  <circle r="1.8" fill="#1F1410"/>
-                </g>
-              </g>
-            </g>
-
-            <!-- Wake V-shape behind boat -->
-            <path d="M -260,70 L -440,160 L -240,100 Z" fill="#FAE6C0" opacity="0.55"/>
-            <path d="M 260,70 L 440,160 L 240,100 Z" fill="#FAE6C0" opacity="0.55"/>
-            <path d="M -200,90 Q 0,100 200,90 Q 0,120 -200,90 Z" fill="#FAF4E9" opacity="0.7"/>
-          </g>
-        </g>
-
-        <!-- Dust particles warm -->
-        <g>
-          <use href="#s10_dust" x="1240" y="260">
-            <animate attributeName="y" values="260;620" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.75;0.5;0" dur="9s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s10_dust" x="1080" y="200">
-            <animate attributeName="y" values="200;620" dur="11s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.7;0.5;0" dur="11s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s10_dust" x="800" y="280">
-            <animate attributeName="y" values="280;680" dur="10s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.4;0" dur="10s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s10_dust" x="1400" y="320">
-            <animate attributeName="y" values="320;700" dur="12s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.4;0" dur="12s" repeatCount="indefinite"/>
-          </use>
-          <use href="#s10_dust" x="560" y="380">
-            <animate attributeName="y" values="380;700" dur="10s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.55;0.35;0" dur="10s" repeatCount="indefinite"/>
-          </use>
-        </g>
+      <!-- Three rowers (sitting upright, more determined) -->
+      <g fill="#0A0805">
+        <ellipse cx="-110" cy="-90" rx="24" ry="28"/>
+        <path d="M -136,-66 L -84,-66 L -90,15 L -130,15 Z"/>
+        <!-- Middle figure — holds compass, slight cradle pose -->
+        <ellipse cx="0" cy="-100" rx="26" ry="30"/>
+        <path d="M -32,-78 L 32,-78 L 25,15 L -25,15 Z"/>
+        <ellipse cx="110" cy="-90" rx="24" ry="28"/>
+        <path d="M 84,-66 L 136,-66 L 130,15 L 90,15 Z"/>
       </g>
+
+      <!-- Orange glow filtering through middle figure's hands -->
+      <g transform="translate(0 -50)">
+        <!-- Glow halo behind hands -->
+        <circle r="80" fill="url(#orangeFinger10)" filter="url(#bloom10)" opacity="0.9">
+          <animate attributeName="opacity" values="0.7;1;0.85;1;0.8" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Cupped hands silhouette -->
+        <path d="M -40,-10 Q -50,15 -35,30 Q -10,40 0,38 Q 10,40 35,30 Q 50,15 40,-10 Q 20,-25 0,-22 Q -20,-25 -40,-10 Z"
+              fill="#0A0805" stroke="#0A0805" stroke-width="1"/>
+        <!-- Light spilling between fingers -->
+        <g fill="#FFCFA0" opacity="0.85" filter="url(#bloom10)">
+          <ellipse cx="-20" cy="-2" rx="3" ry="10"/>
+          <ellipse cx="-5" cy="-5" rx="3" ry="12"/>
+          <ellipse cx="10" cy="-3" rx="3" ry="10"/>
+          <ellipse cx="22" cy="-1" rx="3" ry="9"/>
+        </g>
+        <!-- Bright dot at center of hands -->
+        <circle r="6" fill="#FFE2C0" opacity="0.95" filter="url(#bloom10)"/>
+      </g>
+
+      <!-- Oars — synchronized strokes (more decisive) -->
+      <g>
+        <line x1="-130" y1="-50" x2="-340" y2="70" stroke="#1F1108" stroke-width="6" stroke-linecap="round">
+          <animate attributeName="x2" values="-340;-300;-340;-300;-340" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="70;100;70;100;70" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="130" y1="-50" x2="340" y2="70" stroke="#1F1108" stroke-width="6" stroke-linecap="round">
+          <animate attributeName="x2" values="340;300;340;300;340" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="70;100;70;100;70" keyTimes="0;0.25;0.5;0.75;1" dur="3s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+
+    <!-- Waves -->
+    <g opacity="0.5">
+      <use href="#wave10" x="-100" y="800" fill="#E8DCBE">
+        <animate attributeName="x" values="-100;-280;-100" dur="14s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.4">
+      <use href="#wave10" x="-200" y="880" fill="#FAE6C0">
+        <animate attributeName="x" values="-200;-60;-200" dur="11s" repeatCount="indefinite"/>
+      </use>
+    </g>
+    <g opacity="0.3">
+      <use href="#wave10" x="-100" y="980" fill="#FAF4E9" transform="scale(1.4 0.7)">
+        <animate attributeName="x" values="-100;-260;-100" dur="13s" repeatCount="indefinite"/>
+      </use>
     </g>
   </g>
 
   <!-- Painterly overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#s10_painterly)" pointer-events="none"/>
-
-  <radialGradient id="s10_vig" cx="50%" cy="55%" r="80%">
-    <stop offset="58%" stop-color="#000" stop-opacity="0"/>
-    <stop offset="100%" stop-color="#000" stop-opacity="0.48"/>
-  </radialGradient>
-  <rect width="1920" height="1080" fill="url(#s10_vig)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.04" filter="url(#painterly10)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vig10)" pointer-events="none"/>
 </svg>

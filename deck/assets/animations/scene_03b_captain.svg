@@ -1,349 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 03B — Capitano al timone (Cartoon Saloon)">
-  <title>Scene 03B — Capitano nella tempesta che si placa</title>
-  <desc>Cartoon Saloon: POV close-up dalle spalle del capitano al timone. Cappotto bagnato con pieghe weathered, tricorno con pioggia che cola dal bordo, gocce che gocciolano lente. Mani sulla ruota di ottone-legno. Cielo che si schiarisce gradualmente con nuvole tristi in dissolvenza + lampi distanti soft a destra. Mare 3-layer parallax con onde lente. Vignette finale. Zero arancione, zero volto, zero testo.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene 03B — Captain at the helm during storm">
+  <title>Scene 03B — Capitano silhouette nel buio della tempesta</title>
+  <desc>Capitano in silhouette al timone, controluce di lampi. Static medium. Pioggia.</desc>
 
   <defs>
-    <linearGradient id="s03b_skyDeep" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1B2C3E"/>
-      <stop offset="55%" stop-color="#3F5A6E"/>
-      <stop offset="100%" stop-color="#6F8390"/>
+    <linearGradient id="stormSky03b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E12"/>
+      <stop offset="50%" stop-color="#15202C"/>
+      <stop offset="100%" stop-color="#0E1722"/>
     </linearGradient>
-    <linearGradient id="s03b_cloudFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A2A3A" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#3F5A6E" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s03b_cloudNear" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0E1A28" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#1F2E3C" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s03b_seaFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#6F8390"/><stop offset="100%" stop-color="#3F5A6E"/>
-    </linearGradient>
-    <linearGradient id="s03b_seaMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3F5A6E"/><stop offset="100%" stop-color="#1F2E3C"/>
-    </linearGradient>
-    <linearGradient id="s03b_seaClose" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1F2E3C"/><stop offset="100%" stop-color="#0A1320"/>
-    </linearGradient>
-    <linearGradient id="s03b_deck" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2A1D10"/>
+    <radialGradient id="flashHalo03b" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#D8E2EE" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#7B92AE" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#15202C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="deck03b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1410"/>
       <stop offset="100%" stop-color="#0A0805"/>
     </linearGradient>
-    <linearGradient id="s03b_char" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A1410"/>
-      <stop offset="100%" stop-color="#020306"/>
-    </linearGradient>
-    <linearGradient id="s03b_charWet" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7B92AE" stop-opacity="0.42"/>
-      <stop offset="50%" stop-color="#7B92AE" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#3F5A6E" stop-opacity="0.35"/>
-    </linearGradient>
-    <linearGradient id="s03b_charRim" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#A8C0D8" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#A8C0D8" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="s03b_brass" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#C9A35C"/>
-      <stop offset="55%" stop-color="#8B6E3C"/>
-      <stop offset="100%" stop-color="#3A2818"/>
-    </linearGradient>
-    <linearGradient id="s03b_wheelWood" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#5C4226"/>
-      <stop offset="100%" stop-color="#1A1008"/>
-    </linearGradient>
-    <radialGradient id="s03b_flashRight" cx="92%" cy="22%" r="58%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
-      <stop offset="35%" stop-color="#C8D8E8" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#0E1A28" stop-opacity="0"/>
+    <filter id="painterly03b">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="14"/>
+      <feDisplacementMap in="SourceGraphic" scale="2"/>
+    </filter>
+    <radialGradient id="vig03b" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
     </radialGradient>
-    <filter id="s03b_woodGrain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.4" numOctaves="3" seed="23"/>
-      <feColorMatrix values="0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.05  0 0 0 0.55 0"/>
-      <feComposite in2="SourceGraphic" operator="in"/>
-    </filter>
-    <filter id="s03b_painterly" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="31"/>
-      <feDisplacementMap in="SourceGraphic" scale="6"/>
-    </filter>
-    <filter id="s03b_bloom" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="s03b_softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2"/>
-    </filter>
-    <radialGradient id="s03b_vig" cx="50%" cy="50%" r="78%">
-      <stop offset="48%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.62"/>
-    </radialGradient>
-    <path id="s03b_waveBack" d="M 0,0 Q 120,-10 240,0 T 480,0 T 720,0 T 960,0 T 1200,0 T 1440,0 T 1680,0 T 1920,0 L 1920,50 L 0,50 Z"/>
-    <path id="s03b_waveMid"  d="M 0,0 Q 90,-16 180,0 T 360,0 T 540,0 T 720,0 T 900,0 T 1080,0 T 1260,0 T 1440,0 T 1620,0 T 1800,0 L 1920,0 L 1920,60 L 0,60 Z"/>
   </defs>
 
-  <!-- BASE SKY -->
-  <rect width="1920" height="1080" fill="url(#s03b_skyDeep)"/>
+  <!-- Sky -->
+  <rect width="1920" height="780" fill="url(#stormSky03b)"/>
 
-  <!-- PARALLAX BACK clouds -->
-  <g opacity="0.7">
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; -32 0; -64 0; -32 0; 0 0"
-      keyTimes="0;0.25;0.5;0.75;1" dur="14s" repeatCount="indefinite"
-      calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <path d="M -120,220 Q 220,150 540,225 Q 820,295 1110,195 Q 1380,130 1700,220 Q 1900,265 2040,195 L 2040,0 L -120,0 Z"
-          fill="url(#s03b_cloudFar)"/>
-    <path d="M -120,320 Q 320,260 700,310 Q 1040,360 1380,290 Q 1660,240 2040,300 L 2040,150 L -120,150 Z"
-          fill="#1A2A3A" opacity="0.45"/>
-  </g>
-
-  <!-- PARALLAX MID clouds -->
-  <g opacity="0.78">
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; -64 4; -128 8; -64 4; 0 0"
-      keyTimes="0;0.25;0.5;0.75;1" dur="14s" repeatCount="indefinite"
-      calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <path d="M -150,450 Q 260,370 660,430 Q 990,500 1330,410 Q 1640,340 2080,430 L 2080,220 L -150,220 Z"
-          fill="#1B2C3E" opacity="0.7"/>
-  </g>
-
-  <!-- PARALLAX NEAR cloud belly -->
-  <g opacity="0.68">
-    <animateTransform attributeName="transform" type="translate"
-      values="0 0; -110 6; -220 12; -110 6; 0 0"
-      keyTimes="0;0.25;0.5;0.75;1" dur="14s" repeatCount="indefinite"
-      calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-    <path d="M -200,560 Q 360,470 820,540 Q 1280,620 1700,520 Q 1920,470 2120,535 L 2120,420 L -200,420 Z"
-          fill="url(#s03b_cloudNear)"/>
-  </g>
-
-  <!-- LAMPI DISTANTI a destra -->
-  <rect width="1920" height="1080" fill="url(#s03b_flashRight)" opacity="0">
+  <!-- Flash halo (pulses with lightning) -->
+  <rect width="1920" height="1080" fill="url(#flashHalo03b)" opacity="0">
     <animate attributeName="opacity"
-      values="0;0;0.5;0.25;0.05;0;0;0;0.42;0.18;0;0;0;0.6;0.3;0.08;0"
-      keyTimes="0;0.12;0.13;0.15;0.18;0.22;0.42;0.51;0.52;0.55;0.6;0.78;0.92;0.93;0.96;0.99;1"
-      dur="10s" repeatCount="indefinite"/>
+      values="0;0;1;0;0;0.9;0;0;0.7;0;0"
+      keyTimes="0;0.1;0.12;0.18;0.35;0.37;0.42;0.62;0.64;0.68;1"
+      dur="8s" fill="freeze"/>
   </rect>
-  <g stroke="#E6EEF6" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#s03b_bloom)">
-    <path d="M 1760,40 L 1740,130 L 1786,180 L 1746,260" opacity="0">
+
+  <!-- Lightning bolts (flashes appear briefly) -->
+  <g stroke="#E8EEF6" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Bolt 1 -->
+    <path d="M 380,0 L 360,140 L 420,180 L 380,320 L 440,360 L 400,500" opacity="0">
       <animate attributeName="opacity"
-        values="0;0;0.7;0.18;0"
-        keyTimes="0;0.92;0.94;0.97;1"
-        dur="10s" repeatCount="indefinite"/>
+        values="0;0;1;0.2;0;0"
+        keyTimes="0;0.1;0.12;0.14;0.18;1" dur="8s" fill="freeze"/>
+    </path>
+    <!-- Bolt 2 (different side, later) -->
+    <path d="M 1480,0 L 1500,120 L 1450,170 L 1500,280 L 1440,360 L 1490,460" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.3;0"
+        keyTimes="0;0.35;0.37;0.4;0.43" dur="8s" fill="freeze"/>
+    </path>
+    <!-- Bolt 3 (brief, late) -->
+    <path d="M 980,0 L 1010,90 L 960,150 L 1000,240 L 940,320" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;1;0.2;0"
+        keyTimes="0;0.62;0.64;0.66;0.7" dur="8s" fill="freeze"/>
     </path>
   </g>
 
-  <!-- HAZE orizzonte -->
-  <rect x="0" y="540" width="1920" height="180" fill="#6F8390" opacity="0.35"/>
-
-  <!-- MARE 3-layer parallax -->
-  <g>
-    <rect x="0" y="680" width="1920" height="90" fill="url(#s03b_seaFar)"/>
-    <use href="#s03b_waveBack" x="-100" y="700" fill="#E6EEF6" opacity="0.45">
-      <animate attributeName="x" values="-100;-340;-100" dur="18s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s03b_waveBack" x="-200" y="735" fill="#E6EEF6" opacity="0.3">
-      <animate attributeName="x" values="-200;-40;-200" dur="15s" repeatCount="indefinite"/>
-    </use>
-
-    <rect x="0" y="770" width="1920" height="130" fill="url(#s03b_seaMid)"/>
-    <use href="#s03b_waveMid" x="-50" y="790" fill="#E6EEF6" opacity="0.55">
-      <animate attributeName="x" values="-50;-280;-50" dur="11s" repeatCount="indefinite"/>
-    </use>
-    <use href="#s03b_waveMid" x="-150" y="840" fill="#E6EEF6" opacity="0.4">
-      <animate attributeName="x" values="-150;30;-150" dur="9s" repeatCount="indefinite"/>
-    </use>
-
-    <rect x="0" y="900" width="1920" height="180" fill="url(#s03b_seaClose)"/>
-    <use href="#s03b_waveMid" x="0" y="920" fill="#A8C0D8" opacity="0.55" transform="scale(1.6 1)">
-      <animate attributeName="x" values="0;-180;0" dur="8s" repeatCount="indefinite"/>
-    </use>
+  <!-- Layered storm clouds -->
+  <g opacity="0.85">
+    <path d="M 0,260 Q 240,180 480,240 Q 720,300 960,220 Q 1200,160 1440,240 Q 1680,300 1920,220 L 1920,0 L 0,0 Z" fill="#0B131D"/>
+    <path d="M 0,420 Q 300,360 600,400 Q 900,460 1200,380 Q 1500,320 1920,400 L 1920,200 L 0,200 Z" fill="#16222E" opacity="0.7"/>
   </g>
 
-  <!-- PONTE bagnato (riflessi) -->
-  <g>
-    <rect x="0" y="980" width="1920" height="100" fill="url(#s03b_deck)"/>
-    <rect x="0" y="980" width="1920" height="100" fill="url(#s03b_deck)" filter="url(#s03b_woodGrain)" opacity="0.7"/>
-    <g stroke="#A8C0D8" stroke-width="1" opacity="0.32">
-      <line x1="0" y1="996" x2="1920" y2="1000"/>
-      <line x1="0" y1="1024" x2="1920" y2="1020"/>
-      <line x1="0" y1="1052" x2="1920" y2="1056"/>
-    </g>
+  <!-- Wet deck -->
+  <rect x="0" y="780" width="1920" height="300" fill="url(#deck03b)"/>
+  <!-- Reflective glints on wet deck -->
+  <g stroke="#9CAFC4" stroke-width="1.2" opacity="0.45">
+    <line x1="80" y1="900" x2="240" y2="900"/>
+    <line x1="380" y1="940" x2="540" y2="940"/>
+    <line x1="700" y1="900" x2="900" y2="900"/>
+    <line x1="1080" y1="930" x2="1280" y2="930"/>
+    <line x1="1440" y1="900" x2="1640" y2="900"/>
   </g>
 
-  <!-- ============ CAPITANO POV close-up dalle spalle ============ -->
-  <g transform="translate(960 760)">
-    <animateTransform attributeName="transform" type="translate"
-      values="960 760; 962 754; 960 760; 958 758; 960 760"
-      keyTimes="0;0.25;0.5;0.75;1" dur="4.5s" repeatCount="indefinite"
-      calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-
-    <!-- RUOTA DEL TIMONE -->
-    <g opacity="0.85">
-      <animateTransform attributeName="transform" type="rotate"
-        values="-4;3;-4" keyTimes="0;0.5;1" dur="9s" repeatCount="indefinite"/>
-
-      <circle cx="0" cy="60" r="38" fill="url(#s03b_brass)" stroke="#0A0805" stroke-width="3"/>
-      <circle cx="0" cy="60" r="22" fill="#3A2818" stroke="#0A0805" stroke-width="2"/>
-      <circle cx="0" cy="60" r="8" fill="#C9A35C"/>
-
-      <circle cx="0" cy="60" r="200" fill="none" stroke="url(#s03b_wheelWood)" stroke-width="22"/>
-      <circle cx="0" cy="60" r="200" fill="none" stroke="#0A0805" stroke-width="2"/>
-      <circle cx="0" cy="60" r="200" fill="none" stroke="#A8C0D8" stroke-width="2" opacity="0.25" filter="url(#s03b_softGlow)"/>
-      <circle cx="0" cy="60" r="160" fill="none" stroke="url(#s03b_wheelWood)" stroke-width="6"/>
-
-      <g stroke="url(#s03b_wheelWood)" stroke-width="10" stroke-linecap="round">
-        <line x1="0" y1="-140" x2="0" y2="22"/>
-        <line x1="0" y1="98" x2="0" y2="260"/>
-        <line x1="-140" y1="60" x2="-22" y2="60"/>
-        <line x1="22" y1="60" x2="140" y2="60"/>
-        <line x1="-99" y1="-39" x2="-16" y2="44"/>
-        <line x1="16" y1="44" x2="99" y2="-39"/>
-        <line x1="-99" y1="159" x2="-16" y2="76"/>
-        <line x1="16" y1="76" x2="99" y2="159"/>
+  <!-- ============ CAPTAIN at helm — center, silhouette, backlit ============ -->
+  <g transform="translate(960 800)">
+    <!-- Wheel behind captain -->
+    <g transform="translate(0 60)">
+      <circle r="180" fill="none" stroke="#0E0B09" stroke-width="10"/>
+      <circle r="130" fill="none" stroke="#0E0B09" stroke-width="4" opacity="0.7"/>
+      <g stroke="#0E0B09" stroke-width="9" stroke-linecap="round">
+        <line x1="0" y1="-200" x2="0" y2="-230"/>
+        <line x1="0" y1="200" x2="0" y2="230"/>
+        <line x1="-200" y1="0" x2="-230" y2="0"/>
+        <line x1="200" y1="0" x2="230" y2="0"/>
+        <line x1="-142" y1="-142" x2="-162" y2="-162"/>
+        <line x1="142" y1="-142" x2="162" y2="-162"/>
+        <line x1="-142" y1="142" x2="-162" y2="162"/>
+        <line x1="142" y1="142" x2="162" y2="162"/>
       </g>
-      <g fill="url(#s03b_wheelWood)" stroke="#0A0805" stroke-width="1.5">
-        <rect x="-7" y="-180" width="14" height="44" rx="2"/>
-        <rect x="-7" y="260" width="14" height="44" rx="2"/>
-        <rect x="-180" y="53" width="44" height="14" rx="2"/>
-        <rect x="136" y="53" width="44" height="14" rx="2"/>
-      </g>
+      <circle r="14" fill="#0E0B09"/>
     </g>
 
-    <!-- SPALLE + CAPPOTTO -->
+    <!-- Captain figure (back view, slight 3/4 left lean) -->
     <g>
-      <path d="M -260,-30 L -310,260 L 310,260 L 260,-30 L 240,-50 L -240,-50 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2.5"/>
-      <g stroke="#000000" stroke-width="1.6" fill="none" opacity="0.65">
-        <path d="M -180,-30 Q -184,80 -210,250"/>
-        <path d="M -100,-30 Q -102,80 -110,250"/>
-        <path d="M -30,-30 Q -32,80 -36,250"/>
-        <path d="M 30,-30 Q 32,80 36,250"/>
-        <path d="M 100,-30 Q 102,80 110,250"/>
-        <path d="M 180,-30 Q 184,80 210,250"/>
-      </g>
-      <path d="M 240,-50 L 310,260 L 330,260 L 260,-46 Z" fill="url(#s03b_charRim)"/>
-      <path d="M -240,-50 L -310,260 L -290,260 L -230,-46 Z" fill="url(#s03b_charWet)"/>
-
-      <rect x="-240" y="40" width="480" height="22" fill="#0A0805" stroke="#000000" stroke-width="1.5"/>
-      <rect x="-22" y="38" width="44" height="26" fill="url(#s03b_brass)" stroke="#0A0805" stroke-width="1.5"/>
-      <rect x="-12" y="46" width="24" height="10" fill="#3A2818"/>
-
-      <path d="M -240,-50 L -260,-110 L -180,-150 L -100,-160 L 100,-160 L 180,-150 L 260,-110 L 240,-50 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M -180,-150 L -200,-200 L -120,-180 L -60,-184 L 60,-184 L 120,-180 L 200,-200 L 180,-150 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M -120,-180 L -100,-200 L 100,-200 L 120,-180 Z" fill="#020306"/>
-
-      <!-- Braccia + mani sulla ruota -->
-      <path d="M -240,-46 L -300,80 L -210,140 L -200,90 L -180,30 L -170,-30 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M -220,130 L -250,170 L -200,200 L -160,180 L -160,140 Z" fill="#1A1410" stroke="#020306" stroke-width="1.5"/>
-      <path d="M -240,165 L -252,148 L -240,140 L -228,156 Z" fill="#1A1410" stroke="#020306" stroke-width="1"/>
-      <path d="M -224,176 L -236,158 L -224,150 L -212,168 Z" fill="#1A1410" stroke="#020306" stroke-width="1"/>
-
-      <path d="M 240,-46 L 300,80 L 210,140 L 200,90 L 180,30 L 170,-30 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M 220,130 L 250,170 L 200,200 L 160,180 L 160,140 Z" fill="#1A1410" stroke="#020306" stroke-width="1.5"/>
-      <path d="M 240,165 L 252,148 L 240,140 L 228,156 Z" fill="#1A1410" stroke="#020306" stroke-width="1"/>
-      <path d="M 224,176 L 236,158 L 224,150 L 212,168 Z" fill="#1A1410" stroke="#020306" stroke-width="1"/>
-
-      <!-- TESTA + TRICORNO -->
-      <rect x="-22" y="-210" width="44" height="34" fill="url(#s03b_char)"/>
-      <ellipse cx="0" cy="-240" rx="62" ry="58" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M -10,-200 L -12,-150 L 12,-150 L 10,-200 Z" fill="#020306"/>
-      <ellipse cx="0" cy="-195" rx="14" ry="6" fill="#5C4226"/>
-
-      <path d="M -90,-282 L 90,-282 L 100,-272 L -100,-272 Z" fill="#020306" stroke="#000000" stroke-width="1.5"/>
-      <path d="M -100,-282 L 100,-282 L 60,-330 L -60,-330 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M -80,-294 L 0,-340 L 80,-294 Z" fill="url(#s03b_char)" stroke="#020306" stroke-width="2"/>
-      <path d="M -100,-282 L -118,-312 L -90,-290 Z" fill="#020306"/>
-      <path d="M 100,-282 L 118,-312 L 90,-290 Z" fill="#020306"/>
-      <path d="M -10,-340 L 0,-358 L 10,-340 Z" fill="#020306"/>
-      <path d="M -100,-282 Q 0,-300 100,-282" fill="none" stroke="#8B6E3C" stroke-width="2" opacity="0.7"/>
-
-      <!-- PIOGGIA che cola dal tricorno -->
+      <!-- Coat tails flapping (animated subtle sway) -->
       <g>
-        <ellipse cx="-90" cy="-272" rx="2.5" ry="6" fill="#A8C0D8" filter="url(#s03b_softGlow)">
-          <animate attributeName="cy" values="-272;-180;-100;-30" dur="2.4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;0.9;0.7;0" dur="2.4s" repeatCount="indefinite"/>
-        </ellipse>
-        <ellipse cx="-50" cy="-272" rx="2.5" ry="6" fill="#A8C0D8" filter="url(#s03b_softGlow)">
-          <animate attributeName="cy" values="-272;-180;-100;-30" dur="2.7s" repeatCount="indefinite" begin="0.4s"/>
-          <animate attributeName="opacity" values="0;0.9;0.7;0" dur="2.7s" repeatCount="indefinite" begin="0.4s"/>
-        </ellipse>
-        <ellipse cx="0" cy="-272" rx="3" ry="7" fill="#A8C0D8" filter="url(#s03b_softGlow)">
-          <animate attributeName="cy" values="-272;-180;-100;-30" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
-          <animate attributeName="opacity" values="0;0.95;0.75;0" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
-        </ellipse>
-        <ellipse cx="50" cy="-272" rx="2.5" ry="6" fill="#A8C0D8" filter="url(#s03b_softGlow)">
-          <animate attributeName="cy" values="-272;-180;-100;-30" dur="2.6s" repeatCount="indefinite" begin="1.2s"/>
-          <animate attributeName="opacity" values="0;0.9;0.7;0" dur="2.6s" repeatCount="indefinite" begin="1.2s"/>
-        </ellipse>
-        <ellipse cx="90" cy="-272" rx="2.5" ry="6" fill="#A8C0D8" filter="url(#s03b_softGlow)">
-          <animate attributeName="cy" values="-272;-180;-100;-30" dur="2.8s" repeatCount="indefinite" begin="0.2s"/>
-          <animate attributeName="opacity" values="0;0.9;0.7;0" dur="2.8s" repeatCount="indefinite" begin="0.2s"/>
-        </ellipse>
-        <ellipse cx="-30" cy="-272" rx="1.8" ry="4" fill="#A8C0D8">
-          <animate attributeName="cy" values="-272;-150;-30" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
-          <animate attributeName="opacity" values="0;0.85;0" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
-        </ellipse>
-        <ellipse cx="30" cy="-272" rx="1.8" ry="4" fill="#A8C0D8">
-          <animate attributeName="cy" values="-272;-150;-30" dur="1.8s" repeatCount="indefinite" begin="1.0s"/>
-          <animate attributeName="opacity" values="0;0.85;0" dur="1.8s" repeatCount="indefinite" begin="1.0s"/>
-        </ellipse>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 0 -100; 2 0 -100; -2 0 -100; 1 0 -100; 0 0 -100"
+          keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite"/>
+        <path d="M -90,-60 L -130,260 L -50,260 L -40,-40 Z" fill="#0A0805"/>
+        <path d="M 90,-60 L 130,260 L 50,260 L 40,-40 Z" fill="#0A0805"/>
+        <!-- Wind-blown coat hem flick -->
+        <path d="M -130,260 Q -180,240 -220,260" fill="none" stroke="#0A0805" stroke-width="40" stroke-linecap="round" opacity="0.9"/>
       </g>
+      <!-- Body torso -->
+      <path d="M -70,-180 L 70,-180 L 88,-40 L -88,-40 Z" fill="#0A0805"/>
+      <!-- Head -->
+      <ellipse cx="0" cy="-220" rx="40" ry="48" fill="#0A0805"/>
+      <!-- Tricorn hat -->
+      <path d="M -75,-260 L 75,-260 L 50,-280 L -50,-280 Z" fill="#0A0805"/>
+      <path d="M -75,-260 L 75,-260 L 0,-310 Z" fill="#0A0805"/>
+      <!-- Arms gripping wheel -->
+      <path d="M -68,-140 L -190,0 L -160,40 L -40,-80 Z" fill="#0A0805"/>
+      <path d="M 68,-140 L 190,0 L 160,40 L 40,-80 Z" fill="#0A0805"/>
+
+      <!-- Backlight rim -->
+      <path d="M -42,-260 Q -42,-220 -40,-180" stroke="#9CAFC4" stroke-width="2" fill="none" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0;0;0.9;0;0;0.7;0" keyTimes="0;0.1;0.12;0.18;0.35;0.37;0.42;0.62;0.64;0.7" dur="8s" fill="freeze"/>
+      </path>
+      <path d="M 42,-260 Q 42,-220 40,-180" stroke="#9CAFC4" stroke-width="2" fill="none" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0;0;0.9;0;0;0.7;0" keyTimes="0;0.1;0.12;0.18;0.35;0.37;0.42;0.62;0.64;0.7" dur="8s" fill="freeze"/>
+      </path>
+      <path d="M -88,-40 L 88,-40" stroke="#9CAFC4" stroke-width="2" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0;0;0.9;0;0;0.7;0" keyTimes="0;0.1;0.12;0.18;0.35;0.37;0.42;0.62;0.64;0.7" dur="8s" fill="freeze"/>
+      </path>
     </g>
   </g>
 
-  <!-- PIOGGIA — 2 parallax depths -->
-  <g stroke="#8FA3B8" stroke-width="0.7" opacity="0.28" transform="rotate(-10 960 540)">
-    <line x1="260" y1="-220" x2="220" y2="0">
-      <animate attributeName="y1" values="-220;0;-220" dur="1.4s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;220;0" dur="1.4s" repeatCount="indefinite"/>
+  <!-- Diagonal rain -->
+  <g stroke="#9CAFC4" stroke-width="1.2" opacity="0.55">
+    <line x1="100" y1="0" x2="40" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="0.8s" repeatCount="indefinite"/>
     </line>
-    <line x1="580" y1="-220" x2="540" y2="0">
-      <animate attributeName="y1" values="-220;0;-220" dur="1.5s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;220;0" dur="1.5s" repeatCount="indefinite"/>
+    <line x1="300" y1="0" x2="240" y2="220">
+      <animate attributeName="y1" values="-100;0;-300" dur="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="120;220;-80" dur="0.7s" repeatCount="indefinite"/>
     </line>
-    <line x1="900" y1="-220" x2="860" y2="0">
-      <animate attributeName="y1" values="-220;0;-220" dur="1.45s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;220;0" dur="1.45s" repeatCount="indefinite"/>
+    <line x1="500" y1="0" x2="440" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="0.85s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="0.85s" repeatCount="indefinite"/>
     </line>
-    <line x1="1240" y1="-220" x2="1200" y2="0">
-      <animate attributeName="y1" values="-220;0;-220" dur="1.5s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;220;0" dur="1.5s" repeatCount="indefinite"/>
+    <line x1="720" y1="0" x2="660" y2="220">
+      <animate attributeName="y1" values="-180;0;-260" dur="0.75s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="40;220;-40" dur="0.75s" repeatCount="indefinite"/>
     </line>
-    <line x1="1580" y1="-220" x2="1540" y2="0">
-      <animate attributeName="y1" values="-220;0;-220" dur="1.55s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;220;0" dur="1.55s" repeatCount="indefinite"/>
+    <line x1="940" y1="0" x2="880" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="0.8s" repeatCount="indefinite"/>
     </line>
-  </g>
-
-  <g stroke="#C2D0E0" stroke-width="1.4" opacity="0.55" transform="rotate(-14 960 540)">
-    <line x1="120" y1="-300" x2="20" y2="0">
-      <animate attributeName="y1" values="-300;0;-300" dur="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;300;0" dur="0.7s" repeatCount="indefinite"/>
+    <line x1="1160" y1="0" x2="1100" y2="220">
+      <animate attributeName="y1" values="-160;0;-280" dur="0.78s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="60;220;-60" dur="0.78s" repeatCount="indefinite"/>
     </line>
-    <line x1="420" y1="-300" x2="320" y2="0">
-      <animate attributeName="y1" values="-300;0;-300" dur="0.72s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;300;0" dur="0.72s" repeatCount="indefinite"/>
+    <line x1="1380" y1="0" x2="1320" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="0.82s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="0.82s" repeatCount="indefinite"/>
     </line>
-    <line x1="720" y1="-300" x2="620" y2="0">
-      <animate attributeName="y1" values="-300;0;-300" dur="0.68s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;300;0" dur="0.68s" repeatCount="indefinite"/>
+    <line x1="1600" y1="0" x2="1540" y2="220">
+      <animate attributeName="y1" values="-140;0;-300" dur="0.74s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="80;220;-80" dur="0.74s" repeatCount="indefinite"/>
     </line>
-    <line x1="1040" y1="-300" x2="940" y2="0">
-      <animate attributeName="y1" values="-300;0;-300" dur="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;300;0" dur="0.7s" repeatCount="indefinite"/>
-    </line>
-    <line x1="1360" y1="-300" x2="1260" y2="0">
-      <animate attributeName="y1" values="-300;0;-300" dur="0.74s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;300;0" dur="0.74s" repeatCount="indefinite"/>
-    </line>
-    <line x1="1680" y1="-300" x2="1580" y2="0">
-      <animate attributeName="y1" values="-300;0;-300" dur="0.72s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="0;300;0" dur="0.72s" repeatCount="indefinite"/>
+    <line x1="1820" y1="0" x2="1760" y2="220">
+      <animate attributeName="y1" values="-220;0;-220" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;220;0" dur="0.8s" repeatCount="indefinite"/>
     </line>
   </g>
-
-  <!-- Painterly overlay -->
-  <rect width="1920" height="1080" fill="#FFFFFF" opacity="0.03" filter="url(#s03b_painterly)" pointer-events="none"/>
+  <!-- Second rain layer (faster, lighter) -->
+  <g stroke="#C8D4E2" stroke-width="0.8" opacity="0.35">
+    <line x1="200" y1="0" x2="160" y2="160">
+      <animate attributeName="y1" values="-160;0;-160" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;160;0" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="600" y1="0" x2="560" y2="160">
+      <animate attributeName="y1" values="-160;0;-160" dur="0.55s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;160;0" dur="0.55s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1000" y1="0" x2="960" y2="160">
+      <animate attributeName="y1" values="-160;0;-160" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;160;0" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1400" y1="0" x2="1360" y2="160">
+      <animate attributeName="y1" values="-160;0;-160" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;160;0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1700" y1="0" x2="1660" y2="160">
+      <animate attributeName="y1" values="-160;0;-160" dur="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;160;0" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
 
   <!-- Vignette -->
-  <rect width="1920" height="1080" fill="url(#s03b_vig)" pointer-events="none"/>
+  <rect width="1920" height="1080" fill="url(#vig03b)" pointer-events="none"/>
 </svg>

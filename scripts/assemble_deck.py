@@ -51,11 +51,16 @@ ANIMATIONS_DIR = DECK_DIR / "assets" / "animations"
 DOCS_DIR = ROOT / "docs"
 PROMPTS_DIR = ROOT / "prompts"
 
-# Sequenza scene story (1-12) — IDs come da storyboard
-# title  = cattivante (3-6 parole) per spingere il pubblico alla prossima slide
-# caption = chiarimento per il pubblico (≤14 parole) "ah, ho capito cosa vedo"
-# cue    = micro-promemoria delivery per Rocco al palco (≤8 parole)
-STORY_SCENES = [
+# NUOVO BRIEF Rocco: rimossa storia ciurma/mare (non e' piaciuta al pubblico
+# di test). Presentazione diretta Conflavoro AI come rivoluzione del mondo
+# del lavoro PMI italiano. Palette teal del brand kit originale.
+#
+# Le SCENE STORY sono state svuotate. Tutto il deck e' nella sezione realistic.
+STORY_SCENES = []
+
+
+# === LEGACY STORY (non in uso, conservata per restore eventuale) ===
+_LEGACY_STORY_SCENES = [
     {"id": "01",  "title": "C'è sempre stata una ciurma",
      "caption": "Voi navigate da prima che si parlasse di tecnologia.",
      "cue": "Voce bassa. Pausa 3s prima."},
@@ -100,170 +105,143 @@ STORY_SCENES = [
      "cue": "Passo avanti. Cambio registro. Sorridi."},
 ]
 
-# Sequenza slide realistic (13-25) — 7 piattaforme di prodotto.
+# Sequenza slide realistic — NUOVA STRUTTURA Conflavoro AI (5 piattaforme).
 # Big number concettuali (NON tempi/numeri specifici come richiesto da Rocco).
 # Bullet descrivono input/output concettuali, non quanto-veloci-siamo.
 # caption + cue: stesso schema della story (chiarimento pubblico + delivery Rocco).
 REALISTIC_SLIDES = [
+    # =============== INTRO: chi siamo, perchè, il problema ===============
     {
-        "id": "13", "title": "La storia era vera",
-        "big": "ANNO ZERO.",
-        "caption": "Non era fantascienza. È il calendario di quest'anno.",
-        "cue": "Cambio registro. Tono diretto, voce piena.",
+        "id": "13", "title": "L'anno zero dell'AI nel lavoro",
+        "big": "ANNO ZERO",
+        "caption": "L'AI sta riscrivendo le regole del mestiere. Adesso.",
+        "cue": "Tono diretto, voce piena. Pausa dopo 'Adesso'.",
         "bullets": [
-            "Il presente, non la fantascienza",
-            "Chi capisce l'AI prima costruisce un vantaggio",
-            "Tre anni nel lavoro sono una vita",
+            "Non è fantascienza. È il calendario di quest'anno.",
+            "Chi capisce l'AI prima costruisce un vantaggio reale.",
+            "Per il consulente del lavoro la differenza è oggi.",
         ],
     },
     {
-        "id": "14", "title": "Non un programma. Una flotta.",
-        "big": "7",
-        "caption": "Sette strumenti per voi, per le PMI, per i lavoratori.",
-        "cue": "Indica il pubblico. 'Costruita per voi.'"
-        ,
+        "id": "14", "title": "Conflavoro AI",
+        "big": "CHI",
+        "caption": "Strumenti AI verticali costruiti per il lavoro italiano.",
+        "cue": "Indica il logo. 'Costruita per voi.'",
         "bullets": [
-            "Sette piattaforme. Una visione.",
-            "Per consulente, PMI e lavoratore",
-            "Non chatbot. Strumenti specifici verticali",
-            "Costruiti da chi ha visto la vostra giornata",
+            "Cinque piattaforme. Una visione: amplificare il consulente.",
+            "Per chi tiene insieme studi, PMI e dipendenti.",
+            "Non chatbot generici. Strumenti verticali, in italiano.",
+            "Costruite da chi ha visto la vostra giornata.",
         ],
     },
     {
         "id": "15", "title": "Il vero ladro è il tempo",
         "big": "TEMPO",
         "caption": "Ogni ora su circolari è un'ora tolta al cliente.",
-        "cue": "Pausa dopo 'tempo'. Sguardo al pubblico."
-        ,
+        "cue": "Rallenta. Sguardo al pubblico. 'Il tempo è il vero ladro.'",
         "bullets": [
-            "Compliance, controlli, refresh normativo",
-            "Tempo rubato al cliente, alla relazione, al mestiere",
-            "L'AI libera il tempo, non lo sostituisce",
+            "Compliance, controlli, aggiornamenti normativi senza fine.",
+            "Tempo rubato al cliente, alla relazione, al mestiere vero.",
+            "L'AI non vi sostituisce. Vi ridà le ore.",
+        ],
+    },
+
+    # =============== 5 PIATTAFORME (presentate come 5 progetti per la nuova era) ===============
+    {
+        "id": "16", "title": "CRM-DVR",
+        "big": "DVR",
+        "caption": "L'assistente AI per il consulente RSPP.",
+        "cue": "Frase chiave: 'Da 30 ore a 4 ore per ogni DVR.'",
+        "bullets": [
+            "Documenti di Valutazione Rischi conformi al D.Lgs. 81/08.",
+            "Da 15-30 ore a 2-4 ore per DVR. 85% di tempo recuperato.",
+            "Bulk import, validazione documentale, citazione normativa via AI.",
+            "Workflow firma a due livelli, audit log immodificabile.",
         ],
     },
     {
-        "id": "16", "title": "Prima bussola: il DVR pronto",
-        "big": "RAPIDO",
-        "caption": "Documento di valutazione rischi pronto mentre il caffè è caldo.",
-        "cue": "Frase chiave: 'mentre il caffè è caldo'."
-        ,
+        "id": "17", "title": "Project Manager + FALCO AI",
+        "big": "PARLA",
+        "caption": "Smetti di gestire il gestionale. Parla. FALCO lo fa.",
+        "cue": "Alza energia. 'L'AI esegue, non solo suggerisce.'",
         "bullets": [
-            "Input: documento normativo + dati azienda",
-            "Output: DVR validato, conforme, completo",
-            "Non per togliere lavoro. Per ridarlo a chi conta.",
+            "Project management dove l'AI esegue, non solo suggerisce.",
+            "Comandi vocali in italiano: crea progetti, task, riunioni.",
+            "Videoconferenze native + trascrizione + recap automatico.",
+            "60-90 minuti recuperati al giorno per ogni responsabile.",
         ],
     },
     {
-        "id": "17", "title": "Seconda bussola: preventivi al volo",
-        "big": "FIRMA",
-        "caption": "Il preventivo esce mentre il cliente è ancora in linea.",
-        "cue": "Tono pratico. 'Mentre il cliente è in linea.'"
-        ,
+        "id": "18", "title": "Preventivatore AI",
+        "big": "AUTO",
+        "caption": "Dal primo contatto al contratto firmato, tutto automatico.",
+        "cue": "Tono pratico. 'Niente più follow-up persi.'",
         "bullets": [
-            "Input: anagrafica cliente + listino dello studio",
-            "Output: PDF impaginato pronto all'invio",
-            "Il preventivo non aspetta più la settimana prossima",
+            "Trascrizioni, email, note vocali, PDF → preventivo pronto.",
+            "Applica template aziendale, integra servizi a catalogo, invia.",
+            "Al 'sì' del cliente il preventivo diventa contratto firmabile.",
+            "DocuSign integrato. Una sola pipeline tracciata.",
         ],
     },
     {
-        "id": "18", "title": "Terza bussola: clienti che arrivano",
-        "big": "AGENDA",
-        "caption": "Un agente cerca e contatta i clienti giusti. Anche di notte.",
-        "cue": "Sorridi. 'Mentre voi dormite.'"
-        ,
+        "id": "19", "title": "VCS — Videoconferenza Formativa",
+        "big": "AULA",
+        "caption": "La formazione SSL legalmente valida, automatizzata dall'AI.",
+        "cue": "Voce ferma. 'Compliance by design, non da checklist.'",
         "bullets": [
-            "Cerca, qualifica e contatta lead nei canali giusti",
-            "Già attivo per noi e per il primo cliente",
-            "Un agente che vi riempie l'agenda mentre dormite",
+            "Conforme Accordo Stato-Regioni 2025 e D.Lgs. 81/08.",
+            "Compliance by design: il software impedisce ogni non-conformità.",
+            "AI Coach in aula virtuale: trascrizione, engagement, recap.",
+            "Anti-frode quiz con punteggio di collusione. Attestato con QR.",
         ],
     },
     {
-        "id": "19", "title": "Quarta bussola: studio allineato",
-        "big": "360°",
-        "caption": "Sa chi fa cosa. Sa cosa è in ritardo. Sa dove serve mano.",
-        "cue": "Voce calma. 'Pensa con voi, non al posto vostro.'"
-        ,
+        "id": "20", "title": "Lead Search",
+        "big": "CRM",
+        "caption": "I tuoi prossimi clienti sono già lì fuori. Lead Search li trova.",
+        "cue": "Frase chiave: 'Da query a CRM in pochi minuti.'",
         "bullets": [
-            "Allinea l'organizzazione interna a 360°",
-            "Velocizza l'operatività di tutto lo studio",
-            "Pensa con voi. Non al posto vostro.",
+            "Motore lead generation B2B 100% legale e GDPR-compliant.",
+            "Trova prospect in target su Google e canali B2B verticali.",
+            "Email, telefono, ruolo, settore + scoring di affinità.",
+            "Export verso GoHighLevel, Sidial, CRM interno, CSV.",
+        ],
+    },
+
+    # =============== SINTESI + METODO + CHIUSURA ===============
+    {
+        "id": "21", "title": "Cinque processi, una visione",
+        "big": "5",
+        "caption": "Per ogni rotta del vostro lavoro, uno strumento dedicato.",
+        "cue": "Voce piena. 'Specifici. Verticali. Italiani.'",
+        "bullets": [
+            "Ogni processo del lavoro ha il suo strumento AI dedicato.",
+            "Specifici, verticali, costruiti da chi conosce il mestiere.",
+            "Non un'unica scatola magica. Cinque progetti integrabili.",
         ],
     },
     {
-        "id": "20", "title": "Quinta bussola: agenti che parlano",
-        "big": "VOCE",
-        "caption": "Voi date una voce. Loro chiamano, scrivono, prenotano.",
-        "cue": "Alza energia. Questa è la più 'wow'."
-        ,
-        "bullets": [
-            "Agenti vocali che operano per conto dell'azienda",
-            "Sotto agenti coordinati che lavorano come umani",
-            "Si integra dentro il Project Manager",
-            "L'azienda parla, gli agenti eseguono",
-        ],
-    },
-    {
-        "id": "21", "title": "Sesta bussola: HR in un posto solo",
-        "big": "UNICO",
-        "caption": "Buste paga, presenze, ferie. Una sola fonte di verità.",
-        "cue": "Frase cuore. 'Non è una riga di Excel.'"
-        ,
-        "bullets": [
-            "Busta paga, presenze, contratti, ferie, formazione",
-            "Un sistema unico. Fine dell'Excel a sette schede",
-            "Consulente, azienda e dipendente: stessa verità",
-            "Il dipendente non è una riga di Excel",
-        ],
-    },
-    {
-        "id": "22", "title": "Settima bussola: formazione che vale",
-        "big": "LIVE",
-        "caption": "Videoconferenze a norma e corsi obbligatori dal telefono.",
-        "cue": "Chiudi la sezione prodotti. Tono pieno."
-        ,
-        "bullets": [
-            "Videoconferenze GDPR + trascrizione automatica",
-            "Salvataggio nel fascicolo del dipendente",
-            "Formazione obbligatoria sempre disponibile",
-            "La formazione smette di essere una scartoffia. Torna a essere un sapere.",
-        ],
-    },
-    {
-        "id": "23", "title": "Sette processi, sette bussole",
-        "big": "7 bussole",
-        "caption": "Ogni rotta del vostro lavoro ha il suo strumento dedicato.",
-        "cue": "Frase chiave: 'una bussola per ogni rotta'."
-        ,
-        "bullets": [
-            "Ogni processo del lavoro ha il suo strumento AI",
-            "Specifico. Verticale. Fatto da chi conosce il settore.",
-            "Una bussola per ogni rotta che vi serve",
-        ],
-    },
-    {
-        "id": "24", "title": "Come lo facciamo davvero",
+        "id": "22", "title": "Come lo facciamo davvero",
         "big": "BMAD",
-        "caption": "Un metodo: una bracciata alla volta, testata e confermata.",
-        "cue": "Calma. 'Niente big bang.' Gesto netto."
-        ,
+        "caption": "Un metodo: una mossa alla volta, testata e confermata.",
+        "cue": "Calma. 'Niente big bang. Niente promesse impossibili.'",
         "bullets": [
             "Build. Measure. Adjust. Deploy.",
-            "Una modifica alla volta, testata e confermata",
-            "Niente big bang, niente promesse impossibili",
-            "Si naviga in mare nuovo una bracciata alla volta",
+            "Una modifica alla volta, testata e confermata col cliente.",
+            "Niente big bang. Niente promesse impossibili.",
+            "Si naviga in acqua nuova una bracciata alla volta.",
         ],
     },
     {
-        "id": "25", "title": "La vostra nave non resta ferma",
-        "big": "ADESSO.",
-        "caption": "Altri stanno fermi all'orizzonte. Voi avete la bussola.",
-        "cue": "Voce calda. Pausa 3s prima di 'Grazie'."
-        ,
+        "id": "23", "title": "L'era dell'AI inizia da voi",
+        "big": "ADESSO",
+        "caption": "Altri aspetteranno. Voi avete già la bussola in mano.",
+        "cue": "Voce calda. Pausa 3s prima di 'Grazie'.",
         "bullets": [
-            "Anno zero. Adesso.",
-            "Abbiamo trovato la nostra isola",
-            "La bussola arancione è in mano nostra",
-            "All'orizzonte altre navi ferme. La vostra no.",
+            "Anno zero. Adesso. Per chi sa il mestiere.",
+            "Cinque progetti pronti. Una visione condivisa.",
+            "L'AI non vi sostituisce. Vi rende protagonisti.",
+            "Salpiamo nella nuova era. Insieme.",
         ],
     },
 ]

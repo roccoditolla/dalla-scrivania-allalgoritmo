@@ -6,15 +6,23 @@
  * ========================================================================== */
 
 :root {
-  /* === Palette === */
+  /* === Palette Conflavoro AI (brand kit originale: teal + navy) === */
   --color-cream: #F5EFE6;
   --color-cream-darker: #ECE3D2;
-  --color-orange: #FF6B1A;
-  --color-orange-soft: #FFA463;
+  /* Brand primario: teal del logo Conflavoro AI */
+  --color-brand-teal: #00AAA6;
+  --color-brand-teal-soft: #4FC3C0;
+  /* Brand secondario: navy del sito Lead Search per hero/header */
+  --color-brand-navy: #1E3A8A;
+  --color-brand-navy-soft: #3B5BA8;
+  /* Alias accent: era arancione, ora teal (nome neutro) */
+  --color-orange: #00AAA6;
+  --color-orange-soft: #4FC3C0;
+  /* Ink + neutri */
   --color-ink: #1A1614;
   --color-ink-soft: #2A2420;
-  --color-ocean-deep: #2C4357;
-  --color-ocean-calm: #7A9CB0;
+  --color-ocean-deep: #1E3A8A;
+  --color-ocean-calm: #6A8DC8;
   --color-fog: #B8B5AD;
   --color-sand: #E8DDC8;
   

@@ -48,7 +48,7 @@
 
     <!-- Horizon distant -->
     <linearGradient id="horizonChi" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F5EFE6"/>
+      <stop offset="0%" stop-color="#FFFFFF"/>
       <stop offset="100%" stop-color="#C8C0AE"/>
     </linearGradient>
     <linearGradient id="distantShip" x1="50%" y1="0%" x2="50%" y2="100%">
@@ -68,7 +68,7 @@
     </radialGradient>
   </defs>
 
-  <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
   <rect width="1080" height="1080" fill="#D9B98A" opacity="0.045" filter="url(#painterly25)"/>
 
   <!-- =========================================================

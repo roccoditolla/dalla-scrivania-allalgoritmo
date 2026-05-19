@@ -48,7 +48,7 @@
     </radialGradient>
   </defs>
 
-  <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
   <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly24)"/>
 
   <!-- =========================================================

@@ -112,36 +112,35 @@ _LEGACY_STORY_SCENES = [
 REALISTIC_SLIDES = [
     # =============== INTRO: chi siamo, perchè, il problema ===============
     {
-        "id": "13", "title": "Siamo all'anno zero dell'AI",
-        "big": "ANNO ZERO",
-        "caption": "L'AI entra nel lavoro adesso. Consulenti, aziende, lavoratori, insieme.",
-        "cue": "Tono diretto, voce piena. Pausa dopo 'pionieri'.",
+        "id": "13", "title": "L'AI entra nel lavoro. Adesso.",
+        "big": "01",
+        "caption": "Consulenti, aziende, lavoratori. Lo stesso punto di partenza.",
+        "cue": "Tono diretto, voce piena. 'Anno zero.'",
         "bullets": [
-            "L'AI nel lavoro inizia oggi. Per chi guida, chi opera, chi controlla.",
-            "Chi la usa adesso costruisce un vantaggio vero per tutto il sistema.",
-            "Possiamo guidare il cambiamento insieme. Non subirlo da soli.",
+            "Il momento è oggi. Per chi guida, chi opera, chi controlla.",
+            "Chi adotta l'AI adesso costruisce un vantaggio reale.",
+            "Guidiamo il cambiamento insieme, invece di subirlo.",
         ],
     },
     {
         "id": "14", "title": "Conflavoro AI",
-        "big": "CHI",
-        "caption": "Strumenti AI per chi consiglia, chi produce, chi lavora ogni giorno.",
+        "big": "02",
+        "caption": "Cinque piattaforme AI per il lavoro italiano.",
         "cue": "Indica il logo. 'Costruita per voi.'",
         "bullets": [
-            "Cinque piattaforme. Una visione: tempo restituito a tutto il sistema.",
-            "Per chi consiglia, chi guida l'azienda, chi opera in reparto.",
-            "Non assistenti generici. Strumenti pensati per il lavoro italiano.",
-            "Costruite da chi ha visto le giornate di studi, aziende, dipendenti.",
+            "Una visione: restituire tempo a chi consiglia, chi produce, chi lavora.",
+            "Non assistenti generici. Strumenti pensati per il vostro mestiere.",
+            "Costruite da chi conosce le giornate di studi, aziende, dipendenti.",
         ],
     },
     {
-        "id": "15", "title": "Il vero ladro è il tempo",
-        "big": "TEMPO",
-        "caption": "Ogni ora persa è un'ora tolta al cliente, all'impresa, alla persona.",
-        "cue": "Rallenta. Sguardo al pubblico. 'Il vero ladro è il tempo.'",
+        "id": "15", "title": "Il tempo è quello che vi manca",
+        "big": "03",
+        "caption": "Adempimenti che non finiscono mai. Ore tolte a chi conta davvero.",
+        "cue": "Rallenta. Sguardo al pubblico. Pausa sul problema.",
         "bullets": [
-            "Adempimenti, controlli, aggiornamenti di legge che non finiscono mai.",
-            "Tempo tolto al cliente, all'azienda, al lavoratore, alla relazione.",
+            "Adempimenti, controlli, aggiornamenti normativi senza fine.",
+            "Ore tolte al cliente, all'azienda, al lavoratore, alla relazione.",
             "L'AI non sostituisce nessuno. Restituisce ore a tutti.",
         ],
     },
@@ -149,7 +148,7 @@ REALISTIC_SLIDES = [
     # =============== 5 PIATTAFORME (presentate come 5 progetti per la nuova era) ===============
     {
         "id": "16", "title": "CRM-DVR",
-        "big": "DVR",
+        "big": "04",
         "caption": "Il documento di sicurezza pronto per il consulente, l'azienda, il lavoratore.",
         "cue": "Frase forte: 'Da 30 ore a 4 ore. Per ogni documento.'",
         "bullets": [
@@ -161,7 +160,7 @@ REALISTIC_SLIDES = [
     },
     {
         "id": "17", "title": "Project Manager con FALCO AI",
-        "big": "PARLA",
+        "big": "05",
         "caption": "Per chi guida progetti, chi coordina squadre, chi deve solo parlare.",
         "cue": "Alza energia. 'L'AI esegue, non si limita a suggerire.'",
         "bullets": [
@@ -173,7 +172,7 @@ REALISTIC_SLIDES = [
     },
     {
         "id": "18", "title": "Preventivatore AI",
-        "big": "AUTO",
+        "big": "06",
         "caption": "Per chi propone, chi decide, chi firma. Dal contatto al contratto.",
         "cue": "Tono pratico. 'Niente più preventivi dimenticati nel cassetto.'",
         "bullets": [
@@ -184,8 +183,8 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "19", "title": "VCS, la formazione che vale",
-        "big": "AULA",
+        "id": "19", "title": "VCS, formazione sulla sicurezza",
+        "big": "07",
         "caption": "Formazione vera, valida per legge. Per chi forma, chi assume, chi impara.",
         "cue": "Voce ferma. 'La conformità non si spunta. Si garantisce.'",
         "bullets": [
@@ -197,7 +196,7 @@ REALISTIC_SLIDES = [
     },
     {
         "id": "20", "title": "Lead Search",
-        "big": "CLIENTI",
+        "big": "08",
         "caption": "Per chi cerca clienti, chi qualifica, chi chiude la trattativa.",
         "cue": "Frase chiave: 'Da una ricerca alla rubrica clienti in pochi minuti.'",
         "bullets": [
@@ -210,8 +209,8 @@ REALISTIC_SLIDES = [
 
     # =============== SINTESI + METODO + CHIUSURA ===============
     {
-        "id": "21", "title": "Cinque progetti, una visione",
-        "big": "5",
+        "id": "21", "title": "Cinque piattaforme. Una visione.",
+        "big": "09",
         "caption": "Per ogni snodo del lavoro, uno strumento per chi consiglia e chi opera.",
         "cue": "Voce piena. 'Specifici. Italiani. Pensati per voi.'",
         "bullets": [
@@ -221,8 +220,8 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "22", "title": "Come lo facciamo davvero",
-        "big": "BMAD",
+        "id": "22", "title": "Il metodo BMAD",
+        "big": "10",
         "caption": "Un metodo semplice. Una mossa alla volta, provata con chi la userà.",
         "cue": "Calma. 'Niente effetti speciali. Niente promesse vuote.'",
         "bullets": [
@@ -233,8 +232,8 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "23", "title": "L'era dell'AI inizia da voi",
-        "big": "ADESSO",
+        "id": "23", "title": "Inizia oggi.",
+        "big": "11",
         "caption": "Un sistema che cerca innovazione: consulenti, aziende, lavoratori, insieme.",
         "cue": "Voce calda. Pausa 3s prima di 'Grazie'.",
         "bullets": [

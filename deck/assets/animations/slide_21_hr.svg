@@ -65,7 +65,7 @@
   </defs>
 
   <!-- BG cream + grain -->
-  <rect width="1080" height="1080" fill="#F5EFE6"/>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
   <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly21)"/>
 
   <!-- Warm light wash from right -->
@@ -100,7 +100,7 @@
     <!-- Tab label area on back flap (top-left, deep blue accent) -->
     <g transform="translate(-180 -198)">
       <path d="M -42 -10 Q -42 -18 -34 -18 L 38 -22 Q 46 -22 46 -14 L 46 6 Q 46 14 38 14 L -34 10 Q -42 10 -42 2 Z"
-            fill="#F5EFE6" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
+            fill="#FFFFFF" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
       <path d="M -30 -4 Q -6 -8 36 -4" stroke="#2C4357" stroke-width="3" stroke-linecap="round" fill="none"/>
     </g>
 
@@ -283,7 +283,7 @@
 
       <!-- Collar / shirt suggestion (front) -->
       <path d="M -16 -42 Q 6 -34 30 -40" fill="none"
-            stroke="#F5EFE6" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+            stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
     </g>
 
     <!-- Subtle breathing animation -->

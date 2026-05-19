@@ -542,17 +542,19 @@ html, body {
 /* Header con eyebrow (numerino piccolo) + titolo grande sotto.
    NON piu in linea con big-number: il big-number ora e' verticalmente
    piu staccato, mentre il titolo principale e' la voce principale. */
+/* Header con UN SOLO TITOLO grande.
+   Lo "step indicator" (es. 04 / 11) e' un micro-eyebrow in alto a destra,
+   non un secondo titolo. Reference: Apple keynote, Stripe presentations. */
 .r-header {
   display: flex;
-  align-items: flex-start;
-  gap: 44px;
+  flex-direction: column;
+  gap: var(--space-2);
   border-bottom: 1px solid var(--color-line);
-  padding-bottom: 32px;
+  padding-bottom: var(--space-4);
   position: relative;
 }
 
-/* Sottile accento teal sotto il divider (4px da sinistra) per richiamare brand
-   senza colorare titoli/testo. Stile Linear/Stripe. */
+/* Accent line subtle 64px brand teal sotto il divider */
 .r-header::after {
   content: '';
   position: absolute;
@@ -564,32 +566,33 @@ html, body {
   border-radius: 2px;
 }
 
-/* Big number: ora EYEBROW navy (più business, meno acceso del teal) */
+/* Step indicator (era "big number"): piccolo micro-eyebrow in alto.
+   NON un secondo titolo. Tipografia metadata stile Stripe. */
 .big-number {
-  flex-shrink: 0;
-  font-size: 88px;
-  font-weight: 900;
-  letter-spacing: -0.045em;
-  color: var(--color-brand-navy);
-  line-height: 0.92;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--color-ink-muted);
+  line-height: 1;
   text-align: left;
   text-transform: uppercase;
+  margin: 0;
   opacity: 0;
-  transform: translateX(-30px);
-  min-width: 180px;
+  transform: translateY(-8px);
+  align-self: flex-start;
 }
 
-/* Titolo: voce principale, INK scuro (non più verde), max contrasto */
+/* TITOLO UNICO della slide. Massimo contrasto, peso 800, ink. */
 .r-title {
-  font-size: 64px;
+  font-size: var(--fs-3xl);
   font-weight: 800;
   color: var(--color-ink);
   letter-spacing: -0.028em;
-  margin: 16px 0 0 0;
-  line-height: 1.06;
+  margin: 0;
+  line-height: 1.05;
   opacity: 0;
   transform: translateY(15px);
-  max-width: 760px;
+  max-width: 920px;
 }
 
 .r-body {

@@ -435,7 +435,7 @@ REALISTIC_SLIDE_TEMPLATE = Template("""
         <div class="realistic-layout">
           <header class="r-header">
             <div class="big-number" data-anim="bignum">$big</div>
-            <h2 class="r-title" data-anim="title">$title</h2>
+            $title_block
           </header>
           <div class="r-body">
             <div class="r-visual" data-anim="visual">$image_block</div>
@@ -586,10 +586,22 @@ def build_realistic_slide_html(slide: dict) -> str:
         for i, b in enumerate(slide.get("bullets", []))
     )
 
+    # Se la slide ha un title_image (es. logo Conflavoro AI), mostra l'IMG
+    # alla stessa altezza visiva del titolo. Altrimenti testo <h2>.
+    title_image = slide.get("title_image")
+    if title_image:
+        title_block = (
+            f'<img class="r-title-logo" data-anim="title" '
+            f'src="{title_image}" alt="{slide["title"]}" />'
+        )
+    else:
+        title_block = f'<h2 class="r-title" data-anim="title">{slide["title"]}</h2>'
+
     return REALISTIC_SLIDE_TEMPLATE.substitute(
         id=slide["id"],
         big=slide["big"],
         title=slide["title"],
+        title_block=title_block,
         caption=slide.get("caption", ""),
         cue=slide.get("cue", ""),
         image_block=image_block,

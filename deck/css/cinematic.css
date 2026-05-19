@@ -595,6 +595,18 @@ html, body {
   max-width: 920px;
 }
 
+/* Versione titolo-immagine (logo Conflavoro AI alla stessa altezza del titolo).
+   Usata sulla slide 02 dove il logo SOSTITUISCE il testo titolo. */
+.r-title-logo {
+  display: block;
+  height: 72px;        /* allineato a fs-3xl 72px del titolo testo */
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
 .r-body {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -748,6 +760,9 @@ html, body {
 }
 .reveal section.present.realistic-slide .r-visual {
   animation: r-visual-in 0.9s 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal section.present.realistic-slide .r-title-logo {
+  animation: r-title-in 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .reveal section.present.realistic-slide .r-bullet[data-i="0"] { animation: r-bullet-in 0.7s 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 .reveal section.present.realistic-slide .r-bullet[data-i="1"] { animation: r-bullet-in 0.7s 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards; }

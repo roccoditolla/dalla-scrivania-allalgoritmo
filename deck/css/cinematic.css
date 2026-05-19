@@ -6,25 +6,37 @@
  * ========================================================================== */
 
 :root {
-  /* === Palette Conflavoro AI (brand kit originale: teal + navy) === */
-  --color-cream: #F5EFE6;
-  --color-cream-darker: #ECE3D2;
+  /* === Palette Conflavoro AI business clean (ridotta da palette warm).
+     Sfondo bianco pulito stile Stripe/Linear/Apple keynote.
+     Titoli ink scuro (mai colorati). Teal solo accento subtle.
+     Big number e accenti forti in navy brand. === */
+  --color-bg: #FFFFFF;           /* sfondo principale bianco pulito */
+  --color-bg-soft: #FAFBFC;      /* sfondo subtle off-white per sezioni */
+  --color-cream: #FFFFFF;        /* alias retro-compat (era F5EFE6) */
+  --color-cream-darker: #F0F2F5; /* alias retro-compat */
+
   /* Brand primario: teal del logo Conflavoro AI */
   --color-brand-teal: #00AAA6;
   --color-brand-teal-soft: #4FC3C0;
-  /* Brand secondario: navy del sito Lead Search per hero/header */
-  --color-brand-navy: #1E3A8A;
-  --color-brand-navy-soft: #3B5BA8;
-  /* Alias accent: era arancione, ora teal (nome neutro) */
+  /* Brand secondario: navy del sito Lead Search per titoli/big number */
+  --color-brand-navy: #0F2A5E;
+  --color-brand-navy-soft: #1E3A8A;
+
+  /* Alias accent: era arancione, ora teal (nome neutro per retrocompat) */
   --color-orange: #00AAA6;
   --color-orange-soft: #4FC3C0;
-  /* Ink + neutri */
-  --color-ink: #1A1614;
-  --color-ink-soft: #2A2420;
-  --color-ocean-deep: #1E3A8A;
+
+  /* Ink scale (tipografia business clean) */
+  --color-ink: #0A0E14;          /* nero piu' contrastato */
+  --color-ink-soft: #3A4150;     /* grigio scuro per body */
+  --color-ink-muted: #6B7280;    /* grigio medio per metadata */
+  --color-line: #E5E7EB;         /* divider subtle */
+
+  /* Legacy aliases (retro compat con regole gia' scritte) */
+  --color-ocean-deep: #0F2A5E;
   --color-ocean-calm: #6A8DC8;
   --color-fog: #B8B5AD;
-  --color-sand: #E8DDC8;
+  --color-sand: #F0F2F5;
   
   /* === Tipografia === */
   --font-display: 'Inter', system-ui, -apple-system, sans-serif;
@@ -41,17 +53,20 @@
 
 /* === Reset reveal.js theme con la nostra palette === */
 html, body {
-  background: var(--color-cream);
+  background: var(--color-bg);
 }
 
 .reveal {
   font-family: var(--font-display);
   color: var(--color-ink);
-  background: var(--color-cream);
+  background: var(--color-bg);
+  font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .reveal-viewport {
-  background: var(--color-cream);
+  background: var(--color-bg);
 }
 
 /* Slide story con bg ink: ribaltiamo il letterbox */
@@ -507,18 +522,32 @@ html, body {
 .r-header {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
-  border-bottom: 3px solid var(--color-brand-teal);
-  padding-bottom: 28px;
+  gap: 44px;
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: 32px;
+  position: relative;
 }
 
-/* Big number: ora un EYEBROW visivo, accento brand non protagonista */
+/* Sottile accento teal sotto il divider (4px da sinistra) per richiamare brand
+   senza colorare titoli/testo. Stile Linear/Stripe. */
+.r-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 64px;
+  height: 3px;
+  background: var(--color-brand-teal);
+  border-radius: 2px;
+}
+
+/* Big number: ora EYEBROW navy (più business, meno acceso del teal) */
 .big-number {
   flex-shrink: 0;
-  font-size: 96px;
+  font-size: 88px;
   font-weight: 900;
   letter-spacing: -0.045em;
-  color: var(--color-brand-teal);
+  color: var(--color-brand-navy);
   line-height: 0.92;
   text-align: left;
   text-transform: uppercase;
@@ -527,18 +556,17 @@ html, body {
   min-width: 180px;
 }
 
-/* Titolo: la voce principale della slide. Black weight, ink color,
-   spaziato dal big number, line-height piu generoso. */
+/* Titolo: voce principale, INK scuro (non più verde), max contrasto */
 .r-title {
   font-size: 64px;
   font-weight: 800;
   color: var(--color-ink);
-  letter-spacing: -0.025em;
-  margin: 12px 0 0 0;
-  line-height: 1.08;
+  letter-spacing: -0.028em;
+  margin: 16px 0 0 0;
+  line-height: 1.06;
   opacity: 0;
   transform: translateY(15px);
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .r-body {
@@ -604,45 +632,61 @@ html, body {
 .r-bullet {
   display: flex;
   align-items: flex-start;
-  gap: 26px;
-  font-size: 32px;
+  gap: 24px;
+  font-size: 30px;
   font-weight: 400;
-  color: var(--color-ink);
+  color: var(--color-ink-soft);
   letter-spacing: -0.005em;
-  line-height: 1.35;
+  line-height: 1.4;
   opacity: 0;
   transform: translateX(40px);
 }
 
+/* Bullet mark: tick check teal sottile (più business, less marble) */
 .r-bullet-mark {
   flex-shrink: 0;
-  width: 12px;
-  height: 12px;
-  margin-top: 16px;
+  width: 22px;
+  height: 22px;
+  margin-top: 12px;
   background: var(--color-brand-teal);
   border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(0, 170, 166, 0.14);
+  position: relative;
+  display: inline-block;
+}
+
+.r-bullet-mark::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 5px;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  transform: rotate(45deg);
 }
 
 .r-bullet-text {
   flex: 1;
 }
 
-/* Caption sotto i bullet della slide realistic: 1 frase chiave del PERCHE'
-   (cattivante, accessibile al pubblico non tecnico).
-   Differenziata dai bullet: italic + colore brand teal + tracking lieve. */
+/* Caption sotto i bullet: frase chiave del PERCHE', stile blockquote business.
+   Tipografia: medium ink scuro, NO colore teal (Rocco non vuole titoli verdi
+   che staccano col body nero). Solo l'accent border teal richiama il brand. */
 .r-caption {
-  margin: 36px 0 0 0;
-  font-size: 26px;
+  margin: 40px 0 0 0;
+  font-size: 24px;
   font-weight: 500;
-  color: var(--color-brand-teal);
-  letter-spacing: 0.01em;
-  line-height: 1.32;
+  color: var(--color-ink);
+  letter-spacing: -0.003em;
+  line-height: 1.35;
   font-style: italic;
   opacity: 0;
   transform: translateY(10px);
-  border-top: 2px solid rgba(0, 170, 166, 0.20);
-  padding-top: 26px;
+  border-left: 3px solid var(--color-brand-teal);
+  padding: 4px 0 4px 22px;
+  background: var(--color-bg-soft);
+  border-radius: 0 4px 4px 0;
 }
 
 .reveal section.present.realistic-slide .r-caption {

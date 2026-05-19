@@ -19,7 +19,7 @@
     <radialGradient id="hubDisk" cx="35%" cy="28%" r="85%">
       <stop offset="0%" stop-color="#FFE3C2"/>
       <stop offset="50%" stop-color="#FF8A3D"/>
-      <stop offset="100%" stop-color="#9C3A0E"/>
+      <stop offset="100%" stop-color="#005C5A"/>
     </radialGradient>
 
     <!-- Cream node card -->
@@ -35,9 +35,9 @@
     </linearGradient>
 
     <radialGradient id="haloPM" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.18"/>
-      <stop offset="70%" stop-color="#FF6B1A" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#00AAA6" stop-opacity="0.18"/>
+      <stop offset="70%" stop-color="#00AAA6" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#00AAA6" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="vignette19" cx="50%" cy="50%" r="70%">
@@ -114,10 +114,10 @@
       </g>
 
       <!-- Orange traveling pulses along the rings (energy flow) -->
-      <circle r="6" fill="#FF6B1A" opacity="0.85">
+      <circle r="6" fill="#00AAA6" opacity="0.85">
         <animateMotion path="M 200 0 A 200 200 0 1 1 199.9 0 Z" dur="9s" repeatCount="indefinite"/>
       </circle>
-      <circle r="4" fill="#FF6B1A" opacity="0.7">
+      <circle r="4" fill="#00AAA6" opacity="0.7">
         <animateMotion path="M 370 0 A 370 370 0 1 0 369.9 0 Z" dur="14s" repeatCount="indefinite"/>
       </circle>
 
@@ -137,7 +137,7 @@
             <path d="M 18 -16 L 18 16"/>
           </g>
           <rect x="-19" y="-12" width="14" height="8" rx="1.5" fill="#1A1614" opacity="0.55"/>
-          <rect x="1" y="-12" width="14" height="8" rx="1.5" fill="#FF6B1A"/>
+          <rect x="1" y="-12" width="14" height="8" rx="1.5" fill="#00AAA6"/>
           <rect x="21" y="-12" width="14" height="8" rx="1.5" fill="#1A1614" opacity="0.4"/>
           <rect x="-19" y="-2" width="14" height="6" rx="1.5" fill="#1A1614" opacity="0.4"/>
           <rect x="1" y="2" width="14" height="6" rx="1.5" fill="#1A1614" opacity="0.4"/>
@@ -159,7 +159,7 @@
             <path d="M -8 -10 L -8 18"/>
             <path d="M 8 -10 L 8 18"/>
           </g>
-          <rect x="-6" y="2" width="12" height="6" fill="#FF6B1A"/>
+          <rect x="-6" y="2" width="12" height="6" fill="#00AAA6"/>
         </g>
       </g>
 
@@ -188,7 +188,7 @@
           <path d="M -22 -10 Q -22 -16 -16 -16 L 16 -16 Q 22 -16 22 -10 L 22 12 Q 22 18 16 18 L -16 18 Q -22 18 -22 12 Z"
                 fill="#F5EFE6" stroke="#1A1614" stroke-width="2.2"/>
           <path d="M -22 -10 Q 0 8 22 -10" fill="none" stroke="#1A1614" stroke-width="2.2"/>
-          <circle cx="16" cy="-10" r="3.5" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.2"/>
+          <circle cx="16" cy="-10" r="3.5" fill="#00AAA6" stroke="#1A1614" stroke-width="1.2"/>
         </g>
       </g>
 
@@ -220,7 +220,7 @@
                 fill="#F5EFE6" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
           <!-- bubble 2 (small) -->
           <path d="M -8 6 Q -8 -2 0 -2 L 18 -2 Q 26 -2 26 6 L 26 14 Q 26 22 18 22 L 10 22 L 6 26 L 6 22 Q -8 22 -8 14 Z"
-                fill="#FF6B1A" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round" opacity="0.95"/>
+                fill="#00AAA6" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round" opacity="0.95"/>
         </g>
       </g>
 
@@ -232,7 +232,7 @@
           <circle r="40" fill="url(#nodeCard19)" stroke="#1A1614" stroke-width="3"/>
           <!-- bell (curved, Disney) -->
           <path d="M -18 8 Q -22 -2 -18 -10 Q -10 -22 0 -22 Q 10 -22 18 -10 Q 22 -2 18 8 Z"
-                fill="#FF6B1A" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
+                fill="#00AAA6" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
           <path d="M -22 8 L 22 8" stroke="#1A1614" stroke-width="2.2" stroke-linecap="round"/>
           <path d="M -4 12 Q 0 16 4 12" fill="#1A1614"/>
           <circle cx="0" cy="-24" r="3" fill="#1A1614"/>
@@ -248,7 +248,7 @@
           <!-- 3 ascending bars -->
           <rect x="-22" y="0" width="10" height="16" rx="1.5" fill="#1A1614" opacity="0.7"/>
           <rect x="-6" y="-8" width="10" height="24" rx="1.5" fill="#1A1614" opacity="0.85"/>
-          <rect x="10" y="-18" width="10" height="34" rx="1.5" fill="#FF6B1A"/>
+          <rect x="10" y="-18" width="10" height="34" rx="1.5" fill="#00AAA6"/>
           <!-- baseline -->
           <path d="M -24 18 L 22 18" stroke="#1A1614" stroke-width="2" stroke-linecap="round"/>
         </g>
@@ -292,7 +292,7 @@
     </g>
 
     <!-- "360°" implied — small orange ring marker that orbits the figure -->
-    <circle cx="0" cy="0" r="106" fill="none" stroke="#FF6B1A" stroke-width="3" stroke-dasharray="80,360" stroke-linecap="round" opacity="0.85">
+    <circle cx="0" cy="0" r="106" fill="none" stroke="#00AAA6" stroke-width="3" stroke-dasharray="80,360" stroke-linecap="round" opacity="0.85">
       <animateTransform attributeName="transform" type="rotate"
                         values="0;360" dur="6s" repeatCount="indefinite"/>
     </circle>

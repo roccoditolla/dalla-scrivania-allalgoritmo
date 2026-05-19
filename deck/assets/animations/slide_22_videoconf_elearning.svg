@@ -39,8 +39,8 @@
     <!-- Window warm light flood -->
     <linearGradient id="windowLight" x1="100%" y1="20%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFE3A8" stop-opacity="0.55"/>
-      <stop offset="55%" stop-color="#FFD580" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#FFD580" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#B8E8E7" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#B8E8E7" stop-opacity="0"/>
     </linearGradient>
 
     <!-- Screen panel gradient (cool blue, contrasts warm room) -->
@@ -133,7 +133,7 @@
     <!-- Sill (small ledge) -->
     <path d="M 758 502 L 920 480 L 924 492 L 760 514 Z" fill="url(#rightWall)" stroke="#1A1614" stroke-width="2"/>
     <!-- Outside glow (sky / soft warm glow) -->
-    <rect x="762" y="222" width="160" height="280" fill="#FFD580" opacity="0.3" filter="url(#softGlow22)"/>
+    <rect x="762" y="222" width="160" height="280" fill="#B8E8E7" opacity="0.3" filter="url(#softGlow22)"/>
   </g>
 
   <!-- Warm light flood across the room (from window) -->
@@ -141,13 +141,13 @@
 
   <!-- Light parallelogram cast on floor (warm rectangle of sun) -->
   <path d="M 600 760 L 880 700 L 920 820 L 640 880 Z"
-        fill="#FFD580" opacity="0.18" filter="url(#hazeVC)"/>
+        fill="#B8E8E7" opacity="0.18" filter="url(#hazeVC)"/>
 
   <!-- Decorative concentric circles on back wall (Cartoon Saloon detail — wall art) -->
   <g transform="translate(280 320)" opacity="0.4">
     <circle r="68" fill="none" stroke="#1A1614" stroke-width="1.6"/>
     <circle r="52" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,5"/>
-    <circle r="36" fill="none" stroke="#FF6B1A" stroke-width="1.4" opacity="0.55"/>
+    <circle r="36" fill="none" stroke="#00AAA6" stroke-width="1.4" opacity="0.55"/>
     <circle r="20" fill="none" stroke="#1A1614" stroke-width="1"/>
   </g>
 
@@ -190,11 +190,11 @@
           fill="url(#screenGrad)" stroke="#0A0706" stroke-width="2" stroke-linejoin="round"/>
 
     <!-- LIVE dot top-right -->
-    <circle cx="178" cy="-140" r="6" fill="#FF6B1A">
+    <circle cx="178" cy="-140" r="6" fill="#00AAA6">
       <animate attributeName="opacity" values="1;0.4;1" dur="1.6s" repeatCount="indefinite"
                calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>
-    <circle cx="178" cy="-140" r="10" fill="none" stroke="#FF6B1A" stroke-width="1.6" opacity="0.6">
+    <circle cx="178" cy="-140" r="10" fill="none" stroke="#00AAA6" stroke-width="1.6" opacity="0.6">
       <animate attributeName="r" values="6;16;6" dur="2.4s" repeatCount="indefinite"
                calcMode="spline" keyTimes="0;0.5;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
       <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite"
@@ -230,7 +230,7 @@
       </g>
       <!-- active speaker ring -->
       <path d="M -64 -52 Q -66 -60 -58 -60 L 60 -64 Q 68 -62 68 -54 L 72 46 Q 72 54 64 54 L -56 56 Q -64 54 -64 46 Z"
-            fill="none" stroke="#FF6B1A" stroke-width="3">
+            fill="none" stroke="#00AAA6" stroke-width="3">
         <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite"
                  calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
       </path>
@@ -303,7 +303,7 @@
       <path d="M 16 8 Q 76 6 110 10"/>
     </g>
     <!-- Small diagram on right page (orange dot — eLearning point of interest) -->
-    <circle cx="100" cy="22" r="8" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.5"/>
+    <circle cx="100" cy="22" r="8" fill="#00AAA6" stroke="#1A1614" stroke-width="1.5"/>
     <path d="M 60 22 Q 80 22 92 22" stroke="#1A1614" stroke-width="1.4" stroke-linecap="round" opacity="0.6" fill="none"/>
   </g>
 
@@ -353,10 +353,10 @@
 
       <!-- Rim light on head (warm from window on right) -->
       <path d="M 24 -150 C 36 -144 42 -130 42 -116" fill="none"
-            stroke="#FFD580" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+            stroke="#B8E8E7" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
       <!-- Rim light on right shoulder -->
       <path d="M 64 -50 C 80 -36 86 -16 84 6" fill="none"
-            stroke="#FFD580" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+            stroke="#B8E8E7" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
 
       <!-- Neck shadow (ambient occlusion) -->
       <path d="M -16 -76 Q 6 -64 32 -76" fill="none"

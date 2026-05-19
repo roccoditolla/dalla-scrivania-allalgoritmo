@@ -46,9 +46,9 @@
 
     <!-- Voice wave: orange gradient with falloff -->
     <radialGradient id="voiceWaveGrad" cx="0%" cy="50%" r="100%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.9"/>
+      <stop offset="0%" stop-color="#00AAA6" stop-opacity="0.9"/>
       <stop offset="60%" stop-color="#FF8A3D" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#00AAA6" stop-opacity="0"/>
     </radialGradient>
 
     <!-- Sub-agent card background -->
@@ -59,16 +59,16 @@
 
     <!-- Falcon eye (catch light) -->
     <radialGradient id="eyeGrad" cx="35%" cy="30%" r="80%">
-      <stop offset="0%" stop-color="#FFD580"/>
+      <stop offset="0%" stop-color="#B8E8E7"/>
       <stop offset="55%" stop-color="#D9941C"/>
       <stop offset="100%" stop-color="#3B240E"/>
     </radialGradient>
 
     <!-- Orange accent halo gradient -->
     <radialGradient id="haloFalco" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.22"/>
-      <stop offset="70%" stop-color="#FF6B1A" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#00AAA6" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#00AAA6" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00AAA6" stop-opacity="0"/>
     </radialGradient>
 
     <!-- Vignette mask gradient -->
@@ -166,7 +166,7 @@
        ========================================================= -->
   <g transform="translate(680 478)">
     <!-- Anticipation core (small ember that 'charges' before wave) -->
-    <circle r="6" fill="#FF6B1A" opacity="0.9">
+    <circle r="6" fill="#00AAA6" opacity="0.9">
       <animate attributeName="r" values="3;7;3" dur="2.4s" repeatCount="indefinite"
                calcMode="spline" keyTimes="0;0.3;1" keySplines="0.25 0.1 0.25 1;0.42 0 0.58 1"/>
       <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"
@@ -336,7 +336,7 @@
   </g>
   <!-- Connector arc from falcon to phone -->
   <path d="M 440 470 Q 360 380 260 320" fill="none"
-        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+        stroke="#00AAA6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
 
   <!-- Sub-agent 2 — CALENDAR (top-right) -->
   <g transform="translate(860 285)">
@@ -359,14 +359,14 @@
         <path d="M 14 -22 L 14 32"/>
       </g>
       <!-- orange highlighted day (the booking) -->
-      <rect x="-12" y="6" width="24" height="10" rx="2" fill="#FF6B1A"/>
+      <rect x="-12" y="6" width="24" height="10" rx="2" fill="#00AAA6"/>
       <animateTransform attributeName="transform" type="translate"
                         values="0 0; 0 -6; 0 0" dur="5s" begin="0.6s" repeatCount="indefinite"
                         calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
   </g>
   <path d="M 660 470 Q 750 380 830 320" fill="none"
-        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+        stroke="#00AAA6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
 
   <!-- Sub-agent 3 — EMAIL (bottom-left) -->
   <g transform="translate(200 720)">
@@ -380,14 +380,14 @@
       <!-- envelope flap (open) -->
       <path d="M -34 -16 Q 0 14 34 -16" fill="none" stroke="#1A1614" stroke-width="2.4" stroke-linejoin="round"/>
       <!-- small dot indicating unread -->
-      <circle cx="26" cy="-14" r="5" fill="#FF6B1A" stroke="#1A1614" stroke-width="1.4"/>
+      <circle cx="26" cy="-14" r="5" fill="#00AAA6" stroke="#1A1614" stroke-width="1.4"/>
       <animateTransform attributeName="transform" type="translate"
                         values="0 0; 0 -6; 0 0" dur="5.2s" begin="1.2s" repeatCount="indefinite"
                         calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </g>
   </g>
   <path d="M 440 612 Q 340 670 240 698" fill="none"
-        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+        stroke="#00AAA6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
 
   <!-- Sub-agent 4 — DOCUMENT (bottom-right) -->
   <g transform="translate(880 720)">
@@ -411,7 +411,7 @@
     </g>
   </g>
   <path d="M 660 612 Q 760 670 840 700" fill="none"
-        stroke="#FF6B1A" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
+        stroke="#00AAA6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2,7" opacity="0.55"/>
 
   <!-- =========================================================
        FINAL VIGNETTE — darken corners gently

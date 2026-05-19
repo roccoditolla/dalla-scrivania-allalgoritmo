@@ -34,7 +34,7 @@
     <!-- Needle orange (active half) -->
     <linearGradient id="needleOrange" x1="50%" y1="0%" x2="50%" y2="100%">
       <stop offset="0%" stop-color="#FFB570"/>
-      <stop offset="100%" stop-color="#9C3A0E"/>
+      <stop offset="100%" stop-color="#005C5A"/>
     </linearGradient>
 
     <!-- Needle dark (passive half) -->
@@ -45,9 +45,9 @@
 
     <!-- Halo gradient -->
     <radialGradient id="haloPattern" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.22"/>
-      <stop offset="60%" stop-color="#FF6B1A" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#00AAA6" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#00AAA6" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00AAA6" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="vignette23" cx="50%" cy="50%" r="70%">
@@ -191,7 +191,7 @@
       <animate attributeName="r" values="250;310;250" dur="5.4s" repeatCount="indefinite"
                calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>
-    <circle r="160" fill="#FF6B1A" opacity="0.1" filter="url(#softGlow23)">
+    <circle r="160" fill="#00AAA6" opacity="0.1" filter="url(#softGlow23)">
       <animate attributeName="opacity" values="0.06;0.16;0.06" dur="5.4s" repeatCount="indefinite"
                calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>

@@ -112,16 +112,16 @@ function animateRealisticSlide(slideEl) {
 
 function applyOrangeBridge(prevSlide, currSlide) {
   if (typeof gsap === 'undefined') return;
-  
-  // Overlay arancione fugace tra le due slide
+
+  // Overlay teal (brand Conflavoro AI) fugace tra le due slide
   const overlay = document.createElement('div');
   overlay.style.cssText = `
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
-    background: radial-gradient(circle at 50% 50%, 
-      rgba(255, 107, 26, 0.5) 0%, 
-      rgba(255, 107, 26, 0) 70%);
+    background: radial-gradient(circle at 50% 50%,
+      rgba(0, 170, 166, 0.45) 0%,
+      rgba(0, 170, 166, 0) 70%);
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
@@ -152,8 +152,12 @@ function restartSvgAnimations(slideEl) {
 }
 
 /**
- * Fallback audio: se la slide non ha <audio>, prova SynthAudio (sintetico).
+ * Audio handler. SynthAudio DISATTIVATO (feedback Rocco: 'togli il rumore
+ * in sottofondo, non serve piu'). Resta attivo solo MP3 reali se presenti,
+ * altrimenti silenzio completo.
  */
+const AUDIO_SYNTH_ENABLED = false;
+
 function activateAudioForSlide(slideEl) {
   const ambient = slideEl.querySelector('audio[data-ambient]') || slideEl.querySelector('audio');
   if (ambient) {
@@ -161,7 +165,19 @@ function activateAudioForSlide(slideEl) {
     return;
   }
 
-  // Nessun MP3 — usa SynthAudio se disponibile
+  // Synth disattivato: silenzio totale quando manca MP3
+  if (!AUDIO_SYNTH_ENABLED) {
+    if (audioMixer.currentAmbient) {
+      audioMixer.fadeOut(audioMixer.currentAmbient);
+      audioMixer.currentAmbient = null;
+    }
+    if (typeof window.SynthAudio !== 'undefined') {
+      try { window.SynthAudio.stopAmbient(); window.SynthAudio.stopMusic(); } catch (e) {}
+    }
+    return;
+  }
+
+  // (Codice synth lasciato come dead-code dietro il flag, riattivabile.)
   if (typeof window.SynthAudio === 'undefined') return;
 
   // Stop dell'eventuale MP3 in fade-out

@@ -124,6 +124,7 @@ REALISTIC_SLIDES = [
     },
     {
         "id": "14", "title": "Conflavoro AI",
+        "title_image": "assets/images/conflavoro_ai_logo.svg",
         "big": "02",
         "caption": "Cinque piattaforme AI per il lavoro italiano.",
         "cue": "Indica il logo. 'Costruita per voi.'",

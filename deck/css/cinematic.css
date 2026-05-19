@@ -6,37 +6,60 @@
  * ========================================================================== */
 
 :root {
-  /* === Palette Conflavoro AI business clean (ridotta da palette warm).
-     Sfondo bianco pulito stile Stripe/Linear/Apple keynote.
-     Titoli ink scuro (mai colorati). Teal solo accento subtle.
-     Big number e accenti forti in navy brand. === */
-  --color-bg: #FFFFFF;           /* sfondo principale bianco pulito */
-  --color-bg-soft: #FAFBFC;      /* sfondo subtle off-white per sezioni */
-  --color-cream: #FFFFFF;        /* alias retro-compat (era F5EFE6) */
-  --color-cream-darker: #F0F2F5; /* alias retro-compat */
+  /* === Palette Conflavoro AI business clean.
+     Pattern industry standard (Stripe/Linear/Apple keynote). === */
 
-  /* Brand primario: teal del logo Conflavoro AI */
+  /* Background */
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #FAFAF7;       /* surface elevated business */
+
+  /* Ink scale (industry standard slate) */
+  --color-ink: #0A1628;           /* navy deep per titoli (alto contrasto) */
+  --color-ink-soft: #4A5568;      /* slate per body text */
+  --color-ink-muted: #94A3B8;     /* slate light per caption metadata */
+  --color-line: #E5E7EB;
+
+  /* Brand Conflavoro AI: teal primario, navy secondario */
   --color-brand-teal: #00AAA6;
   --color-brand-teal-soft: #4FC3C0;
-  /* Brand secondario: navy del sito Lead Search per titoli/big number */
-  --color-brand-navy: #0F2A5E;
+  --color-brand-navy: #0A1628;    /* identico a ink (mass-business pulito) */
   --color-brand-navy-soft: #1E3A8A;
 
-  /* Alias accent: era arancione, ora teal (nome neutro per retrocompat) */
+  /* Retro-compat aliases (regole gia' scritte) */
   --color-orange: #00AAA6;
   --color-orange-soft: #4FC3C0;
-
-  /* Ink scale (tipografia business clean) */
-  --color-ink: #0A0E14;          /* nero piu' contrastato */
-  --color-ink-soft: #3A4150;     /* grigio scuro per body */
-  --color-ink-muted: #6B7280;    /* grigio medio per metadata */
-  --color-line: #E5E7EB;         /* divider subtle */
-
-  /* Legacy aliases (retro compat con regole gia' scritte) */
-  --color-ocean-deep: #0F2A5E;
+  --color-cream: #FFFFFF;
+  --color-cream-darker: #FAFAF7;
+  --color-ocean-deep: #0A1628;
   --color-ocean-calm: #6A8DC8;
-  --color-fog: #B8B5AD;
-  --color-sand: #F0F2F5;
+  --color-fog: #94A3B8;
+  --color-sand: #FAFAF7;
+
+  /* === Tipografia scale modulare 1.25 (golden ratio business) ===
+     base 18px, scale x1.25:
+     18 -> 22.5 -> 28 -> 36 -> 44 -> 56 -> 70 -> 88 -> 110 -> 138 */
+  --fs-xs:   16px;
+  --fs-sm:   18px;
+  --fs-base: 22px;
+  --fs-md:   28px;
+  --fs-lg:   36px;
+  --fs-xl:   44px;
+  --fs-2xl:  56px;
+  --fs-3xl:  72px;
+  --fs-4xl:  96px;
+
+  /* === 8pt grid spacing ===
+     base 8px, multipli: 8 16 24 32 40 48 64 80 96 128 */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 80px;
+  --space-9: 96px;
+  --space-10: 128px;
   
   /* === Tipografia === */
   --font-display: 'Inter', system-ui, -apple-system, sans-serif;
@@ -505,15 +528,15 @@ html, body {
 }
 
 /* === Realistic slide: layout 2-colonna (visual + bullet)
-   Tipografia con gerarchia chiara e respiro. Feedback Rocco:
-   'non vanno bene tutte attaccate, differenziare titolo e testo'. */
+   Industry-standard spacing: 8pt grid, padding 8% del canvas.
+   Reference: Stripe presentations, Linear pitch deck, Apple keynote. */
 .realistic-layout {
-  width: 88%;
-  height: 90%;
+  width: 84%;
+  height: 88%;
   display: flex;
   flex-direction: column;
   padding: 0;
-  gap: 48px;
+  gap: var(--space-6);
 }
 
 /* Header con eyebrow (numerino piccolo) + titolo grande sotto.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 16 — DVR Validator: same desk as slide 15 but now illuminated by orange glow from above, organized desk with orange checkmark clipboard and DVR compliant document, employee figure standing upright in S-curve line of action">
-  <title>Slide 16 — DVR Validator (continuità con slide 15)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 16. DVR Validator: same desk as slide 15 but now illuminated by orange glow from above, organized desk with orange checkmark clipboard and DVR compliant document, employee figure standing upright in S-curve line of action">
+  <title>Slide 16. DVR Validator (continuità con slide 15)</title>
   <desc>STESSA scrivania della slide 15, ora illuminata da glow arancione dall'alto. Scrivania ORGANIZZATA, checkmark arancione + clipboard DVR + documento conforme. Figura dipendente in posa eretta, line of action S (energia restored).</desc>
 
   <defs>
@@ -18,7 +18,7 @@
       <feGaussianBlur stdDeviation="10"/>
     </filter>
 
-    <!-- Desk top — same base as slide 15 but warmed by orange ambient -->
+    <!-- Desk top. same base as slide 15 but warmed by orange ambient -->
     <linearGradient id="deskTop16" x1="20%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#D9C8AE"/>
       <stop offset="60%" stop-color="#A89880"/>
@@ -79,7 +79,7 @@
   </g>
 
   <!-- =========================================================
-       ORANGE BEAM from above (cone) — "light of the solution"
+       ORANGE BEAM from above (cone). "light of the solution"
        ========================================================= -->
   <path d="M 360 0 L 720 0 Q 760 0 760 30 L 820 680 Q 820 740 760 760 L 320 760 Q 260 740 260 680 L 320 30 Q 320 0 360 0 Z"
         fill="url(#beamOrange)" opacity="0.85"/>
@@ -94,7 +94,7 @@
   <ellipse cx="540" cy="860" rx="360" ry="20" fill="#1A1614" opacity="0.28" filter="url(#contactBlur16)"/>
 
   <!-- =========================================================
-       DESK — SAME geometry as slide 15 (continuity), now warmed
+       DESK. SAME geometry as slide 15 (continuity), now warmed
        ========================================================= -->
   <g transform="translate(540 690)">
     <!-- desk top -->
@@ -170,7 +170,7 @@
       </g>
     </g>
 
-    <!-- Neat stack (right) — organized -->
+    <!-- Neat stack (right). organized -->
     <g transform="translate(180 -10)">
       <path d="M -56 0 Q -60 -8 -50 -10 L 56 -12 Q 64 -10 60 -2 Q 56 4 50 4 Z" fill="url(#paperStack16)" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
       <path d="M -54 -10 Q -58 -18 -48 -20 L 58 -22 Q 66 -20 62 -12 Q 58 -6 52 -6 Z" fill="url(#paperStack16)" stroke="#1A1614" stroke-width="2.2" stroke-linejoin="round"/>
@@ -182,7 +182,7 @@
   </g>
 
   <!-- =========================================================
-       FIGURE — same position as slide 15, but now UPRIGHT, line of action S
+       FIGURE. same position as slide 15, but now UPRIGHT, line of action S
        ========================================================= -->
   <g transform="translate(670 540)">
     <ellipse cx="0" cy="210" rx="58" ry="8" fill="#1A1614" opacity="0.3" filter="url(#contactBlur16)"/>
@@ -190,7 +190,7 @@
     <!-- Chair back (same wood, warmer) -->
     <path d="M -68 70 Q -72 -10 -60 -90 L -40 -98 Q -34 -10 -42 70 Z" fill="#3A2C1A" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
 
-    <!-- Body — torso upright with subtle S curve (shoulders open, chest forward) -->
+    <!-- Body. torso upright with subtle S curve (shoulders open, chest forward) -->
     <path d="M -48 36 Q -64 -32 -38 -86 Q -6 -116 32 -110 Q 68 -96 76 -52 Q 80 18 64 70 Q 30 100 -10 96 Q -50 90 -48 36 Z"
           fill="url(#figure16)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
 
@@ -198,11 +198,11 @@
     <path d="M -32 -78 Q -4 -110 32 -106 Q 60 -96 66 -78" fill="none"
           stroke="#0A0706" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
 
-    <!-- Head — upright, slightly tilted UP (looking at the solution) -->
+    <!-- Head. upright, slightly tilted UP (looking at the solution) -->
     <ellipse cx="4" cy="-128" rx="32" ry="36" fill="url(#figure16)" stroke="#0A0706" stroke-width="3.5"
              transform="rotate(6 4 -128)"/>
 
-    <!-- Rim light on head (top-right, warm — from orange beam) -->
+    <!-- Rim light on head (top-right, warm. from orange beam) -->
     <path d="M 16 -158 Q 30 -156 36 -140" fill="none"
           stroke="#FFE3C2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-assemble_deck.py — Assembla il deck Reveal.js dalla configurazione del progetto.
+assemble_deck.py. Assembla il deck Reveal.js dalla configurazione del progetto.
 
 USO:
     python scripts/assemble_deck.py
@@ -105,21 +105,21 @@ _LEGACY_STORY_SCENES = [
      "cue": "Passo avanti. Cambio registro. Sorridi."},
 ]
 
-# Sequenza slide realistic — NUOVA STRUTTURA Conflavoro AI (5 piattaforme).
+# Sequenza slide realistic. NUOVA STRUTTURA Conflavoro AI (5 piattaforme).
 # Big number concettuali (NON tempi/numeri specifici come richiesto da Rocco).
 # Bullet descrivono input/output concettuali, non quanto-veloci-siamo.
 # caption + cue: stesso schema della story (chiarimento pubblico + delivery Rocco).
 REALISTIC_SLIDES = [
     # =============== INTRO: chi siamo, perchè, il problema ===============
     {
-        "id": "13", "title": "L'anno zero dell'AI nel lavoro",
+        "id": "13", "title": "Siamo all'anno zero dell'AI",
         "big": "ANNO ZERO",
-        "caption": "L'AI sta riscrivendo le regole del mestiere. Adesso.",
-        "cue": "Tono diretto, voce piena. Pausa dopo 'Adesso'.",
+        "caption": "L'AI sta entrando nel lavoro adesso. Siamo in tempo per esserne pionieri.",
+        "cue": "Tono diretto, voce piena. Pausa dopo 'pionieri'.",
         "bullets": [
-            "Non è fantascienza. È il calendario di quest'anno.",
-            "Chi capisce l'AI prima costruisce un vantaggio reale.",
-            "Per il consulente del lavoro la differenza è oggi.",
+            "L'AI nel mondo del lavoro inizia oggi, non domani.",
+            "Chi la integra adesso costruisce un vantaggio reale.",
+            "Possiamo guidare il cambiamento, non subirlo.",
         ],
     },
     {
@@ -184,7 +184,7 @@ REALISTIC_SLIDES = [
         ],
     },
     {
-        "id": "19", "title": "VCS — Videoconferenza Formativa",
+        "id": "19", "title": "VCS, la formazione che vale",
         "big": "AULA",
         "caption": "La formazione SSL legalmente valida, automatizzata dall'AI.",
         "cue": "Voce ferma. 'Compliance by design, non da checklist.'",
@@ -360,7 +360,7 @@ DECK_TEMPLATE = Template("""<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dalla Scrivania all'Algoritmo — Rocco Di Tolla</title>
+  <title>Dalla Scrivania all'Algoritmo. Rocco Di Tolla.</title>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
@@ -526,7 +526,7 @@ def build_story_slide_html(scene: dict) -> str:
         body = f'''
         <div class="placeholder-slide">
           <div class="placeholder-icon">⚠️</div>
-          <h2>Scena {scene["id"]} — {scene["title"]}</h2>
+          <h2>Scena {scene["id"]}. {scene["title"]}</h2>
           <p>Asset visivo non ancora pronto.<br>
           File atteso: <code>deck/assets/videos/scene_{scene["id"].lower()}_FINAL.mp4</code>
           oppure <code>deck/assets/animations/scene_{scene["id"].lower()}_*.svg</code></p>

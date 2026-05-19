@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 18 — LeadHunter: pictorial silhouette of Italy with seven pulsing orange pins and an isometric magnifying glass moving across">
-  <title>Slide 18 — LeadHunter (mappa + 7 pin + lente)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 18. LeadHunter: pictorial silhouette of Italy with seven pulsing orange pins and an isometric magnifying glass moving across">
+  <title>Slide 18. LeadHunter (mappa + 7 pin + lente)</title>
   <desc>Mappa Italia stilizzata Cartoon Saloon (silhouette pittorica, NON precisa geograficamente) con 7 pin arancioni che pulsano in posti diversi + lente d'ingrandimento isometrica che si muove sopra.</desc>
 
   <defs>
@@ -70,7 +70,7 @@
   <ellipse cx="540" cy="900" rx="320" ry="22" fill="#1A1614" opacity="0.22" filter="url(#contactBlur18)"/>
 
   <!-- =========================================================
-       ITALY — pictorial silhouette (Cartoon Saloon, all Q Bezier)
+       ITALY. pictorial silhouette (Cartoon Saloon, all Q Bezier)
        Asymmetric, not anatomically precise
        ========================================================= -->
   <g transform="translate(540 540)">
@@ -136,7 +136,7 @@
          Each pulses on its own timing
          ========================================================= -->
 
-    <!-- Pin 1 — north (Milan area) -->
+    <!-- Pin 1. north (Milan area) -->
     <g transform="translate(-10 -240)">
       <circle cx="0" cy="0" r="22" fill="#00AAA6" opacity="0.2" filter="url(#softGlow18)">
         <animate attributeName="r" values="14;30;14" dur="3s" repeatCount="indefinite"
@@ -148,7 +148,7 @@
       <circle cx="0" cy="-6" r="4" fill="#FAF5EC" opacity="0.9"/>
     </g>
 
-    <!-- Pin 2 — Venice area -->
+    <!-- Pin 2. Venice area -->
     <g transform="translate(40 -200)">
       <circle cx="0" cy="0" r="18" fill="#00AAA6" opacity="0.2" filter="url(#softGlow18)">
         <animate attributeName="r" values="12;26;12" dur="3.4s" begin="0.3s" repeatCount="indefinite"
@@ -160,7 +160,7 @@
       <circle cx="0" cy="-4" r="3" fill="#FAF5EC" opacity="0.9"/>
     </g>
 
-    <!-- Pin 3 — Florence area -->
+    <!-- Pin 3. Florence area -->
     <g transform="translate(-20 -110)">
       <circle cx="0" cy="0" r="20" fill="#00AAA6" opacity="0.2" filter="url(#softGlow18)">
         <animate attributeName="r" values="13;28;13" dur="3.2s" begin="0.6s" repeatCount="indefinite"
@@ -172,7 +172,7 @@
       <circle cx="0" cy="-5" r="3.5" fill="#FAF5EC" opacity="0.9"/>
     </g>
 
-    <!-- Pin 4 — Rome area -->
+    <!-- Pin 4. Rome area -->
     <g transform="translate(8 -10)">
       <circle cx="0" cy="0" r="24" fill="#00AAA6" opacity="0.22" filter="url(#softGlow18)">
         <animate attributeName="r" values="16;32;16" dur="3.6s" begin="0.9s" repeatCount="indefinite"
@@ -184,7 +184,7 @@
       <circle cx="0" cy="-6" r="4.5" fill="#FAF5EC" opacity="0.9"/>
     </g>
 
-    <!-- Pin 5 — Naples area -->
+    <!-- Pin 5. Naples area -->
     <g transform="translate(36 80)">
       <circle cx="0" cy="0" r="18" fill="#00AAA6" opacity="0.2" filter="url(#softGlow18)">
         <animate attributeName="r" values="12;26;12" dur="3.2s" begin="1.2s" repeatCount="indefinite"
@@ -196,7 +196,7 @@
       <circle cx="0" cy="-4" r="3" fill="#FAF5EC" opacity="0.9"/>
     </g>
 
-    <!-- Pin 6 — south (Bari area) -->
+    <!-- Pin 6. south (Bari area) -->
     <g transform="translate(-32 200)">
       <circle cx="0" cy="0" r="20" fill="#00AAA6" opacity="0.2" filter="url(#softGlow18)">
         <animate attributeName="r" values="13;28;13" dur="3.4s" begin="1.5s" repeatCount="indefinite"
@@ -208,7 +208,7 @@
       <circle cx="0" cy="-5" r="3.5" fill="#FAF5EC" opacity="0.9"/>
     </g>
 
-    <!-- Pin 7 — Sicily -->
+    <!-- Pin 7. Sicily -->
     <g transform="translate(-86 366)">
       <circle cx="0" cy="0" r="18" fill="#00AAA6" opacity="0.2" filter="url(#softGlow18)">
         <animate attributeName="r" values="12;26;12" dur="3.8s" begin="1.8s" repeatCount="indefinite"
@@ -222,7 +222,7 @@
   </g>
 
   <!-- =========================================================
-       MAGNIFYING GLASS — moves across the map (Bezier path)
+       MAGNIFYING GLASS. moves across the map (Bezier path)
        ========================================================= -->
   <g>
     <g transform="translate(540 540)">

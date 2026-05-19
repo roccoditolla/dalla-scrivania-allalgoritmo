@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 15 — Il problema: isometric desk oppressed by paper piles, silhouette employee in contrapposto C compressed pose, clock at 23:00, zero orange">
-  <title>Slide 15 — Il problema (zero arancione)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 15. Il problema: isometric desk oppressed by paper piles, silhouette employee in contrapposto C compressed pose, clock at 23:00, zero orange">
+  <title>Slide 15. Il problema (zero arancione)</title>
   <desc>Scrivania isometrica oppressa da pile di carte e cartelle in curve Bezier morbide, figura silhouette dipendente in contrapposto C compressa e sopraffatta, clock alle 23:00 in alto. Palette: solo cream/ink/blu/fog. Zero arancione (è il PRIMA della soluzione).</desc>
 
   <defs>
@@ -68,7 +68,7 @@
                       additive="sum"/>
   </g>
 
-  <!-- Wall clock — 23:00 (top, distant) -->
+  <!-- Wall clock. 23:00 (top, distant) -->
   <g transform="translate(540 200)">
     <circle r="72" fill="url(#clockFace15)" stroke="#1A1614" stroke-width="3.5"/>
     <circle r="64" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,4" opacity="0.5"/>
@@ -101,7 +101,7 @@
   <ellipse cx="540" cy="860" rx="360" ry="20" fill="#1A1614" opacity="0.3" filter="url(#contactBlur15)"/>
 
   <!-- =========================================================
-       DESK — isometric with depth (Bezier corners, not L L L)
+       DESK. isometric with depth (Bezier corners, not L L L)
        ========================================================= -->
   <g transform="translate(540 690)">
     <!-- desk top -->
@@ -165,7 +165,7 @@
   </g>
 
   <!-- =========================================================
-       FIGURE — silhouette, contrapposto C compressed (sopraffatta)
+       FIGURE. silhouette, contrapposto C compressed (sopraffatta)
        Shoulders sloped, head tilted down, line of action C
        ========================================================= -->
   <g transform="translate(670 550)">
@@ -175,7 +175,7 @@
     <!-- Chair back (cool wood, simple Bezier) -->
     <path d="M -68 60 Q -72 -10 -60 -90 L -40 -98 Q -34 -10 -42 60 Z" fill="#2A2722" stroke="#1A1614" stroke-width="3" stroke-linejoin="round"/>
 
-    <!-- Body — torso curved forward (C compressed), shoulders slumped -->
+    <!-- Body. torso curved forward (C compressed), shoulders slumped -->
     <path d="M -56 28 Q -68 -34 -42 -76 Q -10 -110 30 -100 Q 70 -84 76 -38 Q 78 18 64 60 Q 30 92 -10 86 Q -50 76 -56 28 Z"
           fill="url(#figure15)" stroke="#0A0706" stroke-width="4" stroke-linejoin="round"/>
 
@@ -183,7 +183,7 @@
     <path d="M -38 -68 Q -10 -102 26 -98 Q 54 -90 62 -70" fill="none"
           stroke="#0A0706" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
 
-    <!-- Head (tilted down, line of action peak — overwhelmed) -->
+    <!-- Head (tilted down, line of action peak. overwhelmed) -->
     <ellipse cx="2" cy="-118" rx="32" ry="36" fill="url(#figure15)" stroke="#0A0706" stroke-width="3.5"
              transform="rotate(-14 2 -118)"/>
 
@@ -204,6 +204,6 @@
                       calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
   </g>
 
-  <!-- Vignette (heavy — oppressive feel) -->
+  <!-- Vignette (heavy. oppressive feel) -->
   <rect width="1080" height="1080" fill="url(#vignette15)" pointer-events="none"/>
 </svg>

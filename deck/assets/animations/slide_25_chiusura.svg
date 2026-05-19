@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 25 — Chiusura: large central orange compass with seven small platform tool icons orbiting (DVR, Preventivatore, LeadHunter, Project Manager, Falco AI, HR, Videoconf-eLearning) and two-three distant ship silhouettes stuck on horizon">
-  <title>Slide 25 — Chiusura (Adesso. 7 piattaforme + navi ferme)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 25. Chiusura: large central orange compass with seven small platform tool icons orbiting (DVR, Preventivatore, LeadHunter, Project Manager, Falco AI, HR, Videoconf-eLearning) and two-three distant ship silhouettes stuck on horizon">
+  <title>Slide 25. Chiusura (Adesso. 7 piattaforme + navi ferme)</title>
   <desc>Bussola arancione centrale grande + 7 piccole icone tool che orbitano attorno: DVR, Preventivatore, LeadHunter, Project Manager, Falco AI, HR, Videoconf-eLearning. Rotation lenta + counter-rotation interna. All'orizzonte 2-3 silhouette di nave ferme.</desc>
 
   <defs>
@@ -143,7 +143,7 @@
   </circle>
 
   <!-- =========================================================
-       7 ORBITING ICONS — at radius 320 from center (540, 600)
+       7 ORBITING ICONS. at radius 320 from center (540, 600)
        Slow rotation (60s), with counter-rotation per node
        Order: DVR, Preventivatore, Lead, PM, Falco, HR, Videoconf
        ========================================================= -->
@@ -152,7 +152,7 @@
       <animateTransform attributeName="transform" type="rotate"
                         values="0;360" dur="60s" repeatCount="indefinite"/>
 
-      <!-- NODE 1 — DVR (checkmark clipboard) at 0° (right) -->
+      <!-- NODE 1. DVR (checkmark clipboard) at 0° (right) -->
       <g transform="translate(320 0)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
@@ -170,7 +170,7 @@
         </g>
       </g>
 
-      <!-- NODE 2 — Preventivatore (price sheet + signature) at ~51° -->
+      <!-- NODE 2. Preventivatore (price sheet + signature) at ~51° -->
       <g transform="translate(201.4 248.7)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
@@ -189,7 +189,7 @@
         </g>
       </g>
 
-      <!-- NODE 3 — LeadHunter (map pin) at ~103° -->
+      <!-- NODE 3. LeadHunter (map pin) at ~103° -->
       <g transform="translate(-71.9 312.0)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
@@ -201,7 +201,7 @@
         </g>
       </g>
 
-      <!-- NODE 4 — Project Manager (kanban) at ~154° -->
+      <!-- NODE 4. Project Manager (kanban) at ~154° -->
       <g transform="translate(-287.6 140.2)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
@@ -220,7 +220,7 @@
         </g>
       </g>
 
-      <!-- NODE 5 — Falco AI (voice wave + bird) at ~206° -->
+      <!-- NODE 5. Falco AI (voice wave + bird) at ~206° -->
       <g transform="translate(-287.6 -140.2)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
@@ -237,7 +237,7 @@
         </g>
       </g>
 
-      <!-- NODE 6 — HR / Welfare (people + heart) at ~257° -->
+      <!-- NODE 6. HR / Welfare (people + heart) at ~257° -->
       <g transform="translate(-71.9 -312.0)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>
@@ -252,7 +252,7 @@
         </g>
       </g>
 
-      <!-- NODE 7 — Videoconf / eLearning (screen + play) at ~309° -->
+      <!-- NODE 7. Videoconf / eLearning (screen + play) at ~309° -->
       <g transform="translate(201.4 -248.7)">
         <g>
           <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="60s" repeatCount="indefinite"/>

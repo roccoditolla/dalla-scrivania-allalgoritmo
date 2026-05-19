@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 19 — Project Manager AI: 360 hub with central figure and eight radiating process icons">
-  <title>Slide 19 — Project Manager AI (hub 360°)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 19. Project Manager AI: 360 hub with central figure and eight radiating process icons">
+  <title>Slide 19. Project Manager AI (hub 360°)</title>
   <desc>Hub centrale con persona stilizzata e otto raggi che si irradiano verso icone di processo: kanban, calendario, persone, email, file, chat, alert, grafico.</desc>
 
   <defs>
@@ -50,7 +50,7 @@
   <rect width="1080" height="1080" fill="#F5EFE6"/>
   <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly19)"/>
 
-  <!-- BG LAYER 1 (far) — Cartoon Saloon concentric mandala -->
+  <!-- BG LAYER 1 (far). Cartoon Saloon concentric mandala -->
   <g transform="translate(540 540)" opacity="0.35" filter="url(#hazePM)">
     <circle r="430" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,8"/>
     <circle r="388" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="3,9"/>
@@ -68,7 +68,7 @@
   </circle>
 
   <!-- =========================================================
-       ROTATING SYSTEM — wheel of 8 spokes + nodes
+       ROTATING SYSTEM. wheel of 8 spokes + nodes
        The spokes group rotates slowly clockwise.
        Node icons inside counter-rotate so they stay upright.
        ========================================================= -->
@@ -84,7 +84,7 @@
       <!-- Outer ring -->
       <circle r="370" fill="none" stroke="#1A1614" stroke-width="1.8" stroke-dasharray="2,10" opacity="0.4"/>
 
-      <!-- 8 SPOKES (curves, not straight lines — Disney organic) -->
+      <!-- 8 SPOKES (curves, not straight lines. Disney organic) -->
       <!-- Each spoke: starts at r~110, ends at r~360. We draw 8 at 45° steps. -->
       <g stroke="#1A1614" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.7">
         <!-- 0° right -->
@@ -121,10 +121,10 @@
         <animateMotion path="M 370 0 A 370 370 0 1 0 369.9 0 Z" dur="14s" repeatCount="indefinite"/>
       </circle>
 
-      <!-- 8 NODE positions — at radius 380, every 45° -->
+      <!-- 8 NODE positions. at radius 380, every 45° -->
       <!-- Each node is a small card; inside we counter-rotate to keep it upright -->
 
-      <!-- NODE 1 (right) — KANBAN -->
+      <!-- NODE 1 (right). KANBAN -->
       <g transform="translate(380 0)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -144,7 +144,7 @@
         </g>
       </g>
 
-      <!-- NODE 2 (45°) — CALENDAR -->
+      <!-- NODE 2 (45°). CALENDAR -->
       <g transform="translate(268.7 268.7)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -163,7 +163,7 @@
         </g>
       </g>
 
-      <!-- NODE 3 (90° bottom) — PEOPLE -->
+      <!-- NODE 3 (90° bottom). PEOPLE -->
       <g transform="translate(0 380)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -179,7 +179,7 @@
         </g>
       </g>
 
-      <!-- NODE 4 (135°) — EMAIL -->
+      <!-- NODE 4 (135°). EMAIL -->
       <g transform="translate(-268.7 268.7)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -192,7 +192,7 @@
         </g>
       </g>
 
-      <!-- NODE 5 (180° left) — FILE -->
+      <!-- NODE 5 (180° left). FILE -->
       <g transform="translate(-380 0)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -209,7 +209,7 @@
         </g>
       </g>
 
-      <!-- NODE 6 (225°) — CHAT -->
+      <!-- NODE 6 (225°). CHAT -->
       <g transform="translate(-268.7 -268.7)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -224,7 +224,7 @@
         </g>
       </g>
 
-      <!-- NODE 7 (270° top) — ALERT -->
+      <!-- NODE 7 (270° top). ALERT -->
       <g transform="translate(0 -380)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -239,7 +239,7 @@
         </g>
       </g>
 
-      <!-- NODE 8 (315°) — CHART (KPI) -->
+      <!-- NODE 8 (315°). CHART (KPI) -->
       <g transform="translate(268.7 -268.7)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -259,7 +259,7 @@
 
   <!-- =========================================================
        CENTRAL HUB DISK + PERSON (back view, dignity)
-       NOT rotating — stays anchored
+       NOT rotating. stays anchored
        ========================================================= -->
   <g transform="translate(540 540)">
     <!-- Outer hub ring -->
@@ -269,7 +269,7 @@
     <!-- Decorative inner ring (Cartoon Saloon detail) -->
     <circle r="78" fill="none" stroke="#1A1614" stroke-width="1.2" stroke-dasharray="2,5" opacity="0.55"/>
 
-    <!-- Person silhouette (back view, slight contrapposto — line of action S) -->
+    <!-- Person silhouette (back view, slight contrapposto. line of action S) -->
     <g>
       <!-- Head (slightly tilted right, asymmetric ellipse) -->
       <ellipse cx="4" cy="-32" rx="22" ry="26" fill="url(#figureBody)" stroke="#0A0706" stroke-width="2.5"/>
@@ -291,7 +291,7 @@
             stroke="#000" stroke-width="2.2" opacity="0.45" filter="url(#contactBlur19)"/>
     </g>
 
-    <!-- "360°" implied — small orange ring marker that orbits the figure -->
+    <!-- "360°" implied. small orange ring marker that orbits the figure -->
     <circle cx="0" cy="0" r="106" fill="none" stroke="#00AAA6" stroke-width="3" stroke-dasharray="80,360" stroke-linecap="round" opacity="0.85">
       <animateTransform attributeName="transform" type="rotate"
                         values="0;360" dur="6s" repeatCount="indefinite"/>

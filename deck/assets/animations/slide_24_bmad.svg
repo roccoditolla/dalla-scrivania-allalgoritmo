@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 24 — BMAD: four horizontal boxes Build/Measure/Adjust/Deploy connected by Bezier arrows in a cycle, Deploy box glows orange, employee silhouette above with semantic curves, decorative geometric overlay">
-  <title>Slide 24 — BMAD (ciclo Build-Measure-Adjust-Deploy)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 24. BMAD: four horizontal boxes Build/Measure/Adjust/Deploy connected by Bezier arrows in a cycle, Deploy box glows orange, employee silhouette above with semantic curves, decorative geometric overlay">
+  <title>Slide 24. BMAD (ciclo Build-Measure-Adjust-Deploy)</title>
   <desc>Quattro box orizzontali connessi da frecce Bezier che ciclano. Deploy ha glow arancione. Sopra: dipendente silhouette con shape language semantico curve/dignità. Decorative overlay geometrico Cartoon Saloon.</desc>
 
   <defs>
@@ -65,7 +65,7 @@
   </g>
 
   <!-- =========================================================
-       FIGURE — employee silhouette ABOVE the cycle
+       FIGURE. employee silhouette ABOVE the cycle
        Semantic curves (dignity), line of action S
        ========================================================= -->
   <g transform="translate(540 280)">
@@ -85,7 +85,7 @@
     <!-- Hair nape -->
     <path d="M -18 -158 Q 4 -174 28 -156" fill="none" stroke="#0A0706" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
 
-    <!-- Open arms (left + right) — gesturing toward the cycle -->
+    <!-- Open arms (left + right). gesturing toward the cycle -->
     <path d="M -38 -28 Q -88 -10 -116 28 Q -132 52 -120 64 Q -100 64 -76 44 Q -50 22 -36 6 Z"
           fill="url(#figureBMAD)" stroke="#0A0706" stroke-width="3.2" stroke-linejoin="round"/>
     <path d="M 42 -28 Q 92 -10 120 28 Q 136 52 124 64 Q 104 64 80 44 Q 54 22 40 6 Z"
@@ -117,12 +117,12 @@
                calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
     </circle>
 
-    <!-- BOX 1 — Build -->
+    <!-- BOX 1. Build -->
     <g transform="translate(-360 0)">
       <ellipse cx="0" cy="62" rx="68" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur24)"/>
       <path d="M -78 -54 Q -82 -64 -72 -64 L 72 -64 Q 82 -64 78 -54 L 78 50 Q 82 58 72 58 L -72 58 Q -82 58 -78 50 Z"
             fill="url(#boxIdle)" stroke="#0A0706" stroke-width="3" stroke-linejoin="round"/>
-      <!-- icon: brick/hammer (build) — semantic rectangles -->
+      <!-- icon: brick/hammer (build). semantic rectangles -->
       <g stroke="#FAF5EC" stroke-width="2.4" stroke-linecap="round" fill="none">
         <rect x="-30" y="-26" width="60" height="14" rx="3" fill="#FAF5EC" opacity="0.9" stroke="none"/>
         <rect x="-30" y="-8" width="60" height="14" rx="3" fill="#FAF5EC" opacity="0.6" stroke="none"/>
@@ -130,7 +130,7 @@
       </g>
     </g>
 
-    <!-- BOX 2 — Measure -->
+    <!-- BOX 2. Measure -->
     <g transform="translate(-120 0)">
       <ellipse cx="0" cy="62" rx="68" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur24)"/>
       <path d="M -78 -54 Q -82 -64 -72 -64 L 72 -64 Q 82 -64 78 -54 L 78 50 Q 82 58 72 58 L -72 58 Q -82 58 -78 50 Z"
@@ -144,7 +144,7 @@
       </g>
     </g>
 
-    <!-- BOX 3 — Adjust -->
+    <!-- BOX 3. Adjust -->
     <g transform="translate(120 0)">
       <ellipse cx="0" cy="62" rx="68" ry="6" fill="#1A1614" opacity="0.25" filter="url(#contactBlur24)"/>
       <path d="M -78 -54 Q -82 -64 -72 -64 L 72 -64 Q 82 -64 78 -54 L 78 50 Q 82 58 72 58 L -72 58 Q -82 58 -78 50 Z"
@@ -160,7 +160,7 @@
       </g>
     </g>
 
-    <!-- BOX 4 — Deploy (ORANGE HERO) -->
+    <!-- BOX 4. Deploy (ORANGE HERO) -->
     <g transform="translate(360 0)">
       <ellipse cx="0" cy="62" rx="72" ry="7" fill="#1A1614" opacity="0.3" filter="url(#contactBlur24)"/>
       <path d="M -82 -58 Q -86 -68 -76 -68 L 76 -68 Q 86 -68 82 -58 L 82 54 Q 86 62 76 62 L -76 62 Q -86 62 -82 54 Z"

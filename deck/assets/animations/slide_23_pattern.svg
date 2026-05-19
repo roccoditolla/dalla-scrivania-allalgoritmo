@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 23 — Pattern: seven orange compasses in a hexagon-star arrangement with rotation and counter-rotation, each slightly different">
-  <title>Slide 23 — Il pattern (7 bussole)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Slide 23. Pattern: seven orange compasses in a hexagon-star arrangement with rotation and counter-rotation, each slightly different">
+  <title>Slide 23. Il pattern (7 bussole)</title>
   <desc>Sette bussole arancioni stilizzate disposte a stella esagonale: una centrale e sei ai vertici. Sistema in rotation lenta con counter-rotation interna che mantiene ogni bussola verticale. Ogni bussola è leggermente diversa nell'orientamento dell'ago e nello stile del bordo.</desc>
 
   <defs>
@@ -56,13 +56,13 @@
     </radialGradient>
 
     <!-- =========================================================
-         COMPASS SYMBOLS — 3 slight variants (border style)
+         COMPASS SYMBOLS. 3 slight variants (border style)
          All shared via <symbol> but instances will be rotated
          and have their needle angles set differently.
          The "needle" itself is parameterized by per-instance group.
          ========================================================= -->
 
-    <!-- VARIANT A — round bezel with 8 micro-ticks (cardinal + intercardinal) -->
+    <!-- VARIANT A. round bezel with 8 micro-ticks (cardinal + intercardinal) -->
     <symbol id="compassA" viewBox="-80 -80 160 160" overflow="visible">
       <!-- outer rim -->
       <circle r="74" fill="url(#compassCase)" stroke="#0A0706" stroke-width="3.5"/>
@@ -88,7 +88,7 @@
       <circle cx="-42" cy="-46" r="3" fill="#FFF" opacity="0.85"/>
     </symbol>
 
-    <!-- VARIANT B — round bezel with 12 micro-ticks (more detail) -->
+    <!-- VARIANT B. round bezel with 12 micro-ticks (more detail) -->
     <symbol id="compassB" viewBox="-80 -80 160 160" overflow="visible">
       <circle r="74" fill="url(#compassCase)" stroke="#0A0706" stroke-width="3.5"/>
       <circle r="68" fill="none" stroke="#0A0706" stroke-width="1.2" stroke-dasharray="2,4" opacity="0.55"/>
@@ -114,7 +114,7 @@
       <circle cx="-38" cy="-48" r="3" fill="#FFF" opacity="0.85"/>
     </symbol>
 
-    <!-- VARIANT C — bezel with notched rim (slight irregularity) -->
+    <!-- VARIANT C. bezel with notched rim (slight irregularity) -->
     <symbol id="compassC" viewBox="-80 -80 160 160" overflow="visible">
       <!-- outer rim with 4 small notches (asymmetric) -->
       <path d="M 70 0 Q 76 -28 56 -52 Q 28 -76 0 -74 Q -28 -76 -56 -52 Q -76 -28 -70 0
@@ -144,7 +144,7 @@
   <rect width="1080" height="1080" fill="#D9B98A" opacity="0.04" filter="url(#painterly23)"/>
 
   <!-- =========================================================
-       BG mandala — Cartoon Saloon concentric layer
+       BG mandala. Cartoon Saloon concentric layer
        ========================================================= -->
   <g transform="translate(540 540)" opacity="0.4" filter="url(#hazePattern)">
     <circle r="470" fill="none" stroke="#1A1614" stroke-width="1" stroke-dasharray="1,9"/>
@@ -198,7 +198,7 @@
   </g>
 
   <!-- =========================================================
-       CONNECTING LINES — star pattern center→6 vertices, plus hex perimeter
+       CONNECTING LINES. star pattern center→6 vertices, plus hex perimeter
        ========================================================= -->
   <g stroke="#1A1614" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3,7" opacity="0.45" fill="none">
     <!-- center to each vertex -->
@@ -208,7 +208,7 @@
     <path d="M 540 540 Q 480 670 390 800"/>
     <path d="M 540 540 Q 380 540 240 540"/>
     <path d="M 540 540 Q 480 410 390 280"/>
-    <!-- hex perimeter (curved, not straight — Disney) -->
+    <!-- hex perimeter (curved, not straight. Disney) -->
     <path d="M 690 280 Q 786 410 840 540"/>
     <path d="M 840 540 Q 786 670 690 800"/>
     <path d="M 690 800 Q 540 836 390 800"/>
@@ -218,7 +218,7 @@
   </g>
 
   <!-- =========================================================
-       7 COMPASSES — main rotating group
+       7 COMPASSES. main rotating group
        Each compass: outer group rotates (system spin), inner group
        counter-rotates so the compass stays upright. The needle
        inside has its own slight oscillation.
@@ -232,7 +232,7 @@
       <animateTransform attributeName="transform" type="rotate"
                         values="0;360" dur="80s" repeatCount="indefinite"/>
 
-      <!-- ==================== Compass 1 — top-right vertex ==================== -->
+      <!-- ==================== Compass 1. top-right vertex ==================== -->
       <g transform="translate(150 -260)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -253,7 +253,7 @@
         </g>
       </g>
 
-      <!-- ==================== Compass 2 — right vertex ==================== -->
+      <!-- ==================== Compass 2. right vertex ==================== -->
       <g transform="translate(300 0)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -271,7 +271,7 @@
         </g>
       </g>
 
-      <!-- ==================== Compass 3 — bottom-right vertex ==================== -->
+      <!-- ==================== Compass 3. bottom-right vertex ==================== -->
       <g transform="translate(150 260)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -289,7 +289,7 @@
         </g>
       </g>
 
-      <!-- ==================== Compass 4 — bottom-left vertex ==================== -->
+      <!-- ==================== Compass 4. bottom-left vertex ==================== -->
       <g transform="translate(-150 260)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -307,7 +307,7 @@
         </g>
       </g>
 
-      <!-- ==================== Compass 5 — left vertex ==================== -->
+      <!-- ==================== Compass 5. left vertex ==================== -->
       <g transform="translate(-300 0)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -325,7 +325,7 @@
         </g>
       </g>
 
-      <!-- ==================== Compass 6 — top-left vertex ==================== -->
+      <!-- ==================== Compass 6. top-left vertex ==================== -->
       <g transform="translate(-150 -260)">
         <g>
           <animateTransform attributeName="transform" type="rotate"
@@ -345,7 +345,7 @@
 
     </g>
 
-    <!-- ==================== Compass 7 — CENTRAL (HERO) ====================
+    <!-- ==================== Compass 7. CENTRAL (HERO) ====================
          Does NOT rotate with the system. Slightly larger, "stable
          center" of the constellation. Needle points north consistently.
          ==================================================== -->

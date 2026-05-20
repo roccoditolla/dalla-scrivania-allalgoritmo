@@ -132,19 +132,19 @@ html, body {
 }
 
 .cover-slide h1 {
-  font-size: 92px;
+  font-size: 76px;
   font-weight: 900;
-  margin: 0 0 28px 0;
+  margin: 0 0 32px 0;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  max-width: 80%;
+  max-width: 90%;
 }
 
 .cover-slide .subtitle {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 500;
   color: var(--color-ink-soft);
-  margin: 0 0 36px 0;
+  margin: 0 0 40px 0;
   letter-spacing: 0.01em;
 }
 
@@ -155,7 +155,7 @@ html, body {
 }
 
 .cover-slide .cover-logo {
-  width: 240px;
+  width: 320px;
   height: auto;
   margin: 0;
   filter: drop-shadow(0 2px 8px rgba(26, 22, 20, 0.08));
@@ -527,16 +527,16 @@ html, body {
   height: 100% !important;
 }
 
-/* === Realistic slide: layout 2-colonna (visual + bullet)
-   Industry-standard spacing: 8pt grid, padding 8% del canvas.
-   Reference: Stripe presentations, Linear pitch deck, Apple keynote. */
+/* === Realistic slide: layout PORTRAIT 9:16 (1080x1920).
+   Stack verticale: header / visual / bullets / caption.
+   Reference: Apple keynote portrait, Stripe presentations vertical. */
 .realistic-layout {
-  width: 84%;
-  height: 88%;
+  width: 86%;
+  height: 92%;
   display: flex;
   flex-direction: column;
   padding: 0;
-  gap: var(--space-6);
+  gap: var(--space-7);
 }
 
 /* Header con eyebrow (numerino piccolo) + titolo grande sotto.
@@ -582,9 +582,10 @@ html, body {
   align-self: flex-start;
 }
 
-/* TITOLO UNICO della slide. Massimo contrasto, peso 800, ink. */
+/* TITOLO UNICO della slide. Layout portrait 1080 wide: titolo grande
+   ma con max-width 100% per stare nei 1080px del canvas verticale. */
 .r-title {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-2xl);
   font-weight: 800;
   color: var(--color-ink);
   letter-spacing: -0.028em;
@@ -592,14 +593,14 @@ html, body {
   line-height: 1.05;
   opacity: 0;
   transform: translateY(15px);
-  max-width: 920px;
+  max-width: 100%;
 }
 
 /* Versione titolo-immagine (logo Conflavoro AI alla stessa altezza del titolo).
-   Usata sulla slide 02 dove il logo SOSTITUISCE il testo titolo. */
+   Allineato a fs-2xl (56px) per portrait. */
 .r-title-logo {
   display: block;
-  height: 72px;        /* allineato a fs-3xl 72px del titolo testo */
+  height: 60px;
   width: auto;
   max-width: 100%;
   margin: 0;
@@ -607,11 +608,12 @@ html, body {
   transform: translateY(15px);
 }
 
+/* Layout slide PORTRAIT 9:16. Stack verticale:
+   header in alto, visual al centro (max 700px altezza), bullet sotto. */
 .r-body {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
   flex: 1;
   min-height: 0;
 }
@@ -620,7 +622,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  width: 100%;
+  max-height: 720px;
+  flex-shrink: 0;
   opacity: 0;
   transform: scale(0.92);
 }
@@ -670,8 +674,8 @@ html, body {
 .r-bullet {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
-  font-size: 30px;
+  gap: 22px;
+  font-size: var(--fs-md);
   font-weight: 400;
   color: var(--color-ink-soft);
   letter-spacing: -0.005em;

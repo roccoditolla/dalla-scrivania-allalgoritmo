@@ -3559,12 +3559,17 @@ Grazie.
   <script src="js/transitions.js"></script>
   <script>
     Reveal.initialize({
-      // Schermi del palco in verticale (9:16 portrait)
+      // Schermi del palco in verticale (9:16 portrait). Reveal scala
+      // automaticamente il canvas su qualsiasi display mantenendo il rapporto:
+      // - schermo verticale grande (palco): riempie tutto
+      // - desktop landscape: scala in altezza con bande cream ai lati
+      // - tablet/smartphone: riempie tutto in portrait, scala in landscape
       width: 1080,
       height: 1920,
-      margin: 0,
-      minScale: 0.2,
-      maxScale: 2.0,
+      margin: 0.02,
+      minScale: 0.1,
+      maxScale: 3.0,
+      center: true,
       controls: true,
       progress: true,
       hash: true,

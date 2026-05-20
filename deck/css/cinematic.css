@@ -540,24 +540,47 @@ html, body {
   display: flex;
   flex-direction: column;
   padding: 0;
-  gap: var(--space-7);
+  gap: var(--space-5);
   margin: 0 auto;
+  overflow: hidden;
 }
 
-/* PORTRAIT (palco verticale, mobile, tablet portrait): stack pulito */
+/* PORTRAIT (palco verticale, mobile, tablet portrait): stack pulito, compatto
+   per stare comodamente in 1920px di altezza (header ~140 + visual ~520 +
+   bullets ~700 + caption ~120 + gap ~120 = ~1600px, dentro 1804px del 94%) */
 html.orient-portrait .r-body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);
+  gap: var(--space-5);
   flex: 1;
   min-height: 0;
+  overflow: hidden;
 }
 
 html.orient-portrait .r-visual {
   width: 100%;
-  max-height: 720px;
-  flex-shrink: 0;
+  height: auto;
+  max-height: 520px;
+  min-height: 320px;
+  flex-shrink: 1;
 }
+
+/* Bullet portrait piu' compatti per stare con la visual e la caption */
+html.orient-portrait .r-bullets { gap: 26px; }
+html.orient-portrait .r-bullet { font-size: 32px; line-height: 1.32; }
+html.orient-portrait .r-bullet-mark {
+  width: 24px; height: 24px; margin-top: 12px;
+}
+html.orient-portrait .r-bullet-mark::after {
+  left: 7px; top: 5px; width: 6px; height: 10px;
+}
+html.orient-portrait .r-title { font-size: 64px; line-height: 1.04; }
+html.orient-portrait .r-title-logo { height: 66px; }
+html.orient-portrait .big-number { font-size: 20px; }
+html.orient-portrait .r-caption {
+  font-size: 24px; margin-top: 20px; padding: 14px 0 14px 22px;
+}
+html.orient-portrait .r-header { gap: var(--space-1); padding-bottom: var(--space-3); }
 
 /* LANDSCAPE (desktop, laptop, monitor 16:9): 2-colonne (visual sx + bullet dx).
    Lo stesso content rifluisce in un layout piu' arioso per schermi larghi. */

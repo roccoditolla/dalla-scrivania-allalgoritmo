@@ -399,22 +399,27 @@ $realistic_slides
   <script src="js/lottie_init.js"></script>
   <script src="js/transitions.js"></script>
   <script>
-    // === ADAPTIVE ORIENTATION ===
-    // Detect viewport orientation e configura Reveal canvas di conseguenza:
-    // - Display landscape (aspect > 1.1): canvas 1920x1080 + classe .landscape
-    // - Display portrait (aspect <= 1.1): canvas 1080x1920 + classe .portrait
-    // Il CSS poi adatta il layout (2-colonne landscape vs stack portrait).
-    const viewportAspect = window.innerWidth / window.innerHeight;
-    const isLandscape = viewportAspect > 1.1;
-    document.documentElement.classList.add(isLandscape ? 'orient-landscape' : 'orient-portrait');
+    // === ADAPTIVE ORIENTATION + CSS-driven sizing ===
+    // Disabilito lo scaling fisso di Reveal e gestisco il layout via CSS
+    // responsive (vmin/vh units + media queries). Cosi' su mobile portrait
+    // piccolo i font sono leggibili come su palco verticale grande.
+    const updateOrient = () => {
+      const isLandscape = window.innerWidth / window.innerHeight > 1.1;
+      document.documentElement.classList.toggle('orient-landscape', isLandscape);
+      document.documentElement.classList.toggle('orient-portrait', !isLandscape);
+    };
+    updateOrient();
+    window.addEventListener('resize', updateOrient);
+    window.addEventListener('orientationchange', updateOrient);
 
     Reveal.initialize({
-      width:  isLandscape ? 1920 : 1080,
-      height: isLandscape ? 1080 : 1920,
-      margin: 0.02,
-      minScale: 0.1,
-      maxScale: 3.0,
-      center: true,
+      width: '100%',
+      height: '100%',
+      margin: 0,
+      minScale: 1,
+      maxScale: 1,
+      center: false,
+      disableLayout: true,
       controls: true,
       progress: true,
       hash: true,

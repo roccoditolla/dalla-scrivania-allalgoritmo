@@ -77,11 +77,8 @@
 /* === Reset reveal.js theme con la nostra palette === */
 html, body {
   background: var(--color-bg);
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .reveal {
@@ -91,30 +88,10 @@ html, body {
   font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-  height: 100vh;
 }
 
-.reveal-viewport,
-.reveal .slides {
+.reveal-viewport {
   background: var(--color-bg);
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* Disabilito le transform di Reveal su .slides section (disableLayout
-   gia' lo fa, ma forziamo width/height in 100% per sicurezza) */
-.reveal .slides section {
-  width: 100% !important;
-  height: 100% !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0 !important;
-  transform: none !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Slide story con bg ink: ribaltiamo il letterbox */
@@ -156,28 +133,30 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Cover slide: dimensioni px sul canvas. Reveal scala. */
 .cover-slide h1 {
-  font-size: 9vmin;
+  font-size: 96px;
   font-weight: 900;
-  margin: 0 0 3vmin 0;
+  margin: 0 0 32px 0;
   letter-spacing: -0.03em;
   line-height: 1.04;
   max-width: 92%;
 }
 
 .cover-slide .subtitle {
-  font-size: 3vmin;
+  font-size: 32px;
   font-weight: 500;
   color: var(--color-ink-soft);
-  margin: 0 0 4vmin 0;
+  margin: 0 0 40px 0;
   letter-spacing: 0.01em;
 }
 
-@media (orientation: portrait) and (max-width: 500px) {
-  .cover-slide h1 { font-size: 11vmin; }
-  .cover-slide .subtitle { font-size: 4vmin; }
-  .cover-slide .cover-logo { width: 60vmin; }
-}
+html.orient-landscape .cover-slide h1 { font-size: 84px; max-width: 80%; }
+html.orient-landscape .cover-slide .subtitle { font-size: 28px; }
+html.orient-landscape .cover-slide .cover-logo { width: 380px; }
+html.is-mobile .cover-slide h1 { font-size: 64px; }
+html.is-mobile .cover-slide .subtitle { font-size: 24px; }
+html.is-mobile .cover-slide .cover-logo { width: 260px; }
 
 .cover-slide .subtitle .ai-accent {
   color: var(--color-brand-teal);
@@ -186,7 +165,7 @@ html, body {
 }
 
 .cover-slide .cover-logo {
-  width: 36vmin;
+  width: 420px;
   height: auto;
   margin: 0;
   filter: drop-shadow(0 2px 8px rgba(26, 22, 20, 0.08));
@@ -558,136 +537,112 @@ html, body {
   height: 100% !important;
 }
 
-/* === Realistic slide layout ADAPTIVE responsive vero.
-   Reveal disableLayout=true: niente piu' scaling fisso del canvas.
-   Le slide riempiono 100vw x 100vh. Font/spacing in vmin (= % della
-   dimensione minore tra width e height del viewport) -> scalano in modo
-   intelligente: su mobile small i font sono piccoli ma leggibili,
-   su palco grande verticale sono grandi e leggibili.
-   Media query specifiche per portrait vs landscape. */
+/* === Realistic slide layout ADAPTIVE.
+   Reveal scala il canvas (dinamico da JS al boot in base al device).
+   Il CSS gestisce il layout INTERNO al canvas in unita' relative (%) cosi'
+   resta proporzionato a qualsiasi canvas-size scelto.
+   Classi su <html>:
+   .orient-landscape | .orient-portrait | .is-mobile (small device) */
 
 .realistic-layout {
   display: flex;
   flex-direction: column;
-  padding: 4vmin 5vmin;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+  padding: 4% 5%;
+  width: 92%;
+  height: 94%;
   box-sizing: border-box;
-  gap: 3.5vmin;
+  gap: 3.5%;
   overflow: hidden;
 }
 
 /* ============================================================
-   LANDSCAPE: schermi orizzontali (desktop, laptop)
+   LANDSCAPE canvas (1920x1080 o 1280x720 mobile): 2-colonne
    ============================================================ */
-@media (orientation: landscape) {
-  .realistic-layout {
-    padding: 4vmin 6vmin;
-    gap: 3vmin;
-  }
-
-  .r-header {
-    padding-bottom: 2vmin;
-    gap: 0.6vmin;
-  }
-  .big-number { font-size: 1.8vmin; }
-  .r-title { font-size: 6.4vmin; line-height: 1.05; max-width: 90%; }
-  .r-title-logo { height: 6.8vmin; }
-
-  /* Body 2-colonne su landscape */
-  .r-body {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 5vmin;
-    align-items: center;
-    flex: 1;
-    min-height: 0;
-  }
-  .r-visual {
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-  }
-
-  .r-bullets { gap: 2.2vmin; }
-  .r-bullet { font-size: 2.8vmin; line-height: 1.35; gap: 1.8vmin; }
-  .r-bullet-mark {
-    width: 2.4vmin; height: 2.4vmin; margin-top: 0.9vmin; min-width: 18px;
-  }
-  .r-bullet-mark::after {
-    left: 25%; top: 22%; width: 28%; height: 45%;
-    border-right-width: 0.22vmin; border-bottom-width: 0.22vmin;
-  }
-  .r-caption {
-    font-size: 2.2vmin; padding: 1.2vmin 0 1.2vmin 2vmin;
-    margin-top: 2.4vmin;
-  }
+html.orient-landscape .realistic-layout {
+  padding: 4% 5%;
+  gap: 3%;
 }
+
+html.orient-landscape .r-header {
+  padding-bottom: 2%;
+}
+
+html.orient-landscape .r-body {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5%;
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+}
+
+html.orient-landscape .r-visual {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+/* Big number (eyebrow): proporzionale al canvas */
+html.orient-landscape .big-number { font-size: 22px; }
+html.orient-landscape .r-title { font-size: 64px; line-height: 1.05; max-width: 90%; }
+html.orient-landscape .r-title-logo { height: 68px; }
+html.orient-landscape .r-bullet { font-size: 30px; line-height: 1.35; gap: 22px; }
+html.orient-landscape .r-bullet-mark { width: 24px; height: 24px; margin-top: 10px; }
+html.orient-landscape .r-bullet-mark::after { left: 7px; top: 5px; width: 6px; height: 10px; }
+html.orient-landscape .r-bullets { gap: 24px; }
+html.orient-landscape .r-caption { font-size: 24px; padding: 14px 0 14px 22px; margin-top: 24px; }
 
 /* ============================================================
-   PORTRAIT: schermi verticali (palco, mobile, tablet portrait)
+   PORTRAIT canvas (1080x1920 o 720x1280 mobile): stack verticale
    ============================================================ */
-@media (orientation: portrait) {
-  .realistic-layout {
-    padding: 4vmin 5vmin;
-    gap: 3vmin;
-  }
-
-  .r-header {
-    flex-direction: column;
-    padding-bottom: 2vmin;
-    gap: 0.4vmin;
-  }
-  .big-number { font-size: 1.8vmin; }
-  .r-title { font-size: 6.5vmin; line-height: 1.05; max-width: 100%; }
-  .r-title-logo { height: 7vmin; }
-
-  /* Body stack verticale su portrait */
-  .r-body {
-    display: flex;
-    flex-direction: column;
-    gap: 3vmin;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  .r-visual {
-    width: 100%;
-    height: auto;
-    max-height: 38vmin;
-    min-height: 22vmin;
-    flex-shrink: 1;
-  }
-
-  .r-bullets { gap: 2.2vmin; }
-  .r-bullet { font-size: 3.2vmin; line-height: 1.34; gap: 2vmin; }
-  .r-bullet-mark {
-    width: 2.6vmin; height: 2.6vmin; margin-top: 1vmin; min-width: 18px;
-  }
-  .r-bullet-mark::after {
-    left: 25%; top: 22%; width: 28%; height: 45%;
-    border-right-width: 0.25vmin; border-bottom-width: 0.25vmin;
-  }
-  .r-caption {
-    font-size: 2.4vmin; padding: 1.4vmin 0 1.4vmin 2vmin;
-    margin-top: 2vmin;
-  }
+html.orient-portrait .realistic-layout {
+  padding: 4% 5%;
+  gap: 3%;
 }
 
-/* SMALL MOBILE PORTRAIT (telefono small/medio): ulteriore compattazione */
-@media (orientation: portrait) and (max-width: 500px) {
-  .realistic-layout { padding: 5vmin 5vmin; gap: 3.5vmin; }
-  .r-title { font-size: 8vmin; line-height: 1.08; }
-  .r-title-logo { height: 8.4vmin; }
-  .big-number { font-size: 2.6vmin; }
-  .r-bullets { gap: 3vmin; }
-  .r-bullet { font-size: 4vmin; line-height: 1.36; gap: 2.4vmin; }
-  .r-bullet-mark { width: 3.2vmin; height: 3.2vmin; margin-top: 1.4vmin; }
-  .r-caption { font-size: 3.2vmin; padding: 1.8vmin 0 1.8vmin 2.4vmin; }
-  .r-visual { max-height: 30vh; min-height: 18vh; }
+html.orient-portrait .r-header {
+  flex-direction: column;
+  padding-bottom: 2%;
+  gap: 4px;
 }
+
+html.orient-portrait .r-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5%;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+html.orient-portrait .r-visual {
+  width: 100%;
+  height: auto;
+  max-height: 36%;
+  min-height: 22%;
+  flex-shrink: 1;
+}
+
+html.orient-portrait .big-number { font-size: 22px; }
+html.orient-portrait .r-title { font-size: 72px; line-height: 1.04; max-width: 100%; }
+html.orient-portrait .r-title-logo { height: 72px; }
+html.orient-portrait .r-bullet { font-size: 36px; line-height: 1.32; gap: 24px; }
+html.orient-portrait .r-bullet-mark { width: 28px; height: 28px; margin-top: 14px; }
+html.orient-portrait .r-bullet-mark::after { left: 8px; top: 7px; width: 7px; height: 12px; }
+html.orient-portrait .r-bullets { gap: 26px; }
+html.orient-portrait .r-caption { font-size: 26px; padding: 14px 0 14px 22px; margin-top: 22px; }
+
+/* MOBILE (canvas piu' piccolo 720x1280 o 1280x720): font proporzionalmente
+   piu' grandi rispetto al canvas perche' lo schermo fisico e' piccolo */
+html.is-mobile.orient-portrait .r-title { font-size: 60px; }
+html.is-mobile.orient-portrait .r-title-logo { height: 60px; }
+html.is-mobile.orient-portrait .r-bullet { font-size: 32px; }
+html.is-mobile.orient-portrait .r-caption { font-size: 24px; }
+html.is-mobile.orient-portrait .big-number { font-size: 20px; }
+
+html.is-mobile.orient-landscape .r-title { font-size: 48px; }
+html.is-mobile.orient-landscape .r-bullet { font-size: 24px; }
+html.is-mobile.orient-landscape .r-caption { font-size: 20px; }
 
 /* Header con eyebrow (numerino piccolo) + titolo grande sotto.
    NON piu in linea con big-number: il big-number ora e' verticalmente

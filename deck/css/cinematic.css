@@ -527,12 +527,13 @@ html, body {
   height: 100% !important;
 }
 
-/* === Realistic slide: layout PORTRAIT 9:16 (1080x1920).
-   Stack verticale: header / visual / bullets / caption.
-   Dimensioni generose per leggibilita su qualsiasi device.
-   Reveal scala il canvas: schermo palco verticale = full; desktop landscape
-   = scalato con bande cream; mobile portrait = riempie; mobile landscape =
-   scala mantenendo rapporto 9:16. */
+/* === Realistic slide layout adaptive (portrait + landscape).
+   JS al boot rileva orientation e setta .orient-portrait o .orient-landscape
+   su <html>. Reveal canvas viene impostato di conseguenza (1080x1920 o
+   1920x1080). Il layout si adatta con due varianti.
+   Reference: Apple keynote adaptive, Stripe presentations responsive. */
+
+/* Default base (vale per entrambi gli orientamenti) */
 .realistic-layout {
   width: 88%;
   height: 94%;
@@ -542,6 +543,58 @@ html, body {
   gap: var(--space-7);
   margin: 0 auto;
 }
+
+/* PORTRAIT (palco verticale, mobile, tablet portrait): stack pulito */
+html.orient-portrait .r-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  flex: 1;
+  min-height: 0;
+}
+
+html.orient-portrait .r-visual {
+  width: 100%;
+  max-height: 720px;
+  flex-shrink: 0;
+}
+
+/* LANDSCAPE (desktop, laptop, monitor 16:9): 2-colonne (visual sx + bullet dx).
+   Lo stesso content rifluisce in un layout piu' arioso per schermi larghi. */
+html.orient-landscape .realistic-layout {
+  width: 90%;
+  height: 88%;
+  gap: var(--space-5);
+}
+
+html.orient-landscape .r-body {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-7);
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+}
+
+html.orient-landscape .r-visual {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+}
+
+/* Su landscape titolo piu' compatto (l'header occupa meno altezza relativa) */
+html.orient-landscape .r-title { font-size: 60px; line-height: 1.06; }
+html.orient-landscape .r-title-logo { height: 64px; }
+html.orient-landscape .big-number { font-size: 18px; }
+html.orient-landscape .r-bullet { font-size: 30px; line-height: 1.34; }
+html.orient-landscape .r-bullet-mark { width: 24px; height: 24px; margin-top: 10px; }
+html.orient-landscape .r-bullet-mark::after { left: 7px; top: 5px; width: 6px; height: 10px; }
+html.orient-landscape .r-caption { font-size: 24px; padding: 14px 0 14px 22px; }
+
+/* COVER slide adaptive */
+html.orient-landscape .cover-slide h1 { font-size: 84px; max-width: 80%; }
+html.orient-landscape .cover-slide .subtitle { font-size: 30px; }
+html.orient-landscape .cover-slide .cover-logo { width: 360px; }
 
 /* Header con eyebrow (numerino piccolo) + titolo grande sotto.
    NON piu in linea con big-number: il big-number ora e' verticalmente

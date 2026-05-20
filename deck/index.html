@@ -3558,14 +3558,18 @@ Grazie.
   <script src="js/lottie_init.js"></script>
   <script src="js/transitions.js"></script>
   <script>
+    // === ADAPTIVE ORIENTATION ===
+    // Detect viewport orientation e configura Reveal canvas di conseguenza:
+    // - Display landscape (aspect > 1.1): canvas 1920x1080 + classe .landscape
+    // - Display portrait (aspect <= 1.1): canvas 1080x1920 + classe .portrait
+    // Il CSS poi adatta il layout (2-colonne landscape vs stack portrait).
+    const viewportAspect = window.innerWidth / window.innerHeight;
+    const isLandscape = viewportAspect > 1.1;
+    document.documentElement.classList.add(isLandscape ? 'orient-landscape' : 'orient-portrait');
+
     Reveal.initialize({
-      // Schermi del palco in verticale (9:16 portrait). Reveal scala
-      // automaticamente il canvas su qualsiasi display mantenendo il rapporto:
-      // - schermo verticale grande (palco): riempie tutto
-      // - desktop landscape: scala in altezza con bande cream ai lati
-      // - tablet/smartphone: riempie tutto in portrait, scala in landscape
-      width: 1080,
-      height: 1920,
+      width:  isLandscape ? 1920 : 1080,
+      height: isLandscape ? 1080 : 1920,
       margin: 0.02,
       minScale: 0.1,
       maxScale: 3.0,

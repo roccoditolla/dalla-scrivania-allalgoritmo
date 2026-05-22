@@ -595,21 +595,34 @@ html.orient-landscape .r-caption { font-size: 24px; padding: 14px 0 14px 22px; m
 /* ============================================================
    PORTRAIT canvas (1080x1920 o 720x1280 mobile): stack verticale
    ============================================================ */
+/* PORTRAIT canvas (1080x1920 o 720x1280 mobile)
+   STACK VERTICALE COMPATTO con generose distanze tra elementi.
+   Math del fit calcolata per 1920px disponibili (94% di 1920 = 1805px):
+   - Header (eyebrow 26 + title 64 line 1.05 = 67 + padding 30) = ~125px
+   - Gap 60
+   - Visual max 420px (era 36% = 650, TROPPO)
+   - Gap 60
+   - Bullet 4 x (30 + 16 gap) = ~184 con line 1.45
+   - Gap 60
+   - Caption ~85px
+   Totale: ~995px su 1805 = MOLTO buffer
+*/
 html.orient-portrait .realistic-layout {
-  padding: 4% 5%;
-  gap: 3%;
+  padding: 5% 6%;
+  gap: 0;
 }
 
 html.orient-portrait .r-header {
   flex-direction: column;
-  padding-bottom: 2%;
-  gap: 4px;
+  padding-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 50px;
 }
 
 html.orient-portrait .r-body {
   display: flex;
   flex-direction: column;
-  gap: 3.5%;
+  gap: 60px;
   flex: 1;
   min-height: 0;
   overflow: hidden;
@@ -618,27 +631,87 @@ html.orient-portrait .r-body {
 html.orient-portrait .r-visual {
   width: 100%;
   height: auto;
-  max-height: 36%;
-  min-height: 22%;
+  max-height: 420px;
+  min-height: 240px;
   flex-shrink: 1;
 }
 
-html.orient-portrait .big-number { font-size: 22px; }
-html.orient-portrait .r-title { font-size: 72px; line-height: 1.04; max-width: 100%; }
-html.orient-portrait .r-title-logo { height: 72px; }
-html.orient-portrait .r-bullet { font-size: 36px; line-height: 1.32; gap: 24px; }
-html.orient-portrait .r-bullet-mark { width: 28px; height: 28px; margin-top: 14px; }
-html.orient-portrait .r-bullet-mark::after { left: 8px; top: 7px; width: 7px; height: 12px; }
-html.orient-portrait .r-bullets { gap: 26px; }
-html.orient-portrait .r-caption { font-size: 26px; padding: 14px 0 14px 22px; margin-top: 22px; }
+html.orient-portrait .r-visual img,
+html.orient-portrait .r-visual svg {
+  max-height: 420px !important;
+  width: auto;
+  margin: 0 auto;
+}
 
-/* MOBILE (canvas piu' piccolo 720x1280 o 1280x720): font proporzionalmente
-   piu' grandi rispetto al canvas perche' lo schermo fisico e' piccolo */
-html.is-mobile.orient-portrait .r-title { font-size: 60px; }
-html.is-mobile.orient-portrait .r-title-logo { height: 60px; }
-html.is-mobile.orient-portrait .r-bullet { font-size: 32px; }
-html.is-mobile.orient-portrait .r-caption { font-size: 24px; }
-html.is-mobile.orient-portrait .big-number { font-size: 20px; }
+html.orient-portrait .big-number {
+  font-size: 26px;
+  letter-spacing: 0.2em;
+}
+html.orient-portrait .r-title {
+  font-size: 64px;
+  line-height: 1.06;
+  max-width: 100%;
+  font-weight: 800;
+}
+html.orient-portrait .r-title-logo { height: 64px; }
+html.orient-portrait .r-bullet {
+  font-size: 30px;
+  line-height: 1.45;
+  gap: 22px;
+}
+html.orient-portrait .r-bullet-mark {
+  width: 26px; height: 26px; margin-top: 13px;
+}
+html.orient-portrait .r-bullet-mark::after {
+  left: 7px; top: 6px; width: 6px; height: 11px;
+}
+html.orient-portrait .r-bullets { gap: 24px; }
+html.orient-portrait .r-caption {
+  font-size: 26px;
+  padding: 18px 0 18px 24px;
+  margin-top: 36px;
+  line-height: 1.4;
+}
+
+/* MOBILE PORTRAIT (canvas 720x1280): font + spacing proporzionalmente
+   piu' aerati perche' lo scaling rende tutto piccolo sul telefono.
+   Numeri tarati: 720 wide, 1280 tall. Available content area ~614x1203 */
+html.is-mobile.orient-portrait .realistic-layout {
+  padding: 6% 6%;
+}
+html.is-mobile.orient-portrait .r-header {
+  padding-bottom: 22px;
+  margin-bottom: 36px;
+}
+html.is-mobile.orient-portrait .big-number { font-size: 22px; }
+html.is-mobile.orient-portrait .r-title { font-size: 54px; line-height: 1.08; }
+html.is-mobile.orient-portrait .r-title-logo { height: 54px; }
+html.is-mobile.orient-portrait .r-body { gap: 44px; }
+html.is-mobile.orient-portrait .r-visual {
+  max-height: 280px;
+  min-height: 180px;
+}
+html.is-mobile.orient-portrait .r-visual img,
+html.is-mobile.orient-portrait .r-visual svg {
+  max-height: 280px !important;
+}
+html.is-mobile.orient-portrait .r-bullet {
+  font-size: 26px;
+  line-height: 1.46;
+  gap: 18px;
+}
+html.is-mobile.orient-portrait .r-bullets { gap: 20px; }
+html.is-mobile.orient-portrait .r-bullet-mark {
+  width: 22px; height: 22px; margin-top: 11px;
+}
+html.is-mobile.orient-portrait .r-bullet-mark::after {
+  left: 6px; top: 5px; width: 6px; height: 10px;
+}
+html.is-mobile.orient-portrait .r-caption {
+  font-size: 22px;
+  padding: 14px 0 14px 18px;
+  margin-top: 26px;
+}
 
 html.is-mobile.orient-landscape .r-title { font-size: 48px; }
 html.is-mobile.orient-landscape .r-bullet { font-size: 24px; }

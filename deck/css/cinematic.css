@@ -614,31 +614,34 @@ html.orient-portrait .realistic-layout {
 
 html.orient-portrait .r-header {
   flex-direction: column;
-  padding-bottom: 28px;
-  gap: 12px;
-  margin-bottom: 50px;
+  padding-bottom: 16px;
+  gap: 6px;
+  margin-bottom: 28px;
 }
 
 html.orient-portrait .r-body {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 32px;
   flex: 1;
   min-height: 0;
   overflow: hidden;
 }
 
+/* FIX root cause: flex-basis esplicito + shrink ammesso.
+   Visual occupa 32% del body, max 380px. SVG square dentro centrate. */
 html.orient-portrait .r-visual {
+  flex: 0 1 32%;
   width: 100%;
-  height: auto;
-  max-height: 420px;
-  min-height: 240px;
-  flex-shrink: 1;
+  max-height: 380px;
+  min-height: 180px;
 }
 
 html.orient-portrait .r-visual img,
 html.orient-portrait .r-visual svg {
-  max-height: 420px !important;
+  max-height: 100% !important;
+  max-width: 100%;
+  height: auto;
   width: auto;
   margin: 0 auto;
 }
@@ -667,9 +670,9 @@ html.orient-portrait .r-bullet-mark::after {
 }
 html.orient-portrait .r-bullets { gap: 24px; }
 html.orient-portrait .r-caption {
+  margin: 18px 0 0 0;
+  padding: 14px 0 14px 22px;
   font-size: 26px;
-  padding: 18px 0 18px 24px;
-  margin-top: 36px;
   line-height: 1.4;
 }
 
@@ -686,21 +689,22 @@ html.is-mobile.orient-portrait .r-header {
 html.is-mobile.orient-portrait .big-number { font-size: 22px; }
 html.is-mobile.orient-portrait .r-title { font-size: 54px; line-height: 1.08; }
 html.is-mobile.orient-portrait .r-title-logo { height: 54px; }
-html.is-mobile.orient-portrait .r-body { gap: 44px; }
+html.is-mobile.orient-portrait .r-body { gap: 24px; }
 html.is-mobile.orient-portrait .r-visual {
-  max-height: 280px;
-  min-height: 180px;
+  flex: 0 1 26%;
+  max-height: 250px;
+  min-height: 140px;
 }
 html.is-mobile.orient-portrait .r-visual img,
 html.is-mobile.orient-portrait .r-visual svg {
-  max-height: 280px !important;
+  max-height: 100% !important;
 }
 html.is-mobile.orient-portrait .r-bullet {
   font-size: 26px;
-  line-height: 1.46;
-  gap: 18px;
+  line-height: 1.4;
+  gap: 16px;
 }
-html.is-mobile.orient-portrait .r-bullets { gap: 20px; }
+html.is-mobile.orient-portrait .r-bullets { gap: 18px; }
 html.is-mobile.orient-portrait .r-bullet-mark {
   width: 22px; height: 22px; margin-top: 11px;
 }
@@ -794,13 +798,15 @@ html.is-mobile.orient-landscape .r-caption { font-size: 20px; }
   min-height: 0;
 }
 
+/* BASE r-visual: NON forziamo flex-shrink: 0 (root cause bullet
+   accavallati). Le orientation-specific rules sotto definiscono flex-basis
+   esplicito + shrink ammesso. */
 .r-visual {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-height: 720px;
-  flex-shrink: 0;
+  flex-shrink: 1;
   opacity: 0;
   transform: scale(0.92);
 }

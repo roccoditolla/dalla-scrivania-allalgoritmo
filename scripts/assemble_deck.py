@@ -461,7 +461,7 @@ STORY_SLIDE_TEMPLATE = Template("""
 
 
 REALISTIC_SLIDE_TEMPLATE = Template("""
-      <section data-slide-id="$id" class="realistic-slide" data-background-color="#F5EFE6">
+      <section data-slide-id="$id" class="realistic-slide" data-background-color="#FFFFFF">
         <div class="realistic-layout">
           <header class="r-header">
             <div class="big-number" data-anim="bignum">$big</div>

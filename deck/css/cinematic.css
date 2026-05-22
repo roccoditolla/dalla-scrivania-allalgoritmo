@@ -596,54 +596,75 @@ html.orient-landscape .r-caption { font-size: 24px; padding: 14px 0 14px 22px; m
    PORTRAIT canvas (1080x1920 o 720x1280 mobile): stack verticale
    ============================================================ */
 /* PORTRAIT canvas (1080x1920 o 720x1280 mobile)
-   STACK VERTICALE COMPATTO con generose distanze tra elementi.
-   Math del fit calcolata per 1920px disponibili (94% di 1920 = 1805px):
-   - Header (eyebrow 26 + title 64 line 1.05 = 67 + padding 30) = ~125px
-   - Gap 60
-   - Visual max 420px (era 36% = 650, TROPPO)
-   - Gap 60
-   - Bullet 4 x (30 + 16 gap) = ~184 con line 1.45
-   - Gap 60
-   - Caption ~85px
-   Totale: ~995px su 1805 = MOLTO buffer
-*/
+   STACK VERTICALE con altezze FISSE in pixel del canvas.
+   No piu' percentuali che si interpretano male nei flex annidati.
+   Math 1920px disponibili (canvas full):
+   - Padding outer top/bottom: 100 + 100 = 200
+   - Inner: 1720
+   - Header: ~150px
+   - Margin sotto header: 40
+   - Visual FISSO: 480px
+   - Gap body: 50
+   - Bullets: ~310px (4 line 1.45)
+   - Margin caption: 30
+   - Caption: ~90px
+   TOT: 1150 / 1720 inner = 570px buffer */
 html.orient-portrait .realistic-layout {
-  padding: 5% 6%;
+  padding: 90px 80px;
   gap: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 html.orient-portrait .r-header {
   flex-direction: column;
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   gap: 6px;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
+  flex-shrink: 0;
 }
 
 html.orient-portrait .r-body {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 50px;
   flex: 1;
   min-height: 0;
   overflow: hidden;
 }
 
-/* FIX root cause: flex-basis esplicito + shrink ammesso.
-   Visual occupa 32% del body, max 380px. SVG square dentro centrate. */
+/* FIX visual: ALTEZZA FISSA 480px (no piu' flex-basis %),
+   no grow no shrink, overflow hidden, SVG contained dentro */
 html.orient-portrait .r-visual {
-  flex: 0 1 32%;
+  flex: 0 0 480px;
   width: 100%;
-  max-height: 380px;
-  min-height: 180px;
+  height: 480px;
+  max-height: 480px;
+  overflow: hidden;
+  background: transparent;
+}
+
+html.orient-portrait .r-visual .illustration,
+html.orient-portrait .r-visual .illustration.svg-anim {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
 }
 
 html.orient-portrait .r-visual img,
 html.orient-portrait .r-visual svg {
-  max-height: 100% !important;
-  max-width: 100%;
-  height: auto;
-  width: auto;
+  width: auto !important;
+  height: 100% !important;
+  max-height: 480px !important;
+  max-width: 100% !important;
+  object-fit: contain;
   margin: 0 auto;
+  display: block;
 }
 
 html.orient-portrait .big-number {
@@ -689,15 +710,22 @@ html.is-mobile.orient-portrait .r-header {
 html.is-mobile.orient-portrait .big-number { font-size: 22px; }
 html.is-mobile.orient-portrait .r-title { font-size: 54px; line-height: 1.08; }
 html.is-mobile.orient-portrait .r-title-logo { height: 54px; }
-html.is-mobile.orient-portrait .r-body { gap: 24px; }
+html.is-mobile.orient-portrait .r-body { gap: 34px; }
 html.is-mobile.orient-portrait .r-visual {
-  flex: 0 1 26%;
-  max-height: 250px;
-  min-height: 140px;
+  flex: 0 0 320px;
+  height: 320px;
+  max-height: 320px;
 }
 html.is-mobile.orient-portrait .r-visual img,
 html.is-mobile.orient-portrait .r-visual svg {
-  max-height: 100% !important;
+  max-height: 320px !important;
+}
+html.is-mobile.orient-portrait .realistic-layout {
+  padding: 60px 50px;
+}
+html.is-mobile.orient-portrait .r-header {
+  margin-bottom: 24px;
+  padding-bottom: 14px;
 }
 html.is-mobile.orient-portrait .r-bullet {
   font-size: 26px;
